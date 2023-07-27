@@ -1,0 +1,202 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ReportePlanillasVsConversionViewModel
+@using BCH.Comex.Core.BL.XGPL
+@{
+    ViewBag.Title = "Planillas v/s Conversión";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-planillas-inv.png")" />
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-table")
+    @Scripts.Render("~/bundles/bootstrap-table-export")
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    <script>
+        var $tabla = null, $tabla2 = null;
+
+        $.blockUI({ message: '<h6>Cargando...</h6>' });
+
+        $(function () {
+
+            $tabla = $('#tablaPlanillas');
+            $tabla.bootstrapTable({
+                classes: 'table-sm table-bordered table-condensed',
+                pagination: true,
+                align: 'center',
+                halign: 'center',
+                falign: 'center',
+                sortable: true,
+                locale: "es-SP",
+                pageSize: 10,
+                pageList: [10, 25, 50, 100, 200, 500, 1000, 2000],
+                search: true,
+                showExport: true,
+                exportTypes: ['excel', 'pdf'],
+                exportDataType: 'all',
+                exportOptions: {
+                    fileName: '@Model.Titulo - @DateTime.Now.ToString("ddMMyyyy_hhmmss")',
+                    worksheetName: ['@Model.Titulo'],
+                    tableName: '@Model.Titulo'
+                },
+            });
+
+            $tabla2 = $('#tablaPlanillas2');
+            $tabla2.bootstrapTable({
+                classes: 'table-sm table-bordered table-condensed',
+                pagination: true,
+                sortable: true,
+                locale: "es-SP",
+                align: 'center',
+                halign: 'center',
+                falign: 'center',
+                pageSize: 10,
+                pageList: [10, 25, 50, 100, 200, 500, 1000, 2000],
+                search: true,
+                showExport: true,
+                exportTypes: ['excel', 'pdf'],
+                exportDataType: 'all',
+                exportOptions: {
+                    fileName: '@Model.Titulo - @DateTime.Now.ToString("ddMMyyyy_hhmmss")',
+                    worksheetName: ['@Model.Titulo'],
+                    tableName: '@Model.Titulo'
+                },
+            });
+
+            $.unblockUI();
+            $('#tablaPlanillas').show();
+            $('#tablaPlanillas2').show();
+        });
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .t0 {
+            width: 100%;
+        }
+
+        .t0_td0 {
+            width: 40%;
+        }
+
+        .t0_td1 {
+            width: 70%;
+        }
+
+        .t0_td2 {
+            width: 10%;
+        }
+
+        .t0_td3 {
+            width: 20%;
+        }
+
+        .subtotal td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="width: 100%; background-color: #0066a6; height: 40px; top: 0px; background-color: #002464;">
+            <div class="tit">&nbsp;</div>
+        </div>
+
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="t0_td0" align="left">
+                    <h3 style="font-style: italic; font-family: 'Times New Roman'"><strong>Comercio Exterior</strong></h3>
+                </td>
+                <td class="t0_td1"><h3><u><strong>Planillas v/s Conversión</strong></u></h3></td>
+            </tr>
+        </table>
+
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8">Fecha</div>
+            <div class="col-xs-3">: @Model.Fecha.FormatoFecha() </div>
+        </div>
+
+        <p>Especialista: @Model.Especialista</p>
+
+        @if (Model.Planillas != null)
+        {
+            <table id="tablaPlanillas" style="display:none">
+                <thead>
+                    <tr>
+                        <th data-align="center" data-sortable="true"><h5><strong>Moneda</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Egresos</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Ingresos</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Debe (Conversion)</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Haber (Conversion)</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Debe (Diferencia)</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Haber (Diferencia)</strong></h5></th>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model.Planillas)
+                {
+                    <tr>
+                        <td data-align="center"><h6>@item.Moneda</h6></td>
+                        <td data-align="center"><h6>@item.Egresos.FormatoDecimal()</h6></td>
+                        <td data-align="center"><h6>@item.Ingresos.FormatoDecimal()</h6></td>
+                        <td data-align="center" class="monto"><h6>@item.ConversionDebe.FormatoDecimal()</h6></td>
+                        <td data-align="center" class="monto"><h6>@item.ConversionHaber.FormatoDecimal()</h6></td>
+                        <td data-align="center" class="monto"><h6>@item.DiferenciaDebe.FormatoDecimal()</h6></td>
+                        <td data-align="center" class="monto"><h6>@item.DiferenciaHaber.FormatoDecimal()</h6></td>
+                    </tr>
+                }
+            </table>
+
+            <table id="tablaPlanillas2">
+                <caption><h5><strong>Interfase Posición de Cambio al @Model.Fecha.FormatoFecha()</strong></h5></caption>
+                <thead>
+                    <tr>
+                        <th data-align="center" data-sortable="true"><h5><strong>Tipo de Planilla</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Moneda</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Cantidad</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Egreso</strong></h5></th>
+                        <th data-align="center" data-sortable="true"><h5><strong>Ingreso</strong></h5></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var res in Model.ResumenPorTipo)
+                    {
+                        <tr>
+                            <td data-align="center"><h6>@res.TipoPlanilla</h6></td>
+                            <td data-align="center"><h6>@res.Moneda</h6></td>
+                            <td data-align="center"><h6>@res.Cantidad</h6></td>
+                            <td data-align="center" class="monto"><h6>@res.Egreso.FormatoDecimal()</h6></td>
+                            <td data-align="center" class="monto"><h6>@res.Ingreso.FormatoDecimal()</h6></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>
+
+

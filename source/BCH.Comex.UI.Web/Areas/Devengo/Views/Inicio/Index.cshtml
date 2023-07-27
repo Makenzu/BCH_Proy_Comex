@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Inicialización Devengo";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/info-de-devengo-inv.png");
+}
+
+<div class="container" id="header_layout">
+    <div class="row" id="texto_func">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Consulta Devengamiento <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Consulta Devengamiento">
+                        <li><a href="@Url.Action("ConsultaDevengamientoInteres", "ConsultaDevengamiento")">Consulta Devengamiento Intereses</a></li>
+                        <li><a href="@Url.Action("ConsultaDevengamientoReajuste", "ConsultaDevengamiento")">Consulta Devengamiento Reajustes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a  href="@Url.Action("DevengamientoHistorico", "DevengamientoHistorico")" >
+                        Consulta Devengamiento Historico
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="~/Impresion/ImpresionDocumentoDeveng/ImpresionDeDocumentos?urlHome=@Url.Action("", "Inicio")" role=" button" aria-haspopup="true" aria-expanded="false">
+                        Contabilidad Devengamientos
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="@Url.Action("ConsultaCuentasContables", "ConsultaCuentasContables")">
+                        Interfaz Diaria Cta Cte
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" id="descargaOperacionesCDR">
+                        Operaciones CDR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Consulta Interfaz CDR <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Consulta Devengamiento">
+                        <li><a href="@Url.Action("ConsultaCarteraCDR", "ConsultaInterfazCDR")">Interfaz Cartera CDR</a></li>
+                        <li><a href="@Url.Action("ConsultaDevengamientoCDR", "ConsultaInterfazCDR")">Interfaz Devengamiento CDR</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    @*<a href="@Url.Action("DescargaDiferenciaDevengamiento", "DiferenciaDevengamiento")" >
+                        Diferecia Devengamiento
+                    </a>*@
+                    <a href="#" id="DescargarDiferenciaDevengo">
+                        Diferencia Devengamiento
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var urlDescargaDiferenciaDevengamiento = '@Url.Action("DescargaDiferenciaDevengamiento", "DiferenciaDevengamiento")';
+        var urlDescargaOperacionesCDR = '@Url.Action("DescargaOperacionesCDR", "OperacionesCDR")';
+        var urlDescarga = '@Url.Action("DescargaDocumento", "OperacionesCDR")';
+    </script>
+
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/Devengo/Common")
+    @Scripts.Render("~/bundles/Devengo")
+    
+}

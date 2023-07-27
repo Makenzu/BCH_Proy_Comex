@@ -1,0 +1,255 @@
+﻿@using BCH.Comex.Core.Entities.Portal;
+@model BCH.Comex.Core.Entities.Swift.ResultadoBusquedaSwift
+@{
+    var style = (ViewBag.PrintFormat != null && (PrintFormat)ViewBag.PrintFormat == PrintFormat.PDF) ? "" : "margin: 40px;";//"margin-top: 45px;" : "margin: 40px;";
+    var esHTML = (ViewBag.PrintFormat != null && (PrintFormat)ViewBag.PrintFormat == PrintFormat.PDF) ? true : false;
+    ViewBag.Title = "Detalle Swift Recibido";
+    Layout = null; //esto no hereda encabezado ni otros estilos
+}
+@if (!((Nullable<bool>)ViewBag.GenerarHtmlCompleto).HasValue || ((Nullable<bool>)ViewBag.GenerarHtmlCompleto).Value)
+{
+    @Html.Raw(@"<!DOCTYPE html>
+<html>
+<head>
+<title>Detalle Swift Recibido</title>
+<meta http-equiv=""Content-Type"" content=""text/html;charset=utf-8"" />
+<link rel=""icon"" type=""image/png"" href=""@Url.Content(""~/Content/img/apps/consulta-msj-swift-inv.png"")"" />
+</head>
+<body>");
+}
+<style type="text/css">
+
+    .encabezadotop1 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12.5px;
+        font-weight: bold;
+        color: #2278CE;
+        padding-top:10px;
+    }
+
+    .encabezadotop2 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10.5px;
+        font-weight: bold;
+        color: #000066;
+        padding-top:10px;
+    }
+
+    .encabezadotop3 {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: navy;
+        font-style: italic;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        padding-top:3px;
+    }
+
+    .texto {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+    }
+
+    .textoTitulo {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .txtchico {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        color: #000000;
+    }
+
+    .textochico {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        color: #003366;
+    }
+
+    .limpiar{
+        clear: both;
+    }
+
+    .textoInfo {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8.0pt;
+        color: #000066;
+        font-weight:700;
+        padding-top:5px;
+    }
+
+    .separador {
+        border: 0.5px solid #E4E4E4;
+        margin: 6px 0;
+    }
+</style>
+
+<div style="text-align: left; @style">
+    @* Titulo Banco *@
+    <div style="text-align: left; border: 0px blue solid; width: 100%; background-color: #333399; height: 20px;">
+        <span style="-webkit-print-color-adjust: exact; background: #333399;">
+            <big>
+                <strong>
+                    <font color="#ffffff" style="">BANCO DE CHILE</font>
+                </strong>
+            </big>
+        </span>
+    </div>
+
+    @* Titulo comercio exterior *@
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="encabezadotop1" align="left">COMERCIO EXTERIOR</td>
+            <td class="encabezadotop2" align="right">
+                @if (Model.total_imp == 0)
+                {
+                    @Html.Raw("ORIGINAL")
+                }
+                else
+                {
+                    @Html.Raw("COPIA ") @(Model.total_imp)
+                }
+                - EMISIÓN DOCUMENTO SWIFT
+            </td>
+        </tr>
+        <tr>
+            <td class="encabezadotop3" colspan="1" align="left">Recepción Swift</td>
+        </tr>
+    </table>
+
+    @* Fecha/Hora/Unidad *@
+    <div class="separador"></div>
+    <table width="100%" cellpadding="0" cellspacing="0" style="text-align:left;">
+        <tr>
+            <td class="textoTitulo">Fecha</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@DateTime.Now.ToShortDateString() &nbsp;</td>
+
+            <td width="5%"></td>
+
+            <td class="textoTitulo">Hora</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto" align="left">@DateTime.Now.ToString("HH:mm:ss")</td>
+
+            <td width="5%"></td>
+
+            <td class="textoTitulo" align="right">Unidad</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto" align="left">@Html.DisplayFor(m => m.nombre_casilla) &nbsp;</td>
+        </tr>
+        @if (Model.total_imp != 0)
+        {
+            if (Model.tipo_msg.Trim() != "MT300")
+            {
+                <tr>
+                    <td class="textoInfo texto" colspan="10">Documento no válido como instrumento operativo. Solo para efecto informativo</td>
+                </tr>
+            }
+        }
+    </table>
+
+    @* Descrip. Mensaje *@
+    <div class="separador"></div>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="textoTitulo">Tipo Mensaje</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.tipo_msg)&nbsp;-&nbsp;@Html.DisplayFor(m => m.nombre_tipo)</tdclass="texto">
+
+            <td width="36%"></td>
+
+            <td class="textoTitulo">Prioridad</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Model.PrioridadDesc &nbsp;</td>
+        </tr>
+    </table>
+
+    @* Detalles *@
+    <div class="separador"></div>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="textoTitulo" colspan="3">Destino</td>
+            <td class="textoTitulo" colspan="3">Origen</td>
+        </tr>
+        <tr>
+            @* Destino *@
+            <td class="textoTitulo">Sesión</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.sesion) &nbsp;</td>
+            @* Origen *@
+            <td class="textoTitulo">Sesión</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.SesionEmi) &nbsp;</td>
+        </tr>
+        <tr>
+            @* Destino *@
+            <td class="textoTitulo">Secuencia</td>
+            <td class="textoTitulo">:</td>
+            <td>@Html.DisplayFor(m => m.secuencia) &nbsp;</td>
+            @* Origen *@
+            <td class="textoTitulo">Secuencia</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.SecuenciaEmi) &nbsp;</td>
+        </tr>
+        <tr>
+            @* Destino *@
+            <td class="textoTitulo">Fecha Recepción</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.fecha_rec)  @Html.DisplayFor(m => m.hora_rec) &nbsp;</td>
+            @* Origen *@
+            <td class="textoTitulo">Fecha Emisi&oacute;n</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Html.DisplayFor(m => m.FechaEmi)   @Html.DisplayFor(m => m.HoraEmi) &nbsp;</td>
+        </tr>
+
+        <tr>
+            @* Destino *@
+            <td class="textoTitulo">Banco Receptor</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Model.CodigoYBranchReceptor &nbsp;</td>
+            @* Origen *@
+            <td class="textoTitulo">Banco Emisor</td>
+            <td class="textoTitulo">:</td>
+            <td class="texto">@Model.CodigoYBranchEmisor   @Html.DisplayFor(m => m.nombre_banco) &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+            <td class="texto">@Html.DisplayFor(m => m.ciudad_banco),   @Html.DisplayFor(m => m.pais_banco)&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="separador"></div>
+    @* Detalle Lineas Mensaje *@
+
+    <div style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;"><strong><i>Texto Mensaje</i></strong></div>
+
+    @if (Model.LineasDetalle != null)
+    {
+        <table class="textochico" width="100%" cellpadding="0" cellspacing="0" style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;text-align:left;">
+            @foreach (BCH.Comex.Core.Entities.Swift.LineaDetalleMensajeSwift linea in Model.LineasDetalle)
+            {
+                <tr>
+                    <td>@(linea.EsNuevaLineaDeCampo ? ":" : "-")</td>
+                    <td>@linea.Codigo</td>
+                    <td>@(linea.EsNuevaLineaDeCampo ? "/" : " ")</td>
+                    <td>@linea.Descripcion</td>
+                    <td>@(linea.EsNuevaLineaDeCampo ? ":" : " ")</td>
+                    <td>@linea.Detalle</td>
+                </tr>
+            }
+        </table>
+    }
+
+    <div class="separador"></div>
+    <div class="textoInfo">
+        <br>La información contenida en este correo electrónico se encuentra respaldada con aquella existente en los registros del Banco. <br>Infórmese sobre el límite de garantía estatal a los depósitos.
+    </div>
+</div>
+
+
+
+@if (!((Nullable<bool>)ViewBag.GenerarHtmlCompleto).HasValue || ((Nullable<bool>)ViewBag.GenerarHtmlCompleto).Value)
+{
+    @Html.Raw("</body></html>")
+}

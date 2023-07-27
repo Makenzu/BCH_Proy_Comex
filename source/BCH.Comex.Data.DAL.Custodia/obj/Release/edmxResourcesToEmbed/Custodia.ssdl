@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CUSTODIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CUSTODIA.dbo.CAMBIOS_GRAL_SCE_CTA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CAMBIOS_GRAL_SCE_CTA">
+    <Key>
+      <PropertyRef Name="cta_nem" />
+      <PropertyRef Name="cta_mon" />
+      <PropertyRef Name="cta_num" />
+      <PropertyRef Name="cta_nom" />
+      <PropertyRef Name="cta_gl" />
+      <PropertyRef Name="cta_nroto" />
+      <PropertyRef Name="cta_indto" />
+      <PropertyRef Name="cta_cit" />
+      <PropertyRef Name="cta_cvt" />
+      <PropertyRef Name="cta_cap" />
+      <PropertyRef Name="cta_ctd" />
+      <PropertyRef Name="cta_pos" />
+      <PropertyRef Name="cta_cdr" />
+    </Key>
+    <Property Name="cta_nem" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="cta_mon" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="cta_num" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="cta_nom" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cta_gl" Type="bit" Nullable="false" />
+    <Property Name="cta_nroto" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="cta_indto" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="cta_cit" Type="bit" Nullable="false" />
+    <Property Name="cta_cvt" Type="bit" Nullable="false" />
+    <Property Name="cta_cap" Type="bit" Nullable="false" />
+    <Property Name="cta_ctd" Type="bit" Nullable="false" />
+    <Property Name="cta_pos" Type="bit" Nullable="false" />
+    <Property Name="cta_cdr" Type="bit" Nullable="false" />
+    <Property Name="cta_gto" Type="tinyint" />
+    <Property Name="cta_nroptd" Type="int" />
+    <Property Name="cta_vigtbl" Type="int" />
+  </EntityType>
+  <Function Name="cambios_gral_consulta_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_callfax_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="rut" Type="bigint" Mode="In" />
+    <Parameter Name="cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_check_list_log_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="check_list" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_citidoc_consulta_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_citidoc_duplicados_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_citidoc_duplicados_hora_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="cambios_mift_cliente_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="rut" Type="bigint" Mode="In" />
+    <Parameter Name="cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_cliente_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_contratos_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="rut" Type="bigint" Mode="In" />
+    <Parameter Name="cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_cuenta_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="rut" Type="bigint" Mode="In" />
+    <Parameter Name="cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_log_insert_2_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha_hora" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="Rut" Type="varchar" Mode="In" />
+    <Parameter Name="RutDv" Type="varchar" Mode="In" />
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="NombreClte" Type="varchar" Mode="In" />
+    <Parameter Name="Segmento" Type="varchar" Mode="In" />
+    <Parameter Name="Ejecutivo" Type="varchar" Mode="In" />
+    <Parameter Name="Moneda" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="bigint" Mode="In" />
+    <Parameter Name="CuentaBnf" Type="varchar" Mode="In" />
+    <Parameter Name="NombreBnf" Type="varchar" Mode="In" />
+    <Parameter Name="BancoInt" Type="varchar" Mode="In" />
+    <Parameter Name="BancoBnf" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Otros" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Mift" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Fax" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Citi" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Fax_NY" Type="varchar" Mode="In" />
+    <Parameter Name="Ind_Con_Mail" Type="varchar" Mode="In" />
+    <Parameter Name="Txt_Con_Otros" Type="varchar" Mode="In" />
+    <Parameter Name="Resultado" Type="varchar" Mode="In" />
+    <Parameter Name="Mensaje" Type="varchar" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_mensajes_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="tinyint" Mode="In" />
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_mesa_cvd_00a_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="smallint" Mode="In" />
+    <Parameter Name="rut_cliente" Type="bigint" Mode="In" />
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_mesa_cvd_00b_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="smallint" Mode="In" />
+    <Parameter Name="rut_cliente" Type="bigint" Mode="In" />
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_recurrencia_01b_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ord_rut_aux" Type="bigint" Mode="In" />
+    <Parameter Name="ord_cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_recurrencia_02_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="ord_rut" Type="varchar" Mode="In" />
+    <Parameter Name="ord_cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_recurrencia_manual_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opcion" Type="tinyint" Mode="In" />
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="ord_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_nombre" Type="varchar" Mode="In" />
+    <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_reparo_log_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="rut" Type="varchar" Mode="In" />
+    <Parameter Name="nomcli" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+    <Parameter Name="doc_name" Type="varchar" Mode="In" />
+    <Parameter Name="mailejec" Type="varchar" Mode="In" />
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="reparo_list" Type="varchar" Mode="In" />
+    <Parameter Name="otro_1" Type="varchar" Mode="In" />
+    <Parameter Name="otro_2" Type="varchar" Mode="In" />
+    <Parameter Name="otro_3" Type="varchar" Mode="In" />
+    <Parameter Name="otro_4" Type="varchar" Mode="In" />
+    <Parameter Name="otro_5" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_tarifas_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_tarifas_obs_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="accnum" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_tarifas_pizarra_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="sub_tipo" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="cambios_mift_tarifas_pizarra_02_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="sub_tipo" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="char" Mode="In" />
+    <Parameter Name="monto" Type="numeric" Mode="In" />
+  </Function>
+  <EntityContainer Name="CUSTODIAModelStoreContainer">
+    <EntitySet Name="CAMBIOS_GRAL_SCE_CTA" EntityType="Self.CAMBIOS_GRAL_SCE_CTA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nem] AS [cta_nem], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_mon] AS [cta_mon], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_num] AS [cta_num], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nom] AS [cta_nom], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_gl] AS [cta_gl], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nroto] AS [cta_nroto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_indto] AS [cta_indto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cit] AS [cta_cit], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cvt] AS [cta_cvt], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cap] AS [cta_cap], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_ctd] AS [cta_ctd], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_pos] AS [cta_pos], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cdr] AS [cta_cdr], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_gto] AS [cta_gto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nroptd] AS [cta_nroptd], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_vigtbl] AS [cta_vigtbl]
+    FROM [dbo].[CAMBIOS_GRAL_SCE_CTA] AS [CAMBIOS_GRAL_SCE_CTA]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,68 @@
+﻿<div id="EmitirCheque" class="container" style="max-width: 600px">
+    <h3>Emitir Cheque @ViewBag.Caption</h3>
+    <div class="row">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr data-bind="foreach: l_montos.Header">
+                    <th data-bind="text: $data"></th>
+                </tr>
+            </thead>
+            <tbody id="l_montos" data-bind="foreach: l_montos.Items">
+                @*<tr style="max-height:40px;" data-bind="click: $parent.l_mto_click($index), click: $parent.l_mto_dblclick($index)">*@
+                <tr style="max-height:40px;" data-bind="css:{'info': $parent.newClass($index) == true }, event: {click: $parent.l_mto_click($index)}">
+                    <td data-bind="text: columns.Moneda"></td>
+                    <td data-bind="text: columns.Monto"></td>
+                    <td data-bind="text: columns.Documento"></td>
+                    <td data-bind="text: columns.Generado"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form class="row form-horizontal">
+        <div class="form-group">
+            <label class="col-xs-4">Beneficiario</label>
+            <div class="col-xs-8">
+                <select id="l_benef" data-bind="options: l_benef.Items, optionsText: 'Value', optionsValue: 'Data', value: l_benef.Value, enable:l_benef.Enabled, event:{blur:l_benef_change}" class="form-control input-sm"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-4">Plaza de Pago</label>
+            <div class="col-xs-8">
+                <select id="l_plaza" tabindex="1" data-bind="options: l_plaza.Items, optionsText: 'Value', optionsValue: 'Data', value: l_plaza.Value, optionsCaption: '--Seleccione--', enable:l_plaza.Enabled, event:{blur:l_plaza_change}" class="form-control input-sm"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-4">Nombre</label>
+            <div class="col-xs-8">
+                <input id="NombreBenef" type="text" tabindex="2" data-bind="value: Tx_Nombre.Text, enable:Tx_Nombre.Enabled" maxlength="60" class="form-control input-sm" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-4">Rut</label>
+            <div class="col-xs-8">
+                <input id="txtRutBeneficiario" type="text" data-bind="value: Tx_Rut.Text, enable:Tx_Rut.Enabled" class="form-control input-sm" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-4">Bancos Corresponsales</label>
+            <div class="col-xs-8">
+                <select id="l_cor" size="6" tabindex="3" data-bind="options: l_cor.Items, optionsText: 'Value', optionsValue: 'Data', value: l_cor.SelectedValue, enable:l_cor.Enabled, event:{blur:l_cor_blur}" class="form-control mono"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4">
+            <button type="button" tabindex="4" id="Co_Generar" class="btn btn-success" data-bind="enable:Co_Generar.Enabled, event:{click:Co_Generar_Click}">Generar Doc</button>
+                </div>
+            <div class="col-xs-4 col-xs-offset-4 text-right">
+                <button type="button" tabindex="5" id="Co_Aceptar" class="btn btn-primary" data-bind="event:{click:Co_Aceptar_Click} , enable:Co_Aceptar.Enabled">Aceptar</button>
+                <button type="button" id="Co_Cancelar" class="btn btn-default" data-bind="event:{click:Co_Cancelar_Click}">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/EmitirCheque")
+}
+
+

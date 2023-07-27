@@ -1,0 +1,188 @@
+﻿@model BCH.Comex.UI.Web.Models.ConsultaSwift.DatosMensajeEnviadoViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Datos de Swift Enviado</h4>
+</div>
+<div class="modal-body" style="max-height: 100%;">
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title text-center"><strong>Tipo MT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>@Html.DisplayFor(m => m.Datos.tipo_msg) - @Html.DisplayFor(m => m.Datos.nombre_tipo)</h1>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-4"><strong>Número mensaje: </strong>@Html.DisplayFor(m => m.Datos.id_mensaje)</div>
+                    <div class="col-xs-4"><strong>Prioridad: </strong>@BCH.Comex.UI.Web.Common.FormatUtils.PrioridadDesc(Model.Datos.prioridad, Model.Datos.tipo_msg)</div>
+                    <div class="col-xs-4"><strong>Sesión: </strong>@Html.DisplayFor(m => m.Datos.sesion)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4"><strong>Estado: </strong>@Html.DisplayFor(m => m.Datos.descripcion)</div>
+                    <div class="col-xs-4"><strong>Secuencia: </strong>@Html.DisplayFor(m => m.Datos.secuencia)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4"><strong>Referencia: </strong>@Html.DisplayFor(m => m.Datos.referencia)</div>
+                    <div class="col-xs-8"><strong>Beneficiario: </strong>@Html.DisplayFor(m => m.Datos.beneficiario)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4"><strong>Monto: </strong>@Html.DisplayFor(m => m.Datos.cod_moneda) &nbsp; &nbsp;@(Model.Datos.monto.HasValue ? Model.Datos.monto.Value.ToString("#,#.00") : "0,00")</div>
+                    <div class="col-xs-8"><strong>Comentario: </strong>@Html.DisplayFor(m => m.Datos.comentario)</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Banco Receptor</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6"><strong>Código Swift: </strong>@Html.DisplayFor(m => m.Datos.cod_banco_rec)@Html.DisplayFor(m => m.Datos.branch_rec)</div>
+                    <div class="col-xs-6"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Datos.nombre_banco)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><strong>Sucursal: </strong>@Html.DisplayFor(m => m.Datos.oficina_banco)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"><strong>Ciudad: </strong>@Html.DisplayFor(m => m.Datos.ciudad_banco)</div>
+                    <div class="col-xs-6"><strong>País: </strong>@Html.DisplayFor(m => m.Datos.pais_banco)</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Ingreso</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Unidad: </strong>@Html.DisplayFor(m => m.Datos.casilla)&nbsp;@Html.DisplayFor(m => m.Datos.nombre_casilla)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Rut: </strong>@Model.Datos.rut_ingreso.ToString("#,#")</div>
+                            <div class="col-xs-6"><strong>Tipo: </strong>@Html.DisplayFor(m => m.Datos.TipoIngresoDesc)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha: </strong>@Html.DisplayFor(m => m.Datos.fecha_ingreso)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Modificaciones</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(m => m.Datos.unidad_modifica)</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.Datos.rut_modifica.HasValue ? Model.Datos.rut_modifica.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha: </strong>@Html.DisplayFor(m => m.Datos.fecha_modifica)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>N° Modificaciones: </strong>@Html.DisplayFor(m => m.Datos.veces_modifica)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Fechas</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha Aprobación: </strong></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">@Html.DisplayFor(m => m.Datos.fecha_aprobac)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha Envío: </strong></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">@Html.DisplayFor(m => m.Datos.fecha_envio)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Rechazos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(m => m.Datos.unidad_rechazo)</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.Datos.rut_rechazo.HasValue ? Model.Datos.rut_rechazo.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Fecha: </strong>@Html.DisplayFor(m => m.Datos.fecha_rechazo)</div>
+                            <div class="col-xs-6"><strong>N° Rechazos: </strong>@Html.DisplayFor(m => m.Datos.veces_rechazo)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Motivo: </strong>@Html.DisplayFor(m => m.Datos.texto_rechazo)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Anulación</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(m => m.Datos.unidad_anula)</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.Datos.rut_anula.HasValue ? Model.Datos.rut_anula.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha: </strong>@Html.DisplayFor(m => m.Datos.fecha_anula)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Motivo: </strong>@Html.DisplayFor(m => m.Datos.texto_anula)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Firmas</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-3"><strong>Solicita</strong></div>
+                    <div class="col-xs-2"><strong>Fecha solicitud</strong></div>
+                    <div class="col-xs-3"><strong>Firma</strong></div>
+                    <div class="col-xs-1"><strong>Poder</strong></div>
+                    <div class="col-xs-1"><strong>Estado</strong></div>
+                    <div class="col-xs-2"><strong>Fecha Firma</strong></div>
+                </div>
+                @if (Model.Firmas != null)
+                {
+                    foreach (BCH.Comex.Core.Entities.Swift.sw_msgsend_firma firma in Model.Firmas)
+                    {
+                        <div class="row">
+                            <div class="col-xs-3">@firma.DescPersonaSolicita</div>
+                            <div class="col-xs-2 text-nowrap">@firma.fecha_solic.ToString("dd/MM/yyyy HH:mm")</div>
+                            <div class="col-xs-3">@firma.DescPersonaFirma</div>
+                            <div class="col-xs-1 text-nowrap">@firma.tipo_firma</div>
+                            <div class="col-xs-1 text-nowrap">@firma.EstadoDesc</div>
+                            <div class="col-xs-2 text-nowrap">@(firma.fecha_firma.HasValue ? firma.fecha_firma.Value.ToString("dd/MM/yyyy HH:mm") : String.Empty)</div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

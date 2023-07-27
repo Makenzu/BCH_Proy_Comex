@@ -1,0 +1,121 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ComisionesViewModel
+@{
+    ViewBag.Titulo = "Planilla Ingreso Visible Export";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmComisiones", name = "frmComisiones" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="form-body">
+                    <div class="container">
+                        <h3 class="margin-bottom-double">C/V Divisas  -  Comisiones @ViewBag.Caption</h3>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="mono">   Nombre Comisión &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NemMnd&nbsp;&nbsp;&nbsp;Monto en US$</label>
+                                @Html.EditorFor(model => model.CmbComisiones, new { htmlAttributes = new { @class = "form-control", tabindex = "1", @style = "height: 10em;" } })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_0, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_0, new { htmlAttributes = new { @class = "form-control", tabindex = "2", maxlength = "25" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_1, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_1, new { htmlAttributes = new { @class = "form-control monto", tabindex = "3", maxlength = "15" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="checkbox pull-left" style="margin-right: 27px; margin-left: 20px; padding-top: 32px">
+                                    @if (Model.Ch_com.Enabled)
+                                    {
+                                        @Html.CheckBoxFor(model => model.Ch_com.Checked)
+                                    }
+                                    else
+                                    {
+                                        @Html.CheckBoxFor(model => model.Ch_com.Checked, new { @disabled = "disabled" })
+                                    }
+                                    
+                                    @Html.LabelFor(model => model.Ch_com)
+                                </div>
+                                <div class="input-group pull-right" style="margin-top: 26px">
+                                    <button id="@(Model.OK_com)" class="btn btn-success input-group-addon" tabindex="6" name="Command" value="√" style="width: 39px; color: #fff">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </button>
+                                    <button id="@(Model.NO_com)" class="btn btn-danger input-group-addon" name="Command" value="X" style="width: 39px; color: #fff">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_2, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_2, new { htmlAttributes = new { @class = "form-control monto", maxlength = "15" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_3, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_3, new { htmlAttributes = new { @class = "form-control"} })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_4, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_4, new { htmlAttributes = new { @class = "form-control text-uppercase", tabindex = "5", maxlength = "10" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Com_5, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Com_5, new { htmlAttributes = new { @class = "form-control text-uppercase", maxlength = "40" } })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <div class="text-right">
+                                            <input type="submit" id="@(Model.Cm_com_0)" tabindex="7" name="Command" value="Aceptar" class="btn btn-primary" />
+                                            <input type="submit" id="@(Model.Cm_com_1)" name="Command" value="Cancelar" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts{
+@Scripts.Render("~/bundles/FundTransfer/Comisiones")
+
+    <script>
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+}

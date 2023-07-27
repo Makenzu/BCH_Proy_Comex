@@ -1,0 +1,208 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+@using (Html.BeginForm("FrmResDesc", "InicioController", FormMethod.Post, new { id = "FrmResDesc", @class = "form-horizontal well", @style = "margin-left: 0px; margin-right: 0px", @role = "form" }))
+{
+    <div id="Principal">
+        <div class="panel-body" id="divContableErroneoSwift">
+            <div id="DivElemtosContableErroneo">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="pull-left col-sm-1">
+                        </div>
+                        <div class="col-lg-10">
+                            <span id="ErrorNoSeleccionados"></span>
+                        </div>
+                    </div>
+                </div>
+                <span id="errmsgPermiso"></span>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="pull-left col-sm-1">
+                        </div>
+                        <div class="col-lg-10">                         
+                            <label id="LblTabla"></label>
+                            <table id="tabla"></table>
+                            <br />
+                            <label id="LblTablaSce"></label>
+                            <table id="tablaSce"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        configColumnas = [
+        {
+            field: 'operacion',
+            title: 'Operación',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'CtaCte',
+            title: 'Nº Cta.Cte/Rut',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'CA',
+            title: 'C/A',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'Moneda',
+            title: 'Moneda',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'Monto',
+            title: 'Monto',
+            sortable: true,
+            visible: true
+        }, ]
+
+
+    $('#frmCuadratura').submit(function (e) {
+
+        e.preventDefault();
+    });
+
+    Load();
+
+    function Load() {
+        $.get('@Url.Action("GetElementosSce_cuadra_inyecciones_ctacte_MS")', { }, function (data) {
+            var valores = data;
+            if (valores.length > 0)
+            {
+                $('#tabla').bootstrapTable({
+                    locale: "es-SP",                  
+                    pagination: false,
+                    columns: configColumnas,
+                    showRefresh: false,
+                    clickToSelect: false,
+                    search: false,
+                    cache: false
+                });
+                var Operacion;
+                var CuentaCorriente;
+                var CAvariable;
+                var Monto;
+                $('#LblTabla').text("Reversar por Anulación");
+                for (var i = 0; i < valores.length; i++) {
+
+                    if (valores[i]["estado"]==9)
+                    {
+                        Operacion = valores[i]["codcct"] + "-" + valores[i]["codpro"] + "-" + valores[i]["codesp"] + "-" + valores[i]["codofi"] + "-" + valores[i]["codope"];
+                        if (valores[i]["numcct"].length > 32)
+                        {
+                            CuentaCorriente = valores[i]["numcct"].substring(1, 32);
+                        }
+                        else
+                        {
+                            CuentaCorriente = valores[i]["numcct"];
+                        }
+                        if (valores[i]["cod_dh"]== "D") {
+                            CAvariable = "Cargo";
+                        }
+                        else
+                        {
+                            CAvariable = "Abono";
+                        }
+                        if (valores[i]["nemmon"] == "$")
+                        {
+                            Monto = valores[i]["mtomcd"] + ",0";
+                        }
+                        if (valores[i]["nemmon"] == "US$")
+                        {
+                            Monto = valores[i]["mtomcd"] + ",0.00";
+                        }
+                        if (valores[i]["nemmon"] == "$" != "$" && valores[i]["nemmon"] == "$" != "US$")
+                        {
+                            Monto = valores[i]["mtomcd"];
+                        }
+
+                        $('#tabla').bootstrapTable('insertRow', {
+                            index: 0,
+                            row: {
+                                operacion: Operacion,
+                                CtaCte: CuentaCorriente,
+                                CA: CAvariable,
+                                Moneda: valores[i]["nemmon"],
+                                Monto: Monto
+                            }
+                        });
+                    }
+                        
+                }
+            }
+        });
+
+        $.get('@Url.Action("GetElementosSce_mcd_s71")', {}, function (data) {
+            var valores = data;
+            if (valores.length > 0) {
+                $('#tablaSce').bootstrapTable({
+                    locale: "es-SP",
+                    pagination: false,
+                    columns: configColumnas,
+                    showRefresh: false,
+                    clickToSelect: false,
+                    search: false,
+                    cache: false
+                });
+                var Operacion;
+                var CuentaCorriente;
+                var CAvariable;
+                var Monto;
+                $('#LblTablaSce').text("Las siguientes operaciones no han sido inyectadas en cuanta corriente.");
+                for (var i = 0; i < valores.length; i++) {
+
+                        Operacion = valores[i]["codcct"] + "-" + valores[i]["codpro"] + "-" + valores[i]["codesp"] + "-" + valores[i]["codofi"] + "-" + valores[i]["codope"];
+                        if (valores[i]["numcct"].length > 32) {
+                            CuentaCorriente = valores[i]["numcct"].substring(1, 32);
+                        }
+                        else {
+                            CuentaCorriente = valores[i]["numcct"];
+                        }
+                        if (valores[i]["cod_dh"] == "D") {
+                            CAvariable = "Cargo";
+                        }
+                        else {
+                            CAvariable = "Abono";
+                        }
+                        if (valores[i]["nemmon"] == "$") {
+                            Monto = valores[i]["mtomcd"] + ",0";
+                        }
+                        if (valores[i]["nemmon"] == "US$") {
+                            Monto = valores[i]["mtomcd"] + ",0.00";
+                        }
+                        if (valores[i]["nemmon"] != "$" && valores[i]["nemmon"] != "US$") {
+                            Monto = valores[i]["mtomcd"];
+                        }
+
+                        $('#tablaSce').bootstrapTable('insertRow', {
+                            index: 0,
+                            row: {
+                                operacion: Operacion,
+                                CtaCte: CuentaCorriente,
+                                CA: CAvariable,
+                                Moneda: valores[i]["nemmon"],
+                                Monto: Monto
+                            }
+                        });
+                  
+
+                }
+            }
+        });
+    };
+});
+</script>

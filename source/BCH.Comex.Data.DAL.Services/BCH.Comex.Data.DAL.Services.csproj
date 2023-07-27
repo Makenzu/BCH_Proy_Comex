@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E90823F-F3DB-473C-B4B9-A787EAAA7643}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Data.DAL.Services</RootNamespace>
+    <AssemblyName>BCH.Comex.Data.DAL.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureTest|AnyCPU'">
+    <OutputPath>bin\AzureTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISTest|AnyCPU'">
+    <OutputPath>bin\IISTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\IISRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\IISDesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Services3.3.0.0.0\lib\net20\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aes256CbcEncrypter.cs" />
+    <Compile Include="PasswordDigestBehavior.cs" />
+    <Compile Include="PasswordDigestMessageInspector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CTR.ConsultarFichaClienteFull\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SWCE.ConsultaFima\Reference.cs" />
+    <Compile Include="Service References\SWCE.ConsultaFima\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.AbonoCuentaCosmos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.CargoCuentaCosmos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaDireccionesProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaInformacionBasicaPersona\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaProductoCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaSaldoCuenta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ObtenerDatosFichaChica\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ReversaCosmos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XCFT.ConsultaCuentaCorriente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SWCEServices.cs" />
+    <Compile Include="XCFTServices.cs" />
+    <Compile Include="XGPYServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\BCH.Comex.Data.DAL.Services.CTR.ConsultarFichaClienteFull.consultarFichaClienteFullResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\BCH.Comex.Data.DAL.Services.CTR.ConsultarFichaClienteFull.consultarFichaClienteFullRsType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\BCH.Comex.Data.DAL.Services.CTR.ConsultarFichaClienteFull.HeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\CTR.000400_3.0.wsdl" />
+    <None Include="Service References\SWCE.ConsultaFima\BCH.Comex.Data.DAL.Services.SWCE.ConsultaFima.ConsultarFirmasResponse.datasource" />
+    <None Include="Service References\SWCE.ConsultaFima\BCH.Comex.Data.DAL.Services.SWCE.ConsultaFima.datosHeaderResponse.datasource" />
+    <None Include="Service References\SWCE.ConsultaFima\BCH.Comex.Data.DAL.Services.SWCE.ConsultaFima.datosSalida.datasource" />
+    <None Include="Service References\SWCE.ConsultaFima\ConsultaFirmas.wsdl" />
+    <None Include="Service References\SWCE.ConsultaFima\CS000007_ConsultaFirmas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCE.ConsultaFima\CS000007_ConsultaFirmas1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCE.ConsultaFima\CS000007_ConsultaFirmas2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SWCE.ConsultaFima\CS000007_ConsultaFirmas3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.AbonoCuentaCosmos.AbonoCuentaCosmosCodFCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.AbonoCuentaCosmos.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.AbonoCuentaCosmos.respAbonoCuentaCosmosCodFC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.CargoCuentaCosmos.CargoCuentaCosmosCodFCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.CargoCuentaCosmos.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\BCH.Comex.Data.DAL.Services.XCFT.CargoCuentaCosmos.respCargoCuentaCosmosCodFC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCliente.ConsultaTipoClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCliente.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCliente.respConsultaTipoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\ConsultaTipoCliente.wsdl" />
+    <None Include="Service References\XCFT.ConsultaCliente\CS000058_ConsultaCliente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\CS000058_ConsultaCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\CS000058_ConsultaCliente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCliente\CS000058_ConsultaCliente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCuentaCorriente.ConsultaCuentaCorrienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCuentaCorriente.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaCuentaCorriente.respConsultaCuentaCorriente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\AbonoCuentaCosmosCodFC.wsdl" />
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\CS002031_AbonoCuentaCosmosCodFC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\CS002031_AbonoCuentaCosmosCodFC_1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\CS002031_AbonoCuentaCosmosCodFC_1_2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\CS002031_AbonoCuentaCosmosCodFC_1_2_3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\CargoCuentaCosmosCodFC.wsdl" />
+    <None Include="Service References\XCFT.CargoCuentaCosmos\CS002032_CargoCuentaCosmosCodFC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\CS002032_CargoCuentaCosmosCodFC_1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\CS002032_CargoCuentaCosmosCodFC_1_2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\CS002032_CargoCuentaCosmosCodFC_1_2_3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\BCH.Comex.Data.DAL.Services.XCFT.ConsultaDireccionesProducto.ConsultarDireccionesProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\BCH.Comex.Data.DAL.Services.XCFT.ConsultaDireccionesProducto.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\BCH.Comex.Data.DAL.Services.XCFT.ConsultaDireccionesProducto.datosSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\ConsultaDireccionesProducto.wsdl" />
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\CS000027_ConsultaDireccionesProducto.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\CS000027_ConsultaDireccionesProducto1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\CS000027_ConsultaDireccionesProducto2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\CS000027_ConsultaDireccionesProducto3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaEmpresas.ConsultarInfoBasicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaEmpresas.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaEmpresas.datosSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\ConsultaInformacionBasicaEmpresas1.wsdl" />
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\CS000029_ConsultaInformacionBasicaEmpresas87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaPersona.ConsultarInfoBasicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaPersona.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\BCH.Comex.Data.DAL.Services.XCFT.ConsultaInformacionBasicaPersona.datosSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\ConsultaInformacionBasicaPersona1.wsdl" />
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\CS000028_ConsultaInformacionBasicaPersona87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaProductoCliente.ConsultarProdClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaProductoCliente.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\BCH.Comex.Data.DAL.Services.XCFT.ConsultaProductoCliente.datosSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\ConsultaProductoCliente.wsdl" />
+    <None Include="Service References\XCFT.ConsultaProductoCliente\CS000026_ConsultaProductoCliente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\CS000026_ConsultaProductoCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\CS000026_ConsultaProductoCliente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\CS000026_ConsultaProductoCliente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\BCH.Comex.Data.DAL.Services.XCFT.ConsultaSaldoCuenta.ConsultasSaldoCuentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\BCH.Comex.Data.DAL.Services.XCFT.ConsultaSaldoCuenta.cuerpo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\BCH.Comex.Data.DAL.Services.XCFT.ConsultaSaldoCuenta.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\ConsultasSaldoCuenta.wsdl" />
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\CS000069_ConsultaSaldoCuenta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\CS000069_ConsultaSaldoCuenta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\CS000069_ConsultaSaldoCuenta2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\CS000069_ConsultaSaldoCuenta3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\BCH.Comex.Data.DAL.Services.XCFT.ObtenerDatosFichaChica.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\BCH.Comex.Data.DAL.Services.XCFT.ObtenerDatosFichaChica.ObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\BCH.Comex.Data.DAL.Services.XCFT.ObtenerDatosFichaChica.respObtener.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\CS000191_ObtenerDatosFichaChica.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\CS000191_ObtenerDatosFichaChica1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\CS000191_ObtenerDatosFichaChica2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\CS000191_ObtenerDatosFichaChica3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\ObtenerDatosFichaChica.wsdl" />
+    <None Include="Service References\XCFT.ReversaCosmos\BCH.Comex.Data.DAL.Services.XCFT.ReversaCosmos.datosHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\BCH.Comex.Data.DAL.Services.XCFT.ReversaCosmos.respReversaCosmos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\BCH.Comex.Data.DAL.Services.XCFT.ReversaCosmos.ReversaCosmosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\CS002025_ReversaCosmos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\CS002025_ReversaCosmos_1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\CS002025_ReversaCosmos_1_2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\CS002025_ReversaCosmos_1_2_3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ReversaCosmos\ReversaCosmos.wsdl" />
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\ConsultaCuentaCorriente.wsdl" />
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\CS002027_ConsultaCuentaCorriente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\CS002027_ConsultaCuentaCorriente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\CS002027_ConsultaCuentaCorriente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\CS002027_ConsultaCuentaCorriente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CTR.ConsultarFichaClienteFull\" />
+    <WCFMetadataStorage Include="Service References\XCFT.AbonoCuentaCosmos\" />
+    <WCFMetadataStorage Include="Service References\XCFT.CargoCuentaCosmos\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaCliente\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaDireccionesProducto\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaInformacionBasicaPersona\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaProductoCliente\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaSaldoCuenta\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ObtenerDatosFichaChica\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ReversaCosmos\" />
+    <WCFMetadataStorage Include="Service References\XCFT.ConsultaCuentaCorriente\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCuentaCorriente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.AbonoCuentaCosmos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.CargoCuentaCosmos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaSaldoCuenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ReversaCosmos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ReversaCosmos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ReversaCosmos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaDireccionesProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaPersona\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaProductoCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ObtenerDatosFichaChica\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\XCFT.ConsultaInformacionBasicaEmpresas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCH.Comex.Common\BCH.Comex.Common.csproj">
+      <Project>{889f7437-c885-4877-a730-70442ae318f5}</Project>
+      <Name>BCH.Comex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Cext01\BCH.Comex.Core.Entities.Cext01.csproj">
+      <Project>{4169ac2f-554b-4f30-8405-2f3f0fae44c0}</Project>
+      <Name>BCH.Comex.Core.Entities.Cext01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Swift\BCH.Comex.Core.Entities.Swift.csproj">
+      <Project>{ce544081-c6b2-4c2d-9236-4ff67bfefbdf}</Project>
+      <Name>BCH.Comex.Core.Entities.Swift</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Utils\BCH.Comex.Utils.csproj">
+      <Project>{0be08b03-e9ed-4299-a163-ad2f51d04d9d}</Project>
+      <Name>BCH.Comex.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\configuration91.svcinfo" />
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\configuration.svcinfo" />
+    <None Include="Service References\CTR.ConsultarFichaClienteFull\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\SWCE.ConsultaFima\configuration.svcinfo" />
+    <Content Include="Service References\SWCE.ConsultaFima\configuration91.svcinfo" />
+    <Content Include="Service References\SWCE.ConsultaFima\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SwiftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="swiftEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="EncriptaMensajeS_MS">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="casilla" Mode="In" Type="Int32" />
+      <Parameter Name="unidad" Mode="In" Type="Int32" />
+      <Parameter Name="tipo_msg" Mode="In" Type="String" />
+      <Parameter Name="prioridad" Mode="In" Type="String" />
+      <Parameter Name="estado_msg" Mode="In" Type="String" />
+      <Parameter Name="tipo_ingreso" Mode="In" Type="String" />
+      <Parameter Name="rut_digita" Mode="In" Type="Int32" />
+      <Parameter Name="banco_re" Mode="In" Type="String" />
+      <Parameter Name="branch_re" Mode="In" Type="String" />
+      <Parameter Name="banco_em" Mode="In" Type="String" />
+      <Parameter Name="branch_em" Mode="In" Type="String" />
+      <Parameter Name="moneda" Mode="In" Type="String" />
+      <Parameter Name="monto" Mode="In" Type="Double" />
+      <Parameter Name="referencia" Mode="In" Type="String" />
+      <Parameter Name="beneficiario" Mode="In" Type="String" />
+      <Parameter Name="txt_mensaje" Mode="In" Type="String" />
+      <Parameter Name="comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_env_rango" ReturnType="Collection(SwiftModel.ResultadoBusquedaSwift)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateMensajeS_MS">
+      <Parameter Name="unidad" Mode="In" Type="Int32" />
+      <Parameter Name="prioridad" Mode="In" Type="String" />
+      <Parameter Name="estado_msg" Mode="In" Type="String" />
+      <Parameter Name="banco_re" Mode="In" Type="String" />
+      <Parameter Name="branch_re" Mode="In" Type="String" />
+      <Parameter Name="moneda" Mode="In" Type="String" />
+      <Parameter Name="monto" Mode="In" Type="Double" />
+      <Parameter Name="referencia" Mode="In" Type="String" />
+      <Parameter Name="beneficiario" Mode="In" Type="String" />
+      <Parameter Name="comentario" Mode="In" Type="String" />
+      <Parameter Name="txt_mensaje" Mode="In" Type="String" />
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_trae_tipo_campos_MS" ReturnType="Collection(SwiftModel.proc_trae_tipo_campos_MS_Result)" />
+    <FunctionImport Name="proc_trae_formato_campos_MS" EntitySet="sw_campos_msg" ReturnType="Collection(SwiftModel.sw_campos_msg)" />
+    <FunctionImport Name="proc_trae_bancos_MS" EntitySet="sw_bancos" ReturnType="Collection(SwiftModel.sw_bancos)">
+      <Parameter Name="Codbanco" Mode="In" Type="String" />
+      <Parameter Name="Branch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_por_idmensaje" ReturnType="Collection(SwiftModel.ResultadoBusquedaSwift)">
+      <Parameter Name="idMensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_por_id_MS" ReturnType="Collection(SwiftModel.ResultadoBusquedaSwift)">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_fmt_largo_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_fmt_largo_MS_Result)">
+      <Parameter Name="p_tipo_mt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_datos_msg_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_datos_msg_MS_Result)">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_datos_msg_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_datos_msg_MS_Result)">
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_sendrecv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_log_trae_msg_MS" ReturnType="Collection(SwiftModel.proc_sw_log_trae_msg_MS_Result)">
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_send_recv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_log_trae_msgsend_MS" ReturnType="Collection(SwiftModel.proc_sw_log_trae_msg_MS_Result)">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_msg_s01" ReturnType="Collection(Int32)">
+      <Parameter Name="id_msg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="sw_bancos" EntityType="SwiftModel.sw_bancos" />
+    <EntitySet Name="sw_bancos_autorizados" EntityType="SwiftModel.sw_bancos_autorizados" />
+    <EntitySet Name="sw_campos_msg" EntityType="SwiftModel.sw_campos_msg" />
+    <EntitySet Name="sw_caracter_error" EntityType="SwiftModel.sw_caracter_error" />
+    <EntitySet Name="sw_casillas" EntityType="SwiftModel.sw_casillas" />
+    <EntitySet Name="sw_ciclos" EntityType="SwiftModel.sw_ciclos" />
+    <EntitySet Name="sw_configura" EntityType="SwiftModel.sw_configura" />
+    <EntitySet Name="sw_estados_msg" EntityType="SwiftModel.sw_estados_msg" />
+    <EntitySet Name="sw_folios" EntityType="SwiftModel.sw_folios" />
+    <EntitySet Name="sw_formatos" EntityType="SwiftModel.sw_formatos" />
+    <EntitySet Name="sw_glosa_cmx" EntityType="SwiftModel.sw_glosa_cmx" />
+    <EntitySet Name="sw_log_msg" EntityType="SwiftModel.sw_log_msg" />
+    <EntitySet Name="sw_mensajes" EntityType="SwiftModel.sw_mensajes" />
+    <EntitySet Name="sw_mensajes_add" EntityType="SwiftModel.sw_mensajes_add" />
+    <EntitySet Name="sw_monedas" EntityType="SwiftModel.sw_monedas" />
+    <EntitySet Name="sw_msgsend" EntityType="SwiftModel.sw_msgsend" />
+    <EntitySet Name="sw_msgsend_add" EntityType="SwiftModel.sw_msgsend_add" />
+    <EntitySet Name="sw_msgsend_cambio_estados" EntityType="SwiftModel.sw_msgsend_cambio_estados" />
+    <EntitySet Name="sw_msgsend_cmx" EntityType="SwiftModel.sw_msgsend_cmx" />
+    <EntitySet Name="sw_msgsend_cmx_dia" EntityType="SwiftModel.sw_msgsend_cmx_dia" />
+    <EntitySet Name="sw_msgsend_detfile" EntityType="SwiftModel.sw_msgsend_detfile" />
+    <EntitySet Name="sw_msgsend_files" EntityType="SwiftModel.sw_msgsend_files" />
+    <EntitySet Name="sw_msgsend_firma" EntityType="SwiftModel.sw_msgsend_firma" />
+    <EntitySet Name="sw_msgsend_log" EntityType="SwiftModel.sw_msgsend_log" />
+    <EntitySet Name="sw_msgsend_nop" EntityType="SwiftModel.sw_msgsend_nop" />
+    <EntitySet Name="sw_orden_firmas" EntityType="SwiftModel.sw_orden_firmas" />
+    <EntitySet Name="sw_paridad" EntityType="SwiftModel.sw_paridad" />
+    <EntitySet Name="sw_regla_firmas" EntityType="SwiftModel.sw_regla_firmas" />
+    <EntitySet Name="sw_sce_bic" EntityType="SwiftModel.sw_sce_bic" />
+    <EntitySet Name="sw_tipos_campos" EntityType="SwiftModel.sw_tipos_campos" />
+    <EntitySet Name="sw_tipos_firmas" EntityType="SwiftModel.sw_tipos_firmas" />
+    <EntitySet Name="sw_tipos_msg" EntityType="SwiftModel.sw_tipos_msg" />
+    <EntitySet Name="sw_users_srm" EntityType="SwiftModel.sw_users_srm" />
+    <EntitySet Name="sw_users_swift" EntityType="SwiftModel.sw_users_swift" />
+    <EntitySet Name="sw_valor_campos" EntityType="SwiftModel.sw_valor_campos" />
+    <EntitySet Name="tbl_sw_nets" EntityType="SwiftModel.tbl_sw_nets" />
+    <EntitySet Name="tbl_sw_nets_det" EntityType="SwiftModel.tbl_sw_nets_det" />
+    <EntitySet Name="joal" EntityType="SwiftModel.joal" />
+    <EntitySet Name="sw_firmas_msg" EntityType="SwiftModel.sw_firmas_msg" />
+    <EntitySet Name="sw_formato_cmx" EntityType="SwiftModel.sw_formato_cmx" />
+    <EntitySet Name="sw_msgsend_ftp" EntityType="SwiftModel.sw_msgsend_ftp" />
+    <EntitySet Name="tbl_sw_nets_sor" EntityType="SwiftModel.tbl_sw_nets_sor" />
+    <FunctionImport Name="proc_sw_env_trae_detfile" ReturnType="Collection(SwiftModel.proc_sw_env_trae_detfile_Result)">
+      <Parameter Name="fd_archivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_ftp_err" ReturnType="Collection(SwiftModel.proc_sw_env_trae_ftp_err_Result)">
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_nop" ReturnType="Collection(SwiftModel.proc_sw_env_trae_nop_Result)">
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_tiposMensajeConFormato_MS" EntitySet="sw_tipos_msg" ReturnType="Collection(SwiftModel.sw_tipos_msg)" />
+    <FunctionImport Name="proc_sw_env_trae_aup_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_aup_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_del_firnul_MS">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_solic" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha_solic" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_cons_fipe_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="monto_swift" Mode="In" Type="Double" />
+      <Parameter Name="par1" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_cons_sim_MS" ReturnType="Collection(String)">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_apr_MS">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_dev_MS">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_rec_MS">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_comentario1" Mode="In" Type="String" />
+      <Parameter Name="p_comentario2" Mode="In" Type="String" />
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_aut_pend_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_aut_pend_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_aut_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_aut_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_blo_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_blo_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_dev_firma_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_dev_firma_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_files_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_files_MS_Result)">
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_firmas_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_firmas_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_ing_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_ing_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_mod_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_mod_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_nul_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_nul_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_pro_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_pro_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_rech_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_rech_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_firma" ReturnType="Collection(SwiftModel.proc_sw_trae_firma_Result)">
+      <Parameter Name="Idmensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_config_ing">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="apli" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_estadist_msg_MS" ReturnType="Collection(SwiftModel.proc_sw_env_estadist_msg_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_log_trae_aut_rango_MS">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_log_trae_enc_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_log_trae_enc_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sw_mensajes_add_s01_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_msg_por_rut" ReturnType="Collection(SwiftModel.proc_sw_env_msg_por_rut_Result)">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_graba_conf_MS">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_graba_rech_MS">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+      <Parameter Name="p_texto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sw_configura_s01_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="rut_usuario" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_cnf_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_cnf_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_enc_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_enc_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_imp_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_imp_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_ree_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_ree_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_otr_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_rec_trae_otr_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_usuarios_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_usuarios_MS_Result1)">
+      <Parameter Name="p_rut" Mode="In" Type="Int32" />
+      <Parameter Name="p_nombre" Mode="In" Type="String" />
+      <Parameter Name="p_tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_anula_enc_MS">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_bancos_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_bancos_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="origen_recep_s01_MS" ReturnType="Collection(SwiftModel.origen_recep_s01_MS_Result)" />
+    <FunctionImport Name="proc_sw_Actualiza_bancos_claves_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="intercambio_clave" Mode="In" Type="String" />
+      <Parameter Name="cod_banco" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_bancos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="Ciudad" Mode="In" Type="String" />
+      <Parameter Name="Oficina" Mode="In" Type="String" />
+      <Parameter Name="clave" Mode="In" Type="String" />
+      <Parameter Name="Localidad" Mode="In" Type="String" />
+      <Parameter Name="Pob" Mode="In" Type="String" />
+      <Parameter Name="Pais" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_CampoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Largo" Mode="In" Type="Int32" />
+      <Parameter Name="Formato" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_CaracterInvalido_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_casillas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="origen" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_FormatoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Secuencia" Mode="In" Type="String" />
+      <Parameter Name="Repeticion" Mode="In" Type="Int32" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="OrdenOriginal" Mode="In" Type="Int32" />
+      <Parameter Name="TagOriginal" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_GlosaCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_monedas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="CodigoSwMoneda" Mode="In" Type="String" />
+      <Parameter Name="NombreMoneda" Mode="In" Type="String" />
+      <Parameter Name="UsoMoneda" Mode="In" Type="String" />
+      <Parameter Name="CodigoBcMoneda" Mode="In" Type="Int32" />
+      <Parameter Name="DecimalesMoneda" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_TiposMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_usuarios_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="p_rut" Mode="In" Type="Int32" />
+      <Parameter Name="p_nombre" Mode="In" Type="String" />
+      <Parameter Name="p_tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_Actualiza_valoresCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Tipo" Mode="In" Type="String" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Condicion" Mode="In" Type="String" />
+      <Parameter Name="valor" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Total_valor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_bancos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="flag" Mode="In" Type="Int32" />
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_CampoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_CaracterInvalido_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_casillas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_FormatoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_GlosaCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_monedas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_TiposCambios_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_TiposMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_usuarios_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="p_rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_ValoresCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="tag" Mode="In" Type="String" />
+      <Parameter Name="linea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_env_rango_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_env_rango_MS_Result)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_bancos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="Branch" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="Ciudad" Mode="In" Type="String" />
+      <Parameter Name="Pais" Mode="In" Type="String" />
+      <Parameter Name="Oficina" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+      <Parameter Name="Localidad" Mode="In" Type="String" />
+      <Parameter Name="Pob" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_CampoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Largo" Mode="In" Type="Int32" />
+      <Parameter Name="Formato" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_CaracterInvalido_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+      <Parameter Name="Caracter" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_casillas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="origen" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_FormatoMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Orden" Mode="In" Type="Int32" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Secuencia" Mode="In" Type="String" />
+      <Parameter Name="Repeticion" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_GlosaCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_monedas_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="CodigoSw" Mode="In" Type="String" />
+      <Parameter Name="CodigoBc" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Decimales" Mode="In" Type="Int32" />
+      <Parameter Name="Uso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_TiposMensajes_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_usuarios_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="p_rut" Mode="In" Type="Int32" />
+      <Parameter Name="p_dvRut" Mode="In" Type="Int32" />
+      <Parameter Name="p_nombre" Mode="In" Type="String" />
+      <Parameter Name="p_tipo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_graba_ValoresCampos_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Tag" Mode="In" Type="String" />
+      <Parameter Name="Linea" Mode="In" Type="Int32" />
+      <Parameter Name="Condicion" Mode="In" Type="String" />
+      <Parameter Name="Campos" Mode="In" Type="String" />
+      <Parameter Name="Total" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_bancos_verificados_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_bancos_verificados_MS_Result)">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_CampoMensajes_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_CampoMensajes_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_CaracterInvalido_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_CaracterInvalido_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_casillas_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_casillas_MS_Result)">
+      <Parameter Name="codCasilla" Mode="In" Type="Int32" />
+      <Parameter Name="nombreCasilla" Mode="In" Type="String" />
+      <Parameter Name="origenCasilla" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_FormatoMensajes_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_FormatoMensajes_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_GlosaCampos_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_GlosaCampos_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_monedas_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_monedas_MS_Result)" />
+    <FunctionImport Name="proc_sw_trae_paridad_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_paridad_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_TiposMensajes_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_TiposMensajes_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_valoresCampos_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_valoresCampos_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sw_mensajes_add_s01_MS1" ReturnType="Collection(Int32)">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_MensajeSwift_MS" ReturnType="Collection(Boolean)">
+      <Parameter Name="codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_MensajesEliminar_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_MensajesEliminar_MS_Result)">
+      <Parameter Name="Codigo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_count_bancos_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="swift" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="banco" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+      <Parameter Name="intercambioClave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_test_firma_MS" ReturnType="Collection(SwiftModel.proc_sw_env_test_firma_MS_Result)">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_test_firma_count_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_cambios_MS">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="cambios" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_mod_MS">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_sap_MS">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha_sap" Mode="In" Type="DateTime" />
+      <Parameter Name="p_comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_bancos2_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_bancos2_MS_Result)">
+      <Parameter Name="swift" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="banco" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+      <Parameter Name="intercambioClave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_del_firma_MS">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_firma" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_msgsend_log_i01_MS">
+      <Parameter Name="id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="fecha_log" Mode="In" Type="DateTime" />
+      <Parameter Name="rutais_log" Mode="In" Type="Int32" />
+      <Parameter Name="idprog_log" Mode="In" Type="String" />
+      <Parameter Name="opcion_log" Mode="In" Type="String" />
+      <Parameter Name="casilla_destino" Mode="In" Type="Int32" />
+      <Parameter Name="estado_destino" Mode="In" Type="String" />
+      <Parameter Name="unidad_log" Mode="In" Type="Int32" />
+      <Parameter Name="resultado_log" Mode="In" Type="String" />
+      <Parameter Name="comentario_log" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_borra_casilla_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_busca_eliminar_MS" ReturnType="Collection(SwiftModel.proc_sw_busca_eliminar_MS_Result)">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_elimina_mensaje_MS">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_test_apr_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_test_file_MS" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="sw_configura_s02_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="rut_usuario" Mode="In" Type="Int32" />
+      <Parameter Name="apli" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_update_aut_MS">
+      <Parameter Name="idMensaje" Mode="In" Type="Int32" />
+      <Parameter Name="casilla" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_aum" ReturnType="Collection(String)">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha_aum" Mode="In" Type="DateTime" />
+      <Parameter Name="p_comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_aum_MS" ReturnType="Collection(String)">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha_aum" Mode="In" Type="DateTime" />
+      <Parameter Name="p_comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_count_bancos2_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="swift" Mode="In" Type="String" />
+      <Parameter Name="pais" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+      <Parameter Name="banco" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+      <Parameter Name="intercambioClave" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_graba_imp_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+      <Parameter Name="comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_rec_trae_nro_imp_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="p_sesion" Mode="In" Type="Int32" />
+      <Parameter Name="p_secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_nul_MS" ReturnType="Collection(String)">
+      <Parameter Name="p_casilla" Mode="In" Type="Int32" />
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_comentario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_validaFirmaAnular_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_ftp_err_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_ftp_err_MS_Result)">
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_nop_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_nop_MS_Result)">
+      <Parameter Name="p_fecha1" Mode="In" Type="DateTime" />
+      <Parameter Name="p_fecha2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_trae_firma_MS" ReturnType="Collection(SwiftModel.proc_sw_trae_firma_MS_Result)">
+      <Parameter Name="Idmensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_detfile_MS" ReturnType="Collection(SwiftModel.proc_sw_env_trae_detfile_MS_Result)">
+      <Parameter Name="fd_archivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_res_MS">
+      <Parameter Name="p_id_mensaje" Mode="In" Type="Int32" />
+      <Parameter Name="p_fecha_res" Mode="In" Type="DateTime" />
+      <Parameter Name="p_rut_log" Mode="In" Type="Int32" />
+      <Parameter Name="p_unidad" Mode="In" Type="Int32" />
+      <Parameter Name="p_texto" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_graba_file_MS">
+      <Parameter Name="fd_archivo" Mode="In" Type="Int32" />
+      <Parameter Name="p_estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_config_ing_MS">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="apli" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_msg_por_rut_MS" ReturnType="Collection(SwiftModel.proc_sw_env_msg_por_rut_MS_Result)">
+      <Parameter Name="rut" Mode="In" Type="Int32" />
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_env_trae_por_idmensaje_MS" ReturnType="Collection(SwiftModel.ResultadoBusquedaSwift)">
+      <Parameter Name="idMensaje" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_sw_msg_s01_MS" ReturnType="Collection(Int32)">
+      <Parameter Name="id_msg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sw_mensajes_u01_MS">
+      <Parameter Name="sesion" Mode="In" Type="Int32" />
+      <Parameter Name="secuencia" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="proc_sw_rec_trae_iny_rango_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="ResultadoBusquedaSwift">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_env" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_env" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_trae_tipo_campos_MS_Result">
+    <Property Type="String" Name="tipo_msg_tipcam" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="tag_campo_tipcam" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="nombre_campo_tipcam" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="max_largo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_trae_bancos_MS_Result">
+    <Property Type="String" Name="cod_banco" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="direccion_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="intercambio_clave" Nullable="true" MaxLength="3" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_fmt_largo_MS_Result">
+    <Property Type="String" Name="tag_fmt" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="status_fmt" Nullable="false" MaxLength="2" />
+    <Property Type="Int32" Name="repeticion_fmt" Nullable="false" />
+    <Property Type="Int32" Name="orden_fmt" Nullable="false" />
+    <Property Type="String" Name="secuencia_fmt" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="largo_total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_datos_msg_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" Precision="23" />
+    <Property Type="String" Name="tipo_ingreso" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="unidad_rechazo" Nullable="true" />
+    <Property Type="Int32" Name="rut_rechazo" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_rechazo" Nullable="true" Precision="23" />
+    <Property Type="String" Name="texto_rechazo" Nullable="true" MaxLength="90" />
+    <Property Type="Int32" Name="veces_rechazo" Nullable="true" />
+    <Property Type="Int32" Name="unidad_modifica" Nullable="true" />
+    <Property Type="Int32" Name="rut_modifica" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_modifica" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="veces_modifica" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_aprobac" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="rut_bloqueo" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_bloqueo" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="veces_bloqueo" Nullable="true" />
+    <Property Type="String" Name="texto_bloqueo" Nullable="true" MaxLength="90" />
+    <Property Type="Int32" Name="unidad_anula" Nullable="true" />
+    <Property Type="Int32" Name="rut_anula" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_anula" Nullable="true" Precision="23" />
+    <Property Type="String" Name="texto_anula" Nullable="true" MaxLength="90" />
+    <Property Type="DateTime" Name="fecha_envio" Nullable="true" Precision="23" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_datos_msg_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="fecha_send" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="fecha_ack" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="rut_entry" Nullable="true" />
+    <Property Type="String" Name="observ_encas" Nullable="true" MaxLength="90" />
+    <Property Type="Int32" Name="unidad_recibe" Nullable="true" />
+    <Property Type="Int32" Name="rut_autoriza" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_recibe" Nullable="true" Precision="23" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="Int32" Name="unidad_imprime" Nullable="true" />
+    <Property Type="Int32" Name="rut_imprime" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_imprime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="unidad_rechazo" Nullable="true" />
+    <Property Type="Int32" Name="rut_rechazo" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_rechazo" Nullable="true" Precision="23" />
+    <Property Type="String" Name="texto_rechazo" Nullable="true" MaxLength="90" />
+    <Property Type="Int32" Name="veces_rechazo" Nullable="true" />
+    <Property Type="Int32" Name="rut_reenvio" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_reenvio" Nullable="true" Precision="23" />
+    <Property Type="String" Name="texto_reenvio" Nullable="true" MaxLength="90" />
+    <Property Type="Int32" Name="veces_reenvio" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_log_trae_msg_MS_Result">
+    <Property Type="DateTime" Name="fecha_log" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="rutais_log" Nullable="true" />
+    <Property Type="Int32" Name="casilla_origen" Nullable="true" />
+    <Property Type="String" Name="estado_origen" Nullable="true" MaxLength="3" />
+    <Property Type="Int32" Name="casilla_destino" Nullable="true" />
+    <Property Type="String" Name="estado_destino" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="comentario_log" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <EntityType Name="sw_bancos">
+    <Key>
+      <PropertyRef Name="cod_banco" />
+      <PropertyRef Name="branch" />
+    </Key>
+    <Property Name="cod_banco" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nombre_banco" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="direccion_banco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pais_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="oficina_banco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intercambio_clave" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="localidad_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pobnr_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_bancos_autorizados">
+    <Key>
+      <PropertyRef Name="cod_banco" />
+      <PropertyRef Name="branch" />
+    </Key>
+    <Property Name="cod_banco" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="branch" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="intercambio_clave" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_campos_msg">
+    <Key>
+      <PropertyRef Name="tag_campo" />
+      <PropertyRef Name="linea_campo" />
+    </Key>
+    <Property Name="tag_campo" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="linea_campo" Type="Int32" Nullable="false" />
+    <Property Name="nombre_campo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="largo_campo" Type="Int32" />
+    <Property Name="formato_campo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_caracter_error">
+    <Key>
+      <PropertyRef Name="valor_ascii" />
+    </Key>
+    <Property Name="valor_ascii" Type="Int32" Nullable="false" />
+    <Property Name="caracter" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_casillas">
+    <Key>
+      <PropertyRef Name="cod_casilla" />
+    </Key>
+    <Property Name="cod_casilla" Type="Int32" Nullable="false" />
+    <Property Name="nombre_casilla" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="origen_recep" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_ciclos">
+    <Key>
+      <PropertyRef Name="tipo_msg_fmt" />
+      <PropertyRef Name="orden_fmt" />
+      <PropertyRef Name="tag_fmt" />
+    </Key>
+    <Property Name="tipo_msg_fmt" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="orden_fmt" Type="Int32" Nullable="false" />
+    <Property Name="secuencia_fmt" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="repeticion_fmt" Type="Int32" Nullable="false" />
+    <Property Name="tag_fmt" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="status_fmt" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_configura">
+    <Key>
+      <PropertyRef Name="rut_usuario" />
+      <PropertyRef Name="cod_aplicac" />
+    </Key>
+    <Property Name="rut_usuario" Type="Int32" Nullable="false" />
+    <Property Name="cod_aplicac" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_estados_msg">
+    <Key>
+      <PropertyRef Name="estado_msg" />
+    </Key>
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="send_recv" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_folios">
+    <Key>
+      <PropertyRef Name="id_folio" />
+    </Key>
+    <Property Name="id_folio" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="nro_folio" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_formatos">
+    <Key>
+      <PropertyRef Name="tipo_msg_fmt" />
+      <PropertyRef Name="orden_fmt" />
+      <PropertyRef Name="tag_fmt" />
+    </Key>
+    <Property Name="tipo_msg_fmt" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="orden_fmt" Type="Int32" Nullable="false" />
+    <Property Name="secuencia_fmt" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="repeticion_fmt" Type="Int32" Nullable="false" />
+    <Property Name="tag_fmt" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="status_fmt" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_glosa_cmx">
+    <Key>
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="cod_msg" />
+    </Key>
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="cod_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="nom_msg" Type="String" Nullable="false" MaxLength="41" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_log_msg">
+    <Key>
+      <PropertyRef Name="sesion_log" />
+      <PropertyRef Name="secuencia_log" />
+      <PropertyRef Name="send_recv_log" />
+      <PropertyRef Name="fecha_log" />
+    </Key>
+    <Property Name="sesion_log" Type="Int32" Nullable="false" />
+    <Property Name="secuencia_log" Type="Int32" Nullable="false" />
+    <Property Name="send_recv_log" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_log" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="rutais_log" Type="Int32" />
+    <Property Name="nodoais_log" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="idprog_log" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="opcion_log" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="casilla_origen" Type="Int32" />
+    <Property Name="estado_origen" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="casilla_destino" Type="Int32" />
+    <Property Name="estado_destino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="unidad_log" Type="Int32" />
+    <Property Name="apoderado_log" Type="Int32" />
+    <Property Name="resultado_log" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="comentario_log" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_mensajes">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="send_recv" />
+    </Key>
+    <Property Name="sesion" Type="Int32" Nullable="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <Property Name="send_recv" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="Int32" Nullable="false" />
+    <Property Name="unidad" Type="Int32" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="rut_entry" Type="Int32" />
+    <Property Name="rut_autoriza" Type="Int32" />
+    <Property Name="fecha_send" Type="DateTime" Precision="3" />
+    <Property Name="fecha_ack" Type="DateTime" Precision="3" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="Double" />
+    <Property Name="referencia" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="beneficiario" Type="String" MaxLength="37" FixedLength="false" Unicode="false" />
+    <Property Name="total_imp" Type="Int32" />
+    <Property Name="mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_mensajes_add">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="send_recv" />
+    </Key>
+    <Property Name="sesion" Type="Int32" Nullable="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <Property Name="send_recv" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="Int32" Nullable="false" />
+    <Property Name="observ_encas" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_recibe" Type="DateTime" Precision="3" />
+    <Property Name="unidad_recibe" Type="Int32" />
+    <Property Name="unidad_imprime" Type="Int32" />
+    <Property Name="rut_imprime" Type="Int32" />
+    <Property Name="fecha_imprime" Type="DateTime" Precision="3" />
+    <Property Name="unidad_rechazo" Type="Int32" />
+    <Property Name="rut_rechazo" Type="Int32" />
+    <Property Name="fecha_rechazo" Type="DateTime" Precision="3" />
+    <Property Name="texto_rechazo" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="veces_rechazo" Type="Int32" />
+    <Property Name="rut_reenvio" Type="Int32" />
+    <Property Name="fecha_reenvio" Type="DateTime" Precision="3" />
+    <Property Name="texto_reenvio" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="veces_reenvio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sw_monedas">
+    <Key>
+      <PropertyRef Name="cod_moneda_sw" />
+    </Key>
+    <Property Name="cod_moneda_sw" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="decimales" Type="Int16" />
+    <Property Name="nombre_moneda" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cod_moneda_banco" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="uso_moneda_banco" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="sesion" Type="Int32" Nullable="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <Property Name="casilla" Type="Int32" Nullable="false" />
+    <Property Name="unidad" Type="Int32" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_ingreso" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_ingreso" Type="Int32" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="Double" />
+    <Property Name="referencia" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="beneficiario" Type="String" MaxLength="37" FixedLength="false" Unicode="false" />
+    <Property Name="mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_add">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="unidad_rechazo" Type="Int32" />
+    <Property Name="rut_rechazo" Type="Int32" />
+    <Property Name="fecha_rechazo" Type="DateTime" Precision="3" />
+    <Property Name="texto_rechazo" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="veces_rechazo" Type="Int32" />
+    <Property Name="unidad_modifica" Type="Int32" />
+    <Property Name="rut_modifica" Type="Int32" />
+    <Property Name="fecha_modifica" Type="DateTime" Precision="3" />
+    <Property Name="veces_modifica" Type="Int32" />
+    <Property Name="fecha_aprobac" Type="DateTime" Precision="3" />
+    <Property Name="rut_bloqueo" Type="Int32" />
+    <Property Name="fecha_bloqueo" Type="DateTime" Precision="3" />
+    <Property Name="veces_bloqueo" Type="Int32" />
+    <Property Name="texto_bloqueo" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="unidad_anula" Type="Int32" />
+    <Property Name="rut_anula" Type="Int32" />
+    <Property Name="fecha_anula" Type="DateTime" Precision="3" />
+    <Property Name="texto_anula" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cambio_estados">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="fecha_estado" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_estado" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cmx">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="sesion" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="secuencia" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="unidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_ingreso" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_ingreso" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_ingreso" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="referencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="beneficiario" Type="String" MaxLength="37" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="desc_msg" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="desc_unidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nomb_banco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ciud_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pais_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_envio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="baja_swift" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cmx_dia">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="sesion" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="secuencia" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="unidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_ingreso" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_ingreso" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_ingreso" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="referencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="beneficiario" Type="String" MaxLength="37" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="desc_msg" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="desc_unidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nomb_banco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ciud_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pais_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_envio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="baja_swift" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_detfile">
+    <Key>
+      <PropertyRef Name="fd_archivo" />
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="fd_archivo" Type="Int32" Nullable="false" />
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="fecha_envio" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_files">
+    <Key>
+      <PropertyRef Name="fd_archivo" />
+    </Key>
+    <Property Name="fd_archivo" Type="Int32" Nullable="false" />
+    <Property Name="nombre_archivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecha_confirma" Type="DateTime" Precision="3" />
+    <Property Name="estado_archivo" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="total_mensajes" Type="Int32" />
+    <Property Name="total_envios" Type="Int32" />
+    <Property Name="total_rechazos" Type="Int32" />
+    <Property Name="estado_ftp" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_firma">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="rut_firma" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="rut_firma" Type="Int32" Nullable="false" />
+    <Property Name="tipo_firma" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="estado_firma" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="revisa_firma" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_solic" Type="Int32" Nullable="false" />
+    <Property Name="fecha_solic" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecha_firma" Type="DateTime" Precision="3" />
+    <Property Name="avisado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_log">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="fecha_log" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="fecha_log" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="rutais_log" Type="Int32" />
+    <Property Name="nodoais_log" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="idprog_log" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="opcion_log" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="casilla_origen" Type="Int32" />
+    <Property Name="estado_origen" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="casilla_destino" Type="Int32" />
+    <Property Name="estado_destino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="unidad_log" Type="Int32" />
+    <Property Name="resultado_log" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="comentario_log" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_nop">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+    </Key>
+    <Property Name="sesion" Type="Int32" Nullable="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="Single" />
+    <Property Name="referencia" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_proceso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="comentario" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_orden_firmas">
+    <Key>
+      <PropertyRef Name="orden" />
+    </Key>
+    <Property Name="orden" Type="Int32" Nullable="false" />
+    <Property Name="tipofirma" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_paridad">
+    <Key>
+      <PropertyRef Name="cod_moneda_banco" />
+    </Key>
+    <Property Name="cod_moneda_banco" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="paridad" Type="Double" Nullable="false" />
+    <Property Name="tipcam_observ" Type="Double" Nullable="false" />
+    <Property Name="fecha_valor" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sw_regla_firmas">
+    <Key>
+      <PropertyRef Name="id_firma" />
+    </Key>
+    <Property Name="id_firma" Type="Int32" Nullable="false" />
+    <Property Name="monto_ini" Type="Single" Nullable="false" />
+    <Property Name="monto_fin" Type="Single" Nullable="false" />
+    <Property Name="cod_moneda" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_msg" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="firma1" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="firma2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="firma3" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="firma4" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sw_sce_bic">
+    <Key>
+      <PropertyRef Name="bankcode" />
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="bankcode" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="branchcode" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="instname" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="cityhead" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="physadd" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pobnr" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="couname" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="bic_ala" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="bic_cod" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_tipos_campos">
+    <Key>
+      <PropertyRef Name="tipo_msg_tipcam" />
+      <PropertyRef Name="tag_campo_tipcam" />
+    </Key>
+    <Property Name="tipo_msg_tipcam" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="tag_campo_tipcam" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_campo_tipcam" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_tipos_firmas">
+    <Key>
+      <PropertyRef Name="codig_rh" />
+      <PropertyRef Name="tipofirma" />
+    </Key>
+    <Property Name="codig_rh" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="tipofirma" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_tipos_msg">
+    <Key>
+      <PropertyRef Name="cod_tipo" />
+    </Key>
+    <Property Name="cod_tipo" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="nombre_tipo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_users_srm">
+    <Key>
+      <PropertyRef Name="rut_user" />
+    </Key>
+    <Property Name="rut_user" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="pass_user" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_users_swift">
+    <Key>
+      <PropertyRef Name="rut_user" />
+    </Key>
+    <Property Name="rut_user" Type="Int32" Nullable="false" />
+    <Property Name="digv_user" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="nombre_user" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_user" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_valor_campos">
+    <Key>
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="tag_campo" />
+      <PropertyRef Name="linea_campo" />
+    </Key>
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="tag_campo" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="linea_campo" Type="Int32" Nullable="false" />
+    <Property Name="cond_valor" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="valor_campo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="total_valor" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_sw_nets">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="rut_cli" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="caracter" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="id_mensaje" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="sesion" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="secuencia" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="unidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_ingreso" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="referencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="desc_msg" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="desc_unidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nomb_banco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ciud_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pais_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_envio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_sw_nets_det">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="linea" />
+    </Key>
+    <Property Name="id_mensaje" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="linea" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="detalle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="joal">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="casilla" />
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="prioridad" />
+      <PropertyRef Name="estado_msg" />
+      <PropertyRef Name="tipo_ingreso" />
+      <PropertyRef Name="rut_ingreso" />
+      <PropertyRef Name="fecha_ingreso" />
+      <PropertyRef Name="cod_banco_rec" />
+      <PropertyRef Name="branch_rec" />
+      <PropertyRef Name="cod_banco_em" />
+      <PropertyRef Name="branch_em" />
+    </Key>
+    <Property Name="id_mensaje" Type="Int32" Nullable="false" />
+    <Property Name="sesion" Type="Int32" Nullable="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <Property Name="casilla" Type="Int32" Nullable="false" />
+    <Property Name="unidad" Type="Int32" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="estado_msg" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_ingreso" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_ingreso" Type="Int32" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="Double" />
+    <Property Name="referencia" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="beneficiario" Type="String" MaxLength="37" FixedLength="false" Unicode="false" />
+    <Property Name="mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_firmas_msg">
+    <Key>
+      <PropertyRef Name="sesion_firma" />
+      <PropertyRef Name="secuencia_firma" />
+      <PropertyRef Name="send_recv_firma" />
+      <PropertyRef Name="rut_firma" />
+    </Key>
+    <Property Name="sesion_firma" Type="Int32" Nullable="false" />
+    <Property Name="secuencia_firma" Type="Int32" Nullable="false" />
+    <Property Name="send_recv_firma" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rut_firma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_formato_cmx">
+    <Key>
+      <PropertyRef Name="campo" />
+      <PropertyRef Name="formato" />
+    </Key>
+    <Property Name="campo" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="formato" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_ftp">
+    <Key>
+      <PropertyRef Name="nombre_archivo" />
+    </Key>
+    <Property Name="nombre_archivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_sw_nets_sor">
+    <Key>
+      <PropertyRef Name="rut_cli" />
+      <PropertyRef Name="estado" />
+      <PropertyRef Name="caracter" />
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="casilla" />
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="prioridad" />
+      <PropertyRef Name="fecha_ingreso" />
+      <PropertyRef Name="cod_banco_rec" />
+      <PropertyRef Name="branch_rec" />
+      <PropertyRef Name="cod_banco_em" />
+      <PropertyRef Name="branch_em" />
+    </Key>
+    <Property Name="rut_cli" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="caracter" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="id_mensaje" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="sesion" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="secuencia" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="casilla" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="unidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_msg" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="prioridad" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_ingreso" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_rec" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_rec" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_banco_em" Type="String" Nullable="false" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="branch_em" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="monto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="referencia" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="desc_msg" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="desc_unidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nomb_banco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ciud_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="pais_banco" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_envio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="proc_sw_env_trae_detfile_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="DateTime" Name="fecha_creacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="fecha_envio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_envio" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_rech" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_rech" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="texto_rechazo" Nullable="true" MaxLength="90" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_ftp_err_Result">
+    <Property Type="Int32" Name="fd_archivo" Nullable="false" />
+    <Property Type="String" Name="nombre_archivo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_creacion" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fecha_confirma" Nullable="true" Precision="23" />
+    <Property Type="String" Name="estado_archivo" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="total_mensajes" Nullable="true" />
+    <Property Type="Int32" Name="total_envios" Nullable="true" />
+    <Property Type="Int32" Name="total_rechazos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_nop_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Single" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="fecha_pro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_pro" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="90" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_aup_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" Precision="23" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_aut_pend_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="String" Name="fec_ing" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hor_ing" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="rut_solic" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_aut_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_apr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_apr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_blo_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_bloq" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_bloq" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_dev_firma_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_firma" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_files_MS_Result">
+    <Property Type="Int32" Name="fd_archivo" Nullable="false" />
+    <Property Type="String" Name="nombre_archivo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_creacion" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fecha_confirma" Nullable="true" Precision="23" />
+    <Property Type="String" Name="estado_archivo" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="total_mensajes" Nullable="true" />
+    <Property Type="Int32" Name="total_envios" Nullable="true" />
+    <Property Type="Int32" Name="total_rechazos" Nullable="true" />
+    <Property Type="Int32" Name="campo1" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_firmas_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="String" Name="fec_ing" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hor_ing" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="rut_solic" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_ing_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_mod_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_mod" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_mod" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_nul_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_anula" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_anula" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_pro_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_pro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_pro" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_rech_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_rech" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_rech" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_rechazo" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_firma_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="rut_firma" Nullable="false" />
+    <Property Type="String" Name="tipo_firma" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="estado_firma" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="revisa_firma" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_solic" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_solic" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fecha_firma" Nullable="true" Precision="23" />
+    <Property Type="String" Name="avisado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="nombre_firma" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="estaba" Nullable="false" />
+    <Property Type="String" Name="avis_antes" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_usuarios_MS_Result">
+    <Property Type="Int32" Name="rut_user" Nullable="false" />
+    <Property Type="String" Name="digv_user" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="nombre_user" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="tipo_user" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_estadist_msg_MS_Result">
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="Int32" Name="cantidad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_log_trae_enc_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora1" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_pro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_pro" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_moneda" Nullable="false" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="false" />
+    <Property Type="String" Name="referencia" Nullable="false" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="false" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_hora" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_msg_por_rut_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="tipo_ingreso" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_cnf_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha_enc" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_enc" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_rcb" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_rcb" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_enc_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha_env" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_env" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_enc" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_enc" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_imp_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha_enc" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_enc" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_imp" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_imp" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_ree_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha_rec" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_rec" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_ree" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ree" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_rec_trae_otr_rango_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="fecha_send" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_send" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_pro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_pro" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="total_imp" Nullable="true" />
+    <Property Type="Int32" Name="unidad" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_usuarios_MS_Result1">
+    <Property Type="Int32" Name="rut_user" Nullable="false" />
+    <Property Type="String" Name="digv_user" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="nombre_user" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="tipo_user" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_bancos_MS_Result">
+    <Property Type="String" Name="cod_banco" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="direccion_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="intercambio_clave" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="localidad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pobnr_banco" Nullable="true" MaxLength="35" />
+  </ComplexType>
+  <ComplexType Name="origen_recep_s01_MS_Result">
+    <Property Type="Int32" Name="cod_casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="origen_recep" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_env_rango_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_env" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_env" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="Int32" Name="rut_ingreso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_bancos_verificados_MS_Result">
+    <Property Type="String" Name="cod_banco" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="direccion_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="intercambio_clave" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="localidad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pobnr_banco" Nullable="true" MaxLength="35" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_CampoMensajes_MS_Result">
+    <Property Type="String" Name="tag_campo" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="linea_campo" Nullable="false" />
+    <Property Type="String" Name="nombre_campo" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="largo_campo" Nullable="true" />
+    <Property Type="String" Name="formato_campo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_CaracterInvalido_MS_Result">
+    <Property Type="Int32" Name="valor_ascii" Nullable="false" />
+    <Property Type="String" Name="caracter" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_casillas_MS_Result">
+    <Property Type="Int32" Name="cod_casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="origen_recep" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_FormatoMensajes_MS_Result">
+    <Property Type="String" Name="tipo_msg_fmt" Nullable="false" MaxLength="7" />
+    <Property Type="Int32" Name="orden_fmt" Nullable="false" />
+    <Property Type="String" Name="secuencia_fmt" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="repeticion_fmt" Nullable="false" />
+    <Property Type="String" Name="tag_fmt" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="status_fmt" Nullable="false" MaxLength="2" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_GlosaCampos_MS_Result">
+    <Property Type="String" Name="tipo_msg_tipcam" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="tag_campo_tipcam" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="nombre_campo_tipcam" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_monedas_MS_Result">
+    <Property Type="String" Name="cod_moneda_sw" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="uso_moneda_banco" Nullable="true" MaxLength="1" />
+    <Property Type="Int16" Name="decimales" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_paridad_MS_Result">
+    <Property Type="String" Name="cod_moneda_sw" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="nombre_moneda" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda_banco" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="paridad" Nullable="false" />
+    <Property Type="Double" Name="tipcam_observ" Nullable="false" />
+    <Property Type="String" Name="fecha_valor" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_TiposMensajes_MS_Result">
+    <Property Type="String" Name="cod_tipo" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_valoresCampos_MS_Result">
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="tag_campo" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="linea_campo" Nullable="false" />
+    <Property Type="String" Name="cond_valor" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="valor_campo" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="total_valor" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_MensajesEliminar_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" Precision="23" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_test_firma_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="false" Precision="23" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="30" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_bancos2_MS_Result">
+    <Property Type="String" Name="cod_banco" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="direccion_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="intercambio_clave" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="localidad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pobnr_banco" Nullable="true" MaxLength="35" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_busca_eliminar_MS_Result">
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="estado_msg" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="nombre_casilla" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_ftp_err_MS_Result">
+    <Property Type="Int32" Name="fd_archivo" Nullable="false" />
+    <Property Type="String" Name="nombre_archivo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_creacion" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fecha_confirma" Nullable="true" Precision="23" />
+    <Property Type="String" Name="estado_archivo" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="total_mensajes" Nullable="true" />
+    <Property Type="Int32" Name="total_envios" Nullable="true" />
+    <Property Type="Int32" Name="total_rechazos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_nop_MS_Result">
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Single" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="fecha_pro" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_pro" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="comentario" Nullable="true" MaxLength="90" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_trae_firma_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="rut_firma" Nullable="false" />
+    <Property Type="String" Name="tipo_firma" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="estado_firma" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="revisa_firma" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="rut_solic" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_solic" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fecha_firma" Nullable="true" Precision="23" />
+    <Property Type="String" Name="avisado" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="nombre_firma" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="estaba" Nullable="false" />
+    <Property Type="String" Name="avis_antes" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_trae_detfile_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="sesion" Nullable="false" />
+    <Property Type="Int32" Name="secuencia" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="nombre_casilla" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="nombre_tipo" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="prioridad" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="fecha_ingr" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_ingr" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="cod_banco_em" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_em" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="cod_banco_rec" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="branch_rec" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="nombre_banco" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="ciudad_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="pais_banco" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="oficina_banco" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cod_moneda" Nullable="true" MaxLength="3" />
+    <Property Type="Double" Name="monto" Nullable="true" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="beneficiario" Nullable="true" MaxLength="37" />
+    <Property Type="DateTime" Name="fecha_creacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="fecha_envio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_envio" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="fecha_rech" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="hora_rech" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="texto_rechazo" Nullable="true" MaxLength="90" />
+  </ComplexType>
+  <ComplexType Name="proc_sw_env_msg_por_rut_MS_Result">
+    <Property Type="Int32" Name="id_mensaje" Nullable="false" />
+    <Property Type="Int32" Name="casilla" Nullable="false" />
+    <Property Type="String" Name="tipo_msg" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="referencia" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="tipo_ingreso" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="estado_msg" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="30" />
+  </ComplexType>
+</Schema>

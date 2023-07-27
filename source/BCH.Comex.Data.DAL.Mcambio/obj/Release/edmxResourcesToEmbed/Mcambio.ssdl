@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="McambioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'mcambio.dbo.tbl_chilefx_deal_sce' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tbl_chilefx_deal_sce">
+    <Key>
+      <PropertyRef Name="id_chilefx" />
+      <PropertyRef Name="mto_chilefx" />
+      <PropertyRef Name="fecha_hora_registro" />
+      <PropertyRef Name="fecha_registro" />
+      <PropertyRef Name="codigo_contable" />
+      <PropertyRef Name="rut_cliente" />
+    </Key>
+    <Property Name="id_chilefx" Type="bigint" Nullable="false" />
+    <Property Name="id_sce" Type="nvarchar" MaxLength="19" />
+    <Property Name="mto_chilefx" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="mto_sce" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="fecha_hora_registro" Type="datetime" Nullable="false" />
+    <Property Name="fecha_registro" Type="date" Nullable="false" />
+    <Property Name="codigo_contable" Type="int" Nullable="false" />
+    <Property Name="rut_cliente" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="glosa_error" Type="nvarchar(max)" />
+    <Property Name="exepcionado" Type="bit" />
+    <Property Name="vb_jefatura" Type="bit" />
+    <Property Name="codcom" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <Function Name="CambioDeEstadoCFXT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="varchar" Mode="In" />
+    <Parameter Name="gb_folio" Type="int" Mode="In" />
+    <Parameter Name="gb_estado" Type="char" Mode="In" />
+    <Parameter Name="gb_cod_estado_contable" Type="int" Mode="In" />
+    <Parameter Name="gb_canal" Type="varchar" Mode="In" />
+    <Parameter Name="gb_responsable" Type="varchar" Mode="In" />
+    <Parameter Name="ls_ejecucion" Type="bit" Mode="InOut" />
+    <Parameter Name="ls_codret" Type="char" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="ConsultaDealsDisponible" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rutCliente" Type="varchar" Mode="In" />
+    <Parameter Name="tipoTransaccion" Type="char" Mode="In" />
+    <Parameter Name="ls_codret" Type="varchar" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="CrearDealChileFxTesoreria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_rutCliente" Type="varchar" Mode="In" />
+    <Parameter Name="p_nombreCliente" Type="varchar" Mode="In" />
+    <Parameter Name="p_parMoneda1" Type="char" Mode="In" />
+    <Parameter Name="p_parMoneda2" Type="char" Mode="In" />
+    <Parameter Name="p_precioCliente" Type="float" Mode="In" />
+    <Parameter Name="p_fechaValuta" Type="datetime" Mode="In" />
+    <Parameter Name="p_codBcoCentral" Type="int" Mode="In" />
+    <Parameter Name="p_monto_me" Type="float" Mode="In" />
+    <Parameter Name="p_fechaTransaccion" Type="datetime" Mode="In" />
+    <Parameter Name="p_tipoCambioPizarra" Type="float" Mode="In" />
+    <Parameter Name="p_tipoTransaccion" Type="char" Mode="In" />
+    <Parameter Name="p_identificadorConsulta" Type="varchar" Mode="In" />
+    <Parameter Name="ls_folio" Type="int" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+    <Parameter Name="ls_codret" Type="char" Mode="InOut" />
+  </Function>
+  <Function Name="IncorporacionNumeroOperacionSCE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rutCliente" Type="char" Mode="In" />
+    <Parameter Name="numeroDealChileFX" Type="int" Mode="In" />
+    <Parameter Name="numeroOperacionSCE" Type="nvarchar" Mode="In" />
+    <Parameter Name="montoSCE" Type="numeric" Mode="In" />
+    <Parameter Name="montoChileFX" Type="numeric" Mode="In" />
+    <Parameter Name="codigoEstadoContable" Type="int" Mode="In" />
+    <Parameter Name="glosaError" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="exepcionado" Type="bit" Mode="In" />
+    <Parameter Name="vbJefatura" Type="bit" Mode="In" />
+    <Parameter Name="ls_codret" Type="varchar" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="pro_cvd_ni_consulta_precios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gb_fecha" Type="datetime" Mode="In" />
+    <Parameter Name="gb_compra_venta" Type="char" Mode="In" />
+    <Parameter Name="gb_moneda1" Type="varchar" Mode="In" />
+    <Parameter Name="gb_moneda2" Type="varchar" Mode="In" />
+    <Parameter Name="gb_monto_cliente" Type="decimal" Mode="In" />
+    <Parameter Name="gb_rut_cliente" Type="int" Mode="In" />
+    <Parameter Name="gb_canal" Type="char" Mode="In" />
+    <Parameter Name="gb_valor_spread" Type="decimal" Mode="In" />
+    <Parameter Name="ls_codret" Type="char" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="pro_cvd_ni_consulta_precios2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gb_fecha" Type="datetime" Mode="In" />
+    <Parameter Name="gb_compra_venta" Type="char" Mode="In" />
+    <Parameter Name="gb_moneda1" Type="varchar" Mode="In" />
+    <Parameter Name="gb_moneda2" Type="varchar" Mode="In" />
+    <Parameter Name="gb_monto_cliente" Type="decimal" Mode="In" />
+    <Parameter Name="gb_rut_cliente" Type="int" Mode="In" />
+    <Parameter Name="gb_canal" Type="char" Mode="In" />
+    <Parameter Name="gb_segmento" Type="varchar" Mode="In" />
+    <Parameter Name="gb_valuta" Type="datetime" Mode="In" />
+    <Parameter Name="ls_codret" Type="char" Mode="InOut" />
+    <Parameter Name="ls_msgret" Type="varchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="McambioModelStoreContainer">
+    <EntitySet Name="tbl_chilefx_deal_sce" EntityType="Self.tbl_chilefx_deal_sce" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_chilefx_deal_sce].[id_chilefx] AS [id_chilefx], 
+    [tbl_chilefx_deal_sce].[id_sce] AS [id_sce], 
+    [tbl_chilefx_deal_sce].[mto_chilefx] AS [mto_chilefx], 
+    [tbl_chilefx_deal_sce].[mto_sce] AS [mto_sce], 
+    [tbl_chilefx_deal_sce].[fecha_hora_registro] AS [fecha_hora_registro], 
+    [tbl_chilefx_deal_sce].[fecha_registro] AS [fecha_registro], 
+    [tbl_chilefx_deal_sce].[codigo_contable] AS [codigo_contable], 
+    [tbl_chilefx_deal_sce].[rut_cliente] AS [rut_cliente], 
+    [tbl_chilefx_deal_sce].[glosa_error] AS [glosa_error], 
+    [tbl_chilefx_deal_sce].[exepcionado] AS [exepcionado], 
+    [tbl_chilefx_deal_sce].[vb_jefatura] AS [vb_jefatura], 
+    [tbl_chilefx_deal_sce].[codcom] AS [codcom]
+    FROM [dbo].[tbl_chilefx_deal_sce] AS [tbl_chilefx_deal_sce]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

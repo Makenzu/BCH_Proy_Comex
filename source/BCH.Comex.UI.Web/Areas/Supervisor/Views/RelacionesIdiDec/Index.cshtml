@@ -1,0 +1,85 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.RelacionesIdiDecViewModel
+
+@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/Supervisor/RelacionesIdiDec")    
+    <script>
+        var urlHome = '@Url.Action("Index", "Inicio")';
+        var urlEliminar = '@Url.Action("EliminarRelacionesIdiDec")';
+        var urlBuscar = '@Url.Action("BuscarRelacionesIdiDec")';
+    </script>
+}
+
+@section css{
+
+    <style>
+        .btn-toolbar {
+            margin-right: 10px;
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="row margin-bottom-triple">
+        <h2>Mantención de Relaciones IDI-DEC</h2>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Operación</h2>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Buscar", "RelacionesIdiDec", System.Web.Mvc.FormMethod.Get, new { id = "formFiltros", @class = "form-horizontal" }))
+                {
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-5">
+                            <div class="input-group" id="grpNroOperacion">
+                                @Html.TextBox("nroOp", Model.codcct, new { id = "codcct", @class = "form-control", placeholder = "Uni",  maxlength = "3", tabindex = "1", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codpro, new { id = "codpro", @class = "form-control", placeholder = "Prod", maxlength = "2", tabindex = "2", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codesp, new { id = "codesp", @class = "form-control", placeholder = "Esp",  maxlength = "2", tabindex = "3", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codofi, new { id = "codofi", @class = "form-control", placeholder = "Ofi",  maxlength = "3", tabindex = "4", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codope, new { id = "codope", @class = "form-control", placeholder = "Ope",  maxlength = "5", tabindex = "5", data_inputmask = "'mask': '9','repeat': 5, 'greedy' : false" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-1">
+                            <button type="button" id="btnBuscar" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" id="btnCancelar" class="btn btn-default">&nbsp;&nbsp;Cancelar</button>
+                        </div>
+                        <div class="col-xs-offset-1 col-xs-2">
+                            <button type="button" id="btnEliminar" class="btn btn-danger" disabled><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;&nbsp;Eliminar</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="panel panel-default" id="pnlTablaDEC">
+            <div class="panel-heading">
+                <h2 class="panel-title">Declaraciones&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeDeclaraciones">0</span></h2>
+            </div>
+            <div class="panel-body">
+               <div class="table-responsive">
+                    <table id="tablaDEC"></table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default" id="pnlTablaIDI">
+            <div class="panel-heading">
+                <h2 class="panel-title">IDIs&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeIDIs">0</span></h2>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="tablaIDI"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.CambioClaveViewModel
+@{
+    ViewBag.Title = "Supervisor";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+<h2>Cambio de Clave Supervisor</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmCamCl", name = "FrmCamCl" }))
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Clave</label>
+                            <br />
+                            @Html.TextBoxFor(model => model.claveActual, htmlAttributes: new { @class = "form-control input-sm", type = "password" })
+                            @Html.ValidationMessageFor(model => model.claveActual)
+                        </div>
+
+                        <div class="col-xs-2">
+                            <label>Nueva Clave</label>
+                            <br />
+                            @Html.TextBoxFor(model => model.nuevaClave, htmlAttributes: new { @class = "form-control input-sm", type = "password" })
+                            @Html.ValidationMessageFor(model => model.nuevaClave)
+                        </div>
+
+                        <div class="col-xs-2">
+                            <label>Confirmar Clave</label>
+                            <br />
+                            @Html.TextBoxFor(model => model.nuevaClaveComp, htmlAttributes: new { @class = "form-control input-sm", type = "password" })
+                            @Html.ValidationMessageFor(model => model.nuevaClaveComp)
+                        </div>
+
+
+                        <div class="col-xs-6" style="margin-top:25px;">
+                            <input type="submit" name="Command" id="btnAceptar" value="Aceptar" class="btn btn-primary" />
+                            <input type="button" name="Command" id="btnCancelar" value="Cancelar" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/Supervisor/CambioClave")
+}

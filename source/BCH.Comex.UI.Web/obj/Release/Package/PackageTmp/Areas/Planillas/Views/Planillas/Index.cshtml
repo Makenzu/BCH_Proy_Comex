@@ -1,0 +1,648 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ListadoPlanillasViewModel
+@{
+    ViewBag.Title = "AdministradorPlanillas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+
+    var AccionBotonVisualizar = Model != null && !string.IsNullOrEmpty(Model.NombreAccionVisualizar) ? Model.NombreAccionVisualizar : "";
+    var AccionBotonImprimir = Model != null && !string.IsNullOrEmpty(Model.NombreAccionImprimir) ? Model.NombreAccionImprimir : "";
+    var AccionesPresentes = AccionBotonVisualizar != "";
+
+    var urlAccionImprimir = Url.Action(AccionBotonImprimir, "Planillas", new { area = "Impresion" });
+    BCH.Comex.UI.Web.Areas.Planillas.Models.ListadoPlanillasViewModel linkModel = null;
+    if (Model != null)
+    {
+        linkModel = new BCH.Comex.UI.Web.Areas.Planillas.Models.ListadoPlanillasViewModel()
+        {
+            CentroCosto = Model.CentroCosto,
+            CodigoUsuario = Model.CodigoUsuario,
+            FechaIngreso = Model.FechaIngreso
+        };
+    }
+}
+@using BCH.Comex.UI.Web.Helpers
+<h1>Administrador de Planillas</h1>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planillas <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Visibles", "ListadoPlanillasVisiblesExportacion", "Planillas", linkModel, new { @class = "link-opcionesPln" })</li>
+                        <li>@Html.ActionLink("Invisibles", "ListadoPlanillasInvisibles", "Planillas", linkModel, new { @class = "link-opcionesPln" })</li>
+                        <li>@Html.ActionLink("Anuladas", "ListadoPlanillasAnuladas", "Planillas", linkModel, new { @class = "link-opcionesPln" })</li>
+                        <li>@Html.ActionLink("Importación", "ListadoPlanillasVisiblesImportacion", "Planillas", linkModel, new { @class = "link-opcionesPln" })</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportes <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Planillas Generadas Usuario (Esp)", "GeneradasUsuarios", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li>@Html.ActionLink("Planillas v/s Conversión Usuario (Esp)", "PlanillasVsConversionUsuarios", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li role="separator" class="divider"></li>
+                        <li>@Html.ActionLink("Planillas Generadas Sección (Sup)", "GeneradasSeccion", "Reportes", linkModel, new { @class = "link-opciones", id = "planillasGeneradasSeccion" })</li>
+                        <li><a href="#">Carta Consolidada Sección (Sup)</a></li>
+                        <li>@Html.ActionLink("Informe Posición de Cambios (Sup)", "InformePosicionCambio", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li role="separator" class="divider"></li>
+                        <li>@Html.ActionLink("Movimientos Ctas. Ctes. (U.Control)", "BuscarMovimientosCuentaCorriente", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li><a href="#" class="link-options" id="aMovimientosDeCanje" data-url="@Url.Action("MovimientosDeCanje", "Reportes")">Movimientos de Canje. (U.Control)</a></li>
+                        <li>@Html.ActionLink("Movimiento Ctas. Contables - Por Número de Cuenta", "BuscarMovimientosCuentaContables", "Reportes", new { mode = BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode.NumeroCuenta, linkModel }, new { @class = "link-opciones" })</li>
+                        <li>@Html.ActionLink("Movimiento Ctas. Contables - Por Nemónico de Cuenta", "BuscarMovimientosCuentaContables", "Reportes", new { mode = BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode.NemonicoCuenta, linkModel }, new { @class = "link-opciones" })</li>
+                        <li role="separator" class="divider"></li>
+                        <li>@Html.ActionLink("Carta de Dec. Banco Central", "ActualizacionPlanillas", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li>@Html.ActionLink("Referencias BAE-BCH", "ReferenciasBAEBCH", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                        <li>@Html.ActionLink("Listado de Mov. Corresponsales", "MovimientosCorresponsales", "Reportes", linkModel, new { @class = "link-opciones" })</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form form-inline", id = "form-opciones", role = "form" }))
+{
+    <input type="hidden" value="@ViewBag.TipoPlanilla" name="TipoPlanilla" />
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar Principal">
+                    <div class="btn-group" role="group" aria-label="Grupo Planillas">
+                        @Html.ActionLink("Visibles", "ListadoPlanillasVisiblesExportacion", "Planillas", linkModel, new { @class = "btn btn-default link-opcionesPln" })
+                        @Html.ActionLink("Invisibles", "ListadoPlanillasInvisibles", "Planillas", linkModel, new { @class = "btn btn-default link-opcionesPln" })
+                        @Html.ActionLink("Anuladas", "ListadoPlanillasAnuladas", "Planillas", linkModel, new { @class = "btn btn-default link-opcionesPln" })
+                    </div>
+                    <div class="btn-group" role="toolbar" aria-label="">
+                        @Html.ActionLink("Importación", "ListadoPlanillasVisiblesImportacion", "Planillas", linkModel, new { @class = "btn btn-default link-opcionesPln" })
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Grupo Imprimir">
+                        <a class="btn btn-default" href="@Url.Action("ImpresionDeDocumentos", "Reportes")"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6" align="right">
+                <div class="row" style="width:600px">
+                    <div class="col-xs-2">
+                        <label for="centroCosto">Especialista</label>
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(m => m.CentroCosto, new { htmlAttributes = new { @class = "form-control", size = 3, maxlength = 3, data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(m => m.CodigoUsuario, new { htmlAttributes = new { @class = "form-control", size = 2, maxlength = 2, data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                    </div>
+                    <div class="col-xs-2">
+                        <a tabindex="0" class="btn btn-default align-btn-fix" id="buscarUsuario"><span class="glyphicon glyphicon-ok"></span> Buscar</a>
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre usuario" readonly value="@(Model != null ? Model.NombreUsuario : "")">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="container-fluid">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 id="tituloPlanilla">@(Model != null ? Model.Titulo : "")</h4>
+                    </div>
+
+                    <div class="panel-body" style="padding-top: 0px; margin: 15px; margin-top: 0px;">
+                        <div id="alertPlaceholder"></div>
+                        <!-- #region TablaDatos -->
+                        <div class="row">
+                            <table id="tabla-listado-planillas" class="table table-bordered" data-toggle="table" data-height="400" data-search="true">
+
+                                <thead>
+                                    <tr>
+                                        <th>Planilla</th>
+                                        <th>Operación</th>
+                                        <th>Usuario</th>
+                                        <th>Fecha</th>
+                                        <th>Moneda</th>
+                                        <th>Monto CIF</th>
+                                        <th>Planilla</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Detalle != null)
+                                    {
+                                        foreach (var item in Model.Detalle)
+                                        {
+                                            var urlImprimir = urlAccionImprimir + "?" + Url.RouteUrl(new RouteValueDictionary(item.QueryString)).Split('?')[1];
+                                            <tr data-fecha="@item.FechaPresentacion.ToString("yyyy-MM-dd")"
+                                                data-numero-presentacion="@item.Presentacion"
+                                                data-accion="@Url.Action(AccionBotonVisualizar, "Planilla", item.QueryString)"
+                                                data-accion-imprimir="@urlImprimir"
+                                                data-NroOperacion="@item.Operacion"
+                                                data-TipoDoc="@item.Tipo"
+                                                data-QueryString="@item.QueryString"
+                                                data-jsonQuery="@Html.Raw(Json.Encode(@item.QueryString));">
+                                                <td>@item.Presentacion</td>
+                                                <td class="planilla-operacion">@item.Operacion</td>
+                                                <td>@item.CodigoUsuario</td>
+                                                <td class="planilla-fecha-operacion">@item.FechaPresentacionString</td>
+                                                <td>@item.MonedaString</td>
+                                                <td class="text-right">@item.MontoCIF</td>
+                                                <td>@item.Planilla</td>
+                                                <td>@item.EstadoString</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- #endregion -->
+                    </div>
+
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="container">
+                                    <div class="col-xs-4" id="grpFechaHasta">
+                                        <label for="FechaIngreso">Fecha de Ingreso</label>
+                                        <div class="input-group date" id="dtpFechaIngreso">
+                                            <input type="text" class="form-control" id="txtFechaIngreso" name="FechaIngreso" data-inputmask="'alias': 'date'" value="@(Model != null && Model.FechaIngreso != null ? Model.FechaIngreso : DateTime.Now)" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <label class="control-label has-error" style="display:none" id="lblErrorFechaIngreso"></label>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label for="numeroCopias">Número copias</label>
+                                        <input type="number" class="form-control" id="numeroCopias" oninput="Largo(this)" onkeypress="return isNumeric(event)" size="3" value="1" min="0" max="999" maxlength="3" data-inputmask="'mask': '9','repeat': 3, 'greedy' : false">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="pull-right">
+                                    <a href="@Url.Action("EliminarPlanilla", "Planillas")" class="btn btn-default btn-danger disabled" id="btnEliminar">Eliminar</a>
+                                    <a class="btn btn-default disabled" data-toggle=" modal" id="btnVisualizar">Visualizar</a>
+                                    <a href="@Url.Action("ImprimirPlanillaSeleccionada", "Planilla")" class="btn btn-default" id="btnImprimir" target="_blank">Imprimir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+}
+
+@section css {
+    <style type="text/css">
+        .align-btn-fix {
+            margin-bottom: 0;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #B6D8FF;
+            color: #fff;
+        }
+    </style>
+
+}
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    <script type="text/javascript">
+                var centroCosto = @int.Parse(ViewBag.UsuarioEspecialista.CentroCosto);
+                var linkModel = @Html.Raw(Json.Encode(linkModel));
+                var urlVerMultiples = '@Url.Action("Multiple", "Imprimir", new { area = "Impresion" })';
+                var selectedRows;
+                var ConfigImpres_PrintFormat = '@HttpContext.Current.GetCurrentUser().GetDatosUsuario().ConfigImpres_PrintFormat.ToString()';
+
+                function Largo(object) {
+                    if (object.value.length > object.maxLength)
+                        object.value = object.value.slice(0, object.maxLength)
+                }
+
+                function isNumeric(evt) {
+                    var theEvent = evt || window.event;
+                    var key = theEvent.keyCode || theEvent.which;
+                    key = String.fromCharCode(key);
+                    var regex = /[0-9]|\./;
+                    if (!regex.test(key)) {
+                        theEvent.returnValue = false;
+                        if (theEvent.preventDefault) theEvent.preventDefault();
+                    }
+                }
+
+                function limpiaTabla() {
+                    $('#nombreUsuario').val('');
+                    $('#tituloPlanilla').html('');
+                    $('#tabla-listado-planillas > tbody tr').remove();
+                    $('#tabla-listado-planillas > tbody').append(' <tr><td colspan="8">Sin resultados para mostrar</td></tr>');
+                }
+
+                function refrescarOpcionesEnFilas(table) {
+                    var accionesPresentes = @(AccionesPresentes ? "true" : "false");
+                    $('#btnVisualizar').removeAttr('href');
+                    if (!accionesPresentes || table.getSelections().length == 0) {
+                        selectedRows = [];
+                        $('#btnVisualizar').addClass('disabled');
+                        $('#btnImprimir').addClass('disabled');
+                        $('#btnEliminar').addClass('disabled');
+                        $('#btnLimpiarSeleccionados').addClass('disabled');
+                    }
+                    else if (table.getSelections().length == 1)
+                    {
+                        selectedRows = table.getSelections();
+                        var row = selectedRows[0];
+                        if (table.isSelected(row))
+                        {
+                            var operacion = $(row).attr('data-numero-presentacion');
+                            var accion = $(row).attr('data-accion');
+                            if (typeof operacion !== 'undefined')
+                            {
+                                $('#btnVisualizar').removeClass('disabled');
+                                $('#btnEliminar').removeClass('disabled');
+                                $('#btnImprimir').removeClass('disabled');
+                                $('#btnLimpiarSeleccionados').removeClass('disabled');
+                            }
+                        }
+                    }
+                    else if (table.getSelections().length > 1) {
+                        selectedRows = table.getSelections();
+                        $('#btnVisualizar').removeClass('disabled');
+                        $('#btnImprimir').removeClass('disabled');
+                        $('#btnEliminar').addClass('disabled');
+                        $('#btnLimpiarSeleccionados').removeClass('disabled');
+                    }
+                    else
+                    {
+                        selectedRows = [];
+                        $('#btnVisualizar').addClass('disabled');
+                        $('#btnImprimir').removeClass('disabled');
+                        $('#btnEliminar').addClass('disabled');
+                        $('#btnLimpiarSeleccionados').addClass('disabled');
+                    }
+                }
+
+                $(document).ready(function () {
+                    @ViewBag.UsuarioEspecialista.Jerarquia;
+                    @if (ViewBag.UsuarioEspecialista.Jerarquia != 1){
+                        @: $('#btnEliminar').hide();
+                                }
+                    $('#buscarUsuario').click(function (evt) {
+                        evt.preventDefault();
+                        limpiaTabla();
+                        $.getJSON('@Url.Action("ObtenerUsuarioJSON", "Planillas")', {
+                            'CentroCosto': $('#CentroCosto').val(),
+                            'CodigoUsuario': $('#CodigoUsuario').val()
+                        }).done(function (data) {
+                            $('#nombreUsuario').val(data.nombre);
+                        });
+                    });
+
+                    var dateNow = moment().startOf("day").utc();
+                    $('#dtpFechaIngreso').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, debug: true });
+
+                    var tablePlanillas = $('#tabla-listado-planillas').tableSelectMany();
+                    $(document).bind('rowchange', function (event, table) {
+                        if (tablePlanillas == table) {
+                            refrescarOpcionesEnFilas(table);
+                        }
+                    });
+
+                    $('#tabla-listado-planillas').bootstrapTable();
+                    // al utilizar el buscador de bootstrap table se perdia la instancia de jquery.table-select.js
+                    $('#tabla-listado-planillas').on('search.bs.table', function () {
+                        // cuando buscamos, reiniciamos la instancia.
+                        tablePlanillas = $('#tabla-listado-planillas').tableSelectMany();
+                        $('#tabla-listado-planillas tr').dblclick(function () {
+                            var accion = $(this).attr('data-accion');
+                            if (accion != undefined) {
+                                window.open(
+                                    accion,
+                                    '_blank'
+                                );
+                            }
+                        });
+                    });
+
+                    var updateQueryStringParameter = function (uri, key, value) {
+                        var re = new RegExp("([?|&])" + key + "=.*?(&|#|$)", "i");
+                        if (uri.match(re)) {
+                            return uri.replace(re, '$1' + key + "=" + value + '$2');
+                        } else {
+                            var hash =  '';
+                            if( uri.indexOf('#') !== -1 ){
+                                hash = uri.replace(/.*#/, '#');
+                                uri = uri.replace(/#.*/, '');
+                            }
+                            var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                            return uri + separator + key + "=" + value + hash;
+                        }
+                    }
+
+                    $('#tabla-listado-planillas tr').dblclick(function(){
+                        var accion = $(this).attr('data-accion');
+                        if (accion != undefined)
+                        {
+                            window.open(
+                                accion,
+                                '_blank'
+                            );
+                        }
+                    });
+
+                    $('.link-opcionesPln').on('click', function(e) {
+                        var opciones = {
+                            'FechaIngreso': $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'),
+                            'CentroCosto': $('#CentroCosto').val(),
+                            'CodigoUsuario': $('#CodigoUsuario').val()
+                        };
+                        var qs = decodeURIComponent($.param(opciones, true));
+                        var a = $(this)[0];
+                        var url = a.href + '?' + qs;
+                        url = updateQueryStringParameter(url, "FechaIngreso", $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'));
+                        url = updateQueryStringParameter(url, "CentroCosto", $('#CentroCosto').val());
+                        url = updateQueryStringParameter(url, "CodigoUsuario", $('#CodigoUsuario').val());
+                        e.preventDefault();
+                        location.href = url;
+                    })
+
+                    $('.link-opciones').on('click', function(e) {
+                        var opciones = {
+                            'FechaIngreso': $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'),
+                            'CentroCosto': $('#CentroCosto').val(),
+                            'CodigoUsuario': $('#CodigoUsuario').val()
+                        };
+                        var qs = decodeURIComponent($.param(opciones, true));
+                        var a = $(this)[0];
+                        var url = a.href + '?' + qs;
+                        url = updateQueryStringParameter(url, "FechaIngreso", $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'));
+                        url = updateQueryStringParameter(url, "CentroCosto", $('#CentroCosto').val());
+                        url = updateQueryStringParameter(url, "CodigoUsuario", $('#CodigoUsuario').val());
+
+                        e.preventDefault();
+                        window.open(url, '_blank');
+
+                    })
+
+                    $('#btnEliminar').on('click', function (e) {
+                        e.preventDefault();
+                        var planillas = $('#tabla-listado-planillas').bootstrapTable('getData');
+                        var row = tablePlanillas.getSelections()[0];
+
+                        var nroPresentacion = $(row).attr('data-numero-presentacion');
+                        var fechaPresentacion = $(row).attr('data-fecha');
+                        var tipo = $('input[name="TipoPlanilla"]').val();
+
+                        if (confirm("Está seguro que desea eliminar la planilla " + nroPresentacion))
+                        {
+                            $.ajax({
+                                url: $(this).attr('href'),
+                                method: 'POST',
+                                data: {
+                                    Presentacion: nroPresentacion,
+                                    FechaPresentacion: fechaPresentacion,
+                                    Tipo: tipo
+                                },
+                                success: function (result) {
+                                    row.click();
+                                    $(row).remove();
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+
+                                }
+                            });
+                        }
+                    });
+
+                    // abre en una nueva ventana/tab (dependiendo del navegador) las planillas seleccionadas
+                    $('#btnVisualizar').click(function () {
+                        selectedRows = (selectedRows).sort(OrdenarMenorAMayor);
+
+                        for (var i = 0; i < selectedRows.length; i++) {
+                            window.open(
+                                selectedRows[i].dataset.accion,
+                                '_blank'
+                            )
+                        }
+                    });
+
+                    $('#btnImprimir').on('click', function(e) {
+                        e.preventDefault();
+                        var selections = tablePlanillas.getSelections();
+
+                        if (selections.length === 0 || selections.length == 0) {
+                            return false;
+                        }
+                        else
+                        {
+                            var request = []
+                            var filename = "EMPTY";
+
+                            if(selections.length > 1)
+                                filename = "Multiple";
+
+                            for (i = 0; i < selections.length; ++i) {
+                                var item = selections[i];
+                                request[request.length] = ObtenerRequestRowDeTabla(item);
+                                if (filename == "EMPTY")
+                                    filename = item.dataset['nrooperacion'].replace(/-/g, '');
+                                else if (filename != item.dataset['nrooperacion'])
+                                    filename = "";
+                            }
+
+                            if (ConfigImpres_PrintFormat == 'HTML') {
+                                for (var i = 0; i < request.length; i++) {
+                                    var urlPlanilla = "";
+                                    var queryString = "?";
+                                    switch (request[i].type) {
+                                        case "PlanillaAnulada":
+                                            urlPlanilla =  "@Url.Action("ImprimirPlanillaAnulada", "Planillas", new { area = "Impresion" })";
+                                            queryString += "numeroPresentacion=" + request[i].planillaAnulada.nroPresentacion + "&fechaPresentacion=" + request[i].planillaAnulada.fechaPresentacion + "";
+                                            break;
+                                        case "PlanillaInvisibleExportacion":
+                                            urlPlanilla =  "@Url.Action("ImprimirPlanillaInvisibleExportacion", "Planillas", new { area = "Impresion" })";
+                                            queryString += "numeroPresentacion=" + request[i].planillaInvisibleExportacion.nroPresentacion + "&fechaPresentacion=" + request[i].planillaInvisibleExportacion.fechaPresentacion + "";
+                                            break;
+                                        case "PlanillaReemplazos":
+                                            urlPlanilla =  "@Url.Action("ImprimirPlanillaReemplazos", "Planillas", new { area = "Impresion" })";
+                                            queryString += "codigoCentroCosto=" + request[i].planillaReemplazos.centroCosto +
+                                                "&codigoProducto=" + request[i].planillaReemplazos.producto +
+                                                "&codigoEspecialista=" + request[i].planillaReemplazos.especialista +
+                                                "&codigoEmpresa=" + request[i].planillaReemplazos.empresa +
+                                                "&codigoCobranza=" + request[i].planillaReemplazos.cobranza +
+                                                "&numeroPlanilla=" + request[i].planillaReemplazos.nroPresentacion +
+                                                "&fechaVenta=" + request[i].planillaReemplazos.fechaPresentacion;
+                                            break;
+                                        case "PlanillaVisibleExportacion":
+                                            urlPlanilla =  "@Url.Action("ImprimirPlanillaVisibleExportacion", "Planillas", new { area = "Impresion" })";
+                                            queryString += "numeroPresentacion=" + request[i].planillaVisibleExportacion.nroPresentacion + "&fechaPresentacion=" + request[i].planillaVisibleExportacion.fechaPresentacion + "";
+                                            break;
+                                    }
+
+                                    window.open(
+                                        urlPlanilla + queryString,
+                                        '_blank'
+                                    );
+                                }
+                            } else {
+                                formPost(urlVerMultiples, request, filename);
+                            }
+                        }
+                    });
+
+                    var enterBuscar = function (e) {
+                        var key = e.which;
+                        if(key == 13)
+                        {
+                            $('#buscarUsuario').click();
+                            return false;
+                        }
+                    };
+
+                    $('#CentroCosto').keypress(enterBuscar);
+                    $('#CodigoUsuario').keypress(enterBuscar);
+                    $('#buscarUsuario').keypress(enterBuscar);
+
+                    $('#planillasGeneradasSeccion').off('click').on('click', function (e) {
+                        var opciones = {
+                            'FechaIngreso': $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'),
+                            'CentroCosto': $('#CentroCosto').val(),
+                            'CodigoUsuario': $('#CodigoUsuario').val()
+                        };
+                        var qs = decodeURIComponent($.param(opciones, true));
+                        var a = $(this)[0];
+                        var url = a.href + '?' + qs;
+                        url = updateQueryStringParameter(url, "FechaIngreso", $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD'));
+                        url = updateQueryStringParameter(url, "CentroCosto", $('#CentroCosto').val());
+                        url = updateQueryStringParameter(url, "CodigoUsuario", $('#CodigoUsuario').val());
+
+                        e.preventDefault();
+                        window.open(url, '_blank');
+                    });
+
+                    $(window).resize(function () {
+                        $('#tabla-listado-planillas').bootstrapTable('resetView');
+                    });
+
+                    $(":input").inputmask();
+
+                    $('#aMovimientosDeCanje').on('click', function (e) {
+                        e.preventDefault();
+                        if (centroCosto != 826) {
+                            showAlert('Movimientos de canje', 'Esta opción no puede ser utilizada para este centro de costo', 'alert-danger', true, 'alertPlaceholder');
+                        } else {
+                            window.open($(this).data("url"));
+                        }
+                    });
+
+                    var htmlLimpiarSeleccionados = '<div class="pull-left search">' +
+                        '<a class="btn btn-default disabled" id="btnLimpiarSeleccionados">Limpiar Seleccionados</a>' +
+                        '</div >';
+                    $('.fixed-table-toolbar').append(htmlLimpiarSeleccionados);
+
+                    // deselecciona los rows seleccionados
+                    $('#btnLimpiarSeleccionados').click(function () {
+                        tablePlanillas.clearSelections();
+                        selectedRows = [];
+                        $('#btnLimpiarSeleccionados').addClass("disabled");
+                        $('#btnVisualizar').addClass("disabled");
+                        $('#btnEliminar').addClass("disabled");
+                        $('#btnImprimir').addClass("disabled");
+                    });
+                });
+
+                function ObtenerRequestRowDeTabla(row) {
+                    var tipoDoc = @ViewBag.TipoPlanilla;
+                    var result = {};
+
+                    if (tipoDoc == 2) {
+                        result.type = "PlanillaAnulada";
+                        result.planillaAnulada = GetParamsParaPlanillaAnulada(row);
+                    }
+                    else if (tipoDoc == 1) {
+                        result.type = "PlanillaInvisibleExportacion"
+                        result.planillaInvisibleExportacion = GetParamsParaPlanillaInvisibleExportacion(row);
+                    }
+                    else if (tipoDoc == 3) {
+                        result.type = "PlanillaReemplazos";
+                        result.planillaReemplazos = GetParamsParaPlanillaReemplazos(row);
+                    }
+                    else if (tipoDoc == 0) {
+                        result.type = "PlanillaVisibleExportacion";
+                        result.planillaVisibleExportacion = GetParamsParaPlanillaVisibleExportacion(row);
+                    }
+                    return result;
+                }
+
+                function GetParamsParaPlanillaAnulada(row) {
+                    var nroOperacion = row.dataset['nrooperacion'].replace(/-/g, '');
+                    return {
+                        nroPresentacion: row.dataset['numeroPresentacion'],
+                        fechaPresentacion: row.dataset['fecha'] };
+                }
+
+                function GetParamsParaPlanillaInvisibleExportacion(row) {
+                    var nroOperacion = row.dataset['nrooperacion'].replace(/-/g, '');
+                    return {
+                        nroPresentacion: row.dataset['numeroPresentacion'],
+                        fechaPresentacion: row.dataset['fecha'] };
+                }
+
+                function GetParamsParaPlanillaReemplazos(row) {
+                    var nroOperacion = row.dataset['nrooperacion'].split("-");
+                    var QueryString = row.dataset['querystring'].split(",");
+                    return {
+                        centroCosto: nroOperacion[0],
+                        producto: nroOperacion[1],
+                        especialista: nroOperacion[2],
+                        empresa : QueryString[3].trim().replace(/=/g, ":").split(":")[1].trim(),
+                        cobranza: QueryString[4].trim().replace(/=/g, ":").split(":")[1].trim(),
+                        nroPresentacion: row.dataset['numeroPresentacion'],
+                        fechaPresentacion: row.dataset['fecha'] };
+                }
+
+                function GetParamsParaPlanillaVisibleExportacion(row) {
+                    var nroOperacion = row.dataset['nrooperacion'].replace(/-/g, '');
+                    return {
+                        nroPresentacion: row.dataset['numeroPresentacion'],
+                        fechaPresentacion: row.dataset['fecha'] };
+                }
+
+                function OrdenarMenorAMayor(x, y) {
+                    return ((x.dataset.numeroPresentacion == y.dataset.numeroPresentacion) ? 0 : ((x.dataset.numeroPresentacion > y.dataset.numeroPresentacion) ? 1 : -1));
+                }
+
+                function formPost(action, request, filename)
+                {
+                    var form = document.createElement("form");
+                    form.setAttribute("method", "post");
+                    form.setAttribute("action", action);
+                    form.setAttribute("target", "_blank");
+
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("name", "request");
+                    hiddenField.setAttribute("value", JSON.stringify(request));
+                    hiddenField.setAttribute("type", "hidden");
+                    form.appendChild(hiddenField);
+
+                    hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("name", "filename");
+                    hiddenField.setAttribute("value", filename);
+                    hiddenField.setAttribute("type", "hidden");
+                    form.appendChild(hiddenField);
+
+                    document.body.appendChild(form);
+                    form.submit();
+
+                    form.parentNode.removeChild(form);
+                }
+    </script>
+}

@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Datos Individuo";
+}
+@{ Html.RenderPartial("_MenuMain"); }
+
+<button type="button" id="BtnAceptar" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Aceptar</button>
+<button type="button" id="BtnCancelar" class="btn btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancelar</button>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Datos Individuo
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="rut">RUT</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="rut" disabled="disabled"/>
+                        </div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="ofeje">Oficina Ejecutivo</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="ofeje" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="eje">Ejecutivo</label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("Ejec1", ViewBag.Ejec1 as IEnumerable<SelectListItem>, "-- Ejecutivo --", new { @class = "form-control" })
+                            <!--<select class="form-control" id="eje"></select>-->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="acteco">Act. Aconómica</label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("acteco", ViewBag.acteco as IEnumerable<SelectListItem>, "-- Actividad Económica --", new { @class = "form-control" })
+                            <!--<select class="form-control" id="acteco"></select>-->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="clarie">Clase Riessgo</label>
+                        <div class="col-md-9">
+                            @Html.DropDownList("riesgo1", ViewBag.riesgo1 as IEnumerable<SelectListItem>, "-- Clase Riesgo --", new { @class = "form-control" })
+                            <!--<select class="form-control" id="clarie"></select>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="clasi">Clasificación</label>
+                        <div class="col-md-9">
+                            <select class="form-control" id="clasi">
+                                <option value="0">Agente</option>
+                                <option value="1">Asegurador</option>
+                                <option value="2">Banco</option>
+                                <option value="3">Cliente</option>
+                                <option value="4">Comisionista</option>
+                                <option value="5">Exportador</option>
+                                <option value="6">Importador</option>
+                                <option value="7">Transportista</option>
+                                <option value="8">Sin Clasificación</option>
+                                <option value="9" selected>--Clasificación--</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <div class="row">
+                    <label class="control-label col-md-5" for="tipocliente">Cliente Comex</label>
+                </div>
+                <div class="row">
+                    <input type="radio" id="tipocliente" class="col-md-3" name="tipocliente">
+                </div>
+                <div class="row">
+                    <label class="control-label col-md-5" for="tipocliente">Cliente Banco</label>
+                </div>
+                <div class="row">
+                    <input type="radio" id="tipocliente" class="col-md-3" name="tipocliente">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-0">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Especialista Comex que lo atiende
+                </div>
+                <div class="panel-body">
+                    <table style="width:100%" border="0">
+                        <tr>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">De Importación</td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"><select class="form-control" style="width:200px" id="CenCosImp"></select></td>
+                            <td align="center"><select class="form-control" style="width:300px" id="EspecImp"></select></td>
+                            <td align="center"><button type="button" id="IngImp" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></td>
+                            <td align="center"><button type="button" id="EliImp" class="btn btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+                            <td align="center"><input type="text" class="form-control" style="width:300px" id="txtImp" /></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">De Exportación</td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"><select class="form-control" style="width:200px" id="CenCosEx"></select></td>
+                            <td align="center"><select class="form-control" style="width:300px" id="EspecEx"></select></td>
+                            <td align="center"><button type="button" id="IngEx" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></td>
+                            <td align="center"><button type="button" id="EliEx" class="btn btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+                            <td align="center"><input type="text" class="form-control" style="width:300px" id="txtEx" /></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">De Negocios</td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"><select class="form-control" style="width:200px" id="CenCosNeg"></select></td>
+                            <td align="center"><select class="form-control" style="width:300px" id="EspecEx"></select></td>
+                            <td align="center"><button type="button" id="IngNeg" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></td>
+                            <td align="center"><button type="button" id="EliNeg" class="btn btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+                            <td align="center"><input type="text" class="form-control" style="width:300px" id="txtNe" /></td>
+                        </tr>
+
+                    </table>
+                </div>
+             </div>
+         </div>
+      </div>
+</div>
+
+
+

@@ -1,0 +1,117 @@
+﻿<div class="modal fade" id="modalRazonSocial" tabindex="-1" role="dialog" aria-labelledby="Razón Social">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Razones Sociales de Participantes</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="hidden" id="oldNombreRazonSocial" />
+                    <input type="hidden" id="estadoRazonSocial" />
+                    <div class="col-md-9">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-4 " for="nombreRazonSocial">Nombre o Razón Social</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="nombreRazonSocial" maxlength="60" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="nombreFantasia">Nombre de Fantasía</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="nombreFantasia" maxlength="40" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="contacto">Contacto</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="contacto" maxlength="40" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="sortKey">Sort Key</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="sortKey" maxlength="60" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="rutBanco">R.U.T. Banco</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="rutBanco" maxlength="16" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <button class="btn btn-primary btn-block" id="btnRSAceptar" style="width:100px">Aceptar</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-default btn-block" id="btnRSCancelar" style="width:100px">Cancelar</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-default link-opcionesPln" id="btnRSNuevo" style="width:100px; display:none">Nuevo</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-danger btn-block" id="btnRSEliminar" style="width:100px">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalRSEliminar" tabindex="-1" role="dialog" aria-labelledby="Eliminar Razón Social Participante">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Eliminar Razón Social Participante</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="textNombreRazonSocial">Nombre o Razón Social</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static" id="textNombreRazonSocial"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="textNombreFantasia">Nombre de Fantasía</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static" id="textNombreFantasia"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-warning" id="btnRSConfirmEliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalRSMensajeEliminar" tabindex="-1" role="dialog" aria-labelledby="Eliminar Razón Social Participante">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-warning" role="alert">
+                    <strong>¡Advertencia!</strong><br />
+                    La Razón Social ha sido marcada como eliminada.<br />
+                    Se borrará durante la noche.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+﻿<!-- INICIO MODIFICACION CNC - ACCENTURE -->
+@model BCH.Comex.UI.Web.Models.AdminParticipantes.ClasificacionClienteViewModel
+@{
+    ViewBag.Title = "Clasificación Cliente";
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+@{ Html.RenderPartial("_MenuMain"); }
+
+<div class="modal fade" id="divAceptaCambios">
+    <button class="btn btn-info" data-dismiss="modal" id="aceptar" aria-hidden="true">Aceptar</button>
+    <button class="btn btn-info" data-dismiss="modal" id="cancelar" aria-hidden="true">Cancelar</button>
+</div>
+
+<div class="container">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmClasificacionCliente", name = "frmClasificacionCliente", @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-md-7 col-md-offset-2">
+            <div class="efx-box">
+                <h3><strong>Clasificación de Participantes</strong></h3>
+                <hr />
+                <div class="form-body">
+                    <div class="row">
+                        <input type="hidden" id="ClasificacionCliente" />
+                        <div class="col-sm-10">
+                            <div>
+                                <label class="control-label col-xs-10 " style="margin-top: 5px; text-align: left" for="ClasiRiesgo">Clasificación de Riesgo</label>
+                                <div class="col-xs-10">
+                                    @Html.EditorFor(model => model.txClasiRiesgo, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="control-label col-xs-10" style="margin-top: 5px; text-align: left" for="ActividadEconomica">Actividad Económica</label>
+                                <div class="col-xs-10">
+                                    @Html.EditorFor(model => model.txActividadEconomica, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="control-label col-xs-10" style="margin-top: 5px; text-align: left" for="TipoEvaluRiesgo">Tipo Evaluación de Riesgo</label>
+                                <div class="col-xs-10">
+                                    @Html.EditorFor(model => model.txTipoEvaluRiesgo, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="control-label col-xs-10" style="margin-top: 5px; text-align: left" for="ComposicionInstitucional">Composición Institucional</label>
+                                <div class="col-xs-10">
+                                    @Html.EditorFor(model => model.txComposicionInstitucional, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="control-label col-xs-10" style="margin-top: 5px; text-align: left" for="TipoClienteNormativo">Tipo de Cliente Normativo</label>
+                                <div class="col-xs-10">
+                                    @Html.EditorFor(model => model.txTipoClienteNormativo, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group" style="margin-right: 10px">
+                                @Html.EditorFor(model => model.BtnAceptar, new
+                           {
+                               htmlAttributes = new
+                               {
+                                   @class = "btn btn-primary btn-block",
+                                   value = "Aceptar",
+                                   type = "submit",
+                                   name = "Command"
+                               }
+                           })
+
+                                @Html.EditorFor(model => model.BtnCancelar, new
+                           {
+                               htmlAttributes = new
+                               {
+                                   @class = "btn btn-default btn-block",
+                                   value = "Cancelar",
+                                   type = "submit",
+                                   name = "Command"
+                               }
+                           })
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/ClasificacionCliente")
+
+    <script>
+        document.getElementById("toolbarMainPrty").style.display = "none";
+        document.getElementById("mnuMainArchivo").style.display = "none";
+        document.getElementById("mnuMainOpciones").style.display = "none";
+    </script>
+}
+
+<!-- FIN MODIFICACION CNC - ACCENTURE -->

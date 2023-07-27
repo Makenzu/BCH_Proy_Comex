@@ -1,0 +1,127 @@
+﻿@model BCH.Comex.UI.Web.Models.AdministracionSwift.ReporteAdminSwiftRechazadosViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes @Model.Verbo Por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Archivos de Mensajes Rechazados</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("Fecha de Control: {0} {1} {2} {3}",
+                    "",
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Total Mensajes: </strong></div>
+            <div class="col-xs-3">
+                @Model.Registros.Count
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Casilla: </strong></div>
+            <div class="col-xs-3">
+                @if (@Model.Casilla == 0)
+                {
+                    @Model.NombreCasilla
+                }
+                else
+                {
+                    @Model.Casilla
+                }
+
+            </div>
+        </div>
+        @*<div class="row">
+                   <div class="col-xs-3"><strong>Total mensajes: </strong></div>
+                   <div class="col-xs-3">
+                       @Model.Registros.Count
+                   </div>
+            </div>*@
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>N° Mensaje</th>
+                    <th>Tipo MT</th>
+                    <th>Casilla</th>
+                    <th>Banco Receptor</th>
+                    <th>Referencia</th>
+                    <th>Mnda</th>
+                    <th style="text-align:right">Monto</th>
+                    <th>Fecha/Hora Rechazo</th>
+                </tr>
+            </thead>
+
+            @functions  {
+                public string getFormat(string moneda)
+                {
+                    string formato = string.Empty;
+                    string num = "";
+
+                    if (moneda == "" || moneda == null)
+                    {
+                        num = "";
+                    }
+                    else
+                    {
+                        num = moneda.ToString();
+                    }
+
+                    if ((moneda == "CLP"))
+                    {
+                        formato = "#,0";
+                    }
+                    else
+                    {
+                        formato = "#,0.00";
+                    }
+                    return formato;
+                }
+            }
+
+            @foreach (var item in Model.Registros)
+            {
+                <tr>
+                    <td>@item.id_mensaje</td>
+                    <td>@item.tipo_msg</td>
+                    <td>@item.casilla</td>
+                    <td>@item.cod_banco_rec</td>
+                    <td>@item.referencia</td>
+                    <td>@item.cod_moneda</td>
+                    <td style="text-align:right">
+                        @(item.monto.ToString(getFormat(item.cod_moneda)))
+                    </td>
+                    <td>@item.fecha_ingr @item.hora_ingr</td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</body>
+</html>
+

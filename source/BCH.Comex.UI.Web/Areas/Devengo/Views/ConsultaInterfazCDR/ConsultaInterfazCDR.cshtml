@@ -1,0 +1,56 @@
+﻿@model BCH.Comex.UI.Web.Areas.Devengo.Models.ConsultaInterfazCDRViewModel
+
+@{
+    ViewBag.Title = "ConsultaInterfazCDR";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/info-de-devengo-inv.png");
+}
+
+
+@using (Html.BeginForm("DescargarConsultaInterfaz", "ConsultaInterfazCDR", FormMethod.Post, new { id = "ConsultaInterfazCDR", name = "ConsultaInterfazCDR" }))
+{
+    <div class="container">
+        <h3 class="margin-bottom-double" id="tituloParticipantes">Consulta Interfaz @Model.titulo CDR</h3>
+        <div class="row">
+            <div class="col-xs-1">
+                <label class="control-label">Mes/Año:</label>
+            </div>
+            <div class="col-xs-2">
+                @Html.EditorFor(model => model.listaPeriodos, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "1" } })
+            </div>
+            <div class="col-xs-2 @(Model.muestraFiltros? "show":"hide")">
+                <label class="control-label">Días disponibles:</label>
+            </div>
+            <div class="col-xs-2 @(Model.muestraFiltros? "show":"hide")">
+                @Html.EditorFor(model => model.listaDias, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "2" } })
+            </div>
+            <div class="col-xs-1 @(Model.muestraFiltros? "show":"hide")">
+                <label class="control-label">Rut:</label>
+            </div>
+            <div class="col-xs-2 @(Model.muestraFiltros? "show":"hide")">
+                @Html.EditorFor(model => model.txtRut, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "3" } })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 @(Model.muestraFiltros ? "col-xs-offset-8" : "col-xs-offset-1")">
+                <input type="submit" id="btnGenerarExcel" name="Command" class="btn btn-success" value="Generar Excel" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+                <input type="submit" id="btnVolver" name="Command" class="btn btn-primary" value="Volver" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts {
+
+    <script type="text/javascript">
+        var urlobtenerDiasDisponibles = '@Url.Action("obtenerDiasDisponibles", "ConsultaInterfazCDR")';
+        var urlDescargarConsultaInterfaz = '@Url.Action("DescargarConsultaInterfaz", "ConsultaInterfazCDR")';
+        var urlDescarga = '@Url.Action("DescargaDocumento", "ConsultaInterfazCDR")';
+        var tipoConsulta = '@Model.muestraFiltros';
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/Devengo/Common")
+    @Scripts.Render("~/bundles/Devengo/ConsultaInterfazCDR")
+
+}

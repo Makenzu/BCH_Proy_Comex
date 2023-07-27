@@ -1,0 +1,338 @@
+﻿@model BCH.Comex.UI.Web.Models.AdministracionSwift.Index
+@{
+    ViewBag.Title = "Eliminar Mensaje";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png");
+}
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Gestión de Mensajes</a></li>
+                <li><a href="@Url.Action("GestionArchivos")">Gestión de Archivos</a></li>
+                <li><a href="@Url.Action("EliminaMensaje")">Eliminar Mensajes</a></li>
+                <li><a href="@Url.Action("ConsultaPoderes")">Consulta de poderes</a></li>
+                <li><a href="@Url.Action("Alertas")">Configurar alarmas</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<h2>Eliminar mensaje Swift.</h2>
+<div class="panel panel-default"></div>
+<br />
+<br />
+
+<div class="row" id="DivFiltro">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title" id="titleFiltro">Seleccione mensaje a eliminar.</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body" id="divEliminaMensajeSwift">
+                    <div id="DivElemtosEliminaMensajeSwift">
+                        <br />
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label">N° mensaje:</label>
+                                        <input id="TxtNumeroMensaje" type="text" class="input-sm" size="10" maxlength="10" oninput="Largo(this)" onkeypress="return isNumeric(event)" />     
+                                        <button class="glyphicon glyphicon-search btn btn-info btn-sm pull-right" id="btnBuscaMensaje"></button> 
+                                        <br />
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <span id="errmsgBuscaMensaje"></span>                                
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" id="pnlResultados" hidden>
+    <div class="panel-heading">
+        <h2 class="panel-title" id="Titulo"></h2>
+    </div>
+    <div class="panel-body">
+        <button class="btn btn-group-sm btn-info" id="btnEliminaMensaje" disabled>Eliminar</button> 
+        <br />
+        <table id="tabla"></table>
+    </div>
+</div>
+<div id="modalEliminaMensajeSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Elimina mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Eliminar Mensaje.</h4>
+                <label class="label-success" id="LblcodigoEliminamensaje"></label>
+            </div>
+            <div class="panel-body" id="divEliminaMensajeSwift">
+                <div class="alert alert-warning" role="dialog">
+                    <strong>Atención!</strong><br />
+                    <label id="LblEliminaMensaje"></label><br />
+                </div>
+            </div>
+            <div class="modal-footer" id="DivFooterEliminaMensaje" hidden>
+                <button class="btn btn-info" id="btnEliminaUser">Eliminar</button>
+            </div>
+            <div class="modal-footer" id="DivFooterInfoFinalizadoEliminaMensaje" hidden>
+                <button class="btn btn-info" id="BtnAceptaInfoFinalizadoMensajeEliminado" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section css{
+    <style type="text/css">
+        .align-btn-fix {
+            margin-bottom: 0;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #002464;
+            color: #fff;
+        }
+    </style>
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+
+            .clickable .glyphicon {
+                background: rgba(0, 0, 0, 0.15);
+                display: inline-block;
+                padding: 6px 12px;
+                border-radius: 4px;
+            }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+            a.clickable:hover {
+                text-decoration: none;
+            }
+    </style>
+    <style type="text/css">
+    #errmsgBuscaMensaje {
+        color: red;
+    }
+    </style>
+}
+@section scripts{
+<script type="text/javascript">
+    var rowSelected;
+    $(document).ready(function () {
+        configColumnasMensaje = [{
+            field: 'state',
+            radio: true
+
+        }, {
+            field: 'id',
+            title: 'Identificador',
+            sortable: true,
+            visible: false
+
+        }, {
+            field: 'casilla',
+            title: 'Casilla',
+            sortable: true,
+            visible: true
+
+        }, {
+            field: 'descripcion',
+            title: 'Descripción',
+            sortable: true,
+            visible: true
+
+        }, {
+            field: 'estado_msg',
+            title: 'Estado',
+            sortable: true,
+            visible: true
+
+        }, {
+            field: 'fecha_ingreso',
+            title: 'Fecha de ingreso',
+            sortable: true,
+            visible: true
+
+        }, {
+            field: 'id_mensaje',
+            title: 'ID',
+            sortable: true,
+            visible: true
+
+        }, {
+            field: 'nombre_casilla',
+            title: 'Nombre',
+            sortable: true,
+            visible: true
+
+        },
+         {
+             field: 'tipo_msg',
+             title: 'Tipo',
+             sortable: true,
+             visible: true
+
+         }, ];
+        $("#TxtNumeroMensaje").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                $("#errmsgBuscaMensaje").html("Solo digitos.").show().fadeOut(3000);
+                return false;
+            }
+        });
+    
+    });
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+    $(document).on('click', '.panel div.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+
+    function Largo(object) {
+        if (object.value.length > object.maxLength)
+            object.value = object.value.slice(0, object.maxLength)
+    }
+
+    function isNumeric(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+
+    function ModalEliminaMensaje() {
+        var estado = rowSelected["estado_msg"];
+        $('#DivFooterInfoFinalizadoEliminaMensaje').hide();
+        $('#DivFooterEliminaMensaje').hide();
+        if (estado == "PRO" || estado == "AUT" || estado == "AUM" || estado == "ENV")
+        {
+            $('#LblEliminaMensaje').text("No se puede eliminar el mensaje: " + rowSelected["id_mensaje"] + ", ya que se encuentra en estado " + rowSelected["estado_msg"] + ".");
+            $('#DivFooterInfoFinalizadoEliminaMensaje').show();
+        }
+        else
+        {
+            $('#LblEliminaMensaje').text("El mensaje " + rowSelected["id_mensaje"] + " se encuentra en la casilla " + rowSelected["casilla"] + " en el estado " + rowSelected["estado_msg"] + ". ¿Desea continuar con la eliminación?.");
+            $('#DivFooterEliminaMensaje').show();         
+        }
+
+        $('#divEliminaMensajeSwift').html();
+        $('#modalEliminaMensajeSwift').modal();
+    };
+
+    //Busca mensaje
+    function buscarMensajes() {
+        $("#btnEliminaMensaje").attr("disabled", true);
+        var Codigo = $('#TxtNumeroMensaje').val();
+        Codigo = Codigo.trim();
+        if (!Codigo)
+        {
+            $("#errmsgBuscaMensaje").html("Debe ingresar un valor numerico.").show().fadeOut(3000);
+            $('#TxtNumeroMensaje').focus();
+        }
+        else
+        {
+            $("#pnlResultados").show();
+            var url = '@Url.Action("GetMensajeEliminar")';
+            $('#tabla').bootstrapTable('destroy');
+            $('#tabla').bootstrapTable({
+                height: 550,
+                url: url,
+                queryParams: function (p) {
+                    return { codigo:Codigo };
+                },
+                locale: "es-SP",
+                uniqueId: 'id',
+                pagination: true,
+                pageSize: 25,
+                pageList: [10, 25, 50, 100, 200],
+                columns: configColumnasMensaje,
+                searchAlign: 'left',
+                showRefresh: true,
+                clickToSelect: true,
+                search: false,
+                cache: false
+            });
+        }
+    };
+    //Elimina mensaje
+    function EliminaMensaje() {
+        $.get('@Url.Action("DeleteMensajeSwift")', { codigo: rowSelected["id_mensaje"] }, function (data) {
+            var status = data;
+            if (status == true) {
+                $("#btnEliminaMensaje").attr("disabled", true);
+                $('#tabla').bootstrapTable('removeByUniqueId', rowSelected["id"]);
+                $('#LblEliminaMensaje').text("Mensaje eliminado correctamente.");
+                $('#DivFooterInfoFinalizadoEliminaMensaje').show();
+                $('#DivFooterEliminaMensaje').hide();
+            }
+            else {
+                $('#LblEliminaMensaje').text("No se pudo eliminar el mensaje.");
+                $('#DivFooterInfoFinalizadoEliminaMensaje').show();
+                $('#DivFooterEliminaMensaje').hide();
+            }
+        });
+
+    };
+
+    $('#btnBuscaMensaje').click(buscarMensajes);
+    $('#btnEliminaMensaje').click(ModalEliminaMensaje);
+    $('#btnEliminaUser').click(EliminaMensaje);
+
+
+    $('#tabla').on('load-success.bs.table', function (data) {
+        var mensajesSeleccionados = $('#tabla').bootstrapTable('getData');
+        var UltimoIndex = mensajesSeleccionados.length;
+        if (UltimoIndex > 0) {
+            $('.panel div.clickable').click();
+        };
+    });
+    $('#tabla').on('check.bs.table', function (e, row) {
+        rowSelected = row;
+        $("#btnEliminaMensaje").attr("disabled", false);
+    });
+    $('#tabla').on('check.bs.table', function (e, row) {
+        rowSelected = row;
+        $("#btnEliminaMensaje").attr("disabled", false);
+    });
+</script>
+}

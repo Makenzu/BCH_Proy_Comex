@@ -1,0 +1,1645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77A33B56-9C43-48EF-9F9A-54CEC27BE6BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.UI.Web</RootNamespace>
+    <AssemblyName>BCH.Comex.UI.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIIS>False</UseIIS>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <NuGetPackageImportStamp>28b01cae</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/3a77b43e-cb23-4ad5-b22d-2b1fa3e14c3f/resourcegroups/Group-1/providers/microsoft.insights/components/ComexWeb</ApplicationInsightsResourceId>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseIISExpress>false</UseIISExpress>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <IncludeAppPool>true</IncludeAppPool>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressiveAnnotations, Version=2.3.3.0, Culture=neutral, PublicKeyToken=d3e372f3c1e83cec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpressiveAnnotations.dll.2.3.3\lib\net45\ExpressiveAnnotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net45\HtmlRenderer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Humanizer, Version=1.37.7.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.1.37.7\lib\portable-win+net40+sl50+wp8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Humanizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.4.1.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.0.5639, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RazorPDF.1.0.0\lib\net45\RazorPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\BusquedaPlanilla\BusquedaPlanillaAreaRegistration.cs" />
+    <Compile Include="Areas\BusquedaPlanilla\Controllers\BaseController.cs" />
+    <Compile Include="Areas\BusquedaPlanilla\Controllers\InicioController.cs" />
+    <Compile Include="Areas\BusquedaPlanilla\Models\BusquedaPlanillaViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\AnularContabilidadController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\BaseController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\ChequeController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\DatosAdicionalesController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\EmitirNotaCreditoController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\GenerarSwiftController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\GrabarController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\MensajesController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\NuevaController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\ParticipantesController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\Plan_De_CuentasController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\RelacionarOperacionController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\SeleccionOficinaController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Controllers\TicketsController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\AnularContabilidadViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\ContabilidadGenericaViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\EmitirNotaCreditoViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\GenerarSwiftBaseViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\ImprimirModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\RelacionarOperacionViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\ReporteContableViewModel.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\Models\SeleccionOficinaViewModel.cs" />
+    <Compile Include="Areas\Devengo\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\ConsultaCuentasContablesController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\ConsultaDevengamientoController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\ConsultaInterfazCDRController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\DevengamientoHistoricoController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\DiferenciaDevengamientoController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\InicioController.cs" />
+    <Compile Include="Areas\Devengo\Controllers\OperacionesCDRController.cs" />
+    <Compile Include="Areas\Devengo\DevengoAreaRegistration.cs" />
+    <Compile Include="Areas\Devengo\Models\ConsultaCuentasContablesViewModel.cs" />
+    <Compile Include="Areas\Devengo\Models\ConsultaDevengamientoViewModel.cs" />
+    <Compile Include="Areas\Devengo\Models\ConsultaInterfazCDRViewModel.cs" />
+    <Compile Include="Areas\Devengo\Models\DevengamientoHistoricoViewModel.cs" />
+    <Compile Include="Areas\Devengo\Models\DevengoViewModel.cs" />
+    <Compile Include="Areas\Devengo\Models\DiferenciaDevengamientoViewModel.cs" />
+    <Compile Include="Areas\EnvioSwift\Controllers\BancosController.cs" />
+    <Compile Include="Areas\EnvioSwift\Models\ListaPendientesViewModel.cs" />
+    <Compile Include="Areas\EnvioSwift\Controllers\ConfigurarController.cs" />
+    <Compile Include="Areas\Impresion\Controllers\PlanillasController.cs" />
+    <Compile Include="Controllers\ReportarOperacionController.cs" />
+    <Compile Include="Filters\SupervisorExigirInicioDiaAttribute.cs" />
+    <Compile Include="Filters\LoggingFilter.cs" />
+    <Compile Include="Helpers\ControllerFactory.cs" />
+    <Compile Include="Helpers\Extensions\Extensions.cs" />
+    <Compile Include="Helpers\Extensions\MvcRazorToPdf.cs" />
+    <Compile Include="Helpers\Extensions\MvcRazorToPdfExtensions.cs" />
+    <Compile Include="Helpers\Extensions\MvcRazorToTiff.cs" />
+    <Compile Include="Helpers\Extensions\MvcRazorToTiffExtensions.cs" />
+    <Compile Include="Helpers\Extensions\PdfActionResult.cs" />
+    <Compile Include="Helpers\Extensions\TiffActionResult.cs" />
+    <Compile Include="Helpers\TransferResult.cs" />
+    <Compile Include="Models\AdministracionSwift\ImprimirGestionDeArchivosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ParearViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftAutorizadosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftBloqueadosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftNulosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftProcesadosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftRechazadosViewModel.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteAdminSwiftSinAutorizarViewModel.cs" />
+    <Compile Include="Models\ConfiguracionAlertasModel.cs" />
+    <Compile Include="Areas\FinDia\Controllers\AceptacionController.cs" />
+    <Compile Include="Areas\FinDia\Controllers\BaseController.cs" />
+    <Compile Include="Areas\FinDia\Controllers\TotalesContablesController.cs" />
+    <Compile Include="Areas\FinDia\Models\AceptacionViewModel.cs" />
+    <Compile Include="Areas\FinDia\Models\DetalleReporteCuadraturaModel.cs" />
+    <Compile Include="Areas\FinDia\Models\DetalleReporteDescuadraturaModel.cs" />
+    <Compile Include="Areas\FinDia\Models\DetalleReporteDescuadraturaSceModel.cs" />
+    <Compile Include="Areas\FinDia\Models\InformacionUsuario.cs" />
+    <Compile Include="Areas\FinDia\Models\ReporteCuadraturaModel.cs" />
+    <Compile Include="Areas\FinDia\Models\ReporteDescuadraturaModel.cs" />
+    <Compile Include="Areas\FinDia\Models\TotalesContablesViewModel.cs" />
+    <Compile Include="Areas\Impresion\Controllers\ImpresionDeDocumentosController.cs" />
+    <Compile Include="Areas\Impresion\Controllers\ImpresionDocumentoDevengController.cs" />
+    <Compile Include="Areas\Impresion\Models\ImpresionDocumentosViewModel.cs" />
+    <Compile Include="Areas\Impresion\Models\ImpresionViewModel.cs" />
+    <Compile Include="Areas\Impresion\Models\ReporteContableViewModel.cs" />
+    <Compile Include="Areas\Planillas\Controllers\PlanillasBaseController.cs" />
+    <Compile Include="Common\BaseController.cs" />
+    <Compile Include="Areas\EnvioSwift\Controllers\MensajesController.cs" />
+    <Compile Include="Areas\ContabilidadGenerica\ContabilidadGenericaAreaRegistration.cs" />
+    <Compile Include="Areas\FinDia\Controllers\InicioController.cs" />
+    <Compile Include="Areas\FinDia\FinDiaAreaRegistration.cs" />
+    <Compile Include="Areas\FinDia\Models\FinDiaViewModel.cs" />
+    <Compile Include="Areas\FinDia\Models\InicioViewModel.cs" />
+    <Compile Include="Areas\Impresion\Controllers\ImprimirController.cs" />
+    <Compile Include="Areas\Impresion\ImpresionAreaRegistration.cs" />
+    <Compile Include="Areas\EnvioSwift\Controllers\HomeController.cs" />
+    <Compile Include="Areas\EnvioSwift\EnvioSwiftAreaRegistration.cs" />
+    <Compile Include="Areas\EnvioSwift\Models\EditorMensajeViewModel.cs" />
+    <Compile Include="Areas\InicioDia\Controllers\HomeController.cs" />
+    <Compile Include="Areas\InicioDia\InicioDiaAreaRegistration.cs" />
+    <Compile Include="Areas\InicioDia\SessionDatosUsuario.cs" />
+    <Compile Include="Areas\InicioDia\Views\Models\ReporteNovedadesViewModel.cs" />
+    <Compile Include="Areas\InicioDia\Views\Models\NovedadesViewModel.cs" />
+    <Compile Include="Areas\InicioDia\Views\Models\IndexViewModel.cs" />
+    <Compile Include="Areas\Planillas\Controllers\ReportesController.cs" />
+    <Compile Include="Areas\Planillas\Models\ActualizacionPlanillasViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\BusquedaPlanillasInformadasViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\CartaBancoCentralViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\CuentaContableMovimientosMode.cs" />
+    <Compile Include="Areas\Planillas\Models\DatosPlanillaViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\DeclaracionPlanillaViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\IngresoPlanillasViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ImpresionDocumentosViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ListadoActualizacionPlanillasViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\MovimientosCuentaCorrienteViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReferenciasBAEBCHViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReporteContableViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReporteMovimientosCorresponsalesViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReporteMovimientosCuentaCorrienteViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReporteMovimientosDeCanjeViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReportePlanillasVsConversionViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ReportePlanillaViewModel.cs" />
+    <Compile Include="Areas\Planillas\PlanillasAreaRegistration.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\CambioClaveController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\CederCarteraController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\DocumentosValoradosController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\InicioController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\RelacionesIdiDecController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\InyectarYReversarController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\ProductividadController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\ReemplazarUsuarioController.cs" />
+    <Compile Include="Areas\Supervisor\Controllers\VisualizacionUsuarioController.cs" />
+    <Compile Include="Areas\Supervisor\Models\CambioClaveViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\CargosYAbonosViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\DocumentosValoradosViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\ProductividadViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\RelacionesIdiDecViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\SupervisorViewModel.cs" />
+    <Compile Include="Areas\Supervisor\SupervisorAreaRegistration.cs" />
+    <Compile Include="Common\ApplicationKeys.cs" />
+    <Compile Include="Filters\ComexLogAttribute.cs" />
+    <Compile Include="Common\DecimalModelBinder.cs" />
+    <Compile Include="Filters\FileDownloadAttribute.cs" />
+    <Compile Include="Common\FormatUtils.cs" />
+    <Compile Include="Filters\HandleAjaxExceptionAttribute.cs" />
+    <Compile Include="Common\JsonNetResult.cs" />
+    <Compile Include="Common\SessionKeys.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Controllers\AdministracionSwiftController.cs" />
+    <Compile Include="Controllers\AdminParticipantesController.cs" />
+    <Compile Include="Controllers\AdminSwiftController.cs" />
+    <Compile Include="Controllers\AutorizacionSwiftController.cs" />
+    <Compile Include="Controllers\BancaMundialController.cs" />
+    <Compile Include="Controllers\CentinelaController.cs" />
+    <Compile Include="Controllers\ConfigurarController.cs" />
+    <Compile Include="Controllers\ConsultaSwiftController.cs" />
+    <Compile Include="Controllers\ControlIntegralController.cs" />
+    <Compile Include="Controllers\EliminacionMasivaController.cs" />
+    <Compile Include="Controllers\EncasillamientoSwiftController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FundTransferController.cs" />
+    <Compile Include="Controllers\GestionControlSwiftController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Areas\Planillas\Controllers\PlanillaController.cs" />
+    <Compile Include="Areas\Planillas\Controllers\PlanillasController.cs" />
+    <Compile Include="Controllers\MantenedorSwiftController.cs" />
+    <Compile Include="Controllers\RecibirMensajeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdministracionSwift\DetalleReporteArchivosModel.cs" />
+    <Compile Include="Models\AdministracionSwift\Index.cs" />
+    <Compile Include="Models\AdministracionSwift\ReporteArchivosModel.cs" />
+    <Compile Include="Models\AdminParticipantes\ActivarRazonViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\AdminParticipantesViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\CaracteristicasParticipanteViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\CuentasParticipanteViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\DatosBancoParticipanteViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\DetalleCuentasViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\IndexModel.cs" />
+    <Compile Include="Models\AdminParticipantes\AbrirParticipanteModel.cs" />
+    <Compile Include="Models\AdminParticipantes\InstruccionesEspecialesParticipanteViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\NuevoParticipanteViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\shared\BotonModel.cs" />
+    <Compile Include="Models\AdminParticipantes\ModalTasaEspecialViewModel.cs" />
+    <Compile Include="Models\AdminParticipantes\TasasEspecialesParticipanteViewModel.cs" />
+    <Compile Include="Helpers\AuthorizeOrForbiddenAttribute.cs" />
+    <Compile Include="Helpers\HttpContextHelpers.cs" />
+    <Compile Include="Models\AutorizacionSwift\ConsultaModel.cs" />
+    <Compile Include="Models\AutorizacionSwift\SolicitarFirmasViewModel.cs" />
+    <Compile Include="Models\BaseController.cs" />
+    <Compile Include="Models\ConsultaSwift\DatosMensajeEnviadoViewModel.cs" />
+    <Compile Include="Models\ConsultaSwift\DetalleSwiftEnviadoViewModel.cs" />
+    <Compile Include="Models\ConsultaSwift\EnvioMailViewModel.cs" />
+    <Compile Include="Models\ConsultaSwift\IndexModel.cs" />
+    <Compile Include="Models\ConsultaSwift\LogSwiftViewModel.cs" />
+    <Compile Include="Models\ConsultaSwift\MensajeSwiftAdjunto.cs" />
+    <Compile Include="Models\ControlIntegral\ChkListViewModel.cs" />
+    <Compile Include="Models\ControlIntegral\EnvioMensajeEReparo.cs" />
+    <Compile Include="Models\ControlIntegral\EReparoViewModel.cs" />
+    <Compile Include="Models\ControlIntegral\IndexViewModel.cs" />
+    <Compile Include="Models\ControlIntegral\MensajeCIAdjunto.cs" />
+    <Compile Include="Models\EliminacionMasiva\IndexModel.cs" />
+    <Compile Include="Models\FundTransfer\AnulacionPlanillaVisibleImportViewModel.cs" />
+    <Compile Include="Models\ConsultaSwift\ReporteConsultaSwiftViewModel.cs" />
+    <Compile Include="Models\EncasillamientoSwift\IndexModel.cs" />
+    <Compile Include="Models\FundTransfer\ArbitrajesViewModel.cs" />
+    <Compile Include="Models\FundTransfer\CargaOperacionesViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ComisionesViewModel.cs" />
+    <Compile Include="Models\FundTransfer\FacturasAsociadasViewModel.cs" />
+    <Compile Include="Models\FundTransfer\FundTransferViewModel.cs" />
+    <Compile Include="Models\FundTransfer\EmitirNotaCreditoViewModel.cs" />
+    <Compile Include="Models\FundTransfer\GanuViewModel.cs" />
+    <Compile Include="Models\FundTransfer\GenerarSwiftViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ImpresionDocumentosViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillasTransferenciaViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaVisibleImportEditarViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaAnularNumeroViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ReversarOperacionDeclaracionViewModel.cs" />
+    <Compile Include="Models\FundTransfer\SeleccionOficinaViewModel.cs" />
+    <Compile Include="Models\FundTransfer\NroaViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaAnulacionViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaVisibleExportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ReemAnulacionPlanillaVisibleImportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ReporteContableViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ComercioInvisibleViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ComercioVisibleExportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ConsultaParticipantesViewModel.cs" />
+    <Compile Include="Models\FundTransfer\DestinoFondosViewModel.cs" />
+    <Compile Include="Models\FundTransfer\IndexViewModel.cs" />
+    <Compile Include="Models\FundTransfer\IngresoValoresViewModel.cs" />
+    <Compile Include="Models\FundTransfer\Lt_Operacion_Arbitraje_Model.cs" />
+    <Compile Include="Models\FundTransfer\Lt_Operacion_Model.cs" />
+    <Compile Include="Models\FundTransfer\L_Fondo_Model.cs" />
+    <Compile Include="Models\FundTransfer\L_Mto_Model.cs" />
+    <Compile Include="Models\FundTransfer\OrigenFondosViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ParticipantesCrearViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ParticipantesIdentificarViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ParticipantesViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaIngresoVisibleExportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaInvisibleEditarViewModel.cs" />
+    <Compile Include="Models\FundTransfer\PlanillaVisibleImportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\ReversarOperacionExportViewModel.cs" />
+    <Compile Include="Models\FundTransfer\shared\BotonModel.cs" />
+    <Compile Include="Models\FundTransfer\TicketViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\EncasillamientoManualSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\EstadisticasMensajesEnviadosSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\EstadisticasMensajesRecepcionadosSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\GestionEnviados.cs" />
+    <Compile Include="Models\GestionControlSwift\LogSwiftMensajesEnviadosExteriorViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteConsultaSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteControlEnvioMensajeriaSwifttViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteControlEnvioMensajeriaSwiftViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\EstadisticaImportacionViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteControlRecepcionMensajesSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteControlRecepcionNoMensajesSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteEncasillamientoAutomaticoSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteEncasillamientoManualSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteEstadisticaSwift.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteGestionControlSwiftViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\ReporteMensajesEnviadosExteriorSwiftViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\IngresoVisibleExportacionViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\LogSwiftViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\InvisibleExportacionViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\ListadoPlanillaViewModel.cs" />
+    <Compile Include="Models\GestionControlSwift\Index.cs" />
+    <Compile Include="Areas\Planillas\Models\VisibleExportacionAnuladaViewModel.cs" />
+    <Compile Include="Areas\Planillas\Models\VisibleImportacionViewModel.cs" />
+    <Compile Include="Models\RecibirMensaje\IndexModel.cs" />
+    <Compile Include="Models\RecibirMensaje\ReporteModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Areas\Supervisor\Models\EspecialistaViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BusquedaPlanilla\Scripts\BusquedaPlanilla.Inicio.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Aceptar_Monto.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.AnularContabilidad.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Adicionales.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Cheques.Emision.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.EmitirNotaCredito.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.FrmCta.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Grabar.Imprimir.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Participante.Consultar.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Participante.Crear.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Participante.Identificar.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Participantes.Preguntar.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.RelacionarOperacion.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.GuardarCambiosOperacion.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Ticket.js" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.ConsultaCuentasContables.js" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.ConsultaDevengamiento.js" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.ConsultaInterfazCDR.js" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.DevengamientoHistorico.js" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.Index.js" />
+    <Content Include="Areas\EnvioSwift\Scripts\configuraralertas.js" />
+    <Content Include="Areas\EnvioSwift\Scripts\EditorMensaje.js" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Index.js" />
+    <Content Include="Areas\EnvioSwift\Scripts\listado.js" />
+    <Content Include="Areas\EnvioSwift\Scripts\ListaPendientes.js" />
+    <Content Include="Areas\FinDia\Scripts\FinDia.Inicio.js" />
+    <Content Include="Areas\Impresion\Scripts\Impresion.ImpresionDeDocumentos.js" />
+    <Content Include="Areas\InicioDia\Scripts\Novedades.js" />
+    <Content Include="Areas\InicioDia\Scripts\Index.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.CambioClave.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.CederCartera.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.DocumentosValorados.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.RelacionesIdiDec.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.InyectarYReversar.js" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.Productividad.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap-compiled.css" />
+    <Content Include="Content\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\css\bootstrap-table.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bch-icons.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\ie8.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\reportes-planillas.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\black_square.png" />
+    <Content Include="Content\images\blue_square.png" />
+    <Content Include="Content\images\ap-load.gif" />
+    <Content Include="Content\images\ButtonsBarMnu\AbrirConsulta.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Activar2.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Activar_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Arbitraje.png" />
+    <Content Include="Content\images\ButtonsBarMnu\calculator.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Caracteristicas_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Caracteristicas_white.png" />
+    <Content Include="Content\images\ButtonsBarMnu\CargoAbonodeOperaciones.png" />
+    <Content Include="Content\images\ButtonsBarMnu\ComercioInvisible.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Comisiones.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Cuentas_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Enviar.png" />
+    <Content Include="Content\images\ButtonsBarMnu\GeneradordeCheques.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Grabar.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Grabar_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Instrucciones_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\ListadoSPOTyOP.png" />
+    <Content Include="Content\images\ButtonsBarMnu\NotadeCredito.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Nuevo.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Nuevo_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\OperacionRelacionada.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Origenes.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Participantes.png" />
+    <Content Include="Content\images\ButtonsBarMnu\PlanillasdeAnulacion.png" />
+    <Content Include="Content\images\ButtonsBarMnu\PlanillasInvisibles.png" />
+    <Content Include="Content\images\ButtonsBarMnu\PlanillasVisiblesExport.png" />
+    <Content Include="Content\images\ButtonsBarMnu\PlanillasVisiblesImpor.png" />
+    <Content Include="Content\images\ButtonsBarMnu\ReimpresionDocumentos.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Salir.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Swift.png" />
+    <Content Include="Content\images\ButtonsBarMnu\TasasEspeciales_F.png" />
+    <Content Include="Content\images\ButtonsBarMnu\VentasVisExport.png" />
+    <Content Include="Content\images\ButtonsBarMnu\VentasVisiblesImport.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Vias.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Vueltos.png" />
+    <Content Include="Content\images\ic-perfil.png" />
+    <Content Include="Content\images\logo-banco-chile.png" />
+    <Content Include="Content\images\ButtonsBarMnu\AbrirConsulta.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Activar.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Caracteristicas.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Cuentas.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Grabar.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Instrucciones.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Nuevo.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Participantes.png" />
+    <Content Include="Content\images\ButtonsBarMnu\Salir.png" />
+    <Content Include="Content\images\ButtonsBarMnu\TasasEspeciales.png" />
+    <Content Include="Content\images\Participantes.png" />
+    <Content Include="Content\images\PlanillaInvisibleEditar.png" />
+    <Content Include="Content\images\red_square.png" />
+    <Content Include="Content\images\VtasVisiblesExport.png" />
+    <Content Include="Content\img\apps\70592.png" />
+    <Content Include="Content\img\apps\70654.png" />
+    <Content Include="Content\img\apps\70671.png" />
+    <Content Include="Content\img\apps\70761.png" />
+    <Content Include="Content\img\apps\70850.png" />
+    <Content Include="Content\img\apps\70918.png" />
+    <Content Include="Content\img\apps\71028.png" />
+    <Content Include="Content\img\apps\admin-de-envio-automatico-inv.png" />
+    <Content Include="Content\img\apps\admin-de-envio-automatico.png" />
+    <Content Include="Content\img\apps\admin-participantes-inv.png" />
+    <Content Include="Content\img\apps\admin-participantes.png" />
+    <Content Include="Content\img\apps\admin-planillas-inv.png" />
+    <Content Include="Content\img\apps\admin-planillas.png" />
+    <Content Include="Content\img\apps\apli-supervisor-inv.png" />
+    <Content Include="Content\img\apps\apli-supervisor.png" />
+    <Content Include="Content\img\apps\autorizacion-swift-inv.png" />
+    <Content Include="Content\img\apps\autorizacion-swift.png" />
+    <Content Include="Content\img\apps\busqueda-planilla-inv.png" />
+    <Content Include="Content\img\apps\busqueda-planilla.png" />
+    <Content Include="Content\img\apps\consulta-banca-mundial-inv.png" />
+    <Content Include="Content\img\apps\consulta-banca-mundial.png" />
+    <Content Include="Content\img\apps\consulta-msj-swift-inv.png" />
+    <Content Include="Content\img\apps\consulta-msj-swift.png" />
+    <Content Include="Content\img\apps\control-integral-inv.png" />
+    <Content Include="Content\img\apps\control-integral.png" />
+    <Content Include="Content\img\apps\eliminacion-masiva-inv.png" />
+    <Content Include="Content\img\apps\eliminacion-masiva.png" />
+    <Content Include="Content\img\apps\encasillamiento-inv.png" />
+    <Content Include="Content\img\apps\encasillamiento.png" />
+    <Content Include="Content\img\apps\envio-msj-swift-inv.png" />
+    <Content Include="Content\img\apps\envio-msj-swift.png" />
+    <Content Include="Content\img\apps\Envio-por-mail-inv.png" />
+    <Content Include="Content\img\apps\Envio-por-mail.png" />
+    <Content Include="Content\img\apps\fin-de-dia-inv.png" />
+    <Content Include="Content\img\apps\fin-de-dia.png" />
+    <Content Include="Content\img\apps\fund-transfer-inv.png" />
+    <Content Include="Content\img\apps\fund-transfer.png" />
+    <Content Include="Content\img\apps\gestion-y-control-inv.png" />
+    <Content Include="Content\img\apps\gestion-y-control.png" />
+    <Content Include="Content\img\apps\info-de-devengo-inv.png" />
+    <Content Include="Content\img\apps\info-de-devengo.png" />
+    <Content Include="Content\img\apps\ingreso-asientos-inv.png" />
+    <Content Include="Content\img\apps\ingreso-asientos.png" />
+    <Content Include="Content\img\apps\inicio-dia-inv.png" />
+    <Content Include="Content\img\apps\inicio-dia.png" />
+    <Content Include="Content\img\apps\recepcion-swift-inv.png" />
+    <Content Include="Content\img\apps\recepcion-swift.png" />
+    <Content Include="Content\img\apps\tabla-swift-inv.png" />
+    <Content Include="Content\img\apps\tabla-swift.png" />
+    <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\pie.jpg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.del.js" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.base.js" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.new.dir.js" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.new.rs.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.TasasEspeciales.js" />
+    <Content Include="Scripts\AdminParticipantes\app.custom.js" />
+    <Content Include="Scripts\ai.0.15.0-build46802.js" />
+    <Content Include="Scripts\ai.0.15.0-build46802.min.js" />
+    <Content Include="Scripts\alertas.js" />
+    <Content Include="Scripts\ApplicationInsights.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Impresion\Views\web.config" />
+    <Content Include="Areas\Impresion\Views\Imprimir\Index.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\AceptacionLetras_602.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\PlanillaVisibleExport_613.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\CompraVenta_620.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\Arbitraje_621.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\PagoDirectoCobranza_610.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\ReenvioCobranzaExport_603.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\AvisoCredito_999.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\AvisoDebito_998.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\CancelacionRetornoExport_611.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\VentasVisiblesImport_402.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\RegistroCancelacionRetorno_614.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\RegistroRetorno_612.cshtml" />
+    <Content Include="Areas\Impresion\Views\Imprimir\RegistroCobranza_601.cshtml" />
+    <Content Include="Areas\Planillas\Views\web.config" />
+    <Content Include="Areas\Planillas\Views\Reportes\GeneradasUsuarios.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\PlanillasVsConversionUsuarios.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\ReferenciasBAEBCH.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\BuscarMovimientosCuentaCorriente.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\MovimientosCuentaCorriente.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\InformePosicionCambio.cshtml" />
+    <Content Include="Areas\Planillas\Views\Shared\_LayoutReportes.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\_ViewStart.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\MovimientosDeCanje.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\ActualizacionPlanillas.cshtml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Supervisor\Views\web.config" />
+    <Content Include="Areas\InicioDia\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Supervisor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Supervisor\Views\Inicio\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\VisualizacionUsuario\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Scripts\Supervisor.Especialistas.js" />
+    <Content Include="Areas\Supervisor\Views\ReemplazarUsuario\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\Productividad\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\Productividad\DetalleProductividad.cshtml" />
+    <Content Include="Areas\Supervisor\Views\CambioClave\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\InyectarYReversar\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\DocumentosValorados\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\RelacionesIdiDec\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\CederCartera\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\DocumentosValorados\ImpresionCheque.cshtml" />
+    <Content Include="Areas\InicioDia\Views\web.config" />
+    <Content Include="Areas\InicioDia\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\InicioDia\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Supervisor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\MovimientosCorresponsales.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\GeneradasSeccion.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Planillas\Views\Reportes\ImprimirCartaBancoCentral.cshtml" />
+    <Content Include="Areas\BusquedaPlanilla\Views\web.config" />
+    <Content Include="Areas\BusquedaPlanilla\Views\Inicio\Index.cshtml" />
+    <Content Include="Areas\BusquedaPlanilla\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Home\Index.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\web.config" />
+    <Content Include="Areas\EnvioSwift\Views\Mensajes\Editor.cshtml" />
+    <Content Include="Areas\Planillas\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Planillas\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\FormActualizacionPlanillasDeclaracion.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\ImpresionDeDocumentos.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\DetalleSwift.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\ReporteContable.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\IngresoPlanillas.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\BuscarMovimientosCuentaContables.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\RelacionarOperacion\Index.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\EmitirNotaCredito\Index.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\web.config">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\ContabilidadGenerica\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\ImprimirCartaBancoCentralDeclaraciones.cshtml" />
+    <Content Include="Areas\Devengo\Views\web.config" />
+    <Content Include="Areas\Devengo\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Devengo\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Devengo\Views\Inicio\Index.cshtml" />
+    <Content Include="Areas\InicioDia\Views\Home\Novedades.cshtml" />
+    <Content Include="Areas\InicioDia\Views\Home\ReporteNovedades.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Mensajes\GuardarCambiosOperacion.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_TextBox.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_ListBox.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_Combo.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Participantes\Identificar.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Participantes\_ParticipantesIdentificar.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_Button.cshtml" />
+    <Content Include="Areas\Devengo\Views\DiferenciaDevengamiento\Index.cshtml" />
+    <Content Include="Areas\Devengo\Views\ConsultaDevengamiento\ConsultaDevengamiento.cshtml" />
+    <Content Include="Areas\FinDia\Views\web.config" />
+    <Content Include="Areas\FinDia\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\FinDia\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\Index.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Participantes\Preguntar.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Participantes\Crear.cshtml" />
+    <Content Include="Areas\FinDia\Views\Aceptacion\Aceptacion.cshtml" />
+    <Content Include="Areas\FinDia\Scripts\FinDia.Aceptacion.js" />
+    <Content Include="Areas\FinDia\Views\Aceptacion\ImpresionAceptacion.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ListadoCuadraturaSwift.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ReporteCuadratura.cshtml" />
+    <Content Include="Areas\FinDia\Views\TotalesContables\Index.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Imprimir\ReporteContable.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Tickets\Ingreso.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDeDocumentos\ImpresionDeDocumentos.cshtml" />
+    <Content Include="Areas\Impresion\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDeDocumentos\DetalleSwift.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ImpresionPorInyectar.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ImpresionListado.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Mensajes\Visualizar.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Plan_De_Cuentas\Ver.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\FrmResDesc.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ReporteDescuadre.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Participantes\Consulta.cshtml" />
+    <Content Include="Areas\FinDia\Views\Inicio\ImpresionDescuadre.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_GridItem.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Shared\EditorTemplates\UI_Grid.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Grabar\Imprimir.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Home\Adicionales.cshtml" />
+    <Content Include="Areas\Devengo\Views\DevengamientoHistorico\DevengamientoHistorico.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\AnularContabilidad\Index.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDeDocumentos\ReporteContable.cshtml" />
+    <Content Include="Areas\Devengo\Views\ConsultaInterfazCDR\ConsultaInterfazCDR.cshtml" />
+    <Content Include="Areas\Devengo\Scripts\Devengo.Common.js" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Home\Aceptar_Monto.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDocumentoDeveng\DetalleSwift.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDocumentoDeveng\ImpresionDeDocumentos.cshtml" />
+    <Content Include="Areas\Impresion\Views\ImpresionDocumentoDeveng\ReporteContable.cshtml" />
+    <Content Include="Areas\Devengo\Views\ConsultaCuentasContables\ConsultaCuentasContables.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Tickets\Ingreso.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\GenerarSwift\GenerarSwift.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Bancos\Listado.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Mensajes\_ListaPendientes.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Configurar\Alertas.cshtml" />
+    <Content Include="Areas\ContabilidadGenerica\Views\Cheque\Emision.cshtml" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\ContabilidadGenerica\Views\SeleccionOficina\SeleccionOficina.cshtml" />
+    <Content Include="Areas\Planillas\Views\Reportes\BusquedaPlanillasInformadas.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Areas\Impresion\Views\Planillas\ImprimirPlanillaReemplazos.cshtml" />
+    <Content Include="Areas\Impresion\Views\Planillas\ImprimirPlanillaInvisibleExportacion.cshtml" />
+    <Content Include="Areas\Impresion\Views\Planillas\ImprimirPlanillaAnulada.cshtml" />
+    <Content Include="Areas\Impresion\Views\Planillas\ImprimirPlanilla500.cshtml" />
+    <Content Include="Areas\Impresion\Views\Planillas\ImprimirPlanilla401.cshtml" />
+    <None Include="Content\bootstrap\wells.less" />
+    <None Include="Content\bootstrap\variables.less" />
+    <None Include="Content\bootstrap\utilities.less" />
+    <None Include="Content\bootstrap\type.less" />
+    <None Include="Content\bootstrap\tooltip.less" />
+    <None Include="Content\bootstrap\thumbnails.less" />
+    <None Include="Content\bootstrap\theme.less" />
+    <None Include="Content\bootstrap\tables.less" />
+    <None Include="Content\bootstrap\scaffolding.less" />
+    <None Include="Content\bootstrap\responsive-utilities.less" />
+    <None Include="Content\bootstrap\responsive-embed.less" />
+    <None Include="Content\bootstrap\progress-bars.less" />
+    <None Include="Content\bootstrap\print.less" />
+    <None Include="Content\bootstrap\popovers.less" />
+    <None Include="Content\bootstrap\panels.less" />
+    <None Include="Content\bootstrap\pagination.less" />
+    <None Include="Content\bootstrap\pager.less" />
+    <None Include="Content\bootstrap\normalize.less" />
+    <None Include="Content\bootstrap\navs.less" />
+    <None Include="Content\bootstrap\navbar.less" />
+    <None Include="Content\bootstrap\modals.less" />
+    <None Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <None Include="Content\bootstrap\mixins\text-overflow.less" />
+    <None Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <None Include="Content\bootstrap\mixins\table-row.less" />
+    <None Include="Content\bootstrap\mixins\tab-focus.less" />
+    <None Include="Content\bootstrap\mixins\size.less" />
+    <None Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <None Include="Content\bootstrap\mixins\resize.less" />
+    <None Include="Content\bootstrap\mixins\reset-text.less" />
+    <None Include="Content\bootstrap\mixins\reset-filter.less" />
+    <None Include="Content\bootstrap\mixins\progress-bar.less" />
+    <None Include="Content\bootstrap\mixins\panels.less" />
+    <None Include="Content\bootstrap\mixins\pagination.less" />
+    <None Include="Content\bootstrap\mixins\opacity.less" />
+    <None Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <None Include="Content\bootstrap\mixins\nav-divider.less" />
+    <None Include="Content\bootstrap\mixins\list-group.less" />
+    <None Include="Content\bootstrap\mixins\labels.less" />
+    <None Include="Content\bootstrap\mixins\image.less" />
+    <None Include="Content\bootstrap\mixins\hide-text.less" />
+    <None Include="Content\bootstrap\mixins\grid-framework.less" />
+    <None Include="Content\bootstrap\mixins\grid.less" />
+    <None Include="Content\bootstrap\mixins\gradients.less" />
+    <None Include="Content\bootstrap\mixins\forms.less" />
+    <None Include="Content\bootstrap\mixins\clearfix.less" />
+    <None Include="Content\bootstrap\mixins\center-block.less" />
+    <None Include="Content\bootstrap\mixins\buttons.less" />
+    <None Include="Content\bootstrap\mixins\border-radius.less" />
+    <None Include="Content\bootstrap\mixins\background-variant.less" />
+    <None Include="Content\bootstrap\mixins\alerts.less" />
+    <None Include="Content\bootstrap\mixins.less" />
+    <None Include="Content\bootstrap\media.less" />
+    <None Include="Content\bootstrap\list-group.less" />
+    <None Include="Content\bootstrap\labels.less" />
+    <None Include="Content\bootstrap\jumbotron.less" />
+    <None Include="Content\bootstrap\input-groups.less" />
+    <None Include="Content\bootstrap\grid.less" />
+    <None Include="Content\bootstrap\glyphicons.less" />
+    <None Include="Content\bootstrap\forms.less" />
+    <None Include="Content\bootstrap\dropdowns.less" />
+    <None Include="Content\bootstrap\component-animations.less" />
+    <None Include="Content\bootstrap\code.less" />
+    <None Include="Content\bootstrap\close.less" />
+    <None Include="Content\bootstrap\carousel.less" />
+    <None Include="Content\bootstrap\buttons.less" />
+    <None Include="Content\bootstrap\button-groups.less" />
+    <None Include="Content\bootstrap\breadcrumbs.less" />
+    <None Include="Content\bootstrap\bootstrap.less" />
+    <None Include="Content\bootstrap\badges.less" />
+    <None Include="Content\bootstrap\alerts.less" />
+    <None Include="Properties\PublishProfiles\Arkanosoft.pubxml" />
+    <None Include="Properties\PublishProfiles\ArkanosoftQA.pubxml" />
+    <None Include="Properties\PublishProfiles\Azure WebsiteDebug.pubxml" />
+    <None Include="Properties\PublishProfiles\bchComexDesa.pubxml" />
+    <None Include="Properties\PublishProfiles\BCHComexUIWeb.pubxml" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.abrir.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.CaracteristicasParticipante.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.CuentasParticipante.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.DatosBancoParticipante.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.InstruccionesParticipante.js" />
+    <Content Include="Scripts\AdminParticipantes\AdminParticipantes.Layout.js" />
+    <Content Include="Scripts\AutorizacionSwift\configuraralertas.js" />
+    <Content Include="Scripts\BancaMundial\index.js" />
+    <Content Include="Scripts\bootbox\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap-table-es-SP.js" />
+    <Content Include="Scripts\bootstrap-table.js" />
+    <Content Include="Scripts\bootstrap-table\bootstrap-table-multiple-sort.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\FileSaver\FileSaver.min.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\html2canvas\html2canvas.min.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\jsPDF-AutoTable\jspdf.plugin.autotable.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\jsPDF\jspdf.min.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\tableExport.js" />
+    <Content Include="Scripts\bootstrap-table\export\libs\tableExport.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Commons.js" />
+    <Content Include="Scripts\ConsultaSwift\index.js" />
+    <Content Include="Scripts\ControlIntegral\app.custom.js" />
+    <Content Include="Scripts\ControlIntegral\ControlIntegral.frmMift.js" />
+    <Content Include="Scripts\es5-shim.min.js" />
+    <Content Include="Scripts\bootstrap-table\export\bootstrap-table-export.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.AnulacionPlanillaVisibleImport.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.CargarOperaciones.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.AnulacionOperacion.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Arbitrajes.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.EmitirNotaCredito.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.FacturasAsociadas.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Comisiones.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Frm_Cta.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.GenerarSwift.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.EmitirCheque.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ImpresionDeDocumentos.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ComercioInvisible.js" />
+    <None Include="Properties\PublishProfiles\ComexIISDesa.pubxml" />
+    <None Include="Properties\PublishProfiles\ComexIISRelease2.pubxml" />
+    <None Include="Properties\PublishProfiles\ComexIISTest.pubxml" />
+    <None Include="Properties\PublishProfiles\DESA PRE - LTA244.pubxml" />
+    <None Include="Properties\PublishProfiles\DESA- LTA244.pubxml" />
+    <None Include="Properties\PublishProfiles\EmilianoDeploy.pubxml" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ImprimirGrabar.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Index.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.NuevoDestino.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.NuevoOrigen.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.OrigenFondos.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Participantes.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ConsultaParticipantes.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.DestinoFondos.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ParticipantesCrear.js" />
+    <None Include="Properties\PublishProfiles\SprintActual.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\TestBanco.pubxml" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaTransferencia.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaVisibleImport.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.RelacionarOperacion.js" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.main.js" />
+    <Content Include="Scripts\bootbox\README.md" />
+    <Content Include="Scripts\AdminParticipantes\admin-prty.new.js" />
+    <None Include="Properties\PublishProfiles\user.pubxml" />
+    <None Include="Scripts\jquery-1.11.2.intellisense.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ComercioVisibleExport.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.IngresoValores.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Layout.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaAnulacion.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaInvisibleEditar.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaIngresoVisibleExportacion.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.PlanillaVisibleExport.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.ReversaOperacion.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.SeleccionOficina.js" />
+    <Content Include="Scripts\FundTransfer\FundTransfer.Ticket.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-CL.js" />
+    <Content Include="Scripts\globalize\globalize.js" />
+    <Content Include="Scripts\init-culture-es.js" />
+    <Content Include="Scripts\GestionControl\index.js" />
+    <Content Include="Scripts\FundTransfer\NuevoDestino.js" />
+    <Content Include="Scripts\jquery-1.11.2.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-tableSelect\LICENSE" />
+    <Content Include="Scripts\jquery-tableSelect\README" />
+    <Content Include="Scripts\jquery-tableSelect\tableSelect.jquery.json" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-tableSelect\jquery.tableSelect.js" />
+    <Content Include="Scripts\jquery-tableSelect\jquery.tableSelect.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.fileDownload.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.bundle.min.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.extensions.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Scripts\jquery.inputmask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Scripts\jquery.rut.js" />
+    <Content Include="Scripts\jquery.rut.min.js" />
+    <Content Include="Scripts\jquery.validate.globalize.js" />
+    <Content Include="Scripts\jquery.validate.globalize.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js.cookie.js" />
+    <Content Include="Scripts\knockout-3.3.0.debug.js" />
+    <Content Include="Scripts\knockout-3.3.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout.viewmodel.2.0.3.js" />
+    <Content Include="Scripts\knockout.viewmodel.2.0.3.min.js" />
+    <Content Include="Scripts\localization\messages_ar.js" />
+    <Content Include="Scripts\localization\messages_bg.js" />
+    <Content Include="Scripts\localization\messages_ca.js" />
+    <Content Include="Scripts\localization\messages_cs.js" />
+    <Content Include="Scripts\localization\messages_da.js" />
+    <Content Include="Scripts\localization\messages_de.js" />
+    <Content Include="Scripts\localization\messages_el.js" />
+    <Content Include="Scripts\localization\messages_es.js" />
+    <Content Include="Scripts\localization\messages_et.js" />
+    <Content Include="Scripts\localization\messages_eu.js" />
+    <Content Include="Scripts\localization\messages_fa.js" />
+    <Content Include="Scripts\localization\messages_fi.js" />
+    <Content Include="Scripts\localization\messages_fr.js" />
+    <Content Include="Scripts\localization\messages_he.js" />
+    <Content Include="Scripts\localization\messages_hr.js" />
+    <Content Include="Scripts\localization\messages_hu.js" />
+    <Content Include="Scripts\localization\messages_it.js" />
+    <Content Include="Scripts\localization\messages_ja.js" />
+    <Content Include="Scripts\localization\messages_ka.js" />
+    <Content Include="Scripts\localization\messages_kk.js" />
+    <Content Include="Scripts\localization\messages_lt.js" />
+    <Content Include="Scripts\localization\messages_lv.js" />
+    <Content Include="Scripts\localization\messages_my.js" />
+    <Content Include="Scripts\localization\messages_nl.js" />
+    <Content Include="Scripts\localization\messages_no.js" />
+    <Content Include="Scripts\localization\messages_pl.js" />
+    <Content Include="Scripts\localization\messages_pt_BR.js" />
+    <Content Include="Scripts\localization\messages_pt_PT.js" />
+    <Content Include="Scripts\localization\messages_ro.js" />
+    <Content Include="Scripts\localization\messages_ru.js" />
+    <Content Include="Scripts\localization\messages_si.js" />
+    <Content Include="Scripts\localization\messages_sk.js" />
+    <Content Include="Scripts\localization\messages_sl.js" />
+    <Content Include="Scripts\localization\messages_sr.js" />
+    <Content Include="Scripts\localization\messages_sv.js" />
+    <Content Include="Scripts\localization\messages_th.js" />
+    <Content Include="Scripts\localization\messages_tr.js" />
+    <Content Include="Scripts\localization\messages_uk.js" />
+    <Content Include="Scripts\localization\messages_vi.js" />
+    <Content Include="Scripts\localization\messages_zh.js" />
+    <Content Include="Scripts\localization\messages_zh_TW.js" />
+    <Content Include="Scripts\localization\methods_de.js" />
+    <Content Include="Scripts\localization\methods_nl.js" />
+    <Content Include="Scripts\localization\methods_pt.js" />
+    <Content Include="Scripts\messages_es.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\README.md" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.less" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.min.js.map" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\numeral.js" />
+    <Content Include="Scripts\numeral\languages\es-ES.js" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr-icon.png" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.css" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.js" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.min.css" />
+    <Content Include="Scripts\plugins\bootstrap-toastr\toastr.min.js" />
+    <Content Include="Scripts\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\plugins\bootstrap\js\bootstrap2-typeahead.js" />
+    <Content Include="Scripts\plugins\bootstrap\js\bootstrap2-typeahead.min.js" />
+    <Content Include="Scripts\plugins\jquery.min.js" />
+    <Content Include="Scripts\ReportarOperacion\ReportarOperacion.Index.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\string.min.js" />
+    <Content Include="Scripts\Utils.js" />
+    <Content Include="Static\SessionExpired.html" />
+    <Content Include="Views\Shared\EditorTemplates\UI_Button.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_CheckBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_Combo.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\UI_ListBox.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\EditorTemplates\UI_OptionItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_TextBox.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\FundTransfer\Index.cshtml" />
+    <Content Include="Views\FundTransfer\_Layout.cshtml" />
+    <Content Include="Views\FundTransfer\_ViewStart.cshtml" />
+    <Content Include="Views\ConsultaSwift\Index.cshtml" />
+    <Content Include="Views\BancaMundial\Index.cshtml" />
+    <Content Include="Views\ConsultaSwift\_AdminCasillas.cshtml" />
+    <Content Include="Views\ConsultaSwift\DetalleSwiftRecibido.cshtml" />
+    <Content Include="Views\ConsultaSwift\DetalleSwiftEnviado.cshtml" />
+    <Content Include="Views\FundTransfer\ComercioInvisible.cshtml" />
+    <Content Include="Views\FundTransfer\Ingreso_Valores.cshtml" />
+    <Content Include="Views\ConsultaSwift\DatosSwiftEnviado.cshtml" />
+    <Content Include="Views\ConsultaSwift\DatosSwiftRecibido.cshtml" />
+    <Content Include="Views\ConsultaSwift\LogSwift.cshtml" />
+    <Content Include="Views\FundTransfer\Participantes.cshtml" />
+    <Content Include="Views\FundTransfer\ConsultaParticipantes.cshtml" />
+    <Content Include="Views\FundTransfer\Arbitrajes.cshtml" />
+    <Content Include="Views\ConsultaSwift\PruebaPDF.cshtml" />
+    <Content Include="Views\FundTransfer\ComercioVisibleExport.cshtml" />
+    <Content Include="Views\FundTransfer\FrmxPln0.cshtml" />
+    <Content Include="Views\FundTransfer\OrigenFondos.cshtml" />
+    <Content Include="Views\FundTransfer\DestinoFondos.cshtml" />
+    <Content Include="Views\FundTransfer\_ParticipantesIdentificar.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaVisibleImport.cshtml" />
+    <Content Include="Views\FundTransfer\ImpresionDeDocumentos.cshtml" />
+    <Content Include="Views\FundTransfer\Ticket.cshtml" />
+    <Content Include="Views\FundTransfer\ParticipantesCrear.cshtml" />
+    <Content Include="Views\Home\External.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaIngresoVisibleExport.cshtml" />
+    <Content Include="Views\AutorizacionSwift\Index.cshtml" />
+    <Content Include="Views\EncasillamientoSwift\Index.cshtml" />
+    <Content Include="Views\EncasillamientoSwift\_AdminCasillas.cshtml" />
+    <Content Include="Views\AdminSwift\Index.cshtml" />
+    <Content Include="Views\AdminSwift\_AdminCasillas.cshtml" />
+    <Content Include="Views\AutorizacionSwift\Rechazar.cshtml" />
+    <Content Include="Views\EncasillamientoSwift\Desencasillar.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planillas\Index.cshtml" />
+    <Content Include="Views\GestionControlSwift\Index.cshtml" />
+    <Content Include="Views\GestionControlSwift\_AdminCasillas.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planilla\VerVisibleImportacion.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planilla\VerIngresoVisibleExportacion.cshtml" />
+    <Content Include="Views\AdminSwift\GestionArchivos.cshtml" />
+    <Content Include="Views\AdminParticipantes\Index.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ModalRazonSocial.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ModalDireccion.cshtml" />
+    <Content Include="Views\GestionControlSwift\LogSwift.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planilla\VerVisibleExportacionAnulada.cshtml" />
+    <Content Include="Views\AdminParticipantes\_MenuMain.cshtml" />
+    <Content Include="Views\AdminParticipantes\AbrirParticipante.cshtml" />
+    <Content Include="Views\GestionControlSwift\ControlSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\EncasillamientoManualSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteConsultaSwift.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Fecha.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planilla\VerInvisibleExportacion.cshtml" />
+    <Content Include="Views\GestionControlSwift\EstadisticasMensajesRecepcionadosSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\EstadisticaEnviarRecibir.cshtml" />
+    <Content Include="Views\GestionControlSwift\EncasillamientoAutomaticoSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteEstadistica.cshtml" />
+    <Content Include="Views\GestionControlSwift\EstadisticasMensajesEnviadosSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteEstadisticasMensajesEnviadosSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteEstadisticasMensajesRecepcionadosSwift.cshtml" />
+    <Content Include="Areas\Planillas\Views\Planilla\VerEstadisticaImportacion.cshtml" />
+    <Content Include="Views\AdminParticipantes\CaracteristicasParticipante.cshtml" />
+    <Content Include="Views\AdminParticipantes\CuentasParticipante.cshtml" />
+    <Content Include="Views\AdminParticipantes\InstruccionesEspeciales.cshtml" />
+    <Content Include="Views\AdminParticipantes\TasasEspecialesParticipante.cshtml" />
+    <Content Include="Views\GestionControlSwift\MensajesEnviadosExteriorSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteMensajesEnviadosExteriorSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteEncasillamientoAutomaticoSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteEncasillamientoManualSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteGestionControlSwift.cshtml" />
+    <Content Include="Views\AdminSwift\Parear.cshtml" />
+    <Content Include="Views\AdminParticipantes\_DetalleCuentas.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_Button.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_CheckBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_Combo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_ListBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_OptionItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_TextBox.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ModalMessages.cshtml" />
+    <Content Include="Views\AdminParticipantes\_Layout.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ViewStart.cshtml" />
+    <Content Include="Views\GestionControlSwift\VentanaTodosPorRango.cshtml" />
+    <Content Include="Views\GestionControlSwift\ControlEnvioMensajeriaSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteControlEnvioMensajeriaSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteControlEnvioMensajeriaSwiftt.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteControlRecepcionMensajesSwift.cshtml" />
+    <Content Include="Views\GestionControlSwift\ReporteControlRecepcionNoMensajesSwift.cshtml" />
+    <Content Include="Views\FundTransfer\ReversarOperacionExport.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaVisibleExport.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaInvisibleEditar.cshtml" />
+    <Content Include="Views\FundTransfer\ReporteContable.cshtml" />
+    <Content Include="Views\ConsultaSwift\ReporteConsultaSwift.cshtml" />
+    <Content Include="Views\FundTransfer\SeleccionPlanillasAnular.cshtml" />
+    <Content Include="Views\FundTransfer\FacturasAsociadas.cshtml" />
+    <Content Include="Views\FundTransfer\_ReversarOperacionDeclaracion.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaAnularNumero.cshtml" />
+    <Content Include="Views\FundTransfer\AnulacionOperaciones.cshtml" />
+    <Content Include="Views\FundTransfer\DefinirNuevosOrigenes.cshtml" />
+    <Content Include="Views\FundTransfer\RelacionarOperacion.cshtml" />
+    <Content Include="Views\FundTransfer\NemonicoCuenta.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillasTransferencia.cshtml" />
+    <Content Include="Views\FundTransfer\ImpresionPlanillaInvisible.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaReemplazos.cshtml" />
+    <Content Include="Views\FundTransfer\ImpresionPlanillaVisibleExportacion.cshtml" />
+    <Content Include="Views\FundTransfer\ImprimirPlanillaInvisible.cshtml" />
+    <Content Include="Views\FundTransfer\DetalleSwift.cshtml" />
+    <Content Include="Views\Shared\SolFirmas.cshtml" />
+    <Content Include="Views\AdminParticipantes\_TasaEspeciales.cshtml" />
+    <Content Include="Views\AdminParticipantes\NuevoParticipante.cshtml" />
+    <Content Include="Views\AdminParticipantes\RazonSocial.cshtml" />
+    <Content Include="Views\AdminParticipantes\Direccion.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ModalMessageEliminaParticipante.cshtml" />
+    <Content Include="Views\AdminSwift\EliminaMensaje.cshtml" />
+    <Content Include="Views\AdminSwift\ConsultaPoderes.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteGestionArchivos.cshtml" />
+    <Content Include="Views\MantenedorSwift\Index.cshtml" />
+    <Content Include="Views\RecibirMensaje\Index.cshtml" />
+    <Content Include="Views\RecibirMensaje\_AdminCasillas.cshtml" />
+    <Content Include="Views\RecibirMensaje\Rechazar.cshtml" />
+    <Content Include="Areas\EnvioSwift\Views\Bancos\Imprimir.cshtml" />
+    <Content Include="Views\ControlIntegral\Index.cshtml" />
+    <Content Include="Views\ControlIntegral\_Empresa.cshtml" />
+    <Content Include="Views\ControlIntegral\_EReparo.cshtml" />
+    <Content Include="Views\ControlIntegral\_ChkList.cshtml" />
+    <Content Include="Views\ControlIntegral\_Detalle.cshtml" />
+    <Content Include="Views\ControlIntegral\_DetalleMesa.cshtml" />
+    <Content Include="Views\EliminacionMasiva\Index.cshtml" />
+    <Content Include="Views\EliminacionMasiva\EliminarMensaje.cshtml" />
+    <Content Include="Views\AutorizacionSwift\Alertas.cshtml" />
+    <Content Include="Views\AdminSwift\Alertas.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ConfirmarSalirGuardar.cshtml" />
+    <Content Include="Views\GestionControlSwift\GestionEnviados.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftNulos.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftBloqueados.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftProcesados.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftRechazados.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftAutorizados.cshtml" />
+    <Content Include="Views\AdminSwift\ReporteAdminSwiftSinAutorizar.cshtml" />
+    <Content Include="Views\Error\SessionExpired.cshtml" />
+    <Content Include="Views\RecibirMensaje\ReporteRecepcion.cshtml" />
+    <Content Include="Views\RecibirMensaje\Alertas.cshtml" />
+    <Content Include="Views\Home\Settings.cshtml" />
+    <Content Include="Views\Home\Version.cshtml" />
+    <Content Include="Views\ReportarOperacion\Index.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\UI_TextBox.cshtml" />
+    <Content Include="Views\FundTransfer\SeleccionOficina.cshtml" />
+    <Content Include="Views\FundTransfer\Comisiones.cshtml" />
+    <Content Include="Views\FundTransfer\ImprimirDocumentos.cshtml" />
+    <Content Include="Views\FundTransfer\GenerarSwift.cshtml" />
+    <Content Include="Views\FundTransfer\DefinirNuevosDestinos.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaAnulacion.cshtml" />
+    <Content Include="Views\FundTransfer\PlanillaVisibleImportEditar.cshtml" />
+    <Content Include="Views\FundTransfer\CargarOperaciones.cshtml" />
+    <Content Include="Views\FundTransfer\AnulacionPlanillaVisibleImport.cshtml" />
+    <Content Include="Views\FundTransfer\ReemAnulacionPlanillaVisibleImport.cshtml" />
+    <Content Include="Views\FundTransfer\EmitirNotaCredito.cshtml" />
+    <Content Include="Views\FundTransfer\EmitirCheque.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UI_TextBox.cshtml" />
+    <Content Include="Views\AutorizacionSwift\_AdminCasillas.cshtml" />
+    <Content Include="Views\AutorizacionSwift\ConsultaMensaje.cshtml" />
+    <Content Include="Views\AdminParticipantes\DatosBancoParticipante.cshtml" />
+    <Content Include="Views\AutorizacionSwift\Devolver.cshtml" />
+    <Content Include="Views\AutorizacionSwift\SeguimientoMensaje.cshtml" />
+    <Content Include="Views\AdminParticipantes\_ModalConfirmYesNo.cshtml" />
+    <Content Include="Views\FundTransfer\ImprimirPlanilla500.cshtml" />
+    <Content Include="Views\FundTransfer\ImprimirPlanilla401.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Shared\_GenerarSwift.cshtml" />
+    <None Include="Web.ArkanoQA.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Arkanosoft.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.AzureTest.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.BCH.Certificacion.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.BCH.Desarrollo.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.BCH.Produccion.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.BCH.SIT.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.DesaBanco.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.IISDesa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.IISRelease2.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.IISTest.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.TestBanco.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\BusquedaPlanilla\Views\Base\" />
+    <Folder Include="Areas\BusquedaPlanilla\Views\Shared\" />
+    <Folder Include="Areas\ContabilidadGenerica\Content\" />
+    <Folder Include="Areas\ContabilidadGenerica\Views\Base\" />
+    <Folder Include="Areas\ContabilidadGenerica\Views\ContabilidadGenerica\" />
+    <Folder Include="Areas\ContabilidadGenerica\Views\DatosAdicionales\" />
+    <Folder Include="Areas\ContabilidadGenerica\Views\Nueva\" />
+    <Folder Include="Areas\Devengo\Views\Base\" />
+    <Folder Include="Areas\Devengo\Views\OperacionesCDR\" />
+    <Folder Include="Areas\FinDia\Views\Base\" />
+    <Folder Include="Areas\Impresion\Views\ImpresionPlanillas\" />
+    <Folder Include="Areas\InicioDia\Models\" />
+    <Folder Include="Views\App\" />
+    <Folder Include="Views\FundTransfer\Base\" />
+    <Folder Include="Views\ImpresionComercioInvisibleViewModel\" />
+    <Folder Include="Views\Shared\EditorTemplates\Commons\" />
+    <Folder Include="Views\Swi200\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCH.Comex.Common\BCH.Comex.Common.csproj">
+      <Project>{889f7437-c885-4877-a730-70442ae318f5}</Project>
+      <Name>BCH.Comex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.BancaMundial\BCH.Comex.Core.BL.SBCB.csproj">
+      <Project>{a9e4efc4-ff50-48b4-985a-9991b8924deb}</Project>
+      <Name>BCH.Comex.Core.BL.SBCB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.Centinela\BCH.Comex.Core.BL.Centinela.csproj">
+      <Project>{ef63b2f5-dfa3-439d-9765-88d06be62607}</Project>
+      <Name>BCH.Comex.Core.BL.Centinela</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.Common\BCH.Comex.Core.BL.Common.csproj">
+      <Project>{2bbf2bf8-fe73-4c47-984f-907abe88e53c}</Project>
+      <Name>BCH.Comex.Core.BL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.ControlIntegral\BCH.Comex.Core.BL.CONTROLINTEGRAL.csproj">
+      <Project>{ba3ebc7e-6391-4c6b-aaa7-f1e98a54b609}</Project>
+      <Name>BCH.Comex.Core.BL.CONTROLINTEGRAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWAU\BCH.Comex.Core.BL.SWAU.csproj">
+      <Project>{052fb40d-76ba-43b9-b935-36b7da94d959}</Project>
+      <Name>BCH.Comex.Core.BL.SWAU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWBO\BCH.Comex.Core.BL.SWBO.csproj">
+      <Project>{4c19794c-84f9-4359-8218-b64b07dc5ba7}</Project>
+      <Name>BCH.Comex.Core.BL.SWBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWCE\BCH.Comex.Core.BL.SWCE.csproj">
+      <Project>{2ff97bf3-6306-4748-bc02-c6011165b46e}</Project>
+      <Name>BCH.Comex.Core.BL.SWCE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.Portal\BCH.Comex.Core.BL.Portal.csproj">
+      <Project>{94ee5741-c269-45d8-b548-f60bc546e941}</Project>
+      <Name>BCH.Comex.Core.BL.Portal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWEM\BCH.Comex.Core.BL.SWEM.csproj">
+      <Project>{980546a8-f0c1-44bc-aab6-b3a8066a9ca4}</Project>
+      <Name>BCH.Comex.Core.BL.SWEM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWEN\BCH.Comex.Core.BL.SWEN.csproj">
+      <Project>{b400b268-cbc3-48bd-85a4-2b867c9faa11}</Project>
+      <Name>BCH.Comex.Core.BL.SWEN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWGC\BCH.Comex.Core.BL.SWGC.csproj">
+      <Project>{16f2210d-015e-4e9d-9cd6-d4885189db5d}</Project>
+      <Name>BCH.Comex.Core.BL.SWGC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWMA\BCH.Comex.Core.BL.SWMA.csproj">
+      <Project>{e7c753ad-6bb5-47da-bc8e-da1c62468c88}</Project>
+      <Name>BCH.Comex.Core.BL.SWMA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWRE\BCH.Comex.Core.BL.SWRE.csproj">
+      <Project>{bacce68d-0991-4dbe-8f42-a82a266c878c}</Project>
+      <Name>BCH.Comex.Core.BL.SWRE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWSE\BCH.Comex.Core.BL.SWSE.csproj">
+      <Project>{3bd63072-25f6-43d6-a42c-88f6802faed3}</Project>
+      <Name>BCH.Comex.Core.BL.SWSE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XCFT\BCH.Comex.Core.BL.XCFT.csproj">
+      <Project>{6fc71e10-f313-4856-a815-2d2611434ce6}</Project>
+      <Name>BCH.Comex.Core.BL.XCFT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XEGI\BCH.Comex.Core.BL.XEGI.csproj">
+      <Project>{39767bcc-5ee0-464c-9594-868d50f36ecd}</Project>
+      <Name>BCH.Comex.Core.BL.XEGI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XEVA\BCH.Comex.Core.BL.XEVA.csproj">
+      <Project>{2fa8dd0e-5dda-4b73-bea7-63dd065f0e0b}</Project>
+      <Name>BCH.Comex.Core.BL.XEVA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGCN\BCH.Comex.Core.BL.XGCN.csproj">
+      <Project>{7ce65b44-d8bb-4309-b34e-5d46149e018d}</Project>
+      <Name>BCH.Comex.Core.BL.XGCN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGCV\BCH.Comex.Core.BL.XGCV.csproj">
+      <Project>{d4baf813-3d24-4769-9a90-fae14125fa02}</Project>
+      <Name>BCH.Comex.Core.BL.XGCV</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGFD\BCH.Comex.Core.BL.XGFD.csproj">
+      <Project>{2a498372-42ae-45e4-9157-2a6398795b75}</Project>
+      <Name>BCH.Comex.Core.BL.XGFD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGGL\BCH.Comex.Core.BL.XGGL.csproj">
+      <Project>{dc359530-3a34-4a3b-8ca6-ab1a42cca472}</Project>
+      <Name>BCH.Comex.Core.BL.XGGL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGPL\BCH.Comex.Core.BL.XGPL.csproj">
+      <Project>{f4e80624-0654-453a-b70c-f8d381e7c4e4}</Project>
+      <Name>BCH.Comex.Core.BL.XGPL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGID\BCH.Comex.Core.BL.XGID.csproj">
+      <Project>{efdfa3e4-0faa-4344-8a06-1aa5dd3d7b7a}</Project>
+      <Name>BCH.Comex.Core.BL.XGID</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGPY\BCH.Comex.Core.BL.XGPY.csproj">
+      <Project>{57c4addf-0ee9-4a4f-937e-3152a1278dc2}</Project>
+      <Name>BCH.Comex.Core.BL.XGPY</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XGSV\BCH.Comex.Core.BL.XGSV.csproj">
+      <Project>{3f66b239-e08e-4685-9b97-11677546facc}</Project>
+      <Name>BCH.Comex.Core.BL.XGSV</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Cext01\BCH.Comex.Core.Entities.Cext01.csproj">
+      <Project>{4169ac2f-554b-4f30-8405-2f3f0fae44c0}</Project>
+      <Name>BCH.Comex.Core.Entities.Cext01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Custodia\BCH.Comex.Core.Entities.Custodia.csproj">
+      <Project>{04098f7c-6bca-410b-a47e-2b621f059ccc}</Project>
+      <Name>BCH.Comex.Core.Entities.Custodia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Portal\BCH.Comex.Core.Entities.Portal.csproj">
+      <Project>{256d32fc-c4a9-43d8-be75-785f1b569a15}</Project>
+      <Name>BCH.Comex.Core.Entities.Portal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Sbcor\BCH.Comex.Core.Entities.Sbcor.csproj">
+      <Project>{7d63530f-2893-4f6b-ac6d-2a5fdcd4551b}</Project>
+      <Name>BCH.Comex.Core.Entities.Sbcor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Swift\BCH.Comex.Core.Entities.Swift.csproj">
+      <Project>{ce544081-c6b2-4c2d-9236-4ff67bfefbdf}</Project>
+      <Name>BCH.Comex.Core.Entities.Swift</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Sbcor\BCH.Comex.Data.DAL.Sbcor.csproj">
+      <Project>{9a9e4dc7-3e09-4839-a60d-7d5a1d16545f}</Project>
+      <Name>BCH.Comex.Data.DAL.Sbcor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Services\BCH.Comex.Data.DAL.Services.csproj">
+      <Project>{7e90823f-f3db-473c-b4b9-a787eaaa7643}</Project>
+      <Name>BCH.Comex.Data.DAL.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Utils\BCH.Comex.Utils.csproj">
+      <Project>{0be08b03-e9ed-4299-a163-ad2f51d04d9d}</Project>
+      <Name>BCH.Comex.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\BCH.resx" />
+    <Content Include="Areas\ContabilidadGenerica\Scripts\ContabilidadGenerica.Layout.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureTest|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISTest|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52388</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Sprint42.1</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+      $(PostBuildEventDependsOn);
+      PostBuildMacros;
+    </PostBuildEventDependsOn>
+    <PostBuildEvent>if $(ConfigurationName) == Debug (
+  powershell -ExecutionPolicy Unrestricted -file "$(ProjectDir)..\DbScripts\replaceversion.ps1" -version "@(VersionNumber)" -sqlfolder "$(ProjectDir)..\DbScripts\"
+  if errorlevel 1 exit 1
+)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="PostBuildMacros">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="Targets" />
+    </GetAssemblyIdentity>
+    <ItemGroup>
+      <VersionNumber Include="@(Targets->'%(Version)')" />
+    </ItemGroup>
+  </Target>
+</Project>

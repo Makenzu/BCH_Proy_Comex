@@ -1,0 +1,307 @@
+﻿@model BCH.Comex.UI.Web.Areas.EnvioSwift.Models.EditorMensajeViewModel
+
+@{
+    ViewBag.Title = "Envío de Mensajes Swift - Editor de mensajes";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/envio-msj-swift-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/EnvioSwift/EditorMensaje")
+    @Scripts.Render("~/bundles/EnvioSwift/ListaPendientes")
+    <script>
+        //datos en formato Json
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+
+        //urls
+        var urlGetBancoPorSwift = '@Url.Action("ObtenerBancoPorSwift")';
+        var urlGetLineasYFormatosMT = '@Url.Action("GetLineasYFormatosParaMT")';
+        var urlGrabarMensaje = '@Url.Action("GrabarMensaje")';
+        var urlVisualizarMensaje = '@Url.Action("VisualizarMensaje")';
+        var urlListaPendientes = '@Url.Action("ListaPendientes")';
+        var urleditarSwiftPendiente = '@Url.Action("EditarSwiftPendiente")';
+        var urleliminarSwfitPendiente = '@Url.Action("EliminarSwiftPendiente")';
+        var urlenviarSwiftPendiente = '@Url.Action("EnviarSwiftPendiente")';
+        var urlGrabarBorrador = '@Url.Action("GrabarBorrador")';
+        var urlGrabarMensajeModificado = '@Url.Action("GrabarMensajeModificado")';
+        var urlGetMoneda = '@Url.Action("ObtenerMoneda")';
+        var urlGetValitedMontoMoneda = '@Url.Action("ValidaMTMonedaMonto")';
+        var urlObtieneCamposSumatoriaMtoTotal = '@Url.Action("ObtenerCamposSumatoriaMontoTotalMT")';
+        var urlSolicitarFirmas = '@Url.Action("SolicitarFirmas", "AutorizacionSwift", new { area = string.Empty  })';
+
+
+      
+    </script>
+}
+
+@section css {
+
+    <style>
+        /*le pongo height fija para que el grabar siempre quede visible*/
+        #panelTablaSwift {
+            overflow-y: auto;
+            bottom: 0;
+            /*max-height: 400px;*/
+        }
+    </style>
+
+}
+
+<div id="divContainer" class="container">
+    <div class="row panel" style="vertical-align: middle">
+        <div class="col-xs-6"><h2 data-bind="text: (IdMensaje() ? 'Editor para Modificación - Id Mensaje: ' + IdMensaje() : 'Editor para Ingreso')"></h2></div>
+        <div class="col-xs-5" style="vertical-align: middle">
+            <a class="btn btn-transparent bottom" id="btnNuevo" href="#"><img title="Nuevo" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/Nuevo.png"></a>
+            <a class="btn btn-transparent bottom" id="btnAbrir" href="#"><img title="Abrir" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/AbrirConsulta.png"></a>
+            <a class="btn btn-transparent bottom" id="btnVisualizar" href="#" data-bind="visible: TipoMT"><img title="Visualizar" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/PlanillasdeAnulacion.png"></a>
+            <a class="btn btn-transparent bottom" id="btnGrabarBorrador" href="#" data-bind="visible: (TipoMT() != null && (IdMensaje() == 0))"><img title="Guardar borrador" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/Grabar.png"></a>
+            <a class="btn btn-transparent bottom" id="btnGrabarPlantilla" href="#" data-bind="visible: (TipoMT() != null && (IdMensaje() == 0))"><img title="Guardar como plantilla" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/PlanillaInvisibleEditar.png"></a>
+            <a class="btn btn-transparent bottom" id="btnGrabar" href="#" data-bind="visible: TipoMT"><img title="Grabar" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/Enviar.png"></a>
+        </div>
+        <div class="col-xs-1" style="vertical-align: middle"><a class="btn btn-transparent bottom" id="btnSalir" href="#"><img title="Salir" class="img-func" style="width: 32px; height: 32px;" src="~/Content/images/ButtonsBarMnu/Salir.png"></a></div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Datos básicos</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label class="control-label">Tipo MT: </label>
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">MT</button>
+                                    </span>
+                                    <select id="ddlTipoMT" class="form-control" data-bind="options: TiposMT, value: TipoMT, optionsValue: 'cod_tipo', optionsText: 'NroCodYNombre', optionsCaption: 'Seleccione...', disable: TipoMT"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label class="control-label">Banco Receptor: </label>
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" id="txtSwiftBancoReceptor" onkeypress="return alpha(event)" style="text-transform: uppercase" class="form-control" data-bind="value: SwiftBancoReceptor" />
+                            </div>
+                            <div class="col-xs-4"><label data-bind="html: DescBancoReceptor"></label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label class="control-label">Moneda: </label>
+                            </div>
+                            <div class="col-xs-10">
+                                <select id="ddlMoneda" class="form-control" data-bind="options: Monedas, value: CodMonedaSW, optionsText: 'CodYNombre', optionsValue: 'cod_moneda_sw', optionsCaption: 'Seleccione...', valueUpdate: 'afterkeydown'"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label class="control-label">Monto: </label>
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" id="txtMonto" class="form-control monto" data-bind="enable: CodMonedaSW, value: Monto.extend({decimalesMoneda: ''})" maxlength="19" />
+                            </div>
+                            <div class="col-xs-2">
+                                <button type="button" id="btnModalAgregarLineas" class="btn btn-primary" data-bind="visible: ActivaAcciones, click: function(){showDialog(true)}">Texto Libre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ko if: TipoMT  -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title" data-bind="text: TipoMT().nombre_tipo"></h2>
+            </div>
+            <div class="panel-body" id="panelTablaSwift">
+                <div class="panel-body">
+                    <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="width:2%">&nbsp;</th>
+                                    <th style="width:5%">Incluir</th>
+                                    <th style="width:8%">Campo</th>
+                                    <th style="width:25%">Desc</th>
+                                    <th style="width:15%">Formato</th>
+                                    <th style="width:45%">Texto</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: { data: $data.LineasMT, as: 'principal'}">
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-asterisk" aria-hidden="true" data-bind="visible: Obligatorio"></span></td>
+                                    <td><input type="checkbox" class="chkIncluido" data-bind="checked: Incluido, enable: !Obligatorio()" /></td>
+                                    <td>
+                                        <!-- ko if: TieneVariantes  -->
+                                        <div class="form-group" data-bind="css: { 'has-error': TieneErrorVariante }">
+                                            <select class="form-control" data-bind="options: Variantes, value: VarianteSeleccionada,  optionsCaption: '--' + CodCam()  + '--', enable: Incluido"></select>
+                                            <label class='lblMensajeError control-label' data-bind="html: MensajeError, visible: TieneErrorVariante" />
+                                        </div>
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: TieneVariantes  -->
+                                        <span data-bind="text: CodCam"></span>
+                                        <!-- /ko -->
+                                    </td>
+                                    <td><span data-bind="text: Descripcion"></span></td>
+                                    <td data-bind="ifnot: TieneVariantes">
+                                        <span data-bind="text: Formato"></span>
+                                    </td>
+                                    <td>
+                                        <div class="form-group" data-bind="ifnot: TieneVariantes, css: { 'has-error': TieneErrorDetalle }">
+                                            <input type="text" class="form-control" data-bind="value: Detalle.extend({uppercase: ''}), attr: { maxlength: LenLinea }, enable: Incluido" />
+                                            <label class='lblMensajeError control-label' data-bind="html: MensajeError, visible: principal.TieneErrorDetalle" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- ko foreach: principal.LineasSecundarias -->
+                                <!-- ko if: (principal.Incluido() && (!principal.TieneVariantes() || principal.VarianteSeleccionada() == CodCam())) -->
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><span data-bind="text: Descripcion, visible: principal.Descripcion() != Descripcion()"></span></td>
+                                    <td><span data-bind="text: Formato"></span></td>
+                                    <td>
+                                        <div class="form-group" data-bind="css: { 'has-error': TieneErrorDetalle }">
+                                            <input type="text" class="form-control" data-bind="value: Detalle.extend({uppercase: ''}), attr: { maxlength: LenLinea }, enable: principal.Incluido" />
+                                            <label class='lblMensajeError control-label' data-bind="html: MensajeError, visible: TieneErrorDetalle" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <div id="modalVisorSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visualizar borrador de Swift">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center" id="divCuerpoMensajeSwift">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalBuscarSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Buscardor de Swift">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                    <div class="modal-body text-center" style="overflow-x: hidden" id="divCuerpoBuscadorSwift">
+                        <div class="alert alert-danger" role="dialog" id="divErroneoEnvioSwift">
+                            <label id="LblAlertaMensaje"></label><br />
+                        </div>
+                        @{Html.RenderPartial("_ListaPendientes");}
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Este se llena por Ajax*@
+    <div id="divSolFirmasSwift"></div>
+
+    <div id="modalBorrador" class="modal fade noForzarHeight" tabindex="-1" role="dialog" aria-labelledby="Datos del borrador">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="titleModalBorrador">Datos del borrador</h4>
+                </div>
+                <div class="modal-body" id="divCuerpoGuardarBorrador">
+                    <form>
+                        <div class="form-group">
+                            <label for="txtNombreBorrador">Nombre:</label>
+                            <input type="text" id="txtNombreBorrador" class="form-control" data-bind="value: nuevoNombreArchivo" onkeypress="return alpha(event)" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="btnConfirmarGrabarBorrador">Guardar</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="btn" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Modal de Agregar Lineas *@
+    <div id="modalAgregarLineas" class="modal fade noForzarHeight" tabindex="-1" role="dialog" data-bind="modal:showDialog" aria-labelledby="Acci&oacute;n Agregar L&iacute;neas">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="titleModalBorrador">Agregar l&iacute;neas en campo</h4>
+                </div>
+                <div class="modal-body text-right" id="divCuerpoAgregarLineas">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label class="control-label">Campo: </label>
+                                </div>
+                                <div class="col-xs-10">
+                                    <select id="ddlCampos" class="form-control" data-bind="options: CamposMT, value: selectedCamposMT, valueUpdate: 'afterkeydown'"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label class="control-label">Texto a ingresar: </label>
+                                </div>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" data-bind="value: txtTextoEnLineas"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label class="control-label"></label>
+                                </div>
+                                <div class="col-xs-10 text-left has-error">
+                                    <label class="control-label" data-bind="text: txtMensajeErrorAgregarLinea"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bind="click: btnLimpiar">Limpiar</button>
+                    <button type="button" class="btn btn-success" data-bind="click: btnAgregarLineas">Finalizar</button>
+                    <button class="btn" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

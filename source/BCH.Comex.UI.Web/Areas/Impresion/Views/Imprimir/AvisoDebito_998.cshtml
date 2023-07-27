@@ -1,0 +1,240 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+@using BCH.Comex.Core.Entities.Portal
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Aviso de débito</title>
+
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0px 171px 76px;
+            padding: 0px;
+            border: none;
+            width: 740px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_1 #id_1_1 {
+                    float: left;
+                    border: none;
+                    margin: 1px 0px 0px 0px;
+                    padding: 0px;
+                    width: 300px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_2 {
+                    border: none;
+                    margin: 0px 0px 0px 380px;
+                    padding: 0px;
+                    width: 750px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_3 {
+                    float: left;
+                    border: none;
+                    margin: 1px 0px 0px 0px;
+                    padding: 0px;
+                    width: 740px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 10px 0px 0px 0px;
+                padding: 0px;
+                width: 740px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_3 {
+                border: none;
+                margin: 448px 0px 0px 500px;
+                padding: 0px;
+                width: 740px;
+                overflow: hidden;
+            }
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 45px;
+            margin-bottom: 0px;
+        }
+
+        .p2 {
+            text-align: left;
+            padding-right: 108px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .p3 {
+            text-align: left;
+            padding-left: 2px;
+            margin-top: 2px;
+            margin-bottom: 0px;
+        }
+
+        .p4 {
+            text-align: left;
+            padding-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p5 {
+            text-align: left;
+            padding-left: 153px;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        .p6 {
+            text-align: left;
+            padding-right: 0px;
+            margin-top: 60px;
+            margin-bottom: 0px;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-right: 220px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p8 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+    </style>
+
+    <style>
+    @{
+        var printFormat = ViewData[BCH.Comex.UI.Web.Helpers.Extensions.ControllerExtensions.PrintFormatViewDataKey] as PrintFormat? ?? PrintFormat.HTML;
+        if (printFormat == PrintFormat.TIFF)
+        {
+
+            @:.ft0 {
+            @:    font: bold 16px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.ft1 {
+            @:    font: italic bold 13px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft2 {
+            @:    font: italic bold 13px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.ft3 {
+            @:    font: 13px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft4 {
+            @:    font: bold 13px 'Times New Roman';
+            @:    line - height: 14px;
+            @:}
+        }
+        else
+        {
+            @:.ft0 {
+            @:    font: bold 23px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.ft1 {
+            @:    font: italic bold 20px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft2 {
+            @:    font: italic bold 20px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.ft3 {
+            @:    font: 20px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft4 {
+            @:    font: bold 20px 'Times New Roman';
+            @:    line - height: 14px;
+            @:}
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="page_1">
+        <div id="id_1">
+            <div id="id_1_1">
+                <p class="p0 ft0">@Model.TituloCabezal.ToUpper()</p>
+            </div>
+            <div id="id_1_2">
+                <p class="p0 ft3">@Model.Ciudad</p>
+                <p class="p3 ft4">@Model.NuestraReferencia <nobr>@Model.NuestraReferenciaValue</nobr></p>
+                @if (Model.SuReferenciaValue != null) {
+                  <p class="p3 ft4">@Model.SuReferencia <nobr>@Model.SuReferenciaValue</nobr></p>
+                }
+            </div>
+        </div>
+        <div id="id_1">
+            <div id="id_1_3">
+                <p class="p1 ft1">Señores</p>
+                <p class="p0 ft1">@Model.NombreCliente</p>
+                <p class="p2 ft2">@Model.DireccionCliente</p>
+                <p class="p2 ft2">@Model.CiudadCliente</p>
+            </div>
+        </div>
+        <div id="id_2" style="width: 100%;">
+            <p class="p4 ft3" style="word-wrap: break-word;">@Model.Parrafo1</p>
+            @foreach (var item in Model.LineasDebitoCredito)
+            {
+                <p class="p5 ft3">@item.Moneda @item.Monto</p>
+            }
+            <p class="p6 ft3" style="white-space: pre-wrap;word-wrap: break-word;">@Model.PiePagina</p>
+        </div>
+        <div id="id_3">
+            <p class="p0 ft1">_______________________</p>
+            <p class="p8 ft2">Banco de Chile</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿@model string
+@{
+    ViewBag.Title = "External";
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+}
+
+<iframe src="@Model" width="100%" height="800px">
+</iframe>
+
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b2ed84b0-f58d-461a-a489-27bfbe455bac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Source\xml_2015\WSDL Exportados\CargoCuentaCosmos\CS002032_CargoCuentaCosmosCodFC_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS002032_CargoCuentaCosmosCodFC_1.xsd" MetadataType="Schema" ID="153b03e8-3e1d-4cbf-b5ac-8d13d2064c13" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CargoCuentaCosmos/CS002032_CargoCuentaCosmosCodFC_1.xsd" />
+    <MetadataFile FileName="CS002032_CargoCuentaCosmosCodFC_1_2.xsd" MetadataType="Schema" ID="26ea28f4-0247-40ca-b12d-94b97528986d" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CargoCuentaCosmos/CS002032_CargoCuentaCosmosCodFC_1_2.xsd" />
+    <MetadataFile FileName="CS002032_CargoCuentaCosmosCodFC_1_2_3.xsd" MetadataType="Schema" ID="02b3b6c9-f00a-48d8-a7dc-c2c1cecc7ea4" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CargoCuentaCosmos/CS002032_CargoCuentaCosmosCodFC_1_2_3.xsd" />
+    <MetadataFile FileName="CargoCuentaCosmosCodFC.wsdl" MetadataType="Wsdl" ID="f0777e67-27c7-42ae-bfbe-70331e03521b" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CargoCuentaCosmos/CS002032_CargoCuentaCosmosCodFC_1.wsdl" />
+    <MetadataFile FileName="CS002032_CargoCuentaCosmosCodFC.xsd" MetadataType="Schema" ID="5a15f4ca-cf56-4f19-8db0-4dc5b06e839a" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CargoCuentaCosmos/CS002032_CargoCuentaCosmosCodFC.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

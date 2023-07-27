@@ -1,0 +1,99 @@
+﻿@model BCH.Comex.UI.Web.Areas.FinDia.Models.ReporteDescuadraturaModel
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = Model.Titulo;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+
+@if (Model != null)
+{
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Operación.</th>
+                <th>CtaCte.</th>
+                <th>C/A.</th>
+                <th>Moneda.</th>
+                <th>Monto.</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.DetalleInyeccion)
+        {
+            <tr>
+                @if (item.estado == 9)
+                {                 
+                    <td>@item.codcct-@item.codpro-@item.codesp-@item.codofi-@item.codope</td>
+                    if (item.numcct.Length > 32)
+                    {
+                        <td>@item.numcct.Substring(1,32)</td>
+                    }
+                    else
+                    {
+                        <td>@item.numcct</td>
+                    }
+                    if (item.cod_dh == "D")
+                    {
+                        <td>Cargo</td>
+                    }
+                    else
+                    {
+                        <td>Abono</td>
+                    }
+                    <td>@item.nemmon</td>
+                    if (item.nemmon == "$")
+                    {
+                        <td>@item.mtomcd,0</td>
+                    }
+                    if (item.nemmon == "US$")
+                    {
+                        <td> @item.mtomcd,0.00</td>
+                    }
+                    if (item.nemmon != "$" && item.nemmon != "US$")
+                    {
+                        <td>@item.mtomcd,0</td>
+                    }
+                }
+                
+            </tr>
+        }
+        @foreach (var item in Model.DetalleSce)
+        {
+            <tr>      
+                    <td>@item.codcct-@item.codpro-@item.codesp-@item.codofi-@item.codope</td>
+                    @if (item.numcct.Length > 32)
+                    {
+                        <td>@item.numcct.Substring(1, 32)</td>
+                    }
+                    else
+                    {
+                        <td>@item.numcct</td>
+                    }
+                    @if (item.cod_dh == "D")
+                    {
+                        <td>Cargo</td>
+                    }
+                    else
+                    {
+                        <td>Abono</td>
+                    }
+                    <td>@item.nemmon</td>
+                    @if (item.nemmon == "$")
+                    {
+                        <td>@item.mtomcd,0</td>
+                    }
+                    @if (item.nemmon == "US$")
+                    {
+                        <td> @item.mtomcd,0.00</td>
+                    }
+                    @if (item.nemmon != "$" && item.nemmon != "US$")
+                    {
+                        <td>@item.mtomcd,0</td>
+                    }           
+            </tr>
+        }
+    </table>
+    <br />
+    @Model.Total
+}

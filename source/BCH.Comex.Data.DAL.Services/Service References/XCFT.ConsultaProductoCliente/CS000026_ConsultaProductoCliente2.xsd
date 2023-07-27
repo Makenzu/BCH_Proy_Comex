@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaProductoCliente/OpConsultarProdClienteResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaProductoCliente/OpConsultarProdClienteResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="producto">
+    <xsd:sequence>
+      <xsd:element name="rowIdProducto" type="xsd:string" />
+      <xsd:element name="numProducto" type="xsd:string" />
+      <xsd:element name="descripcion" type="xsd:string" />
+      <xsd:element name="familia" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+      <xsd:element name="codigoProducto" type="xsd:string" />
+      <xsd:element name="flagBloqueo" type="xsd:string" />
+      <xsd:element name="rowIdEmail" type="xsd:string" />
+      <xsd:element name="email" type="xsd:string" />
+      <xsd:element name="flagInhibicion" type="xsd:string" />
+      <xsd:element name="fechaInhibicion" nillable="true" type="xsd:date" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="titularidad" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="marca" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoTarjeta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="redComercialTarjeta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="claseCuenta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoPersona" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayProductos">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="producto" nillable="true" type="tns:producto" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosSalida">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="listaProductos" type="tns:arrayProductos" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

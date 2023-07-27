@@ -1,0 +1,84 @@
+﻿@model BCH.Comex.UI.Web.Areas.ContabilidadGenerica.Models.GenerarSwiftBaseViewModel
+
+@{
+    ViewBag.Title = "GenerarSwift";
+    //Layout = "~/Areas/ContabilidadGenerica/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/FundTransfer/GenerarSwift")
+<script type="text/javascript">
+        /** todas estas variables se utilizan en el archivo FundTransfer.GenerarSwift.js  **/
+
+        //datos en formato Json
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+
+        //otras constantes
+        var valueBancoAladi = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoAla);
+        var valueBancoPagador = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoPag);
+        var valueBancoIntermediario = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoInt);
+        var valueMonedaDolares =  @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGTAB0.MndDol);
+
+        //urls de acciones
+        var urlGetCorresponsales = '@Url.Action("GetCorresponsales")';
+        var urlGetBancoPorSwift = '@Url.Action("GetBancosPorCodigoSwift")';
+        var urlValidarSwiftCompleto = '@Url.Action("ValidarYGenerarSwift")';
+        var urlValidarCodCom = '@Url.Action("ValidarCodCom")';
+        var urlHome = '@Url.Action("Index", "Home")';
+        var urlValidarFechaPago = '@Url.Action("GenerarSwiftValidaFechaPago")';
+        var urlGetCondicionesPais = '@Url.Action("GetCondicionesPais")';
+
+</script>
+}
+
+@section css
+{
+    <style>
+        #alertdiv {
+            margin: 0 auto;
+        }
+
+        .letraMonospace {
+            font-family: Consolas;
+        }
+
+        .accionTablaCampo23 {
+            vertical-align: middle;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            margin-bottom: 0px !important; /* el diseño global esta agregando 10px de margen a los botones */
+        }
+
+        .accionRow {
+            font-size: 1.2em;
+        }
+
+        .panel-heading .accordion-toggle:after {
+            /* symbol for "opened" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e113";
+            float: right;
+            color: grey;
+        }
+
+        .panel-heading .accordion-toggle.collapsed:after {
+            /* symbol for "collapsed" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e114";
+            float: right;
+            color: grey;
+        }
+
+        input {
+            text-transform: uppercase;
+        }
+    </style>
+}
+@{ Html.RenderPartial("_GenerarSwift", Model);  }
+
+
+
+

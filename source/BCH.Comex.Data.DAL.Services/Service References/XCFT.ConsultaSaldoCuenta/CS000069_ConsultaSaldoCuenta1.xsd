@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="cuerpo">
+    <xsd:sequence>
+      <xsd:element name="Cuenta" type="tns:CuentaType" />
+      <xsd:element name="CuentaRelacionada" type="tns:CuentaRelacionadaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CuentaType">
+    <xsd:sequence>
+      <xsd:element name="NumeroCuenta" type="xsd:string" />
+      <xsd:element name="SaldoDisponible" type="xsd:string" />
+      <xsd:element name="SaldoContable" type="xsd:string" />
+      <xsd:element name="Retencion1Dia" type="xsd:string" />
+      <xsd:element name="RetencionNDia" type="xsd:string" />
+      <xsd:element name="LimiteCredito" type="xsd:string" />
+      <xsd:element name="SobregiroPactado" type="xsd:string" />
+      <xsd:element name="MontoBloqueado" type="xsd:string" />
+      <xsd:element name="Oficina" type="xsd:string" />
+      <xsd:element name="Moneda" type="xsd:string" />
+      <xsd:element name="NombreTitular" type="xsd:string" />
+      <xsd:element name="NombreSegundoTitular" type="xsd:string" />
+      <xsd:element name="MontoAutorizadoLSP" type="xsd:string" />
+      <xsd:element name="montoDebitoTanqueado" type="xsd:string" />
+      <xsd:element name="montoCrebitoTanqueado" type="xsd:string" />
+      <xsd:element name="montoRetencionTanqueado" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CuentaRelacionadaType">
+    <xsd:sequence>
+      <xsd:element name="NumeroCuentaRelacionada" type="xsd:string" />
+      <xsd:element name="MontoLineaAutorizado" type="xsd:string" />
+      <xsd:element name="MontoLineaDisponible" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

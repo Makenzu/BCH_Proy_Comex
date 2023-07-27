@@ -1,0 +1,637 @@
+﻿@model BCH.Comex.Core.Entities.Portal.DatosUsuarioDTO
+
+@{
+    ViewBag.Title = "Configuracion";
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+    <style type="text/css">
+        dt {
+            width: 350px !important;
+        }
+
+        dd {
+            margin-left: 370px !important;
+        }
+    </style>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Combo_ConfigImpres_PrintFormat").change(function () {
+                $("#btnSave").show();
+            });
+
+            $("#btnSave").click(function () {
+                $.post('@Url.Action("SaveSettings")',
+                    { ConfigImpres_PrintFormat: $("#Combo_ConfigImpres_PrintFormat").val() },
+                    function () {
+                        $("#btnSave").hide();
+                        window.location = '@Url.Action("Index")';
+                    });
+            });
+        });
+    </script>
+    
+}
+<div>
+    <h4>Datos Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.samAccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.samAccountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigImpres_Formato)
+        </dt>
+
+        <dd>
+            @Html.DropDownListFor(model => model.ConfigImpres_PrintFormat, ViewBag.formats as IEnumerable<SelectListItem>, new { id= "Combo_ConfigImpres_PrintFormat" })
+            <a id="btnSave" href="#" style="display: none"><img title="Grabar" class="img-func" style="width: 16px; height: 16px;" src="~/Content/images/ButtonsBarMnu/Grabar.png"></a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigImpres_ImprimeCartas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigImpres_ImprimeCartas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigImpres_ImprimePlanillas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigImpres_ImprimePlanillas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigImpres_ImprimeReporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigImpres_ImprimeReporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Configuracion_Sonidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Configuracion_Sonidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CtaCteLin_ArcHCCL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CtaCteLin_ArcHCCL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CtaCteLin_ArcLCCL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CtaCteLin_ArcLCCL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CtaCteLin_ServCCL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CtaCteLin_ServCCL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CtaCteLin_ServSOL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CtaCteLin_ServSOL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CtaCteLin_VistSOL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CtaCteLin_VistSOL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entry_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entry_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exportaciones_DocSwf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exportaciones_DocSwf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exportaciones_TcpConDec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exportaciones_TcpConDec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exportaciones_TcpConvenio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exportaciones_TcpConvenio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exportaciones_TcpSinPai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exportaciones_TcpSinPai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXPOTAR_arch_export)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXPOTAR_arch_export)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXPOTAR_dir_arch_export)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXPOTAR_dir_arch_export)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXPOTAR_ruta_excel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXPOTAR_ruta_excel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_MndDol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_MndDol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_MndNac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_MndNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_MndSinDec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_MndSinDec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_MontoIVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_MontoIVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_Alias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_CCtUsr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_CCtUsr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_CCtUsro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_CCtUsro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_Impresora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_Impresora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_Rut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_Rut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importaciones_TcpAutBcoCen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importaciones_TcpAutBcoCen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodBCCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodBCCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodBCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodBCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodPBC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODGUSR_UsrEsp_CentroCosto_CodPBC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODGUSR_UsrEsp_CentroCosto_SucBCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODGUSR_UsrEsp_CentroCosto_SucBCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monedas_CodMonedaDolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monedas_CodMonedaDolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monedas_CodMonedaNacional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monedas_CodMonedaNacional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oficinas_UsrEsp_CentroCosto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oficinas_UsrEsp_CentroCosto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais_CodPais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais_CodPais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participantes_PartyEnRed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participantes_PartyEnRed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participantes_PartyNodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participantes_PartyNodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participantes_PartyServidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participantes_PartyServidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaldosCtaCte_NodoSalME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaldosCtaCte_NodoSalME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaldosCtaCte_SerSalCCL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaldosCtaCte_SerSalCCL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaldosCtaCte_VisSalME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaldosCtaCte_VisSalME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaldosCtaCte_VisSalMN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaldosCtaCte_VisSalMN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SceIdi_PlazaCentral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SceIdi_PlazaCentral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SgtCCLin_NodoSgt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SgtCCLin_NodoSgt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SgtCCLin_ServSgt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SgtCCLin_ServSgt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SgtCCLin_TabSgt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SgtCCLin_TabSgt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SgtCCLin_VisSgt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SgtCCLin_VisSgt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Swift103_BICEMI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swift103_BICEMI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Swift103_BICREC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swift103_BICREC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Swift_23E_Reglas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Swift_23E_Reglas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SyBase_Base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SyBase_Base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SyBase_Nodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SyBase_Nodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SyBase_Servidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SyBase_Servidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SyBase_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SyBase_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion_Entry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion_Entry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebServices_IP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebServices_IP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinsAlertaEnvioSwift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinsAlertaEnvioSwift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BCHComexSwem_Casillas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BCHComexSwem_Casillas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirmasLocales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirmasLocales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigImpres_ContabilidadGenerica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigImpres_ContabilidadGenerica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinsAlertaAutorizacionSwift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinsAlertaAutorizacionSwift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinsAlertaAdminEnvioSwift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinsAlertaAdminEnvioSwift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinsAlertaRecepcionSwift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinsAlertaRecepcionSwift)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_CentroDeCostosImpersonado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_CentroDeCostosImpersonado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_IdEspecialistaImpersonado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_IdEspecialistaImpersonado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_CentroDeCostosOriginal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_CentroDeCostosOriginal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion_IdEspecialistaOriginal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion_IdEspecialistaOriginal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RutEnFormatoBDSwift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RutEnFormatoBDSwift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodBCCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodBCCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodPBC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodPBC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodBCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodBCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SucBCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SucBCH)
+        </dd>
+
+    </dl>
+</div>

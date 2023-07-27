@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04098F7C-6BCA-410B-A47E-2B621F059CCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Core.Entities.Custodia</RootNamespace>
+    <AssemblyName>BCH.Comex.Core.Entities.Custodia</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU'">
+    <OutputPath>bin\IISRelease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cambios_gral_consulta_00_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CAMBIOS_GRAL_SCE_CTA.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_callfax_00_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_citidoc_consulta_01_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_citidoc_duplicados_01_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_cliente_00_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cambios_mift_cliente_01_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_contratos_00_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_mesa_cvd_00a_MS_ResultDTO.cs" />
+    <Compile Include="cambios_mift_mesa_cvd_00b_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_recurrencia_01b_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cambios_mift_tarifas_01_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cambios_mift_tarifas_obs_01_MS_Result.cs" />
+    <Compile Include="cambios_mift_tarifas_pizarra_01_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cambios_mift_tarifas_pizarra_02_MS_Result.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControlIntegral\DataTypes\InitializationObject.cs" />
+    <Compile Include="ControlIntegral\T_Modulos\T_ModFunc.cs" />
+    <Compile Include="ControlIntegral\T_Modulos\T_Modulo.cs" />
+    <Compile Include="ControlIntegral\UI_Modulos\UI_frmChkList.cs" />
+    <Compile Include="ControlIntegral\UI_Modulos\UI_frmEReparo.cs" />
+    <Compile Include="Custodia.cs">
+      <DependentUpon>Custodia.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Custodia.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Custodia.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCH.Comex.Common\BCH.Comex.Common.csproj">
+      <Project>{889f7437-c885-4877-a730-70442ae318f5}</Project>
+      <Name>BCH.Comex.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Partials\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

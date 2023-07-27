@@ -1,0 +1,123 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ReporteContableViewModel
+@{
+    Layout = null;
+}
+
+@if(Model.GenerarHtmlCompleto)
+{
+@: <!DOCTYPE html>
+@: <html>
+@: <head>
+@:     <meta name="viewport" content="width=device-width" />
+@:     <title>Reporte Contable - @Model.Reporte.Cabecera.NroOperacion</title>
+@:     <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+if (Model.Imprimir) {
+@:     <script type="text/javascript">
+@:         window.onload = function () { window.print(); }
+@:      </script>
+}
+@: </head>
+@: <body>    
+}
+    <div class="container@(Model.GenerarHtmlCompleto ? String.Empty : "-fluid")">
+        <div class="row">
+            <div class="col-xs-8"><h3>COMERCIO EXTERIOR</h3></div>
+            <div class="col-xs-4"><h4>REPORTE CONTABLE</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8"><strong>Página</strong></div>
+            <div class="col-xs-3">: 1</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8"><strong>Fecha</strong></div>
+            <div class="col-xs-3">: @DateTime.Now.ToShortDateString()</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8"><strong>Hora</strong></div>
+            <div class="col-xs-3">: @DateTime.Now.ToShortTimeString()</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>Operación</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.NroOperacion</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>Cliente</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.nomcli</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>Función</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.DescripcionFuncionContable</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>Transacción</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.nrorpt - @Model.Reporte.Cabecera.fecmov.ToShortDateString()</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><strong>Usuario</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.NombreEspecialista</div>
+        </div>
+        @if (!String.IsNullOrEmpty(Model.Reporte.Cabecera.desgen))
+        {
+        <div class="row">
+            <div class="col-xs-2"><strong>Op. Relacionada</strong></div>
+            <div class="col-xs-6">: @Model.Reporte.Cabecera.desgen</div>
+        </div>
+        }
+        <br />
+        @if (Model.Reporte.Cabecera.estado == BCH.Comex.Core.Entities.Cext01.FundTransfer.T_Modulos.T_MODGCON0.ECC_ANU)
+{
+    <div class="alert alert-danger text-center" style="font-size:1.2em;" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>&nbsp;&nbsp;ANULADO</div>
+}
+        <table class="table table-bordered">
+            <thead>
+                <tr class="active">
+                    <th>CUENTA</th>
+                    <th>MND</th>
+                    <th style="text-align:right">DEBE</th>
+                    <th style="text-align:right">HABER</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var linea in Model.Reporte.Lineas)
+                {
+                    <tr>
+                        <td>@linea.NumCtaConFormato&nbsp;@linea.NombreCuenta @if (!String.IsNullOrEmpty(linea.DescAdicional))
+                        {
+                            <br /><small>@linea.DescAdicional</small>
+                        }
+                        </td>
+                        <td>@linea.nemmon</td>
+                        @if (linea.cod_dh == "D") //debe
+                        {
+                            <td style="text-align:right">@linea.mtomcd.ToString("#,###,###,###,##0.00")</td>
+                            <td>&nbsp;</td>
+                        }
+                        else if (linea.cod_dh == "H") //haber
+                        {
+                            <td>&nbsp;</td>
+                            <td style="text-align:right">@linea.mtomcd.ToString("#,###,###,###,##0.00")</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                @{
+                    bool esPrimero = true;
+                    foreach (var lineaTotal in Model.Reporte.CalcularTotales())
+                    {
+                        <tr class="active">
+                            <td style="text-align:right"><strong>@(esPrimero ? "TOTALES" : string.Empty)</strong></td>
+                            <td>@lineaTotal.NemMoneda</td>
+                            <td style="text-align:right">@lineaTotal.TotalDebe.ToString("#,###,###,###,##0.00")</td>
+                            <td style="text-align:right">@lineaTotal.TotalHaber.ToString("#,###,###,###,##0.00")</td>
+                        </tr>
+                        esPrimero = false;
+                    }
+                }
+            </tfoot>
+        </table>
+    </div>
+@if(Model.GenerarHtmlCompleto)
+{
+@:     </body></html>
+}

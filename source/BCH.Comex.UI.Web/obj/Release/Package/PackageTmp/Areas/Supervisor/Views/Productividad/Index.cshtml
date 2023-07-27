@@ -1,0 +1,52 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.ProductividadViewModel
+
+@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+<h2>Productividad</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmAyM", name = "FrmAyM" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <label>Año</label>
+                            <br />
+                            @Html.TextBoxFor(model => model.anio, htmlAttributes: new { @class = "form-control input-sm" })
+                        </div>
+                        <div class="col-xs-2">
+                            <label>Mes</label>
+                            <br />
+                            @Html.DropDownListFor(model => model.mesSelected, Model.ltMeses, htmlAttributes: new { @class = "form-control input-sm" })
+                        </div>
+                        
+
+                        <div class="col-xs-8" style="margin-top:25px;">
+                            <input type="button" name="Command" id="btnAceptar" value="Imprimir" class="btn btn-primary" />
+                            <input type="submit" name="Command" id="Cancelar" value="Cancelar" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/Supervisor/Productividad")
+}

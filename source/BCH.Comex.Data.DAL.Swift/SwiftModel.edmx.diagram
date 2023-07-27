@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8dbb29d35e5e40cd9495469c826426c8" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SwiftModel.sw_bancos" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_bancos_autorizados" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_campos_msg" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_caracter_error" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_casillas" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_ciclos" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_configura" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_estados_msg" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_folios" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_formatos" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_glosa_cmx" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_log_msg" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_mensajes" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_mensajes_add" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_monedas" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_add" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_cambio_estados" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_cmx" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_cmx_dia" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_detfile" Width="1.5" PointX="6.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_files" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_firma" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_log" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_nop" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_orden_firmas" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_paridad" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_regla_firmas" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_sce_bic" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_tipos_campos" Width="1.5" PointX="4.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_tipos_firmas" Width="1.5" PointX="6.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_tipos_msg" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_users_srm" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_users_swift" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_valor_campos" Width="1.5" PointX="16.875" PointY="3.5" />
+        <EntityTypeShape EntityType="SwiftModel.tbl_sw_nets" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SwiftModel.tbl_sw_nets_det" Width="1.5" PointX="8.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SwiftModel.joal" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_firmas_msg" Width="1.5" PointX="12.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_formato_cmx" Width="1.5" PointX="18.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SwiftModel.sw_msgsend_ftp" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SwiftModel.tbl_sw_nets_sor" Width="1.5" PointX="6.75" PointY="19.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,476 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.FundTransfer.DataTypes.Planilla500
+
+@{
+    Layout = null;
+}
+<title>Imprimir Planilla</title>
+<STYLE type="text/css">
+    body {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    #page_1 {
+        position: relative;
+        overflow: hidden;
+        margin: 51px 0px 0px 0px;
+        padding: 0px;
+        border: none;
+        width: 816px;
+    }
+
+        #page_1 #id_1 {
+            border: none;
+            margin: 0px 0px 0px 4px;
+            padding: 0px;
+            border: none;
+            width: 812px;
+            overflow: hidden;
+        }
+
+        #page_1 #id_2 {
+            border: none;
+            margin: 0px 0px 0px 0px;
+            padding: 0px;
+            border: none;
+            width: 816px;
+            overflow: hidden;
+        }
+
+
+
+
+
+    #page_2 {
+        position: relative;
+        overflow: hidden;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        border: none;
+        width: 816px;
+    }
+
+        #page_2 #id_1 {
+            border: none;
+            margin: 0px 0px 0px 4px;
+            padding: 0px;
+            border: none;
+            width: 812px;
+            overflow: hidden;
+        }
+
+        #page_2 #id_2 {
+            border: none;
+            margin: 1023px 0px 0px 0px;
+            padding: 0px;
+            border: none;
+            width: 816px;
+            overflow: hidden;
+        }
+
+
+
+
+
+    #page_3 {
+        position: relative;
+        overflow: hidden;
+        margin: 516px 0px 494px 82px;
+        padding: 0px;
+        border: none;
+        width: 734px;
+    }
+
+
+
+
+
+    .ft0 {
+        font: 12px 'Times';
+        line-height: 15px;
+    }
+
+    .ft1 {
+        font: 1px 'Times';
+        line-height: 1px;
+    }
+
+    .ft2 {
+        font: 11px 'Times';
+        line-height: 14px;
+    }
+
+    .ft3 {
+        font: 13px 'Times';
+        line-height: 15px;
+    }
+
+    .ft4 {
+        font: 13px 'Times';
+        line-height: 14px;
+    }
+
+    .ft5 {
+        font: 12px 'Times';
+        line-height: 14px;
+    }
+
+    .ft6 {
+        font: 16px 'Helvetica';
+        line-height: 16px;
+    }
+
+    .ft7 {
+        font: 16px 'Helvetica';
+        line-height: 18px;
+    }
+
+    .ft8 {
+        font: 9px 'Arial Unicode MS';
+        color: #0000ff;
+        line-height: 12px;
+    }
+
+    .ft9 {
+        font: 9px 'Arial Unicode MS';
+        line-height: 12px;
+    }
+
+    .ft10 {
+        font: 13px 'Arial Unicode MS';
+        line-height: 18px;
+    }
+
+    .p0 {
+        text-align: left;
+        padding-left: 37px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p1 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p2 {
+        text-align: left;
+        padding-left: 62px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p3 {
+        text-align: left;
+        padding-left: 66px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p4 {
+        text-align: left;
+        padding-left: 52px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p5 {
+        text-align: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p6 {
+        text-align: left;
+        padding-left: 51px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p7 {
+        text-align: right;
+        padding-right: 260px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p8 {
+        text-align: left;
+        padding-left: 32px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p9 {
+        text-align: left;
+        padding-left: 42px;
+        margin-top: 83px;
+        margin-bottom: 0px;
+    }
+
+    .p10 {
+        text-align: left;
+        padding-left: 55px;
+        margin-top: 19px;
+        margin-bottom: 0px;
+    }
+
+    .p11 {
+        text-align: left;
+        padding-left: 42px;
+        margin-top: 14px;
+        margin-bottom: 0px;
+    }
+
+    .p12 {
+        text-align: left;
+        padding-left: 29px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .p13 {
+        text-align: left;
+        margin-top: 21px;
+        margin-bottom: 0px;
+    }
+
+    .p14 {
+        text-align: left;
+        padding-left: 35px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p15 {
+        text-align: right;
+        padding-right: 331px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p16 {
+        text-align: right;
+        padding-right: 14px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p17 {
+        text-align: left;
+        padding-left: 29px;
+        margin-top: 19px;
+        margin-bottom: 0px;
+    }
+
+    .p18 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .p19 {
+        text-align: left;
+        margin-top: 1px;
+        margin-bottom: 0px;
+    }
+
+    .p20 {
+        text-align: left;
+        margin-top: 3px;
+        margin-bottom: 0px;
+    }
+
+    .td0 {
+        padding: 0px;
+        margin: 0px;
+        width: 101px;
+        vertical-align: bottom;
+    }
+
+    .td1 {
+        padding: 0px;
+        margin: 0px;
+        width: 319px;
+        vertical-align: bottom;
+    }
+
+    .td2 {
+        padding: 0px;
+        margin: 0px;
+        width: 324px;
+        vertical-align: bottom;
+    }
+
+    .td3 {
+        padding: 0px;
+        margin: 0px;
+        width: 420px;
+        vertical-align: bottom;
+    }
+
+    .td4 {
+        padding: 0px;
+        margin: 0px;
+        width: 91px;
+        vertical-align: bottom;
+    }
+
+    .td5 {
+        padding: 0px;
+        margin: 0px;
+        width: 292px;
+        vertical-align: bottom;
+    }
+
+    .td6 {
+        padding: 0px;
+        margin: 0px;
+        width: 84px;
+        vertical-align: bottom;
+    }
+
+    .td7 {
+        padding: 0px;
+        margin: 0px;
+        width: 491px;
+        vertical-align: bottom;
+    }
+
+    .td8 {
+        padding: 0px;
+        margin: 0px;
+        width: 253px;
+        vertical-align: bottom;
+    }
+
+    .td9 {
+        padding: 0px;
+        margin: 0px;
+        width: 390px;
+        vertical-align: bottom;
+    }
+
+    .tr0 {
+        height: 18px;
+    }
+
+    .tr1 {
+        height: 22px;
+    }
+
+    .tr2 {
+        height: 34px;
+    }
+
+    .tr3 {
+        height: 48px;
+    }
+
+    .tr4 {
+        height: 14px;
+    }
+
+    .tr5 {
+        height: 62px;
+    }
+
+    .tr6 {
+        height: 32px;
+    }
+
+    .tr7 {
+        height: 17px;
+    }
+
+    .tr8 {
+        height: 15px;
+    }
+
+    .tr9 {
+        height: 61px;
+    }
+
+    .tr10 {
+        height: 33px;
+    }
+
+    .t0 {
+        width: 744px;
+        margin-left: 10px;
+        font: 12px 'Times';
+    }
+
+    .t1 {
+        width: 467px;
+        margin-left: 47px;
+        margin-top: 131px;
+        font: 12px 'Times';
+    }
+
+    .t2 {
+        width: 744px;
+        margin-left: 10px;
+        margin-top: 16px;
+        font: 12px 'Times';
+    }
+</STYLE>
+
+<DIV id="page_1">
+
+
+    <DIV id="id_1">
+        <TABLE cellpadding=0 cellspacing=0 class="t0">
+            <TR>
+                <TD class="tr0 td0"><P class="p0 ft0"><NOBR>@Model.VxPlvs_NumPre</NOBR></P></TD>
+                <TD class="tr0 td1"><P class="p1 ft1">&nbsp;</P></TD>
+                <TD class="tr0 td2"><P class="p1 ft1">&nbsp;</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr1 td0"><P class="p0 ft0">@Model.VxPlvs_fecpre</P></TD>
+                <TD class="tr1 td1"><P class="p2 ft2">@Model.VPbc_Pbc_PbcDes</P></TD>
+                <TD class="tr1 td2"><P class="p3 ft0">@Model.VxPlvs_PlzBcc</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr2 td0"><P class="p1 ft1">&nbsp;</P></TD>
+                <TD class="tr2 td1"><P class="p2 ft2">@Model.NomPLn</P></TD>
+                <TD class="tr2 td2"><P class="p3 ft0">@Model.VxPlvs_TipPln</P></TD>
+            </TR>
+            <TR>
+                <TD colspan=2 class="tr2 td3"><P class="p4 ft3">@Model.DatPrt</P></TD>
+                <TD rowspan=2 class="tr3 td2"><P class="p5 ft0"><NOBR>@Model.VxPlvs_RutExp</NOBR></P></TD>
+            </TR>
+            <TR>
+                <TD colspan=2 class="tr4 td3"><P class="p6 ft4">@Model.DatPrtn</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr5 td0"><P class="p1 ft2">@Model.VMnd_Mnd_MndNom</P></TD>
+                <TD class="tr5 td1"><P class="p7 ft0">@Model.VMnd_Mnd_MndCbc</P></TD>
+                <TD class="tr5 td2"><P class="p1 ft1">&nbsp;</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr6 td0"><P class="p8 ft0">@Model.VxPlvs_MtoBru</P></TD>
+                <TD class="tr6 td1"><P class="p1 ft1">&nbsp;</P></TD>
+                <TD class="tr6 td2"><P class="p1 ft1">&nbsp;</P></TD>
+            </TR>
+        </TABLE>
+        <P class="p9 ft0">@Model.VxPlvs_MtoBru</P>
+        <P class="p10 ft0">@Model.VxPlvs_Mtopar</P>
+        <P class="p11 ft0">@Model.VxPlvs_MtoLiq</P>
+        <P class="p12 ft0">@Model.VxPlvs_TipCam</P>
+        <P class="p13 ft0">@String.Join("\r\n",Model.Palabras)</P>
+    </DIV>
+</DIV>

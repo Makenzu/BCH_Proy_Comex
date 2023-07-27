@@ -1,0 +1,92 @@
+﻿@model BCH.Comex.UI.Web.Areas.ContabilidadGenerica.Models.AnularContabilidadViewModel
+@{
+    Layout = "~/Areas/ContabilidadGenerica/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+<div id="AnularContabilidad" class="container">
+    <div class="container form-horizontal">
+        <h3 class="margin-bottom-triple" id="caption">Anular Contabilidad Genérica @ViewBag.Caption</h3>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label class="col-sm-0 control-label">Anulación de GL</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <label>Nro. Reporte Contable</label>
+                                </div>
+                                <div class=" col-xs-2">
+                                    <input type="text" tabindex="1" id="Tx_NroRep" class="form-control input-sm upperCaseField" style="width: 180px;" data-bind="textInput: Tx_NroRep.Text, valueUpdate:'afterkeydown'" data-inputmask="'mask': '9','repeat': 8, 'greedy' : false" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <label>Fecha Reporte Contable</label>
+                                </div>
+                                <div class=" col-xs-4">
+                                    <div class="input-group date" id="dtpFechaOperacion">
+                                        <input type="text" tabindex="2" class="form-control input-sm" id="Tx_FecRep" data-bind="textInput: Tx_FecRep.Text, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2">
+                                    <button type="submit" tabindex="4" style="width: 39px; color: #fff; margin-left:5px" id="btn_ok" name="Command" value="btn_ok" class="btn btn-success input-group-addon" data-bind="click: btn_ok_click">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </button>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFecha">La fecha debe ser menor o igual a la fecha del día</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <label>Cliente</label>
+                                </div>
+                                <div class="col-xs-4">
+                                    <input type="text" id="Tx_Cliente" class="form-control input-sm upperCaseField" style="width: 360px;" data-bind="value: Tx_Cliente.Text" maxlength="70" readonly="readonly" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4">
+                                    <button id="btnAceptar" tabindex="5" class="btn btn-primary" style="width:80px;" disabled="disabled" data-bind="event:{click:btn_aceptar_click}">Aceptar</button>
+                                    <button class="btn btn-default" style="width:80px" data-bind="event:{click:btn_cancelar_click}">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-12" style="margin-top:10px">
+                            <div class="panel panel-default" id="pnlTablaDetalle">
+                                <div class="panel-heading">
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <div class="table-responsive">
+                                            <table id="tableDetalle" name="tableDetalle" class="table"></table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var urlImpresion = '@Url.Action("Imprimir","Grabar")';
+    </script>
+    @Scripts.Render("~/bundles/ContabilidadGenerica/AnularContabilidad")
+}

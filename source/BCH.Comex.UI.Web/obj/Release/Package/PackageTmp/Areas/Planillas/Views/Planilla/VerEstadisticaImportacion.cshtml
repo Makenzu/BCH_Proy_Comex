@@ -1,0 +1,549 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.EstadisticaImportacionViewModel
+@{
+    ViewBag.Title = "Planilla estadística de importación";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+
+<div class="panel">
+    @using (Html.BeginForm())
+    {
+
+        <div class="panel-heading">
+            <h4 class="modal-title">@ViewBag.Title</h4>
+        </div>
+        <div class="panel-body bg-estadistica-importacion">
+            @Html.ValidationSummary()
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">N&deg; Presentación</label>
+                                    @Html.EditorFor(m => m.NumeroPresentacion, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Código</label>
+                                    @Html.EditorFor(m => m.CodigoPlanilla, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <h5>PLANILLA ESTADISTICA COMERCIO VISIBLE</h5>
+                                <h6>Operaciones en moneda extranjera importaciones</h6>
+                                <h6>Entidad que presenta la planilla</h6>
+                                <h5>Banco de Chile 15</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha venta</label>
+                                    @Html.EditorFor(m => m.FechaVenta, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="row">
+                                    <div class="form-group col-xs-8">
+                                        <label class="control-label">Plaza Banco Central de Chile</label>
+                                        <p>Santiago</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        @Html.EditorFor(m => m.CodigoPlazaBancoCentral, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <label class="control-label">Importador</label>
+                                    @Html.EditorFor(m => m.NombreImportador, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">RUT</label>
+                                    @Html.EditorFor(m => m.RutImportador, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group ">
+                                            <label class="control-label">N&deg; inf. importación</label>
+                                            @Html.EditorFor(m => m.NumeroInforme, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Fecha emisión informe</label>
+                                            @Html.EditorFor(m => m.FechaInforme, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group ">
+                                            <label class="control-label">N&deg; conocimiento</label>
+                                            @Html.EditorFor(m => m.NumeroConocimientoEmbarque, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Fecha conocimiento</label>
+                                            @Html.EditorFor(m => m.FechaConocimientoEmbarque, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-8">Fecha vcto. operación</label>
+                                        <div class="col-xs-4">
+                                            @Html.EditorFor(m => m.FechaVencimiento, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="control-label">Forma de pago</label>
+                                    @Html.DropDownListFor(m => m.FormaPago, Model.FormasPago, new { @class = "form-control input-sm" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Código plaza emisión</label>
+                                    @Html.DropDownListFor(m => m.PlazaEmision, Model.PlazasEmision, new { @class = "form-control input-sm" })
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h5>Cuadro de pagos</h5>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">N&deg;</label>
+                                            @Html.EditorFor(m => m.NumeroCuotas, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Cuota N&deg;</label>
+                                            @Html.EditorFor(m => m.Cuota, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-6">Acuerdos a que se acoge</label>
+                                            <div class="col-xs-6">
+                                                @Html.EditorFor(m => m.NumeroAcuerdos, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-xs-6">
+                                            @Html.EditorFor(m => m.AcuerdoDesde, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                        <div class="col-xs-6">
+                                            @Html.EditorFor(m => m.AcuerdoHasta, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label">País de pago</label>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    @Html.EditorFor(m => m.CodigoPaisPago, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.PaisPago, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    @Html.EditorFor(m => m.CodigoMoneda, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.Moneda, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                        <fieldset class="form-horizontal">
+                            <legend>Detalle de montos en cobertura</legend>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor mercadería</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.ValorMercaderia, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Gastos hasta FOB</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.GastosHastaFOB, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor FOB</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.FOB, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Flete</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.Flete, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Seguro</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.Seguro, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor CIF</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.CIF, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Intereses</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.Intereses, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Gastos bancarios</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.GastosBancarios, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor total</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.ValorTotal, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor CIF en US$</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.CIFEnDolares, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Valor total en US$</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.TotalEnDolares, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-horizontal">
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Tipo de cambio</label>
+                                <div class="col-xs-8 input-group">
+                                    @Html.EditorFor(m => m.TipoCambio, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                    <span class="input-group-addon">Por 1 US$</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Paridad a US$</label>
+                                <div class="col-xs-8 input-group">
+                                    @Html.EditorFor(m => m.ParidadUSD, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                    <span class="input-group-addon">Por 1 US$</span>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="checkbox">
+                            <label for="cbAnular">
+                                <input type="checkbox" id="cbAnular">
+                                Antecedentes a la fecha de anulación
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group ">
+                                    <label class="control-label">Fecha</label>
+                                    <input type="text" class="form-control input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Paridad a US$</label>
+                                    <input type="text" class="form-control input-sm" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Valor total US$</label>
+                                    <input type="text" class="form-control input-sm" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <label for="cbReemplazada">
+                                <input type="checkbox" id="cbReemplazada">
+                                Antecedentes planilla reemplazada
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group ">
+                                    <label class="control-label">N&deg; presentación</label>
+                                    @Html.EditorFor(m => m.ReemplazoNumeroPresentacion, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha</label>
+                                    @Html.EditorFor(m => m.ReemplazoFecha, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Cod. plaza BCCH</label>
+                                    @Html.EditorFor(m => m.ReemplazoCodigoPlazaBancoCentral, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group ">
+                                    <label class="control-label">Cod. entidad</label>
+                                    @Html.EditorFor(m => m.ReemplazoCodigoEntidad, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">N&deg; inf. importación</label>
+                                    @Html.EditorFor(m => m.ReemplazoNumeroInforme, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha emisión informe</label>
+                                    @Html.EditorFor(m => m.ReemplazoFechaInforme, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group ">
+                                    <label class="control-label">Plaza emisión informe</label>
+                                    @Html.EditorFor(m => m.ReemplazoPlazaEmision, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">N&deg; conocimiento</label>
+                                    @Html.EditorFor(m => m.ReemplazoNumeroConocimientoEmbarque, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha conocimiento</label>
+                                    @Html.EditorFor(m => m.ReemplazoFechaConocimientoEmbarque, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <h5>Convenio crédito recíproco</h5>
+
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.UsaConvenio)
+                                Usa convenio Aladi
+                            </label>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-6">a) En Chile fecha aut. de débito</label>
+                            <div class="col-xs-6">
+                                @Html.EditorFor(m => m.FechaAutorizacionDebito, "Fecha", new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">Número documento</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.NumeroDocumentoChile, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">b) En el extranjero número documento</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.NumeroDocumentoExtranjero, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Zona franca
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-default" @(Model.Intereses <= 0 ? "disabled" : "")>Interés</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalObservacionesPlanillaEstadistica">Observaciones</button>
+                        <button type="button" class="btn btn-default" id="btnEliminar">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-primary">Aceptar</button>
+            @Html.ActionLink("Cancelar", "Volver", "Planillas", null, new { @class="btn btn-default align-btn-fix", @data_dismiss="modal" })
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="modalObservacionesPlanillaEstadistica">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Observaciones</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="" class="control-label">Observaciones generales</label>
+                    <span class="text-muted">Sólo efectos estadísticos</span>
+                    <textarea class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="" class="control-label">Observaciones de declaración</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="" class="control-label">Observaciones de la operación</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Aceptar</button>
+                <button type="button" class="btn btn-default  align-btn-fix" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section css {
+    <style type="text/css">
+        .bg-estadistica-importacion {
+            background-color: RGB(192, 255, 192);
+        }
+    </style>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('.datepicker').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: Date.now() });
+
+            $('#btnEliminar').click(function () {
+                if (confirm('¿ Está seguro que desea eliminar ?')) {
+                    // Save it!
+                } else {
+                    // Do nothing!
+                }
+            });
+
+            $('#cbAnular').click(function () {
+                alert('TODO');
+                //int IndPlani = 0;
+
+                //if (Ch_Anula.CheckState == System.Windows.Forms.CheckState.Checked)
+                //{
+                //    // marcada
+                //    Tx_FecAnu.Enabled = true;
+                //    Tx_ParAnu.Enabled = true;
+                //    Tx_TotAnu.Enabled = true;
+                //    // Datos de anulacion
+                //    Tx_FecAnu.Text = MigrationSupport.Utils.Format(DateTime.Now,"dd/mm/yyyy");
+                //    IndPlani = Aceptar.Tag.ToInt();
+                //    Tx_ParAnu.Text = MODGTAB1.SyGet_Vmc(MODPLAE1.PlnVEst[IndPlani].CodMndBch,MigrationSupport.Utils.Format(DateTime.Now,"dd/mm/yyyy"),"P").ToStr();
+                //    Tx_TotAnu.Text = MigrationSupport.Utils.Format(MODGPYF1.ValTexto(_montos_8) / MODGPYF1.ValTexto(Tx_ParAnu),MODGPYF1.DecObjeto(Tx_TotAnu));
+                //}
+                //else
+                //{
+                //    Tx_FecAnu.Text = "";
+                //    Tx_ParAnu.Text = "";
+                //    Tx_TotAnu.Text = "";
+                //    Tx_FecAnu.Enabled = false;
+                //    Tx_ParAnu.Enabled = false;
+                //    Tx_TotAnu.Enabled = false;
+                //}
+            });
+
+            $('#cbReemplazada').click(function () {
+                alert('todo');
+                //if (Ch_Reemp.CheckState == System.Windows.Forms.CheckState.Checked) {
+                //    // marcada
+                //    Tx_NumPlnR.Enabled = true;
+                //    Tx_FecPlnR.Enabled = true;
+                //    Tx_CodPlzR.Enabled = true;
+                //    Tx_CodEntR.Enabled = true;
+                //    Tx_NumInfR.Enabled = true;
+                //    Tx_FecInfR.Enabled = true;
+                //    Tx_PlzInfR.Enabled = true;
+                //    Tx_NumConR.Enabled = true;
+                //    Tx_FecConR.Enabled = true;
+                //}
+                //else {
+                //    Tx_NumPlnR.Text = "";
+                //    Tx_FecPlnR.Text = "";
+                //    Tx_CodPlzR.Text = "";
+                //    Tx_CodEntR.Text = "";
+                //    Tx_NumInfR.Text = "";
+                //    Tx_FecInfR.Text = "";
+                //    Tx_PlzInfR.Text = "";
+                //    Tx_NumConR.Text = "";
+                //    Tx_FecConR.Text = "";
+                //    Tx_NumPlnR.Enabled = false;
+                //    Tx_FecPlnR.Enabled = false;
+                //    Tx_CodPlzR.Enabled = false;
+                //    Tx_CodEntR.Enabled = false;
+                //    Tx_NumInfR.Enabled = false;
+                //    Tx_FecInfR.Enabled = false;
+                //    Tx_PlzInfR.Enabled = false;
+                //    Tx_NumConR.Enabled = false;
+                //    Tx_FecConR.Enabled = false;
+                //}
+            });
+
+            $('#cbAladi').click(function () {
+                if (this.checked) {
+                    $('#numeroAcuerdos').val('1');
+                    $('#acuerdos0').val('1493');
+                } else {
+                    $('#numeroAcuerdos').val('0');
+                    $('#acuerdos0').val('0');
+                }
+            });
+        });
+    </script>
+}

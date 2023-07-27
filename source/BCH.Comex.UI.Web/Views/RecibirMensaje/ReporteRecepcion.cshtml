@@ -1,0 +1,107 @@
+﻿@model BCH.Comex.UI.Web.Models.RecibirMensaje.ReporteModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes Recepcionados Por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/recepcion-swift-inv.png")" />
+</head>
+<body>
+    <div class="container" style="width: 1300px;">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Informe Recepción Mensajes Swift</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1"><strong>Casilla: </strong></div>
+            <div class="col-xs-5">@Model.Casilla</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("Mensajes {0} {1} {2} {3}",
+            Model.TipoMensaje,
+            (Model.FechaFin.Date != Model.FechaInicio.Date ? "desde el" : "el día"),
+            @Model.FechaInicio.ToString("dd/MMM/yyyy"),
+            (Model.FechaFin.Date != Model.FechaInicio.Date ? "al " + Model.FechaFin.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Sesión</th>
+                    <th>Secuencia</th>
+                    <th>Tipo MT</th>
+                    <th>Referencia</th>
+                    <th>Beneficiario</th>
+                    <th>Banco Emisor</th>
+                    <th>Mnda</th>
+                    <th>Monto</th>
+                    <th>Prioridad</th>
+                    <th>Fecha @(Model.Estado == "REC" ? "Encasillamiento" : (Model.Estado == "CNF" ? "Confirmación" : (Model.Estado == "IMR" ? "Impresión" : "Reenvío" )))</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @functions  {
+                    public string getFormat(string moneda)
+                    {
+                        string formato = string.Empty;
+                        string num = "";
+
+                        if (moneda == "" || moneda == null)
+                        {
+                            num = "";
+                        }
+                        else
+                        {
+                            num = moneda.ToString();
+                        }
+
+                        if ((moneda == "CLP"))
+                        {
+                            formato = "#,0";
+                        }
+                        else
+                        {
+                            formato = "#,0.00";
+                        }
+                        return formato;
+                    }
+                }
+                @foreach (var row in Model.Result)
+                {
+                    <tr>
+                        <td>@row.Sesion</td>
+                        <td>@row.Secuencia</td>
+                        <td>@row.TipoMt</td>
+                        <td>@row.Referencia</td>
+                        <td>@row.Beneficiario</td>
+                        <td>@row.BancoEmisor</td>
+                        <td>@row.Moneda</td>
+                        <td style="text-align:right">
+                            @(row.Monto.ToString(getFormat(row.Moneda)))
+                        </td>
+                        <td>@(BCH.Comex.UI.Web.Common.FormatUtils.PrioridadDesc(row.Prioridad, row.TipoMt))</td>
+                        <td>@row.Fecha</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

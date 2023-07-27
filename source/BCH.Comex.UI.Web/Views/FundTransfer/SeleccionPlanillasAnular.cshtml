@@ -1,0 +1,44 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.NroaViewModel
+
+@{
+    ViewBag.Titulo = "Planillas a Anular";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "Frmnroa", name = "Frmnroa" }))
+        {
+            <div class="form-horizontal">
+                <div class="form-body">
+                    <h3>Planillas a Anular</h3>
+                    <div class="container-fluid recuadro">
+                        <div class="row">
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <label>Moneda</label>
+                                    @Html.DropDownListFor(x => x.Moneda, Model.Cb_Moneda, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-2">
+                                <button type="button" id="btnAceptar" class="btn btn-primary pull-right">Aceptar</button>
+                                <button type="button" id="btnCancelar" class="btn btn-default pull-left">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+

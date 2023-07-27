@@ -1,0 +1,221 @@
+﻿<div class="modal fade" id="modalDireccion" tabindex="-1" role="dialog" aria-labelledby="Direccion">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Direcciones de Participantes</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="hidden" id="oldDireccion" />
+                    <div class="col-md-9">
+                        <form class="form-horizontal">
+                            <input type="hidden" id="temp_id" name="user" value="texens" />
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="direccion">Dirección</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="direccion" maxlength="60" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="comuna">Comuna o Localidad</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="comuna"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="ciudad">Ciudad</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="ciudad" maxlength="30" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="region">Región o Estado</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="region">
+                                        <option value="OTRA REGION">OTRA REGION</option>
+                                        <option value="PRIMERA">PRIMERA</option>
+                                        <option value="SEGUNDA">SEGUNDA</option>
+                                        <option value="TERCERA">TERCERA</option>
+                                        <option value="CUARTA">CUARTA</option>
+                                        <option value="QUINTA">QUINTA</option>
+                                        <option value="SEXTA">SEXTA</option>
+                                        <option value="SEPTIMA">SEPTIMA</option>
+                                        <option value="OCTAVA">OCTAVA</option>
+                                        <option value="NOVENA">NOVENA</option>
+                                        <option value="DECIMA">DECIMA</option>
+                                        <option value="UNDECIMA">UNDECIMA</option>
+                                        <option value="DUODECIMA">DUODECIMA</option>
+                                        <option value="METROPOLITANA">METROPOLITANA</option>
+                                        <option value="EXTRANJERA">EXTRANJERA</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="pais">País</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="pais"></select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <button class="btn btn-primary btn-block" id="btnDirAceptar" style="width:100px">Aceptar</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-default btn-block" id="btnDirCancelar" style="width:100px">Cancelar</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-success btn-block" id="btnDirNuevo" style="width:100px; display:none">Nuevo</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-danger btn-block" id="btnDirEliminar" style="width:100px">Eliminar</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-success btn-block" id="btnDirActivar" style="width:100px">Activar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="casillaBancoChile">Casilla Banco Chile</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="casillaBancoChile" maxlength="20" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="casillaPostal">Casilla Postal</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="casillaPostal" maxlength="20" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="correoElectronico">Correo Electrónico</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="correoElectronico" maxlength="500" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label" for="telefono">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" maxlength="10" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="telex">Télex</label>
+                                <input type="text" class="form-control" id="telex" maxlength="15" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label" for="Fax">Fax</label>
+                                <input type="tel" class="form-control" id="fax" maxlength="10" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="codPostal">Cod. Postal</label>
+                                <input type="text" class="form-control" id="codPostal" maxlength="20" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Enviar correspondencia
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionCorrespondencia" id="optionDireccion" value="optionDireccion" checked>
+                                        Dirección
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionCorrespondencia" id="optionFax" value="optionFax">
+                                        Fax
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionCorrespondencia" id="optionCasillaBancoChile" value="optionCasillaBancoChile">
+                                        Casilla Banco Chile
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionCorrespondencia" id="optionCasillaPostal" value="optionCasillaPostal">
+                                        Casilla Postal
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionCorrespondencia" id="optionEmail" value="optionEmail">
+                                        Correo Electrónico
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDirEliminar" tabindex="-1" role="dialog" aria-labelledby="Eliminar Dirección Participante">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Eliminar Dirección Participante</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="textDireccion">Dirección</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static" id="textDireccion"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-warning" id="btnDirConfirmEliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDirMensajeEliminar" tabindex="-1" role="dialog" aria-labelledby="Eliminar Dirección Participante">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-warning" role="alert">
+                    <strong>¡Advertencia!</strong><br />
+                    La Dirección ha sido marcada como eliminada.<br />
+                    Se borrará durante la noche.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

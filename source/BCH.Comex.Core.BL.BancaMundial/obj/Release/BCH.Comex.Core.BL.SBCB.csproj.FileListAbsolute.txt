@@ -1,0 +1,99 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\SpreadsheetLight.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.SBCB.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.BancaMundial\obj\Release\BCH.Comex.Core.BL.BancaMundial.pdb

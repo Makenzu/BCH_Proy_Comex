@@ -1,0 +1,279 @@
+﻿@model BCH.Comex.UI.Web.Models.AdminParticipantes.CuentasParticipanteViewModel
+@{
+    ViewBag.Title = "Cuentas Participante";
+}
+@{ Html.RenderPartial("_MenuMain");}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="container">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmCuentasParticipante", name = "frmCuentasParticipante", @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4 class="margin-bottom-double">
+                    @Html.DisplayFor(model => model.Titulo.Text, new { htmlAttributes = new { @class = "form-control" } })
+                </h4>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@Html.DisplayFor(model => model.Frame1.Text, new { htmlAttributes = new { @class = "form-control" } })</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-xs-1"></div>
+                                                <div class="col-xs-11">
+                                                    @Html.DisplayFor(model => model.Label1.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                    @Html.DisplayFor(model => model.Label2.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                    @Html.DisplayFor(model => model.Label3.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                    @Html.EditorFor(model => model.Lista1, new { htmlAttributes = new { @class = "form-control", multiple = "", @style = "font-family: monospace;" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.aceptar, new
+                            {
+                               htmlAttributes = new
+                               {
+                                   @class = "btn btn-primary btn-block",
+                                   value = "Aceptar",
+                                   type = "submit",
+                                   name = "Command",
+                                   aria_hidden = "true"
+                               }
+                            })
+
+                            @Html.EditorFor(model => model.cancelar, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    @class = "btn btn-default btn-block",
+                                    value = "Cancelar",
+                                    type = "submit",
+                                    name = "Command",
+                                    aria_hidden = "true"
+                                }
+                            })
+
+
+                            @Html.EditorFor(model => model.guardar, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    @class = "btn btn-success btn-block",
+                                    value = "Guardar",
+                                    type = "submit",
+                                    name = "Command",
+                                    aria_hidden = "true"
+                                }
+                            })
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@Html.DisplayFor(model => model.Frame2.Text, new { htmlAttributes = new { @class = "form-control" } })</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-xs-1"></div>
+                                            <div class="col-xs-11">
+                                                @Html.DisplayFor(model => model.Label4.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                @Html.DisplayFor(model => model.Label7.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                @Html.DisplayFor(model => model.Label5.Text, new { htmlAttributes = new { @class = "control-label" } })
+                                                @Html.DisplayFor(model => model.Label6.Text, new { htmlAttributes = new { @class = "control-label" } })
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                @Html.EditorFor(model => model.Lista2, new { htmlAttributes = new { @class = "form-control", multiple = "", @style = "font-family: monospace;" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="modalSrchPart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Cuentas Corrientes">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modalSrchPart_Content">
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section css{
+    <style type="text/css">
+        .control-label .required {
+            color: #e02222;
+            font-size: 12px;
+            padding-left: 2px;
+        }
+
+        /*.nav > li > a {
+            position: relative;
+            display: block;
+            padding: 6px 8px;
+        }*/
+
+        .form-group {
+            margin-bottom: 2px;
+            line-height: 24px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 24px;
+            padding: 6px 12px;
+            font-size: 12px;
+            line-height: 1.4285;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+            line-height: 21px;
+            height: 21px;
+        }
+
+        .panel-heading {
+            padding: 0px 13px;
+        }
+
+        .form-horizontal .control-label {
+            padding-top: 1px;
+            margin-bottom: 0px;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        .panel-body {
+            padding: 5px 3px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 0px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1.3285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] {
+            position: absolute;
+            margin-top: 1px; /*4px \9;*/
+            margin-left: -20px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 15px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+            padding-top: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 17px; /*4px \9;*/
+        }
+
+
+        select.input-sm {
+            height: 21px;
+            line-height: 21px;
+        }
+
+        .wrapper{
+            border: 1px dashed red;
+            height: 150px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            width: 150px;
+         }
+
+        /*body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.2285;
+            color: #333;
+            background-color: #fff;
+        }*/
+    </style>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/CuentasParticipante")
+    <script>
+    $(function () {
+        $('#aceptar').click(function () {
+            sessionStorage.setItem('modificando', true);
+            modificando = sessionStorage.getItem('modificando');
+        });
+        @if (((BCH.Comex.Core.Entities.Cext01.AdminParticipantes.Datatypes.InitializationObject)Session[BCH.Comex.UI.Web.Common.SessionKeys.AdminParty.PartySessionKey]).UsrEsp.Jerarquia != 1 && ((BCH.Comex.Core.Entities.Cext01.AdminParticipantes.Datatypes.InitializationObject)Session[BCH.Comex.UI.Web.Common.SessionKeys.AdminParty.PartySessionKey]).UsrEsp.Tipeje != "N")
+        {
+            @: $('#Lista1_SelectedValue').unbind("dblclick");
+            @: $('#Lista1_SelectedValue').removeAttr("disabled");
+            @: $('#Lista2_SelectedValue').unbind("dblclick");
+            @: $('#Lista2_SelectedValue').removeAttr("disabled");
+        }
+    });
+    </script>
+}

@@ -1,0 +1,475 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+@using BCH.Comex.Core.Entities.Portal
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Imprimir Planilla</title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0px 156px 76px;
+            padding: 0px;
+            border: none;
+            width: 740px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_1 #id_1_1 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 390px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_2 {
+                    border: none;
+                    margin: 0px 0px 0px 380px;
+                    padding: 0px;
+                    border: none;
+                    width: 740px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_3 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 740px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 13px 50px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_3 {
+                border: none;
+                margin: 350px 0px 0px 500px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 54px;
+            margin-bottom: 0px;
+        }
+
+        .p2 {
+            text-align: left;
+            padding-right: 160px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p3 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p4 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p5 {
+            text-align: left;
+            padding-right: 45px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p6 {
+            text-align: right;
+            padding-right: 67px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p7 {
+            text-align: right;
+            padding-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p8 {
+            text-align: right;
+            padding-right: 92px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p9 {
+            text-align: right;
+            padding-right: 96px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p10 {
+            text-align: right;
+            padding-right: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-right: 25px;
+            margin-top: 31px;
+            margin-bottom: 0px;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-right: 98px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p13 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 130px;
+            vertical-align: bottom;
+        }
+
+        .td {
+            padding: 0px;
+            margin: 0px;
+            /*width: 150px;*/
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 143px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 120px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 150px;
+            vertical-align: bottom;
+        }
+
+        .td4 {
+            padding: 0px;
+            margin: 0px;
+            width: 200px;
+            vertical-align: bottom;
+        }
+
+        .td5 {
+            padding: 0px;
+            margin: 0px;
+            width: 60px;
+            vertical-align: bottom;
+        }
+
+        .td6 {
+            padding: 0px;
+            margin: 0px;
+            width: 100px;
+            vertical-align: bottom;
+        }
+
+        .tr0 {
+            height: 15px;
+        }
+
+        .tr1 {
+            height: 30px;
+        }
+    </style>
+
+    <style>
+    @{
+        var printFormat = ViewData[BCH.Comex.UI.Web.Helpers.Extensions.ControllerExtensions.PrintFormatViewDataKey] as PrintFormat? ?? PrintFormat.HTML;
+        if (printFormat == PrintFormat.TIFF)
+        {
+            @:.ft0 {
+            @:    font: bold 16px 'Times New Roman';
+            @:    line - height: 19px;
+            @:}
+
+            @:.ft1 {
+            @:    font: italic bold 13px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft2 {
+            @:    font: 13px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft3 {
+            @:    font: bold 13px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft4 {
+            @:    font: bold 13px 'Times New Roman';
+            @:    text - decoration: underline;
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft5 {
+            @:    font: 1px 'Times New Roman';
+            @:    line - height: 1px;
+            @:}
+
+            @:.ft6 {
+            @:    font: italic bold 13px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.t0 {
+            @:    width: 239px;
+            @:    margin - left: 2px;
+            @:    margin - top: 3px;
+            @:    font: bold 13px 'Times New Roman';
+            @:}
+
+            @:.t1 {
+            @:    width: 650px;
+            @:    margin - top: 14px;
+            @:    font: 13px 'Times New Roman';
+            @:}
+        }
+        else
+        {
+            @:.ft0 {
+            @:    font: bold 23px 'Times New Roman';
+            @:    line - height: 19px;
+            @:}
+
+            @:.ft1 {
+            @:    font: italic bold 20px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft2 {
+            @:    font: 20px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft3 {
+            @:    font: bold 20px 'Times New Roman';
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft4 {
+            @:    font: bold 20px 'Times New Roman';
+            @:    text - decoration: underline;
+            @:    line - height: 15px;
+            @:}
+
+            @:.ft5 {
+            @:    font: 7px 'Times New Roman';
+            @:    line - height: 1px;
+            @:}
+
+            @:.ft6 {
+            @:    font: italic bold 20px 'Times New Roman';
+            @:    line - height: 16px;
+            @:}
+
+            @:.t0 {
+            @:    width: 239px;
+            @:    margin - left: 2px;
+            @:    margin - top: 3px;
+            @:    font: bold 20px 'Times New Roman';
+            @:}
+
+            @:.t1 {
+            @:    width: 650px;
+            @:    margin - top: 14px;
+            @:    font: 20px 'Times New Roman';
+            @:}
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div id="page_1">
+
+
+        <div id="id_1">
+            <div id="id_1_1">
+                <p class="p0 ft0">@Model.TituloCabezal.ToUpper()</p>
+            </div>
+            <div id="id_1_2">
+                <p class="p0 ft2">@Model.Ciudad</p>
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    <tr>
+                        <td class="tr0 td0"><p class="p3 ft3">@Model.NuestraReferencia</p></td>
+                        <td class="tr0 td1"><p class="p4 ft3"><nobr>@Model.NuestraReferenciaValue</nobr></p></td>
+                    </tr>
+                    <tr>
+                        @if (Model.SuReferenciaValue != null)
+                        {
+                            <td class="tr0 td0"><p class="p3 ft3">@Model.SuReferencia</p></td>
+                            <td class="tr0 td1"><p class="p4 ft3"><nobr>@Model.SuReferenciaValue</nobr></p></td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="id_1">
+            <div id="id_1_3">
+                <p class="p1 ft1">Señores</p>
+                <p class="p0 ft1">@Model.NombreCliente</p>
+                <p class="p2 ft1">@Model.DireccionCliente</p>
+                <p class="p3 ft1">@Model.CiudadCliente</p>
+            </div>
+        </div>
+        <div id="id_2">
+            <p class="p5 ft2">@Model.Parrafo1</p>
+            <table cellpadding=0 cellspacing=0 class="t1">
+                <tr style="height:0px;">
+                    <td class="tr0 td2">&nbsp;</td>
+                    <td class="tr0 td3">&nbsp;</td>
+                    <td class="tr0 td4">&nbsp;</td>
+                    <td class="tr0 td5">&nbsp;</td>
+                    <td class="tr0 td6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="tr0 td"><p class="p3 ft4">Planilla</p></td>
+                    <td class="tr0 td"><p class="p6 ft4">Código</p></td>
+                    <td class="tr0 td"><p class="p7 ft4" style="text-align: center;">Declaración</p></td>
+                    <td class="tr0 td"><p class="p3 ft5">&nbsp;</p></td>
+                    <td class="tr0 td"><p class="p4 ft4">Monto</p></td>
+                </tr>
+                @foreach (var item in Model.LineasComercioInvisible)
+                {
+                    <tr>
+                        <td class="tr1 td"><p class="p3 ft2">@item.CodigoPlanilla</p></td>
+                        <td class="tr1 td"><p class="p8 ft2">@item.Codigo</p></td>
+                        <td class="tr1 td"><p class="p9 ft2"><nobr>@item.Declaracion</nobr></p></td>
+                        <td class="tr1 td"><p class="p3 ft2">@item.Moneda</p></td>
+                        <td class="tr1 td"><p class="p10 ft2">@item.Monto</p></td>
+                    </tr>
+                }
+
+                @if (Model.LineasComisionGasto.Where(i => i.Tipo == "C").ToList().Count > 0)
+                {
+                    <tr>
+                        <td colspan=2 class="tr1 td"><p class="p3 ft6">Detalle comisiones y gastos cobrados:</p></td>
+                        <td class="tr1 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr1 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr1 td"><p class="p3 ft5">&nbsp;</p></td>
+                    </tr>
+                }
+
+                @foreach (var item in Model.LineasComisionGasto.Where(i => i.Tipo == "C").ToList())
+                {
+                    <tr>
+                        <td class="tr1 td"><p class="p3 ft1">@item.TipoOperacion</p></td>
+                        <td class="tr1 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr1 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr1 td"><p class="p14 ft1">@item.Moneda</p></td>
+                        <td class="tr1 td"><p class="p7 ft1">@item.Monto</p></td>
+                    </tr>
+                }
+
+                @if (Model.LineasComisionGasto.Where(i => i.Tipo == "C").ToList().Count > 0)
+                {
+                    <tr>
+                        <td class="tr0 td"><p class="p3 ft4">&nbsp;</p></td>
+                        <td colspan=5 class="tr3 td"><p class="p7 ft1">________________________________</p></td>
+                    </tr>
+                }
+
+                @if (Model.LineasComisionGasto.Where(i => i.Tipo == "C").ToList().Count > 0)
+                {
+                    <tr>
+                        <td class="tr3 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr3 td"><p class="p3 ft5">&nbsp;</p></td>
+                        <td class="tr3 td"><p class="p18 ft8" style="text-align: center;">Total</p></td>
+                        <td class="tr3 td"><p class="p14 ft1">$</p></td>
+                        <td class="tr3 td"><p class="p18 ft8" style="text-align: right;">@Model.TotalComisionGasto</p></td>
+                    </tr>
+                }
+                @*<tr>
+                        <td class="tr1 td2"><p class="p3 ft2">515001K</p></td>
+                        <td class="tr1 td3"><p class="p8 ft2">500</p></td>
+                        <td class="tr1 td4"><p class="p9 ft2"><nobr>-------</nobr></p></td>
+                        <td class="tr1 td5"><p class="p3 ft2">US$</p></td>
+                        <td class="tr1 td6"><p class="p10 ft2">20.000,00</p></td>
+                    </tr>*@
+            </table>
+            <p class="p11 ft2" style="white-space: pre-wrap;word-wrap: break-word;">@Model.PiePagina</p>
+            <p class="p12 ft2">@*¡¡CONSULTE SUS OPERACIONES DE NEGOCIOS INTERNACIONALES EN INTERNET!! CONTÁCTENOS EN www.internacional.bancochile.cl*@</p>
+        </div>
+        <div id="id_3">
+            <p class="p0 ft1">_______________________</p>
+            <p class="p13 ft6">Banco de Chile</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4086530A-E2DA-4280-90BA-42A0A2D191EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Common.XGPY</RootNamespace>
+    <AssemblyName>BCH.Comex.Common.XGPY</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU'">
+    <OutputPath>bin\IISRelease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU'">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datatypes\InitializationObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T_Modulos\T_MODGRNG.cs" />
+    <Compile Include="T_Modulos\T_MODGSGT.cs" />
+    <Compile Include="T_Modulos\T_MODGUSR.cs" />
+    <Compile Include="T_Modulos\T_MODWS.cs" />
+    <Compile Include="T_Modulos\T_PARTY.cs" />
+    <Compile Include="T_Modulos\T_PRTYENT.cs" />
+    <Compile Include="T_Modulos\T_PRTYENT2.cs" />
+    <Compile Include="UI_Modulos\UI_Mdi_Principal.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt00.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt01.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt04.cs" />
+    <Compile Include="T_Modulos\T_PRTGLOB.cs" />
+    <Compile Include="T_Modulos\T_UTILES.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt06.cs" />
+    <Compile Include="UI_Modulos\UI_Commons.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt07.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt08.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt09.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt10.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt11.cs" />
+    <Compile Include="UI_Modulos\UI_PrtEnt13.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://osb.bancochile.cl/ConsultasSaldoCuenta/" name="ConsultasSaldoCuenta" targetNamespace="http://osb.bancochile.cl/ConsultasSaldoCuenta/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:tns="http://osb.bancochile.cl/ConsultasSaldoCuenta/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:Q1="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaRequest" xmlns:Q2="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaResponse" xmlns:Q3="http://osb.bancochile.cl/common/HeaderRequest" xmlns:Q4="http://osb.bancochile.cl/common/HeaderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://osb.bancochile.cl/ConsultasSaldoCuenta/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" namespace="http://osb.bancochile.cl/common/HeaderResponse" />
+      <xsd:import schemaLocation="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" namespace="http://osb.bancochile.cl/common/HeaderRequest" />
+      <xsd:import schemaLocation="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FPX_SaldosCartolas%2FCS000069_ConsultaSaldoCuenta%2FSpecificactions%2FWSDL%2FCS000069Response" namespace="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaResponse" />
+      <xsd:import schemaLocation="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FPX_SaldosCartolas%2FCS000069_ConsultaSaldoCuenta%2FSpecificactions%2FWSDL%2FCS000069Request" namespace="http://osb.bancochile.cl/ESB/ConsultasSaldoCuenta/OpConsultasSaldoCuentaRequest" />
+      <xsd:element name="headerRequest" type="Q3:datosHeaderRequest" />
+      <xsd:element name="headerResponse" type="Q4:datosHeaderResponse" />
+      <xsd:element name="ConsultasSaldoCuenta">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cuerpo" type="Q1:cuerpo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultasSaldoCuentaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cuerpo" type="Q2:cuerpo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ConsultasSaldoCuentaRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:ConsultasSaldoCuenta" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ConsultasSaldoCuentaResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:ConsultasSaldoCuentaResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerRequestMessage">
+    <WL5G3N0:part name="headerRequest" element="WL5G3N1:headerRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerResponseMessage">
+    <WL5G3N0:part name="headerResponse" element="WL5G3N1:headerResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ConsultasSaldoCuenta">
+    <WL5G3N0:operation name="ConsultasSaldoCuenta">
+      <WL5G3N0:input message="WL5G3N1:ConsultasSaldoCuentaRequest" />
+      <WL5G3N0:output message="WL5G3N1:ConsultasSaldoCuentaResponse" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ConsultasSaldoCuentaSOAP" type="WL5G3N1:ConsultasSaldoCuenta">
+    <WL5G3N2:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="ConsultasSaldoCuenta">
+      <WL5G3N2:operation soapAction="http://osb.bancochile.cl/ConsultasSaldoCuenta/ConsultasSaldoCuenta" />
+      <WL5G3N0:input>
+        <WL5G3N2:header message="WL5G3N1:headerRequestMessage" part="headerRequest" use="literal" />
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:header message="WL5G3N1:headerResponseMessage" part="headerResponse" use="literal" />
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ConsultasSaldoCuenta">
+    <WL5G3N0:port name="ConsultasSaldoCuentaSOAP" binding="WL5G3N1:ConsultasSaldoCuentaSOAP">
+      <WL5G3N2:address location="http://osb.bancochile.cl:8015/SaldosCartolas/CS000069_ConsultaSaldoCuenta" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

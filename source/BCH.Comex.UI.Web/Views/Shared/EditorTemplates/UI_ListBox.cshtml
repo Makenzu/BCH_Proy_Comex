@@ -1,0 +1,36 @@
+﻿@using System.Collections;
+@using System.Web.Mvc;
+@using BCH.Comex.Core.Entities.Cext01.FundTransfer.UI_Modulos;
+
+@model BCH.Comex.Common.UI_Modulos.UI_ListBox
+
+@{
+    var htmlAttributes = (object)ViewData["htmlAttributes"];
+    var newAttrs = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
+    if (!Model.Enabled)
+    {
+        newAttrs.Add("disabled", "disabled");
+    }
+    newAttrs.Add("multiple", "multiple");
+    
+    if (!newAttrs.ContainsKey("class"))
+    {
+        newAttrs.Add("class", "");
+    }
+    newAttrs["class"] += " mono";
+    
+    //if (Model.Items.Count > 0)
+    //{
+    //    Model.Items.ForEach(x => x.Value = x.Value.Replace(" ", "\xA0").Replace("\t", "\xA0\xA0\xA0"));
+    //}
+}
+
+@Html.DropDownListFor(model => model.SelectedValue,
+                Model.Items.Select(x => new SelectListItem
+                {
+                    Text = x.Value,
+                    Value = x.Data.ToString(),
+                    Selected = (Model.ListIndex >= 0 && Model.Items[Model.ListIndex].Data == x.Data)
+                }).ToList(),
+                htmlAttributes: @newAttrs)

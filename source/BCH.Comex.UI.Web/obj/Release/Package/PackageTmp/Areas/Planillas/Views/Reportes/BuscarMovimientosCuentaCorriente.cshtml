@@ -1,0 +1,73 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.MovimientosCuentaCorrienteViewModel
+
+@{
+    ViewBag.Title = "Movimientos Ctas. Ctes.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+<div class="container form-horizontal">
+<h3 class="margin-bottom-base" id="caption">@ViewBag.Title</h3>
+<div class="row">
+    @using (Html.BeginForm("MovimientosCuentaCorriente", "Reportes", FormMethod.Get))
+    {
+        @Html.ValidationSummary();
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                            @Html.LabelFor(m => m.TipoCuenta)
+                        </div>
+                        <div class=" col-xs-4">
+                            @Html.DropDownListFor(m => m.TipoCuenta, Model.TiposCuenta, new { @class = "form-control input-sm"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                            @Html.LabelFor(m => m.Fecha)
+                        </div>
+                        <div class=" col-xs-4">
+                            <div class="input-group date" id="dtpFecha">
+                                <input type="text" class="form-control input-sm" id="txtFecha" name="Fecha" value="@(Model != null && Model.Fecha != null ? Model.Fecha : DateTime.Now)" data-inputmask="'alias': 'date'" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-2">
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                    @*<button class="btn btn-default" style="width:80px">Cancelar</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+
+            $('#dtpFecha').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: Date.now(), maxDate: Date.now(), debug: true });
+
+            $('button[type="submit"]').on('click', function (e) {
+                e.preventDefault();
+                
+                var $form = $('form');
+                $form.find('#txtFecha').val($('#dtpFecha').data('DateTimePicker').date().format('YYYY-MM-DD'));
+                $form.submit();
+            })
+
+        });
+    </script>
+}
+
+
+
+

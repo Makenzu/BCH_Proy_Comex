@@ -1,0 +1,1161 @@
+﻿@model BCH.Comex.UI.Web.Models.AdministracionSwift.Index
+@{
+    ViewBag.Title = "Administración Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png");
+}
+
+@section css{
+    <style type="text/css">
+        .align-btn-fix {
+            margin-bottom: 0;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #002464;
+            color: #fff;
+        }
+    </style>
+
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+
+            .clickable .glyphicon {
+                background: rgba(0, 0, 0, 0.15);
+                display: inline-block;
+                padding: 6px 12px;
+                border-radius: 4px;
+            }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+            a.clickable:hover {
+                text-decoration: none;
+            }
+    </style>
+
+}
+
+<div class="container" id="msg-zone" style="padding-top: 20px;z-index: 1001;">
+</div>
+
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Gestión de Mensajes</a></li>
+                <li><a href="@Url.Action("GestionArchivos")">Gestión de Archivos</a></li>
+                <li><a href="@Url.Action("EliminaMensaje")">Eliminar Mensajes</a></li>
+                <li><a href="@Url.Action("ConsultaPoderes")">Consulta de poderes</a></li>
+                <li><a href="@Url.Action("Alertas")">Configurar alarmas</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<h2>Gestión de mensajes Swift</h2>
+<div class="panel panel-default">
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title" id="titleFiltro">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+
+                <button class="btn btn-primary" id="btnBuscarSwifts">Sin autorizar</button>
+                <button class="btn btn-primary" id="btnAutorizados">Autorizados</button>
+                <button class="btn btn-primary" id="btnRechazados">Rechazados</button>
+                <button class="btn btn-primary" id="btnProcesados">Procesados</button>
+                <button class="btn btn-primary" id="btnBloqueados">Bloqueados</button>
+                <button class="btn btn-primary" id="btnAnulados">Anulados</button>
+
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="container">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    @Html.Label("Casilla", "Casilla", new { @class = "control-label col-xs-2" })
+                                    <div class="col-xs-5">
+                                        <div class="input-group">
+                                            @Html.DropDownList("idCasilla", Model.CasillasVisibles, "-- Todas las Casillas --", new { @class = "selectpicker form-control", data_live_search = "true" })
+                                            <span class="input-group-btn">
+                                                <button id="btnConfigurarCasillas" class="btn btn-default" type="button" data-toggle="modal" data-backdrop="false" title="Configure las casillas que desea ver en esta lista" data-target="#modalAdminCasillas">
+                                                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorCasilla">La casilla es requerida</label>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("dtpFechaDesde", "Fecha", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                    <div class="col-xs-3">
+                                        <div class="input-group date" id="dtpFechaDesde">
+                                            <input type="text" class="form-control" id="txtFechaDesde" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="chkPeriodoFechas"> Período
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorFechaDesde">La fecha debe ser menor o igual a la fecha del día</label>
+                                </div>
+                                <div class="form-group" id="grpFechaHasta">
+                                    @Html.Label("Hasta", "Hasta", new { @class = "control-label col-xs-2" })
+                                    <div class="col-xs-3">
+                                        <div class="input-group date" id="dtpFechaHasta">
+                                            <input type="text" class="form-control" id="txtFechaHasta" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorFechaHasta">La fecha debe ser mayor o igual a la fecha desde</label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
+                    @{ Html.RenderPartial("_AdminCasillas"); }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" id="pnlResultados">
+    <div class="panel-heading">
+        <h2 class="panel-title">Resultados.</h2>
+    </div>
+    <div class="panel-body">
+        <div id="botoneraAcciones"> 
+            <button class="btn btn-info requiereSeleccionado" id="btnAutorizar">Autorizar</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnVerDatos">Ver datos</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnVisualizar">Visualizar</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnLog">Log</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnRechazar">Rechazar</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnBloquear">Bloquear</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnDesloquear">Desbloquear</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnAnular">Anular</button>
+            <button class="btn btn-info requiereSeleccionado" id="btnReporte">Reporte</button>
+
+            <button type="button" class="btn btn-default pull-right" id="btnExportarExcel" style="display: none"><span class="glyphicon glyphicon-export" aria-hidden="true"></span>&nbsp;&nbsp;Exportar a Excel&nbsp;&nbsp;</button>    
+            </div>
+        <table id="tablaSwifts"></table>
+    </div>
+</div>
+
+@*Este se llena por Ajax*@
+<div id="divSolFirmasSwift"></div>
+
+
+<div id="modalVisorIndividualSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body text-center" id="divCuerpoSwift"></div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" id="btnImprimirMensajeIndividual"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>  Imprimir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalVisorSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg xlg">
+        <div class="modal-content">
+            <div id="divCuerpoMensajeSwift"></div>
+        </div>
+    </div>
+</div>
+
+<div id="modalLogSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body text-center" id="divLogSwift"></div>
+        </div>
+    </div>
+</div>
+
+<div id="modalRechazarSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Rechazo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Rechazar mensaje</h4>
+            </div>
+            <div class="modal-body" id="divRechazoSwift">
+                <div class="form-group" id="DivComentarioRechazo">
+                    <label style="text-align:left" for="comentario">Motivo rechazo</label>
+                    @Html.TextArea("comentario", new { placeholder = "Ingrese un comentario", @class = "form-control", id = "comentarioRechazo", @rows = "6", maxlength = "90" })
+                </div>
+                <div class="alert alert-info" role="alert" id="DivRechazoExito" hidden>
+                    <strong>Información!</strong><br />
+                    Swift rechazado con éxito.
+                </div>
+                <div class="alert alert-info" role="alert" id="DivMensajeError" hidden>
+                    <strong>Información!</strong><br />
+                    Debe ingresar un comentario.
+                </div>
+            </div>
+            <div class="modal-footer" id="DivAceptaRechazo">
+                <button class="btn btn-info" id="BtnRechazaSwift">Aceptar</button>
+            </div>
+            <div class="modal-footer" id="DivRechazado" hidden>
+                <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalRechazarNoTieneFirmas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Rechazo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Rechazar mensaje</h4>
+            </div>
+            <div class="modal-body" id="divRechazoSwift">
+                <div class="form-group" id="DivComentarioRechazo">
+                    <label style="text-align:left" for="comentario">Motivo rechazo</label>
+                </div>
+                <div class="alert alert-info" role="alert" id="DivRechazoExito" hidden>
+                    <strong>Información!</strong><br />
+                    No tiene firmas asociadas, no se pueden eliminar.
+                </div>
+            </div>
+            <div class="modal-footer" id="DivAceptaRechazo">
+                <button class="btn btn-info" id="BtnRechazaSwift">Aceptar</button>
+            </div>
+            <div class="modal-footer" id="DivRechazado" hidden>
+                <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalBloquearSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Bloqueo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Bloquear mensaje</h4>
+            </div>
+            <div class="modal-body" id="divBloqueoSwift">
+                <div class="form-group" id="DivComentarioBloqueo">
+                    <label style="text-align:left" for="comentario">Motivo bloqueo</label>
+                    @Html.TextArea("comentario", new { placeholder = "Ingrese un comentario", @class = "form-control", id = "comentario", @rows = "6", maxlength = "90" })
+                </div>
+                <div class="alert alert-info" role="alert" id="DivBloqueadoExito" hidden>
+                    <strong>Información!</strong><br />
+                    Swift bloqueado con éxito.
+                </div>
+                <div class="alert alert-info" role="alert" id="DivMensajeErrorBloqueo" hidden>
+                    <strong>Información!</strong><br />
+                    Debe ingresar un comentario.
+                </div>
+            </div>
+            <div class="modal-footer" id="DivAceptaBloqueo">
+                <button class="btn btn-info" id="BtnBloqueaSwift">Aceptar</button>
+            </div>
+            <div class="modal-footer" id="DivBloqueado" hidden>
+                <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalAnularSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Anulacion de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Anular mensaje</h4>
+            </div>
+            <div class="modal-body" id="divAnulaSwift">
+                <div class="form-group" id="DivComentarioAnula">
+                    <label style="text-align:left" for="comentario">Motivo anulación</label>
+                    @Html.TextArea("comentario", new { placeholder = "Ingrese un comentario", @class = "form-control", id = "comentarioAnula", @rows = "6", maxlength = "90" })
+                </div>
+                <div class="alert alert-info" role="alert" id="DivAnulaExito" hidden>
+                    <strong>Información!</strong><br />
+                    Swift anulado con éxito.
+                </div>
+                <div class="alert alert-info" role="alert" id="DivMensajeErrorAnular" hidden>
+                    <strong>Información!</strong><br />
+                    Debe ingresar un comentario.
+                </div>
+            </div>
+            <div class="modal-footer" id="DivAceptaAnula">
+                <button class="btn btn-info" id="BtnAnulaSwift">Aceptar</button>
+            </div>
+            <div class="modal-footer" id="DivAnula" hidden>
+                <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalDesbloqueoSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Desbloqueo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Desbloquear mensaje</h4>
+            </div>
+            <div class="modal-body" id="divDesbloqueoSwift">
+                <div class="alert alert-info" role="alert">
+                    <strong>Información!</strong><br />
+                    Swift desbloqueado con éxito.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalInfoSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Usuario Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Información.</h4>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <div class="modal-body" id="MensajeActualizar">
+                        <div class="alert alert-success" role="alert">
+                            <strong>Atención!</strong><br />
+                            Se han actualizado los datos correctamente.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer" id="DivInfoSwift">
+                    <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="msg-zone" style="padding-top: 20px;"></div>
+
+
+@section scripts{
+
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    <script type="text/javascript">
+    var seleccion = "nulo";
+    var ultimaRowAccionIndividual = null;
+    var formatoGET = "YYYY/MM/DD";
+    var urlDetalleSwift = '@Url.Action("DetalleSwift", "ConsultaSwift")';
+
+    $("#modalAutorizarSwift").on("hidden.bs.modal", buscarSegunSeleccion);
+
+    $(document).on('hidden.bs.modal', function (e) {
+        $(e.target).removeData('bs.modal');
+    });
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+    $(document).on('click', '.panel div.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+
+    function ImprimirMensajeIndividual(row) {
+        var location = urlDetalleSwift + '?sesion=' + row['Sesion'] + '&secuencia=' + row['Secuencia'] + '&htmlCompleto=true&pdf=true';
+
+        if (!$('#direccionRecibidos').is(':checked')) {
+            //enviados
+            location = location + "&idMensaje=" + row['id_mensaje'];
+        }
+
+        var w = window.open();
+        w.location = location;
+    }
+    var dtpFechaDesde = $('#dtpFechaDesde');
+    var dtpFechaHasta = $('#dtpFechaHasta');
+    function ReporteAdmin() {
+
+        if ($('#idCasilla').val() == "") {
+            var idCasilla = 0;
+        }
+        else {
+            var idCasilla = $('#idCasilla').val();
+        }
+
+        var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        var fechaHasta;
+        if ($("#chkPeriodoFechas").is(":checked")) {
+
+            fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+        }
+        else {
+
+            fechaHasta = fechaDesde;
+        }
+
+        if (seleccion == "nulos") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftNulos", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+        if (seleccion == "bloqueados") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftBloqueados", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+        if (seleccion == "procesados") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftProcesados", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+        if (seleccion == "rechazados") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftRechazados", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+        if (seleccion == "autorizados") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftAutorizados", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+        if (seleccion == "sinAutorizar") {
+            var urlReporteEncAutSwift = '@Url.Action("ReporteAdminSwiftSinAutorizar", "AdminSwift")';
+            {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = urlReporteEncAutSwift + "?idCasilla=" + idCasilla +
+                    "&fechaDesde=" + encodeURIComponent(moment(fechaDesde, formatoGET).format(formatoGET)) +
+                    "&fechaHasta=" + encodeURIComponent(moment(fechaHasta, formatoGET).format(formatoGET)) +
+                    "&estado=" + seleccion;
+                //"&_codEstado=" + p['_codEstado'];
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+
+    };
+
+    $(document).ready(function () {
+        $.fx.off = true;
+        $(document).ajaxStart(function () {
+            $.blockUI({
+                message: '<h6>Cargando...</h6>',
+                baseZ: 2000
+            })
+        })
+                .ajaxStop($.unblockUI);
+
+        $('#btnImprimirMensajeIndividual').click(function () {
+            ImprimirMensajeIndividual(rowSelected);
+        });
+
+        $('#btnReporte').click(ReporteAdmin);
+
+        //Guardar casilla
+        var urlGuardarCasillas = '@Url.Action("GuardarCasillas")';
+        var actualizarDropDownCasillasSegunConfigurado = function () {
+            var dropDown = $('#idCasilla');
+            dropDown.find('option').remove().end().append('<option value="">-- Todas las Casillas --</option>');
+
+            $('input[name=chkCasillaVisible]:checked').each(function () {
+                var strSelected = "";
+                if ($('input[name=radCasillaPrincipal][value=' + $(this).val() + ']').is(':checked')) {
+                    strSelected = " selected";
+                }
+                dropDown.append("<option value='" + $(this).val() + "'" + strSelected + ">" + $(this).closest("td").siblings('#trNombreCasilla').eq(0).text() + "</option>");
+            });
+
+        }
+        var guardarCasillas = function () {
+            var casillasSeleccionadas = [];
+            $('input[name=chkCasillaVisible]:checked').each(function () {
+                casillasSeleccionadas.push($(this).val());
+            });
+
+            var valorCasillaDefault = "";
+            var selected = $("input[type='radio'][name='radCasillaPrincipal']:checked");
+            if (selected.length > 0) {
+                valorCasillaDefault = selected.val();
+            }
+
+            var parametros = { idsCasillasVisibles: casillasSeleccionadas, idCasillaDefault: valorCasillaDefault };
+
+            if (casillasSeleccionadas.length === 0) {
+                showAlert("Error en la operación", "Debe seleccionar al menos una casilla.", "alert-danger");
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: urlGuardarCasillas,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(parametros),
+                dataType: "json",
+                success: function () {
+                    $('#modalAdminCasillas').modal('hide');
+                    showAlert("Operación exitosa!", "Las casillas se guardaron satisfactoriamente.", "alert-success");
+                    actualizarDropDownCasillasSegunConfigurado();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    $('#modalAdminCasillas').modal('hide');
+                    showAlert("Error en la operación", "Los cambios no se pudieron guardar.", "alert-danger");
+                }
+            });
+            return false;
+        };
+
+        $('#btnGuardarCasillas').click(function () {
+            guardarCasillas();
+        });
+
+        $('#dtpFechaDesde').on("dp.show", function (e) {
+            $('#dtpFechaHasta').data('DateTimePicker').hide();
+        });
+
+        $('#dtpFechaHasta').on("dp.show", function (e) {
+            $('#dtpFechaDesde').data('DateTimePicker').hide();
+        });
+
+        actionButonHidden();
+    });
+
+    function getConfigColumnas(nombreColumnaFecha, tituloColumnaFecha) {
+        return [
+            { field: 'state', radio: true, events: operateEvents },
+            { field: 'id_mensaje', title: 'N° Mensaje', sortable: true, visible: true },
+            { field: 'Tipo', title: 'Tipo MT', sortable: true },
+            { field: 'Unidad', title: 'Casilla', sortable: true },
+            { field: 'BancoReceptor', title: 'Banco Receptor', sortable: true },
+            { field: 'BancoSwift', title: 'BIC', sortable: true },
+            { field: 'Referencia', title: 'Referencia', sortable: true },
+            { field: 'Moneda', title: 'Mnda', sortable: true, },
+            { field: 'Monto', title: 'Monto', sortable: true, align: 'right', formatter: montoFormatter },
+            { field: nombreColumnaFecha, title: tituloColumnaFecha, sortable: true },
+            { field: 'estado_msg', title: 'Estado', sortable: true, visible: false },
+            { field: 'Sesion', title: 'Sesion', visible: false },
+            { field: 'RutIngreso', title: 'Rut Ingreso', visible: false },
+            { field: 'Secuencia', title: 'Secuencia', visible: false },
+            { field: 'beneficiario', title: 'Beneficiario', sortable: true, visible: false }
+        ];
+    }
+
+    var visualizar = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("DetalleSwift", "ConsultaSwift")', { idMensaje: idMensaje, sesion: 0, secuencia: 0 }, function (data) {
+            $('#divCuerpoSwift').html(data);
+            $('#modalVisorIndividualSwift').modal();
+        });
+    };
+
+    var verMensaje = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("DatosSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+            $('#divCuerpoMensajeSwift').html(data);
+            $('#modalVisorSwift').modal();
+        });
+    };
+
+    var verLog = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("LogSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+            $('#divLogSwift').html(data);
+            $('#modalLogSwift').modal();
+        });
+    };
+
+
+    var rechazar = function () {
+
+        $('#comentarioRechazo').val('');
+        $('#DivRechazado').hide();
+        $('#DivMensajeError').hide();
+        $('#DivRechazoExito').hide();
+        $('#DivAceptaRechazo').show();
+        $('#DivComentarioRechazo').show();
+        $('#divRechazoSwift').html();
+        $('#modalRechazarSwift').modal();
+    };
+
+    var RechazarSwift = function () {
+        var comentario = $('#comentarioRechazo').val();
+
+        if (comentario.length <= 0) {
+            $('#DivMensajeError').show();
+            return false;
+        }
+
+        $.post('@Url.Action("RechazarSwift")', { idMensaje: rowSelected["id_mensaje"], comentario: comentario }, function (data) {
+            // console.debug("Resultado Rechazo: " + data);
+            if (data == 0) {
+                $('#DivMensajeError').hide();
+                $('#DivRechazado').show();
+                $('#DivRechazoExito').show();
+                $('#DivAceptaRechazo').hide();
+                $('#DivComentarioRechazo').hide();
+            }
+            else if (data == -3) {
+                $('#modalRechazarNoTieneFirmas').show();
+            }
+
+            buscarSegunSeleccion();
+        });
+    };
+
+        function buscarSegunSeleccion()
+        {
+            if (seleccion == "sinAutorizar") {
+                sinAutorizar();
+            };
+            if (seleccion == "bloqueados") {
+                bloqueados();
+            };
+            if (seleccion == "procesados") {
+                procesados();
+            };
+            if (seleccion == "autorizados") {
+                Autorizados();
+            };
+            if (seleccion == "rechazados") {
+                Rechazados();
+            };
+            if (seleccion == "nulos") {
+                Nulos();
+            };
+        }
+
+
+    var bloquear = function () {
+
+        $('#DivBloqueado').hide();
+        $('#DivBloqueadoExito').hide();
+        $('#DivMensajeErrorBloqueo').hide();
+        $('#DivAceptaBloqueo').show();
+        $('#DivComentarioBloqueo').show();
+        $('#divBloqueoSwift').html();
+        $('#modalBloquearSwift').modal();
+
+        $('#comentario').val('');
+
+    };
+    var bloquearSwift = function () {
+        var comentario = $('#comentario').val();
+
+        if (comentario.length <= 0) {
+            $('#DivMensajeErrorBloqueo').show();
+            return false;
+        }
+
+        $.post('@Url.Action("BloquearSwift")', { idMensaje: rowSelected["id_mensaje"], comentario: comentario }, function (data) {
+            $('#DivMensajeErrorBloqueo').hide();
+            $('#DivBloqueado').show();
+            $('#DivBloqueadoExito').show();
+            $('#DivAceptaBloqueo').hide();
+            $('#DivComentarioBloqueo').hide();
+            
+            buscarSegunSeleccion();
+        });
+    };
+
+    var Anular = function () {
+
+        $('#DivAnula').hide();
+        $('#DivAnulaExito').hide();
+        $('#DivMensajeErrorAnular').hide();
+        $('#DivAceptaAnula').show();
+        $('#DivComentarioAnula').show();
+        $('#divAnulaSwift').html();
+        $('#modalAnularSwift').modal();
+
+        $('#comentarioAnula').val('');
+    };
+    var AnularSwift = function () {
+        var comentario = $('#comentarioAnula').val();
+
+        if (comentario.length <= 0) {
+            $('#DivMensajeErrorAnular').show();
+            return false;
+        }
+
+        $.post('@Url.Action("AnularSwift")', { idMensaje: rowSelected["id_mensaje"], comentario: comentario }, function (data) {
+            $('#DivMensajeErrorAnular').hide();
+            $('#DivAnula').show();
+            $('#DivAnulaExito').show();
+            $('#DivAceptaAnula').hide();
+            $('#DivComentarioAnula').hide();
+            
+            buscarSegunSeleccion();
+        });
+    };
+
+    var desbloquear = function () {
+
+        var url = '@Url.Action("Desbloquear")';
+        var idMensaje = rowSelected["id_mensaje"];
+        $.post(url, { idMensaje: idMensaje }, function (data) {
+            $('#divDesbloqueoSwift').html();
+            $('#modalDesbloqueoSwift').modal();
+            $('#btnBloqueados').click();
+            $('.panel-heading span.clickable').click();
+        });
+
+    };
+
+
+    $('#grpFechaHasta').hide();
+
+    var initialDate = moment(new Date()).utc().startOf('day');
+    var finalDate = moment(new Date()).utc().endOf('day');
+
+    $('#dtpFechaDesde').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+    $('#dtpFechaHasta').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+
+    $('#grpFechaHasta').hide();
+    $('#dtpFechaHasta').data("DateTimePicker").minDate(initialDate);
+    $("#dtpFechaDesde").on("dp.change", function (e) {
+        var checkbox = $('#chkPeriodoFechas');
+        if (!checkbox.is(':checked')) {
+            $('#dtpFechaHasta').data("DateTimePicker").date(e.date);
+        }
+        $('#dtpFechaHasta').data("DateTimePicker").minDate(e.date);
+    });
+
+    $("#dtpFechaDesde").on("dp.change", function (e) {
+        var checkbox = $('#chkPeriodoFechas');
+        if (!checkbox.is(':checked')) {
+            $('#dtpFechaHasta').data("DateTimePicker").date(e.date);
+        }
+
+        $('#dtpFechaHasta').data("DateTimePicker").minDate(e.date);
+    });
+
+    $('#chkPeriodoFechas').change(function () {
+        $('#grpFechaHasta').toggle();
+        if ($(this).is(':checked')) {
+            $('#lblFechaDesde').text("Desde");
+            $('#dtpFechaHasta').data("DateTimePicker").show();
+        }
+        else {
+            $('#lblFechaDesde').text("Fecha");
+            $('#dtpFechaHasta').data("DateTimePicker").hide();
+        }
+    });
+
+    function obtenerDatosYArmarBootstrapTable(nombreSeleccion) {
+        seleccion = nombreSeleccion;
+
+        var nombreColumnaFecha = "";
+        var tituloColumnaFecha = "";
+        var url = "";
+        var filtro = capitalizeFirstLetter(seleccion);
+
+        if (seleccion == "sinAutorizar") {
+            nombreColumnaFecha = 'FechaIngreso';
+            tituloColumnaFecha = "Fecha/Hora Ingreso";
+            url = '@Url.Action("Get")';
+            filtro = "Sin autorizar";
+        };
+        if (seleccion == "bloqueados") {
+            nombreColumnaFecha = "FechaBloqueo";
+            tituloColumnaFecha = "Fecha/Hora Bloqueo";
+            url = '@Url.Action("GetBloqueados")';
+        };
+        if (seleccion == "procesados") {
+            nombreColumnaFecha = "FechaProcesado";
+            tituloColumnaFecha = "Fecha/Hora Procesado";
+            url = '@Url.Action("GetProcesados")';
+        };
+        if (seleccion == "autorizados") {
+            nombreColumnaFecha = "FechaAutorizado";
+            tituloColumnaFecha = "Fecha/Hora Autorizado";
+            url = '@Url.Action("GetAutorizados")';
+        };
+        if (seleccion == "rechazados") {
+            nombreColumnaFecha = "FechaRechazo";
+            tituloColumnaFecha = "Fecha/Hora Rechazo";
+            url = '@Url.Action("GetRechazados")';
+        };
+        if (seleccion == "nulos") {
+            nombreColumnaFecha = 'FechaAnulado'; 
+            tituloColumnaFecha = 'Fecha/Hora Anulación';
+            url = '@Url.Action("GetNulos")';
+        };
+        
+        var CasillaName = 'Todas las casillas';
+
+        if ($('#idCasilla').val() == '') {
+            var idCasilla = '0';
+        }
+        else {
+            var idCasilla = $('#idCasilla').val();
+            CasillaName = $('#idCasilla option:selected').text();
+        }
+        var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        var fechaHasta;
+        if ($("#chkPeriodoFechas").is(":checked")) {
+            fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+        }
+        else {
+            fechaHasta = fechaDesde;
+        }
+        $("#lblErrorFechaDesde").hide();
+        $("#lblErrorFechaHasta").hide();
+        dtpFechaDesde.closest(".form-group").removeClass("has-error");
+        dtpFechaHasta.closest(".form-group").removeClass("has-error");
+        if (fechaDesde == null) {
+            dtpFechaDesde.closest(".form-group").addClass("has-error");
+            $("#lblErrorFechaDesde").show();
+            return;
+        }
+        else {
+            dtpFechaDesde.closest(".form-group").removeClass("has-error");
+            $("#lblErrorFechaDesde").hide();
+            if ($("#chkPeriodoFechas").is(":checked")) {
+                fechaHasta = dtpFechaHasta.data("DateTimePicker").date();
+                if (fechaHasta < fechaDesde) {
+                    dtpFechaHasta.closest(".form-group").addClass("has-error");
+                    $("#lblErrorFechaHasta").show();
+                    return;
+                }
+            }
+        }
+        actionButonHidden();
+        actionButonVisible();
+
+        var titleFiltro = 'Filtro actual: ' + filtro + ', Casilla: ' + CasillaName + ' - Desde: ' + fechaDesde.format("DD-MM-YYYY") + ' Hasta: ' + fechaHasta.format("DD-MM-YYYY") + '.';
+        $('#titleFiltro').text(titleFiltro);
+
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts').bootstrapTable({
+            height: 540,
+            url: url,
+            queryParams: function (p) {
+                return { idCasilla: idCasilla, fechaInicio: fechaDesde.format("MM/DD/YYYY"), fechaFin: fechaHasta.format("MM/DD/YYYY") };
+            },
+            pagination: true,
+            sidePagination: 'client',
+            pageSize: 25,
+            pageList: [10, 25, 50, 100, 200],
+            cache: false,
+            columns: getConfigColumnas(nombreColumnaFecha, tituloColumnaFecha),
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            search: true
+        });
+    }
+
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    var sinAutorizar = function () {
+        obtenerDatosYArmarBootstrapTable('sinAutorizar');
+    };
+
+    var bloqueados = function () {
+        obtenerDatosYArmarBootstrapTable("bloqueados");
+    };
+
+
+    var procesados = function () {
+        obtenerDatosYArmarBootstrapTable('procesados');
+    };
+
+
+    var Autorizados = function () {
+        obtenerDatosYArmarBootstrapTable('autorizados');
+    };
+
+
+    var Rechazados = function () {
+        obtenerDatosYArmarBootstrapTable('rechazados');
+    };
+
+    var Nulos = function () {
+        obtenerDatosYArmarBootstrapTable('nulos');
+    };
+
+
+    function montoFormatter(value, row, index) {
+        if (row["Moneda"] == 'USD') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'GBP') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'EUR') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'GBP') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] != null) {
+            return numeral(value).format("0,0.00");
+        } else {
+            return numeral(value).format("0,0.00");
+        }
+    }
+
+    var Autorizar = function () {
+        var idMensaje = rowSelected["id_mensaje"];
+        var tipo = rowSelected["Tipo"];
+        var moneda = rowSelected["Moneda"];
+        var monto = rowSelected["Monto"];
+        var casilla = rowSelected["Unidad"];
+
+        $.ajax({
+            url: '@Url.Action("SolicitarFirmas")',
+            data: { idMensaje: idMensaje, monto: monto, casilla: casilla },
+            type: "POST",
+            success: function (data) {
+                if (typeof data.resultado === "undefined") {
+                    $('#divSolFirmasSwift').html(data);
+                    $('#modalSolFirmasSwift').modal({ backdrop: false });
+                    $('#lblMensaje').text(idMensaje);
+                    $('#lblTipo').text(tipo);
+                    $('#lblMoneda').text(moneda);
+                    $('#lblMonto').text(numeral(monto).format("0,0.00"));
+                    onFirmasSuccess(firmasSolicitadasSuccess);  //este "handler" onFirmasSuccess está en SolFirmas.cshtml
+                } else {
+                    showAlert("", data.mensaje, "alert-danger", false, "msg-zone");
+                }
+            },
+            error: function (xhr, status) {
+                showAlert("Error en la operación.", xhr.status + " " + xhr.statusText, "alert-danger", true);
+            }
+        });
+    };
+
+    function exportarAExcel() {
+        $.fileDownload('@Url.Action("ExportarAExcelUltimaGrillaGenerada")')
+            .done(function () { /* nada que alertar, con la ventanita del browser pidiendo para bajar el archivo alcanza*/ })
+            .fail(function () { showAlert("Error en la descarga.", "No se pudo exportar la tabla a Excel", "alert-danger") });
+
+    }
+
+    var firmasSolicitadasSuccess = function () {
+        $('#tablaSwifts').bootstrapTable('refresh');
+        rowSelected = null;
+
+        actionButonHidden();
+        actionButonVisible();
+    }
+
+    $('#btnBuscarSwifts').on('click', sinAutorizar);
+    $('#btnProcesados').click(procesados);
+    $('#BtnBloqueaSwift').click(bloquearSwift);
+    $('#BtnRechazaSwift').click(RechazarSwift);
+    $('#BtnAnulaSwift').click(AnularSwift);
+    $('#btnAutorizados').click(Autorizados);
+    $('#btnRechazados').click(Rechazados);
+    $('#btnAutorizar').click(Autorizar);
+    $('#btnVisualizar').click(visualizar);
+    $('#btnVerDatos').click(verMensaje);
+    $('#btnLog').click(verLog);
+    $('#btnRechazar').click(rechazar);
+    $('#btnBloqueados').click(bloqueados);
+    $('#btnBloquear').click(bloquear);
+    $('#btnDesloquear').click(desbloquear);
+    $('#btnAnulados').click(Nulos);
+    $('#btnAnular').click(Anular);
+    $('#btnExportarExcel').click(exportarAExcel);
+
+
+    $('#tablaSwifts').on('check.bs.table', function (e, row) {
+        rowSelected = row;
+        $("#btnAutorizar").attr("disabled", false);
+        $("#btnVerDatos").attr("disabled", false);
+        $("#btnVisualizar").attr("disabled", false);
+        $("#btnLog").attr("disabled", false);
+        $("#btnRechazar").attr("disabled", false);
+        $("#btnReporte").attr("disabled", false);
+
+        if (seleccion == "bloqueados") {
+            $("#btnBloquear").attr("disabled", true);
+            $("#btnDesloquear").attr("disabled", false);
+        }
+        else {
+            $("#btnBloquear").attr("disabled", false);
+            $("#btnDesloquear").attr("disabled", true);
+
+            if (seleccion == "rechazados") {
+                $("#btnDesloquear").attr("disabled", true);
+                $("#btnRechazar").attr("disabled", true);
+            }
+
+            if (seleccion == "nulos" || seleccion == "procesados") {
+                $("#btnAnular").attr("disabled", true);
+            }
+            else {
+                $("#btnAnular").attr("disabled", false);
+
+                if (seleccion == "autorizados") {
+                    $("#btnAutorizar").attr("disabled", true);
+                }
+            }
+        }
+
+
+
+    });
+    $('#tablaSwifts').on('load-success.bs.table', function (data) {
+        var elementos = $('#tablaSwifts').bootstrapTable('getData');
+        if (elementos.length > 0) {
+            $('.panel div.clickable').click();
+        }
+    });
+
+    function actionButonVisible() {
+        $("#botoneraAcciones > button").show();
+    }
+
+    function actionButonHidden() {
+        $("#botoneraAcciones > button.requiereSeleccionado").hide();
+        $("#botoneraAcciones > button.requiereSeleccionado").attr("disabled", true);
+    }
+
+    //$("#modalRechazarSwift").on("hidden.bs.modal", function () {
+    //    $('#btnRechazados').click();
+    //    $('.panel-heading span.clickable').click();
+    //    $('.panel div.clickable').click();
+    //});
+
+
+    window.operateEvents = {
+
+        'click .verMensaje': function (e, value, row, index) {
+            ArmarVisorIndividual(row);
+        },
+    };
+
+    function ArmarVisorIndividual(row) {
+        ultimaRowAccionIndividual = row;
+        var data = { sesion: row['sesion'], secuencia: row['secuencia'], htmlCompleto: false };
+        var recibidos = $('#direccionRecibidos').is(':checked');
+
+        if (!recibidos) {  //enviados
+            data["idMensaje"] = row['id_mensaje'];
+            data["casilla"] = row['casilla'];
+            data["rut"] = row['rut'];
+        }
+
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url: urlDetalleSwift,
+            success: function (resultado) {
+                var enviarPorMailHabilitado = (row.estado_msg == "ENV" || recibidos); //solo dejo enviar por mail (posiblemente al cliente) si el estado es enviado o recibido
+                $("#btnEnviarMensajeIndividual").toggle(enviarPorMailHabilitado);
+                $("#divCuerpoMensajeSwift").html(resultado);
+                $('#modalVisorIndividualSwift').modal({ backdrop: true });
+            },
+            data: data,
+            error: function (request, type, message) {
+                alert(type + " - " + message);
+            }
+        });
+
+    }
+
+
+</script>
+}

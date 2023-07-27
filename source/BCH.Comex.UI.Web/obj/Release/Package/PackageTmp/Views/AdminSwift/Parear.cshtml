@@ -1,0 +1,619 @@
+﻿@{
+    ViewBag.Title = "Parear";
+    Layout = null;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png");
+}
+@model BCH.Comex.UI.Web.Models.AdministracionSwift.ParearViewModel
+
+
+@using (Html.BeginForm("Parear", "AdminSwift", FormMethod.Post, new { id = "frmParea", @class = "form-horizontal", @style = "margin-left: 0px; margin-right: 0px" }))
+{
+
+    <div class="panel-body" id="DivGlobal">
+        <div id="alertasDentroModal"></div>
+        <div class="panel panel-default" id="pnldetalle">
+            <div class="panel-heading">
+                <h2 class="panel-title">Detalle del Archivo</h2>
+            </div>
+            <div class="panel-body">
+                <table id="tablaDetalle"></table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="pnlOperacion" hidden>
+
+            <div class="panel-heading">
+                <h2 class="panel-title" id="LblOperacion"></h2>
+            </div>
+
+            <div id="DivPrincipal" class="panel-body">
+                <div class="col-xs-6 .col-xs-12 .col-md-8">
+                    <div class="panel-body">
+                        <input type="checkbox" id="chkAceptado" disabled> Aceptado
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label id="LblSesion">Sesión</label><br />
+                        <label id="txtSesion" class="alert-info"></label>
+
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label id="LblSecuencia">Secuencia</label><br />
+                        <label id="txtSecuencia" class="alert-info"></label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label id="LblFecha">Fecha</label><br />
+                        <label id="txtFecha" class="alert-info"></label>
+                    </div>
+
+                </div>
+
+
+                <div class="col-xs-6 .col-xs-12 .col-md-8">
+                    <div class="panel-body">
+                        <input type="checkbox" id="chkRechazado" disabled> Rechazado
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label id="LblFechaRechazo">Fecha</label><br />
+                        <label id="txtFechaRechazo" class="alert-info"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label id="LblMotivo">Motivo</label><br />
+                        @Html.TextArea("Motivo", new { placeholder = "Ingrese un motivo", @class = "form-control", id = "comentario", @rows = "3", maxlength = "89" })
+                    </div>
+
+
+                </div>
+
+            </div>
+            @*<div class="panel panel-default">
+                </div>*@
+            <div class="panel-body">
+                <button class="btn btn-info" id="btnVisualizarInfo">Visualizar</button>
+                <button class="btn btn-info" id="btnGrabar">Grabar</button>
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="pnlresultados">
+            <div class="panel-heading">
+                <h2 class="panel-title">Mensajes no pareados</h2>
+            </div>
+            <div class="panel-body">
+                <table id="tablanop"></table>
+            </div>
+        </div>
+
+        <div class="modal-body" id="Validaciones" hidden>
+            <div class="alert alert-warning" role="alert">
+                <strong>Atención!</strong><br />
+                <label id="LblValidaciones"></label><br />
+                <button class="btn btn-info" id="btnAceptarValidacion">Aceptar</button>
+            </div>
+        </div>
+        <div class="modal-body" id="ValidacionesContinuacion" hidden>
+            <div class="alert alert-warning" role="alert">
+                <strong>Atención!</strong><br />
+                <label id="LblConinuacion"></label><br />
+                <button class="btn btn-info" id="btnAceptarContinuacion">Aceptar</button>
+                <button class="btn btn-info" id="btnCancelaContinuacion">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body" id="DivBotonVolver">
+        <button class="btn btn-info" id="btnVolverPareo">Volver</button>
+    </div>
+
+    <div id="modalVisorSwiftPareo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center" id="divCuerpoSwiftPareo" style="max-height: 793px;"></div>
+                <div class="modal-footer">
+                    <button id="btnCerrarModalPareo" class="btn" data-dismiss="modalVisorSwiftPareo">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript">
+
+    var Fecha;
+    var Id_Mensaje;
+    var rowArriba = null;
+    var rowAbajo = null;
+    var FechaInicio;
+    var yaPediConfirmacion = false;
+    var mensajesNoP = @Html.Raw(Json.Encode(Model.MensajesNop));
+    var detalleArchivo = @Html.Raw(Json.Encode(Model.DetalleArchivo));
+
+    $(document).ready(function () {
+        configColumnasDetalle = [
+            {
+                field: 'state',
+                checkbox: true
+
+            },
+        {
+            field: 'id_mensaje',
+            title: 'Codigo',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'tipo_msg',
+            title: 'Tipo mensaje',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'casilla',
+            title: 'Casilla',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'estado_msg',
+            title: 'Estado',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'banco_rec',
+            title: 'Banco receptor',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'referencia',
+            title: 'Referencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'cod_moneda',
+            title: 'Codigo moneda',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'monto',
+            title: 'Monto',
+            sortable: true,
+            visible: true,
+            align: 'right',
+            formatter: montoFormatter,
+        }, {
+            field: 'fecha_creacion',
+            title: 'Fecha proceso',
+            sortable: true,
+            visible: true,
+            formatter: function fechaFormatter(value, row, index) {
+                if (value != null) {
+                    var fechaStr = moment(value).format("DD/MM/YYYY");
+                    if (fechaStr != '01/01/1900') {
+                        return fechaStr;
+                    }
+                    else return null;
+                }
+            }
+        }, {
+            field: 'sesion',
+            title: 'Sesión',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'secuencia',
+            title: 'Secuencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'fecha_envio_desc',
+            title: 'Fecha envio/Rech.',
+            sortable: true,
+            visible: true
+        }, ]
+
+        configColumnasNop = [
+            {
+                field: 'state',
+                checkbox: true
+
+            },
+        {
+            field: 'secuencia',
+            title: 'Secuencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'tipo_msg',
+            title: 'Tipo MT',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'sesion',
+            title: 'Sesión',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'banco_rec',
+            title: 'Banco receptor',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'referencia',
+            title: 'Referencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'cod_moneda',
+            title: 'Mnda',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'monto',
+            title: 'Monto',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'estado_msg',
+            title: 'Estado',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'fecha_desc',
+            title: 'Fecha proceso',
+            sortable: true,
+            visible: true
+        }, ];
+    });
+
+    $('#frmParea').submit(function (e) {
+        e.preventDefault();
+    });
+
+    var Detalle = function () {
+
+        var idArchivo = @Model.IdArchivo;
+
+        $('#tablaDetalle').bootstrapTable({
+            data: detalleArchivo,
+            locale: "es-SP",
+            pagination: true,
+            columns: configColumnasDetalle,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            singleSelect: true,
+            search: false,
+            cache: false,
+            pageSize: 5,
+            pageList: [5],
+            uniqueId: 'id_mensaje',
+            rowStyle: function (row, index) {
+                if (row.estado_msg != 'ENV') {
+                    return {
+                        css: { "color": "red"}
+                    }
+
+                }
+                else {
+                    return {};
+                }
+            }
+        });
+    };
+
+    Detalle();
+    mostrarUOcultarControles(false, false);
+    evaluarSeleccionados();
+    inicializarTablaNoP();
+
+
+    $('#tablaDetalle').on('uncheck.bs.table', function (e, row, $element) {
+        rowArriba = null;
+        rowAbajo = null;
+        $('#tablanop').bootstrapTable('uncheckAll');
+        $("#btnVisualizarInfo").attr("disabled", true);
+
+        evaluarSeleccionados();
+    });
+
+    $('#tablanop').on('uncheck.bs.table', function (e, row, $element) {
+        rowAbajo = null;
+        evaluarSeleccionados();
+    });
+
+    function inicializarTablaNoP()
+    {
+        $('#tablanop').bootstrapTable({
+            locale: "es-SP",
+            pagination: true,
+            columns: configColumnasNop,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            singleSelect: true,
+            search: true,
+            cache: false,
+            pageSize: 200,
+            pageList: []
+        });
+    }
+
+    function evaluarSeleccionados()
+    {
+        $('#btnGrabar').attr("disabled", (rowArriba == null || rowAbajo == null));
+        $('#pnlresultados').toggle((rowArriba != null && rowArriba.estado_msg == "PRO"));
+    }
+
+    $('#tablanop').on('check.bs.table', function (e, row, $element) {
+        $("#chkAceptado").prop("checked", false);
+        $("#chkRechazado").prop("checked", false);
+        $('#pnlOperacion').show();
+        rowAbajo = row;
+        evaluarSeleccionados();
+
+        if (rowAbajo["estado_msg"] == "ENV") {
+
+            $("#chkAceptado").prop("checked", true);
+
+            $('#txtSesion').text(rowAbajo["sesion"]);
+            $('#txtSecuencia').text(rowAbajo["secuencia"]);
+            $('#txtFecha').text(rowAbajo["fecha_desc"]);
+
+            mostrarUOcultarControles(true, false);
+        }
+        if (rowAbajo["estado_msg"] == "RES") {
+
+            mostrarUOcultarControles(false, true);
+            
+            $("#chkRechazado").prop("checked", true);
+            $('#txtFechaRechazo').text(rowAbajo["fecha_desc"]);
+        }
+    });
+
+    $('#tablaDetalle').on('check.bs.table', function (e, row, $element) {
+        mensajeDetalleSeleccionado(row);
+        evaluarSeleccionados();
+    });
+
+
+    function mensajeDetalleSeleccionado(row)
+    {
+        rowArriba = row;
+
+        $("#chkAceptado").prop("checked", false);
+        $("#chkRechazado").prop("checked", false);
+        $("#btnVisualizarInfo").attr("disabled", false);
+        $("#LblOperacion").html("Resultado del mensaje Swift N°: " + rowArriba["id_mensaje"] + ".");
+        $('#pnlOperacion').show();
+
+        if (rowArriba["estado_msg"] == "PRO" && mensajesNoP != null && mensajesNoP.length > 0) {
+            mostrarUOcultarControles(false, false);
+
+            $("#chkAceptado").prop("checked", false);
+            
+            var mensajesMismoTipo = $.grep(mensajesNoP, function (m) {
+                return m.tipo_msg === rowArriba.tipo_msg;
+            });
+
+            $('#tablanop').bootstrapTable('load', mensajesMismoTipo);
+        }
+
+        if (rowArriba["estado_msg"] == "ENV") {
+            $("#chkAceptado").prop("checked", true);
+            $('#txtSesion').text(rowArriba["sesion"]);
+            $('#txtSecuencia').text(rowArriba["secuencia"]);
+            $('#txtFecha').text(rowArriba["fecha_envio_desc"]);
+
+            mostrarUOcultarControles(true, false);
+        }
+
+        if (rowArriba["estado_msg"] == "RES") {
+            mostrarUOcultarControles(false, true);
+            $("#chkRechazado").prop("checked", true);
+            $('#txtFechaRechazo').text(rowArriba["fecha_envio_desc"]);
+        }
+
+    }
+
+    function mostrarUOcultarControles(primerConjuntoVisible, segundoConjuntoVisible)
+    {
+        $('#LblSesion').toggle(primerConjuntoVisible);
+        $('#LblSecuencia').toggle(primerConjuntoVisible);
+        $('#LblFecha').toggle(primerConjuntoVisible);
+        $('#txtSesion').toggle(primerConjuntoVisible);
+        $('#txtSecuencia').toggle(primerConjuntoVisible);
+        $('#txtFecha').toggle(primerConjuntoVisible);
+
+        $('#txtFechaRechazo').toggle(segundoConjuntoVisible);
+        $('#LblMotivo').toggle(segundoConjuntoVisible);
+        $('#LblFechaRechazo').toggle(segundoConjuntoVisible);
+        $('#comentario').toggle(segundoConjuntoVisible);
+    }
+
+            function Grabar() {
+
+                if (rowArriba == null) {
+                    mostrarValidacion("Debe seleccionar al menos un registro del detalle de mensajes.");
+                    return;
+                }
+
+                if (rowAbajo == null) {
+                    mostrarValidacion("Debe seleccionar al menos un mensaje.");
+                    return;
+                }
+
+                if (rowAbajo["tipo_msg"] != rowArriba["tipo_msg"]) {
+                    mostrarValidacion("El Tipo de MT no es igual para ambos registros seleccionados.");
+                    return;
+                }
+
+                if(!yaPediConfirmacion){
+                    var confirmaciones = [];
+
+                    if (rowArriba["cod_moneda"] != null && rowArriba["cod_moneda"].trim() != "")
+                    {
+                        if (rowAbajo["cod_moneda"] == null || rowAbajo["cod_moneda"].trim() == "")
+                        {
+                            //20160527 - Se tiene que poder dejar parear si arriba hay moneda y abajo no.
+                            confirmaciones.push("La moneda no es igual para ambos registros seleccionados.");
+                        }
+                        else if(rowArriba["cod_moneda"] != rowAbajo["cod_moneda"])
+                        {
+                            //20160527 - Esto lo solicito Alejandro Tupper, en la legacy no está igual, pero no se tiene que poder parear si ambos tienen monedas y son diferentes
+                            mostrarValidacion("La moneda no es igual para ambos registros seleccionados.");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (rowAbajo["cod_moneda"] != null && rowAbajo["cod_moneda"].trim() != "")
+                        {
+                            //20160527 - Se tiene que poder dejar parear si arriba hay moneda y abajo no.
+                            confirmaciones.push("La moneda no es igual para ambos registros seleccionados.");
+                        }
+                    }
+
+                    if (rowAbajo["referencia"] != rowArriba["referencia"]) {
+                        confirmaciones.push("La referencia no es igual para ambos registros seleccionados.");
+                    }
+
+                    if (rowAbajo["branch_rec"] != rowArriba["branch_rec"]) {
+                        confirmaciones.push("El Banco Receptor no es igual para ambos registros seleccionados.");
+                    }
+
+                    if (rowAbajo["monto"] != rowArriba["monto"]) {
+                        confirmaciones.push("El monto no es igual para ambos registros seleccionados.");
+                    }
+
+                    yaPediConfirmacion = true;
+
+                    if(confirmaciones.length > 0)
+                    {
+                        mostrarConfirmacion(confirmaciones);
+                    }
+                }
+                else {
+                    if ($("#chkAceptado").prop("checked") == true) {
+
+                        $.post('@Url.Action("GrabaPareoAceptado")', { IdMensaje: rowArriba["id_mensaje"], Sesion: rowAbajo.sesion, Secuencia: rowAbajo.secuencia, Fecha: rowAbajo.fecha_desc }).done(function (data) {
+
+                            //actualizo la row de detalle
+                            rowArriba.estado_msg = "ENV";
+                            rowArriba.sesion = rowAbajo.sesion;
+                            rowArriba.secuencia = rowAbajo.secuencia;
+                            rowArriba.fecha_envio_desc = rowAbajo.fecha_desc;
+                            $('#tablaDetalle').bootstrapTable('updateByUniqueId', { id: rowArriba.id_mensaje, row: rowArriba });
+                            $('#tablanop').bootstrapTable('remove', { field: 'secuencia', values: [rowAbajo["secuencia"]] });
+
+                            //ademas de removerlo de la tabla nop, tengo que removerlo del array original nop
+                            $.each(mensajesNoP, function (index, mensajeNop) {
+                                if (mensajeNop.sesion == rowAbajo.sesion && mensajeNop.secuencia == rowAbajo.secuencia) {
+                                    mensajesNoP.splice(index, 1); //en la posicion index, eliminar 1 elemento
+                                    return false; //para no seguir iterando
+                                }
+                            });
+
+                            grabeExitosamenteAlgunPareo = true; //esta variable se define en Gestion de Archivos
+                            yaPediConfirmacion = false;
+                            mostrarFinalizado();
+                        });
+                    }
+
+                    if ($("#chkRechazado").prop("checked") == true) {
+
+                        $.post('@Url.Action("GrabaPareoRechazado")', { IdMensaje: rowArriba["id_mensaje"], Fecha: document.getElementById('txtFechaRechazo').innerHTML, Texto: $('#comentario').val() }).done(function (data) {
+
+                            //actualizo la row de detalle
+                            rowArriba.estado_msg = "RES";
+                            rowArriba.fecha_envio_desc = rowAbajo.fecha_desc;
+                            $('#tablaDetalle').bootstrapTable('updateByUniqueId', { id: rowArriba.id_mensaje, row: rowArriba });
+
+                            //alert(rowAbajo["secuencia"]);
+                            $('#tablanop').bootstrapTable('remove', { field: 'secuencia', values: [rowAbajo["secuencia"]] });
+                            yaPediConfirmacion = false;
+                            mostrarFinalizado();
+                        });
+                    }
+                }
+            };
+
+            function VisualizarInfo() {
+                if (rowArriba != null) {
+                    var idMensaje = rowArriba["id_mensaje"];
+                    $.get('@Url.Action("DetalleSwift", "ConsultaSwift")', { idMensaje: idMensaje, sesion: 0, secuencia: 0 }, function (data) {
+                        $('#divCuerpoSwiftPareo').html(data);
+                        $('#modalVisorSwiftPareo').modal();
+                    });
+                }
+
+            };
+
+            function AceptarValidacion() {
+                $('#pnlresultados').show();
+                $('#pnldetalle').show();
+                $('#pnlOperacion').show();
+                $('#Validaciones').hide();
+            };
+            function AceptarContinuacion() {
+                $('#pnlresultados').show();
+                $('#pnldetalle').show();
+                $('#pnlOperacion').show();
+                $('#ValidacionesContinuacion').hide();
+                Grabar();
+            };
+            function CancelaContinuacion() {
+                yaPediConfirmacion = false;
+                $('#pnlresultados').show();
+                $('#pnldetalle').show();
+                $('#pnlOperacion').show();
+                $('#ValidacionesContinuacion').hide();
+            };
+            
+            function VolverPareo() {
+                $('#modalPareo').modal('hide');
+            };
+
+            function mostrarValidacion(texto)
+            {
+                $('#pnlresultados').hide();
+                $('#pnldetalle').hide();
+                $('#pnlOperacion').hide();
+                $('#LblValidaciones').text(texto);
+                $('#Validaciones').show();
+
+            }
+
+            function mostrarConfirmacion(confirmaciones)
+            {
+                confirmaciones.push("<br />");
+                confirmaciones.push("¿Desea continuar?");
+
+                var htmlConfirmacion = confirmaciones.join("<br />");
+
+                $('#pnlresultados').hide();
+                $('#pnldetalle').hide();
+                $('#pnlOperacion').hide();
+                $('#LblConinuacion').html(htmlConfirmacion);
+                $('#ValidacionesContinuacion').show();
+            }
+
+            function mostrarFinalizado()
+            {
+                showAlert("Operación exitosa!", "El pareo se realizó correctamente", "alert-success", true);
+            
+                rowAbajo = null;
+                evaluarSeleccionados();
+            }
+
+            $('#btnVisualizarInfo').click(VisualizarInfo);
+            $('#btnVolverPareo').click(VolverPareo);
+            $('#btnGrabar').click(Grabar);
+            $('#btnAceptarValidacion').click(AceptarValidacion);
+            $('#btnAceptarContinuacion').click(AceptarContinuacion);
+            $('#btnCancelaContinuacion').click(CancelaContinuacion);
+            $('#btnCerrarModalPareo').click(function (){
+                $("#modalVisorSwiftPareo").modal("hide");
+            });
+            
+</script>
+

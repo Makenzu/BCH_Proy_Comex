@@ -1,0 +1,482 @@
+﻿@model IList<BCH.Comex.Core.Entities.Cext01.Supervisor.T_Chq>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Impresión de Cheque</title>
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/apli-supervisor-inv.png")" />
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 36px 0px 49px 0px;
+            padding: 0px;
+            border: none;
+            width: 615px;
+            height: 964px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 615px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 4px 0px 0px 195px;
+                padding: 0px;
+                border: none;
+                width: 499px;
+                overflow: hidden;
+            }
+
+            #page_1 #dimg1 {
+                position: absolute;
+                top: 778px;
+                left: 117px;
+                z-index: -1;
+                width: 507px;
+                height: 196px;
+            }
+
+                #page_1 #dimg1 #img1 {
+                    width: 507px;
+                    height: 196px;
+                }
+        /*********************************************************************************/
+        .ft0 {
+            /*font: 1px 'Courier New';*/
+            /*line-height: 1px;*/
+        }
+
+        .ft1 {
+            font: 16px 'Courier New';
+            /*line-height: 16px;*/
+        }
+
+        .ft2 {
+            font: 1px 'Courier New';
+            /*line-height: 8px;*/
+        }
+
+        .ft3 {
+            font: 16px 'Courier New';
+            /*line-height: 15px;*/
+        }
+
+        .ft4 {
+            font: 1px 'Courier New';
+            /*line-height: 7px;*/
+        }
+
+        .ft5 {
+            font: 1px 'Courier New';
+            /*line-height: 15px;*/
+        }
+
+        .ft6 {
+            font: bold 18px 'Helvetica';
+            /*line-height: 19px;*/
+        }
+
+        .ft7 {
+            /*font: 12px 'Helvetica';*/
+            /*line-height: 15px;*/
+        }
+
+        .ft8 {
+            font: bold 19px 'Helvetica';
+            color: #000080;
+            /*line-height: 19px;*/
+        }
+        /*********************************************************************************/
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p1 {
+            text-align: left;
+            padding-left: 150px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2 {
+            text-align: left;
+            padding-left: 150px;
+            padding-top: 15px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p3 {
+            text-align: left;
+            padding-left: 60px;
+            margin-top: 3px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p4 {
+            text-align: left;
+            padding-left: 256px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p5 {
+            text-align: left;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p6 {
+            text-align: left;
+            padding-left: 124px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-left: 115px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p8 {
+            text-align: -webkit-left;
+            padding-left: 115px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            height: 30px;
+            width: 580px;
+        }
+
+        .p9 {
+            text-align: left;
+            padding-left: 42px;
+            margin-top: 55px;
+            margin-bottom: 0px;
+        }
+
+        .p10 {
+            text-align: left;
+            padding-left: 42px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-left: 42px;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 0px;
+        }
+
+        .p11_1 {
+            text-align: left;
+            padding-left: 42px;
+            margin-top: 45px;
+            margin-bottom: 0px;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-left: 400px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p13 {
+            text-align: left;
+            padding-left: 400px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p14 {
+            text-align: left;
+            padding-left: 115px;
+            margin-top: 12px;
+            margin-bottom: 0px;
+        }
+
+        .p15 {
+            text-align: left;
+            padding-left: 42px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p16 {
+            text-align: left;
+            padding-left: 42px;
+            margin-top: 16px;
+            margin-bottom: 0px;
+        }
+
+        .p17 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p18 {
+            text-align: left;
+            padding-left: 106px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+        /*********************************************************************************/
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 0px;
+            font: 16px 'Courier New';
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 35%;
+            font: 16px 'Courier New';
+            /*border: 1px blue dashed;*/
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 65%;
+            font: 16px 'Courier New';
+            /*border: 1px red dashed;*/
+        }
+        /*********************************************************************************/
+        .tr0 {
+            height: 19px;
+        }
+
+        .tr1 {
+            height: 20px;
+        }
+
+        .tr2 {
+            height: 28px;
+        }
+
+        .tr3 {
+            height: 5px;
+        }
+
+        .tr4 {
+            height: 20px;
+        }
+
+        .tr5 {
+            height: 20px;
+        }
+
+        .tr6 {
+            /*height: 10px;*/
+        }
+
+        .tr7 {
+            height: 7px;
+        }
+
+        .tr8 {
+            height: 7px;
+        }
+
+        .tr9 {
+            height: 30px;
+        }
+
+        .tr10 {
+            height: 62px;
+        }
+
+        .tr11 {
+            height: 20px;
+        }
+
+        .tr12 {
+            height: 20px;
+        }
+
+        .tr13 {
+            height: 0px;
+        }
+
+        .t0 {
+            width: 615px;
+            margin-left: 35px;
+            font: 15px 'Courier New';
+        }
+
+        .p0_1 {
+            padding-top: 15px;
+        }
+
+        .p1_10 {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    @foreach (BCH.Comex.Core.Entities.Cext01.Supervisor.T_Chq chq in Model)
+    {
+        <div id="page_1">
+            <div id="id_1">
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    <tr>
+                        <td class="tr0 td0"></td>
+                        <td class="tr0 td1"><p class="p0 ft0">&nbsp;</p></td>
+                        <td class="tr0 td2"><p class="p1 ft1 pFecEmi"><nobr>@chq.FecEmi</nobr></p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr1 td0"></td>
+                        <td class="tr1 td1"><p class="p0 ft1">@chq.NomPag</p></td>
+                        <td rowspan=2 class="tr2 td2"><p class="p2 ft1">@chq.MtoChq_t</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr3 td0"></td>
+                        <td class="tr3 td1"><p class="p0 ft2">&nbsp;</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr4 td0"></td>
+                        <td class="tr4 td1"><p class="p0 ft1">@chq.swfpag</p></td>
+                        <td rowspan=2 class="tr5 td2"><p class="p3 ft1">@chq.NomBen</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr3 td0"></td>
+                        <td rowspan=2 class="tr6 td1"><p class="p0 ft3">@chq.CiuPag</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr7 td0"></td>
+                        <td class="tr7 td2"><p class="p0 ft4">&nbsp;</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr8 td0"></td>
+                        <td class="tr8 td1"><p class="p0 ft1">@chq.PaiPag</p></td>
+                        <td class="tr8 td2"><p class="p0 ft0">&nbsp;</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr4 td0"></td>
+                        <td class="tr4 td1"><p class="p0 ft1">ACCOUNT N. : @chq.numcta</p></td>
+                        <td rowspan=2 class="tr5 td2"><p class="p3 ft1">@chq.NomCli</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr3 td0"></td>
+                        <td class="tr3 td1"><p class="p0 ft2"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr9 td0"></td>
+                        <td class="tr9 td1"><p class="p3 ft1"><nobr>@chq.operacion</nobr></p></td>
+                        <td class="tr9 td2"><table class="td0" width="350"><tr><td style="text-align: left; padding-left:50px">@chq.NomPro</td><td style="text-align: right; padding-right: 35px;">@chq.codesp</td></tr></table></td>
+                    </tr>
+                    <tr>
+                        <td class="tr10 td0"></td>
+                        <td class="tr10 td1"><p class="p0 ft0">&nbsp;</p></td>
+                        <td class="tr10 td2"><p class="p1 p1_10 ft1"><nobr>@chq.FecEmi</nobr></p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr11 td0"></td>
+                        <td class="tr11 td1"><p class="p0 p0_1 ft1">@chq.NomPag</p></td>
+                        <td rowspan=2 class="tr12 td2"><p class="p2 ft1">@chq.MtoChq_t</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr3 td0"></td>
+                        <td class="tr3 td1"></td>
+                    </tr>
+                    <tr>
+                        <td class="tr4 td0"></td>
+                        <td class="tr4 td1"><p class="p0 ft1">@chq.swfpag</p></td>
+                        <td rowspan=2 class="tr5 td2"><p class="p3 ft1">@chq.NomBen</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr3 td0"></td>
+                        <td rowspan=2 class="tr6 td1"><p class="p0 ft3">@chq.CiuPag</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr7 td0"></td>
+                        <td class="tr7 td2"></td>
+                    </tr>
+                    <tr>
+                        <td class="tr6 td0"></td>
+                        <td class="tr6 td1"><p class="p0 ft3">@chq.PaiPag</p></td>
+                        <td class="tr6 td2"><p class="p0 ft5">&nbsp;</p></td>
+                    </tr>
+                    <tr>
+                        <td class="tr11 td0"></td>
+                        <td class="tr11 td1"><p class="p0 ft1">ACCOUNT N. : @chq.numcta</p></td>
+                        <td rowspan=2 class="tr12 td2"><p class="p3 ft1">@chq.NomCli</p></td>
+                    </tr>
+                    <tr >
+                        <td class="tr3 td0"></td>
+                        <td class="tr3 td1"></td>
+                    </tr>
+                    <tr>
+                        <td class="tr9 td0"></td>
+                        <td class="tr9 td1"><p class="p3 ft1"><nobr>@chq.operacion</nobr></p></td>
+                        @*<td class="tr9 td2"><p class="p4 ft1">@chq.codesp</p></td>*@
+                        <td class="tr9 td2"><table class="td0" width="350"><tr><td style="text-align: left; padding-left:50px">@chq.NomPro</td><td style="text-align: right; padding-right: 35px;">@chq.codesp</td></tr></table></td>
+                    </tr>
+                    <tr>
+                        <td class="tr13 td0"></td>
+                        <td class="tr13 td1"></td>
+                        <td class="tr13 td2"></td>
+                    </tr>
+                </table>
+                <p class="p11_1 ft7">REF. NUM. <nobr>@chq.operacion</nobr></p>
+                <p class="p12 ft6">@chq.MtoChq_t</p>
+                <p class="p13 ft7">@chq.FechaIng</p>
+                <p class="p7 ft7">@chq.NomBen</p>
+                <p class="p8 ft7"><nobr>@chq.DescMontoIngles</nobr></p>
+                <p class="p9 ft7">@chq.CiuPag</p>
+                <p class="p10 ft7">@chq.PaiPag</p>
+                <p class="p10 ft7">ACCOUNT N. : @chq.numcta</p>
+                <p class="p11 ft7">REF. NUM. <nobr>@chq.operacion</nobr></p>
+                <p class="p12 ft6">@chq.MtoChq_t</p>
+                <p class="p13 ft7">@chq.FechaIng</p>
+                <p class="p14 ft7">@chq.NomBen</p>
+                <p class="p8 ft7"><nobr>@chq.DescMontoIngles</nobr></p>
+                <p class="p15 ft7">@chq.NomPag</p>
+                <p class="p16 ft7">@chq.swfpag</p>
+                <p class="p10 ft7">@chq.CiuPag</p>
+                <p class="p10 ft7">@chq.PaiPag</p>
+                <p class="p10 ft7">ACCOUNT N. : @chq.numcta</p>
+            </div>
+            <div id="id_2">
+                <p class="p17 ft8">BANCO DE CHILE @chq.MtoChq_t</p>
+            </div>
+        </div>
+        @*<p style="page-break-after:always;"></p>*@
+    }
+</body>
+</html>

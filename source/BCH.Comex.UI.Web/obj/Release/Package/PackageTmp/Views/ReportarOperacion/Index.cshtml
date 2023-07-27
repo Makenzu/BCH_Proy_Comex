@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <h2>Reportar Problema Operación</h2>
+    <div id="alerta"></div>
+    <div class="row">
+        <div class="input-sm col-xs-10">
+            <h4>Numero operacion a reportar</h4>
+            <input type="text" tabindex="1" class="text input-sm" id="nroOperacion" placeholder="753-XX-29-000-XXXXX" />
+        </div>
+        <div class="col-xs-2">
+            <h4>Fecha Operacion</h4>
+            <div class="input-group date" id="dtpFecha">
+                <input tabindex="2" type="text" class="form-control input-xs" id="txtfechaOperacion" />
+                <span class="input-group-addon ">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Descripcion del Problema</h4>
+            <textarea class="form-control" rows="5" tabindex="3" id="descripcionProblema" placeholder="Breve descripcion de que tipo de operacion estaba realizando cuando ocurrio el error..."></textarea>
+            <br />
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-primary" id="btnReportar">Reportar</button>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/ReportarOperacion/Index")
+}

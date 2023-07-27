@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AsyncTraceError" xml:space="preserve">
+    <value>Ha ocurrido un error cuando se intentaba procesar un evento de trace. El mensaje original que no se pudo almacenar en el log {0}.</value>
+    <comment>AsyncTraceListener</comment>
+  </data>
+  <data name="CacheAddOrGetItemFailed" xml:space="preserve">
+    <value>No es posible obtener ni agregar al caché el elemento para la clave '{0}'.</value>
+    <comment>Caching</comment>
+  </data>
+  <data name="CacheLoadError" xml:space="preserve">
+    <value>Error al cargar la configuración de manejo de caché del archivo de configuración</value>
+  </data>
+  <data name="CategoryAlreadyHasCounterName" xml:space="preserve">
+    <value>La categoría {0} ya tiene un contador llamado {1}</value>
+    <comment>CounterCategoryData</comment>
+  </data>
+  <data name="CategoryNameNullOrEmpty" xml:space="preserve">
+    <value>El nombre de la categoría no puede ser vacío o nulo</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="ComexCommonException" xml:space="preserve">
+    <value>Ocurrió un error - GUID:{0} . Mensaje: {1}. Stack Trace:{2}. {3}</value>
+  </data>
+  <data name="CounterCategoryAlreadyExists" xml:space="preserve">
+    <value>La categoría {0} ya existe</value>
+    <comment>PerformanceCounterContainer</comment>
+  </data>
+  <data name="CounterCategoryDoesntExist" xml:space="preserve">
+    <value>La categoría {0} no existe</value>
+    <comment>PerformanceCounterContainer</comment>
+  </data>
+  <data name="CounterInstanceAlreadyExists" xml:space="preserve">
+    <value>La instancia {0} ya existe en el contador {1}</value>
+    <comment>CounterData</comment>
+  </data>
+  <data name="EmptyPolicyName" xml:space="preserve">
+    <value>El nombre de la política no puede ser vacío</value>
+    <comment>Caching</comment>
+  </data>
+  <data name="ErrorGettingConfigurationSection" xml:space="preserve">
+    <value>Error al intentar obtener la sección "{0}"del archivo de configuración</value>
+    <comment>InstrumentationConfigurationManager</comment>
+  </data>
+  <data name="InexistentPolicyName" xml:space="preserve">
+    <value>El nombre de la política no existe entre las definidas en el archivo de configuración:</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="InstrumentationInitializationError" xml:space="preserve">
+    <value>Ha ocurrido un error al inicializar el módulo de instrumentación</value>
+    <comment>InstrumentationProvider</comment>
+  </data>
+  <data name="InsufficientPermissionsForCounterCategoryCreation" xml:space="preserve">
+    <value>No se tienen suficientes permisos para crear la categoría de contadores: {0}</value>
+    <comment>InstrumentationConfigurationManager</comment>
+  </data>
+  <data name="InsufficientPermissionsForCounterCategoryDeletion" xml:space="preserve">
+    <value>No se tienen suficientes permisos para borra la categoría {0}</value>
+    <comment>InstrumentationConfigurationManager</comment>
+  </data>
+  <data name="InsufficientPermissionsForCounterReading" xml:space="preserve">
+    <value>No se tienen suficientes permisos para leer los contadores</value>
+    <comment>InstrumentationConfigurationManager</comment>
+  </data>
+  <data name="InvalidCacheType" xml:space="preserve">
+    <value />
+    <comment>Caching</comment>
+  </data>
+  <data name="InvalidCounterCategoryType" xml:space="preserve">
+    <value>El nombre del tipo de categoría de contadores de performance "{0}" no es válido, lo valores válidos son: {1}</value>
+    <comment>InstrumentationProvider</comment>
+  </data>
+  <data name="InvalidCounterForOperation" xml:space="preserve">
+    <value>El tipo del contador no es válido para esta operación</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="InvalidBCHComexCounterType" xml:space="preserve">
+    <value>El nombre del tipo de de contador de BCHComex {0} no es válido, los valores posibles son: {1}</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="InvalidTraceSource" xml:space="preserve">
+    <value>No fue posible determinar el source destino. Debe especificar el TraceSource de destino en el atributo initializationData. Verifique la configuración de &lt;system.diagnostics /&gt;</value>
+    <comment>AsyncTraceListener</comment>
+  </data>
+  <data name="InvalidTraceSourceName" xml:space="preserve">
+    <value>No se pudo crear el TraceSource con el nombre especificado :{0} . Verifique el nombre.</value>
+    <comment>TracingHandler</comment>
+  </data>
+  <data name="InvalidType" xml:space="preserve">
+    <value>El tipo no es válido: {0}</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>El valor no es válido: {0}</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="BCHComexCounterTypeNullOrEmpry" xml:space="preserve">
+    <value>El nombre del tipo de contador de BCHComex no puede ser vacío o nulo</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="PerformanceCounterHelper_CategoryNotFound" xml:space="preserve">
+    <value>PerformanceCounterHelper: No es posible obtener el contador [{0}] ya que no existe la categoría [{0}] de Performance Counters.</value>
+  </data>
+  <data name="PerformanceCounterHelper_CounterNotFound" xml:space="preserve">
+    <value>PerformanceCounterHelper: No se encontró el Performance Counter [{0}] en la categoría [{1}].</value>
+  </data>
+  <data name="ResourceDisposed" xml:space="preserve">
+    <value>El recurso fue liberado</value>
+  </data>
+  <data name="ValueHasToBeEnum" xml:space="preserve">
+    <value>El tipo debe ser un enumerado: {0}</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="ValueWithoutAssociatedBaseType" xml:space="preserve">
+    <value>El valor no tiene un tipo base asociado: {0}</value>
+    <comment>Instrumentation.Util</comment>
+  </data>
+  <data name="EmptyType" xml:space="preserve">
+    <value>El tipo no puede ser vacío</value>
+    <comment>ExceptionHandling.Utils</comment>
+  </data>
+  <data name="ExceptionHandlingLoadError" xml:space="preserve">
+    <value>Error al cargar la configuración de manejo de excepciones del archivo de configuración</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="InexistentPolicyName1" xml:space="preserve">
+    <value>El nombre de la política no existe entre las definidas en el archivo de configuración:</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="InvalidAction" xml:space="preserve">
+    <value>La accion no es válida</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="ParameterCanBeNull" xml:space="preserve">
+    <value>El parámetro no puede ser null: {0}</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="PolicyWithoutAssociatedType" xml:space="preserve">
+    <value>La política "{0}" no tiene un tipo asociado a: {1}</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="TypeDoesNotInheritsFromException" xml:space="preserve">
+    <value>El tipo no hereda de System.Exception:</value>
+    <comment>ExceptionPolicy</comment>
+  </data>
+  <data name="UndefinedKeyOrInexistentValue" xml:space="preserve">
+    <value>La clave "{0}" debe estar definida en el archivo de configuración y tener un valor asignado</value>
+    <comment>ExceptionHandling.Utils</comment>
+  </data>
+</root>

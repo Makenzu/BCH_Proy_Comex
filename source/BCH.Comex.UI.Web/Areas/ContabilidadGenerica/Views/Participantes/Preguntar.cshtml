@@ -1,0 +1,29 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.ContabilidadGenerica.UI_Forms.UI_GetPrty2
+@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+<div class="row" style="margin-top: 20px;">
+    <div class="col-xs-offset-3 col-xs-6">
+        <h4>@Model.Text</h4>
+    </div>        
+</div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-xs-offset-3 col-xs-6">
+        <div class="col-xs-1">
+            <img src="http://img4.wikia.nocookie.net/__cb20141214024456/age-of-ishtaria/images/f/f2/Warning-icon-hi.png" height="40" width="40" />
+        </div>
+        <div class="col-xs-11">
+            <h5>Participante No Existe en Base de Datos</h5>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-xs-offset-3 col-xs-6">
+        <button type="button" class="btn btn-success" id="crear">Crear</button>
+        <button type="button" class="btn btn-primary" id="consultar">Consultar</button>
+        <button type="button" class="btn btn-danger" id="cancelar">Cancelar</button>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/ParticipantePreguntar")
+}

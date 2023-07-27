@@ -1,0 +1,67 @@
+﻿@using BCH.Comex.Common.UI_Modulos;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contabilidad Genérica";
+}
+
+<div class="container" id="msg-zone" style="padding-top: 20px;">
+    @{
+        if (Model != null && Model.ListaErrores != null)
+        {
+            foreach (var item in Model.ListaErrores)
+            {
+                string tipo = String.Empty;
+                if (item.Type != TipoMensaje.Nada)
+                {
+                    if (item.Type == TipoMensaje.Informacion)
+                    {
+                        tipo = "alert-info";
+                    }
+                    else if (item.Type == TipoMensaje.Correcto)
+                    {
+                        tipo = "alert-success";
+                    }
+                    else if ((item.Type == TipoMensaje.Error) || (item.Type == TipoMensaje.Critical))
+                    {
+                        tipo = "alert-danger";
+                    }
+                    <div class="alert @tipo">
+                        <a class="close" data-dismiss="alert">×</a>
+                        <span>
+                            <strong>@item.Title </strong> @item.Text
+                        </span>
+                    </div>
+                }
+            }
+        }
+    }
+</div>
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="Diálogo Modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title"></h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+
+            </div>
+            <div class="modal-footer" id="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderBody()
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/Layout")
+    @RenderSection("scripts", false)
+}
+
+@section css{
+    @Styles.Render("~/Content/css/layout.css")
+    @RenderSection("css", required: false)
+}
+
+

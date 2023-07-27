@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.xmlsoap.org/ws/2004/09/enumeration" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2008/1/ActiveDirectory" />
+  <xs:element xmlns:q1="http://schemas.microsoft.com/2008/1/ActiveDirectory" name="CannotProcessFilter" type="q1:EnumerateFault" />
+  <xs:element xmlns:q2="http://schemas.microsoft.com/2008/1/ActiveDirectory" name="InvalidExpirationTime" type="q2:EnumerateFault" />
+  <xs:element name="FilterDialectRequestedUnavailable" type="tns:SupportedDialect" />
+  <xs:complexType name="SupportedDialect">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://schemas.microsoft.com/2008/1/ActiveDirectory" name="InvalidEnumerationContext" type="q3:FaultDetail" />
+  <xs:element xmlns:q4="http://schemas.microsoft.com/2008/1/ActiveDirectory" name="TimedOut" type="q4:PullFault" />
+  <xs:element xmlns:q5="http://schemas.microsoft.com/2008/1/ActiveDirectory" name="UnableToRenew" type="q5:RenewFault" />
+</xs:schema>

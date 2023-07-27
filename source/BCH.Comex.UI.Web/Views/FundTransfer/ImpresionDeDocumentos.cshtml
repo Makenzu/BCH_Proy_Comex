@@ -1,0 +1,144 @@
+﻿@model  BCH.Comex.UI.Web.Models.FundTransfer.ImpresionDocumentosViewModel
+@{
+    Layout = "~/Views/FundTransfer/_Layout.cshtml";
+}
+
+@using BCH.Comex.UI.Web.Helpers
+
+@section scripts {
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    <script>
+        //todas estas variables se utilizan en el archivo FundTransfer.CargosYAbonos.js
+        var urlCargarDatos = '@Url.Action("BuscarDocumentosOperaciones")';
+        var urlImprimirDocumento = '';
+        var urlVerDetalleMensajeSwift = '@Url.Action("GetDetalleSwift", "ImpresionDeDocumentos", new { area = "Impresion" })'; //'@Url.Action("GetDetalleSwift")';
+        var urlVerDocumento = '@Url.Action("Index", "Imprimir", new { area = "Impresion" })';
+        var urlVerReporteContable = '@Url.Action("ReporteContable", "ImpresionDeDocumentos", new { area = "Impresion" })'; //'@Url.Action("ReporteContable")';
+        var urlHome = '@Url.Action("Index")';
+        var urlVerMultiples = '@Url.Action("Multiple", "Imprimir", new { area = "Impresion" })';
+        var ConfigImpres_PrintFormat = "@HttpContext.Current.GetCurrentUser().GetDatosUsuario().ConfigImpres_PrintFormat";
+    </script>
+    @Scripts.Render("~/bundles/FundTransfer/ImpresionDeDocumentos")
+}
+
+@section css{
+
+    <style>
+        .btn {
+            margin-bottom: 0px !important; /* el diseño global esta agregando 10px de margen a los botones */
+        }
+
+        .btn-toolbar {
+            margin-right: 10px;
+        }
+
+        .labelRadio {
+            margin-left: 10px;
+        }
+
+        .accionRow {
+            font-size: 1.2em;
+        }
+    </style>
+}
+
+<div class="container">
+    <h3>Impresión de Documentos</h3>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Filtros</h2>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("BuscarDocumentosAImprimir", "FundTransfer", System.Web.Mvc.FormMethod.Get, new { id = "formFiltros", @class = "form-horizontal" }))
+                {
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-2">
+                            <input tabindex="1" type="radio" name="radTipoFiltro" id="radFiltroFecha" checked>
+                            @Html.Label("radFiltroFecha", "Fecha Operación", new { id = "lblFecha", @class = "control-label labelRadio" })
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="input-group date input-group-sm" id="dtpFechaOperacion">
+                                <input tabindex="2" type="text" class="form-control" id="txtfechaOperacion" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <label class="control-label has-error" style="display:none" id="lblErrorFecha">La fecha debe ser menor o igual a la fecha del día</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-2">
+                            <input tabindex="3" type="radio" name="radTipoFiltro" id="radFiltroNroOperacion">
+                            @Html.Label("radFiltroNroOperacion", "Número Operación", new { @class = "control-label labelRadio" })
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="input-group input-group-sm" id="grpNroOperacion">
+                                @Html.TextBox("nroOp", Model.codcct, new { id = "codcct", @class = "form-control", placeholder = "Uni", tabindex = "4", maxlength = "3", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codpro, new { id = "codpro", @class = "form-control", placeholder = "Prod", tabindex = "5", maxlength = "2", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codesp, new { id = "codesp", @class = "form-control", placeholder = "Esp", tabindex = "6", maxlength = "2", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codofi, new { id = "codofi", @class = "form-control", placeholder = "Ofi", tabindex = "7", maxlength = "3", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" })<div class="input-group-addon">-</div>
+                                @Html.TextBox("nroOp", Model.codope, new { id = "codope", @class = "form-control", placeholder = "Ope", tabindex = "8", maxlength = "5", data_inputmask = "'mask': '9','repeat': 5, 'greedy' : false" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-2">
+                            <input tabindex="9" type="radio" name="radTipoFiltro" id="radFiltroCrfNumber">
+                            @Html.Label("radFiltroCrfNumber", "C. R. Number", new { @class = "control-label labelRadio" })
+                        </div>
+                        <div class="col-xs-2">
+                            @Html.TextBox("crfNumber", "", new { @class = "form-control input-sm", tabindex = "10", maxlength = "10", data_inputmask = "'mask': '9','repeat': 10, 'greedy' : false" })
+                        </div>
+                        <label class="control-label has-error" style="display:none" id="lblErrorCRNumber">Debe ingresar Contract Reference</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-4">
+                            <button tabindex="11" type="button" id="btnBuscarDocs" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                            <button tabindex="12" type="button" id="btnCancelar" class="btn btn-default">Cancelar</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div id="alertPlaceholder"></div>
+
+        <div class="panel panel-default" id="pnlResultados">
+            <div class="panel-heading">
+                <h2 class="panel-title">Documentos&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantDocumentos">0</span></h2>
+            </div>
+            <div class="panel-body">
+                <div id="toolbar">
+                    <form class="form-inline">
+                        <button type="button" class="btn btn-primary" id="btnImprimirMultiples"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>&nbsp;&nbsp;Imprimir seleccionados&nbsp;&nbsp;<span class="badge" id="badgeCantSeleccionados">0</span></button>&nbsp;
+                    </form>
+                </div>
+                <div class="table-responsive">
+                    <table id="tablaDocs"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="modalVisorDoc" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @*<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Visor de Documentos</h4>
+                </div>*@
+            <div class="modal-body">
+                <div id="divCuerpoDoc"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" id="btnImprimir"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>  Imprimir</button>
+            </div>
+        </div>
+    </div>
+</div>
+

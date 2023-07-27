@@ -1,0 +1,331 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Reenvío cobranza exportación</title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 59px 0px 186px 76px;
+            padding: 0px;
+            border: none;
+            width: 740px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 295px 0px 0px 429px;
+                padding: 0px;
+                border: none;
+                width: 311px;
+                overflow: hidden;
+            }
+
+
+
+
+
+        .ft0 {
+            font: bold 16px 'Times New Roman';
+            line-height: 11px;
+        }
+
+        .ft1 {
+            font: 13px 'Times New Roman';
+            line-height: 15px;
+        }
+
+        .ft2 {
+            font: 1px 'Times New Roman';
+            line-height: 1px;
+        }
+
+        .ft3 {
+            font: bold 13px 'Times New Roman';
+            line-height: 9px;
+        }
+
+        .ft4 {
+            font: italic bold 13px 'Times New Roman';
+            line-height: 15px;
+        }
+
+        .ft5 {
+            font: italic bold 13px 'Times New Roman';
+            line-height: 16px;
+        }
+
+        .ft6 {
+            font: bold 13px 'Times New Roman';
+            text-decoration: underline;
+            line-height: 15px;
+        }
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p1 {
+            text-align: left;
+            padding-left: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2 {
+            text-align: left;
+            padding-left: 12px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p3 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p4 {
+            text-align: right;
+            padding-right: 38px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p5 {
+            text-align: justify;
+            padding-right: 165px;
+            margin-top: 14px;
+            margin-bottom: 0px;
+            text-indent: 42px;
+        }
+
+        .p6 {
+            text-align: left;
+            padding-left: 246px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-right: 185px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p8 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p9 {
+            text-align: left;
+            padding-right: 215px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p10 {
+            text-align: left;
+            padding-right: 326px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-right: 170px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 380px;
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 258px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 137px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 121px;
+            vertical-align: bottom;
+        }
+
+        .td4 {
+            padding: 0px;
+            margin: 0px;
+            width: 113px;
+            vertical-align: bottom;
+        }
+
+        .td5 {
+            padding: 0px;
+            margin: 0px;
+            width: 127px;
+            vertical-align: bottom;
+        }
+
+        .td6 {
+            padding: 0px;
+            margin: 0px;
+            width: 177px;
+            vertical-align: bottom;
+        }
+
+        .tr0 {
+            height: 16px;
+        }
+
+        .tr1 {
+            height: 12px;
+        }
+
+        .tr2 {
+            height: 18px;
+        }
+
+        .tr3 {
+            height: 45px;
+        }
+
+        .tr4 {
+            height: 15px;
+        }
+
+        .tr5 {
+            height: 19px;
+        }
+
+        .t0 {
+            width: 638px;
+            font: bold 13px 'Times New Roman';
+        }
+
+        .t1 {
+            width: 417px;
+            margin-left: 161px;
+            margin-top: 15px;
+            font: 13px 'Times New Roman';
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page_1">
+        <div id="id_1">
+            <table cellpadding=0 cellspacing=0 class="t0">
+                <tr>
+                    <td class="tr0 td0"><p class="p0 ft0">@Model.TituloCabezal.ToUpper()</p></td>
+                    <td colspan=2 class="tr0 td1"><p class="p1 ft1">@Model.Ciudad</p></td>
+                </tr>
+                <tr>
+                    <td class="tr1 td0"><p class="p0 ft2">&nbsp;</p></td>
+                    <td class="tr1 td2"><p class="p2 ft3">@Model.NuestraReferencia</p></td>
+                    <td class="tr1 td3"><p class="p3 ft3"><nobr>@Model.NuestraReferenciaValue</nobr></p></td>
+                </tr>
+                <tr>
+                    <td class="tr2 td0"><p class="p0 ft2">&nbsp;</p></td>
+                    <td class="tr2 td2"><p class="p1 ft1">@Model.CobradorReferencia</p></td>
+                    <td class="tr2 td3"><p class="p4 ft1">@Model.CobradorReferenciaValue</p></td>
+                </tr>
+                <tr>
+                    <td class="tr3 td0"><p class="p0 ft4">Messrs</p></td>
+                    <td class="tr3 td2"><p class="p0 ft4">Drawer</p></td>
+                    <td class="tr3 td3"><p class="p0 ft2">&nbsp;</p></td>
+                </tr>
+                <tr>
+                    <td class="tr4 td0"><p class="p0 ft4">Hamburger Sparkasse (Haspa)</p></td>
+                    <td class="tr4 td2"><p class="p0 ft1">MASISA S.A.</p></td>
+                    <td class="tr4 td3"><p class="p0 ft2">&nbsp;</p></td>
+                </tr>
+                <tr>
+                    <td class="tr4 td0"><p class="p0 ft4">Wikinger Weg 1</p></td>
+                    <td class="tr4 td2"><p class="p0 ft1">Apoquindo 3650 Piso 10</p></td>
+                    <td class="tr4 td3"><p class="p0 ft2">&nbsp;</p></td>
+                </tr>
+                <tr>
+                    <td class="tr4 td0"><p class="p0 ft4">20537 Hamburg</p></td>
+                    <td class="tr4 td2"><p class="p0 ft1">Santiago</p></td>
+                    <td class="tr4 td3"><p class="p0 ft2">&nbsp;</p></td>
+                </tr>
+                <tr>
+                    <td class="tr5 td0"><p class="p0 ft5">Germany</p></td>
+                    <td class="tr5 td2"><p class="p0 ft1">CHILE</p></td>
+                    <td class="tr5 td3"><p class="p0 ft2">&nbsp;</p></td>
+                </tr>
+            </table>
+            <p class="p5 ft1">On behalf of our Customers, attached find the following additionals documents for collection, which must be considerated part of our original remit dated 12/10/2014, and must be delivered against Aceptación de Letras, to the drawees : ERIC BITTNER., THEODOR STROM STRASSE 4, <nobr>D-22941</nobr> BARGTEHEIDE HO, ALEMANIA</p>
+            <p class="p6 ft6">DOCUMENTS</p>
+            <table cellpadding=0 cellspacing=0 class="t1">
+                <tr>
+                    <td class="tr4 td4"><p class="p0 ft1">Draft Nr.</p></td>
+                    <td class="tr4 td5"><p class="p0 ft1">01 EUR</p></td>
+                    <td class="tr4 td6"><p class="p0 ft1">42.233,90 Maturity 02/10/2015</p></td>
+                </tr>
+            </table>
+            <p class="p7 ft1">Please credit our account Nr. 400 8722027/00 with COMMERZBANK AG, , Frankfurt, Alemania under advice to us quoting our ref number.</p>
+            <p class="p8 ft1">Do not Protest</p>
+            <p class="p9 ft1">Please advise draft's acceptance, and/or any difficulties in the acceptance/payment by Swift/Telex. Kindly request yours commissions and charges to drawee, which must not be refused.</p>
+            <p class="p8 ft1">We will not accept any deduction in the amount under this collection.</p>
+            <p class="p10 ft1">This collection cannot be handled by another bank without our authorization. In case of difficulties in the payment, please advise by Swift/Telex.</p>
+            <p class="p11 ft1">Please acknowledge receipt by swift/telex and address all correspondence to the attention Jaime Hinojosa G., Huerfanos 930, Piso 2, phone 4686103, fax 4686694, quoting our reference <nobr>729-06-70-000-07074.</nobr> This collection is subject to ICC Publication 522.</p>
+        </div>
+        <div id="id_2">
+            <p class="p8 ft4">_______________________</p>
+            <p class="p12 ft5">Banco de Chile</p>
+        </div>
+    </div>
+</body>
+</html>

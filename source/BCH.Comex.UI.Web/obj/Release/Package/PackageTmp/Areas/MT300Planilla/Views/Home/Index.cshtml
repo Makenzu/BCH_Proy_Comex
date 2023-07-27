@@ -1,0 +1,149 @@
+﻿@model BCH.Comex.UI.Web.Areas.MT300Planilla.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Planillas MT300";
+    //ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12"><h2>Planillas cargadas MT300</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default" id="panelFiltros">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Filtros</h2>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Buscar", "Index"))
+                    {
+                        <div class="form-group" id="grpFechaHasta">
+                            @Html.Label("Fecha", "Fecha", new { @class = "control-label col-xs-3" })
+                            <div class="col-xs-9">
+                                <div class="input-group date" id="dtpFiltroFecha">
+                                    <input type="text" class="form-control" id="txtFiltroFecha" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <label class="control-label has-error col-xs-offset-3" style="display:none" id="lblErrorFecha">La fecha debe ser menor o igual a la fecha del día</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="btn-group">
+                                    <button type="button" id="btnBuscar" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default" id="pnlResumen">
+            <div class="panel-heading">
+                <h2 class="panel-title">Resumen total de registros para fecha </h2>
+            </div>
+            <div class="panel-body">
+                <div id="ResumenResultado1" class="col-xs-12">
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Archivos Totales
+                        </label>
+                        <label id="archProcesados" class="control-label col-xs-2" />
+                    </div>
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Reg. Error NACK
+                        </label>
+                        <label id="errorNack" class="control-label col-xs-2">
+                            0
+                        </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Mensajes MT300 generados
+                        </label>
+                        <label id="mt300Generados" class="control-label col-xs-2">
+                            0
+                        </label>
+                    </div>
+                </div>
+                <div id="ResumenResultado2" class="col-xs-12">
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Reg. Totales
+                        </label>
+                        <label id="regProcesados" class="control-label col-xs-2">
+                            0
+                        </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Reg. Error Formato
+                        </label>
+                        <label id="errFormato" class="control-label col-xs-2">
+                            0
+                        </label>
+                    </div>
+                    <div class="col-xs-4">
+                        <label class="control-label col-xs-6">
+                            Mensajes MT300 existentes
+                        </label>
+                        <label id="mt300Existentes" class="control-label col-xs-2">
+                            0
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default" id="pnlRegistrosExistentes">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="tablaArchivos"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @section scripts{
+            @Scripts.Render("~/bundles/MT300Planilla/Index")
+            <script type="text/javascript">
+        var urlBuscar = '@Url.Action("BuscarArchivos")';
+        var urlResumen = '@Url.Action("TraeResumen")';
+        var urlVerMensaje = '@Url.Action("DetallePlanilla")';//'/MT300DetallePlanilla/Home/index'
+        var pageSize = @Model.pageSize;
+        var soloConsulta = @Json.Encode(Model.soloConsulta);
+
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+            </script>
+        }
+
+        @section css
+{
+            <style>
+                .panel-heading .accordion-toggle:after {
+                    /* symbol for "opened" panels */
+                    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+                    content: "\e113";
+                    float: right;
+                    color: grey;
+                }
+
+                .panel-heading .accordion-toggle.collapsed:after {
+                    /* symbol for "collapsed" panels */
+                    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+                    content: "\e114";
+                    float: right;
+                    color: grey;
+                }
+            </style>
+        }

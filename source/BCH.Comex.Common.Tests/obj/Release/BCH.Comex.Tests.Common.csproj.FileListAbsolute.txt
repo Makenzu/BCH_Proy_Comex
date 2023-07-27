@@ -1,0 +1,14 @@
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\BCH.Comex.Common.Tests.dll.config
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\BCH.Comex.Common.Tests.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\BCH.Comex.Common.Tests.pdb
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Common.Tests\bin\Release\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\obj\Release\BCH.Comex.Tests.Common.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Common.Tests\obj\Release\BCH.Comex.Tests.Common.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Common.Tests\obj\Release\BCH.Comex.Tests.Common.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Common.Tests\obj\Release\BCH.Comex.Common.Tests.dll
+D:\3IT\COMEX\BCH.Comex.Common.Tests\obj\Release\BCH.Comex.Common.Tests.pdb

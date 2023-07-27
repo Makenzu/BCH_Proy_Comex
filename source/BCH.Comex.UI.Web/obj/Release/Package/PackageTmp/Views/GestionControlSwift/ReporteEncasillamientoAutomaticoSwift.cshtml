@@ -1,0 +1,132 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.ReporteEncasillamientoAutomaticoSwiftViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes Encasillados Automáticamente</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Mensajes Encasillados Automáticamente</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("{0} {1} {2} {3}",
+            Model.Verbo,
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-xs-3"><strong>Total Mensajes Encasillados Automáticamente: </strong></div>
+        <div class="col-xs-3">@Model.Registros.Count</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Casilla: </strong></div>
+            <div class="col-xs-3"> @Model.NombreCasilla</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Estado: </strong></div>
+            <div class="col-xs-3">@Model.Estado</div>
+        </div>
+        @*@if (!Model.Enviados)
+            {
+                <div class="row">
+                    <div class="col-xs-3"><strong>Estado: </strong></div>
+                    <div class="col-xs-3">@Model.Filtro</div>
+                </div>
+            }*@
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+                @if (Model.Enviados)
+                {
+                    <tr>
+                        <th>Sesión</th>
+                        <th>Secuencia</th>
+                        <th>Tipo MT</th>
+                        <th>Encasillamiento</th>
+                        <th>Estado</th>
+                        <th>Casilla</th>
+                        <th>Banco Emisor</th>
+                        <th>Referencia</th>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th>Sesión</th>
+                        <th>Secuencia</th>
+                        <th>Tipo MT</th>
+                        <th>Encasillamiento</th>
+                        <th>Estado</th>
+                        <th>Casilla</th>
+                        <th>Banco Emisor</th>
+                        <th>Referencia</th>
+                    </tr>
+                }
+            </thead>
+            <tbody>
+
+                @if (Model.Enviados)
+                {
+                    foreach (var row in Model.Registros)
+                    {
+                        <tr>
+                            <td>@row.sesion</td>
+                            <td>@row.secuencia</td>
+                            <td>@row.tipo_msg</td>
+                            <td>@(@row.fecha_ack + " " + @row.hora_ack)</td>
+                            <td>@row.estado_msg</td>
+                            <td>@row.casilla</td>
+                            <td>@(@row.cod_banco_em + " " + @row.branch_em)</td>
+                            <td>@row.referencia</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    //int indiceRow = 0;
+                    foreach (var row in Model.Registros)
+                    {
+                        <tr>
+                            <td>@row.sesion</td>
+                            <td>@row.secuencia</td>
+                            <td>@row.tipo_msg</td>
+                            <td>@(@row.fecha_ack + " " + @row.hora_ack)</td>
+                            <td>@row.estado_msg</td>
+                            <td>@row.casilla</td>
+                            <td>@(@row.cod_banco_em + " " + @row.branch_em)</td>
+                            <td>@row.referencia</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+@*@{
+    ViewBag.Title = "ReporteEncasillamientoAutomaticoSwift";
+}
+
+<h2>ReporteEncasillamientoAutomaticoSwift</h2>*@
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaTipoCliente/OpConsultaTipoClienteResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaTipoCliente/OpConsultaTipoClienteResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="respConsultaTipoCliente">
+    <xsd:sequence>
+      <xsd:element name="tipoCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" ref="tns:detallePersona" />
+      <xsd:element minOccurs="0" maxOccurs="1" ref="tns:detalleEmpresa" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="detallePersona">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="apellidoMaterno" type="xsd:string" />
+        <xsd:element name="apellidoPaterno" type="xsd:string" />
+        <xsd:element name="nombres" type="xsd:string" />
+        <xsd:element name="razonSocial" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="detalleEmpresa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="razonSocial" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

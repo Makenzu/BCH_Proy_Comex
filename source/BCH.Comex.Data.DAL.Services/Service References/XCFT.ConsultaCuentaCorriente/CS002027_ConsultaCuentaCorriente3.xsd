@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="respConsultaCuentaCorriente">
+    <xsd:sequence>
+      <xsd:element ref="tns:Respuesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Respuesta">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="BancaCliente" type="xsd:string" />
+        <xsd:element name="NombreTitular" type="xsd:string" />
+        <xsd:element name="RutTitular" type="xsd:string" />
+        <xsd:element name="RutBipersonal" type="xsd:string" />
+        <xsd:element name="NombreBipersonal" type="xsd:string" />
+        <xsd:element name="CodigoRelacion" type="xsd:string" />
+        <xsd:element name="CategoriaCliente" type="xsd:string" />
+        <xsd:element name="TokenCuenta" type="xsd:string" />
+        <xsd:element name="TipoCuenta" type="xsd:string" />
+        <xsd:element name="ProductoComercial" type="xsd:string" />
+        <xsd:element name="CuentaRelacionada" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="ClaseCuenta" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

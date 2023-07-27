@@ -1,0 +1,69 @@
+﻿@model BCH.Comex.UI.Web.Areas.InicioDia.Views.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Inicialización de Comercio Exterior";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/inicio-dia-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/InicioDia")
+    <script>
+    var urlIniciarDia = '@Url.Action("IniciarDia", "Home")';
+    var urlReemplazarUsuario = '@Url.Action("ReemplazarUsuario", "Home")';
+    var datosEspecialistas = @Html.Raw(Json.Encode(Model.Especialistas));
+        var ccYCodUsrActual = '@Model.CCYCodUsrImpersonado';
+        var mensajes = @Html.Raw(Json.Encode(Model.Mensajes));
+
+    </script>
+}
+
+@section css{
+
+    <style>
+        .btn-toolbar {
+            margin-right: 10px;
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6"><h2>Inicialización de Comercio Exterior</h2></div>
+        <div class="col-xs-2" style="top: 20px;">
+            <ul class="nav nav-pills">
+                <li><a href="@Url.Action("Novedades", "Home")">Ver novedades</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4"><h3>Fecha: @DateTime.Now.Date.ToShortDateString()</h3></div>
+        <div class="col-xs-2"></div>
+        <div class="col-xs-6"><h3>Centro de Costos: @Model.DescCCActual</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">&nbsp;</div>
+    </div>
+    <div class="row">
+        @using (Html.BeginForm("IniciarDia", "Home", System.Web.Mvc.FormMethod.Post, new { id="formGuardar", @class = "form-horizontal" }))
+        {
+                <div class="col-xs-12">
+                    <button type="button" id="btnGuardar" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>&nbsp;&nbsp;INICIAR</button>
+                </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-xs-6">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default" id="pnlEspecialistas">
+            <div class="panel-heading">
+                <h2 class="panel-title">Especialistas&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeEspecialistas">0</span></h2>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="tablaEspecialistas"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

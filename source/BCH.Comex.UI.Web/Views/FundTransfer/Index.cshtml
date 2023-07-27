@@ -1,0 +1,299 @@
+﻿@using BCH.Comex.UI.Web.Models.FundTransfer
+@model IndexViewModel
+@{
+    ViewBag.Title = "Fund Transfer";
+    
+    BCH.Comex.Core.Entities.Cext01.FundTransfer.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+<div class="container" id="header_layout">
+    <div class="row" id="texto_func">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Archivo <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Archivo">
+                        <li><a href="~/FundTransfer/NuevaOperacion">Nuevo</a></li>
+                        <li><a href="#">Compra Venta</a></li>
+                        <li><a href="~/FundTransfer/Arbitrajes">Arbitrajes</a></li>
+                        <li><a href="#">Ventas Visibles</a></li>
+                        <li><a href="~/FundTransfer/Grabar1">Guardar</a></li>
+                        <li><a href="#">Imprimir</a></li>
+                        @*<li><a href="#">Salir</a></li>*@
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Opciones <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Opciones">
+                        @foreach (var item in Mdi_Principal.Opciones)
+                        {
+                            if (item.Tag == "separator")
+                            {
+                                <li role="separator" class="divider"></li>
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <li class="dropdown disabled">
+                                        <a id="@item.ID" href="#">
+                                            @item.Text
+                                        </a>
+                                    </li>
+                                }
+                                else 
+                                {
+                                    <li class="dropdown">
+                                        <a id="@item.ID" href="@Url.Content((string)item.Tag)">
+                                           @item.Text
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Configuración <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Configuración" id="mnuConfiguracion">
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionCartas) Impresión Cartas
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionContabilidad) Impresión Contabilidad
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionPlanillas) Impresión Planillas
+                                    </label>
+                                </div>
+                                </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-center panel">
+    @foreach (var item in Mdi_Principal.BUTTONS)
+    {
+        <a id="@item.Value.ID"
+           @if (!item.Value.Enabled) {    @: disabled="disabled"
+               @: href="#"
+           } else {  
+               @: href="@Url.Content((string)item.Value.Tag)"
+               @: tabindex="@item.Value.TabIndex"
+               @: focus="@item.Value.Focus.ToString().ToLower()"
+           }
+           class="btn btn-transparent btn-no-padding margin-horizontal-half btnMenu" ><img class="img-func" data-toggle="tooltip" data-placement="bottom" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath)" style="width:32px;height:32px" /></a>
+    }
+</div>
+
+<div class="container">
+    <h3>@Model.Caption</h3>
+</div>
+
+<div class="container">
+    <h4>Identificación de los Participantes</h4>
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-3 label-div"><label for="cliente">Cliente</label></div>
+                <div class="col-xs-9">
+                    @Html.EditorFor(model => model.NombreParticipante, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-6 label-div"><label for="referencia">Referencia Cliente</label></div>
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.Referencia, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+        </div>
+    </div>
+    </div>
+                <div class="row">
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-6 label-div">
+                            <label for="nroFact">Factura Nro.</label>
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.EditorFor(model => model.NumeroFactura, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-6 label-div">
+                            <label for="operacion">Operación</label>
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.EditorFor(model => model.NumeroOperacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-6 label-div">
+                            <label for="tipoFact">Tipo Factura</label>
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.EditorFor(model => model.TipoFactura, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-6 label-div">
+                            <label for="moneda">Moneda</label>
+                        </div>
+                        <div class="col-xs-6">
+                            @Html.EditorFor(model => model.Moneda, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-6 label-div">
+                    <label for="nroFact">Neto</label>
+            </div>
+            <div class="col-xs-6">
+                    @Html.EditorFor(model => model.Neto, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-6 label-div">
+                        <label for="iva">I.V.A.</label>
+                </div>
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.IVA, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-6 label-div">
+                        <label for="total">Total</label>
+                </div>
+                <div class="col-xs-6">
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+    <h4>Comercio Invisible</h4>
+    <div class="table-responsive">
+    <table class="table table-hover table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Operación</th>
+                <th>Mnd. Compra</th>
+                <th>Mto. Compra</th>
+                <th>Mnd. Venta</th>
+                <th>Mto. Venta</th>
+            </tr>
+        </thead>
+        <tbody>
+             @foreach (var item in Model.ComercioVisible)
+            {
+                <tr>
+                    <td class=" text-nowrap">@item.Operacion</td>
+                    <td class=" text-nowrap">@item.Mnd_Compra</td>
+                    <td class=" text-nowrap">@item.Mto_Compra</td>
+                    <td class=" text-nowrap">@item.Mnd_Venta</td>
+                    <td class=" text-nowrap">@item.Mto_Venta</td>
+                </tr>
+            }
+       </tbody>
+    </table>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Comercio Visible Exportaciones</h4>
+            <div class="table-responsive">
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Moneda</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ComercioVisibleExport)
+                    {
+                        <tr>
+                            <td class=" text-nowrap">@item.Operacion</td>
+                            <td class=" text-nowrap">@item.Moneda</td>
+                            <td class=" text-nowrap">@item.Monto</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>Comercio Visible Importaciones</h4>
+            <div class="table-responsive">
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Moneda</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ComercioVisibleImport)
+                    {
+                        <tr>
+                            <td class=" text-nowrap">@item.Operacion</td>
+                            <td class=" text-nowrap">@item.Moneda</td>
+                            <td class=" text-nowrap">@item.Monto</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/Index")
+}

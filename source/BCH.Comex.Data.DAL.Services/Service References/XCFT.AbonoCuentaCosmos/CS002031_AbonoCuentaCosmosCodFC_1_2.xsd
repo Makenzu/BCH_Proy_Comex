@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="respAbonoCuentaCosmosCodFC">
+    <xsd:sequence>
+      <xsd:element ref="tns:Respuesta" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Respuesta">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="descripcionRetorno" type="xsd:string" />
+        <xsd:element ref="tns:ListaMensajes" />
+        <xsd:element ref="tns:ListaCampos" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ListaMensajes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="tns:Mensajes" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Mensajes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="tipoMovimiento" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoMensaje" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="descripcionMensaje" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ListaCampos">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="tns:Campos" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Campos">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="nombreCampo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="valorCampo" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

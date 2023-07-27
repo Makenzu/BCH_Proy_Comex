@@ -1,0 +1,165 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.ReporteGestionControlSwiftViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes Recepcionados Por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Mensajes Recepcionados Por Sistema</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("{0} {1} {2} {3}",
+            Model.Verbo,
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><strong>Total Mensajes Recepcionados Por Sistema: </strong></div>
+            <div class="col-xs-5">@Model.Registros.Count</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><strong>Casilla: </strong></div>
+            <div class="col-xs-5">@Model.NombreCasilla</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><strong>Estado: </strong></div>
+            <div class="col-xs-5">@Model.Estado</div>
+        </div>
+        @*@if (!Model.Enviados)
+            {
+                <div class="row">
+                    <div class="col-xs-3"><strong>Estado: </strong></div>
+                    <div class="col-xs-3">@Model.Filtro</div>
+                </div>
+            }*@
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+                @if (Model.Enviados)
+                {
+                    <tr>
+                        <th>Sesión</th>
+                        <th>Secuencia</th>
+                        <th>Tipo MT</th>
+                        <th>Fecha Recepción</th>
+                        <th>Estado</th>
+                        <th>Casilla</th>
+                        <th>Banco Emisor</th>
+                        <th>Moneda</th>
+                        <th>Monto</th>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th>Sesión</th>
+                        <th>Secuencia</th>
+                        <th>Tipo MT</th>
+                        <th>Fecha Recepción</th>
+                        <th>Estado</th>
+                        <th>Casilla</th>
+                        <th>Banco Emisor</th>
+                        <th>Moneda</th>
+                        <th>Monto</th>
+                    </tr>
+                }
+            </thead>
+            <tbody>
+
+                @functions  {
+                    public string getFormat(string moneda)
+                    {
+                        string formato = string.Empty;
+                        string num = "";
+
+                        if (moneda == "")
+                        {
+                            num = "";
+                        }
+                        else
+                        {
+                            num = moneda.ToString();
+                        }
+                        
+                        if ((moneda == "CLP"))
+                        {
+                            formato = "#,0";
+                        }
+                        else
+                        {
+                            formato = "#,0.00";
+                        }
+                        return formato;
+                    }
+                }
+
+                @if (Model.Enviados)
+                {
+                    foreach (var row in Model.Registros)
+                    {
+                        <tr>
+                            <td>@row.sesion</td>
+                            <td>@row.secuencia</td>
+                            <td>@row.tipo_msg</td>
+                            <td>@(@row.fecha1 + " " + @row.fecha2)</td>
+                            <td>@row.estado_msg</td>
+                            <td>@row.casilla</td>
+                            <td>@(@row.cod_banco_em + " " + @row.branch_em)</td>
+                            <td>@row.cod_moneda</td>
+                            <td style="text-align:right">
+                                @(row.monto.ToString(getFormat(row.cod_moneda)))
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    //int indiceRow = 0;
+                    foreach (var row in Model.Registros)
+                    {
+                        <tr>
+                            <td>@row.sesion</td>
+                            <td>@row.secuencia</td>
+                            <td>@row.tipo_msg</td>
+                            <td>@(@row.fecha1 + " " + @row.fecha2)</td>
+                            <td>@row.estado_msg</td>
+                            <td>@row.casilla</td>
+                            <td>@(@row.cod_banco_em + " " + @row.branch_em)</td>
+                            <td>@row.cod_moneda</td>
+                            <td style="text-align:right">@(row.monto.ToString(getFormat(row.cod_moneda)))</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+@*@{
+    ViewBag.Title = "ReporteGestionControlSwift";
+}
+
+<h2>ReporteGestionControlSwift</h2>*@
+

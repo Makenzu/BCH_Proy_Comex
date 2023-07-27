@@ -1,0 +1,309 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillaAnulacionViewModel
+
+@{
+    ViewBag.Titulo = "Planilla Anulación";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmxAnu", name = "frmxAnu" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="form-body">
+                    <div class="container-fluid margin-bottom-double" >
+                        <h3 class="margin-bottom-triple">Anulación de Planillas @ViewBag.Caption</h3>
+                        <h4>Planilla de Ingreso de Comercio Visible</h4>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_NPresentacion, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_NPresentacion, new { htmlAttributes = new { @class = "form-control" ,tabindex="2" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Fecha, htmlAttributes: new { @class = "control-label" })
+                                        <div class="input-group date" id="FechaPicker" data-delay="year">
+                                            @Html.EditorFor(model => model.Tx_Fecha, new { htmlAttributes = new { @class = "form-control", tabindex = "1", data_inputmask = "'alias': 'date'" } })
+                                            <span class="input-group-addon">
+                                                <span id="btnFechaPicker" class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-4">Entidad que presenta la planilla:</label>
+                                        <label class="control-label col-xs-8" style="color:#002464;"><b>BANCO DE CHILE</b></label>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_PlazaBancoContabiliza, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                        <div class="col-xs-8">
+                                            @Html.EditorFor(model => model.Tx_PlazaBancoContabiliza, new { htmlAttributes = new { @class = "form-control" , tabindex="6" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Nombre, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                        <div class="col-xs-8">
+                                            @Html.EditorFor(model => model.Tx_Nombre, new { htmlAttributes = new { @class = "form-control" ,tabindex="21" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_Direccion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                        <div class="col-xs-8">
+                                            @Html.EditorFor(model => model.Tx_Direccion, new { htmlAttributes = new { @class = "form-control", tabindex="22" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_TipoAnulacion, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_TipoAnulacion, new { htmlAttributes = new { @class = "form-control", tabindex = "18", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_CodigoUno, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodigoUno, new { htmlAttributes = new { @class = "form-control" ,tabindex="8" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Tx_CodigoDos, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodigoDos, new { htmlAttributes = new { @class = "form-control",tabindex="11" ,data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false"} })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <label class="control-label col-md-12 text-right" style="color:#002464; padding-right: 0">Uso Exclusivo Banco Central</label>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Tx_Rut, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                    <div class="col-xs-8">
+                                        @Html.EditorFor(model => model.Tx_Rut, new { htmlAttributes = new { @class = "form-control" , tabindex="76" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <h4>Datos Planilla Anulada</h4>
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+                                        @Html.LabelFor(model => model.Tx_DesEntidadAutorizadaPlanillaAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_DesEntidadAutorizadaPlanillaAnulada, new { htmlAttributes = new { @class = "form-control" ,tabindex="38"} })
+                                    </div>
+                                    <div class="col-xs-4">
+                                        @Html.LabelFor(model => model.Tx_CodEntidadAutorizadaPlanillaAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodEntidadAutorizadaPlanillaAnulada, new { htmlAttributes = new { @class = "form-control" ,tabindex="40", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_NumeroPresentacionAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_NumeroPresentacionAnulada, new { htmlAttributes = new { @class = "form-control", tabindex = "37", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_FechaPresentacionAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_FechaPresentacionAnulada, new { htmlAttributes = new { @class = "form-control", tabindex = "36", data_inputmask = "'alias': 'date'" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+                                        @Html.LabelFor(model => model.Tx_TipoOperacionAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_TipoOperacionAnulada, new { htmlAttributes = new { @class = "form-control", tabindex="35" } })
+                                    </div>
+                                    <div class="col-xs-4">
+                                        @Html.LabelFor(model => model.Tx_CodigoOperacionAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodigoOperacionAnulada, new { htmlAttributes = new { @class = "form-control", tabindex = "27", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+                                        @Html.LabelFor(model => model.Tx_PlazaBancoCentralAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_PlazaBancoCentralAnulada, new { htmlAttributes = new { @class = "form-control" ,tabindex="34" } })
+                                    </div>
+                                    <div class="col-xs-4">
+                                        @Html.LabelFor(model => model.Tx_CodigoBancaCentralAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodigoBancaCentralAnulada, new { htmlAttributes = new { @class = "form-control", tabindex = "32", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_MontoMMONAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_MontoMMONAnulada, new { htmlAttributes = new { @class = "form-control" , tabindex= "30"} })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_ParidadMMONAnulada, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_ParidadMMONAnulada, new { htmlAttributes = new { @class = "form-control",tabindex="29" } })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <div class="col-xs-6">
+                                    <h4>Datos Declar. Exportación</h4>
+                                    <div class="form-group">
+                                        <div class="col-xs-8">
+                                            @Html.LabelFor(model => model.Tx_AduanaExportacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_AduanaExportacion, new { htmlAttributes = new { @class = "form-control", tabindex = "51" } })
+                                        </div>
+                                        <div class="col-xs-4">
+                                            @Html.LabelFor(model => model.Tx_CodigoExportacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_CodigoExportacion, new { htmlAttributes = new { @class = "form-control", tabindex = "56", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_NumeroAceptacionExportacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_NumeroAceptacionExportacion, new { htmlAttributes = new { @class = "form-control", tabindex = "52", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_FechaAceptacionExportacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_FechaAceptacionExportacion, new { htmlAttributes = new { @class = "form-control", tabindex = "53", data_inputmask = "'alias': 'date'" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_FechaVencimientoRetornoExportacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_FechaVencimientoRetornoExportacion, new { htmlAttributes = new { @class = "form-control", tabindex = "54", data_inputmask = "'alias': 'date'" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <h4>Datos Autorización</h4>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Cb_Autor, htmlAttributes: new { @class = "control-label" })
+                                            @Html.DropDownListFor(x => x.SelAutor, Model.Cb_Autor, "--Seleccione--", new { @class = "form-control", tabindex = "67" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_NumeroAutorizacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_NumeroAutorizacion, new { htmlAttributes = new { @class = "form-control", tabindex = "64", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_FechaAutorizacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_FechaAutorizacion, new { htmlAttributes = new { @class = "form-control", tabindex = "65",  data_inputmask = "'alias': 'date'" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            @Html.LabelFor(model => model.Tx_TipoCambioAutorizacion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_TipoCambioAutorizacion, new { htmlAttributes = new { @class = "form-control", tabindex = "66" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.Tx_Observaciones, htmlAttributes: new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.Tx_Observaciones.Text, new { @class = "form-control", @rows = "4", @cols = "9" })
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <h4>Monto Anulado</h4>
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+                                        @Html.LabelFor(model => model.Tx_DescripcionMonedaMontoAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_DescripcionMonedaMontoAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "80" } })
+                                    </div>
+                                    <div class="col-xs-4">
+                                        @Html.LabelFor(model => model.Tx_CodigoMonedaAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_CodigoMonedaAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "85", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_MontoAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_MontoAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "81" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_ParidadMMONMontoAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_ParidadMMONMontoAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "82" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_MontoMMONMontoAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_MontoMMONMontoAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "83" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_MontoMMONParidadOriginalAnulado, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_MontoMMONParidadOriginalAnulado, new { htmlAttributes = new { @class = "form-control", tabindex = "79" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                     <div class="col-md-6">
+                                             @Html.EditorFor(model => model.Boton_0, new
+                                             {
+                                                 htmlAttributes = new
+                                                 {
+                                                     @class = "btn btn-default",
+                                                     value = "<<",
+                                                     type = "submit",
+                                                     name = "Command",
+                                                     tabindex="101"
+                                                 }
+                                             })
+
+                                             @Html.EditorFor(model => model.Boton_1, new
+                                             {
+                                                 htmlAttributes = new
+                                                 {
+                                                     @class = "btn btn-default",
+                                                     value = ">>",
+                                                     type = "submit",
+                                                     name = "Command",
+                                                     tabindex = "100"
+                                                 }
+                                             })
+
+                                             <button id="@(Model.Boton_2)" tabindex="97" type="submit" name="Command" value="√" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                                                 <i class="glyphicon glyphicon-ok"></i>
+                                             </button>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <input type="submit" id="@(Model.Boton_3)" tabindex="98"  name="Command" value="Aceptar" class="btn btn-primary" />
+                                            <input type="submit" id="@(Model.Boton_4)" tabindex="99"  name="Command" value="Cancelar" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section scripts{
+@Scripts.Render("~/bundles/FundTransfer/PlanillaAnulacion")
+
+    <script>
+        var modeloCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+}

@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A749C74-6EA3-408E-848C-B00280084FC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Core.Entities.Swift</RootNamespace>
+    <AssemblyName>BCH.Comex.Core.Entities.Swift</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="swift\joal.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sbcor\rbc_ilot.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\rbc_lot.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\rbc_macb.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\rbc_macp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcbere.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcberp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcerr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcgrp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcope.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\SbcorModel.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="sbcor\sbcsitf.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcvi.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcvisp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbcvist.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_act.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_age.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ape.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_apev.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bco.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bcoi.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bcot.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ber.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_berd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bere.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_berp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bksc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_bksv.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_blfyd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_blfyh.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_cci.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_cciu.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_clf.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_clfb.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_clfc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_clfe.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_clft.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_comd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_cpai.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_crp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_crpg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_crp_ope.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_cta.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ctap.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ctrl.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_datos_grilla_mod.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_datos_superiores_mod.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_emp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_err.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_exd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_exp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_fam.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_fer.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_fmi.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_fny.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_gas.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_grp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_hdetpai.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_het.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_hope.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_hvalida.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_inflot.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_infmatr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_jcci.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lin.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ling.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lino.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_linp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_linp_ope.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_linr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lins.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lint.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_linv.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lof.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lot.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lotasg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lotg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lot_obs.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lptr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lre.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_lsl.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mac.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_macb.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_macd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_macp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mbd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mbr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mbs.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mpd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mpr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_mps.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_niv.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_nomp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_nyc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ofi.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_ope.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_opee.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_open.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_oper.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_pair.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_par.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_pex.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_pro.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prvcho.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prvcus.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prvd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prve.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prvr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_prvusa.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_recf.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_reco.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_res.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_rsg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_rstd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_rstg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_rstt.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_rutsw.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_sitf.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_subl.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_syr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_syrc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_sys.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tcom.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tem.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_top.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tpro.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_txt.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tyc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tyc1.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tyc2.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tyca.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tycc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tycd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tyce.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tycg.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tycp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_tycq.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_usr.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_vis.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_visp.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sbc_vist.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sce_bic.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sce_cou.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_mnd.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_pai.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_suc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_tba.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_vmc.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sbcor\sgt_vmd2.cs">
+      <DependentUpon>SbcorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\SwiftModel.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="swift\sw_bancos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_bancos_autorizados.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_campos_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_caracter_error.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_casillas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_ciclos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_configura.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_estados_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_firmas_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_folios.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_formatos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_formato_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_glosa_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_log_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_mensajes.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_mensajes_add.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_monedas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_add.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_cambio_estados.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_cmx_dia.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_detfile.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_files.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_firma.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_ftp.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_log.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_msgsend_nop.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_orden_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_paridad.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_regla_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_sce_bic.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_tipos_campos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_tipos_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_tipos_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_users_srm.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_users_swift.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\sw_valor_campos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\tbl_sw_nets.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\tbl_sw_nets_det.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="swift\tbl_sw_nets_sor.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="sbcor\SbcorModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SbcorModel.cs</LastGenOutput>
+    </None>
+    <None Include="swift\SwiftModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SwiftModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

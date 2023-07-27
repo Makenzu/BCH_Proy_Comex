@@ -1,0 +1,185 @@
+﻿@model BCH.Comex.UI.Web.Areas.MT300Planilla.Models.DetalleMensajeViewModel
+
+@{
+    ViewBag.Title = "Detalle Registro";
+    //ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12"><h2>Detalle Registro</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default" id="panelDetalle">
+                <div class="panel-body">
+                    @using (Html.BeginForm("Generar", "DetalleMensaje", FormMethod.Post))
+                    {
+                    <fieldset>
+                        @Html.TextBoxFor(model => model.Mensaje.idDetalle, htmlAttributes: new { @class = "form-control input-sm disabled hidden" })
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("safekeeping", "Safekeeping ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.safekeeping, htmlAttributes: new { @class = "form-control input-sm disabled", minlength = 6, maxlength = 6, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.safekeeping)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("reference", "Reference ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.reference, htmlAttributes: new { @class = "form-control input-sm disabled", minlength = 1, maxlength = 15, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.reference)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("booked_by", "Booked by ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.bookedBy, htmlAttributes: new { @class = "form-control input-sm", minlength = 8, maxlength = 8, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.bookedBy)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("date_line", "Value Date ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.valueDate, htmlAttributes: new { @class = "form-control input-sm", minlength = 8, maxlength = 8, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.valueDate)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("rate", "Rate ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.rate, htmlAttributes: new { @class = "form-control input-sm", maxlength = 11 , @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.rate)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("codMonedame", " Moneda Extranjera (codigo moneda)", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.codMonedame, htmlAttributes: new { @class = "form-control input-sm", minlength = 3, maxlength = 3, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.codMonedame)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("campo33B", " Monto Moneda Extranjera (amountUsd)", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.campo33B, htmlAttributes: new { @class = "form-control input-sm", maxlength = 14 , @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.campo33B)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("codMonedamn", " Moneda Nacional ", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.codMonedamn, htmlAttributes: new { @class = "form-control input-sm", minlength = 3, maxlength = 3, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.codMonedamn)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("campo32B", " Monto Moneda Nacional (amountClp)", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.campo32B, htmlAttributes: new { @class = "form-control input-sm", maxlength = 14 , @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.campo32B)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-3 text-right">
+                                @Html.Label("executionTimehhmmss", " Execution Time hh:mm", new { @class = "control-label" })
+                            </div>
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(model => model.Mensaje.executionTimehhmmss, htmlAttributes: new { @class = "form-control input-sm", minlength = 5, maxlength = 5, @disabled = "disabled" })
+                                @Html.ValidationMessageFor(model => model.Mensaje.executionTimehhmmss)
+                            </div>
+                        </div>
+                    </fieldset>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="btn-group">
+                                    @if (Model.Mensaje.estado == "ERROR_VALIDACION" || Model.Mensaje.estado == "MT300_PREVIO")
+                                    {
+                                        <button type="submit" id="btnSubmit" class="btn btn-primary">Modificar y generar MT-300</button>
+                                    }
+                                    <a type="button" id="btnVolver" class="btn btn-default" href="@Url.Action("DetallePlanilla", "Home",new { id_archivo = Model.Mensaje.idArchivo })">Volver</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Model.Mensaje.mensajes != null)
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default" id="panelMensajes">
+                    <div id="HeadmensajesError" class="panel-heading">
+                        <h2 class="panel-title">Mensajes de error</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            @*@Html.TextBoxFor(model => model.Mensaje.mensajes, htmlAttributes: new { @class = "form-control input-sm", @readonly = "readonly" })*@
+
+                            @foreach (var item in Model.Mensaje.mensajes)
+                            {
+                                <div>@item</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+            @section scripts{
+                @Scripts.Render("~/bundles/MT300Planilla/Mensaje")
+                <script type="text/javascript">
+                    var urlBuscar = '@Url.Action("BuscarSwifts")';
+                    var urlVerMensaje = '@Url.Action("DetalleMensaje")'
+                    var modelCompleto = @Html.Raw(Json.Encode(Model));
+                </script>
+            }
+
+            @section css
+{
+                <style>
+                    .panel-heading .accordion-toggle:after {
+                        /* symbol for "opened" panels */
+                        font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+                        content: "\e113";
+                        float: right;
+                        color: grey;
+                    }
+
+                    .panel-heading .accordion-toggle.collapsed:after {
+                        /* symbol for "collapsed" panels */
+                        font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+                        content: "\e114";
+                        float: right;
+                        color: grey;
+                    }
+                </style>
+            }

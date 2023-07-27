@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aea6057e-22f4-4f01-aa01-5ff91ffccdbc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Source\xml_2015\WSDL Exportados\CS002031_AbonoCuentaCosmosCodFC_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS002031_AbonoCuentaCosmosCodFC.xsd" MetadataType="Schema" ID="b391ae64-9b28-4210-9046-6ff7bf64d0ae" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CS002031_AbonoCuentaCosmosCodFC.xsd" />
+    <MetadataFile FileName="CS002031_AbonoCuentaCosmosCodFC_1_2_3.xsd" MetadataType="Schema" ID="7ec897d3-d075-472e-ad62-8bc4b04a6b8e" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CS002031_AbonoCuentaCosmosCodFC_1_2_3.xsd" />
+    <MetadataFile FileName="AbonoCuentaCosmosCodFC.wsdl" MetadataType="Wsdl" ID="b5e1a376-4bbd-49b9-b134-0b2cf2b1c704" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CS002031_AbonoCuentaCosmosCodFC_1.wsdl" />
+    <MetadataFile FileName="CS002031_AbonoCuentaCosmosCodFC_1.xsd" MetadataType="Schema" ID="12f54824-b2b7-4513-bdb0-d716270fbbb6" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CS002031_AbonoCuentaCosmosCodFC_1.xsd" />
+    <MetadataFile FileName="CS002031_AbonoCuentaCosmosCodFC_1_2.xsd" MetadataType="Schema" ID="f67db35a-f0f2-41d5-9aa4-4ca1eb46c03c" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/CS002031_AbonoCuentaCosmosCodFC_1_2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

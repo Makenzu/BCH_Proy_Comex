@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/entities/contactabilidad/Direccion" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/entities/contactabilidad/Direccion" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="direccion">
+    <xsd:sequence>
+      <xsd:element name="rowIdDir" type="xsd:string" />
+      <xsd:element name="direccion" type="xsd:string" />
+      <xsd:element name="numero" type="xsd:string" />
+      <xsd:element name="departamento" type="xsd:string" />
+      <xsd:element name="region" type="xsd:string" />
+      <xsd:element name="ciudad" type="xsd:string" />
+      <xsd:element name="comuna" type="xsd:string" />
+      <xsd:element name="tipoDireccion" type="xsd:string" />
+      <xsd:element name="codigoPostal" type="xsd:string" />
+      <xsd:element name="tipoDespacho" type="xsd:string" />
+      <xsd:element name="fechaActualizacion" nillable="true" type="xsd:dateTime" />
+      <xsd:element name="verificadaPor" type="xsd:string" />
+      <xsd:element name="fechaVerificacion" nillable="true" type="xsd:dateTime" />
+      <xsd:element name="veriVisada" type="xsd:string" />
+      <xsd:element name="veriEmpExt" type="xsd:string" />
+      <xsd:element name="usoLegal" type="xsd:string" />
+      <xsd:element name="usoPostal" type="xsd:string" />
+      <xsd:element name="normalizada" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

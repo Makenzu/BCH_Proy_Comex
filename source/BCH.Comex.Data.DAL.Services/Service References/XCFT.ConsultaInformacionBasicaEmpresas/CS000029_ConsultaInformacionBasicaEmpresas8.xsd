@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:D4="http://osb.bancochile.cl/entities/contactabilidad/DatosEjecutivo" xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaInformacionBasicaEmpresas/OpConsultarInfoBasicaResponse" xmlns:D1="http://osb.bancochile.cl/entities/contactabilidad/Telefono" xmlns:D2="http://osb.bancochile.cl/entities/contactabilidad/Direccion" xmlns:D3="http://osb.bancochile.cl/entities/contactabilidad/Email" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaInformacionBasicaEmpresas/OpConsultarInfoBasicaResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FTelefono" namespace="http://osb.bancochile.cl/entities/contactabilidad/Telefono" />
+  <xsd:import schemaLocation="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDireccion" namespace="http://osb.bancochile.cl/entities/contactabilidad/Direccion" />
+  <xsd:import schemaLocation="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FEmail" namespace="http://osb.bancochile.cl/entities/contactabilidad/Email" />
+  <xsd:import schemaLocation="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDatosEjecutivo" namespace="http://osb.bancochile.cl/entities/contactabilidad/DatosEjecutivo" />
+  <xsd:complexType name="datosTelefono">
+    <xsd:sequence>
+      <xsd:element name="rowIdTelefono" type="xsd:string" />
+      <xsd:element name="fechaActualizacion" nillable="true" type="xsd:dateTime" />
+      <xsd:element name="telefono" type="D1:telefono" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayTelefonos">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="telefono" nillable="true" type="tns:datosTelefono" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayDirecciones">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="direcciones" nillable="true" type="D2:direccion" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayEjecutivos">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Ejecutivos" nillable="true" type="D4:DatosEjecutivo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosCorreo">
+    <xsd:sequence>
+      <xsd:element name="rowIdEmail" type="xsd:string" />
+      <xsd:element name="email" type="D3:correo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayCorreos">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="correo" nillable="true" type="tns:datosCorreo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosSalida">
+    <xsd:sequence>
+      <xsd:element name="flagEnviaCorreo" type="xsd:string" />
+      <xsd:element name="razonSocial" type="xsd:string" />
+      <xsd:element name="listaCorreos" type="tns:arrayCorreos" />
+      <xsd:element name="listaDirecciones" type="tns:arrayDirecciones" />
+      <xsd:element name="listaEjecutivos" type="tns:arrayEjecutivos" />
+      <xsd:element name="listaTelefonos" type="tns:arrayTelefonos" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

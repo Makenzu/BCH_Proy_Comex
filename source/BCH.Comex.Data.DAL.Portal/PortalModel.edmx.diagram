@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a39f1a3099645e79fde412789ccfac0" Name="Diagram1">
+        <EntityTypeShape EntityType="portalModel.Aplicacion" Width="1.5" PointX="3.125" PointY="0.875" />
+        <EntityTypeShape EntityType="portalModel.GrupoAplicacion" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="portalModel.FK_tbl_aplicacion_tbl_grupoaplicacion" />
+        <EntityTypeShape EntityType="portalModel.DatosUsuario" Width="1.5" PointX="1" PointY="3.375" />
+        <EntityTypeShape EntityType="portalModel.CodigosSucursal" Width="1.5" PointX="3.25" PointY="8.625" />
+        <AssociationConnector Association="portalModel.FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

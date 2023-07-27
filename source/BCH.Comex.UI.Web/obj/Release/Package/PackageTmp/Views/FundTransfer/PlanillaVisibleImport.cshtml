@@ -1,0 +1,345 @@
+﻿@using BCH.Comex.UI.Web.Models.FundTransfer
+@model PlanillaVisibleImportViewModel
+<style>
+    .modal-arbt {
+        width: 80vw; /* Aumentar el ancho del modal en un 80% en relación con la pantalla */
+        max-width: 100%;
+        margin: 1.75rem auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .table-arbt {
+        border-collapse: collapse; /* fusionar bordes de las celdas adyacentes */
+        width: 100%;
+        text-align: center; /* alinear el texto a la izquierda */
+        margin: 0 auto; /* centrar la tabla en su contenedor */
+    }
+
+    .td-arbt {
+        border: 1px solid #ddd; /* agregar borde de 1px sólido con color gris claro */
+        padding: 8px; /* agregar relleno de 8px en todas las celdas */
+        text-align: center; /* alinear el texto a la izquierda */
+        white-space: nowrap;
+    }
+
+    .th-arbt {
+        background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+        font-weight: bold; /* agregar negrita al texto de encabezado */
+        white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+        color: white;
+        font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+    }
+
+    .table-container {
+        width: 99%;
+        overflow-x: auto; /* agregar scroll horizontal */
+    }
+
+
+    .table-header {
+        background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+        font-weight: bold; /* agregar negrita al texto de encabezado */
+        white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+        color: white;
+        font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+        text-align: center; /* alinear el texto a la izquierda */
+    }
+</style>
+<div id="pvimp" class="container-fluid">
+    <h3 id="caption">Planillas Visibles de Importación sin Operación @ViewBag.Caption</h3>
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="row ">
+                <div class="col-xs-4">
+                    <label>Declaración Importación</label>
+                    <input type="text" id="Tx_NumDec" class="form-control input-sm" data-bind="value: Tx_NumDec" data-inputmask="'mask': '9{1,15}G[9|a]', 'greedy' : false , 'casing' : 'upper'" />
+
+                </div>
+                <div class="col-xs-4">
+                    <label>Fecha Dec.</label>
+                    <input type="text" id="Tx_FecDec" class="form-control input-sm" data-bind="value: Tx_FecDec" data-inputmask="'alias': 'date'" />
+                </div>
+                <div class="col-xs-4">
+                    <label>Cód. Forma de Pago</label>
+                    <input type="text" id="Tx_CodPag" tabindex="1" maxlength="2" class="form-control input-sm" data-bind="value: Tx_CodPag, valueUpdate:'afterkeydown'" data-inputmask="'mask': '9','repeat': 6, 'greedy' : false" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>Moneda</label>
+                    @Html.DropDownListFor(x => x.idCbMoneda, Model.Cb_Moneda, "--Seleccione--", new { @id = "idCbMoneda", @class = "form-control", @data_bind = "value: idCbMoneda", tabindex = "2" })
+                </div>
+                <div class="col-xs-4">
+                    <label>Cód. Moneda</label>
+                    <input type="text" id="Pn_CodMon" disabled="disabled" class="form-control input-sm" data-bind="value: Pn_CodMon" />
+                </div>
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="input-group text-right pull-left" style="margin-top: 26px">
+                                <button id="btn_OkDec" tabindex="3" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button id="btn_no1" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                            <div class="input-group text-right pull-left">
+                                <button id="btnClientes" class="btn btn-primary" style="margin-left: 30px;margin-top: 26px;" disabled="disabled">Clientes</button>
+                                <br />
+                                <button id="btn_chilefx" class="btn btn-info" style="width: 69.36px; margin-top: 5px; color: #fff">
+                                    <i class="glyphicon "></i>
+                                    ChileFx
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 ">
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Nro Presentación</label>
+                    <input type="text" id="Pn_NroPre" disabled="disabled" class="form-control input-sm" data-bind="value:  Pn_NroPre" data-inputmask="'mask': '9','repeat': 6, 'greedy' : false" />
+                </div>
+                <div class="col-xs-6">
+                    <label>Plaza Banco Central Chile</label>
+                    @Html.DropDownListFor(x => x.idCbPbc, Model.Cb_Pbc, "--Seleccione--", new { @id = "idCbPbc", @disabled = "disabled", @class = "form-control input-sm", @data_bind = "value: idCbPbc" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Importador</label>
+                    <input type="text" id="Pn_Import" disabled="disabled" class="form-control input-sm" data-bind="value:  Pn_Import" />
+                </div>
+                <div class="col-xs-6">
+                    <label>Rut</label>
+                    <input type="text" id="Pn_RutImp" disabled="disabled" class="form-control input-sm" data-bind="value: Pn_RutImp" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="Ch_Transf" tabindex="4" name="Ch_Transf" data-bind="checked: Ch_Transf, click: Ch_Transf_Click" />&nbsp;Transferencia
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Pais de Pago</label>
+                    @Html.DropDownListFor(x => x.idCbPPago, Model.Cb_PPago, "--Seleccione--", new { @id = "idCbPPago", @class = "form-control input-sm", @disabled = "disabled", @data_bind = "value: idCbPPago", tabindex = "5" })
+
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBoxFor(x => x.Ch_PlanRee, new { @id = "Ch_PlanRee", @disabled = "disabled", @data_bind = "checked: Ch_PlanRee, click: Ch_PlanRee_Click" }) Antecedentes Planilla Reemplazada
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>N° Presentación</label>
+                            <input type="text" disabled="disabled" id="Tx_NroPre" maxlength="6" class="form-control input-sm" data-bind="value: Tx_NroPre" data-inputmask="'mask': '9','repeat': 6, 'greedy' : false" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Fecha</label>
+                            <input type="text" id="Tx_FecRee" disabled="disabled" class="form-control input-sm" data-bind="value: Tx_FecRee" data-inputmask="'alias': 'date'" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Observaciones</label>
+                            @Html.TextAreaFor(x => x.Tx_Observ, new { @class = "form-control input-sm", disabled = "disabled", @data_bind = "value: Tx_Observ", maxlength = "255" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div class="input-group text-right" style="margin-top: 26px">
+                                <button id="btn_OkFinal" tabindex="8" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button id="btn_NoFinal" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xs-10">
+                            <label class="mono">Nº Planilla              Monto</label>   @*<label style="margin-left: 10em;">Monto</label>*@
+                            @Html.ListBoxFor(x => x.selectedLtFinal, Model.Lt_Final, new { @class = "form-control lbox mono input-sm", @data_bind = "options: Lt_Final, optionsText: 'Text', optionsValue: 'Value', value: indexFinal" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 text-right" style="margin-top: 25px;">
+                            <button id="btnAceptar" tabindex="9" class="btn btn-primary" data-bind="enable:Bot_Acepta" disabled="disabled">Aceptar</button>
+                            <button id="btnCancelar" class="btn btn-default">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div>
+                <label>Valor FOB</label>
+                <input type="text" id="Tx_MtoFob" tabindex="6" maxlength="13" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Tx_MtoFob, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Flete</label>
+                <input type="text" id="Tx_MtoFle" maxlength="13" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Tx_MtoFle, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Seguro</label>
+                <input type="text" id="Tx_MtoSeg" maxlength="13" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Tx_MtoSeg, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Valor Cif</label>
+                <input type="text" id="Pn_ValCif" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Pn_ValCif, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Valor Total</label>
+                <input type="text" id="Pn_MtoTot" disabled="disabled" class="form-control monto input-sm" data-bind="textInput:  Pn_MtoTot, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Valor Cif en US$</label>
+                <input type="text" id="Pn_CifDol" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Pn_CifDol, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Valor Total en US$</label>
+                <input type="text" id="Pn_TotDol" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Pn_TotDol, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Tipo cambio US$</label>
+                <input type="text" id="Tx_TipCam" tabindex="7" maxlength="7" disabled="disabled" class="form-control monto input-sm" data-bind="textInput: Tx_TipCam, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+                <label>Tipo cambio Eq. US$</label>
+                <input type="text" id="Pn_TCDol" disabled="disabled" class="form-control monto input-sm" data-bind="value: Pn_TCDol" />
+            </div>
+            <div>
+                <label>Paridad a US$</label>
+                <input type="text" id="Tx_Paridad" class="form-control monto input-sm" data-bind="textInput: Tx_Paridad, enable: Tx_Paridad_Enabled, valueUpdate:'afterkeydown'" />
+            </div>
+        </div>
+    </div>
+
+    <div id="Fr_Acuerdos" data-bind="visible:false">
+        <input type="text" id="Tx_CantAc" class="form-control input-sm" data-bind="visible:false, textInput: Tx_CantAc, valueUpdate:'afterkeydown'" />
+        <input type="text" id="Tx_NumAc1" class="form-control input-sm" data-bind="visible:false, textInput: Tx_NumAc1, valueUpdate:'afterkeydown'" />
+        <input type="text" id="Tx_NumAc2" class="form-control input-sm" data-bind="visible:false, textInput: Tx_NumAc2, valueUpdate:'afterkeydown'" />
+    </div>
+    <div id="Fr_ConvCre" data-bind="visible:false">
+        <input type="text" id="Tx_FecDeb" class="form-control input-sm" data-bind="visible:false, textInput: Tx_FecDeb, valueUpdate:'afterkeydown'" />
+        <input type="text" id="Tx_DocChi" class="form-control input-sm" data-bind="visible:false, textInput: Tx_DocChi, valueUpdate:'afterkeydown'" />
+        <input type="text" id="Tx_DocExt" class="form-control input-sm" data-bind="visible:false, textInput: Tx_DocExt, valueUpdate:'afterkeydown'" />
+    </div>
+    <div id="Fr_Cpagos" data-bind="visible:false">
+        <input type="text" id="Tx_NCpago" class="form-control input-sm" data-bind="visible:false, textInput: Tx_NCpago, valueUpdate:'afterkeydown'" />
+        <input type="text" id="Tx_NCuota" class="form-control input-sm" data-bind="visible:false, textInput: Tx_NCuota, valueUpdate:'afterkeydown'" />
+    </div>
+    <div id="Fr_Checkboxes">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="Ch_Endoso" data-bind="visible:false, value: Ch_Endoso, valueUpdate:'afterkeydown'" />
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="Ch_ClauRo" data-bind="visible:false, value: Ch_ClauRo, valueUpdate:'afterkeydown'" />
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="Ch_ZonFra" data-bind="visible:false, value: Ch_ZonFra, valueUpdate:'afterkeydown'" />
+            </label>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="ConsultaDealsDisponible">
+    <div class="modal-dialog modal-arbt">
+        <div class="modal-content">
+            <div class="modal-header table-header">
+                <h5 class="modal-title">
+                    Deals Cliente y valor tipo cambio pizarra
+                </h5>
+            </div>
+            <div class="modal-body table-container ">
+                <table class="table-arbt">
+                    <thead>
+                        <tr class="tg-th">
+                            <th class="w65 td-arbt th-arbt">Selección</th>
+                            <th class="w61 td-arbt th-arbt">Tipo</th>
+                            <th class="w71 td-arbt th-arbt">ID<br />ChileFX</th>
+                            <th class="w60 td-arbt th-arbt">Tipo de<br /> cambio</th>
+                            <th class="w55 td-arbt th-arbt" hidden>Pais</th>
+                            <th class="w55 td-arbt th-arbt" hidden>Moneda</th>
+                            <th class="w56 td-arbt th-arbt">Moneda<br />Compra</th>
+                            <th class="w56 td-arbt th-arbt">Moneda<br />Venta</th>
+                            <th class="w55 td-arbt th-arbt" hidden>PPM1</th>
+                            <th class="w55 td-arbt th-arbt" hidden>PPM2</th>
+                            <th class="w92 td-arbt th-arbt">Monto original</th>
+                            <th class="w94 td-arbt th-arbt">Saldo</th>
+                            <th class="w104 td-arbt th-arbt">Saldo en $</th>
+                            <th class="w81 td-arbt th-arbt">Fecha deal</th>
+                            <th class="w81 td-arbt th-arbt">Fecha valuta</th>
+                            <th class="w71 td-arbt th-arbt">Origen</th>
+                            <th class="w60 td-arbt th-arbt" hidden>Tipo</th>
+                            <th class="w80 td-arbt th-arbt" hidden>CEC</th>
+                            <th class="w136 td-arbt th-arbt">Num SCE Transitoria</th>
+                            <th class="w136 td-arbt th-arbt">Num SCE Contingente</th>
+                            <th class="w89 td-arbt th-arbt">Código comercio</th>
+                            <th class="w102 td-arbt th-arbt" hidden>Descripción Operación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb_CDD">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" role="dialog" id="msg_us" style="top: 25%;">
+    <div class="modal-dialog" style="text-align:center; width:450px;">
+        <div class="modal-content">
+            <div class="modal-title" style="background-color:red; color:white; margin-top:-8px;">
+                &nbsp;
+            </div>
+            <div class="modal-body">
+                <br /><br /><br />
+                <h2 class="modal-title">Monto ingresado no valido.</h2>
+                <h4>Supera la tolerancia de hasta +5% ó +100 USD.</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" tabindex="101" id="btn_Close_Adv" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @*<script type="text/javascript" src="~/Scripts/knockout-3.3.0.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/knockout.mapping-latest.js"></script>*@
+    @Scripts.Render("~/bundles/FundTransfer/PlanillaVisibleImport")
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/FundTransfer.css" />
+}

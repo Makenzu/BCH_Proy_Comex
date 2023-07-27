@@ -1,0 +1,39 @@
+﻿
+<html>
+<head>
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="../Content/css/Site.css" rel="stylesheet" />
+    <link href="../Content/css/bch-icons.css" rel="stylesheet" />
+    <title>Sesión expirada</title>
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+</head>
+<body>
+    <div class="header" id="divHeader">
+        <a href="../">
+            <div class="tit" style='background-image: url("../Content/images/logo-banco-chile.png");'></div>
+        </a>
+        <!--<div class="user-box hidden-xs">
+            <div class="user-image">
+                <img src="/Content/images/ic-perfil.png">
+            </div>
+            <div class="user-name">ESTANISARKANO\Arkano</div>
+        </div>-->
+    </div>
+    <div class="container-fluid" id="body_content">
+        <div class="container">
+            <h1 class="text-danger">Alerta</h1>
+            <h2 class="text-danger">Su sesión ha expirado</h2>
+            <a class="btn btn-default" href="../" id="Volver">
+                Volver al portal
+            </a>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById("Volver");
+        if (btn != null)
+            btn.focus();
+    </script>
+</body>
+</html>

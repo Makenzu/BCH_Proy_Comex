@@ -1,0 +1,217 @@
+﻿@{
+    ViewBag.Title = "Direccion";
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+@{ Html.RenderPartial("_MenuMain"); }
+
+
+<div class="col-md-8 col-md-offset-2">
+    <div class="efx-box">
+        <h3><strong>Direcciones de Participantes</strong></h3>
+        <hr />
+        <div class="form-body">
+            <div class="row">
+                <input type="hidden" id="oldDireccion" />
+                <div class="col-md-9">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="direccion">Dirección</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="direccion" maxlength="60" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="comuna">Comuna o Localidad</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="comuna"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="ciudad">Ciudad</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="ciudad" maxlength="30" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="region">Región o Estado</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="region">
+                                    <option value="OTRA REGION">OTRA REGION</option>
+                                    <option value="PRIMERA">PRIMERA</option>
+                                    <option value="SEGUNDA">SEGUNDA</option>
+                                    <option value="TERCERA">TERCERA</option>
+                                    <option value="CUARTA">CUARTA</option>
+                                    <option value="QUINTA">QUINTA</option>
+                                    <option value="SEXTA">SEXTA</option>
+                                    <option value="SEPTIMA">SEPTIMA</option>
+                                    <option value="OCTAVA">OCTAVA</option>
+                                    <option value="NOVENA">NOVENA</option>
+                                    <option value="DECIMA">DECIMA</option>
+                                    <option value="UNDECIMA">UNDECIMA</option>
+                                    <option value="DUODECIMA">DUODECIMA</option>
+                                    <option value="METROPOLITANA">METROPOLITANA</option>
+                                    <option value="EXTRANJERA">EXTRANJERA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="pais">País</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="pais"></select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <button class="btn btn-primary btn-block" id="btnDirAceptar" style="width:100px">Aceptar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block" id="btnDirNuevoNPrty" style="width:100px">Agregar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-danger btn-block" id="btnDirEliminarNPrty" style="width:100px">Eliminar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-default btn-block" id="btnDirCancelar" style="width:100px">Cancelar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block" id="btnDirGuardar" style="width:100px"><i class="fa fa-floppy-o"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <label class="control-label col-md-5" for="casillaBancoChile">Casilla Banco Chile</label>
+                        <label class="control-label col-md-3" for="telefono">Teléfono</label>
+                        <label class="control-label col-md-3" for="fax">Fax</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="casillaBancoChile" maxlength="20" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="tel" class="form-control" id="telefono" maxlength="10" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="tel" class="form-control" id="fax" maxlength="10" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <label class="control-label col-md-5" for="casillaPostal">Casilla Postal</label>
+                        <label class="control-label col-md-3" for="telex">Télex</label>
+                        <label class="control-label col-md-3" for="codPostal">Cód. Postal</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="casillaPostal" maxlength="20" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="telex" maxlength="15" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="codPostal" maxlength="20" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <label class="control-label col-md-5" for="correoElectronico">Correo Electrónico</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="correoElectronico" maxlength="500" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Enviar correspondencia a
+                                </div>
+                                <div class="panel-body">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionCorrespondencia" id="optionDireccion" value="optionDireccion" checked>
+                                            Dirección
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionCorrespondencia" id="optionFax" value="optionFax">
+                                            Fax
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionCorrespondencia" id="optionCasillaBancoChile" value="optionCasillaBancoChile">
+                                            Casilla Banco Chile
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionCorrespondencia" id="optionCasillaPostal" value="optionCasillaPostal">
+                                            Casilla Postal
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionCorrespondencia" id="optionEmail" value="optionEmail">
+                                            Correo Electrónico
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default" id="grillaDireccN">
+                <div class="panel-heading">
+                    <strong>Direcciones</strong>
+                </div>
+                <table id="tableDireccionNuePrty"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/new/dir")
+    <script>
+    
+        if (referrerPathname() === '/AdminParticipantes/RazonSocial') {
+            sessionStorage.setItem('modificando', true)
+        } else {
+            sessionStorage.setItem('modificando', false)
+        }
+
+        CustomSave = function () {
+            $('#btnDirAceptar').trigger('click');
+        }
+
+        $(function () {
+            $('.form-body').change(function () {
+                sessionStorage.setItem('modificando', true);
+            });
+        });
+    </script>
+
+}

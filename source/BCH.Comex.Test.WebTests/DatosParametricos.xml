@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parametros>
+  <fechaPagoSwift>
+    <fecha>24/02/2017</fecha>
+  </fechaPagoSwift>
+  <urls>
+    <urlLocal>http://localhost/Sprint26/FundTransfer</urlLocal>
+    <urlgl>http://localhost/Sprint26/ContabilidadGenerica</urlgl>
+  </urls>
+</parametros>

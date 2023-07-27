@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRs/mpi" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRs/mpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>
+        Estructura de salida de la consulta del cliente ficha full.
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="consultarFichaClienteFullRs" type="tns:consultarFichaClienteFullRsType" />
+  <xsd:complexType name="consultarFichaClienteFullRsType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="codigoRespuesta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="glosaRespuesta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="respuesta" type="tns:respuestaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="respuestaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombre" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="oficinaEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaternoEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaternoEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="telefono" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="segmento" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="marca" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="banca" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="clasificacionRiesgo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="actividadEconomica" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="categoria" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoSegmento" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoMarca" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoBanca" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoActividadEconomica" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreOficina" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="sexo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="direccion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="numeroDireccion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="complementoDireccion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="comuna" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ciudad" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="region" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pais" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoDespacho" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="cui" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCategoria" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="rowIdDireccion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisFonoPartCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadPartCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fonoParticularCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisCelularCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadCelularCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="celularParticularCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailParticularCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisFonoComCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadFonoComCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fonoComercialCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailComercialCliente" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailAlternativoEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutEjecutivo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="inhabilidad" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nacionalidad" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="paisOrigen" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="estadoCivil" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="regimenMatrimonial" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoFATCA" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tinNumSeguroSocial" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutContacto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreContacto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaternoContacto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaternoContacto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoRelacionContacto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutConyuge" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoVivienda" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nroDependencia" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="anoResidencia" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="marcaFuncionario" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nivelEstudios" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="profesion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutEmpleador" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreEmpleador" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="cargo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoContrato" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaContrato" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoRenta" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoPagoPension" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fondoPension" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="usoBancoMonto" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoIngrLiquido" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="montoIngreso" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaActualizacionIngreso" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="marcaComparteBcaPrivada" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="idioma" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="flagEnviaCorreo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="desSexo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="desCui" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="comportamiento" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaDefuncion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="composicionInstitucional" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="evaluacionRiesgo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoClienteNormativo" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

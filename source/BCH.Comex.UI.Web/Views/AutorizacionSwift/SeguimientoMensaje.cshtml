@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Seguimiento de mensaje";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/autorizacion-swift-inv.png");
+}
+
+@section css{
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+
+        .clickable .glyphicon {
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+        a.clickable:hover {
+            text-decoration: none;
+        }
+    </style>
+}
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Mensajes</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Revisar Mensaje</a></li>
+                <li><a href="@Url.Action("ConsultaMensaje")">Consultar Mensajes</a></li>
+                <li><a href="@Url.Action("SeguimientoMensaje")">Log Mensaje</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<h2>Seguimiento de Mensaje</h2>
+<div class="panel panel-default">
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title" id="titleFiltro">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="container">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    @Html.Label("Seguimiento del mensaje Nº", "Seguimiento del mensaje Nº", new { @class = "control-label col-xs-4" })
+                                    <div class="col-xs-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="txtNroMensaje" data-inputmask="'mask': '9','repeat': 20, 'greedy' : false" />
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorCasilla">La casilla es requerida</label>
+                                </div>
+                                <div class="form-group">
+                                    <button class="col-xs-offset-3 btn btn-primary" id="btnBuscar">Buscar datos</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" id="pnlResultados">
+    <div class="panel-heading">
+        <h2 class="panel-title">Resultados.</h2>
+    </div>
+    <div class="panel-body">
+        <div id="resultado"></div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).ready(function () {
+            $('#btnBuscar').click(function (e) {
+                e.preventDefault();
+                var idMensaje = $('#txtNroMensaje').val();
+                $.get('@Url.Action("LogSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+                    $('#resultado').html(data);
+                    $('span[aria-hidden=true]').hide()
+                });
+            });
+        });
+
+        $(":input").inputmask();
+    </script>
+}

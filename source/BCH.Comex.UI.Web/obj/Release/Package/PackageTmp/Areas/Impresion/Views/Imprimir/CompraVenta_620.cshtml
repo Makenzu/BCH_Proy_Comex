@@ -1,0 +1,533 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+@using BCH.Comex.Core.Entities.Portal
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Compra Venta</title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0px 172px 76px;
+            padding: 0px;
+            border: none;
+            width: 750px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 750px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_1 #id_1_1 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 300px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_2 {
+                    border: none;
+                    margin: 0px 0px 0px 330px;
+                    padding: 0px;
+                    border: none;
+                    width: 750px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_3 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 590px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 13px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 750px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_3 {
+                border: none;
+                margin: 50px 0px 0px 500px;
+                padding: 0px;
+                border: none;
+                width: 750px;
+                overflow: hidden;
+            }
+
+        
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 34px;
+            margin-bottom: 0px;
+        }
+
+        .p2 {
+            text-align: justify;
+            padding-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p3 {
+            text-align: left;
+            padding-left: 2px;
+            padding-right: 71px;
+            margin-top: 3px;
+            margin-bottom: 0px;
+        }
+
+        .p4 {
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p5 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p6 {
+            text-align: right;
+            padding-right: 64px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p-beneficiario {
+            text-align: left;
+            padding-left: 3px;
+            margin-top: 0px;
+            margin-bottom: 0px;            
+        }
+
+        .p8 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p9 {
+            text-align: center;
+            padding-left: 0px;
+            margin-top: 25px;
+            margin-bottom: 0px;
+        }
+
+        .p10 {
+            text-align: left;
+            margin-top: 12px;
+            margin-bottom: 0px;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-right: 0px;
+            margin-top: 59px;
+            margin-bottom: 0px;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-right: 224px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p13 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .p14 {
+            text-align: right;
+            padding-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 50px;
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 125px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 70px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 115px;
+            vertical-align: bottom;
+        }
+
+        .td4 {
+            padding: 0px;
+            margin: 0px;
+            width: 122px;
+            vertical-align: bottom;
+        }
+
+        .td5 {
+            padding: 0px;
+            margin: 0px;
+            width: 290px;
+            vertical-align: bottom;
+        }
+
+        .td {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: bottom;
+        }
+        .tr0 {
+            height: 15px;
+        }
+
+        .tr1 {
+            height: 30px;
+        }
+
+        .tr2 {
+            height: 16px;
+        }
+
+        .tr3 {
+            height: 10px;
+        }
+        
+    </style>
+
+    <style>
+        @{
+            var printFormat = ViewData[BCH.Comex.UI.Web.Helpers.Extensions.ControllerExtensions.PrintFormatViewDataKey] as PrintFormat? ?? PrintFormat.HTML;
+            if (printFormat == PrintFormat.TIFF)
+            {
+
+                @:.ft0 {
+                @:    font: bold 16px 'Times New Roman';
+                @:    line - height: 19px;
+                @:}
+
+                @:.ft1 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft2 {
+                @:    font: 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft3 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft4 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft5 {
+                @:    font: 1px 'Times New Roman';
+                @:    line - height: 1px;
+                @:}
+
+                @:.ft6 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft7 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    line - height: 16px;
+                @:}
+
+                @:.ft8 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.t0 {
+                @:    width: 100%;
+                @:    margin - top: 14px;
+                @:    font: 13px 'Times New Roman';
+                @:}
+
+                @:.t1 {
+                @:    width: 100%;
+                @:    margin - top: 15px;
+                @:    font: 13px 'Times New Roman';
+                @:}
+            }
+            else
+            {
+                @:.ft0 {
+                @:    font: bold 23px 'Times New Roman';
+                @:    line - height: 19px;
+                @:}
+
+                @:.ft1 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft2 {
+                @:    font: 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft3 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft4 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft5 {
+                @:    font: 7px 'Times New Roman';
+                @:    line - height: 1px;
+                @:}
+
+                @:.ft6 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft7 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    line - height: 16px;
+                @:}
+
+                @:.ft8 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.t0 {
+                @:    width: 100%;
+                @:    margin - top: 14px;
+                @:    font: 20px 'Times New Roman';
+                @:}
+
+                @:.t1 {
+                @:    width: 100%;
+                @:    margin - top: 15px;
+                @:    font: 20px 'Times New Roman';
+                @:}
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="page_1">
+        <div id="id_1">
+            <div id="id_1_1">
+                <p class="p0 ft0">@Model.TituloCabezal.ToUpper()</p>
+            </div>
+            <div id="id_1_2">
+                <p class="p0 ft2">@Model.Ciudad</p>
+                <p class="p3 ft3"> @Model.NuestraReferencia <nobr>@Model.NuestraReferenciaValue</nobr></p>
+                @if (Model.SuReferenciaValue != null)
+                {
+                    <p class="p3 ft3"> @Model.SuReferencia <nobr>@Model.SuReferenciaValue</nobr></p>
+                }
+                
+            </div>
+        </div>
+
+        <div id="id_1">
+            <div id="id_1_3">
+                <p class="p1 ft1">Señores</p>
+                <p class="p0 ft1">@Model.NombreCliente</p>
+                <p class="p2 ft1">@Model.DireccionCliente</p>
+                <p class="p2 ft1">@Model.CiudadCliente</p>
+            </div>
+        </div>
+
+        <div id="id_2" style="width: 100%;">
+            <p class="p0 ft2">@Model.Parrafo1</p>
+            
+            @if (Model.LineasCompra.Count > 0)
+            {
+                <p class="p9 ft6">Compra de Divisas:</p>
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    @foreach (var item in Model.LineasCompra)
+                    {
+                        <tr>
+                            <td class="tr1" style="width: 50px;"><p class="p7 ft2">@item.MonedaOrigen</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p5 ft2">@item.Monto</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p7 ft2">Tipo de Cambio $</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p5 ft2">@item.TipoCambio</p></td>
+                            <td class="tr1" style="width: 50px;"><p class="p8 ft2">Total $</p></td>
+                            <td class="tr1" style="width: 100px;"><p class="p8 ft2">@item.MontoTotal</p></td>
+                        </tr>
+                    }
+
+                </table>
+            }
+            @if (Model.LineasVenta.Count > 0)
+            {
+                <p class="p9 ft6">Ventas de Divisas:</p>
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    @foreach (var item in Model.LineasVenta)
+                    {
+                        <tr>
+                            <td class="tr1" style="width: 50px;"><p class="p7 ft2">@item.MonedaOrigen</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p5 ft2">@item.Monto</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p7 ft2">Tipo de Cambio $</p></td>
+                            <td class="tr1" style="width: 150px;"><p class="p5 ft2">@item.TipoCambio</p></td>
+                            <td class="tr1" style="width: 50px;"><p class="p8 ft2" style="text-align: left;">Total $</p></td>
+                            <td class="tr1" style="width: 100px;"><p class="p8 ft2">@item.MontoTotal</p></td>
+                        </tr>
+                    }
+
+                </table>
+            }
+            @if (Model.LineasRemesa.Count > 0)
+            {
+                <p class="p4 ft2">La moneda extranjera vendida fue distribuida de la siguiente forma :</p>
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    <tr>
+                        <td class="tr0 td0" style="width: 250px; vertical-align: bottom;"><p class="p-beneficiario ft4">Beneficiario</p></td>
+                        <td class="tr0 td1" style="width: 250px; vertical-align: bottom;"><p class="p7 ft4">Vía de la Remesa</p></td>
+                        <td class="tr0 td2" style="width: 50px; vertical-align: bottom;"><p class="p5 ft5">&nbsp;</p></td>
+                        <td class="tr0 td3" style="width: 100px; vertical-align: bottom;"><p class="p8 ft4">Monto</p></td>
+                    </tr>
+                    @foreach (var item in Model.LineasRemesa)
+                    {
+                        <tr>
+                            <td class="tr1 td0" style="width: 250px; vertical-align: bottom;"><p class="p-beneficiario ft2">@item.Beneficiario</p></td>
+                            <td class="tr1 td1" style="width: 250px; vertical-align: bottom;"><p class="p7 ft2">@item.ViaRemesa</p></td>
+                            <td class="tr1 td2" style="width: 50px; vertical-align: bottom;"><p class="p5 ft2">@item.Moneda</p></td>
+                            <td class="tr1 td3" style="width: 100px; vertical-align: bottom;"><p class="p8 ft2">@item.Monto</p></td>
+                        </tr>
+                    }
+                </table>
+            }
+            <p class="p9 ft6">Cargos y/o Abonos</p>
+            <p class="p10 ft2">En consecuencia efectuamos los débitos y/o abonos que se detallan:</p>
+            <table cellpadding=0 cellspacing=0 class="t1">
+                @foreach (var item in Model.LineasCargoAbono)
+                {
+                    <tr>
+                        <td class="tr2 td4" style="width: 200px; vertical-align: bottom;"><p class="p5 ft2">@item.DescripcionVia</p></td>
+                        <td class="tr2 td5" style="width: 300px; vertical-align: bottom;"><p class="p5 ft2">@item.NombreVia</p></td>
+                        <td class="tr2 td2" style="width: 50px; vertical-align: bottom;"><p class="p5 ft2">@item.Moneda</p></td>
+                        <td class="tr2 td3" style="width: 100px; vertical-align: bottom;"><p class="p8 ft2">@item.Monto</p></td>
+                    </tr>
+                }
+            </table>
+            @if (Model.LineasComisionGasto.Count > 0)
+            {
+                <p class="p10 ft8">Detalle comisiones y gastos cobrados:</p>
+                <table cellpadding=0 cellspacing=0 class="t1">
+                    <tr style="height:0px;"> 
+                        <td class="tr2 td4" style="width: 300px;"></td>
+                        <td class="tr2 td5" style="width: 200px;"></td>
+                        <td class="tr2 td2" style="width: 50px;"></td>
+                        <td class="tr2 td3" style="width: 100px;"></td>
+                    </tr>
+                    @foreach (var item in Model.LineasComisionGasto)
+                    {
+                        <tr>
+                            <td colspan=2 class="tr2 td"><p class="p2 ft2">@item.TipoOperacion</p></td>
+                            <td class="tr2 td"><p class="p5 ft2">@item.Moneda</p></td>
+                            <td class="tr2 td"><p class="p8 ft2">@item.Monto</p></td>
+                        </tr>
+                    }
+
+                    <tr>
+                        <td colspan="2" class="tr2 td"><p class="p14 ft2">&nbsp;</p></td>
+                        <td colspan="2" class="tr2 td"><p class="p14 ft2">_____________</p></td> @*tr0 td - p14 ft2*@
+                    </tr>
+
+                    <tr>
+                        <td colspan=2 class="tr2 td"><p class="p14 ft2">Total</p></td>
+                        <td class="tr2 td"><p class="p5 ft2">$</p></td>
+                        <td class="tr2 td"><p class="p8 ft2">@Model.TotalComisionGasto</p></td>
+                    </tr>
+                </table>
+            }
+            <p class="p11 ft1" style="white-space: pre-wrap;word-wrap: break-word;">@Model.PiePagina</p>
+        </div>
+        <div id="id_3">
+            <p class="p0 ft1">_______________________</p>
+            <p class="p13 ft7">Banco de Chile</p>
+        </div>
+    </div>
+</body>
+</html>

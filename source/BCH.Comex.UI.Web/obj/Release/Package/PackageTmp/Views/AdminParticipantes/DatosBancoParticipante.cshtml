@@ -1,0 +1,261 @@
+﻿@model BCH.Comex.UI.Web.Models.AdminParticipantes.DatosBancoParticipanteViewModel
+@{
+    ViewBag.Title = "Datos Banco";
+}
+@{ Html.RenderPartial("_MenuMain"); }
+
+        <div class="container">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmDatosBanco", name = "frmDatosBanco", @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()            
+                    <h4 class="margin-bottom-double">Datos Banco</h4>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="container-fluid recuadro">
+                                <div class="form-group">
+                                    <div class="col-xs-4">
+                                        @Html.LabelFor(model => model.Tx_Codigo, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Codigo, new { htmlAttributes = new { @class = "form-control", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                    </div>
+                                    <div class="col-xs-8">
+                                        @Html.LabelFor(model => model.Tx_DireccionSwiff, htmlAttributes: new { @class = "control-label" })
+
+                                        @Html.EditorFor(model => model.Tx_DireccionSwiff, new { htmlAttributes = new { @class = "form-control", maxlength = "10" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(model => model.Tx_Rut, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_Rut, new { htmlAttributes = new { @class = "form-control", maxlength = "13" } })
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                @Html.EditorFor(model => model.ch_Aladi)
+                                                Aladi
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        @Html.LabelFor(model => model.Tx_PlazaAladi, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Tx_PlazaAladi, new { htmlAttributes = new { @class = "form-control", maxlength = "9" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="container-fluid recuadro">
+                                <h4>Tipo Banco</h4>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-xs-12" id="TipoContainer">
+                                            <div class="checkbox">
+                                                <label>
+                                                    @Html.EditorFor(model => model.ch_Acreedor)
+                                                    Acreedor
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="control-label">
+                                                    @Html.EditorFor(model => model.ch_Corresponsal)
+                                                    Corresponsal
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="control-label">
+                                                    @Html.EditorFor(model => model.ch_Avisador)
+                                                    Avisador
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Tasa de Refinanciamiento</h4>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <div class="col-xs-7" id="TasaContainer">
+                                            @foreach (var item in Model.prtTasaRefinanciamiento)
+                                            {
+                                                <div class="radio">
+                                                    <label class="control-label">
+                                                        @Html.RadioButtonFor(model => model.SelectedTasaRefinanciamiento, item.ID)
+                                                        @item.Value
+                                                    </label>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="col-xs-5">
+                                            @Html.LabelFor(model => model.Tx_SpreadTasaRefinanciamiento, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Tx_SpreadTasaRefinanciamiento, new { htmlAttributes = new { @class = "form-control", maxlength = "9" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            @*<div class="btn-group">*@                               
+                            <input type="submit" id="BotonAceptar" tabindex="3" name="Command" value="Aceptar" class="btn btn-primary  btn-block" @(Model.BotonAceptar.Enabled ? "" : "disabled = 'disabled'") />                               
+                            <input type="submit" id="BotonCancelar" tabindex="5" name="Command" value="Cancelar" class="btn btn-default  btn-block" />                              
+                            @*</div>*@
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.Tx_EjecutivoCorresponsal, htmlAttributes: new { @class = "control-label" })
+
+                                    @Html.EditorFor(model => model.Tx_EjecutivoCorresponsal, new { htmlAttributes = new { @class = "form-control", maxlength = "50", autocomplete = "off" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.cb_Clasificacion, htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.cb_Clasificacion, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>             
+            }
+        </div>
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section css{
+    <style type="text/css">
+        .control-label .required {
+            color: #e02222;
+            font-size: 12px;
+            padding-left: 2px;
+        }
+
+        /*.nav > li > a {
+            position: relative;
+            display: block;
+            padding: 6px 8px;
+        }*/
+
+        .form-group {
+            margin-bottom: 2px;
+            line-height: 24px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 24px;
+            padding: 6px 12px;
+            font-size: 12px;
+            line-height: 1.4285;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+            line-height: 21px;
+            height: 21px;
+        }
+
+
+        .panel-heading {
+            padding: 0px 13px;
+        }
+
+        .form-horizontal .control-label {
+            padding-top: 1px;
+            margin-bottom: 0px;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        .panel-body {
+            padding: 5px 3px;
+        }
+  
+       .btn {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 0px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1.3285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] {
+            position: absolute;
+            margin-top: 1px; /*4px \9;*/
+            margin-left: -20px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 15px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+            padding-top: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 17px; /*4px \9;*/
+        }
+
+
+        select.input-sm {
+            height: 21px;
+            line-height: 21px;
+        }  
+
+        /*body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.2285;
+            color: #333;
+            background-color: #fff;
+        }*/
+    </style>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/DatosBancoParticipante")
+    <script>
+        CustomSave = function () {
+            $('#BotonAceptar').trigger('click');
+        }
+        $(function () {
+            $('form').change(function () {
+                sessionStorage.setItem('modificando', true);                
+            });
+        });
+    </script>
+}

@@ -1,0 +1,95 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.EstadisticasMensajesEnviadosSwiftViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes @Model.Verbo por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Mensajes Enviados Por Sistema</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("Mensajes {0} {1} {2} {3}",
+            Model.Verbo,
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Casilla: </strong></div>
+            <div class="col-xs-3">@Model.Casilla @Model.NombreCasilla</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Banco Receptor: </strong></div>
+            <div class="col-xs-3">@Model.Cod_Banco_Rec XXX-@Model.Nombre_Banco</div>
+        </div>
+
+        @*@if (!Model.Enviados)
+            {
+                <div class="row">
+                    <div class="col-xs-3"><strong>Estado: </strong></div>
+                    <div class="col-xs-3">@Model.Filtro</div>
+                </div>
+            }*@
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table cellpadding=0 cellspacing=0 class="t1" style="width:20%" align="center">
+            <tbody>
+                @foreach (var bigRow in Model.RegistrosRecibidos)
+                {
+                    <tr>
+                        <td style="background: #F6EBB1;height:1%"><h5 style="font-family:'Times New Roman'"><b>@("Casilla: " + @bigRow.ElementAt(0).nombre_casilla + "[" + @bigRow.Key + "]")</b></h5></td>
+                        <td align="center" style="background: #F6EBB1;height:1%"><h5 style="text-align:center">@("")</h5></td>
+                        <td style="background: #F6EBB1;height:1%"><h5 style="text-align:left"><strong>@("")</strong></h5></td>
+                    </tr>
+
+                    foreach (var row in bigRow)
+                    {
+                        <tr style="width:1%">
+                            <td><h6 style="text-align:left; font-family:'Arial Rounded MT'"><strong>@(@row.tipo_msg + "- " + @row.nombre_tipo)</strong></h6></td>
+                            <td align="center"><h5 style="text-align:center">@(":")</h5></td>
+                            <td width="100px" align="center"><h5><strong>@(@row.cantidad)</strong></h5></td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>@("_________________________________________________________________")</td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:center">@("Total Mensajes Casilla")</h5></td>
+                        <td style="text-align:center"><h5 style="text-align:center"><strong>@(":")</strong></h5></td>
+                        <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:center"><strong>@bigRow.Sum(i => i.cantidad)</strong></h5></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <table cellpadding=0 cellspacing=0 class="t1" style="width:48%" align="center">
+            <tbody>
+                <tr>
+                    <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:right"><b>Total</b></h5></td>
+                    <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:right"><b>@(":")@Model.Suma</b></h5></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

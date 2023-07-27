@@ -1,0 +1,46 @@
+﻿@model BCH.Comex.UI.Web.Models.ConfiguracionAlertasModel
+
+@{
+    ViewBag.Title = "Alertas";
+    Layout = "~/Areas/EnvioSwift/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/envio-msj-swift-inv.png");
+}
+
+<h2>Configurar Alertas</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.noRecibirAlertas, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9" style="vertical-align: middle;">
+                @Html.EditorFor(model => model.noRecibirAlertas, new { htmlAttributes = new { @class = "control-label" } })
+                @Html.ValidationMessageFor(model => model.noRecibirAlertas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.intervaloMinutos, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.intervaloMinutos, new { htmlAttributes = new { @class = "form-control", tabindex = 1, maxlength = "5", min = "0", max = "99999" } })
+                @Html.ValidationMessageFor(model => model.intervaloMinutos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-5 col-md-4">
+                <input id="guardar" type="button" value="Guardar" class="btn btn-primary" tabindex=2 />
+                <input id="cancelar" type="button" value="Cancelar" class="btn btn-default" tabindex=3/>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="urlCancel" value="@Url.Action("Index", "Home")" />
+    <input type="hidden" id="urlAccept" value="@Url.Action("EditarConfiguracionAlertas", "Configurar")" />
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/EnvioSwift/configuraralertas")
+}

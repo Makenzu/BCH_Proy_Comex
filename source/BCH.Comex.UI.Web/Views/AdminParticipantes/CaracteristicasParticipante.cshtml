@@ -1,0 +1,430 @@
+﻿@model BCH.Comex.UI.Web.Models.AdminParticipantes.CaracteristicasParticipanteViewModel
+@{
+    ViewBag.Title = "Caracteristicas Participante";
+}
+@{ Html.RenderPartial("_MenuMain"); }
+
+
+<div class="modal fade" id="divAceptaCambios">
+    <button class="btn btn-info" data-dismiss="modal" id="aceptar" aria-hidden="true">Aceptar</button>
+    <button class="btn btn-info" data-dismiss="modal" id="cancelar" aria-hidden="true">Cancelar</button>
+</div>
+
+<div class="container">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmCaracteristicasParticipante", name = "frmCaracteristicasParticipante", @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4 class="margin-bottom-double">Datos Individuo</h4>
+        @Html.HiddenFor(model => model.actividad)
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label class="control-label col-xs-4">
+                                Rut
+                                <span class="required">*</span>
+                            </label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(model => model.Tx_Rut, new { htmlAttributes = new { @class = "form-control", @maxlength = "12" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <div class="col-xs-12" id="clienteContainer">
+                                @foreach (var item in Model.prtcliente)
+                                {
+                                    if (item.Selected)
+                                    {
+                                        if (item.Selected && !item.Enabled)
+                                        {
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.prtcliente, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                    @item.Value
+                                                </label>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.prtcliente, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                    @item.Value
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (!item.Enabled)
+                                        {
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.prtcliente, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                    @item.Value
+                                                </label>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.prtcliente, item.ID)
+                                                    @item.Value
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.BtnAceptar, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    @class = "btn btn-primary btn-block",
+                                    value = "Aceptar",
+                                    type = "submit",
+                                    name = "Command"
+                                }
+                            })
+
+                            @Html.EditorFor(model => model.BtnCancelar, new
+                            {
+                                htmlAttributes = new
+                                {
+                                    @class = "btn btn-default btn-block",
+                                    value = "Cancelar",
+                                    type = "submit",
+                                    name = "Command"
+                                }
+                            })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.oficina, htmlAttributes: new { @class = "control-label col-xs-2" })*@
+                    <label class="control-label col-xs-2">
+                        Ofic.Ejecutivo
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(model => model.cboOficina, new { htmlAttributes = new { @class = "form-control input-sm", @maxlength = "3" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">                  
+                    <label class="control-label col-xs-2">
+                        Ejecutivo
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(model => model.cbEjecutivo, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">                  
+                    <label class="control-label col-xs-2">
+                        Actividad Económica
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(model => model.cbActividadEconomico, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.cbClaseRiesgo, htmlAttributes: new { @class = "control-label col-xs-2" })*@
+                    <label class="control-label col-xs-2">
+                        Clase Riesgo
+                        <span class="required">*</span>
+                    </label>
+                    <div class="col-xs-10">
+                        @Html.EditorFor(model => model.cbClaseRiesgo, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cbClasificacion, htmlAttributes: new { @class = "control-label col-xs-2" })
+                    <div class="col-xs-10">
+                        @Html.EditorFor(model => model.cbClasificacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid recuadro">
+            <h4>Especialistas Comex que lo atiende</h4>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbCenCosImportacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-xs-4">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbEspecImportacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-md-2">
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnIngresoImportacion, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-primary btn-block",
+                                value = "√",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+                    </div>
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnEliminarImportacion, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-danger btn-block",
+                                value = "X",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="col-xs-12">
+                        @Html.LabelFor(model => model.Tx_Importacion, htmlAttributes: new { @class = "control-label col-xs-12" })
+                        @Html.EditorFor(model => model.Tx_Importacion, new { htmlAttributes = new { @class = "form-control col-xs-12", @readonly = "readonly" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbCenCosExportacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-xs-4">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbEspecExportacion, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-md-2">
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnIngresoExportacion, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-primary  btn-block",
+                                value = "√√",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+
+                    </div>
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnEliminarExportacion, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-danger btn-block",
+                                value = "XX",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="col-xs-12">
+                        @Html.LabelFor(model => model.Tx_Exportacion, htmlAttributes: new { @class = "control-label col-xs-12" })
+                        @Html.EditorFor(model => model.Tx_Exportacion, new { htmlAttributes = new { @class = "form-control col-xs-12", @readonly = "readonly" } })
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbCenCosNegocio, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-xs-4">
+                    <label class="control-label"></label>
+                    @Html.EditorFor(model => model.CbEspecNegocio, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                </div>
+                <div class="col-md-2">
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnIngresoNegocio, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-primary btn-block",
+                                value = "√√√",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+                    </div>
+                    <div class="col-md-6">
+                        <br />
+                        @Html.EditorFor(model => model.BtnEliminarNegocio, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "btn btn-danger btn-block",
+                                value = "XXX",
+                                type = "button",
+                                name = "Command"
+                            }
+                        })
+
+                    </div>
+
+                </div>
+                <div class="col-xs-4">
+                    <div class="col-xs-12">
+                        @Html.LabelFor(model => model.Tx_Negocio, htmlAttributes: new { @class = "control-label col-xs-12" })
+                        @Html.EditorFor(model => model.Tx_Negocio, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", @readonly = "readonly" } })
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>
+
+
+@section css{
+    <style type="text/css">
+        .control-label .required {
+            color: #e02222;
+            font-size: 12px;
+            padding-left: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 2px;
+            line-height: 24px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 24px;
+            padding: 6px 12px;
+            font-size: 12px;
+            line-height: 1.4285;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+            line-height: 21px;
+            height: 21px;
+        }
+
+        /*.panel-heading {
+            padding: 0px 13px;
+        }*/
+
+        .form-horizontal .control-label {
+            padding-top: 1px;
+            margin-bottom: 0px;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        /*.panel-body {
+            padding: 5px 3px;
+        }*/
+
+        .btn {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 0px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1.3285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] {
+            position: absolute;
+            margin-top: 1px; /*4px \9;*/
+            margin-left: -20px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 15px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+            padding-top: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 17px; /*4px \9;*/
+        }
+
+
+        select.input-sm {
+            height: 21px;
+            line-height: 21px;
+        }
+
+    </style>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/CaracteristicasParticipante")
+    @Scripts.Render("~/Scripts/jquery.rut.js")
+}

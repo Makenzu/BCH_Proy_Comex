@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3318c03f-fffc-4766-b832-d3de19ecdaa8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000058_ConsultaCliente.xsd" MetadataType="Schema" ID="a9018704-3129-446c-8782-3082ca6b3dc9" SourceId="1" SourceUrl="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?SCHEMA%2FPX_BoletaGarantia%2FCS000058_ConsultaCliente%2FSpecification%2FXSD%2FCS000058_ConsultaTipoClienteRequest" />
+    <MetadataFile FileName="CS000058_ConsultaCliente1.xsd" MetadataType="Schema" ID="a2b087cf-6eca-49e2-ba6d-de384ca0bd3f" SourceId="1" SourceUrl="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS000058_ConsultaCliente2.xsd" MetadataType="Schema" ID="a2168de6-4eab-4245-9606-be7c49a40439" SourceId="1" SourceUrl="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?SCHEMA%2FPX_BoletaGarantia%2FCS000058_ConsultaCliente%2FSpecification%2FXSD%2FCS000058_ConsultaTipoClienteResponse" />
+    <MetadataFile FileName="ConsultaTipoCliente.wsdl" MetadataType="Wsdl" ID="d7bf97f1-786e-4294-8417-204b4e72bc84" SourceId="1" SourceUrl="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?WSDL" />
+    <MetadataFile FileName="CS000058_ConsultaCliente3.xsd" MetadataType="Schema" ID="5a2bcba7-db04-4907-8760-128a83614375" SourceId="1" SourceUrl="http://osb.sb:8011/BoletaGarantia/CS000058_ConsultaCliente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

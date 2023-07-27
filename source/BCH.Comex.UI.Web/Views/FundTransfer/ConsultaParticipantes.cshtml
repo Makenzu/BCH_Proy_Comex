@@ -1,0 +1,52 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ConsultaParticipantesViewModel
+
+@{
+    ViewBag.Title = "Consulta de Participantes";
+}
+
+@section css{ 
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+}
+
+<div class="container">
+    <h3 class="margin-bottom-double">Participantes</h3>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmConParticipantes_FundTransfer", name = "frmConParticipantes_FundTransfer" }))
+{
+    @Html.AntiForgeryToken() 
+
+    <fieldset class="form-horizontal margin-bottom-triple">
+        <legend>Consulta de Participantes</legend>
+        <div class="row margin-bottom-double">
+            <div class="col-xs-2 label-div">                
+                @Html.LabelFor(model => model.RazonSocial)
+            </div>
+            <div class="col-xs-3">
+                @Html.EditorFor(model => model.RazonSocial, new { htmlAttributes = new { @class = "form-control", tabindex="1" } })
+                @Html.ValidationMessageFor(model => model.RazonSocial, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-xs-6">
+                <button id="btnBuscar" tabindex="2" name="btnBuscar" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="margin-bottom-triple">
+        <legend>Resultado</legend>
+        <div class="table-responsive">
+            <table id="tableParticipantes" name="tableParticipantes" class="table"></table>
+        </div>
+    </fieldset>
+}
+
+
+@Html.ActionLink("Volver", "Participantes", new { id = 1 }, new { @class = "btn btn-default" })
+
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        var queryUrl = '@Url.Action("ConsultaParticipantes_Consultar", "Fundtransfer")';
+        var participantesUrl = '@Url.Action("Participantes", "Fundtransfer")';
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+       </script>
+@Scripts.Render("~/bundles/FundTransfer/ConsultaParticipantes")
+}

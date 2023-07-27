@@ -1,0 +1,400 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.FundTransfer.DataTypes.PlanillaReemplazo
+@{
+    Layout = null;
+}
+<title>Imprimir Planilla</title>
+<style type="text/css">
+    body {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    #page_1 {
+        position: relative;
+        overflow: hidden;
+        margin: 21px 0px 297px 34px;
+        padding: 0px;
+        border: none;
+        width: 782px;
+    }
+
+    .ft0 {
+        font: bold 12px 'Times New Roman';
+        line-height: 13px;
+    }
+
+    .ft1 {
+        font: 1px 'Times New Roman';
+        line-height: 1px;
+    }
+
+    .ft2 {
+        font: bold 12px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .ft3 {
+        font: bold 10px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft4 {
+        font: 1px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft5 {
+        font: bold 12px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft6 {
+        font: bold 12px 'Times New Roman';
+        line-height: 15px;
+    }
+
+    .p0 {
+        text-align: right;
+        padding-right: 182px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p1 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p2 {
+        text-align: right;
+        padding-right: 50px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p3 {
+        text-align: right;
+        padding-right: 25px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p4 {
+        text-align: right;
+        padding-right: 128px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p5 {
+        text-align: right;
+        padding-right: 92px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p6 {
+        text-align: right;
+        padding-right: 133px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p7 {
+        text-align: center;
+        padding-left: 70px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p8 {
+        text-align: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p9 {
+        text-align: right;
+        padding-right: 189px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p10 {
+        text-align: right;
+        padding-right: 28px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p11 {
+        text-align: right;
+        padding-right: 166px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p12 {
+        text-align: right;
+        padding-right: 3px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p13 {
+        text-align: right;
+        padding-right: 58px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p14 {
+        text-align: right;
+        padding-right: 60px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p15 {
+        text-align: left;
+        margin-top: 136px;
+        margin-bottom: 0px;
+    }
+
+    .p16 {
+        text-align: left;
+        margin-top: 42px;
+        margin-bottom: 0px;
+    }
+
+    .p17 {
+        text-align: left;
+        margin-top: 121px;
+        margin-bottom: 0px;
+    }
+
+    .td0 {
+        padding: 0px;
+        margin: 0px;
+        width: 229px;
+        vertical-align: bottom;
+    }
+
+    .td1 {
+        padding: 0px;
+        margin: 0px;
+        width: 132px;
+        vertical-align: bottom;
+    }
+
+    .td2 {
+        padding: 0px;
+        margin: 0px;
+        width: 221px;
+        vertical-align: bottom;
+    }
+
+    .td3 {
+        padding: 0px;
+        margin: 0px;
+        width: 57px;
+        vertical-align: bottom;
+    }
+
+    .td4 {
+        padding: 0px;
+        margin: 0px;
+        width: 93px;
+        vertical-align: bottom;
+    }
+
+    .tr0 {
+        height: 15px;
+    }
+
+    .tr1 {
+        height: 38px;
+    }
+
+    .tr2 {
+        height: 42px;
+    }
+
+    .tr3 {
+        height: 37px;
+    }
+
+    .tr4 {
+        height: 12px;
+    }
+
+    .tr5 {
+        height: 19px;
+    }
+
+    .tr6 {
+        height: 54px;
+    }
+
+    .t0 {
+        width: 732px;
+        font: bold 12px 'Times New Roman';
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+
+    <div id="page_1">
+
+
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="tr0 td0"><p class="p0 ft0">@Html.DisplayFor(model => model.Vx_PReem_NumPla)</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p1 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft2">@Html.DisplayFor(model => model.Vx_PReem_Codigo)</p></td>
+                <td class="tr1 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr1 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr1 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr1 td4"><p class="p1 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr2 td0"><p class="p2 ft0">@Html.DisplayFor(model => model.Vx_PReem_FecVen)</p></td>
+                <td class="tr2 td1"><p class="p3 ft0">@Html.DisplayFor(model => model.Vx_PReem_NomPlz)</p></td>
+                <td class="tr2 td2"><p class="p4 ft0">@Html.DisplayFor(model => model.Vx_PReem_CodBch)</p></td>
+                <td class="tr2 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr2 td4"><p class="p1 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr3 td0"><p class="p5 ft3">@Html.DisplayFor(model => model.Vx_PReem_NomImp)</p></td>
+                <td class="tr3 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr3 td2"><p class="p6 ft0"><nobr>@Html.DisplayFor(model => model.Vx_PReem_RutImp)</nobr></p></td>
+                <td class="tr3 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr3 td4"><p class="p1 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr4 td0"><p class="p1 ft4">&nbsp;</p></td>
+                <td class="tr4 td1"><p class="p1 ft4">&nbsp;</p></td>
+                <td class="tr4 td2"><p class="p7 ft5">@Html.DisplayFor(model => model.Vx_PReem_NomPai)</p></td>
+                <td class="tr4 td3"><p class="p1 ft5">@Html.DisplayFor(model => model.Vx_PReem_CodPPa) @Html.DisplayFor(model => model.Vx_PReem_NomMon)</p></td>
+                <td class="tr4 td4"><p class="p8 ft5">@Html.DisplayFor(model => model.Vx_PReem_CodMPa)</p></td>
+            </tr>
+            <tr>
+                <td class="tr5 td0"><p class="p9 ft0">@Html.DisplayFor(model => model.Vx_PReem_NumIdi)</p></td>
+                <td class="tr5 td1"><p class="p10 ft0">@Html.DisplayFor(model => model.Vx_PReem_CodPlz)</p></td>
+                <td class="tr5 td2"><p class="p11 ft0">@Html.DisplayFor(model => model.Vx_PReem_CodPag)</p></td>
+                <td class="tr5 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td4"><p class="p1 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr5 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td4"><p class="p12 ft0">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_MtoFob) </p></td>
+            </tr>
+            <tr>
+                <td class="tr5 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_MtoFle)</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_MtoSeg)</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_MtoCif)</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft2">@Html.DisplayFor(model => model.Vx_PReem_MtoInt)</p></td>
+            </tr>
+            <tr>
+                <td class="tr5 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr5 td4"><p class="p12 ft2">@Html.DisplayFor(model => model.Vx_PReem_GasBan)</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft2">@Html.DisplayFor(model => model.Vx_PReem_TotOri) </p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_CifDol)</p></td>
+            </tr>
+            <tr>
+                <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr0 td4"><p class="p12 ft0">@Html.DisplayFor(model => model.Vx_PReem_TotDol)</p></td>
+            </tr>
+            <tr>
+                <td class="tr6 td0"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr6 td1"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr6 td2"><p class="p13 ft6">@Html.DisplayFor(model => model.Vx_PReem_TipCam)</p></td>
+                <td class="tr6 td3"><p class="p1 ft1">&nbsp;</p></td>
+                <td class="tr6 td4"><p class="p14 ft6">@Html.DisplayFor(model => model.Vx_PReem_ParPag)</p></td>
+            </tr>
+        </table>
+        <p class="p15 ft6">@Html.DisplayFor(model => model.Vx_PReem_ObsDec)</p>
+        <p class="p16 ft6">@Html.DisplayFor(model => model.Vx_PReem_observ)</p>
+        <p class="p17 ft6">@Html.DisplayFor(model => model.Vx_PReem_ObsCob)</p>
+    </div>
+
+}

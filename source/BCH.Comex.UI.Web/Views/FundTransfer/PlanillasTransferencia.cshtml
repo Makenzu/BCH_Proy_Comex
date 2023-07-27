@@ -1,0 +1,67 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillasTransferenciaViewModel
+@{
+    ViewBag.Title = "Planilla de Transferencia";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "PlanillasTransferencia", name = "PlanillasTransferencia" }))
+{
+    <div class="container">
+        <h3 class="margin-bottom-triple" id="caption">Planillas de Transferencia @ViewBag.Caption</h3>
+
+        @Html.AntiForgeryToken()
+        <div class="panel panel-default col-xs-8 col-xs-offset-2">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <label>Moneda</label>
+                        @Html.EditorFor(model => model.Cbo_Moneda, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "1" } })
+                    </div>
+                    <div class="col-sm-7">
+                        <label>Concepto de Planillas</label>
+                        @Html.EditorFor(model => model.Cbo_CptoPln, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "2" } })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>País</label>
+                        @Html.EditorFor(model => model.CbPais, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "3" } })
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Saldo</label>
+                        @Html.EditorFor(model => model.Lb_Saldo, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "4", @disabled = "disabled" } })
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Monto</label>
+                        @Html.EditorFor(model => model.Tx_Monto, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "5" } })
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="col-sm-10">
+                        <label class="mono"> Cod.Comercio&nbsp;Mnd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Descripción</label>
+                        @Html.EditorFor(model => model.ListaPlanillas, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "16" } })
+                    </div>
+                    <div class="col-sm-1">
+                        <button id="btnAdd" tabindex="6" type="button" value="+" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+
+                        <button id="btnDel" tabindex="7" type="button" value="-" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row" style="margin:auto">
+                    <div class="col-sm-12  text-right">
+                        <input type="submit" id="btnAccept" tabindex="8" name="btnComando" value="Aceptar" class="btn btn-primary" disabled ="disabled" />
+                        <input type="submit" id="btnCancel" tabindex="9" name="btnComando" value="Cancelar" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/PlanillaTransferencia")
+}

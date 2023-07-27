@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/2008/1/ActiveDirectory" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:i0="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://schemas.xmlsoap.org/ws/2004/09/enumeration" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i2="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ActiveDirectoryWebService" targetNamespace="http://schemas.microsoft.com/2008/1/ActiveDirectory" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_Resource_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses>
+            </wsam:AnonymousResponses>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ResourceFactory_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses>
+            </wsam:AnonymousResponses>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_Search_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses>
+            </wsam:AnonymousResponses>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_AccountManagement_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses>
+            </wsam:AnonymousResponses>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TopologyManagement_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses>
+            </wsam:AnonymousResponses>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.xmlsoap.org/ws/2004/09/transfer" location="" />
+  <wsdl:import namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" location="" />
+  <wsdl:import namespace="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" location="" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_Resource" type="i0:Resource">
+    <wsp:PolicyReference URI="#NetTcpBinding_Resource_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FragmentDialectNotSupported">
+        <soap12:fault use="literal" name="FragmentDialectNotSupported" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AccessDenied">
+        <soap12:fault use="literal" name="AccessDenied" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SchemaValidationError">
+        <soap12:fault use="literal" name="SchemaValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnwillingToPerform">
+        <soap12:fault use="literal" name="UnwillingToPerform" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="CannotProcessFilter">
+        <soap12:fault use="literal" name="CannotProcessFilter" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EncodingLimit">
+        <soap12:fault use="literal" name="EncodingLimit" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Put" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FragmentDialectNotSupported">
+        <soap12:fault use="literal" name="FragmentDialectNotSupported" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="CannotProcessFilter">
+        <soap12:fault use="literal" name="CannotProcessFilter" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnwillingToPerform">
+        <soap12:fault use="literal" name="UnwillingToPerform" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EncodingLimit">
+        <soap12:fault use="literal" name="EncodingLimit" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRepresentation">
+        <soap12:fault use="literal" name="InvalidRepresentation" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SchemaValidationError">
+        <soap12:fault use="literal" name="SchemaValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ActionNotSupportedFault">
+        <soap12:fault use="literal" name="ActionNotSupportedFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AccessDenied">
+        <soap12:fault use="literal" name="AccessDenied" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnwillingToPerform">
+        <soap12:fault use="literal" name="UnwillingToPerform" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SchemaValidationError">
+        <soap12:fault use="literal" name="SchemaValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AccessDenied">
+        <soap12:fault use="literal" name="AccessDenied" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ResourceFactory" type="i0:ResourceFactory">
+    <wsp:PolicyReference URI="#NetTcpBinding_ResourceFactory_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Create">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AccessDenied">
+        <soap12:fault use="literal" name="AccessDenied" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnwillingToPerform">
+        <soap12:fault use="literal" name="UnwillingToPerform" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EncodingLimit">
+        <soap12:fault use="literal" name="EncodingLimit" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FragmentDialectNotSupported">
+        <soap12:fault use="literal" name="FragmentDialectNotSupported" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidRepresentation">
+        <soap12:fault use="literal" name="InvalidRepresentation" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="CannotProcessFilter">
+        <soap12:fault use="literal" name="CannotProcessFilter" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ActionNotSupportedFault">
+        <soap12:fault use="literal" name="ActionNotSupportedFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SchemaValidationError">
+        <soap12:fault use="literal" name="SchemaValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AlreadyExists">
+        <soap12:fault use="literal" name="AlreadyExists" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_Search" type="i1:Search">
+    <wsp:PolicyReference URI="#NetTcpBinding_Search_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Enumerate">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Enumerate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidPropertyFault">
+        <soap12:fault use="literal" name="InvalidPropertyFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="CannotProcessFilter">
+        <soap12:fault use="literal" name="CannotProcessFilter" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidExpirationTime">
+        <soap12:fault use="literal" name="InvalidExpirationTime" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FilterDialectRequestedUnavailable">
+        <soap12:fault use="literal" name="FilterDialectRequestedUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EnumerationContextLimitExceeded">
+        <soap12:fault use="literal" name="EnumerationContextLimitExceeded" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnsupportedSelectOrSortDialectFault">
+        <soap12:fault use="literal" name="UnsupportedSelectOrSortDialectFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSortKey">
+        <soap12:fault use="literal" name="InvalidSortKey" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Pull">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Pull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="DestinationUnreachable">
+        <soap12:fault use="literal" name="DestinationUnreachable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidEnumerationContext">
+        <soap12:fault use="literal" name="InvalidEnumerationContext" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="TimedOut">
+        <soap12:fault use="literal" name="TimedOut" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="MaxTimeExceedsLimit">
+        <soap12:fault use="literal" name="MaxTimeExceedsLimit" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="MaxCharsNotSupported">
+        <soap12:fault use="literal" name="MaxCharsNotSupported" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Renew">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Renew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnableToRenew">
+        <soap12:fault use="literal" name="UnableToRenew" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidEnumerationContext">
+        <soap12:fault use="literal" name="InvalidEnumerationContext" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidEnumerationContext">
+        <soap12:fault use="literal" name="InvalidEnumerationContext" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <soap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Release" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EndpointUnavailable">
+        <soap12:fault use="literal" name="EndpointUnavailable" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_AccountManagement" type="i2:AccountManagement">
+    <wsp:PolicyReference URI="#NetTcpBinding_AccountManagement_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetADGroupMember">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADGroupMember" style="document" />
+      <wsdl:input name="GetADGroupMemberRequest">
+        <soap12:header message="i2:GetADGroupMemberRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADGroupMemberResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADGroupMemberFault">
+        <soap12:fault use="literal" name="GetADGroupMemberFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetADPrincipalGroupMembership">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalGroupMembership" style="document" />
+      <wsdl:input name="GetADPrincipalGroupMembershipRequest">
+        <soap12:header message="i2:GetADPrincipalGroupMembershipRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADPrincipalGroupMembershipResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADPrincipalGroupMembershipFault">
+        <soap12:fault use="literal" name="GetADPrincipalGroupMembershipFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/SetPassword" style="document" />
+      <wsdl:input name="SetPasswordRequest">
+        <soap12:header message="i2:SetPasswordRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetPasswordResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SetPasswordFault">
+        <soap12:fault use="literal" name="SetPasswordFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/ChangePassword" style="document" />
+      <wsdl:input name="ChangePasswordRequest">
+        <soap12:header message="i2:ChangePasswordRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangePasswordResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ChangePasswordFault">
+        <soap12:fault use="literal" name="ChangePasswordFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetADPrincipalAuthorizationGroup">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalAuthorizationGroup" style="document" />
+      <wsdl:input name="GetADPrincipalAuthorizationGroupRequest">
+        <soap12:header message="i2:GetADPrincipalAuthorizationGroupRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADPrincipalAuthorizationGroupResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADPrincipalAuthorizationGroupFault">
+        <soap12:fault use="literal" name="GetADPrincipalAuthorizationGroupFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateName">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/TranslateName" style="document" />
+      <wsdl:input name="TranslateNameRequest">
+        <soap12:header message="i2:TranslateNameRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TranslateNameResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="TranslateNameFault">
+        <soap12:fault use="literal" name="TranslateNameFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TopologyManagement" type="i2:TopologyManagement">
+    <wsp:PolicyReference URI="#NetTcpBinding_TopologyManagement_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetADDomainController">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomainController" style="document" />
+      <wsdl:input name="GetADDomainControllerRequest">
+        <soap12:header message="i2:GetADDomainControllerRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADDomainControllerResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADDomainControllerFault">
+        <soap12:fault use="literal" name="GetADDomainControllerFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDomain">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomain" style="document" />
+      <wsdl:input name="GetADDomainRequest">
+        <soap12:header message="i2:GetADDomainRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADDomainResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADDomainFault">
+        <soap12:fault use="literal" name="GetADDomainFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveADOperationMasterRole">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/MoveADOperationMasterRole" style="document" />
+      <wsdl:input name="MoveADOperationMasterRoleRequest">
+        <soap12:header message="i2:MoveADOperationMasterRoleRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MoveADOperationMasterRoleResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MoveADOperationMasterRoleFault">
+        <soap12:fault use="literal" name="MoveADOperationMasterRoleFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetADForest">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADForest" style="document" />
+      <wsdl:input name="GetADForestRequest">
+        <soap12:header message="i2:GetADForestRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetADForestResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetADForestFault">
+        <soap12:fault use="literal" name="GetADForestFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOptionalFeature">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/ChangeOptionalFeature" style="document" />
+      <wsdl:input name="ChangeOptionalFeatureRequest">
+        <soap12:header message="i2:ChangeOptionalFeatureRequest_Headers" part="Server" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ChangeOptionalFeatureResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ChangeOptionalFeatureFault">
+        <soap12:fault use="literal" name="ChangeOptionalFeatureFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap12:operation soapAction="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetVersion" style="document" />
+      <wsdl:input name="GetVersionRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetVersionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetVersionFault">
+        <soap12:fault use="literal" name="GetVersionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActiveDirectoryWebService">
+    <wsdl:port name="NetTcpBinding_Resource" binding="tns:NetTcpBinding_Resource">
+      <soap12:address location="net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/Resource" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/Resource</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/testadjpb.jpbtest.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ResourceFactory" binding="tns:NetTcpBinding_ResourceFactory">
+      <soap12:address location="net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/ResourceFactory" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/ResourceFactory</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/testadjpb.jpbtest.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_Search" binding="tns:NetTcpBinding_Search">
+      <soap12:address location="net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/Enumeration" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/Enumeration</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/testadjpb.jpbtest.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_AccountManagement" binding="tns:NetTcpBinding_AccountManagement">
+      <soap12:address location="net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/AccountManagement" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/AccountManagement</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/testadjpb.jpbtest.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TopologyManagement" binding="tns:NetTcpBinding_TopologyManagement">
+      <soap12:address location="net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/TopologyManagement" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9389/ActiveDirectoryWebServices/Windows/TopologyManagement</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/testadjpb.jpbtest.com</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

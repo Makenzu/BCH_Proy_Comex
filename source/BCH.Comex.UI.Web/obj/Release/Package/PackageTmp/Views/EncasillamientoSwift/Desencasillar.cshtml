@@ -1,0 +1,632 @@
+﻿@model BCH.Comex.UI.Web.Models.EncasillamientoSwift.IndexModel
+
+@{
+    ViewBag.Title = "Deshacer Encasillamiento Manual";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/encasillamiento-inv.png");
+}
+
+@section css{
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+
+            .clickable .glyphicon {
+                background: rgba(0, 0, 0, 0.15);
+                display: inline-block;
+                padding: 6px 12px;
+                border-radius: 4px;
+            }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+            a.clickable:hover {
+                text-decoration: none;
+            }
+    </style>
+}
+
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones Encasillamiento</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Encasillamiento Mensaje Swift</a></li>
+                <li><a href="@Url.Action("Desencasillar")">Deshacer Encasillamiento Mensaje Swift</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>
+            <i class="glyphicon glyphicon-check"></i>&nbsp;Deshacer Encasillamiento Manual Swift
+        </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title" id="titleFiltro">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("BuscarSwifts", "ConsultaSwift"))
+                {
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("Casilla", "Casilla", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        @Html.DropDownList("idCasilla", Model.CasillasVisibles, "-- Seleccione --", new { @class = "selectpicker form-control", data_live_search = "true" })
+                                        <span class="input-group-btn">
+                                            <button id="btnConfigurarCasillas" class="btn btn-default" type="button" data-toggle="modal" data-backdrop="false" title="Configure las casillas que desea ver en esta lista" data-target="#modalAdminCasillas">
+                                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorCasilla">La casilla es requerida</label>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("dtpFechaDesde", "Fecha", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaDesde">
+                                        <input type="text" class="form-control" id="txtFechaDesde" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="chkPeriodoFechas"> Período
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFechaDesde">La fecha debe ser menor o igual a la fecha del día</label>
+                            </div>
+                            <div class="form-group" id="grpFechaHasta">
+                                @Html.Label("Hasta", "Hasta", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaHasta">
+                                        <input type="text" class="form-control" id="txtFechaHasta" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFechaHasta">La fecha debe ser menor o igual a la fecha desde</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-xs-10">
+                                    <div class="btn-group">
+                                        <button type="button" id="btnBuscar" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @{ Html.RenderPartial("_AdminCasillas"); }
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div id="alertPlaceholder"></div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default" id="pnlResultados">
+        <div class="panel-heading">
+            <h2 class="panel-title">Resultados</h2>
+        </div>
+        <div class="panel-body">
+            <table id="tablaSwifts"></table>
+        </div>
+    </div>
+</div>
+
+<div id="custom-toolbar">
+    <div class="form-inline" role="form" id="toolbarResultados">
+        <div class="form-group" id="grupoBotonesEncasilla">
+            <button class="btn btn-info" id="remove-data" data-method="remove">
+                <i class="glyphicon glyphicon-check"></i>&nbsp;Deshacer
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="modalVisorSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg xlg">
+        <div class="modal-content">
+            <div id="divCuerpoMensajeSwift"></div>
+        </div>
+    </div>
+</div>
+
+<div id="modalVisorIndividualSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body text-center" id="divCuerpoSwift"></div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">Deshacer Encasillamiento Manual</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Modal Body</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="reloadtable">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+
+        $(document).ready(function () {
+            $.fx.off = true;
+            $.ajaxSetup({
+                cache: false
+            });
+            //activo el bloquear la UI en requests asincronos
+            $(document).ajaxStart(function () { $.blockUI({ message: '<h6>Cargando...</h6>' }) })
+                .ajaxStop($.unblockUI);
+            $('#pnlResultados').hide();
+            $('#grpFechaHasta').hide();
+            $('#formFiltroEstado').hide();
+            $('#custom-toolbar').hide();
+            $('#idCasilla').children('option:first').val(0);
+            //(moo 2015-08-24) grupo de botones invisible, si es que no existe fila seleccionada
+            $('#grupoBotonesEncasilla').hide();
+
+            var rowSelected;
+            var configColumnas = [{
+                //field: 'state',
+                checkbox: true
+            }, {
+                title: '#',
+                formatter: accionVerTableFormatter,
+                align: 'center',
+                clickToSelect: false
+            }, {
+                title: '#',
+                formatter: accionVisTableFormatter,
+                align: 'center',
+                clickToSelect: false
+            }, {
+                field: 'Sesion',
+                title: 'Sesión',
+                visible: true
+            }, {
+                field: 'Secuencia',
+                title: 'Secuencia',
+                sortable: true
+            }, {
+                field: 'Tipo',
+                title: 'Tipo',
+                visible: true,
+                sortable: true
+            }, {
+                field: 'Casilla',
+                title: 'Casilla',
+                visible: true,
+                sortable: true
+            }, {
+                field: 'Referencia',
+                title: 'Referencia',
+                sortable: true
+            }, {
+                field: 'Beneficiario',
+                title: 'Beneficiario',
+                sortable: true
+            }, {
+                field: 'FechaRecepcion',
+                title: 'Fecha Recepción',
+                sortable: true
+            }, {
+                field: 'FechaProceso',
+                title: 'Encasillamiento',
+                sortable: true
+            }, {
+                field: 'Moneda',
+                title: 'Mnda',
+                sortable: true
+            }, {
+                field: 'Monto',
+                title: '$ Monto',
+                sortable: true,
+                align: 'right',
+                formatter: montoFormatter,
+            }, ];
+
+            var initialDate = moment(new Date()).utc().startOf('day');
+            var finalDate = moment(new Date()).utc().endOf('day');
+
+            $('#dtpFechaDesde').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+            $('#dtpFechaHasta').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+
+            $('#grpFechaHasta').hide();
+            $("#dtpFechaDesde").on("dp.change", function (e) {
+                var checkbox = $('#chkPeriodoFechas');
+                if (!checkbox.is(':checked')) {
+                    $('#dtpFechaHasta').data("DateTimePicker").date(e.date);
+                }
+
+                $('#dtpFechaHasta').data("DateTimePicker").minDate(e.date);
+            });
+
+            $('#chkPeriodoFechas').change(function () {
+                $('#grpFechaHasta').toggle();
+                if ($(this).is(':checked')) {
+                    $('#lblFechaDesde').text("Desde");
+                    $('#dtpFechaHasta').data("DateTimePicker").show();
+                }
+                else {
+                    $('#lblFechaDesde').text("Fecha");
+                    $('#dtpFechaHasta').data("DateTimePicker").hide();
+                }
+            });
+
+            //(moo 2015-08-24) Acciónes sobre los registros
+            function accionVerTableFormatter(value, row, index) {
+                return "<a href='#'><i class='glyphicon glyphicon-th-list'></i></a>";
+            }
+            function accionVisTableFormatter(value, row, index) {
+                return "<a href='#'><i class='glyphicon glyphicon-file'></i></a>";
+            }
+
+            //(moo 2015-08-24) Funcion formatear Monto
+            function montoFormatter(value, row, index) {
+                if (row["Moneda"] == 'USD') {
+                    return "<i class='glyphicon glyphicon-usd'></i> " + numeral(value).format("0,0.00");
+                } else if (row["Moneda"] == 'GBP') {
+                    return "<i class='glyphicon glyphicon-gbp'></i> " + numeral(value).format("0,0.00");
+                } else if (row["Moneda"] == 'EUR') {
+                    return "<i class='glyphicon glyphicon-eur'></i> " + numeral(value).format("0,0.00");
+                } else if (row["Moneda"] == 'GBP') {
+                    return "<i class='glyphicon glyphicon-gbp'></i> " + numeral(value).format("0,0.00");
+                } else if (row["Moneda"] != null) {
+                    return "<i class='glyphicon glyphicon-usd'></i> " + numeral(value).format("0,0.00");
+                } else {
+                    return numeral(value).format("0,0.00");
+                }
+            }
+
+
+            //(moo 2015-08-24) Funcion Buscar Datos asociados al Mensaje
+            var detalleMensaje = function (row) {
+                var inSession = row["Sesion"];
+                var inSecuencia = row["Secuencia"];
+
+                $.get('@Url.Action("DatosSwiftRecibido", "ConsultaSwift")', { sesion: inSession, secuencia: inSecuencia }, function (data) {
+                    $('#divCuerpoMensajeSwift').html(data);
+                    $('#modalVisorSwift').modal();
+                });
+            };
+
+            //(moo 2015-08-24) Funcion visualiza información del Mensaje
+            var visualizarMensaje = function (row) {
+                var inSession = row["Sesion"];
+                var inSecuencia = row["Secuencia"];
+
+                $.get('@Url.Action("DetalleSwift", "ConsultaSwift")', { sesion: inSession, secuencia: inSecuencia }, function (data) {
+                    $('#divCuerpoSwift').html(data);
+                    $('#modalVisorIndividualSwift').modal();
+                });
+            };
+
+            //(moo 2015-08-24) Funcion Buscar Mensajes
+            var buscar = function () {
+                var url = '@Url.Action("GetMensajesRecibidosRangoDes")';
+                var ie_fix = new Date().getTime();
+                var idCasilla = $('#idCasilla').val();
+                var nameCasilla = $('#idCasilla option:selected').text();
+                if (idCasilla == 0) {
+                    nameCasilla = "Todos";
+                }
+                var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+                var fechaHasta;
+                if ($("#chkPeriodoFechas").is(":checked")) {
+                    fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+                }
+                else {
+                    fechaHasta = fechaDesde;
+                }
+
+                $('#pnlResultados').show();
+
+                var titleFiltro = 'Filtro [Casilla: ' + nameCasilla + ' - Desde: ' + fechaDesde.format("DD-MM-YYYY") + ' Hasta: ' + fechaHasta.format("DD-MM-YYYY") + ']';
+                $('#titleFiltro').text(titleFiltro);
+
+                //(moo 2015-08-24) nueva busqueda, desabilitamos grupo de botones y filtros, a la espera que se seleccione un registro
+                $('#grupoBotonesEncasilla').hide();
+                $('#formFiltroEstado').hide();
+
+                $('#tablaSwifts').bootstrapTable('destroy');
+                $('#tablaSwifts').bootstrapTable({
+                    classes: 'table',
+                    height: 550,
+                    url: url,
+                    queryParams: function (p) {
+                        return {
+                            idCasilla: idCasilla,
+                            fechaInicio: fechaDesde.format("YYYY/MM/DD"),
+                            fechaFin: fechaHasta.format("YYYY/MM/DD"),
+                            ie_fix : ie_fix
+                        };
+                    },
+                    locale: "es-SP",
+                    pagination: true,
+                    sidePagination: 'client',
+                    columns: configColumnas,
+                    searchAlign: 'left',
+                    showRefresh: true,
+                    clickToSelect: true,
+                    search: true,
+                    checkboxHeader: false,
+                    toolbar: '#custom-toolbar',
+                    striped: true,
+                    pagination: true,
+                    pageSize: 25,
+                    pageList: [10, 25, 50, 100, 200],
+                    showExport: true,
+                    exportTypes: ['excel', 'txt'],
+                    exportDataType: 'all'
+                });
+
+            };
+
+            //(moo 2015-08-24) solo mostramos el filtro en caso de que exista información
+            $('#tablaSwifts').on("click-cell.bs.table", function (e, field, value, row, $element) {
+                if (field == '1') {
+                    detalleMensaje(row);
+                } else if (field == '2') {
+                    visualizarMensaje(row);
+                }
+            });
+
+
+            //(moo 2015-08-24) solo mostramos el filtro en caso de que exista información
+            $('#tablaSwifts').on("load-success.bs.table", function (e, data) {
+                if (data.length > 0) {
+                    $('#formFiltroEstado').show();
+                    $('#custom-toolbar').show();
+
+                    //(moo 2015-08-25) cerramos panel filtro
+                    $('.panel div.clickable').click();
+
+                    $('.pull-right .pagination').before('<div style="float: left;padding-right: 10px;" id="divIrPagina"><span class="pagination-info" style="float: left;">Ir a página</span><input class="form-control" type="number" value="1" maxlength="5" max="99999" min="0" size="5" name="ir" id="irA" style="width: 80px;"/></div>');
+                } else {
+                    $('#formFiltroEstado').hide();
+                    $('#custom-toolbar').hide();
+
+                    //(moo 2015-08-25) ampliamos panel filtro
+                    $('.panel div.clickable').click();
+                }
+            });
+
+            $('#tablaSwifts').on("page-change.bs.table", function (e, number, size) {
+                $('.pull-right .pagination').before('<div style="float: left;padding-right: 10px;" id="divIrPagina"><span class="pagination-info" style="float: left;">Ir a página</span><input class="form-control" type="number" value="' + number + '" maxlength="5" max="99999" min="0" size="5" name="ir" id="irA" style="width: 80px;"/></div>');
+                $('#irA').focus().val(number);
+            });
+
+            $(document).on('keyup', '#irA', function (e) {
+                var $tabla = $('#tablaSwifts');
+                var $pagina = $(this);
+
+                if ($(this).val() != "")
+                    $tabla.bootstrapTable('selectPage', $pagina.val());
+            });
+
+            //(moo 2015-08-24) eventos click
+            $('#btnBuscar').click(buscar);
+            //$('#reloadtable').click(buscar);
+            
+            //(moo 2015-08-24) detectamos seleccion del filtro de mensajes
+            $('#selectFiltroEstado').change(function () {
+                var filtro = $('#selectFiltroEstado').val();
+
+                //(moo 2015-08-24) deshabilitamos botones de seleccion
+                $('#grupoBotonesEncasilla').hide();
+
+                if (filtro == '0') {
+                    $('#tablaSwifts').bootstrapTable('filterBy', {});
+                } else {
+                    $('#tablaSwifts').bootstrapTable('filterBy', { Estado: filtro });
+                }
+            });
+
+            //Guardar casilla
+            var urlGuardarCasillas = '@Url.Action("GuardarCasillas")';
+            var actualizarDropDownCasillasSegunConfigurado = function () {
+                var dropDown = $('#idCasilla');
+                dropDown.find('option').remove().end().append('<option value="748">-- Seleccione --</option>');
+
+                $('input[name=chkCasillaVisible]:checked').each(function () {
+                    var strSelected = "";
+                    if ($('input[name=radCasillaPrincipal][value=' + $(this).val() + ']').is(':checked')) {
+                        strSelected = " selected";
+                    }
+                    dropDown.append("<option value='" + $(this).val() + "'" + strSelected + ">" + $(this).closest("td").siblings('#trNombreCasilla').eq(0).text() + "</option>");
+                });
+
+            }
+            var guardarCasillas = function () {
+                var casillasSeleccionadas = [];
+                $('input[name=chkCasillaVisible]:checked').each(function () {
+                    casillasSeleccionadas.push($(this).val());
+                });
+
+                var valorCasillaDefault = "";
+                var selected = $("input[type='radio'][name='radCasillaPrincipal']:checked");
+                if (selected.length > 0) {
+                    valorCasillaDefault = selected.val();
+                }
+
+                var parametros = { idsCasillasVisibles: casillasSeleccionadas, idCasillaDefault: valorCasillaDefault };
+
+                $.ajax({
+                    type: "POST",
+                    url: urlGuardarCasillas,
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(parametros),
+                    dataType: "json",
+                    success: function () {
+                        $('#modalAdminCasillas').modal('hide');
+                        showAlert("Operación exitosa!", "Las casillas se guardaron satisfactoriamente.", "alert-success");
+                        actualizarDropDownCasillasSegunConfigurado();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        $('#modalAdminCasillas').modal('hide');
+                        showAlert("Error en la operación", "Los cambios no se pudieron guardar.", "alert-danger");
+                    }
+                });
+                return false;
+            };
+            $('#btnGuardarCasillas').click(function () {
+                guardarCasillas();
+            });
+
+            $('#dtpFechaDesde').on("dp.show", function (e) {
+                $('#dtpFechaHasta').data('DateTimePicker').hide();
+            });
+
+            $('#dtpFechaHasta').on("dp.show", function (e) {
+                $('#dtpFechaDesde').data('DateTimePicker').hide();
+            });
+        });
+
+        //(moo 2015-08-24) Evento de seleccion de Fila
+        $('#tablaSwifts').on('check.bs.table', function (e, row) {
+            //(moo 2015-08-24) habilitamos botones de seleccion
+
+            var elements = $('#tablaSwifts').bootstrapTable('getSelections');
+            if (elements.length > 0) {
+                $('#grupoBotonesEncasilla').show();
+                rowSelected = row;
+            } else {
+                $('#grupoBotonesEncasilla').hide();
+                rowSelected = row;
+            }
+        });
+
+        //(moo 2015-08-24) Evento de seleccion de Fila
+        $('#tablaSwifts').on('uncheck.bs.table', function (e, row) {
+            //(moo 2015-08-24) habilitamos botones de seleccion
+
+            var elements = $('#tablaSwifts').bootstrapTable('getSelections');
+            if (elements.length > 0) {
+                $('#grupoBotonesEncasilla').show();
+                rowSelected = row;
+            } else {
+                $('#grupoBotonesEncasilla').hide();
+                rowSelected = row;
+            }
+        });
+
+        //(moo 2015-08-25) Función Encasillar
+
+        $('#remove-data').click(function () {
+            $('#basicModal').modal();
+            var elements = JSON.stringify($('#tablaSwifts').bootstrapTable('getSelections'));
+            var obj = JSON.parse(elements);
+
+            var inSecuencia2 = "";
+            for (var i = 0; i < obj.length; i++) {
+                var inIdCasilla = $('#idCasilla').val();
+                var inSession = obj[i].Sesion;
+                var inSecuencia = obj[i].Secuencia;
+                inSecuencia2 += obj[i].Secuencia+", ";
+
+                var model = { idCasilla: inIdCasilla, Sesion: inSession, Secuencia: inSecuencia };
+                $.ajax({
+                    url: '@Url.Action("DesencasillarAction", "EncasillamientoSwift")',
+                    contentType: 'application/json; charset=utf-8',
+                    type: 'POST',
+                    dataType: 'html',
+                    data: JSON.stringify(model),
+                    statusCode: {
+                        500: function () {
+                            alert( "Error al cambiar");
+                        }
+                    },
+                    success: function (result) {
+                        $('#grupoBotonesEncasilla').hide();
+                    }
+                })
+
+                $('#tablaSwifts').bootstrapTable('remove', { field: 'Secuencia', values: [inSecuencia] });
+            }
+
+            $(".modal-body").text("Mensaje Desencasillados: " + inSecuencia2.substring(0,inSecuencia2.length - 2));
+        });
+
+
+
+        //(moo 2015-08-25) se activa modal de encasillar
+        /*$('#modalEncasillar').on('shown.bs.modal', function () {
+            var modal = $(this);
+            var elements = $('#tablaSwifts').bootstrapTable('getSelections');
+            alert('2.-Selected values: ' + JSON.stringify(elements));
+            $("#newIdCasilla option[value='" + $('#idCasilla option:selected').val() + "']").remove();
+        })*/
+
+    </script>
+}
+
+
+
+

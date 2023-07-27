@@ -1,0 +1,86 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.SeleccionOficinaViewModel
+
+@{
+    ViewBag.Titulo = "Selección Oficina";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmOfi", name = "FrmOfi" }))
+        {
+            <div class="form-horizontal">
+                <div class="form-body">
+                    <div class="container" style="max-width: 600px">
+                        <h3>Selección Oficina</h3>
+                        <h4>Oficinas Banco de Chile</h4>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.EditorFor(model => model.Cb_Oficina, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <div class="radio">
+                                            <label class="control-label">
+                                                @if (!Model.opt_CVD.Enabled)
+                                                {
+                                                    @Html.RadioButtonFor(x => x.EsComision, false,
+                                                    new { @disabled = "disabled" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.RadioButtonFor(x => x.EsComision, false)
+                                                }
+                                                Compra Venta Divisas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="radio">
+                                            @*<div class="checkbox">*@
+                                            <label class="control-label">
+                                                @if (!Model.opt_Comision.Enabled)
+                                                {
+                                                    @Html.RadioButtonFor(x => x.EsComision, true,
+                                                    new { @disabled = "disabled" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.RadioButtonFor(x => x.EsComision, true)
+                                                } Comision
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-right">
+                                <input type="submit" id="btnAceptar" name="cmdButton" class="btn btn-primary" value="Aceptar" />
+                                <input type="submit" id="btnCancelar" name="cmdButton" class="btn btn-default" value="Cancelar" />
+                                <input type="hidden" name="cmdButton" value="Aceptar" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        //datos en formato Json
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    @Scripts.Render("~/bundles/FundTransfer/SeleccionOficina")
+}
+
+

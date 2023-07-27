@@ -1,0 +1,188 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.CartaBancoCentralViewModel
+@using BCH.Comex.Core.BL.XGPL;
+@{
+    ViewBag.Title = "Reporte Carta Banco Central";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+ 
+ <table align="center" width="70%">
+    <tbody>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  SEÑORES</td>
+        </tr>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  DEPARTAMENTO OPERACIONES DE</td>
+        </tr>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  COMERCIO EXTERIOR Y CAMBIOS</td>
+        </tr>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  BANCO CENTRAL DE CHILE</td>
+        </tr>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  PRESENTE</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+ <table align="center" width="70%">
+    <tbody>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">  De nuestra consideración:</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+ <table align="center" width="70%">
+    <tbody>
+        <tr>
+            <td style="text-align:justify;font-family:'Times New Roman'">@Model.Frase</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+
+<table align="center" width="70%" class="tabla-reporte-carta">
+    <colgroup span="4"></colgroup>
+    <colgroup span="5"></colgroup>
+    <thead>
+        <tr class="titulos">
+            <th colspan="4">Planilla de Cobertura</th>
+            <th colspan="5">Aplicable a</th>
+        </tr>
+            <tr>
+                <th style="font-family:'Times New Roman';text-align:center">Cód</th>
+                <th style="font-family:'Times New Roman';text-align:center">Número<br />Present.</th>
+                <th style="font-family:'Times New Roman';text-align:center">Fecha<br />Present.</th>
+                <th style="font-family:'Times New Roman';text-align:center">Monto en US$</th>
+                <th style="font-family:'Times New Roman';text-align:center">Nº<br /> Declarac.</th>
+                <th style="font-family:'Times New Roman';text-align:center">Fecha<br />Declarac.</th>
+                <th style="font-family:'Times New Roman';text-align:center">Cód.<br />Aduana</th>
+                @if (Model.Planillas.Count > 0 && Model.Planillas[0].TipoPlanilla == 'I')
+                {
+                    <th style="font-family:'Times New Roman';text-align:center">Monto en US$<br />a aplicar a la D.I.</th>
+                    <th style="font-family:'Times New Roman';text-align:center">Monto intereses a<br /> aplicar a la D.I.</th>
+                }
+                else
+                {
+                    <th style="font-family:'Times New Roman';text-align:center">Vencimiento<br />del Retorno</th>
+                    <th style="font-family:'Times New Roman';text-align:center">Monto en US$</th>
+                }
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Planillas)
+        {
+            <tr>
+                    <td>@item.Correlativo</td>
+                    <td>@item.NumeroPresentacion</td>
+                    <td style="font-family:'Times New Roman';text-align:center" align="center">@item.FechaPresentacion.FormatoFecha()</td>
+                    <td style="font-family:'Times New Roman'" class="monto">@item.MontoDolaresPlanilla.FormatoDecimal()</td>
+                    <td style="font-family:'Times New Roman';text-align:center" class="numdec">@item.NumeroDeclaracion</td>
+                    <td style="font-family:'Times New Roman';text-align:center" align="center">@item.FechaDeclaracion.FormatoFecha()</td>
+                    <td style="font-family:'Times New Roman';text-align:center" align="center">@item.CodigoAduana</td>
+                    
+                    @if(item.TipoPlanilla == 'I')
+                    {
+                      <td style="font-family:'Times New Roman'" class="monto">@item.MontoDolaresDeclaracionIngresoString</td>
+                      <td style="font-family:'Times New Roman'" class="monto">@item.MontoInteresDeclaracionIngresoString</td>
+                    }
+                    else if (item.TipoPlanilla == 'E')
+                    { 
+                       <td style="text-align:center;font-family:'Times New Roman'">@item.VtoRet.FormatoFecha()</td>                   
+                       <td style="font-family:'Times New Roman'" class="monto">@item.MontoDolaresDeclaracionIngresoString</td>
+                    }
+                </tr>
+
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Fecha: @(DateTime.Now.FormatoFecha())
+</p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p>
+    <div class="firma">
+        Firma: <span class="linea-firma">Banco de Chile</span>
+    </div>
+</p>
+
+@section css {
+    <style>
+        .numdec {
+            text-wrap: none;
+            white-space: pre;
+        }
+        .firma {
+            margin-left: 50%;
+        }
+        .linea-firma {
+            display: block;
+            width: 15em;
+            margin-left: 5em;
+            border-top: 1px solid black;
+            text-align: center;
+        }
+        table.tabla-reporte-carta {
+            border: 0;
+            border-collapse: separate;
+            border-spacing: 0 5px;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        colgroup {
+            border: 1px solid black;
+        }
+
+        table.tabla-reporte-carta thead {
+            border: 1px solid;
+        }
+
+        table.tabla-reporte-carta thead tr:last-child th {
+            border-bottom: 1px solid black;
+            border-collapse: separate;
+        }
+
+        table.tabla-reporte-carta td, th {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        table.tabla-reporte-carta tr.titulos {
+            text-transform: uppercase;
+            border: 1px solid;
+        }
+    </style>
+}

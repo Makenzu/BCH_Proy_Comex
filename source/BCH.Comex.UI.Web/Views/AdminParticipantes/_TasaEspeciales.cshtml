@@ -1,0 +1,284 @@
+﻿@model BCH.Comex.UI.Web.Models.AdminParticipantes.ModalTasaEspecialViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="titleModalSrchPart">
+        <i class="glyphicon glyphicon-check"></i>&nbsp;
+        <label class="control-label">Tasa Especial</label>
+    </h4>
+</div>
+<div class="form-body">
+    <br />
+    <form id="formularioModalTasasEspeciales" name="formularioModalTasasEspeciales">
+        @Html.AntiForgeryToken()
+        <input id="Lb_fecing" name="Lb_fecing" type="hidden" value="@Model.Lb_fecing.Text" />
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        <div class="col-xs-12" id="manualContainer">
+                            @if (Model.manual.Enabled)
+                            {
+                                @Html.CheckBoxFor(model => model.manual.Checked)
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(model => model.manual.Checked, new { @disabled = "disabled" })
+                            }
+                            @Html.LabelFor(model => model.manual)
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                            @*@Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "10", data_inputmask = "'alias': 'date'" } })*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="button" id="aceptar" name="Command" value="Aceptar" class="btn btn-primary btn-block" />
+                            <input type="button" id="cancelar" name="Command" value="Cancelar" class="btn btn-default btn-block" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-5">
+                    <h5>Datos Tasa Especial</h5>
+                    <div class="form-group">
+                        <div class="col-xs-12" id="fijoContainer">
+                            @if (Model.fijo.Enabled)
+                            {
+                                @Html.CheckBoxFor(model => model.fijo.Checked)
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(model => model.fijo.Checked, new { @disabled = "disabled" })
+                            }
+                            @Html.LabelFor(model => model.fijo)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            @Html.LabelFor(model => model.tasa, htmlAttributes: new { @class = "control-label" })
+
+                            @Html.EditorFor(model => model.tasa, new { htmlAttributes = new { @class = "form-control input-sm monto", maxlength = "8" } })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            @Html.LabelFor(model => model.monto, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.monto, new { htmlAttributes = new { @class = "form-control input-sm monto", @maxlength = "17" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            @Html.LabelFor(model => model.minimo, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.minimo, new { htmlAttributes = new { @class = "form-control input-sm monto", @maxlength = "17" } })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            @Html.LabelFor(model => model.maximo, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.maximo, new { htmlAttributes = new { @class = "form-control input-sm monto", @maxlength = "17" } })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br />
+    </form>
+</div>
+
+@*<script src="~/Scripts/jquery.inputmask/jquery.inputmask.js"></script>*@
+<script>
+    var baseUrl = $("#base_url").val();
+    var formulario = $("#formularioModalTasasEspeciales");
+    //var usoDecimales = 2;
+    //setMascara();
+    //function setMascara() {
+    //    $("#tasa_Text").AppAdminParticipantes().initMascaraTasa();
+    //    $("#monto_Text").AppAdminParticipantes().initMascaraMonto(usoDecimales);
+    //    $("#minimo_Text").AppAdminParticipantes().initMascaraMonto(usoDecimales);
+    //    $("#maximo_Text").AppAdminParticipantes().initMascaraMonto(usoDecimales);
+    //}
+
+    $("#fecha_Text").inputmask("d/m/y", { "placeholder": "__/__/____" });
+
+    //$("#monto_Text").inputmask({
+    //    mask: '[9][9][9][9][9][9][9][9][9][9]9,99',
+    //    numericInput: true,
+    //    placeholder: '0',
+    //    greedy: false
+    //});
+
+    var opciones = { radixPoint: ",", digits: 2, autoGroup: true, groupSeparator: ".", groupSize: 3 };
+    $("#monto_Text").inputmask("decimal", opciones);
+    $("#minimo_Text").inputmask("decimal", opciones);
+    $("#maximo_Text").inputmask("decimal", opciones);
+
+    //$(":input").inputmask();
+
+    $('#manualContainer input[type=checkbox]').change(function () {
+        $.post(baseUrl + "AdminParticipantes/ModalTasasEspeciales_Manual_Click", { elem: $(this).attr('id'), value: $(this).prop('checked') }, function (dataResult) {
+            if (dataResult != null) {
+                var manual = dataResult.manual.Checked;
+                if (manual) {
+                    $("#fijo_Checked").removeAttr("checked");
+                    $("#tasa_Text").val(dataResult.tasa.Text);
+                    $("#monto_Text").val(dataResult.monto.Text);
+                    $("#minimo_Text").val(dataResult.minimo.Text);
+                    $("#maximo_Text").val(dataResult.maximo.Text);
+                }               
+                Frame(dataResult.Frame1.Enabled);              
+            }
+        });
+    });
+
+    function Frame(habiliDeshabilita) {
+
+        if (!habiliDeshabilita) {
+            $("#fijo_Checked").prop("disabled", true);
+            $("#tasa_Text").attr('disabled', 'disabled');
+            $("#minimo_Text").attr('disabled', 'disabled');
+            $("#monto_Text").attr('disabled', 'disabled');
+            $("#maximo_Text").attr('disabled', 'disabled');
+        }
+        else {
+            $("#fijo_Checked").prop("disabled", false);
+            $("#tasa_Text").removeAttr('disabled');
+            $("#minimo_Text").removeAttr('disabled');
+            $("#monto_Text").removeAttr('disabled');
+            $("#maximo_Text").removeAttr('disabled');
+        }
+
+    }
+
+    $('#fijoContainer input[type=checkbox]').change(function () {
+        $.post(baseUrl + "AdminParticipantes/ModalTasasEspeciales_Fijo_Click", { elem: $(this).attr('id'), value: $(this).prop('checked') }, function (dataResult) {
+            if (dataResult != null) {
+                var fijo = dataResult.fijo.Checked;
+                if (fijo) {
+                    $("#tasa_Text").val(dataResult.tasa.Text);
+                    $("#tasa_Text").attr('disabled', 'disabled');
+                    $("#maximo_Text").val(dataResult.tasa.Text);
+                    $("#maximo_Text").attr('disabled', 'disabled');
+                    // alert('true 1');
+                }
+                else {
+
+                    $("#tasa_Text").removeAttr('disabled');
+                    $("#maximo_Text").removeAttr('disabled');
+                    // alert('false 0');
+                }
+            }
+        });
+    });
+
+    $("#aceptar").click(function () {
+        var data = formulario.serialize();
+        $.post(baseUrl + "AdminParticipantes/ModalTasaEspeciales_Aceptar_Click", data, function (dataResult) {
+            if (dataResult != null) {
+                if (dataResult.mensaje != "")
+                    bootbox.alert(dataResult.mensaje);     
+                if (dataResult.marcaMensaje == 1)
+                    $('#modalTasaEspecial').modal('hide');
+                else {
+                    $('#modalTasaEspecial').modal('show');
+                    return;
+                }
+                var lista_com = $('#ListaComision_SelectedValue');
+                var traeLista_com = dataResult.data.lista_com.Items;
+                
+                lista_com.html('');
+                $.each(traeLista_com, function (id, option) {
+                    lista_com.append($('<option></option>').val(option.Data).html(option.Value));
+                });
+                lista_com.val(dataResult.data.lista_com.ListIndex);  
+            }
+        });
+    });
+
+    $('#cancelar').click(function (e) {
+        $('#modalTasaEspecial').modal('hide');
+    });
+
+    //$("#tasa_Text").blur(function () {
+    //    var string = numeral($("#tasa_Text").val()).format("##,###0.000000");
+    //    $("#tasa_Text").val(string);
+    //});
+
+    $("#tasa_Text").blur(function () {
+        var data = formulario.serialize();
+        $.post(baseUrl + "AdminParticipantes/TasaEspeciales_Tasa_LostFocus", data, function (dataResult) {
+            if (dataResult != null) {
+                if (dataResult.MensajesDeError.length > 0) {
+                    dataResult.MensajesDeError.forEach(function (element) {
+                        bootbox.alert(element.Text);
+                    });
+                }
+            }
+        });
+    })
+
+    $("#monto_Text").blur(function () {
+        var data = formulario.serialize();
+        $.post(baseUrl + "AdminParticipantes/TasaEspeciales_Monto_LostFocus", data, function (dataResult) {
+            if (dataResult != null) {
+
+                if (dataResult.idEstadoMonto == 1) {
+                    bootbox.alert("Monto ingresado fuera de rango.");
+                }
+            }
+        });
+    })
+
+    $("#maximo_Text").blur(function () {
+        var data = formulario.serialize();
+        $.post(baseUrl + "AdminParticipantes/TasaEspeciales_Maximo_LostFocus", data, function (dataResult) {
+            if (dataResult != null) {
+                //alert(dataResult.idEstadoMonto);
+                if (dataResult.idEstadoMonto == 1)
+                    bootbox.alert("Monto mínimo es mayor que monto máximo.");
+            }
+        });
+    })
+
+    $("#minimo_Text").blur(function () {
+        var data = formulario.serialize();
+        $.post(baseUrl + "AdminParticipantes/TasaEspeciales_Minimo_LostFocus", data, function (dataResult) {
+            if (dataResult != null) {
+                //alert(dataResult.idEstadoMonto);
+                if (dataResult.idEstadoMonto == 1)
+                    bootbox.alert("Monto mínimo es mayor que monto máximo.");
+            }
+        });
+    })
+</script>

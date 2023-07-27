@@ -1,0 +1,85 @@
+﻿<div class="modal fade" id="modalAdminCasillas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Administración de casillas</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <caption>Seleccione las casillas que desea ver en el filtro de búsqueda</caption>
+                    <thead>
+                        <tr>
+                            <th class="text-center">Visible</th>
+                            <th class="text-center">Principal</th>
+                            @*<th>Código</th>*@
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="text-center"><input name="chkAll" type="checkbox" onchange="selectAll(this)" /></th>
+                            <th class="text-center"></th>
+                            <th class="text-left">Seleccionar Todas</th>
+                        </tr>
+                        @foreach (SelectListItem casilla in Model.TodasLasCasillas)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="text-center">
+                                        <label><input name="chkCasillaVisible" type="checkbox" value="@casilla.Value" @Html.Raw(Model.IdsCasillasVisibles.Contains(casilla.Value) ? "checked" : String.Empty)></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <label><input name="radCasillaPrincipal" onchange="selectCheckbox(this)" type="radio" value="@casilla.Value" @Html.Raw(Model.IdCasillaDefault == casilla.Value ? "checked" : String.Empty)></label>
+                                    </div>
+                                </td>
+                                @*<td>@casilla.Value</td>*@
+                                <td id="trNombreCasilla">@casilla.Text</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="close" onclick="desSelectAll(this)" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button id="btnGuardarCasillas" type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var last = null;
+    function selectCheckbox(elem) {
+        var e = $(elem);
+        var immediateP = e.parent().parent().parent().parent();
+        var elementNeeded = immediateP.children(":first").children(":first").children(":first").children(":first");
+        if (last) {
+            last.prop("checked", false);
+        }
+        elementNeeded.prop("checked", true);
+        last = elementNeeded;
+        console.log(elem);
+    }
+
+    //Seleccionar Todas
+
+    function selectAll(elem) {
+        checkboxes = document.getElementsByName('chkCasillaVisible');
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
+            checkboxes[i].checked = elem.checked;
+        }
+    };
+
+    //Deseleccionar Todos
+
+    function desSelectAll(elem) {
+        checkboxes = document.getElementsByName('chkCasillaVisible');
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
+            checkboxes[i].checked = elem.unchecked;
+        }
+    };
+
+
+</script>

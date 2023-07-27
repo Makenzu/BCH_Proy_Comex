@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0db48fd9-d561-48bd-ac1c-182420ff3fd1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="3.xsd" MetadataType="Schema" ID="d4d4ca19-5fcf-479f-815a-de8d6b7cbf48" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FSRV.BCH.NEG.CIF%2FSRV.000400_3.0.ConsultarFichaClienteFull%2FSpecifications%2FMSG.000400_3.0.ConsultarFichaClienteFullRs" />
+    <MetadataFile FileName="31.xsd" MetadataType="Schema" ID="4353a5f1-f27f-4d5d-b5c1-7652c76f5de3" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FSRV.BCH.NEG.CIF%2FSRV.000400_3.0.ConsultarFichaClienteFull%2FSpecifications%2FMSG.000400_3.0.ConsultarFichaClienteFullRq" />
+    <MetadataFile FileName="32.xsd" MetadataType="Schema" ID="11d23a9b-12ac-4ca3-88da-5c232d27a830" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FBCH.NEG.ModeloComunInformacion%2FSpecifications%2FENT.4.0.BCH.NEG.CabeceraServicios" />
+    <MetadataFile FileName="33.xsd" MetadataType="Schema" ID="614edb34-bf4e-40b0-a9d2-d398c0dde67c" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FBCH.INFRA.Arquitectura%2FControlErrores%2FSpecifications%2FMSG.6.0.BCH.INFRA.ErrorDetails" />
+    <MetadataFile FileName="34.xsd" MetadataType="Schema" ID="6513ef9b-a832-4118-9692-905ff8c8eec8" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FBCH.INFRA.ModeloComunInformacion%2FSpecifications%2FENT.3.0.BCH.INFRA.CabeceraServicios" />
+    <MetadataFile FileName="35.xsd" MetadataType="Schema" ID="5da2aa49-5cd8-4038-8dad-e156a95fb4c0" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FBCH.INFRA.ModeloComunInformacion%2FSpecifications%2FENT.3.0.BCH.INFRA.Comun" />
+    <MetadataFile FileName="CTR.000400_3.0.wsdl" MetadataType="Wsdl" ID="4624f659-d168-45ab-9be7-6be9d549327f" SourceId="1" SourceUrl="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

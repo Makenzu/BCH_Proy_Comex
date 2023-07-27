@@ -1,0 +1,18 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 text-center" id="NuevosDestinos">
+            <p>
+                El destino de los fondos ya se encuentra definido. ¿Desea volver a definirlos?
+            </p>
+            <div>
+                <button type="button" id="btn_no" class="btn btn-default" data-bind="click: noVolverADefinir">No</button>
+                <button type="button" id="btn_si" class="btn btn-primary" data-bind="click: volverADefinir">Si</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+@Scripts.Render("~/bundles/FundTransfer/NuevoDestino")
+}
+

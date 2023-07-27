@@ -1,0 +1,485 @@
+﻿<div class="container-fluid" id="ComercioInvisible">
+    <style>
+        .modal-arbt {
+            width: 80vw; /* Aumentar el ancho del modal en un 80% en relación con la pantalla */
+            max-width: 100%;
+            margin: 1.75rem auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .table-arbt {
+            border-collapse: collapse; /* fusionar bordes de las celdas adyacentes */
+            width: 100%;
+            text-align: center; /* alinear el texto a la izquierda */
+            margin: 0 auto; /* centrar la tabla en su contenedor */
+        }
+
+        .td-arbt {
+            border: 1px solid #ddd; /* agregar borde de 1px sólido con color gris claro */
+            padding: 8px; /* agregar relleno de 8px en todas las celdas */
+            text-align: center; /* alinear el texto a la izquierda */
+            white-space: nowrap;
+        }
+
+        .th-arbt {
+            background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+            font-weight: bold; /* agregar negrita al texto de encabezado */
+            white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+            color: white;
+            font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+        }
+
+        .table-container {
+            width: 99%;
+            overflow-x: auto; /* agregar scroll horizontal */
+        }
+
+
+        .table-header {
+            background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+            font-weight: bold; /* agregar negrita al texto de encabezado */
+            white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+            color: white;
+            font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            text-align: center; /* alinear el texto a la izquierda */
+        }
+    </style>
+    <h3>Comercio Invisible @ViewBag.Caption</h3>
+
+    <div class="row">
+        <div id="Fr_Ope" data-bind="disableChildren: !Fr_Ope.Enabled, css: Fr_OpeD.Visible() ? 'col-xs-8':'col-xs-12'">
+            <div class="col-xs-4">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-xs-4">Operación</label>
+                        <div class="col-xs-8">
+                            <select id="Cb_Divisa" tabindex="1" data-bind="enable: Cb_Divisa.Enabled, options: Cb_Divisa.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Divisa.Value, event:{blur:cb_divisa_blur,change:cb_divisa_change}" class="form-control input-sm"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">País</label>
+                        <div class="col-xs-8">
+                            <select id="Cb_Pais" tabindex="3" data-bind="enable: Cb_Pais.Enabled, options: Cb_Pais.Items, optionsText: 'Value',optionsCaption: '--Seleccione--' , optionsValue: 'Data', value: Cb_Pais.Value, event:{change:cb_pais_change}" class="form-control input-sm"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">Moneda</label>
+                        <div class="col-xs-8">
+                            <select id="Cb_Moneda" tabindex="4" data-bind="enable: Cb_Moneda.Enabled, options: Cb_Moneda.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Moneda.Value,optionsCaption: '--Seleccione--' , event:{change:cb_moneda_change, blur:cb_moneda_blur }" class="form-control input-sm"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 form-horizontal">
+                <div class="col-xs-12">
+                    <div class="form-group ">
+                        <label class="pull-left" style="padding-left:15px; width: 22.2%;">Concepto</label>
+                        <div class="col-xs-9">
+                            <select id="Lt_Tcp" tabindex="2" data-bind="enable: Lt_Tcp.Enabled, options: Lt_Tcp.Items, optionsText: 'Value', optionsValue: 'Data', value: Lt_Tcp.Value, event:{blur:lt_tcp_blur,change:lt_tcp_change}" class="form-control input-sm" style="min-width:100%;"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label class="col-xs-4">Monto</label>
+                        <div class="col-xs-8">
+                            <input id="monto" tabindex="5" type="text" maxlength="16" class="form-control monto input-sm" data-bind="textInput: Tx_MtoCV()[0].Text, enable: Tx_MtoCV()[0].Enabled, event:{blur:tx_mtocv_blur(0), keypress:tx_datos_keypress}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">Tipo Cambio</label>
+                        <div class="col-xs-8">
+                            <input id="tipoCambio" tabindex="6" type="text" maxlength="12" class="form-control monto input-sm" data-bind="textInput: Tx_MtoCV()[1].Text, enable: Tx_MtoCV()[1].Enabled, event:{blur:tx_mtocv_blur(1), keypress:tx_datos_keypress}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">Monto en $</label>
+                        <div class="col-xs-8">
+                            <input id="montoPesos" tabindex="7" type="text" class="form-control monto" data-bind="textInput: Tx_MtoCV()[2].Text, enable: Tx_MtoCV()[2].Enabled, event:{blur:tx_mtocv_blur(2)}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">Paridad</label>
+                        <div class="col-xs-8">
+                            <input id="paridad" tabindex="8" type="text" maxlength="12" class="form-control monto input-sm" data-bind="textInput: Tx_MtoCV()[3].Text, enable: Tx_MtoCV()[3].Enabled, event:{blur:tx_mtocv_blur(3), keypress:tx_datos_keypress}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4">Cant. de Acuerdos</label>
+                        <div class="col-xs-8">
+                            <input type="text" maxlength="1" class="form-control monto input-sm" data-bind="textInput: Tx_CanAc.Text, event:{keypress:tx_datos_keypress}" data-inputmask="'mask': '9','repeat': 8, 'greedy' : false" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="check" type="checkbox" data-bind="checked: Ch_Convenio.Checked, event:{change:ch_convenio_change}" />
+                            Convenio
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input id="check" type="checkbox" data-bind="checked: ch_AfDer.Checked" />
+                            Afecto a Deriv.
+                        </label>
+                    </div>
+                    @*<div class="checkbox">
+                            <label>
+                                <input id="check" type="checkbox" data-bind="checked: ch_ZoFra.Checked" />
+                                Zona Franca
+                            </label>
+                        </div>*@
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group text-left">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="btn_chilefx" tabindex="9" class="btn btn-info" style="width: 100px; color: #fff" data-bind="click: btn_chilefx_click">
+                                    <i class="glyphicon "></i>
+                                    ChileFx
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="input-group pull-right" style="margin-top: 26px">
+                                <button id="btn_ok" tabindex="10" class="btn btn-success input-group-addon" style="width: 39px; color: #fff" data-bind="click: ok_btn_click">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button id="btn_no" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff" data-bind="click: no_btn_click">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div data-bind="if: Fr_OpeD.Visible()">
+            <div class="col-xs-4" id="Fr_OpeD" data-bind="if: Fr_OpeD.Visible(), disableChildren: !Fr_OpeD.Enabled()">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Operaciones de Derivados</legend>
+                        <div class="form-group">
+                            <label class="col-xs-4">Nro. de Contrato</label>
+                            <div class="col-xs-8">
+                                <input tabindex="11" id="Tx_NumCon" type="text" maxlength="8" class="form-control input-sm" data-bind="textInput: Tx_NumCon.Text, valueUpdate:'afterkeydown'" data-inputmask="'mask': '9','repeat': 8, 'greedy' : false" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-4">Fec. Suscript.</label>
+                            <div class="col-xs-8">
+                                <input tabindex="12" type="text" id="Tx_FecSus" class="form-control input-sm" data-bind="textInput: Tx_FecSus.Text, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4">Fec. Vcto.</label>
+                            <div class="col-xs-8">
+                                <input tabindex="13" type="text" id="Tx_FecVen" class="form-control input-sm" data-bind="textInput: Tx_FecVen.Text, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4">Instr. Utiliz.</label>
+                            <div class="col-xs-8">
+                                <select id="Cb_InsUt" tabindex="14" data-bind="options: Cb_InsUt.Items, optionsCaption: '--Seleccione--' ,optionsText: 'Value', optionsValue: 'Data', value: Cb_InsUt.Value, event:{change:cb_insut_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4">Parid./T. Camb.</label>
+                            <div class="col-xs-8">
+                                <input tabindex="15" type="text" id="Tx_ParTip" class="form-control input-sm" data-bind="textInput: Tx_ParTip.Text, valueUpdate:'afterkeydown'" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4">Area Cont.</label>
+                            <div class="col-xs-8">
+                                <select id="Cb_ArCon" tabindex="16" data-bind="options: Cb_ArCon.Items, optionsCaption: '--Seleccione--' ,optionsText: 'Value', optionsValue: 'Data', value: Cb_ArCon.Value, event:{change:cb_arcon_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div data-bind="if: Fr_OFI.Visible() || Fr_Sec.Visible()">
+            <div class="col-xs-5">
+                <div id="Fr_OFI" data-bind="if: Fr_OFI.Visible(), childrenEnabled: Fr_OFI.Enabled()">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Operaciones Financieras Internacionales</legend>
+                            <div class="form-group">
+                                <label class="col-xs-4">Nro. Inscripción</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_NumIns" maxlength="6" tabindex="17" class="form-control input-sm" data-bind="value: Tx_NumIns.Text,enable: Fr_OFI.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'mask': '9','repeat': 6, 'greedy' : false" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Fec. Inscrip.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_FecIns" tabindex="18" class="form-control input-sm" data-bind="value: Tx_FecIns.Text,enable: Fr_OFI.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Nom. Financ.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_NomFin" maxlength="60" min="8" max="60" tabindex="19" class="form-control input-sm" data-bind="value: Tx_NomFin.Text,enable: Fr_OFI.Enabled, event:{change:Tx_NomFin_change, keypress: Tx_NomFin_keypress}, valueUpdate:'afterkeydown'" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Fec. Vto. C. I. C.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_FecVC" tabindex="20" class="form-control input-sm" data-bind="value: Tx_FecVC.Text,enable: Fr_OFI.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Fecha Desemb.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_Fecha" tabindex="21" class="form-control input-sm" data-bind="value: Tx_Fecha.Text,enable: Fr_OFI.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Moneda Des.</label>
+                                <div class="col-xs-8">
+                                    <select id="Cb_MonDes" tabindex="22" data-bind="enable: Fr_OFI.Enabled, options: Cb_MonDes.Items, optionsText: 'Value', optionsCaption: '--Seleccione--', optionsValue: 'Data', value: Cb_MonDes.Value, event:{change:cb_mondes_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Mto Equiv.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_Mto" tabindex="23" class="form-control input-sm" data-bind="value: Tx_Mto.Text,enable: Fr_OFI.Enabled, valueUpdate:'afterkeydown'" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="Fr_Sec" data-bind="if: Fr_Sec.Visible(), disableChildren: !Fr_Sec.Enabled()">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Sectores</legend>
+                            <div class="form-group">
+                                <label class="col-xs-4">Sec. Ec. Benef.</label>
+                                <div class="col-xs-8">
+                                    <select id="Cb_SecEcBen" tabindex="24" data-bind="enable: Cb_SecEcBen.Enabled,optionsCaption: '--Seleccione--' , options: Cb_SecEcBen.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_SecEcBen.Value, event:{change:cb_sececben_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Sec. Ec.Inver.</label>
+                                <div class="col-xs-8">
+                                    <select id="Cb_SecEcIn" tabindex="25" data-bind="enable: Cb_SecEcIn.Enabled,optionsCaption: '--Seleccione--' , options: Cb_SecEcIn.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_SecEcIn.Value, event:{change:cb_sececin_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-4">Porcent.Particip.</label>
+                                <div class="col-xs-8">
+                                    <input type="text" id="Tx_PrcPar" tabindex="26" class="form-control input-sm" data-bind="value: Tx_PrcPar.Text, enable: Tx_PrcPar.Enabled, valueUpdate:'afterkeydown'" maxlength="4" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="disableChildren: !Fr_Ope.Enabled, css: (Fr_OFI.Visible() || Fr_Sec.Visible() || Fr_OpRe.Visible() || Fr_Declaracion.Visible() || Fr_Convenio.Visible() || Fr_Autori.Visible()) ? 'col-xs-7':'col-xs-7'">
+            <div class="col-xs-6" id="Fr_Convenio" data-bind="if: Fr_Convenio.Visible(), disableChildren: !Fr_Convenio.Enabled()">
+                <form>
+                    <fieldset>
+                        <legend>Conv. Crédito Recíproco</legend>
+                        <div class="form-group">
+                            <label>Fec. Débito</label>
+                            <input type="text" id="Tx_FecDeb" tabindex="27" class="form-control input-sm" data-bind="value: Tx_FecDeb.Text,enable: Tx_FecDeb.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Doc. Nac.</label>
+                            <input type="text" id="Tx_DocNac" tabindex="28" class="form-control input-sm" data-bind="value: Tx_DocNac.Text,enable: Tx_DocNac.Enabled, event:{blur:tx_docnac_blur, change: tx_docnac_change}, valueUpdate:'afterkeydown'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Doc. Ext</label>
+                            <input type="text" id="Tx_DocExt" tabindex="29" class="form-control input-sm" data-bind="value: Tx_DocExt.Text,enable: Tx_DocNac.Enabled, valueUpdate:'afterkeydown'" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-xs-6" id="Fr_Autori" data-bind="if: Fr_Autori.Visible(), disableChildren: !Fr_Autori.Enabled()">
+                <form>
+                    <fieldset>
+                        <legend>Datos Aut. Bco. Central</legend>
+                        <div class="form-group">
+                            <label>Tipo de Aut.</label>
+                            <select id="Cb_TipAut" tabindex="30" data-bind="enable: Cb_TipAut.Enabled, options: Cb_TipAut.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_TipAut.Value, event:{change:cb_tipaut_change}, valueUpdate:'afterkeydown'" class="form-control input-sm"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nro. Aut.</label>
+                            <input type="text" id="Tx_NroAut" tabindex="31" class="form-control input-sm" data-bind="value: Tx_NroAut.Text,enable: Tx_NroAut.Enabled, valueUpdate:'afterkeydown'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha Aut.</label>
+                            <input type="text" id="Tx_FecAut" tabindex="32" class="form-control input-sm" data-bind="value: Tx_FecAut.Text,enable: Tx_FecAut.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Suc. BCCH.</label>
+                            <input type="text" id="Tx_SucBcch" tabindex="33" class="form-control input-sm" data-bind="value: Tx_SucBcch.Text,enable: Tx_SucBcch.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'mask': '9','repeat': 3, 'greedy' : false" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-xs-6" id="Fr_Declaracion" data-bind="if: Fr_Declaracion.Visible(), disableChildren: !Fr_Declaracion.Enabled()">
+                <form>
+                    <fieldset>
+                        <legend>Datos Declaración</legend>
+                        <div class="form-group">
+                            <label>Nro. Dec.</label>
+                            <input type="text" id="Tx_NroDec" tabindex="34" class="form-control input-sm" data-bind="value: Tx_NroDec.Text,enable: Tx_NroDec.Enabled, event:{blur:tx_nrodec_blur, change: tx_nrodec_change}, valueUpdate:'afterkeydown'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha Dec.</label>
+                            <input type="text" id="Tx_FecDec" tabindex="35" class="form-control input-sm" data-bind="value: Tx_FecDec.Text,enable: Tx_FecDec.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Cód. Adn.</label>
+                            <input type="text" id="Tx_CodAdn" tabindex="36" class="form-control input-sm" data-bind="value: Tx_CodAdn.Text,enable: Tx_CodAdn.Enabled, event:{blur:tx_codadn_blur, change:tx_codadn_change}, valueUpdate:'afterkeydown'" />
+                        </div>
+                        <div class="form-group">
+                            <label>E/R</label>
+                            <input type="text" id="Tx_ER" tabindex="37" class="form-control input-sm" data-bind="value: Tx_ER.Text,enable: Tx_ER.Enabled, event:{blur:tx_er_blur, change: tx_er_change}, valueUpdate:'afterkeydown'" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="Fr_OpRe" class="col-xs-6" data-bind="if: Fr_OpRe.Visible(), disableChildren: !Fr_OpRe.Enabled()">
+                <form>
+                    <fieldset>
+                        <legend>Operación Relacionada</legend>
+                        <div class="form-group">
+                            <label>Fec.</label>
+                            <input type="text" id="Tx_FecPre" tabindex="38" class="form-control input-sm" data-bind="value: Tx_FecPre.Text,enable: Tx_FecPre.Enabled, valueUpdate:'afterkeydown'" data-inputmask="'alias': 'date'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Nro.</label>
+                            <input type="text" id="Tx_NumPre" tabindex="39" class="form-control input-sm" data-bind="value: Tx_NumPre.Text,enable: Tx_NumPre.Enabled, valueUpdate:'afterkeydown'" />
+                        </div>
+                        <div class="form-group">
+                            <label>Cod.</label>
+                            <input type="text" id="Tx_CodIns" tabindex="40" class="form-control input-sm" data-bind="value: Tx_CodIns.Text,enable: Tx_CodIns.Enabled, valueUpdate:'afterkeydown'" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Moneda</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="operaciones" data-bind="foreach: Lt_Operacion.Items">
+                            <tr data-bind="event: {dblclick: $parent.lt_operacion_click($index)}">
+                                <td data-bind="text: columns.tipo"></td>
+                                <td data-bind="text: columns.moneda"></td>
+                                <td data-bind="text: columns.monto"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <input type="button" id="btnAccept" tabindex="41" class="btn btn-primary" data-bind="click: co_btn_click(0), event:{keydown:co_btn_keypress}" value="Aceptar" />
+                    <input type="button" id="btnCancel" class="btn btn-default" data-bind="click: co_btn_click(1)" value="Cancelar" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="ConsultaDealsDisponible">
+    <div class="modal-dialog modal-arbt">
+        <div class="modal-content">
+            <div class="modal-header table-header">
+                <h5 class="modal-title">
+                    Deals Cliente y valor tipo cambio pizarra
+                </h5>
+            </div>
+            <div class="modal-body table-container ">
+                <table class="table-arbt">
+                    <thead>
+                        <tr class="tg-th">
+                            <th class="w64 td-arbt th-arbt">Selección</th>
+                            <th class="w60 td-arbt th-arbt">Tipo</th>
+                            <th class="w70 td-arbt th-arbt">ID<br />ChileFX</th>
+                            <th class="w60 td-arbt th-arbt">Tipo de<br /> cambio</th>
+                            <th class="w55 td-arbt th-arbt" hidden>Pais</th>
+                            <th class="w55 td-arbt th-arbt" hidden>Moneda</th>
+                            <th class="w55 td-arbt th-arbt">Moneda<br />Compra</th>
+                            <th class="w55 td-arbt th-arbt">Moneda<br />Venta</th>
+                            <th class="w55 td-arbt th-arbt" hidden>PPM2</th>
+                            <th class="w55 td-arbt th-arbt" hidden>PPM1</th>
+                            <th class="w92 td-arbt th-arbt">Monto original</th>
+                            <th class="w93 td-arbt th-arbt">Saldo</th>
+                            <th class="w110 td-arbt th-arbt">Saldo en $</th>
+                            <th class="w81 td-arbt th-arbt">Fecha deal</th>
+                            <th class="w81 td-arbt th-arbt">Fecha valuta</th>
+                            <th class="w70 td-arbt th-arbt">Origen</th>
+                            <th class="w60 td-arbt th-arbt" hidden>Tipo</th>
+                            <th class="w80 td-arbt th-arbt" hidden>CEC</th>
+                            <th class="w134 td-arbt th-arbt">Num SCE Transitoria</th>
+                            <th class="w134 td-arbt th-arbt">Num SCE Contingente</th>
+                            <th class="w104 td-arbt th-arbt">Código comercio</th>
+                            <th class="w102 td-arbt th-arbt" hidden>Descripción Operación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb_CDD">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" role="dialog" id="msg_us" style="top: 25%;">
+    <div class="modal-dialog" style="text-align:center; width:450px;">
+        <div class="modal-content">
+            <div class="modal-title" style="background-color:red; color:white; margin-top:-8px;">
+                &nbsp;
+            </div>
+            <div class="modal-body">
+                <br /><br /><br />
+                <h2 class="modal-title">Monto ingresado no valido.</h2>
+                <h4>Supera la tolerancia de hasta +5% ó +100 USD.</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" tabindex="101" id="btn_Close_Adv" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap-table-es-SP.js"></script>
+    <script type="text/javascript" src="~/Scripts/knockout.viewmodel.2.0.3.js"></script>
+    @*<script src="~/Scripts/sweetalert2.all.min.js"></script>*@
+    @Scripts.Render("~/bundles/FundTransfer/ComercioInvisible")
+}
+
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="~/Content/css/FundTransfer.css" />
+}

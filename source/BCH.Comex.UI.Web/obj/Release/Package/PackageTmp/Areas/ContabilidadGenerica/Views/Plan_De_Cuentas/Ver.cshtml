@@ -1,0 +1,29 @@
+﻿@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div id="NemonicoCuenta">
+    <div class="col-xs-8">
+        <table id="cuentas" data-height="500" data-single-select="true">
+            <thead>
+                <tr>
+                    <th data-checkbox="true"></th>
+                    <th data-field="Cta_Num" data-sortable="true">Número</th>
+                    <th data-field="Cta_Nem" data-sortable="true">Nemónico</th>
+                    <th data-field="Cta_Nom" data-sortable="true">Descripción</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="row">
+            <div class="col-xs-6">
+                <button class="btn btn-primary" id="btn_aceptar">Aceptar</button>
+                <button class="btn btn-default" id="btn_cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/FrmCta")
+}

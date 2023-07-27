@@ -1,0 +1,731 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.Index
+@{
+    ViewBag.Title = "Gestión y Control Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/gestion-y-control-inv.png");
+}
+@section css{
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+        .clickable .glyphicon {
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+        a.clickable {
+            color: inherit;
+        }
+        a.clickable:hover {
+            text-decoration: none;
+        }
+    </style>
+}
+<div id="msg-zone">
+
+</div>
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("ControlEnvioMensajeriaSwift")">Control de Envío</a></li>
+                <li><a href="@Url.Action("ControlSwift")">Control de Recepción</a></li>
+                <li><a href="@Url.Action("Index")">Gestión Mensajes Recibidos</a></li>
+                <li><a href="@Url.Action("GestionEnviados")">Gestión Mensajes Enviados</a></li>
+                <li><a href="@Url.Action("EstadisticaEnviarRecibir")">Estadísticas Enviar/Recibir</a></li>
+            </ul>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Encasillamiento</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("EncasillamientoManualSwift")">Encasillamiento Manual</a></li>
+                <li><a href="@Url.Action("EncasillamientoAutomaticoSwift")">Encasillamiento Automático</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Control de Recepción de Mensajes</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title">Filtros</h2>
+                <span class="pull-right"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("dtpFechaDesde", "Fecha de Control", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaDesde">
+                                        <input type="text" class="form-control" id="txtFechaDesde" data-inputmask="'alias': 'date'" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-default" id="pnlResultados" style="display: none">
+    <div class="panel-heading">
+        <h2 class="panel-title">Resultados</h2>
+    </div>
+    <div class="col-xs-12" id="pnlResultados3" style="padding-top:20px; display:none;">
+        <button class="btn btn-info" id="btnVerificar">Verificar</button>
+        <button class="btn btn-info" id="btnRefrescar">Refrescar</button>
+    </div>
+    <div class="col-xs-12" id="pnlResultados2" style="display: none">
+        <div class="input-group col-xs-12">
+            <label class="radio-inline">
+                <input type="radio" name="direccion" id="MensajesRecepcionados" value="1" checked>Mensajes Recepcionados
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="direccion" id="NoRecepcionados" value="2">No Recepcionados
+            </label>
+            &nbsp;&nbsp;<button class="btn btn-info" id="btnReporte">Reporte</button>
+        </div>
+    </div>
+        <div class="panel-body">
+            <div class="col-xs-4" id="pnlTabla1">
+                    <h3>Mensajes Recepcionados</h3>
+                    <table id="tablaSwifts">@*Mensajes Recepcionados*@</table>
+            </div>
+            <div class="col-xs-4" id="pnlTabla2">
+                <h3>Recepcionados OK</h3>
+                <table id="tablaSwifts02">@*Recepcionados OK*@</table>
+            </div>
+            <div class="col-xs-4" id="pnlTabla3">
+                <h3>No Recepcionados</h3>
+                <table id="tablaSwifts03">@*No Recepcionados*@</table>
+            </div>
+        </div>
+    </div>
+
+<div id="modalBloquearSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Todos o Por Rango">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Control de Mensajes</h4>
+            </div>
+            <div class="modal-body" id="divBloqueoSwift">
+                <form action="/ComexCVD/GestionControlSwift/VentanaTodosPorRango" class="form-horizontal well" id="frmVentanaTodosPorRango" method="post" role="form" style="margin-left: 20px; margin-right: 20px">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="input-group col-xs-12">
+                                <label class="radio-inline">
+                                    <input type="radio" name="direccion" id="radioTodos" value="1" checked="">Todos
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="direccion" id="radioPorRango" value="2">Por Rango
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label style="text-align:left; margin-left : 5px" for="Sesion">Sesión</label>
+                            <input class="control-label col-xs-6" id="Sesion" name="Sesion" type="number" min="0" max="9999999999" maxlength="10" oninput="Largo(this)" onkeypress="return isNumeric(event)" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label style="text-align:left; margin-left : 5px" for="Inicio">Inicio</label>
+                            <input class="control-label col-xs-6" id="Inicio" name="Inicio" type="number" min="0" max="9999999999" maxlength="10" oninput="Largo(this)" onkeypress="return isNumeric(event)" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label style="text-align:left; margin-left : 5px" for="Termino">Término</label>
+                            <input class="control-label col-xs-6" id="Termino" name="Termino" type="number" min="0" max="9999999999" maxlength="10" oninput="Largo(this)" onkeypress="return isNumeric(event)" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert" id="divError" style="display:none">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12" style="margin-top: 20px;">
+
+
+                        </div>
+                    </div>
+                    <div class="modal-body" id="MensajeExito" hidden="">
+                        <div class="alert alert-info" role="alert">
+                            <strong>Información!</strong><br>
+                            Swift bloqueado con exito.
+                        </div>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3">
+                            <table id="tablaApoyo"></table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary pull-right" aria-hidden="true" id="btnAceptar">Aceptar</button>
+            </div>
+        </div>
+
+    </div>
+ 
+</div>
+
+@section scripts{
+<script type="text/javascript">
+    $.fx.off = true;
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+
+    $(document).on('click', '.panel div.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+
+    var fechaDesde;
+    var ultimosParamsConsultaSwift = null;
+    var formatoPOST = "DD/MM/YYYY";
+    var formatoGET = "YYYY/MM/DD";
+    var _data;
+    var _data01;
+    var _data03;
+    var _globalSecuencia;
+    var _globalSecuenciaFinal;
+    var _globalSesion;
+    var rowSelected;
+    var sesion;
+    var secuencia;
+    var estado;
+    var cod_banco_rec;
+    var _Array;
+    var sesionParam = 0;
+    var secuenciaIni = 0;
+    var secuenciaFin = 0;
+    var filaIni = 0;
+    var filaFin = 0;
+    $('#frmVentanaTodosPorRango').submit(function (e) {
+
+        e.preventDefault();
+    });
+    
+    var dateNow = moment().startOf("day").utc();
+
+    $('#dtpFechaDesde').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, debug: true });
+
+    $('#dtpFechaDesde').on("dp.change", function (e) {
+        fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        buscarPorFecha(fechaDesde);
+    });
+
+    $("#btnRefrescar").click(function () {
+        if (fechaDesde !== undefined)
+        {
+            buscarPorFecha(fechaDesde);
+        }
+    });
+
+    var obtieneMaximaSecuencia = function (sesion, secuencia) {
+        //se asume que el llamado de esto se realiza habiendo obtenido la data desde _data
+        var secuenciaResult = secuencia;
+        for (var i = 1; i < _data.length; i++) {
+            var sesionTemp = _data[i]["Sesion"];
+            var secuenciaTemp = _data[i]["Secuencia"];
+            if (sesionTemp == sesion) {
+                secuenciaResult = secuenciaTemp;
+            } else {
+                break;
+            }
+        }
+        return secuenciaResult;
+    };
+
+    var Load = function () {
+        fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        armarTabla1();
+        mostrarUOcultarElementosLuegoDeBusqueda();
+    }
+
+    function armarTabla1()
+    {
+        var url = '@Url.Action("GetControlRecepcionMensajes", "GestionControlSwift")';
+
+        $('#tablaSwifts').bootstrapTable({
+            classes: 'table',
+            url: url,
+            queryParams: function GetParamsParaBusquedaSwift(p) {
+                ultimosParamsConsultaSwift = {
+                    idCasilla: 0,
+                    fechaDesde: fechaDesde.format("YYYY/MM/DD")
+                };
+                return ultimosParamsConsultaSwift;
+            },
+            locale: "es-SP",
+            columns: [
+                { field: 'Sesion', title: 'Sesión', visible: true },
+                { field: 'Secuencia', title: 'Secuencia', visible: true },
+                { field: 'Estado', title: 'Estado', visible: true }
+            ],
+            searchAlign: 'left',
+            showRefresh: false,
+            clickToSelect: true,
+            search: false,
+            checkboxHeader: false,
+            toolbar: '#custom-toolbar',
+            striped: true,
+            pagination: true,
+            pageSize: 15,
+            pageList: [20, 50, 100, 200]
+            //height: 550
+        });
+
+        $('#tablaSwifts').on('load-success.bs.table', function (e, data) {
+            _data = $('#tablaSwifts').bootstrapTable('getData');
+            $('#btnVerificar').prop('disabled', (_data.length == 0));
+
+            if (!$(".clickable").hasClass('panel-collapsed') && _data.length > 0) {
+                $(".clickable").click();
+            }
+        });
+    }
+
+    function armarTabla2()
+    {
+        $('#tablaSwifts02').bootstrapTable({
+            classes: 'table',
+            locale: "es-SP",
+            columns: [
+                { field: 'Sesion', title: 'Sesión', visible: true },
+                { field: 'Secuencia', title: 'Secuencia', visible: true }
+            ],
+            searchAlign: 'left',
+            showRefresh: false,
+            clickToSelect: true,
+            search: false,
+            checkboxHeader: false,
+            toolbar: '#custom-toolbar',
+            striped: true,
+            pagination: true,
+            pageSize: 15,
+            pageList: [20, 50, 100, 200],
+            onLoadError: function (arg1, arg2, arg3) {
+                if (arg1 == "500") {
+                    showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                }
+            }
+        });
+    }
+
+    function armarTabla3() {
+        //Grilla NO Recepcionados.
+        $('#tablaSwifts03').bootstrapTable({
+            classes: 'table',
+            locale: "es-SP",
+            columns: [
+                { field: 'Sesion', title: 'Sesión', visible: true },
+                { field: 'Secuencia', title: 'Secuencia', visible: true }
+            ],
+            searchAlign: 'left',
+            showRefresh: false,
+            clickToSelect: true,
+            search: false,
+            checkboxHeader: false,
+            toolbar: '#custom-toolbar',
+            striped: true,
+            pagination: true,
+            pageSize: 15,
+            pageList: [20, 50, 100, 200],
+            onLoadError: function (arg1, arg2, arg3) {
+                if (arg1 == "500") {
+                    showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                }
+            }
+        });
+    }
+    
+    function buscarPorFecha(fechaDesde) {
+        mostrarUOcultarElementosLuegoDeBusqueda();        
+        
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts02').bootstrapTable('destroy');
+        $('#tablaSwifts03').bootstrapTable('destroy');
+
+        //Grilla Mensajes Recepcionados.
+        armarTabla1();
+    };
+
+        function mostrarUOcultarElementosLuegoDeBusqueda()
+        {
+            $('#pnlResultados').show();
+            $('#pnlResultados3').show();
+
+            $('#pnlTabla2').hide();
+            $('#pnlTabla3').hide();
+
+            $('#tablaSwifts02').hide();
+            $('#tablaSwifts03').hide();
+        }
+
+    Load();
+
+    //Bóton Verificar.
+    var verificarGrilla01 = function () {
+        $('#tablaSwifts02').bootstrapTable('destroy');
+        $('#tablaSwifts03').bootstrapTable('destroy');
+        $('#pnlResultados2').show();
+        $('#tablaSwifts02').hide();
+        $('#tablaSwifts03').hide();
+
+        armarTabla2();
+        armarTabla3();
+
+        var obtSesionFila1;
+        var obtSesionFila2;
+        var obtSecFila1;
+        var obtSecFila2;
+        var obtSecFinal;
+
+        sesionParam = _data[0]["Sesion"];
+        secuenciaIni = _data[0]["Secuencia"];
+        secuenciaFin = obtieneMaximaSecuencia(sesionParam, secuenciaIni);
+        $('#modalBloquearSwift').modal();
+    };
+
+    //Inyectamos eventos a la modal
+    $("#radioPorRango").change(function (event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            $('#Sesion').val(sesionParam);
+            $('#Inicio').val(secuenciaIni);
+            $('#Termino').val(secuenciaFin);
+        }
+    });
+
+    $("#radioTodos").change(function (event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            $('#Sesion').val("");
+            $('#Inicio').val("");
+            $('#Termino').val("");
+        }
+    });
+
+    var encuentraFila = function (sesion, secuencia) {
+        for (var i = 0; i < _data.length; i++) {
+            var sesionTemp = _data[i]["Sesion"];
+            var secuenciaTemp = _data[i]["Secuencia"];
+            if (sesionTemp == sesion && secuenciaTemp == secuencia) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    //Bóton Aceptar del modal.
+    var Aceptarr = function (e) {
+        e.preventDefault();
+        var divError = $('#divError');
+        divError.hide();
+        $.blockUI({ message: '<h6>Validando...</h6>', baseZ: 2000 });
+        
+        //Bloqueamos inicialmente para hacer las validaciones respectivas
+        filaIni = 0;
+        filaFin = _data.length - 1;
+        var esTodos = true;
+        if ($('#radioPorRango').is(':checked')) {
+            if ($('#Sesion').val() == "") {
+                divError.text("Sesion no debe de ser vacío");
+                divError.show();
+                $.unblockUI();
+                return;
+            }
+            if ($('#Inicio').val() == "") {
+                divError.text("Inicio no debe de ser vacío");
+                divError.show();
+                $.unblockUI();
+                return;
+            }
+            if ($('#Termino').val() == "") {
+                divError.text("Termino no debe de ser vacío");
+                divError.show();
+                $.unblockUI();
+                return;
+            }
+            filaIni = encuentraFila($('#Sesion').val(), $('#Inicio').val());
+            filaFin = encuentraFila($('#Sesion').val(), $('#Termino').val());
+            
+            //Procedemos a realizar las validaciones
+            if (filaIni == -1) {
+                divError.text("No existe sesión con la secuencia de inicio ingresada.");
+                divError.show();
+                $.unblockUI();
+                return;
+            }
+            if (filaFin == -1) {
+                divError.text("No existe sesión con la secuencia de término ingresada");
+                divError.show();
+                $.unblockUI();
+                return;
+            }
+            esTodos = false;
+        } else {
+            filaIni = 0;
+            filaFin = _data.length - 1;
+        }
+        $('#pnlTabla2').show();
+        $('#tablaSwifts02').show();
+        $('#pnlTabla3').show();
+        $('#tablaSwifts03').show();
+        $.unblockUI();
+        $('#modalBloquearSwift').modal('hide');
+
+        var obtResultado;
+        var vl_sesion = 0;
+        var vl_secuencia = 0;
+        var vl_estado = "";
+        var vl_codBanco = 0;
+        var maxFilas = 0;
+        var resultado;
+        var resultado1;
+        var currentSesion = _data[filaIni]["Sesion"];
+        var currentSecuencia = _data[filaIni]["Secuencia"];
+        var currentEstado = _data[filaIni]["Estado"];
+        
+        var dataSwiftsRecibidos = [{Sesion: currentSesion,
+            Secuencia: currentSecuencia,
+            Estado: currentEstado
+        }];
+
+        var dataSwiftsNoRecibidos = [];
+        
+        for (var i = filaIni + 1; i <= filaFin; i++) {
+            var siguienteSesion = _data[i]["Sesion"];
+            var siguienteSecuencia = _data[i]["Secuencia"];
+            var siguienteEstado = _data[i]["Estado"];
+            
+            dataSwiftsRecibidos.push({
+                Sesion: siguienteSesion,
+                Secuencia: siguienteSecuencia
+            });
+
+            while ((currentSesion == siguienteSesion) && ((currentSecuencia + 1) != siguienteSecuencia)) {
+
+                /// Obtener la diferencia  
+                var diferencia = siguienteSecuencia - currentSecuencia;
+
+                /// El valor de los 5.000 es el promedio de mensajes diarios por el banco, si el tamaño del
+                /// arreglo es superior del promedio, se considera este valor para realizar el criterio
+                var umbral = (filaFin > 5000) ? filaFin : 5000;
+
+                /// Validamos si la diferencia entre las secuencias es mayor al umbral, este no lo agrega
+                /// en el arreglo de dataSwiftsNoRecibidos.
+                if (diferencia > (umbral)) {
+                    break;
+                }
+
+                currentSecuencia++;
+
+                dataSwiftsNoRecibidos.push({
+                    Sesion: currentSesion,
+                    Secuencia: currentSecuencia
+                });                
+            }
+
+            currentSesion = siguienteSesion;
+            currentSecuencia = siguienteSecuencia;
+        }
+
+        $('#tablaSwifts02').bootstrapTable("load", dataSwiftsRecibidos);
+        $('#tablaSwifts03').bootstrapTable("load", dataSwiftsNoRecibidos);
+    }
+
+    function obtSecFaltante(_SecGrilla) {
+        var _valida = false;
+        var SecSig = 0;
+        SecSig = (_SecGrilla + 1);
+
+        for (var i = 0; i < _data.length; i++) {//_data.length
+            if (SecSig == _data[i]["Secuencia"]) {
+                _valida = true;
+                return _valida;
+                break;
+            };
+        }
+        return _valida;
+    }
+
+    function Validar(_globalSecuencia, estado) {
+        var _valida = false;
+        for (var i = 0; i < _data.length; i++) {
+
+            if (estado == "SES") {
+                if (_globalSecuencia == _data[i]["Sesion"]) {
+                    _valida = true;
+                    return _valida;
+                    break;
+                };
+            };
+            if (estado == "SECI") {
+                if (_globalSecuencia == _data[i]["Secuencia"]) {
+                    _valida = true;
+                    return _valida;
+                    break;
+                };
+            };
+            if (estado == "SECF") {
+                if (_globalSecuencia == _data[i]["Secuencia"]) {
+                    _valida = true;
+                    return _valida;
+                    break;
+                };
+            };
+        }
+        return _valida;
+    }
+
+    function Resultados(_Ses, _Sec) {
+        var _valida = false;
+        for (var i = 0; i < _data.length; i++) {
+            _Sec = (_Sec + 1);
+            if ((_Ses == _data[i]["Sesion"]) && (_Sec == _data[i]["Secuencia"])) {
+                    _valida = true;
+                    return _valida;
+                    break;
+                };
+        }
+        return _valida;
+    }
+
+    var Reporte = function () {
+        var _direccion = 1;
+        if ($('#NoRecepcionados').is(':checked')) {
+            _direccion = 2;
+        }
+        if (_direccion == 1) {
+            //Mensajes Recepcionados
+            var _urlReporte = '@Url.Action("ReporteControlRecepcionMensajesSwift", "GestionControlSwift")';
+            var p = ultimosParamsConsultaSwift;
+            if (p != null) {
+                //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                var urlReporte = _urlReporte + "?idCasilla=" + p['idCasilla'] +
+                                               "&fechaDesde=" + encodeURIComponent(moment(p['fechaDesde']).format(formatoGET));
+
+                var w = window.open(urlReporte, "_blank");
+                return true;
+            }
+        }
+        else {
+            var _urlReporte = '@Url.Action("ReporteControlRecepcionNoMensajesSwift", "GestionControlSwift")';
+            var p = ultimosParamsConsultaSwift;
+            if (p != null) {
+
+                //los mensajes no recibidos los "calculé" del lado de javascript.
+                //Para tenerlos en el reporte, primero los mando al servidor por ajax, luego cuando llame a abrir el popup, ya estarán en sesión.
+                
+                var urlGuardar = '@Url.Action("GuardarTemporalmenteMensajesNoRecepcionados", "GestionControlSwift")';
+                
+                $.ajax({
+                    type: "POST",
+                    url: urlGuardar,
+                    data: { mensajesNoRecepcionados: $('#tablaSwifts03').bootstrapTable('getData') },
+                    success: function (resultado) {
+                        ////tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                        if (resultado.Estado == false)
+                        {
+                            showAlert("Error en la operación.", "No hay datos para mostrar ", "alert-danger", false);
+                            return false;
+                        }
+
+                        var urlReporte = _urlReporte + "?idCasilla=" + p['idCasilla'] +
+                                               "&fechaDesde=" + encodeURIComponent(moment(p['fechaDesde']).format(formatoGET));
+                        var w = window.open(urlReporte, "_blank");
+                        return true;
+                    },
+                    error: function (response, type, message) {
+                        try {
+                            //intento parsear la respesta como json.
+                            var responseJson = JSON.parse(response.responseText);
+                            showAlert("Error en la operación.", "Detalles: " + responseJson.Message, "alert-danger", false);
+                        }
+                        catch (err) {
+                            showAlert("Error en la operación.", "Detalles: " + message, "alert-danger", false);
+                        }
+                    }
+                });
+            }
+        }
+    };
+
+    $('#btnVerificar').click(verificarGrilla01);
+    $('#btnAceptar').click(Aceptarr);
+    $('#btnReporte').click(Reporte);
+    //cuando el ajax vuelve, desbloqueo el block UI si es que estaba bloqueado
+    $(document).ajaxStop($.unblockUI);
+   
+    function Largo(object) {
+        if (object.value.length > object.maxLength)
+            object.value = object.value.slice(0, object.maxLength)
+    }
+
+    function isNumeric(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+</script>
+}

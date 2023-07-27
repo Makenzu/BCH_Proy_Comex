@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="571fcfa0-b0d7-497b-ab28-d65bb8df4b23" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000191_ObtenerDatosFichaChica.xsd" MetadataType="Schema" ID="646493e5-1849-4d2c-aae2-c4e154865f11" SourceId="1" SourceUrl="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?SCHEMA%2FPX_RenovacionInternet%2FCS000191_ObtenerDatosFichaChica%2FSpecification%2FXSD%2FCS000191_OpObtenerRequest" />
+    <MetadataFile FileName="CS000191_ObtenerDatosFichaChica1.xsd" MetadataType="Schema" ID="5bb574b0-1fd6-4077-9077-64ed320f4034" SourceId="1" SourceUrl="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS000191_ObtenerDatosFichaChica2.xsd" MetadataType="Schema" ID="f470e902-026c-4228-b394-bd35a42c12de" SourceId="1" SourceUrl="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?SCHEMA%2FPX_RenovacionInternet%2FCS000191_ObtenerDatosFichaChica%2FSpecification%2FXSD%2FCS000191_OpObtenerResponse" />
+    <MetadataFile FileName="CS000191_ObtenerDatosFichaChica3.xsd" MetadataType="Schema" ID="76e13218-b796-469b-a16d-bc5c2f8f0497" SourceId="1" SourceUrl="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="ObtenerDatosFichaChica.wsdl" MetadataType="Wsdl" ID="654615c3-fd1d-4df1-8e7a-1798273fae8c" SourceId="1" SourceUrl="http://osb.sb:8011/RenovacionInternet/CS000191_ObtenerDatosFichaChica?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "VentanaTodosPorRango";
+    Layout = null;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/gestion-y-control-inv.png");
+}
+
+
+    @using (Html.BeginForm("VentanaTodosPorRango", "GestionControlSwift", FormMethod.Post, new { id = "frmVentanaTodosPorRango", @class = "form-horizontal well", @style = "margin-left: 20px; margin-right: 20px", @role = "form" }))
+    {
+        <div class="panel-body">
+            <div class="col-xs-12">
+                <div class="input-group col-xs-12">
+                    <label class="radio-inline">
+                        <input type="radio" name="direccion" id="radioTodos" value="1" checked>Todos</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="direccion" id="radioPorRango" value="2" >Por Rango</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label style="text-align:left; margin-left : 5px" for="Sesion">Sesion</label>
+                @Html.TextBox("Sesion", "", new { @class = "control-label col-xs-6" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label style="text-align:left; margin-left : 5px" for="Inicio">Inicio</label>
+                @Html.TextBox("Inicio", "", new { @class = "control-label col-xs-6" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label style="text-align:left; margin-left : 5px" for="Termino">Termino</label>
+               @Html.TextBox("Termino", "", new { @class = "control-label col-xs-6" })
+            </div>
+        </div>
+        @*<div class="form-group">
+            <div class="col-xs-12">
+                <label style="text-align:left" for="fechaDesde" hidden>fechaDesde</label>
+                 @Html.TextBox("fechaDesde", "", new { @class = "control-label col-xs-6" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.Hidden("_globalSesion", (object)ViewBag._globalSesion)
+            @Html.Hidden("_globalSecuencia", (object)ViewBag._globalSecuencia)
+            @Html.Hidden("_globalSecuenciaFinal", (object)ViewBag._globalSecuenciaFinal)
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12" style="margin-top: 20px;">
+                @*<button class="btn btn-primary pull-right" data-dismiss="modal" aria-hidden="true" id="btnAceptar">Aceptar</button>*@
+                @*<button class="btn btn-primary pull-right" id="btnCancelar">Cancelar</button>*@
+            </div>
+        </div>
+        <div class="modal-body" id="MensajeExito" hidden>
+            <div class="alert alert-info" role="alert">
+                <strong>Información!</strong><br />
+                Swift bloqueado con exito.
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <table id="tablaApoyo"></table>
+            </div>
+        </div>
+    }
+<script type="text/javascript">
+
+
+    $('#frmVentanaTodosPorRango').submit(function (e) {
+
+        e.preventDefault();
+    });
+
+        var elem0 = document.getElementById("Sesion");
+        elem0.value = 0;
+        var elem1 = document.getElementById("Inicio");
+        elem1.value = 0;
+        var elem2 = document.getElementById("Termino");
+        elem2.value = 0;
+
+    if ($('#radioTodos').is(':checked')) {
+        var elem0 = document.getElementById("Sesion");
+        elem0.value = 0;
+        var elem1 = document.getElementById("Inicio");
+        elem1.value = 0;
+        var elem2 = document.getElementById("Termino");
+        elem2.value = 0;
+        //$('#modalBloquearSwift').hide();
+    };
+
+    var checkboxRango = $("#radioPorRango");
+    checkboxRango.change(function (event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            var elem0 = document.getElementById("Sesion");
+            elem0.value = _globalSesion;
+            var elem1 = document.getElementById("Inicio");
+            elem1.value = _globalSecuencia;
+            var elem2 = document.getElementById("Termino");
+            elem2.value = _globalSecuenciaFinal;
+        } else {
+
+        }
+    });
+
+
+
+    var checkboxTodos = $("#radioTodos");
+    checkboxTodos.change(function (event) {
+        var checkbox = event.target;
+        //alert("todos");
+        if (checkbox.checked) {
+            var elem0 = document.getElementById("Sesion");
+            elem0.value = 0;
+            var elem1 = document.getElementById("Inicio");
+            elem1.value = 0;
+            var elem2 = document.getElementById("Termino");
+            elem2.value = 0;
+        } else {
+
+        }
+    });
+
+
+</script>
+
+

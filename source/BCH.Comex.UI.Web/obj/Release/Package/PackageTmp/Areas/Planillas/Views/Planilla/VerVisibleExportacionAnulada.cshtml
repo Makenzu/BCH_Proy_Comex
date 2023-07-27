@@ -1,0 +1,488 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.VisibleExportacionAnuladaViewModel
+@{
+    ViewBag.Title = "Visible Exp: " + Model.NumeroPresentacion;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+
+    var additionalViewData = new { htmlAttributes = new { @class = "form-control disabled", @readonly = "readonly" } };
+    var additionalViewDataEditable = new { htmlAttributes = new { @class = "form-control" } };
+}
+@using (Html.BeginForm("VerVisibleExportacionAnulada"))
+{
+    
+    @Html.ValidationSummary();
+    @Html.AntiForgeryToken();
+
+    <input type="hidden" name="FechaPresentacion" value="@(Model.FechaPresentacion != null ? Model.FechaPresentacion.Value.ToString("dd/MM/yyy") : "")" />
+    <div class="row">
+        <div class="panel panel-default exportacion-anulada">
+            <h4>Anulación de Planillas</h4>
+            <div class="panel-body">
+                <div class="row fill">
+                    <div class="col-xs-2 seccion">
+                        <div class="form-group">
+                            <label class="control-label">N° Presentación</label>
+                            @Html.EditorFor(m => m.NumeroPresentacion, additionalViewData)
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Fecha</label>
+                            @Html.EditorFor(m => m.FechaPresentacionNueva, "Fecha", additionalViewDataEditable)
+                            @Html.ValidationMessageFor(m => m.FechaPresentacionNueva)
+                        </div>
+                    </div>
+                    <div class="col-xs-8 seccion">
+                        <div class="row">
+                            <div class="col-xs-10">
+                                <h4 style="text-align:center;font-family:'Times New Roman'"><strong>Planilla de Ingreso de Comercio Visible</strong></h4>
+                                <br/>
+                                <h5 style="text-align:left;font-family:'Times New Roman'">Entidad que presenta la planilla   <strong style="max-width:initial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banco De Chile</strong></h5>
+                            </div>
+                            <div class="col-xs-2">
+                                <label class="control-label">Tipo Anulación</label>
+                                @Html.EditorFor(m => m.TipoAnulacion, additionalViewData)
+                            </div>
+                            <div class="col-xs-2">
+                                <label class="control-label">Código</label>
+                                <input type="text" size="3" class="form-control" value="15" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-10">
+                                <label style="font-family:'Times New Roman';color:gray" class="control-label">Plaza Banco Central que contabiliza</label>
+                                <input type="text" class="form-control" value="@Model.NombrePlazaBancoCentral" readonly />
+                            </div>
+                            <div class="col-xs-2">
+                                <label class="control-label">Código</label>
+                                <input type="text" size="3" class="form-control" value="@Model.CodigoPlazaBancoCentral" readonly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-2 seccion">
+                        <div class="well well-sm">Uso exclusivo Banco Central de Chile</div>
+                    </div>
+                </div>
+                <div class="row fill">
+                    <div class="form-horizontal col-xs-10 seccion">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Nombre</label>
+                            <div class="col-sm-10">
+                                @Html.EditorFor(m => m.NombreParty, additionalViewData)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Dirección</label>
+                            <div class="col-sm-10">
+                                @Html.EditorFor(m => m.DireccionParty, additionalViewData)
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-2 seccion">
+                        <div class="form-group">
+                            <label class="control-label">RUT</label>
+                            @Html.EditorFor(m => m.RutExportador, additionalViewData)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row fill">
+                    <!--#region Datos Planilla Anulada-->
+                    <div class="col-xs-4 seccion">
+                        <div class="row">
+                            <h4 style="font-family:'Times New Roman'"><strong>Datos Planilla Anulada</strong></h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="form-group">
+                                    <label class="control-label">Entidad Autorizada</label>
+                                    @Html.EditorFor(m => m.NombreEntidadAutorizadaOriginal, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label">Código</label>
+                                <input type="text" class="form-control" value="@Model.CodigoEntidadAutorizadaOriginal" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Número Presentación</label>
+                                @Html.EditorFor(m => m.NumeroPresentacionOriginal, additionalViewData)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Fecha Presentación</label>
+                                @Html.EditorFor(m => m.FechaPresentacionOriginal, "Fecha", additionalViewData)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="form-group">
+                                    <label class="control-label">Tipo de Operación</label>
+                                    @Html.EditorFor(m => m.TipoPlanillaOriginal, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label">Código</label>
+                                <input type="text" class="form-control" value="@Model.CodigoTipoPlanillaOriginal" readonly />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="form-group">
+                                    <label class="control-label">Plaza Banco Central</label>
+                                    @Html.EditorFor(m => m.NombrePlazaBancoCentralOriginal, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label">Código</label>
+                                <input type="text" class="form-control" value="@Model.CodigoPlazaBancoCentralOriginal" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Monto US$</label>
+                                @Html.EditorFor(m => m.MontoDolaresOriginal, additionalViewData)
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Paridad a US$</label>
+                                @Html.EditorFor(m => m.ParidadOriginal, additionalViewData)
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--#endregion-->
+                    <!--#region Datos Declaración de Exportación-->
+
+                    <div class="col-xs-4 seccion">
+                        <div class="row">
+                            <h4 style="font-family:'Times New Roman'"><strong>Datos Declaración de Exportación</strong></h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="form-group">
+                                    <label class="control-label">Aduana</label>
+                                    @Html.EditorFor(m => m.NombreAduana, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label">Código</label>
+                                <input type="text" class="form-control" value="@Model.CodigoAduana" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Número Aceptación</label>
+                                @Html.EditorFor(m => m.NumeroDeclaracion, additionalViewData)
+                                @Html.ValidationMessageFor(m => m.NumeroDeclaracion)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Fecha Aceptación</label>
+                                @Html.EditorFor(m => m.FechaAceptacion, "Fecha", additionalViewData)
+                                @Html.ValidationMessageFor(m => m.FechaAceptacion)
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Fecha Vencimiento Retorno</label>
+                                @Html.EditorFor(m => m.FechaVencimientoRetorno, "Fecha", additionalViewData)
+                                @Html.ValidationMessageFor(m => m.FechaVencimientoRetorno)
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Observaciones</label>
+                                @Html.TextAreaFor(m => m.Observaciones, new { @class = "form-control input-sm", rows = 10, cols = 30 })
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+                    <!--#region Monto Anulado-->
+
+                    <div class="col-xs-4 seccion">
+                        <div class="row">
+                            <h4 style="font-family:'Times New Roman'"><strong>Monto Anulado</strong></h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="form-group">
+                                    <label class="control-label">Moneda</label>
+                                    @Html.EditorFor(m => m.MonedaAnulacion, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label">Código</label>
+                                <input type="text" class="form-control" value="@Model.CodigoMonedaAnulacion" readonly />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Monto Anulada</label>
+                                @Html.EditorFor(m => m.MontoAnulado, additionalViewData)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Paridad a US$</label>
+                                @Html.EditorFor(m => m.ParidadAnulado, additionalViewData)
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Monto en US$</label>
+                                @Html.EditorFor(m => m.MontoAnuladoUS, additionalViewData)
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">Monto en US$ (Paridad Original)</label>
+                                @Html.EditorFor(m => m.MontoAnuladoUSParidadOriginal, additionalViewData)
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--#endregion-->
+
+
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <button type="submit" class="btn btn-primary" id="btnAceptar">Aceptar</button>
+                <button type="button" class="btn btn-default" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="txtTitleModal">Advertencia del Sistema</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtSuccess">Atención !... Se Han Modificado 1 o más Planillas. Desea Guardar los Cambios.</h3>
+                <h3 id="txtCancel">Atención !... Se perderá cualquier cambio que haya realizado, ¿Desea continuar?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnAceptarModal" style="margin-bottom: 0px">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section css {
+    <style type="text/css">
+        .exportacion-anulada {
+            background-color: #FFC080;
+        }
+
+        div {
+            /* border: 1px solid red; */
+        }
+
+        .form-group{
+            margin-bottom : 0px;
+        }
+        .input-sm{
+            padding: 0px 10px;
+        }
+        .panel-heading{
+            padding: 0px 15px;
+        }
+        .control-label{
+            font-size: 12px;
+        }
+
+        .fill {
+            display: table;
+            table-layout: fixed;
+            height: 100%;
+            width: 100%;
+        }
+
+        .seccion {
+            vertical-align: top;
+            display: table-cell;
+            float: none;
+            height: 100%;
+            /*border: 1px solid maroon;*/
+            padding: 10px;
+        }
+
+
+        .row-height {
+            display: table;
+            table-layout: fixed;
+            height: 100%;
+            width: 100%;
+        }
+
+        .col-height {
+            display: table-cell;
+            float: none;
+            height: 100%;
+        }
+
+        .col-top {
+            vertical-align: top;
+        }
+
+        .col-middle {
+            vertical-align: middle;
+        }
+
+        .col-bottom {
+            vertical-align: bottom;
+        }
+
+        @@media (min-width: 480px) {
+            .row-xs-height {
+                display: table;
+                table-layout: fixed;
+                height: 100%;
+                width: 100%;
+            }
+
+            .col-xs-height {
+                display: table-cell;
+                float: none;
+                height: 100%;
+            }
+
+            .col-xs-top {
+                vertical-align: top;
+            }
+
+            .col-xs-middle {
+                vertical-align: middle;
+            }
+
+            .col-xs-bottom {
+                vertical-align: bottom;
+            }
+        }
+
+        @@media (min-width: 768px) {
+            .row-sm-height {
+                display: table;
+                table-layout: fixed;
+                height: 100%;
+                width: 100%;
+            }
+
+            .col-sm-height {
+                display: table-cell;
+                float: none;
+                height: 100%;
+            }
+
+            .col-sm-top {
+                vertical-align: top;
+            }
+
+            .col-sm-middle {
+                vertical-align: middle;
+            }
+
+            .col-sm-bottom {
+                vertical-align: bottom;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .row-md-height {
+                display: table;
+                table-layout: fixed;
+                height: 100%;
+                width: 100%;
+            }
+
+            .col-md-height {
+                display: table-cell;
+                float: none;
+                height: 100%;
+            }
+
+            .col-md-top {
+                vertical-align: top;
+            }
+
+            .col-md-middle {
+                vertical-align: middle;
+            }
+
+            .col-md-bottom {
+                vertical-align: bottom;
+            }
+        }
+
+        @@media (min-width: 1200px) {
+            .row-lg-height {
+                display: table;
+                table-layout: fixed;
+                height: 100%;
+                width: 100%;
+            }
+
+            .col-lg-height {
+                display: table-cell;
+                float: none;
+                height: 100%;
+            }
+
+            .col-lg-top {
+                vertical-align: top;
+            }
+
+            .col-lg-middle {
+                vertical-align: middle;
+            }
+
+            .col-lg-bottom {
+                vertical-align: bottom;
+            }
+        }
+    </style>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/globalization")
+    @{bool planillaGuardada = Model.PlanillaGuardada;}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            @if (planillaGuardada)
+            {
+                @:window.close();
+            }
+            $('#btnCancelar').click(function () {
+                $('#txtSuccess').hide();
+                $('#txtCancel').show();
+                $('#modalAlert').modal();
+            });
+            $('#btnAceptarModal').click(function () {
+                window.close();
+            });
+        });
+    </script>
+}

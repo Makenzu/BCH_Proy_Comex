@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4db65e0b-92d5-44e1-a716-b878122597b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000026_ConsultaProductoCliente.xsd" MetadataType="Schema" ID="6fe6cedc-a457-4c97-8a12-bf4356ff0001" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="ConsultaProductoCliente.wsdl" MetadataType="Wsdl" ID="6c961b49-030b-44d9-9fb6-d0ab7bbd4d6f" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?WSDL" />
+    <MetadataFile FileName="CS000026_ConsultaProductoCliente1.xsd" MetadataType="Schema" ID="399df7bf-efb7-44e3-9297-1e7b52868691" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?SCHEMA%2FPX_SiebelClientes%2FCS000026_ConsultaProductoCliente%2FSpecifications%2FWSDL%2FCS000026_OpConsultarProdClienteRequest" />
+    <MetadataFile FileName="CS000026_ConsultaProductoCliente2.xsd" MetadataType="Schema" ID="2d26b042-dec9-4dfc-aba4-480e0c2a3326" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?SCHEMA%2FPX_SiebelClientes%2FCS000026_ConsultaProductoCliente%2FSpecifications%2FWSDL%2FCS000026_OpConsultarProdClienteResponse" />
+    <MetadataFile FileName="CS000026_ConsultaProductoCliente3.xsd" MetadataType="Schema" ID="f019ba9c-264e-415a-99ef-d7bbf5fa8580" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000026_ConsultaProductoCliente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fdcf22a2a45c4a058f69c7bf3a67eb32" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="sbcorModel.rbc_lot" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.rbc_macb" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.rbc_macp" Width="1.5" PointX="5.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_act" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_age" Width="1.5" PointX="7.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bco" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bcot" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ber" Width="1.5" PointX="23.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_berd" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bere" Width="1.5" PointX="23.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_berp" Width="1.5" PointX="23.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bksc" Width="1.5" PointX="23.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bksv" Width="1.5" PointX="24.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_blfyd" Width="1.5" PointX="25.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_blfyh" Width="1.5" PointX="25.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_cciu" Width="1.5" PointX="21" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_clf" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_clfb" Width="1.5" PointX="25.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_clfc" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_clfe" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_clft" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_comd" Width="1.5" PointX="25.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_cpai" Width="1.5" PointX="18.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_crp" Width="1.5" PointX="18.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_crpg" Width="1.5" PointX="20.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_cta" Width="1.5" PointX="25.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ctap" Width="1.5" PointX="22.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ctrl" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_emp" Width="1.5" PointX="26.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_err" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_exd" Width="1.5" PointX="27.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_exp" Width="1.5" PointX="27.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_fam" Width="1.5" PointX="27.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_fer" Width="1.5" PointX="27.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_gas" Width="1.5" PointX="27.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_grp" Width="1.5" PointX="14.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_hdetpai" Width="1.5" PointX="27.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_het" Width="1.5" PointX="28.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_hope" Width="1.5" PointX="9.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_hvalida" Width="1.5" PointX="11.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_jcci" Width="1.5" PointX="24.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lin" Width="1.5" PointX="29.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ling" Width="1.5" PointX="5.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lino" Width="1.5" PointX="29.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_linp" Width="1.5" PointX="29.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_linp_ope" Width="1.5" PointX="29.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_linr" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lins" Width="1.5" PointX="29.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lint" Width="1.5" PointX="29.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_linv" Width="1.5" PointX="29.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lof" Width="1.5" PointX="29.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lot" Width="1.5" PointX="11" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lot_obs" Width="1.5" PointX="30.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lotg" Width="1.5" PointX="13.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lptr" Width="1.5" PointX="15.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lre" Width="1.5" PointX="31.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lsl" Width="1.5" PointX="31.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mac" Width="1.5" PointX="31.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_macb" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_macd" Width="1.5" PointX="17.75" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_macp" Width="1.5" PointX="16" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mbd" Width="1.5" PointX="19.75" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mbr" Width="1.5" PointX="31.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mbs" Width="1.5" PointX="31.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mpd" Width="1.5" PointX="29.75" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mpr" Width="1.5" PointX="31.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_mps" Width="1.5" PointX="32.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_niv" Width="1.5" PointX="13.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_nyc" Width="1.5" PointX="5.75" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ofi" Width="1.5" PointX="16.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ope" Width="1.5" PointX="16.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_open" Width="1.5" PointX="33.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_pair" Width="1.5" PointX="33.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_par" Width="1.5" PointX="33.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_pex" Width="1.5" PointX="33.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_pro" Width="1.5" PointX="11" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prvcho" Width="1.5" PointX="33.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prvd" Width="1.5" PointX="33.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prve" Width="1.5" PointX="16" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prvr" Width="1.5" PointX="33.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_recf" Width="1.5" PointX="19" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_reco" Width="1.5" PointX="22" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_res" Width="1.5" PointX="33.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_rsg" Width="1.5" PointX="0.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_rstd" Width="1.5" PointX="2.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_rstg" Width="1.5" PointX="34.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_rstt" Width="1.5" PointX="7.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_rutsw" Width="1.5" PointX="9.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_sitf" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_subl" Width="1.5" PointX="24.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_syr" Width="1.5" PointX="35.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_syrc" Width="1.5" PointX="35.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_sys" Width="1.5" PointX="3" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tcom" Width="1.5" PointX="35.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tem" Width="1.5" PointX="15.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tpro" Width="1.5" PointX="35.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_txt" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tyc" Width="1.5" PointX="17.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tyc2" Width="1.5" PointX="19.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tyca" Width="1.5" PointX="35.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tycc" Width="1.5" PointX="35.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tycd" Width="1.5" PointX="26.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tyce" Width="1.5" PointX="28.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tycg" Width="1.5" PointX="35.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tycp" Width="1.5" PointX="33.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tycq" Width="1.5" PointX="35.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_usr" Width="1.5" PointX="16" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_vis" Width="1.5" PointX="18.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_visp" Width="1.5" PointX="21" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_vist" Width="1.5" PointX="21" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcbere" Width="1.5" PointX="11.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcberp" Width="1.5" PointX="21.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcerr" Width="1.5" PointX="36.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcgrp" Width="1.5" PointX="30.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcope" Width="1.5" PointX="0.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcsitf" Width="1.5" PointX="2.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcvi" Width="1.5" PointX="18.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcvisp" Width="1.5" PointX="21" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbcvist" Width="1.5" PointX="21" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sce_bic" Width="1.5" PointX="37.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sce_cou" Width="1.5" PointX="37.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_mnd" Width="1.5" PointX="13.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_pai" Width="1.5" PointX="13.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_vmc" Width="1.5" PointX="37.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.rbc_ilot" Width="1.5" PointX="37.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_ape" Width="1.5" PointX="23.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_apev" Width="1.5" PointX="37.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_bcoi" Width="1.5" PointX="37.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_cci" Width="1.5" PointX="4.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_crp_ope" Width="1.5" PointX="6.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_datos_grilla_mod" Width="1.5" PointX="8.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_datos_superiores_mod" Width="1.5" PointX="13.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_fmi" Width="1.5" PointX="32.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_fny" Width="1.5" PointX="34.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_inflot" Width="1.5" PointX="39.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_infmatr" Width="1.5" PointX="39.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_lotasg" Width="1.5" PointX="39.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_nomp" Width="1.5" PointX="39.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_opee" Width="1.5" PointX="11" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_oper" Width="1.5" PointX="11" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prvcus" Width="1.5" PointX="39.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_prvusa" Width="1.5" PointX="39.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_top" Width="1.5" PointX="15.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sbc_tyc1" Width="1.5" PointX="25.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_suc" Width="1.5" PointX="27.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_tba" Width="1.5" PointX="29.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sbcorModel.sgt_vmd2" Width="1.5" PointX="41.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_bcot_relation__sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_clf_ref_3061_sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_ctrl_ref_59243_sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_linr_relation__sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_macb_relation__sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_sitf_relation__sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_sys_ref_76433_sbc_bco" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_bcot_ref_24922_sbc_txt" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_cciu_ref_42141_sbc_cpai" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_clf_ref_23769_sbc_clfe" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_clf_ref_32123_sbc_clft" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_clfc_ref_23765_sbc_clfe" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_clfc_ref_31195_sbc_clft" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_lot_ref_21834_sbc_err" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_opee_ref_20240_sbc_err" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_oper_ref_20246_sbc_err" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_pro_ref_20276_sbc_err" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_ope_ref_17993_sbc_grp" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_macp_ref_1847_sgt_pai" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_macp_ref_1860_sgt_mnd" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_usr_ref_30392_sbc_niv" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_recf_ref_20504_sbc_ofi" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_reco_ref_20468_sbc_ofi" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_recf_ref_20498_sbc_ope" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_reco_ref_20474_sbc_ope" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.sbc_prv_1334504033" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_recf_ref_20510_sgt_pai" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_reco_ref_20492_sgt_pai" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_visp_relation__sbc_vis" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbc_vist_relation__sbc_vis" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbcvisp_relation__sbcvis" ManuallyRouted="false" />
+        <AssociationConnector Association="sbcorModel.fk_sbcvist_relation__sbcvis" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,115 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.ReporteControlEnvioMensajeriaSwiftViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes @Model.Verbo Por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Archivos de Mensajes No Terminados</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+            <h4>
+                @string.Format("Fecha de Control: {0} {1} {2} {3}",
+                    "",
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+            </h4>
+            </div>
+        </div>
+        @*<div class="row">
+                <div class="col-xs-3"><strong>Total mensajes: </strong></div>
+                <div class="col-xs-3">
+                    @Model.Registros.Count
+                </div>
+         </div>*@
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        <table class="table table-condensed">
+            <thead>
+                @if (Model.Enviados)
+                {
+                    <tr>
+                        <th>Nombre Archivo</th>
+                        <th>Fecha Creación</th>
+                        <th>Fecha Recepción</th>
+                        <th>Total Mensajes</th>
+                        <th>Total Envíos</th>
+                        <th>Total Rechazados</th>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th>Nombre Archivo</th>
+                        <th>Fecha Creación</th>
+                        <th>Fecha Recepción</th>
+                        <th>Total Mensajes</th>
+                        <th>Total Envíos</th>
+                        <th>Total Rechazados</th>
+                    </tr>
+                }
+            </thead>
+            <tbody>
+                                @if (Model.Enviados)
+                                {
+                                    foreach (var row in Model.Registros)
+                                    {
+                                        if (@row.campo1 == 3)
+                                        {
+                                        <tr>
+                                            <td>@row.nombre_archivo</td>
+                                            <td>@row.fecha_creacion</td>
+                                            <td>@row.fecha_confirma</td>
+                                            <td>@row.total_mensajes</td>
+                                            <td>@row.total_envios</td>
+                                            <td>@row.total_rechazos</td>
+                                        </tr>
+                                        };
+                                    };
+                                }
+                                else
+                                {
+                                    foreach (var row in Model.Registros)
+                                    {
+                                        if (@row.campo1 == 3)
+                                        {
+                                         <tr>
+                                            <td>@row.nombre_archivo</td>
+                                            <td>@row.fecha_creacion</td>
+                                            <td>@row.fecha_confirma</td>
+                                            <td>@row.total_mensajes</td>
+                                            <td>@row.total_envios</td>
+                                            <td>@row.total_rechazos</td>
+                                         </tr>
+                                        };
+                                    };
+                                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+@*@{
+    ViewBag.Title = "ReporteControlEnvioMensajeriaSwift";
+}
+
+<h2>ReporteControlEnvioMensajeriaSwift</h2>*@
+

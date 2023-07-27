@@ -1,0 +1,489 @@
+﻿@model BCH.Comex.UI.Web.Models.AdminParticipantes.TasasEspecialesParticipanteViewModel
+@{
+    ViewBag.Title = "Tasas Especiales Participante - Administrador de Participantes";
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+@{ Html.RenderPartial("_MenuMain"); }
+
+<style type="text/css">
+    .container {
+        margin-top: 0px;
+    }
+    /* submenu */
+    .submenu-show {
+        border-radius: 3px;
+        display: block;
+        left: 100%;
+        margin-top: -25px !important;
+        /*moz-border-radius: 3px;*/
+        position: absolute;
+        /*webkit-border-radius: 3px;*/
+    }
+
+    .submenu-hide {
+        display: none !important;
+        float: right;
+        position: relative;
+        top: auto;
+    }
+
+    .navbar .submenu-show:before {
+        border-bottom: 7px solid transparent;
+        border-left: none;
+        border-right: 7px solid rgba(0, 0, 0, 0.2);
+        border-top: 7px solid transparent;
+        left: -7px;
+        top: 10px;
+    }
+
+    .navbar .submenu-show:after {
+        border-bottom: 6px solid transparent;
+        border-left: none;
+        border-right: 6px solid #fff;
+        border-top: 6px solid transparent;
+        left: 10px;
+        left: -6px;
+        top: 11px;
+    }
+</style>
+<script type='text/javascript'>
+    window.onload = function () {
+        jQuery('.submenu').hover(function () {
+            jQuery(this).children('ul').removeClass('submenu-hide').addClass('submenu-show');
+        }, function () {
+            jQuery(this).children('ul').removeClass('.submenu-show').addClass('submenu-hide');
+        }).find("a:first").append(" &raquo; ");
+    };
+</script>
+
+<div class="container">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmTasaEspecialesParticipante", name = "frmTasaEspecialesParticipante", @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4 class="margin-bottom-double"><span id="Titulo">@Model.Titulo.Text</span></h4>
+        <div class="collapse navbar-collapse" id="adminParty-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <input id="menuImportaciones" class="btn-link" type="button" tabindex="0" value="Importaciones" /><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown submenu">
+                            <input id="prodCobranza" class="btn-link" type="button" name="Command" value="Cobranzas" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etacobComisionPago" class="btn-link" type="button" tabindex="0" name="Command" title="Pago" value="Comisión pago" /></li>
+                                <li><input id="etacobAnulacion" class="btn-link" type="button" tabindex="1" name="Command" value="Anulación" /></li>
+                                <li><input id="etacobTraspasoOtrosBancos" class="btn-link" type="button" tabindex="2" name="Command" value="Traspaso otros bancos" /></li>
+                                <li><input id="etacobProrroga" class="btn-link" type="button" tabindex="3" name="Command" value="Prórroga" /></li>
+                                <li><input id="etacobMantencion" class="btn-link" type="button" tabindex="4" name="Command" value="Mantención" /></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+
+                            <input id="prodCartaCredito" class="btn-link" type="button" name="Command" value="Carta Crédito" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etacarApertura" class="btn-link" type="button" tabindex="0" name="Command" value="Apertura" /></li>
+                                <li><input id="etacarModificacion1" class="btn-link" type="button" tabindex="1" name="Command" value="Modificación 1" /></li>
+                                <li><input id="etacarModificacion2" class="btn-link" type="button" tabindex="2" name="Command" value="Modificación 2" /></li>
+                                <li><input id="etacarAnulacionSaldo" class="btn-link" type="button" tabindex="3" name="Command" value="Anulación saldo" /></li>
+                                <li><input id="etacarNegociacionCobertura" class="btn-link" type="button" tabindex="4" name="Command" value="Negociación a cobertura" /></li>
+                                <li><input id="etacarNegociacionVencimiento" class="btn-link" type="button" tabindex="5" name="Command" value="Negociación a vencimiento obligación" /></li>
+                                <li><input id="etacarProrroga" class="btn-link" type="button" name="Command" tabindex="6" value="Prórroga" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <input id="menuExportaciones" class="btn-link" type="button" tabindex="1" value="Exportaciones" /> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown submenu">
+                            <input id="prodexpPae" class="btn-link" type="button" name="Command" value="Pae" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etapaeIngreso" class="btn-link" type="button" tabindex="0" name="Command" value="Ingreso" /></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+
+                            <input id="prodexpCompraDoc" class="btn-link" type="button" name="Command" value="Compra Documentos" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etacomPais" class="btn-link" type="button" tabindex="0" name="Command" value="Gestión país" /></li>
+                                <li><input id="etacomAladi" class="btn-link" type="button" tabindex="1" name="Command" value="Gestión Aladi" /></li>
+                                <li><input id="etacomOtrosPaises" class="btn-link" type="button" tabindex="2" name="Command" value="Gestión otros países" /></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <input id="prodexpDescDoc" class="btn-link" type="button" name="Command" value="Descuento documentos" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etadesPais" class="btn-link" type="button" tabindex="0" name="Command" value="Gestión país" /></li>
+                                <li><input id="etadesAladi" class="btn-link" type="button" tabindex="1" name="Command" value="Gestión Aladi" /></li>
+                                <li><input id="etadesOtrosPaises" class="btn-link" type="button" tabindex="2" name="Command" value="Gestión otros países" /></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <input id="prodexpCartaCredito" class="btn-link" type="button" name="Command" value="Carta de Crédito" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etacredAviso" class="btn-link" type="button" tabindex="0" name="Command" value="Aviso" /></li>
+                                <li><input id="etacredConfirmacion" class="btn-link" type="button" tabindex="1" name="Command" value="Confirmación" /></li>
+                                <li><input id="etacredMotivacion" class="btn-link" type="button" tabindex="2" name="Command" value="Modificación" /></li>
+                                <li><input id="etacredTransferencia" class="btn-link" type="button" tabindex="3" name="Command" value="Transferencia" /></li>
+                                <li><input id="etacredNoUtilizacion" class="btn-link" type="button" tabindex="4" name="Command" value="No utilización" /></li>
+                                <li><input id="etacredPago" class="btn-link" type="button" tabindex="5" name="Command" value="Pago y/o Revisión Doc." /></li>
+                                <li><input id="etacredRevision" class="btn-link" type="button" tabindex="6" name="Command" value="Revisión Coc. Discrep." /></li>
+                                <li><input id="etacredTraspaso" class="btn-link" type="button" tabindex="7" name="Command" value="Traspaso" /></li>
+                                <li><input id="etacredAvisoBenificiario" class="btn-link" type="button" tabindex="8" name="Command" value="Aviso 2° Beneficiario" /></li>
+                            </ul>
+                        </li>
+                        <li><input id="prodexpPagoAnticipado" class="btn-link" type="button" name="Command" value="Pago Anticipado Carta Crédito" /></li>
+                        <li class="dropdown submenu">
+                            <input id="prodexpCobranzas" class="btn-link" type="button" name="Command" value="Cobranzas" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etapaManejo" class="btn-link" type="button" tabindex="0" name="Command" value="Manejo" /></li>
+                                <li><input id="etapaMensaje" class="btn-link" type="button" tabindex="1" name="Command" value="Mensaje" /></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown submenu">
+                            <input id="prodexpRetorno" class="btn-link" type="button" name="Command" value="Retorno" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="etaretTraspaso" class="btn-link" type="button" tabindex="0" name="Command" value="Traspaso" /></li>
+                                <li><input id="etaretAdicion" class="btn-link" type="button" tabindex="1" name="Command" value="Adición 3 planillas" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <input id="menuServicios" class="btn-link" type="button" tabindex="2" value="Servicios" /> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li><input id="prodserEndosoPlanilla" class="btn-link" type="button" tabindex="0" name="Command" value="Endoso planilla" /></li>
+                        <li><input id="prodserTraspasoIDI" class="btn-link" type="button" tabindex="1" name="Command" value="Traspaso IDI" /></li>
+                        <li><input id="prodserCoberturaFlote" class="btn-link" type="button" tabindex="2" name="Command" value="Cobertura flete / seguro importación" /></li>
+                        <li class="dropdown submenu">
+                            <input id="prodserExFinanciamiento" class="btn-link" type="button" name="Command" value="Ex-financiamiento" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="exFinanciamientoProceso" class="btn-link" type="button" tabindex="0" name="Command" value="Proceso" /></li>
+                                <li><input id="exFinanciamientoAnulacion" class="btn-link" type="button" tabindex="1" name="Command" value="Anulación" /></li>
+                            </ul>
+                        </li>
+                        <li><input id="prodserVentaDivisas" class="btn-link" type="button" name="Command" tabindex="4" value="Venta divisas" /></li>
+                        <li class="dropdown submenu">
+                            <input id="prodserOrdenPagoCondicionado" class="btn-link" type="button" name="Command" value="Orden de pago condicionado" />
+                            <ul class="dropdown-menu submenu-show submenu-hide">
+                                <li><input id="EtaordenPagoFinanAviso" class="btn-link" type="button" tabindex="0" name="Command" value="Avisos" /></li>
+                                <li><input id="EtaordenPagoFinanPago" class="btn-link" type="button" tabindex="1" name="Command" value="Pago" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @*<input id="GroupingOfControlsPrtComision" type="hidden" value="@Model.GroupingOfControlsPrtComision" />
+            <input id="GroupingOfControlsPrtGasto" type="hidden" value="@Model.GroupingOfControlsPrtGasto" />
+            <input id="GroupingOfControlsPrtInteres" type="hidden" value="@Model.GroupingOfControlsPrtInteres" />*@
+        <div class="row">
+            <div class="col-xs-10">
+                <h4>Comisión</h4>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tasa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monto Hasta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mínimo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Máximo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        @Html.EditorFor(model => model.ListaComision, new { htmlAttributes = new { @class = "form-control", multiple = "" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">              
+
+                @Html.EditorFor(model => model.BtnAceptar, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "btn btn-primary btn-block",
+                        value = "Aceptar",
+                        type = "submit",
+                        name = "Command"
+                    }
+                })
+
+                @Html.EditorFor(model => model.Btncancelar, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "btn btn-default btn-block",
+                        value = Model.Btncancelar.Text,
+                        type = "submit",
+                        name = "Command"
+                    }
+                })
+
+                @Html.EditorFor(model => model.BtnAgregar, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "btn btn-success btn-block",
+                        value = Model.BtnAgregar.Text,
+                        type = "submit",
+                        name = "Command"
+                    }
+                })
+
+                @Html.EditorFor(model => model.BtnEliminar, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "btn btn-danger btn-block",
+                        value = "Eliminar",
+                        type = "submit",
+                        name = "Command"
+                    }
+                })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h4>Interés</h4>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        @Html.LabelFor(model => model.TasaInteres, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.TasaInteres, new { htmlAttributes = new { @class = "form-control", maxlength = "8" } })
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <br />
+                <br />
+                <div class="form-group">
+                    <div class="col-xs-12" id="prtTipoInteres">
+                        @foreach (var item in Model.prtTipoInteres)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="radio">
+                                        <label>
+                                            @Html.RadioButtonFor(m => m.prtTipoInteres, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                            @item.Value
+                                        </label>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="radio">
+                                        <label>
+                                            @Html.RadioButtonFor(m => m.prtTipoInteres, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                            @item.Value
+                                        </label>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="radio">
+                                        <label>
+                                            @Html.RadioButtonFor(m => m.prtTipoInteres, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                            @item.Value
+                                        </label>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="radio">
+                                        <label>
+                                            @Html.RadioButtonFor(m => m.prtTipoInteres, item.ID)
+                                            @item.Value
+                                        </label>
+                                    </div>
+                                }
+                            }
+                        }
+
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label>
+                                @Html.EditorFor(model => model.Flotante)
+                                Flotante
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <h4>Gasto</h4>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        @Html.LabelFor(model => model.MontoGastos, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.MontoGastos, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="checkbox">
+                            <label>
+                                @Html.EditorFor(model => model.tarifa)
+                                Desde Manual_Tarifa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Módulo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Producto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Etapa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        @Html.EditorFor(model => model.ListaModulo, new { htmlAttributes = new { @class = "form-control", multiple = "" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="modalTasaEspecial" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modalTasaEspecial_Content">
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section css{
+    <style type="text/css">
+        .control-label .required {
+            color: #e02222;
+            font-size: 12px;
+            padding-left: 2px;
+        }
+
+        /*.nav > li > a {
+            position: relative;
+            display: block;
+            padding: 6px 8px;
+        }*/
+
+        .form-group {
+            margin-bottom: 2px;
+            line-height: 24px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 24px;
+            padding: 6px 12px;
+            font-size: 12px;
+            line-height: 1.4285;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+            line-height: 21px;
+            height: 21px;
+        }
+
+        .form-horizontal .control-label {
+            padding-top: 1px;
+            margin-bottom: 0px;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 0px;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1.3285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] {
+            position: absolute;
+            margin-top: 1px; /*4px \9;*/
+            margin-left: -20px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 15px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+            padding-top: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 17px; /*4px \9;*/
+        }
+
+        select.input-sm {
+            height: 21px;
+            line-height: 21px;
+        }
+
+        /*body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.2285;
+            color: #333;
+            background-color: #fff;
+        }*/
+    </style>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/AdminParticipantes/custom")
+    <script>
+        CustomSave = function () {
+            $('#BtnAceptar').trigger('click');
+        }
+
+        $(function () {
+            AppAdminParticipantes.initCustom();
+
+            //$('form').change(function () {
+            //    sessionStorage.setItem('modificando', true);
+            //});
+
+            $('#BtnAceptar').click(function () {
+                sessionStorage.setItem('modificando', true);
+                modificando = sessionStorage.getItem('modificando');
+            });
+        });
+    </script>
+
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    <script type="text/javascript" src="~/Scripts/bootbox/bootbox.min.js"></script>
+    @Scripts.Render("~/bundles/AdminParticipantes/TasasEspeciales")
+}

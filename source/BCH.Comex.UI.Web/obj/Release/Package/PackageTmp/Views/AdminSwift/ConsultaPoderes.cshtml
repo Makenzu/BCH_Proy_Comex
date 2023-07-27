@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "Consulta de Poderes";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png");
+}
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Gestión de Mensajes</a></li>
+                <li><a href="@Url.Action("GestionArchivos")">Gestión de Archivos</a></li>
+                <li><a href="@Url.Action("EliminaMensaje")">Eliminar Mensajes</a></li>
+                <li><a href="@Url.Action("ConsultaPoderes")">Consulta de poderes</a></li>
+                <li><a href="@Url.Action("Alertas")">Configurar alarmas</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<h2>Consulta de Poderes Swift</h2>
+<div class="panel panel-default"></div>
+<br />
+<br />
+
+<div class="row" id="DivFiltro">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title" id="titleFiltro">Consulta de poderes al extranjero.</h2>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body" id="divConsultaPoderesSwift">
+                    <div id="DivElemtosConsultaPoderesSwift">
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert" id="DivError" hidden>
+                                <strong>Información!</strong><br />
+                                Usuario no encontrado en la tabla poderes
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                </div>
+                                <div class="col-sm-5">
+                                    <label class="control-label">Nombre:</label>
+                                    <input id="txtApellidoFirma" type="text" class="input-sm" size="40" maxlength="40" />
+                                    <button class="glyphicon glyphicon-search btn btn-info btn-sm pull-right" id="btnBuscaUsuario"></button>
+                                    <br />
+                                    <div class="col-sm-3">
+                                    </div>
+                                    <span id="errmsgBuscaUsuario"></span>
+                                </div>
+                            </div>
+                            <br />
+                     
+                            </div>
+                        <div class="col-sm-6">
+                            <br /><br />
+                            <table id="tabla"></table>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-lg-12" id="DivPoderes" style="margin-top: 50px; display: none;">
+                                        <br /><br />
+                                        <label id="LblPoderes" class="control-label">Nombre:</label><br />
+                                        <select multiple class="form-control" id="SeleccionValores" size="7"></select>
+                                        <br />
+                                        <label class="control-label">Firma:</label><br />
+                                        <img id="ImgImagen">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@section scripts{
+<script type="text/javascript">
+
+    $(document).ajaxStart(function () {
+        $.blockUI({ message: "<h6>Espere un momento ...</h6>" });
+    }).ajaxStop($.unblockUI);
+
+    $(document).ready(function () {
+        configColumnasFirmas = [
+            {
+                field: 'Nombre',
+                title: 'Nombre',
+                sortable: true,
+                visible: true
+            }, {
+                field: 'Rut',
+                title: 'Rut',
+                sortable: true,
+                visible: true,
+                //formatter: RutFormatter
+            }, {
+                title: 'Selección',
+                formatter: accionVerTableFormatter,
+                align: 'center',
+                clickToSelect: true,
+                events: "operateEvents"
+            }, ];
+    });
+    function accionVerTableFormatter(value, row, index) {
+        return [
+            '<a class="busca accionRow" href="javascript:void(0)" title="Ver">',
+            '<i class="glyphicon glyphicon-circle-arrow-right"></i>',
+            '</a>  '
+        ].join('');
+    }
+
+    var BuscarFirmas = function () {
+        $('#DivPoderes').hide();
+        var url = '@Url.Action("GetUsuariosPorNombre", "AdminSwift")';
+        var nombre = $('#txtApellidoFirma').val();
+        $('#tabla').bootstrapTable('destroy');
+        $('#tabla').bootstrapTable({
+            url: url,
+            queryParams: function (p) {
+                return { nombre: nombre };
+            },
+            locale: "es-SP",
+            pagination: true,
+            columns: configColumnasFirmas,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: false,
+            search: false,
+            cache: false,
+            pageSize: 10,
+            pageList: [5, 10, 15, 20]
+        });
+    };
+
+    $('#btnBuscaUsuario').click(BuscarFirmas);
+
+    window.operateEvents = {
+        'click .busca': function (e, value, row, index) {
+            window.setTimeout(function () { GetPoderesRowDeTabla(row) }, 0);
+        }
+    };
+
+    function GetPoderesRowDeTabla(row) {
+        var RutActual = row["Rut"];
+        $("#DivError").hide();
+        $("#SeleccionValores").empty();
+        $("#ImgImagen").attr("src", "");
+        $.ajax({
+            type: "GET",
+            //cache: false,
+            url: '@Url.Action("GetPoderes")',
+            data: {rut: RutActual},
+              error: function (response, type, message) {
+                  try {
+                      $("#SeleccionValores").append("<option>" + "Poder no encontrado" + "</option>");
+                      ////intento parsear la respesta como json.
+                      var responseJson = JSON.parse(response.responseText);
+                      showAlert("Error en la operación.", "Usuario no encontrado en tabla poderes " + "alert-danger");
+                      
+                      return false;
+                  }
+                  catch (err) {
+                      showAlert("Error en la operación.", "Detalles: " + message, "alert-danger", true);
+                  }
+              },
+              success: function (data) {
+
+                  if (data.Estado == false)
+                  {
+                      showAlert("Error en la operación.", "Usuario no encontrado en tabla poderes " + "alert-danger");
+                      $("#DivError").show();
+                      return false;
+                  }
+
+                  $('#LblPoderes').text("Poderes usuario: " + row["Nombre"]);
+                  $('#DivPoderes').show();
+                  try {
+                      $("#SeleccionValores").append("<option>" + data.Poder + ", Tipo: " + data.fun_atributo + "</option>");
+                  }
+                  catch (ex) {
+                      $("#SeleccionValores").append("<option>" + "Poder no encontrado" + "</option>");
+                  }
+
+                //Llamado para obtener la imagen de Firma
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ObtieneImagenFirma")',
+                    data: { rut: RutActual },
+                    success: function (data) {
+                        if (data != null && data.trim() != "") {
+                            $("#ImgImagen").attr("src", "data:image/png;base64," + data);
+                            $("#ImgImagen").show();
+                            EmptyMessageZone();
+                        }
+                        else {
+                            showAlert("Firma no encontrada", "No se encontró la imagen de la firma.", "alert-danger", true);
+                            $("#ImgImagen").hide();
+                        }
+                    },
+                    error: function (response, type, message) {
+                        try {
+                            //intento parsear la respesta como json.
+                            var responseJson = JSON.parse(response.responseText);
+                            showAlert("Error en la operación.", "Detalles: " + responseJson.Message, "alert-danger", true);
+                        }
+                        catch (err) {
+                            showAlert("Error en la operación.", "Detalles: " + message, "alert-danger", true);
+                        }
+                    },
+                    dataType: 'json'
+                });
+
+              }
+          })
+    }
+</script>
+}
+

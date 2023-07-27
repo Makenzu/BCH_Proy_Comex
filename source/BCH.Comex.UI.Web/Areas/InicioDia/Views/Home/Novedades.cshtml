@@ -1,0 +1,103 @@
+﻿@model BCH.Comex.UI.Web.Areas.InicioDia.Views.Models.NovedadesViewModel
+
+@{
+    ViewBag.Title = "Novedades del Día";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/inicio-dia-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/InicioDia/Novedades")
+    <script>
+        var urlBuscarNovedades = '@Url.Action("BuscarNovedades", "Home")'; 
+        var urlIndex = '@Url.Action("Index", "Home")';
+        var urlReporte = '@Url.Action("ImprimirReporteNovedades", "Home")';
+        var datosNovedades = @Html.Raw(Json.Encode(Model.Novedades));
+        var datosMensajes = @Html.Raw(Json.Encode(Model.Mensajes));
+
+        var impresion = false;
+    </script>
+
+    <style>
+
+        .btn {
+            margin-bottom: 0px !important; /* el diseño global esta agregando 10px de margen a los botones, yo creo que no deberia */
+        }
+
+        #ddlFiltroTipo 
+        {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+    </style>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12"><h2>Novedades del día</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                @*<div class="panel-heading">
+                    <h1 class="panel-title">Filtros</h1>
+                </div>*@
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Fecha novedad:</label></div>
+
+                        <div class="col-xs-2">
+                            <div class="input-group date" id="txtFechaNovedad">
+                                <input type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-offset-1 col-xs-1">
+                            <button type="button" id="btnBuscar" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                        </div>
+                        <div class="col-xs-1">
+                            <button type="button" id="btnCancelar" class="btn btn-default">&nbsp;&nbsp;Volver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="row">
+        <div class="col-xs-6">&nbsp;</div>
+    </div>*@
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default" id="pnlNovedades">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><span id="titleResultados" style="margin-right:15px;">Novedades</span><span class="badge" id="badgeCantResultados">0</span></h2>
+                </div>
+                <div class="panel-body">
+                    <div id="toolbar">
+                        <form class="form-inline">
+                            <div class="form-group row" id="formGroupFiltroTipo">
+                                <div class="col-xs-3">
+                                    <label for="ddlFiltroTipo">Tipo novedad:</label>
+                                </div>
+                                <div class="col-xs-6" style="max-width:300px">
+                                    <select class="form-control" id="ddlFiltroTipo">
+                                        <option value="0" selected="selected">Novedades del día</option>
+                                        <option value="1">Novedades anteriores sin resolver</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3">
+                                    <button type="button" class="btn btn-primary" id="btnImprimirReporte"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>&nbsp;&nbsp;Imprimir&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <table id="tablaNovedades" class="table table-hover"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

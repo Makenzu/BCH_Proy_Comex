@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "ListadoCuadratura";
+    Layout = null;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+
+@using (Html.BeginForm("ListadoCuadratura", "InicioController", FormMethod.Post, new { id = "frmCuadratura", @class = "form-horizontal well", @style = "margin-left: 0px; margin-right: 0px", @role = "form" }))
+{
+    <style type="text/css">
+        #ErrorNoSeleccionados, #ErrorListado {
+            color: red;
+        }
+    </style>
+
+    <div id="Principal">
+        <div class="panel-body" id="divContableErroneoSwift" style="max-height: 70%;">
+            <div id="DivElemtosContableErroneo">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="pull-left col-sm-1">
+                        </div>
+                        <div class="col-lg-10">
+                            <span id="ErrorListado">No es posible cerrar el d&iacute;a porque se detectaron errores. Los detalles est&aacute;n en la grilla.</span>
+                            <span id="ErrorNoSeleccionados"></span>
+                        </div>
+                    </div>
+                </div>
+                <span id="errmsgPermiso"></span>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="pull-left col-sm-1">
+                        </div>
+                        <div class="col-lg-10">
+                            <table id="tabla"></table>
+                            <div id="toolbar">
+                                <a class="btn btn-default pull-right" id="BtnEliminar"><span>Eliminar</span></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalReporte" hidden>
+        <div class="modal-body">
+            <div class="panel">
+                <div class="modal-header">
+                </div>
+                <div class="panel" id="divmodalReporte">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        configColumnasTabla = [
+        {
+            field: 'state',
+            checkbox: true
+        },
+        {
+            field: 'tipo_mt',
+            title: 'Tipo',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'referencia',
+            title: 'Referencia',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'ncorr',
+            title: 'Correlativo',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'glosa_estado',
+            title: 'Estado',
+            sortable: true,
+            visible: true
+        },
+        {
+            field: 'mensaje_error',
+            title: 'Mensaje de error',
+            sortable: true,
+            visible: true
+        }]
+
+        $('#frmCuadratura').submit(function (e) {
+            e.preventDefault();
+        });
+
+        Load();
+
+        function Load() {
+            var url = '@Url.Action("GetElementosCuadratura")';
+
+            $('#tabla').bootstrapTable('destroy');
+            $('#tabla').bootstrapTable({
+                url: url,
+                classes: "table table-hover table-condensed table-bordered",
+                queryParams: function (p) {
+                    return {};
+                },
+                locale: "es-SP",
+                pagination: false,
+                uniqueId: 'ncorr',
+                columns: configColumnasTabla,
+                searchAlign: 'left',
+                showRefresh: false,
+                clickToSelect: false,
+                search: false,
+                cache: false
+            });
+        };
+
+        var EliminaMensajes = function () {
+            var mensajeDetalle = $('#tabla').bootstrapTable('getSelections');
+            var validacion = true;
+            var correlativos = new Array();
+            var confirmarEliminadosFallidos = new Array();
+
+            if(mensajeDetalle.length <= 0)
+            {
+                $("#ErrorNoSeleccionados").html("No hay elementos seleccionados.").show().fadeOut(3000);
+            }
+            else
+            {
+                for (var i = 0; i < mensajeDetalle.length; i++) {
+                    if (mensajeDetalle[i]["glosa_estado"] != "Anulados" && mensajeDetalle[i]["glosa_estado"] != "")
+                    {
+                        validacion = false;
+                        correlativos.push(mensajeDetalle[i]["ncorr"]);
+                    }
+                }
+
+                if (validacion) {
+                    for (var j = 0; j < mensajeDetalle.length; j++) {
+                        $.get('@Url.Action("EliminaMT")', {
+                            codcct: mensajeDetalle[j]["codcct"],
+                            codesp: mensajeDetalle[j]["codesp"],
+                            codofi: mensajeDetalle[j]["codofi"],
+                            codope: mensajeDetalle[j]["codope"],
+                            codpro: mensajeDetalle[j]["codpro"],
+                            glosa_estado: mensajeDetalle[j]["glosa_estado"],
+                            mensaje_error: mensajeDetalle[j]["mensaje_error"],
+                            ncorr: mensajeDetalle[j]["ncorr"],
+                            referencia: mensajeDetalle[j]["referencia"],
+                            tipo_mt: mensajeDetalle[j]["tipo_mt"],
+                            tipo_mt_decimal: mensajeDetalle[j]["tipo_mt_decimal"]
+                        }, function (data) {
+                            var status = data;
+                            if (data == -1) {
+                                confirmarEliminadosFallidos.push(mensajeDetalle[j]["ncorr"]);
+                            }
+                        });
+                    }
+
+                    if (confirmarEliminadosFallidos.length > 0) {
+                        $("#ErrorNoSeleccionados").html("No se pudo eliminar los siguientes mensajes: " + confirmarEliminadosFallidos.toString()).show().fadeOut(3000);
+                    } else if (mensajeDetalle.length > 0) {
+                        $('#modalCuadratura').modal('hide').ready(function () {
+                            bajaDatos_1();
+                        });
+                    }
+                } else {
+                    $("#ErrorNoSeleccionados").html("No se pueden eliminar los siguientes mensajes: " + correlativos.toString() + "<br />Solo se pueden eliminar los MT que están anulados.").show().fadeOut(3000);
+                }
+            }
+        };
+
+        $('#BtnEliminar').click(EliminaMensajes);
+       
+    });
+</script>
+

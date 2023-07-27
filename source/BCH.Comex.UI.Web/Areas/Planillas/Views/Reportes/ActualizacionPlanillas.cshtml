@@ -1,0 +1,415 @@
+﻿@{
+    ViewBag.Title = "Actualizacion de Planillas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <table class="table" data-toggle="table" id="tablaPlanillas" tabindex="1"></table>
+
+            </div>
+            <fieldset class="col-xs-3">
+                <legend>Tipo planilla</legend>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" tabindex="2" name="tipoPlanilla"  id="optionsImportacion" value="I" checked>
+                        Importación
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" tabindex="3" name="tipoPlanilla" id="optionsExportacion" value="E">
+                        Exportación
+                    </label>
+                </div>
+
+            </fieldset>
+
+            <form class="col-xs-3">
+                <div class="form-group">
+
+                    <label for="">Fecha inicio</label>
+                    <div class="input-group date" id="dtpFechaInicio">
+                        <input tabindex="4" type="text" class="form-control" id="txtFechaInicio" name="FechaInicio" data-inputmask="'alias': 'date'" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Fecha término</label>
+                    <div class="input-group date" id="dtpFechaTermino">
+                        <input tabindex="5" type="text" class="form-control" id="txtFechaTermino" name="FechaTermino" data-inputmask="'alias': 'date'" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <button tabindex="6" type="submit" class="btn btn-primary pull-right" id="btnBuscar">Buscar</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-6">
+                <a data-toggle="modal" href="@Url.Action("IngresoPlanillas", "Reportes")" data-target="#modalIngresoPlanillas" class="btn btn-default" data-remote="false">Agregar</a>
+
+            </div>
+            <div class="col-xs-3 ">
+
+                <button type="button" class="btn btn-success" id="btnOK" tabindex="13">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-danger" id="btoNoOK">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Rut" id="txtRut" disabled />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Nombre del cliente" id="txtRazonSocial" disabled />
+                </div>
+            </div>
+        </div>
+
+        <div id="containerDeclaracion">
+            @{Html.RenderPartial("FormActualizacionPlanillasDeclaracion");}
+        </div>
+
+
+        <table class="table" id="tablaDeclaraciones" tabindex="14" data-toggle="table"></table>
+
+    </div>
+    <div class="panel-footer">
+        <button type="button"  disabled="disabled" class="btn btn-primary" id="btnAceptar" tabindex="15">Aceptar</button>
+        @Html.ActionLink("Consulta", "BusquedaPlanillasInformadas", "Reportes", new { area = "Planillas" }, new { @class = "btn btn-default link-opciones", tabindex = "16" })
+    </div>
+</div>
+
+<div class="modal fade" id="modalIngresoPlanillas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Ingreso de planillas</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAceptarIngresoPlanillas" style="margin-bottom: 0px">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section css {
+<style type="text/css">
+        .align-btn-fix {
+            margin-bottom: 0;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #002464;
+            color: #fff;
+        }
+    </style>
+
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/globalization");
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    <script type="text/javascript">
+        var _index = 0;
+        var $tablaPlanillas, $tablaDeclaraciones;
+        var tableOne;
+        var resultGlobal;
+
+        function Largo(object) {
+            if (object.value.length > object.maxLength)
+                object.value = object.value.slice(0, object.maxLength)
+        }
+
+        function isNumeric(evt) {
+            var theEvent = evt || window.event;
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+
+        $(function () {
+            $(document).ajaxStart(function () { $.blockUI({ message: '<h6>Cargando...</h6>' }) })
+                .ajaxStop($.unblockUI).ajaxError($.unblockUI);
+
+            function montoFormatter(value, row, index) {
+                return numeral(value).format("0,0.00");
+            }
+            function fechaFormatter(value, row, index) {
+                return (value).toString("dd/MM/yyyy").replace('0:00:00', '');
+            }
+
+            $tablaPlanillas = $('#tablaPlanillas');
+            $tablaDeclaraciones = $('#tablaDeclaraciones');
+
+            $('#btnBuscar').click(function (e) {
+                if ($("#txtFechaInicio").val() == "") {
+                    alert('Debe seleccionar la fecha de inicio.');
+                    return;
+                }
+
+                if ($("#txtFechaTermino").val()=="") {
+                    alert('Debe seleccionar la fecha de término.');
+                    return;
+                }
+
+                if ($('input[name="tipoPlanilla"]:checked').val() == 'I') {
+                    $('#txtFechaVencimientoRetorno').attr('disabled', 'disabled');
+                    $('#Declaracion_InteresDI').removeAttr('disabled');
+                }
+                else {
+                    $('#txtFechaVencimientoRetorno').removeAttr('disabled');
+                    $('#Declaracion_InteresDI').attr('disabled', 'disabled');
+                }
+
+                e.preventDefault();
+                $tablaPlanillas.bootstrapTable('destroy');
+                $tablaPlanillas.bootstrapTable({
+                    url: '@Url.Action("GetPlanillas", "Reportes")',
+                    method: 'get',
+                    cache: false,
+                    height: 300,
+                    search: true,
+                    showRefresh: true,
+                    clickToSelect: true,
+                    singleSelect: true,
+                    queryParams: function (p) {
+                        return {
+                            tipoPlanilla: $('input[name="tipoPlanilla"]:checked').val(),
+                            fechaInicio: $('#dtpFechaInicio').data('DateTimePicker').date().format('YYYY-MM-DD'),
+                            fechaTermino: $('#dtpFechaTermino').data('DateTimePicker').date().format('YYYY-MM-DD')
+                        };
+                    },
+                    locale: "es-CL",
+                    columns: [
+                        {radio: true},
+                        {field: 'NumeroPresentacion',title: 'N°'},
+                        {field: 'FechaPresentacionString', title: 'Fecha'},
+                        {field: 'TotalDolar',title: 'Monto total USD',align: 'right',formatter: montoFormatter, align: 'right'},
+                        {field: 'AntiguedadDias',title: 'Num. Días',align: 'right'},
+                        {field: 'Rut',title: 'Rut', visible: false},
+                        {field: 'RazonSocial', title: 'Razon Social', visible : false }
+                    ],
+                    onCheck: function (row) {
+                        //Asignar Campos.
+                        $('#txtRazonSocial').val(row.RazonSocial);
+                        $('#txtRut').val(row.Rut);
+
+                        //Limpia campos del formulario.
+                        $('#Declaracion_NumeroDeclaracion').val('');
+                        $('#Declaracion_MontoDI').val('');
+                        $('#Declaracion_InteresDI').val('');
+                        $("#Declaracion_NumeroDeclaracion").focus().select();
+                    }
+                });
+            });
+
+            var dateNow = new Date();
+            var dateMonthEarlier = new Date();
+            dateMonthEarlier.setDate(dateNow.getDate() - 30);
+
+            $('#dtpFechaInicio').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateMonthEarlier, maxDate: dateNow, debug: true });
+            $('#dtpFechaTermino').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, debug: true });
+            $('#dtpFechaDeclaracion').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, debug: true });
+            $('#dtpFechaVencimientoRetorno').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: null, maxDate: dateNow, debug: true });
+
+            //Agrega a la tabla bootstrap declaraciones.
+            $('#tablaDeclaraciones').bootstrapTable('destroy');
+            //Botón Ok:
+            $('#btnOK').click(function () {
+                var planillasSeleccionadas = $tablaPlanillas.bootstrapTable('getSelections');
+                if (planillasSeleccionadas.length <= 0) {
+                    alert('Debe seleccionar un elemento de la lista');
+                    return;
+                }
+
+                if ($('#formDeclaracion').valid()) {
+                    var formResponse;
+                    var tableData = $('#formDeclaracion').serializeArray();
+                    var Declaracion_MontoDI = parseFloat($('#Declaracion_MontoDI').val());
+                    var Declaracion_InteresDI = parseFloat($('#Declaracion_InteresDI').val());
+                    var MontoUSDPlanilla = parseFloat(planillasSeleccionadas[0].TotalDolar);
+
+                    if ($('#Declaracion_FechaDeclaracion').val()== "") {
+                        alert('Debe seleccionar la fecha de declaración.')
+                        return;
+                    }
+                    
+                    $('#tablaDeclaraciones').bootstrapTable({
+                        locale: "es-CL",
+                        clickToSelect: true,
+                        singleSelect: true,
+                        columns: [
+                            { radio: true },
+                            { field: 'NumeroPresentacion', title: 'N°' },
+                            { field: 'FechaPresentacionString', title: 'Fec. Pres.', align: 'center' },
+                            { field: 'NumeroDeclaracion', title: 'N° Dec.', align: 'right'},
+                            { field: 'FechaDeclaracionString', title: 'Fec. Dec.', align: 'center' },
+                            { field: 'CodigoAduana', title: 'Cód. adn', align: 'center' },
+                            { field: 'FechaVencimientoRetornoString', title: 'Vto. ret.', align: 'center' },
+                            { field: 'MontoDI', title: 'Mto. USD$ DEC', formatter: montoFormatter, align: 'right' },
+                            { field: 'InteresDI', title: 'Mto. int. DEC', formatter: montoFormatter, align: 'right' }
+                        ],
+                        onCheck: function (row) {
+                            // row: the record corresponding to the clicked row,
+                        },
+                        onLoadSuccess: function (data) {
+                            $('#formDeclaracion').find('input[type="text"]').val('');
+                        },
+                        onLoadError: function (status) {
+                            $('#dtpFechaDeclaracion').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: null, maxDate: dateNow, debug: true });
+                            $('#dtpFechaVencimientoRetorno').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: null, maxDate: dateNow, debug: true });
+                        }
+                    });
+                    
+                    if ($('#Declaracion_InteresDI').val() == "") {
+                        Declaracion_InteresDI = 0;
+                    }
+
+                    var suma = parseFloat(Declaracion_InteresDI + Declaracion_MontoDI);
+                    if (suma > 0) {
+                        if (suma > MontoUSDPlanilla) {
+                            alert('La suma del monto de declaración e interés de declaración no puede superar al monto de la planilla.');
+                            return;
+                        }
+                    }
+                    tableData.push({ name: 'Declaracion.MontoUSDPlanilla', value: numeral(planillasSeleccionadas[0].TotalDolar).format('0.0[0000]') });
+                    tableData.push({ name: 'Declaracion.NumeroPresentacion', value: planillasSeleccionadas[0].NumeroPresentacion });
+                    tableData.push({ name: 'Declaracion.FechaPresentacion', value: planillasSeleccionadas[0].FechaPresentacionString });
+
+                    $.post('DeclaracionPlanilla', tableData).done(function (data) {
+                        formResponse = data;
+                        console.log(formResponse.NumeroPresentacion);
+                        //Insertar en la tabla Declaraciones.
+                        $('#tablaDeclaraciones').bootstrapTable('insertRow', {
+                            index: _index++,
+                            row: {
+                                NumeroPresentacion: formResponse[0].NumeroPresentacion,
+                                FechaPresentacionString: formResponse[0].FechaPresentacionString,
+                                NumeroDeclaracion: formResponse[0].NumeroDeclaracion,
+                                FechaDeclaracionString: formResponse[0].FechaDeclaracionString,
+                                CodigoAduana: formResponse[0].CodigoAduana,
+                                FechaVencimientoRetornoString: formResponse[0].FechaVencimientoRetornoString,
+                                MontoDI: formResponse[0].MontoDI,
+                                InteresDI: formResponse[0].InteresDI
+                            }
+                        });
+                    }).fail(function () {
+                        $('#containerDeclaracion').html(formResponse);
+                    });
+                    //Limpia campos del formulario.
+                    $('#Declaracion_NumeroDeclaracion').val('');
+                    $('#Declaracion_MontoDI').val('');
+                    $('#Declaracion_InteresDI').val('');
+                    $('#btnAceptar').removeAttr('disabled');
+                }
+            });
+
+            $('#btoNoOK').click(function () {
+                var planillasDecSeleccionadas = $tablaDeclaraciones.bootstrapTable('getSelections');
+                var NumeroDeclaracion = planillasDecSeleccionadas[0]['NumeroDeclaracion'];
+
+                if (planillasDecSeleccionadas.length <= 0) {
+                    alert('Debe seleccionar un elemento de la lista');
+                    return;
+                }
+                //Eliminar en la tabla bootstrapTable  Declaraciones.
+                $('#tablaDeclaraciones').bootstrapTable('remove', {
+                    field: 'NumeroDeclaracion',
+                    values: [NumeroDeclaracion]
+                });
+            });
+
+            $('#modalIngresoPlanillas').on('show.bs.modal', function (e) {
+                var link = $(e.relatedTarget);
+                $(this).find('.modal-body').load(link.attr('href'));
+            });
+
+            $('#btnAceptarIngresoPlanillas').click(function () {
+                $('#modalIngresoPlanillas').modal('hide');
+                if ($('#MontoUSD').val() != "") {
+                    $tablaPlanillas.bootstrapTable('append', {
+                        NumeroPresentacion: $('#NumeroPresentacion').val(),
+                        FechaPresentacionString: $('#txtFechaPresentacion').val(),
+                        TotalDolar: $('#MontoUSD').val(),
+                        AntiguedadDias: $('#NumeroPlanilla').val(),
+                        Rut: $('#txtRut').val(),
+                        RazonSocial: $('#txtRazonSocial').val()
+                    });
+                    $tablaPlanillas.bootstrapTable('scrollTo', 'bottom');
+                }
+            });
+
+            //Formulario Actualización.
+            $('#btnAceptar').click(function () {
+
+                var declaraciones = $tablaDeclaraciones.bootstrapTable('getData');
+                var planillasSeleccionadas = $tablaPlanillas.bootstrapTable('getSelections');
+
+                
+                if (declaraciones.length <= 0)
+                {
+                    alert('No existen elementos en la lista');
+                } else {
+                    var numeroPresentacion = "";
+
+                    for (i = 0; i < declaraciones.length; i++) {
+                        declaraciones[i].TipoPlanilla = $('input[name="tipoPlanilla"]:checked').val();
+                        declaraciones[i].MontoUSDPlanilla = numeral(planillasSeleccionadas[0].TotalDolar).format('0.0[0000]');
+                        numeroPresentacion += declaraciones[i].NumeroPresentacion + ",";
+                    }//Fin for.
+                    
+                    $.ajax({
+                        url: 'GuardarDeclaracion',
+                        type: 'POST',
+                        data: { model: declaraciones },
+                        success: function (result) {
+                            var urlImpr = 'ImprimirCartaBancoCentralDeclaraciones?tipoPlanilla='
+                                + $('input[name="tipoPlanilla"]:checked').val() + '&numeroPresentacion=' + numeroPresentacion + '&idDetalle=' + result.id;
+                            window.location = urlImpr;
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert('No se pudo guardar la declaracion: ' + errorThrown);
+                        }
+                    });
+
+                }
+
+            });
+
+            $('.link-opciones').on('click', function (e) {
+                var a = $(this)[0];
+                var url = a.href;
+                e.preventDefault();
+                window.open(url, '_blank');
+            })
+        });
+        $(":input").inputmask();
+    </script>
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="836a7123bffd475cbc9d61ababd71590" Name="Diagram1" ZoomLevel="57" >
+        <EntityTypeShape EntityType="cext01Model.sce_prty" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_dad" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_rsa" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_xdoc" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_pope" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_usr" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_ctas" Width="1.5" PointX="3.375" PointY="6.125" />
+        <EntityTypeShape EntityType="cext01Model.sce_tdme" Width="1.5" PointX="9.625" PointY="0.75" />
+        <EntityTypeShape EntityType="cext01Model.sgt_suc" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="cext01Model.tbl_sce_ovd_ft" Width="1.5" PointX="9.375" PointY="3.5" />
+        <EntityTypeShape EntityType="cext01Model.tbl_sce_parametros_ft" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="cext01Model.tbl_sce_codtran_ft" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="cext01Model.tbl_sce_fts" Width="1.5" PointX="11.375" PointY="6.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_mcd" Width="1.5" PointX="15" PointY="1" />
+        <EntityTypeShape EntityType="cext01Model.sce_mcdh" Width="1.5" PointX="13.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cext01Model.sce_dfc" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_bic" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_cpai" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_tccs" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_fdp" Width="1.5" PointX="13.375" PointY="13.75" />
+        <EntityTypeShape EntityType="cext01Model.tbl_prty_ejc_MS" Width="1.5" PointX="3.375" PointY="16.75" />
+        <EntityTypeShape EntityType="cext01Model.sce_fer" Width="1.5" PointX="15.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

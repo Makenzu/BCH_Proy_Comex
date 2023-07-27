@@ -1,0 +1,2840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sbcorModelStoreContainer" CdmEntityContainer="sbcorEntities">
+    <EntitySetMapping Name="rbc_lot">
+      <EntityTypeMapping TypeName="sbcorModel.rbc_lot">
+        <MappingFragment StoreEntitySet="rbc_lot">
+          <ScalarProperty Name="lot_fecdia" ColumnName="lot_fecdia" />
+          <ScalarProperty Name="lot_key" ColumnName="lot_key" />
+          <ScalarProperty Name="lot_tiplot" ColumnName="lot_tiplot" />
+          <ScalarProperty Name="lot_codope" ColumnName="lot_codope" />
+          <ScalarProperty Name="lot_numref" ColumnName="lot_numref" />
+          <ScalarProperty Name="lot_refsec" ColumnName="lot_refsec" />
+          <ScalarProperty Name="lot_fecpro" ColumnName="lot_fecpro" />
+          <ScalarProperty Name="lot_codofi" ColumnName="lot_codofi" />
+          <ScalarProperty Name="lot_codpai" ColumnName="lot_codpai" />
+          <ScalarProperty Name="lot_codswi" ColumnName="lot_codswi" />
+          <ScalarProperty Name="lot_rutemp" ColumnName="lot_rutemp" />
+          <ScalarProperty Name="lot_numrut" ColumnName="lot_numrut" />
+          <ScalarProperty Name="lot_dvemp" ColumnName="lot_dvemp" />
+          <ScalarProperty Name="lot_fecini" ColumnName="lot_fecini" />
+          <ScalarProperty Name="lot_fecven" ColumnName="lot_fecven" />
+          <ScalarProperty Name="lot_codmnd" ColumnName="lot_codmnd" />
+          <ScalarProperty Name="lot_mtoope" ColumnName="lot_mtoope" />
+          <ScalarProperty Name="lot_tasa" ColumnName="lot_tasa" />
+          <ScalarProperty Name="lot_estado" ColumnName="lot_estado" />
+          <ScalarProperty Name="lot_coderr" ColumnName="lot_coderr" />
+          <ScalarProperty Name="lot_congar" ColumnName="lot_congar" />
+          <ScalarProperty Name="lot_swimat" ColumnName="lot_swimat" />
+          <ScalarProperty Name="lot_paimat" ColumnName="lot_paimat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rbc_macb">
+      <EntityTypeMapping TypeName="sbcorModel.rbc_macb">
+        <MappingFragment StoreEntitySet="rbc_macb">
+          <ScalarProperty Name="macb_codswi" ColumnName="macb_codswi" />
+          <ScalarProperty Name="macb_fecapr" ColumnName="macb_fecapr" />
+          <ScalarProperty Name="macb_nummod" ColumnName="macb_nummod" />
+          <ScalarProperty Name="macb_codpai" ColumnName="macb_codpai" />
+          <ScalarProperty Name="macb_fecini" ColumnName="macb_fecini" />
+          <ScalarProperty Name="macb_fecven" ColumnName="macb_fecven" />
+          <ScalarProperty Name="macb_estado" ColumnName="macb_estado" />
+          <ScalarProperty Name="macb_codmnd" ColumnName="macb_codmnd" />
+          <ScalarProperty Name="macb_mtomac" ColumnName="macb_mtomac" />
+          <ScalarProperty Name="macb_mtoout" ColumnName="macb_mtoout" />
+          <ScalarProperty Name="macb_mtores" ColumnName="macb_mtores" />
+          <ScalarProperty Name="macb_mtodis" ColumnName="macb_mtodis" />
+          <ScalarProperty Name="macb_ruting" ColumnName="macb_ruting" />
+          <ScalarProperty Name="macb_dving" ColumnName="macb_dving" />
+          <ScalarProperty Name="macb_fecing" ColumnName="macb_fecing" />
+          <ScalarProperty Name="macb_rutmod" ColumnName="macb_rutmod" />
+          <ScalarProperty Name="macb_dvmod" ColumnName="macb_dvmod" />
+          <ScalarProperty Name="macb_fecmod" ColumnName="macb_fecmod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rbc_macp">
+      <EntityTypeMapping TypeName="sbcorModel.rbc_macp">
+        <MappingFragment StoreEntitySet="rbc_macp">
+          <ScalarProperty Name="macp_codpai" ColumnName="macp_codpai" />
+          <ScalarProperty Name="macp_fecapr" ColumnName="macp_fecapr" />
+          <ScalarProperty Name="macp_nummod" ColumnName="macp_nummod" />
+          <ScalarProperty Name="macp_fecven" ColumnName="macp_fecven" />
+          <ScalarProperty Name="macp_estado" ColumnName="macp_estado" />
+          <ScalarProperty Name="macp_codmnd" ColumnName="macp_codmnd" />
+          <ScalarProperty Name="macp_mtomac" ColumnName="macp_mtomac" />
+          <ScalarProperty Name="macp_mtooutb" ColumnName="macp_mtooutb" />
+          <ScalarProperty Name="macp_mtoouta" ColumnName="macp_mtoouta" />
+          <ScalarProperty Name="macp_mtooutn" ColumnName="macp_mtooutn" />
+          <ScalarProperty Name="macp_mtores" ColumnName="macp_mtores" />
+          <ScalarProperty Name="macp_mtoresb" ColumnName="macp_mtoresb" />
+          <ScalarProperty Name="macp_mtorese" ColumnName="macp_mtorese" />
+          <ScalarProperty Name="macp_mtodis" ColumnName="macp_mtodis" />
+          <ScalarProperty Name="macp_sublfin" ColumnName="macp_sublfin" />
+          <ScalarProperty Name="macp_sublfinu" ColumnName="macp_sublfinu" />
+          <ScalarProperty Name="macp_sublfind" ColumnName="macp_sublfind" />
+          <ScalarProperty Name="macp_sublcrp" ColumnName="macp_sublcrp" />
+          <ScalarProperty Name="macp_sublcrpu" ColumnName="macp_sublcrpu" />
+          <ScalarProperty Name="macp_sublcrpd" ColumnName="macp_sublcrpd" />
+          <ScalarProperty Name="macp_sublfc" ColumnName="macp_sublfc" />
+          <ScalarProperty Name="macp_sublfcu" ColumnName="macp_sublfcu" />
+          <ScalarProperty Name="macp_sublfcd" ColumnName="macp_sublfcd" />
+          <ScalarProperty Name="macp_ruting" ColumnName="macp_ruting" />
+          <ScalarProperty Name="macp_dving" ColumnName="macp_dving" />
+          <ScalarProperty Name="macp_fecing" ColumnName="macp_fecing" />
+          <ScalarProperty Name="macp_rutmod" ColumnName="macp_rutmod" />
+          <ScalarProperty Name="macp_dvmod" ColumnName="macp_dvmod" />
+          <ScalarProperty Name="macp_fecmod" ColumnName="macp_fecmod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_act">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_act">
+        <MappingFragment StoreEntitySet="sbc_act">
+          <ScalarProperty Name="act_numref" ColumnName="act_numref" />
+          <ScalarProperty Name="act_codswi" ColumnName="act_codswi" />
+          <ScalarProperty Name="act_rutcli" ColumnName="act_rutcli" />
+          <ScalarProperty Name="act_dvrut" ColumnName="act_dvrut" />
+          <ScalarProperty Name="act_nombre" ColumnName="act_nombre" />
+          <ScalarProperty Name="act_codope" ColumnName="act_codope" />
+          <ScalarProperty Name="act_tipope" ColumnName="act_tipope" />
+          <ScalarProperty Name="act_estado" ColumnName="act_estado" />
+          <ScalarProperty Name="act_ofiori" ColumnName="act_ofiori" />
+          <ScalarProperty Name="act_codmnd" ColumnName="act_codmnd" />
+          <ScalarProperty Name="act_mtoope" ColumnName="act_mtoope" />
+          <ScalarProperty Name="act_fecini" ColumnName="act_fecini" />
+          <ScalarProperty Name="act_fecven" ColumnName="act_fecven" />
+          <ScalarProperty Name="act_tiptas" ColumnName="act_tiptas" />
+          <ScalarProperty Name="act_tasa" ColumnName="act_tasa" />
+          <ScalarProperty Name="act_spread" ColumnName="act_spread" />
+          <ScalarProperty Name="act_tastot" ColumnName="act_tastot" />
+          <ScalarProperty Name="act_plazo" ColumnName="act_plazo" />
+          <ScalarProperty Name="act_operie" ColumnName="act_operie" />
+          <ScalarProperty Name="act_clainv" ColumnName="act_clainv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_age">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_age">
+        <MappingFragment StoreEntitySet="sbc_age">
+          <ScalarProperty Name="age_codswi" ColumnName="age_codswi" />
+          <ScalarProperty Name="age_codcto" ColumnName="age_codcto" />
+          <ScalarProperty Name="age_nombco" ColumnName="age_nombco" />
+          <ScalarProperty Name="age_famswi" ColumnName="age_famswi" />
+          <ScalarProperty Name="age_contacto" ColumnName="age_contacto" />
+          <ScalarProperty Name="age_cargo" ColumnName="age_cargo" />
+          <ScalarProperty Name="age_direccion" ColumnName="age_direccion" />
+          <ScalarProperty Name="age_ciudad" ColumnName="age_ciudad" />
+          <ScalarProperty Name="age_postal" ColumnName="age_postal" />
+          <ScalarProperty Name="age_pais" ColumnName="age_pais" />
+          <ScalarProperty Name="age_codpain" ColumnName="age_codpain" />
+          <ScalarProperty Name="age_codpaic" ColumnName="age_codpaic" />
+          <ScalarProperty Name="age_codentp" ColumnName="age_codentp" />
+          <ScalarProperty Name="age_codentc" ColumnName="age_codentc" />
+          <ScalarProperty Name="age_fono1c" ColumnName="age_fono1c" />
+          <ScalarProperty Name="age_fono2c" ColumnName="age_fono2c" />
+          <ScalarProperty Name="age_fax1c" ColumnName="age_fax1c" />
+          <ScalarProperty Name="age_fax2c" ColumnName="age_fax2c" />
+          <ScalarProperty Name="age_fono1" ColumnName="age_fono1" />
+          <ScalarProperty Name="age_fono2" ColumnName="age_fono2" />
+          <ScalarProperty Name="age_fax1" ColumnName="age_fax1" />
+          <ScalarProperty Name="age_fax2" ColumnName="age_fax2" />
+          <ScalarProperty Name="age_nivel" ColumnName="age_nivel" />
+          <ScalarProperty Name="age_memo" ColumnName="age_memo" />
+          <ScalarProperty Name="age_busi" ColumnName="age_busi" />
+          <ScalarProperty Name="age_cifr" ColumnName="age_cifr" />
+          <ScalarProperty Name="age_pasc" ColumnName="age_pasc" />
+          <ScalarProperty Name="age_tyco" ColumnName="age_tyco" />
+          <ScalarProperty Name="age_flag" ColumnName="age_flag" />
+          <ScalarProperty Name="age_doc1" ColumnName="age_doc1" />
+          <ScalarProperty Name="age_doc2" ColumnName="age_doc2" />
+          <ScalarProperty Name="age_doc3" ColumnName="age_doc3" />
+          <ScalarProperty Name="age_doc4" ColumnName="age_doc4" />
+          <ScalarProperty Name="age_doc5" ColumnName="age_doc5" />
+          <ScalarProperty Name="age_ruting" ColumnName="age_ruting" />
+          <ScalarProperty Name="age_dving" ColumnName="age_dving" />
+          <ScalarProperty Name="age_fecing" ColumnName="age_fecing" />
+          <ScalarProperty Name="age_rutact" ColumnName="age_rutact" />
+          <ScalarProperty Name="age_dvact" ColumnName="age_dvact" />
+          <ScalarProperty Name="age_fecact" ColumnName="age_fecact" />
+          <ScalarProperty Name="age_email" ColumnName="age_email" />
+          <ScalarProperty Name="age_rib" ColumnName="age_rib" />
+          <ScalarProperty Name="age_celular" ColumnName="age_celular" />
+          <ScalarProperty Name="age_coment" ColumnName="age_coment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bco">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bco">
+        <MappingFragment StoreEntitySet="sbc_bco">
+          <ScalarProperty Name="bco_codswi" ColumnName="bco_codswi" />
+          <ScalarProperty Name="bco_codpai" ColumnName="bco_codpai" />
+          <ScalarProperty Name="bco_tipbco" ColumnName="bco_tipbco" />
+          <ScalarProperty Name="bco_swimat" ColumnName="bco_swimat" />
+          <ScalarProperty Name="bco_paimat" ColumnName="bco_paimat" />
+          <ScalarProperty Name="bco_rutbco" ColumnName="bco_rutbco" />
+          <ScalarProperty Name="bco_dvbco" ColumnName="bco_dvbco" />
+          <ScalarProperty Name="bco_codbde" ColumnName="bco_codbde" />
+          <ScalarProperty Name="bco_nombre" ColumnName="bco_nombre" />
+          <ScalarProperty Name="bco_direccion" ColumnName="bco_direccion" />
+          <ScalarProperty Name="bco_ciudad" ColumnName="bco_ciudad" />
+          <ScalarProperty Name="bco_cpostal" ColumnName="bco_cpostal" />
+          <ScalarProperty Name="bco_pais" ColumnName="bco_pais" />
+          <ScalarProperty Name="bco_corresp" ColumnName="bco_corresp" />
+          <ScalarProperty Name="bco_deudor" ColumnName="bco_deudor" />
+          <ScalarProperty Name="bco_acreedor" ColumnName="bco_acreedor" />
+          <ScalarProperty Name="bco_rnkpai" ColumnName="bco_rnkpai" />
+          <ScalarProperty Name="bco_rnkmun" ColumnName="bco_rnkmun" />
+          <ScalarProperty Name="bco_clfbco" ColumnName="bco_clfbco" />
+          <ScalarProperty Name="bco_catbcoa" ColumnName="bco_catbcoa" />
+          <ScalarProperty Name="bco_catbcom" ColumnName="bco_catbcom" />
+          <ScalarProperty Name="bco_ruting" ColumnName="bco_ruting" />
+          <ScalarProperty Name="bco_dving" ColumnName="bco_dving" />
+          <ScalarProperty Name="bco_fecing" ColumnName="bco_fecing" />
+          <ScalarProperty Name="bco_rutact" ColumnName="bco_rutact" />
+          <ScalarProperty Name="bco_dvact" ColumnName="bco_dvact" />
+          <ScalarProperty Name="bco_fecact" ColumnName="bco_fecact" />
+          <ScalarProperty Name="bco_rutsuper" ColumnName="bco_rutsuper" />
+          <ScalarProperty Name="bco_dvsuper" ColumnName="bco_dvsuper" />
+          <ScalarProperty Name="bco_region" ColumnName="bco_region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bcot">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bcot">
+        <MappingFragment StoreEntitySet="sbc_bcot">
+          <ScalarProperty Name="bco_codswi" ColumnName="bco_codswi" />
+          <ScalarProperty Name="bcot_tiptxt" ColumnName="bcot_tiptxt" />
+          <ScalarProperty Name="bcot_numlin" ColumnName="bcot_numlin" />
+          <ScalarProperty Name="bcot_texto" ColumnName="bcot_texto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ber">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ber">
+        <MappingFragment StoreEntitySet="sbc_ber">
+          <ScalarProperty Name="ber_codswi" ColumnName="ber_codswi" />
+          <ScalarProperty Name="ber_agno" ColumnName="ber_agno" />
+          <ScalarProperty Name="ber_mes" ColumnName="ber_mes" />
+          <ScalarProperty Name="ber_fecing" ColumnName="ber_fecing" />
+          <ScalarProperty Name="ber_audita" ColumnName="ber_audita" />
+          <ScalarProperty Name="ber_codmnd" ColumnName="ber_codmnd" />
+          <ScalarProperty Name="ber_nemmnd" ColumnName="ber_nemmnd" />
+          <ScalarProperty Name="ber_paridad" ColumnName="ber_paridad" />
+          <ScalarProperty Name="ber_obsber" ColumnName="ber_obsber" />
+          <ScalarProperty Name="ber_utn_a" ColumnName="ber_utn_a" />
+          <ScalarProperty Name="ber_utn_p" ColumnName="ber_utn_p" />
+          <ScalarProperty Name="ber_ini_a" ColumnName="ber_ini_a" />
+          <ScalarProperty Name="ber_dep_a" ColumnName="ber_dep_a" />
+          <ScalarProperty Name="ber_cn_a" ColumnName="ber_cn_a" />
+          <ScalarProperty Name="ber_dep_tp" ColumnName="ber_dep_tp" />
+          <ScalarProperty Name="ber_cn_dep" ColumnName="ber_cn_dep" />
+          <ScalarProperty Name="ber_p_a" ColumnName="ber_p_a" />
+          <ScalarProperty Name="ber_tp_p" ColumnName="ber_tp_p" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_berd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_berd">
+        <MappingFragment StoreEntitySet="sbc_berd">
+          <ScalarProperty Name="ber_codswi" ColumnName="ber_codswi" />
+          <ScalarProperty Name="ber_agno" ColumnName="ber_agno" />
+          <ScalarProperty Name="ber_mes" ColumnName="ber_mes" />
+          <ScalarProperty Name="ber_codcta" ColumnName="ber_codcta" />
+          <ScalarProperty Name="mer_mtoori" ColumnName="mer_mtoori" />
+          <ScalarProperty Name="mer_mtodol" ColumnName="mer_mtodol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bere">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bere">
+        <MappingFragment StoreEntitySet="sbc_bere">
+          <ScalarProperty Name="bere_codswi" ColumnName="bere_codswi" />
+          <ScalarProperty Name="bere_agno" ColumnName="bere_agno" />
+          <ScalarProperty Name="bere_codpai" ColumnName="bere_codpai" />
+          <ScalarProperty Name="bere_mes" ColumnName="bere_mes" />
+          <ScalarProperty Name="bere_feccta" ColumnName="bere_feccta" />
+          <ScalarProperty Name="bere_fecing" ColumnName="bere_fecing" />
+          <ScalarProperty Name="bere_audita" ColumnName="bere_audita" />
+          <ScalarProperty Name="bere_codmnd" ColumnName="bere_codmnd" />
+          <ScalarProperty Name="bere_nemmnd" ColumnName="bere_nemmnd" />
+          <ScalarProperty Name="bere_paridad" ColumnName="bere_paridad" />
+          <ScalarProperty Name="bere_nummes" ColumnName="bere_nummes" />
+          <ScalarProperty Name="bere_indmto" ColumnName="bere_indmto" />
+          <ScalarProperty Name="bere_obsber" ColumnName="bere_obsber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_berp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_berp">
+        <MappingFragment StoreEntitySet="sbc_berp">
+          <ScalarProperty Name="berp_codswi" ColumnName="berp_codswi" />
+          <ScalarProperty Name="berp_agno" ColumnName="berp_agno" />
+          <ScalarProperty Name="berp_mes" ColumnName="berp_mes" />
+          <ScalarProperty Name="berp_codpai" ColumnName="berp_codpai" />
+          <ScalarProperty Name="berp_codcta" ColumnName="berp_codcta" />
+          <ScalarProperty Name="berp_feccta" ColumnName="berp_feccta" />
+          <ScalarProperty Name="berp_indmto" ColumnName="berp_indmto" />
+          <ScalarProperty Name="merp_mtoori" ColumnName="merp_mtoori" />
+          <ScalarProperty Name="merp_mtoorir" ColumnName="merp_mtoorir" />
+          <ScalarProperty Name="merp_mtodol" ColumnName="merp_mtodol" />
+          <ScalarProperty Name="merp_mtodolr" ColumnName="merp_mtodolr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bksc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bksc">
+        <MappingFragment StoreEntitySet="sbc_bksc">
+          <ScalarProperty Name="bksc_codbks" ColumnName="bksc_codbks" />
+          <ScalarProperty Name="bksc_desbks" ColumnName="bksc_desbks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bksv">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bksv">
+        <MappingFragment StoreEntitySet="sbc_bksv">
+          <ScalarProperty Name="bksv_codcta" ColumnName="bksv_codcta" />
+          <ScalarProperty Name="bksv_codbks0" ColumnName="bksv_codbks0" />
+          <ScalarProperty Name="bksv_factor0" ColumnName="bksv_factor0" />
+          <ScalarProperty Name="bksv_codbks1" ColumnName="bksv_codbks1" />
+          <ScalarProperty Name="bksv_factor1" ColumnName="bksv_factor1" />
+          <ScalarProperty Name="bksv_codbks2" ColumnName="bksv_codbks2" />
+          <ScalarProperty Name="bksv_factor2" ColumnName="bksv_factor2" />
+          <ScalarProperty Name="bksv_codbks3" ColumnName="bksv_codbks3" />
+          <ScalarProperty Name="bksv_factor3" ColumnName="bksv_factor3" />
+          <ScalarProperty Name="bksv_codbks4" ColumnName="bksv_codbks4" />
+          <ScalarProperty Name="bksv_factor4" ColumnName="bksv_factor4" />
+          <ScalarProperty Name="bksv_codbks5" ColumnName="bksv_codbks5" />
+          <ScalarProperty Name="bksv_factor5" ColumnName="bksv_factor5" />
+          <ScalarProperty Name="bksv_codbks6" ColumnName="bksv_codbks6" />
+          <ScalarProperty Name="bksv_factor6" ColumnName="bksv_factor6" />
+          <ScalarProperty Name="bksv_codbks7" ColumnName="bksv_codbks7" />
+          <ScalarProperty Name="bksv_factor7" ColumnName="bksv_factor7" />
+          <ScalarProperty Name="bksv_codbks8" ColumnName="bksv_codbks8" />
+          <ScalarProperty Name="bksv_factor8" ColumnName="bksv_factor8" />
+          <ScalarProperty Name="bksv_codbks9" ColumnName="bksv_codbks9" />
+          <ScalarProperty Name="bksv_factor9" ColumnName="bksv_factor9" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_blfyd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_blfyd">
+        <MappingFragment StoreEntitySet="sbc_blfyd">
+          <ScalarProperty Name="blfyd_codpai" ColumnName="blfyd_codpai" />
+          <ScalarProperty Name="blfyd_codswi" ColumnName="blfyd_codswi" />
+          <ScalarProperty Name="blfyd_fecpro" ColumnName="blfyd_fecpro" />
+          <ScalarProperty Name="blfyd_codlfy" ColumnName="blfyd_codlfy" />
+          <ScalarProperty Name="blfyd_anolfy" ColumnName="blfyd_anolfy" />
+          <ScalarProperty Name="blfyd_codcons" ColumnName="blfyd_codcons" />
+          <ScalarProperty Name="blfyd_codcta" ColumnName="blfyd_codcta" />
+          <ScalarProperty Name="blfyd_mtocta" ColumnName="blfyd_mtocta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_blfyh">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_blfyh">
+        <MappingFragment StoreEntitySet="sbc_blfyh">
+          <ScalarProperty Name="blfyh_codpai" ColumnName="blfyh_codpai" />
+          <ScalarProperty Name="blfyh_codswi" ColumnName="blfyh_codswi" />
+          <ScalarProperty Name="blfyh_fecpro" ColumnName="blfyh_fecpro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_cciu">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_cciu">
+        <MappingFragment StoreEntitySet="sbc_cciu">
+          <ScalarProperty Name="cciu_nombre" ColumnName="cciu_nombre" />
+          <ScalarProperty Name="cciu_codpaic" ColumnName="cciu_codpaic" />
+          <ScalarProperty Name="cciu_codentc" ColumnName="cciu_codentc" />
+          <ScalarProperty Name="cciu_codentp" ColumnName="cciu_codentp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_clf">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_clf">
+        <MappingFragment StoreEntitySet="sbc_clf">
+          <ScalarProperty Name="clf_codswi" ColumnName="clf_codswi" />
+          <ScalarProperty Name="clf_codclfe" ColumnName="clf_codclfe" />
+          <ScalarProperty Name="clf_fecclf" ColumnName="clf_fecclf" />
+          <ScalarProperty Name="clf_tipclfc" ColumnName="clf_tipclfc" />
+          <ScalarProperty Name="clf_codclfc" ColumnName="clf_codclfc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_clfb">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_clfb">
+        <MappingFragment StoreEntitySet="sbc_clfb">
+          <ScalarProperty Name="clfb_codclf" ColumnName="clfb_codclf" />
+          <ScalarProperty Name="clfb_catrsg" ColumnName="clfb_catrsg" />
+          <ScalarProperty Name="clfb_peresp" ColumnName="clfb_peresp" />
+          <ScalarProperty Name="clfb_prcprv" ColumnName="clfb_prcprv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_clfc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_clfc">
+        <MappingFragment StoreEntitySet="sbc_clfc">
+          <ScalarProperty Name="clfc_codclfe" ColumnName="clfc_codclfe" />
+          <ScalarProperty Name="clfc_codclfc" ColumnName="clfc_codclfc" />
+          <ScalarProperty Name="clfc_tipclfc" ColumnName="clfc_tipclfc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_clfe">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_clfe">
+        <MappingFragment StoreEntitySet="sbc_clfe">
+          <ScalarProperty Name="clfe_codclfe" ColumnName="clfe_codclfe" />
+          <ScalarProperty Name="clfe_nomclfe" ColumnName="clfe_nomclfe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_clft">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_clft">
+        <MappingFragment StoreEntitySet="sbc_clft">
+          <ScalarProperty Name="clft_tipclfc" ColumnName="clft_tipclfc" />
+          <ScalarProperty Name="clft_nomtip" ColumnName="clft_nomtip" />
+          <ScalarProperty Name="clft_nemtip" ColumnName="clft_nemtip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_comd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_comd">
+        <MappingFragment StoreEntitySet="sbc_comd">
+          <ScalarProperty Name="comd_numref" ColumnName="comd_numref" />
+          <ScalarProperty Name="comd_fecpro" ColumnName="comd_fecpro" />
+          <ScalarProperty Name="comd_codpro" ColumnName="comd_codpro" />
+          <ScalarProperty Name="comd_codswi" ColumnName="comd_codswi" />
+          <ScalarProperty Name="comd_nombco" ColumnName="comd_nombco" />
+          <ScalarProperty Name="comd_codpai" ColumnName="comd_codpai" />
+          <ScalarProperty Name="comd_nompai" ColumnName="comd_nompai" />
+          <ScalarProperty Name="comd_codmnd" ColumnName="comd_codmnd" />
+          <ScalarProperty Name="comd_mtoope" ColumnName="comd_mtoope" />
+          <ScalarProperty Name="comd_fecini" ColumnName="comd_fecini" />
+          <ScalarProperty Name="comd_fecven" ColumnName="comd_fecven" />
+          <ScalarProperty Name="comd_mndcom" ColumnName="comd_mndcom" />
+          <ScalarProperty Name="comd_mtocom" ColumnName="comd_mtocom" />
+          <ScalarProperty Name="comd_mtosis" ColumnName="comd_mtosis" />
+          <ScalarProperty Name="comd_haydif" ColumnName="comd_haydif" />
+          <ScalarProperty Name="comd_mtodif" ColumnName="comd_mtodif" />
+          <ScalarProperty Name="comd_codinf" ColumnName="comd_codinf" />
+          <ScalarProperty Name="comd_msginf" ColumnName="comd_msginf" />
+          <ScalarProperty Name="comd_fecpar" ColumnName="comd_fecpar" />
+          <ScalarProperty Name="comd_mtopar" ColumnName="comd_mtopar" />
+          <ScalarProperty Name="comd_mtoope_" ColumnName="comd_mtoope_" />
+          <ScalarProperty Name="comd_mtocom_" ColumnName="comd_mtocom_" />
+          <ScalarProperty Name="comd_mtosis_" ColumnName="comd_mtosis_" />
+          <ScalarProperty Name="comd_mtodif_" ColumnName="comd_mtodif_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_cpai">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_cpai">
+        <MappingFragment StoreEntitySet="sbc_cpai">
+          <ScalarProperty Name="cpai_codpaic" ColumnName="cpai_codpaic" />
+          <ScalarProperty Name="cpai_nompai" ColumnName="cpai_nompai" />
+          <ScalarProperty Name="cpai_codentp" ColumnName="cpai_codentp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_crp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_crp">
+        <MappingFragment StoreEntitySet="sbc_crp">
+          <ScalarProperty Name="crp_tp_reg" ColumnName="crp_tp_reg" />
+          <ScalarProperty Name="crp_rut" ColumnName="crp_rut" />
+          <ScalarProperty Name="crp_dv" ColumnName="crp_dv" />
+          <ScalarProperty Name="crp_suc_ptmo" ColumnName="crp_suc_ptmo" />
+          <ScalarProperty Name="crp_num_ptmo" ColumnName="crp_num_ptmo" />
+          <ScalarProperty Name="crp_rut_emp" ColumnName="crp_rut_emp" />
+          <ScalarProperty Name="crp_dv_emp" ColumnName="crp_dv_emp" />
+          <ScalarProperty Name="crp_moneda" ColumnName="crp_moneda" />
+          <ScalarProperty Name="crp_monto_vigente" ColumnName="crp_monto_vigente" />
+          <ScalarProperty Name="crp_fecha_inicio" ColumnName="crp_fecha_inicio" />
+          <ScalarProperty Name="crp_fecha_vencimiento" ColumnName="crp_fecha_vencimiento" />
+          <ScalarProperty Name="crp_tipo_tasa" ColumnName="crp_tipo_tasa" />
+          <ScalarProperty Name="crp_tasa_base" ColumnName="crp_tasa_base" />
+          <ScalarProperty Name="crp_signo_spread" ColumnName="crp_signo_spread" />
+          <ScalarProperty Name="crp_spread" ColumnName="crp_spread" />
+          <ScalarProperty Name="crp_tasa_total" ColumnName="crp_tasa_total" />
+          <ScalarProperty Name="crp_to" ColumnName="crp_to" />
+          <ScalarProperty Name="crp_oficina" ColumnName="crp_oficina" />
+          <ScalarProperty Name="crp_cod_ejec" ColumnName="crp_cod_ejec" />
+          <ScalarProperty Name="crp_filler" ColumnName="crp_filler" />
+          <ScalarProperty Name="crp_operie" ColumnName="crp_operie" />
+          <ScalarProperty Name="crp_clainv" ColumnName="crp_clainv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_crpg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_crpg">
+        <MappingFragment StoreEntitySet="sbc_crpg">
+          <ScalarProperty Name="crpg_numref" ColumnName="crpg_numref" />
+          <ScalarProperty Name="crpg_congar" ColumnName="crpg_congar" />
+          <ScalarProperty Name="crpg_paigar" ColumnName="crpg_paigar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_cta">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_cta">
+        <MappingFragment StoreEntitySet="sbc_cta">
+          <ScalarProperty Name="cta_codcta" ColumnName="cta_codcta" />
+          <ScalarProperty Name="cta_nomcta" ColumnName="cta_nomcta" />
+          <ScalarProperty Name="cta_codctar" ColumnName="cta_codctar" />
+          <ScalarProperty Name="cta_poscta" ColumnName="cta_poscta" />
+          <ScalarProperty Name="cta_codgrp" ColumnName="cta_codgrp" />
+          <ScalarProperty Name="cta_calculo" ColumnName="cta_calculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ctap">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ctap">
+        <MappingFragment StoreEntitySet="sbc_ctap">
+          <ScalarProperty Name="ctap_codpai" ColumnName="ctap_codpai" />
+          <ScalarProperty Name="ctap_feccta" ColumnName="ctap_feccta" />
+          <ScalarProperty Name="ctap_codcta" ColumnName="ctap_codcta" />
+          <ScalarProperty Name="ctap_tipcta" ColumnName="ctap_tipcta" />
+          <ScalarProperty Name="ctap_nomcta" ColumnName="ctap_nomcta" />
+          <ScalarProperty Name="ctap_codctar1" ColumnName="ctap_codctar1" />
+          <ScalarProperty Name="ctap_codctar2" ColumnName="ctap_codctar2" />
+          <ScalarProperty Name="ctap_codgrp" ColumnName="ctap_codgrp" />
+          <ScalarProperty Name="ctap_calculo" ColumnName="ctap_calculo" />
+          <ScalarProperty Name="ctap_valida1" ColumnName="ctap_valida1" />
+          <ScalarProperty Name="ctap_valida2" ColumnName="ctap_valida2" />
+          <ScalarProperty Name="ctap_valida3" ColumnName="ctap_valida3" />
+          <ScalarProperty Name="ctap_valida4" ColumnName="ctap_valida4" />
+          <ScalarProperty Name="ctap_valida5" ColumnName="ctap_valida5" />
+          <ScalarProperty Name="ctap_valida6" ColumnName="ctap_valida6" />
+          <ScalarProperty Name="ctap_valida7" ColumnName="ctap_valida7" />
+          <ScalarProperty Name="ctap_valida8" ColumnName="ctap_valida8" />
+          <ScalarProperty Name="ctap_valida9" ColumnName="ctap_valida9" />
+          <ScalarProperty Name="ctap_valida10" ColumnName="ctap_valida10" />
+          <ScalarProperty Name="ctap_valida11" ColumnName="ctap_valida11" />
+          <ScalarProperty Name="ctap_p1" ColumnName="ctap_p1" />
+          <ScalarProperty Name="ctap_p2" ColumnName="ctap_p2" />
+          <ScalarProperty Name="ctap_p3" ColumnName="ctap_p3" />
+          <ScalarProperty Name="ctap_p4" ColumnName="ctap_p4" />
+          <ScalarProperty Name="ctap_p5" ColumnName="ctap_p5" />
+          <ScalarProperty Name="ctap_p6" ColumnName="ctap_p6" />
+          <ScalarProperty Name="ctap_p7" ColumnName="ctap_p7" />
+          <ScalarProperty Name="ctap_p8" ColumnName="ctap_p8" />
+          <ScalarProperty Name="ctap_p9" ColumnName="ctap_p9" />
+          <ScalarProperty Name="ctap_p10" ColumnName="ctap_p10" />
+          <ScalarProperty Name="ctap_p11" ColumnName="ctap_p11" />
+          <ScalarProperty Name="ctap_p12" ColumnName="ctap_p12" />
+          <ScalarProperty Name="ctap_p13" ColumnName="ctap_p13" />
+          <ScalarProperty Name="ctap_p14" ColumnName="ctap_p14" />
+          <ScalarProperty Name="ctap_p15" ColumnName="ctap_p15" />
+          <ScalarProperty Name="ctap_p16" ColumnName="ctap_p16" />
+          <ScalarProperty Name="ctap_m1" ColumnName="ctap_m1" />
+          <ScalarProperty Name="ctap_m2" ColumnName="ctap_m2" />
+          <ScalarProperty Name="ctap_m3" ColumnName="ctap_m3" />
+          <ScalarProperty Name="ctap_mtoind" ColumnName="ctap_mtoind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ctrl">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ctrl">
+        <MappingFragment StoreEntitySet="sbc_ctrl">
+          <ScalarProperty Name="ctrl_codswi" ColumnName="ctrl_codswi" />
+          <ScalarProperty Name="ctrl_numcor" ColumnName="ctrl_numcor" />
+          <ScalarProperty Name="ctrl_grupo" ColumnName="ctrl_grupo" />
+          <ScalarProperty Name="ctrl_prcgrp" ColumnName="ctrl_prcgrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_emp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_emp">
+        <MappingFragment StoreEntitySet="sbc_emp">
+          <ScalarProperty Name="emp_rutemp" ColumnName="emp_rutemp" />
+          <ScalarProperty Name="emp_dvemp" ColumnName="emp_dvemp" />
+          <ScalarProperty Name="emp_nombre" ColumnName="emp_nombre" />
+          <ScalarProperty Name="emp_direccion" ColumnName="emp_direccion" />
+          <ScalarProperty Name="emp_ciudad" ColumnName="emp_ciudad" />
+          <ScalarProperty Name="emp_cpostal" ColumnName="emp_cpostal" />
+          <ScalarProperty Name="emp_pais" ColumnName="emp_pais" />
+          <ScalarProperty Name="emp_codpai" ColumnName="emp_codpai" />
+          <ScalarProperty Name="emp_clasif" ColumnName="emp_clasif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_err">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_err">
+        <MappingFragment StoreEntitySet="sbc_err">
+          <ScalarProperty Name="err_coderr" ColumnName="err_coderr" />
+          <ScalarProperty Name="err_nomerr" ColumnName="err_nomerr" />
+          <ScalarProperty Name="err_tiperr" ColumnName="err_tiperr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_exd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_exd">
+        <MappingFragment StoreEntitySet="sbc_exd">
+          <ScalarProperty Name="exd_key" ColumnName="exd_key" />
+          <ScalarProperty Name="exd_tiplot" ColumnName="exd_tiplot" />
+          <ScalarProperty Name="exd_codope" ColumnName="exd_codope" />
+          <ScalarProperty Name="exd_nomope" ColumnName="exd_nomope" />
+          <ScalarProperty Name="exd_numref" ColumnName="exd_numref" />
+          <ScalarProperty Name="exd_codofi" ColumnName="exd_codofi" />
+          <ScalarProperty Name="exd_codpai" ColumnName="exd_codpai" />
+          <ScalarProperty Name="exd_codswi" ColumnName="exd_codswi" />
+          <ScalarProperty Name="exd_rutemp" ColumnName="exd_rutemp" />
+          <ScalarProperty Name="exd_numrut" ColumnName="exd_numrut" />
+          <ScalarProperty Name="exd_dvemp" ColumnName="exd_dvemp" />
+          <ScalarProperty Name="exd_nombre" ColumnName="exd_nombre" />
+          <ScalarProperty Name="exd_fecini" ColumnName="exd_fecini" />
+          <ScalarProperty Name="exd_fecven" ColumnName="exd_fecven" />
+          <ScalarProperty Name="exd_codmnd" ColumnName="exd_codmnd" />
+          <ScalarProperty Name="exd_mtoope" ColumnName="exd_mtoope" />
+          <ScalarProperty Name="exd_paridad" ColumnName="exd_paridad" />
+          <ScalarProperty Name="exd_mtodol" ColumnName="exd_mtodol" />
+          <ScalarProperty Name="exd_estado" ColumnName="exd_estado" />
+          <ScalarProperty Name="exd_coderr" ColumnName="exd_coderr" />
+          <ScalarProperty Name="exd_nomerr" ColumnName="exd_nomerr" />
+          <ScalarProperty Name="exd_tipotrn" ColumnName="exd_tipotrn" />
+          <ScalarProperty Name="exd_plazo" ColumnName="exd_plazo" />
+          <ScalarProperty Name="exd_spread" ColumnName="exd_spread" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_exp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_exp">
+        <MappingFragment StoreEntitySet="sbc_exp">
+          <ScalarProperty Name="exp_codpai" ColumnName="exp_codpai" />
+          <ScalarProperty Name="exp_codmnd" ColumnName="exp_codmnd" />
+          <ScalarProperty Name="exp_nompai" ColumnName="exp_nompai" />
+          <ScalarProperty Name="exp_nemmnd" ColumnName="exp_nemmnd" />
+          <ScalarProperty Name="exp_mtopais" ColumnName="exp_mtopais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_fam">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_fam">
+        <MappingFragment StoreEntitySet="sbc_fam">
+          <ScalarProperty Name="fam_codfam" ColumnName="fam_codfam" />
+          <ScalarProperty Name="fam_nomfam" ColumnName="fam_nomfam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_fer">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_fer">
+        <MappingFragment StoreEntitySet="sbc_fer">
+          <ScalarProperty Name="fer_diafer" ColumnName="fer_diafer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_gas">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_gas">
+        <MappingFragment StoreEntitySet="sbc_gas">
+          <ScalarProperty Name="gas_codcct" ColumnName="gas_codcct" />
+          <ScalarProperty Name="gas_codpro" ColumnName="gas_codpro" />
+          <ScalarProperty Name="gas_codesp" ColumnName="gas_codesp" />
+          <ScalarProperty Name="gas_codofi" ColumnName="gas_codofi" />
+          <ScalarProperty Name="gas_codope" ColumnName="gas_codope" />
+          <ScalarProperty Name="gas_codcom" ColumnName="gas_codcom" />
+          <ScalarProperty Name="gas_fecreg" ColumnName="gas_fecreg" />
+          <ScalarProperty Name="gas_numcor" ColumnName="gas_numcor" />
+          <ScalarProperty Name="gas_codswi" ColumnName="gas_codswi" />
+          <ScalarProperty Name="gas_mndgas" ColumnName="gas_mndgas" />
+          <ScalarProperty Name="gas_mtogas" ColumnName="gas_mtogas" />
+          <ScalarProperty Name="gas_estado" ColumnName="gas_estado" />
+          <ScalarProperty Name="gas_fecpag" ColumnName="gas_fecpag" />
+          <ScalarProperty Name="gas_mndneg" ColumnName="gas_mndneg" />
+          <ScalarProperty Name="gas_mtoneg" ColumnName="gas_mtoneg" />
+          <ScalarProperty Name="gas_swfneg" ColumnName="gas_swfneg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_grp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_grp">
+        <MappingFragment StoreEntitySet="sbc_grp">
+          <ScalarProperty Name="grp_codgrp" ColumnName="grp_codgrp" />
+          <ScalarProperty Name="grp_nomgrp" ColumnName="grp_nomgrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_hdetpai">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_hdetpai">
+        <MappingFragment StoreEntitySet="sbc_hdetpai">
+          <ScalarProperty Name="pai_fecha" ColumnName="pai_fecha" />
+          <ScalarProperty Name="pai_cod" ColumnName="pai_cod" />
+          <ScalarProperty Name="pai_codpai" ColumnName="pai_codpai" />
+          <ScalarProperty Name="pai_painom" ColumnName="pai_painom" />
+          <ScalarProperty Name="pai_mtomac" ColumnName="pai_mtomac" />
+          <ScalarProperty Name="pai_mtoout" ColumnName="pai_mtoout" />
+          <ScalarProperty Name="pai_mtodis" ColumnName="pai_mtodis" />
+          <ScalarProperty Name="bco_mtomac" ColumnName="bco_mtomac" />
+          <ScalarProperty Name="bco_mtoout" ColumnName="bco_mtoout" />
+          <ScalarProperty Name="bco_mtodis" ColumnName="bco_mtodis" />
+          <ScalarProperty Name="det_mtomac" ColumnName="det_mtomac" />
+          <ScalarProperty Name="det_mtoout" ColumnName="det_mtoout" />
+          <ScalarProperty Name="det_mtodis" ColumnName="det_mtodis" />
+          <ScalarProperty Name="det_tiplot" ColumnName="det_tiplot" />
+          <ScalarProperty Name="det_codswi" ColumnName="det_codswi" />
+          <ScalarProperty Name="det_nombre" ColumnName="det_nombre" />
+          <ScalarProperty Name="det_codope" ColumnName="det_codope" />
+          <ScalarProperty Name="det_nomope" ColumnName="det_nomope" />
+          <ScalarProperty Name="det_numref" ColumnName="det_numref" />
+          <ScalarProperty Name="det_fecini" ColumnName="det_fecini" />
+          <ScalarProperty Name="det_fecven" ColumnName="det_fecven" />
+          <ScalarProperty Name="det_plazo_res" ColumnName="det_plazo_res" />
+          <ScalarProperty Name="det_mtoope" ColumnName="det_mtoope" />
+          <ScalarProperty Name="det_codofi" ColumnName="det_codofi" />
+          <ScalarProperty Name="det_operie" ColumnName="det_operie" />
+          <ScalarProperty Name="det_codlinc" ColumnName="det_codlinc" />
+          <ScalarProperty Name="det_deslinc" ColumnName="det_deslinc" />
+          <ScalarProperty Name="det_flagpla" ColumnName="det_flagpla" />
+          <ScalarProperty Name="det_plaini" ColumnName="det_plaini" />
+          <ScalarProperty Name="det_incini" ColumnName="det_incini" />
+          <ScalarProperty Name="det_plafin" ColumnName="det_plafin" />
+          <ScalarProperty Name="det_incfin" ColumnName="det_incfin" />
+          <ScalarProperty Name="det_mndswf" ColumnName="det_mndswf" />
+          <ScalarProperty Name="det_paigar" ColumnName="det_paigar" />
+          <ScalarProperty Name="det_paigar_" ColumnName="det_paigar_" />
+          <ScalarProperty Name="det_prcpai" ColumnName="det_prcpai" />
+          <ScalarProperty Name="det_mtopai" ColumnName="det_mtopai" />
+          <ScalarProperty Name="det_glosa" ColumnName="det_glosa" />
+          <ScalarProperty Name="det_tasa" ColumnName="det_tasa" />
+          <ScalarProperty Name="det_flagerr" ColumnName="det_flagerr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_het">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_het">
+        <MappingFragment StoreEntitySet="sbc_het">
+          <ScalarProperty Name="het_fecha" ColumnName="het_fecha" />
+          <ScalarProperty Name="het_cod" ColumnName="het_cod" />
+          <ScalarProperty Name="het_painom" ColumnName="het_painom" />
+          <ScalarProperty Name="het_paicod" ColumnName="het_paicod" />
+          <ScalarProperty Name="het_pailin" ColumnName="het_pailin" />
+          <ScalarProperty Name="het_paimac" ColumnName="het_paimac" />
+          <ScalarProperty Name="het_paiout" ColumnName="het_paiout" />
+          <ScalarProperty Name="het_tipemp" ColumnName="het_tipemp" />
+          <ScalarProperty Name="het_bconom" ColumnName="het_bconom" />
+          <ScalarProperty Name="het_bcoswi" ColumnName="het_bcoswi" />
+          <ScalarProperty Name="het_bcomac" ColumnName="het_bcomac" />
+          <ScalarProperty Name="het_bcoout" ColumnName="het_bcoout" />
+          <ScalarProperty Name="het_bcoope" ColumnName="het_bcoope" />
+          <ScalarProperty Name="het_outope" ColumnName="het_outope" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_hope">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_hope">
+        <MappingFragment StoreEntitySet="sbc_hope">
+          <ScalarProperty Name="hope_fecha" ColumnName="hope_fecha" />
+          <ScalarProperty Name="hope_cod" ColumnName="hope_cod" />
+          <ScalarProperty Name="hope_tiperr" ColumnName="hope_tiperr" />
+          <ScalarProperty Name="hope_tipsis" ColumnName="hope_tipsis" />
+          <ScalarProperty Name="hope_codope" ColumnName="hope_codope" />
+          <ScalarProperty Name="hope_custid" ColumnName="hope_custid" />
+          <ScalarProperty Name="hope_errdes" ColumnName="hope_errdes" />
+          <ScalarProperty Name="hope_nomemp" ColumnName="hope_nomemp" />
+          <ScalarProperty Name="hope_fecini" ColumnName="hope_fecini" />
+          <ScalarProperty Name="hope_fecven" ColumnName="hope_fecven" />
+          <ScalarProperty Name="hope_swimnd" ColumnName="hope_swimnd" />
+          <ScalarProperty Name="hope_mtoope" ColumnName="hope_mtoope" />
+          <ScalarProperty Name="hope_refope" ColumnName="hope_refope" />
+          <ScalarProperty Name="hope_oficin" ColumnName="hope_oficin" />
+          <ScalarProperty Name="hope_nompai" ColumnName="hope_nompai" />
+          <ScalarProperty Name="hope_rutswi" ColumnName="hope_rutswi" />
+          <ScalarProperty Name="hope_tipope" ColumnName="hope_tipope" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_hvalida">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_hvalida">
+        <MappingFragment StoreEntitySet="sbc_hvalida">
+          <ScalarProperty Name="het_fecha" ColumnName="het_fecha" />
+          <ScalarProperty Name="het_estado" ColumnName="het_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_jcci">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_jcci">
+        <MappingFragment StoreEntitySet="sbc_jcci">
+          <ScalarProperty Name="jcci_codcct" ColumnName="jcci_codcct" />
+          <ScalarProperty Name="jcci_codpro" ColumnName="jcci_codpro" />
+          <ScalarProperty Name="jcci_codesp" ColumnName="jcci_codesp" />
+          <ScalarProperty Name="jcci_codofi" ColumnName="jcci_codofi" />
+          <ScalarProperty Name="jcci_codope" ColumnName="jcci_codope" />
+          <ScalarProperty Name="jcci_fecpro" ColumnName="jcci_fecpro" />
+          <ScalarProperty Name="jcci_fecing" ColumnName="jcci_fecing" />
+          <ScalarProperty Name="jcci_moncci" ColumnName="jcci_moncci" />
+          <ScalarProperty Name="jcci_mtocci" ColumnName="jcci_mtocci" />
+          <ScalarProperty Name="jcci_fecven" ColumnName="jcci_fecven" />
+          <ScalarProperty Name="jcci_codpai" ColumnName="jcci_codpai" />
+          <ScalarProperty Name="jcci_concci" ColumnName="jcci_concci" />
+          <ScalarProperty Name="jcci_gascli" ColumnName="jcci_gascli" />
+          <ScalarProperty Name="jcci_numavi" ColumnName="jcci_numavi" />
+          <ScalarProperty Name="jcci_numneg" ColumnName="jcci_numneg" />
+          <ScalarProperty Name="jcci_numcon" ColumnName="jcci_numcon" />
+          <ScalarProperty Name="jcci_swfavi" ColumnName="jcci_swfavi" />
+          <ScalarProperty Name="jcci_swfneg" ColumnName="jcci_swfneg" />
+          <ScalarProperty Name="jcci_swfcon" ColumnName="jcci_swfcon" />
+          <ScalarProperty Name="jcci_swfrem" ColumnName="jcci_swfrem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lin">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lin">
+        <MappingFragment StoreEntitySet="sbc_lin">
+          <ScalarProperty Name="lin_codlin" ColumnName="lin_codlin" />
+          <ScalarProperty Name="lin_prcptr" ColumnName="lin_prcptr" />
+          <ScalarProperty Name="lin_mtomax" ColumnName="lin_mtomax" />
+          <ScalarProperty Name="lin_codmnd" ColumnName="lin_codmnd" />
+          <ScalarProperty Name="lin_prcprv" ColumnName="lin_prcprv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ling">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ling">
+        <MappingFragment StoreEntitySet="sbc_ling">
+          <ScalarProperty Name="ling_codling" ColumnName="ling_codling" />
+          <ScalarProperty Name="ling_desling" ColumnName="ling_desling" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lino">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lino">
+        <MappingFragment StoreEntitySet="sbc_lino">
+          <ScalarProperty Name="lino_codswi" ColumnName="lino_codswi" />
+          <ScalarProperty Name="lino_codofi" ColumnName="lino_codofi" />
+          <ScalarProperty Name="lino_codpai" ColumnName="lino_codpai" />
+          <ScalarProperty Name="lino_codmnd" ColumnName="lino_codmnd" />
+          <ScalarProperty Name="lino_mtoout" ColumnName="lino_mtoout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_linp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_linp">
+        <MappingFragment StoreEntitySet="sbc_linp">
+          <ScalarProperty Name="linp_codlin" ColumnName="linp_codlin" />
+          <ScalarProperty Name="linp_codlint" ColumnName="linp_codlint" />
+          <ScalarProperty Name="linp_codlinc" ColumnName="linp_codlinc" />
+          <ScalarProperty Name="linp_deslinc" ColumnName="linp_deslinc" />
+          <ScalarProperty Name="linp_prc" ColumnName="linp_prc" />
+          <ScalarProperty Name="linp_flagpla" ColumnName="linp_flagpla" />
+          <ScalarProperty Name="linp_plaini" ColumnName="linp_plaini" />
+          <ScalarProperty Name="linp_incini" ColumnName="linp_incini" />
+          <ScalarProperty Name="linp_plafin" ColumnName="linp_plafin" />
+          <ScalarProperty Name="linp_incfin" ColumnName="linp_incfin" />
+          <ScalarProperty Name="linp_flaginv" ColumnName="linp_flaginv" />
+          <ScalarProperty Name="linp_codinvini" ColumnName="linp_codinvini" />
+          <ScalarProperty Name="linp_codinvfin" ColumnName="linp_codinvfin" />
+          <ScalarProperty Name="linp_incinvi" ColumnName="linp_incinvi" />
+          <ScalarProperty Name="linp_incinvf" ColumnName="linp_incinvf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_linp_ope">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_linp_ope">
+        <MappingFragment StoreEntitySet="sbc_linp_ope">
+          <ScalarProperty Name="ope_codlin" ColumnName="ope_codlin" />
+          <ScalarProperty Name="ope_codlint" ColumnName="ope_codlint" />
+          <ScalarProperty Name="ope_codope" ColumnName="ope_codope" />
+          <ScalarProperty Name="ope_codlinc" ColumnName="ope_codlinc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_linr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_linr">
+        <MappingFragment StoreEntitySet="sbc_linr">
+          <ScalarProperty Name="linr_codswi" ColumnName="linr_codswi" />
+          <ScalarProperty Name="linr_codpai" ColumnName="linr_codpai" />
+          <ScalarProperty Name="linr_codmnd" ColumnName="linr_codmnd" />
+          <ScalarProperty Name="linr_mtolinr" ColumnName="linr_mtolinr" />
+          <ScalarProperty Name="linr_mtolino" ColumnName="linr_mtolino" />
+          <ScalarProperty Name="linr_mtolind" ColumnName="linr_mtolind" />
+          <ScalarProperty Name="linr_ruting" ColumnName="linr_ruting" />
+          <ScalarProperty Name="linr_dving" ColumnName="linr_dving" />
+          <ScalarProperty Name="linr_fecing" ColumnName="linr_fecing" />
+          <ScalarProperty Name="linr_rutact" ColumnName="linr_rutact" />
+          <ScalarProperty Name="linr_dvact" ColumnName="linr_dvact" />
+          <ScalarProperty Name="linr_fecact" ColumnName="linr_fecact" />
+          <ScalarProperty Name="linr_proceso" ColumnName="linr_proceso" />
+          <ScalarProperty Name="linr_rnkbco" ColumnName="linr_rnkbco" />
+          <ScalarProperty Name="linr_descrip" ColumnName="linr_descrip" />
+          <ScalarProperty Name="linr_tippar" ColumnName="linr_tippar" />
+          <ScalarProperty Name="linr_swfcto" ColumnName="linr_swfcto" />
+          <ScalarProperty Name="linr_codcto" ColumnName="linr_codcto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lins">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lins">
+        <MappingFragment StoreEntitySet="sbc_lins">
+          <ScalarProperty Name="lins_codswi" ColumnName="lins_codswi" />
+          <ScalarProperty Name="lins_codofi" ColumnName="lins_codofi" />
+          <ScalarProperty Name="lins_codsubl" ColumnName="lins_codsubl" />
+          <ScalarProperty Name="lins_plazo" ColumnName="lins_plazo" />
+          <ScalarProperty Name="lins_codmnd" ColumnName="lins_codmnd" />
+          <ScalarProperty Name="lins_mtoout" ColumnName="lins_mtoout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lint">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lint">
+        <MappingFragment StoreEntitySet="sbc_lint">
+          <ScalarProperty Name="lint_codlint" ColumnName="lint_codlint" />
+          <ScalarProperty Name="lint_codling" ColumnName="lint_codling" />
+          <ScalarProperty Name="lint_tipodeu" ColumnName="lint_tipodeu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_linv">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_linv">
+        <MappingFragment StoreEntitySet="sbc_linv">
+          <ScalarProperty Name="linv_codinv" ColumnName="linv_codinv" />
+          <ScalarProperty Name="linv_correl" ColumnName="linv_correl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lof">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lof">
+        <MappingFragment StoreEntitySet="sbc_lof">
+          <ScalarProperty Name="lof_codswi" ColumnName="lof_codswi" />
+          <ScalarProperty Name="ofi_codofi" ColumnName="ofi_codofi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lot">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lot">
+        <MappingFragment StoreEntitySet="sbc_lot">
+          <ScalarProperty Name="lot_key" ColumnName="lot_key" />
+          <ScalarProperty Name="lot_tiplot" ColumnName="lot_tiplot" />
+          <ScalarProperty Name="lot_codope" ColumnName="lot_codope" />
+          <ScalarProperty Name="lot_numref" ColumnName="lot_numref" />
+          <ScalarProperty Name="lot_refsec" ColumnName="lot_refsec" />
+          <ScalarProperty Name="lot_fecpro" ColumnName="lot_fecpro" />
+          <ScalarProperty Name="lot_codofi" ColumnName="lot_codofi" />
+          <ScalarProperty Name="lot_codpai" ColumnName="lot_codpai" />
+          <ScalarProperty Name="lot_codswi" ColumnName="lot_codswi" />
+          <ScalarProperty Name="lot_rutemp" ColumnName="lot_rutemp" />
+          <ScalarProperty Name="lot_numrut" ColumnName="lot_numrut" />
+          <ScalarProperty Name="lot_dvemp" ColumnName="lot_dvemp" />
+          <ScalarProperty Name="lot_fecini" ColumnName="lot_fecini" />
+          <ScalarProperty Name="lot_fecven" ColumnName="lot_fecven" />
+          <ScalarProperty Name="lot_codmnd" ColumnName="lot_codmnd" />
+          <ScalarProperty Name="lot_mtoori" ColumnName="lot_mtoori" />
+          <ScalarProperty Name="lot_mtoope" ColumnName="lot_mtoope" />
+          <ScalarProperty Name="lot_estado" ColumnName="lot_estado" />
+          <ScalarProperty Name="lot_coderr" ColumnName="lot_coderr" />
+          <ScalarProperty Name="lot_congar" ColumnName="lot_congar" />
+          <ScalarProperty Name="lot_swimat" ColumnName="lot_swimat" />
+          <ScalarProperty Name="lot_paimat" ColumnName="lot_paimat" />
+          <ScalarProperty Name="lot_paigar" ColumnName="lot_paigar" />
+          <ScalarProperty Name="lot_prccom" ColumnName="lot_prccom" />
+          <ScalarProperty Name="lot_prcpai" ColumnName="lot_prcpai" />
+          <ScalarProperty Name="lot_mtocom" ColumnName="lot_mtocom" />
+          <ScalarProperty Name="lot_mtopai" ColumnName="lot_mtopai" />
+          <ScalarProperty Name="lot_obslot" ColumnName="lot_obslot" />
+          <ScalarProperty Name="lot_nomope" ColumnName="lot_nomope" />
+          <ScalarProperty Name="lot_nombre" ColumnName="lot_nombre" />
+          <ScalarProperty Name="lot_pairsg" ColumnName="lot_pairsg" />
+          <ScalarProperty Name="lot_tipotrn" ColumnName="lot_tipotrn" />
+          <ScalarProperty Name="lot_sublim" ColumnName="lot_sublim" />
+          <ScalarProperty Name="lot_plazo" ColumnName="lot_plazo" />
+          <ScalarProperty Name="lot_paigar_" ColumnName="lot_paigar_" />
+          <ScalarProperty Name="lot_tasa" ColumnName="lot_tasa" />
+          <ScalarProperty Name="lot_spread" ColumnName="lot_spread" />
+          <ScalarProperty Name="lot_tasat" ColumnName="lot_tasat" />
+          <ScalarProperty Name="lot_tenor" ColumnName="lot_tenor" />
+          <ScalarProperty Name="lot_conprv" ColumnName="lot_conprv" />
+          <ScalarProperty Name="lot_paiprv" ColumnName="lot_paiprv" />
+          <ScalarProperty Name="lot_codgru" ColumnName="lot_codgru" />
+          <ScalarProperty Name="lot_prcgru" ColumnName="lot_prcgru" />
+          <ScalarProperty Name="lot_mtoprv" ColumnName="lot_mtoprv" />
+          <ScalarProperty Name="lot_obsprv" ColumnName="lot_obsprv" />
+          <ScalarProperty Name="lot_codpai_" ColumnName="lot_codpai_" />
+          <ScalarProperty Name="lot_paiprv_" ColumnName="lot_paiprv_" />
+          <ScalarProperty Name="lot_fecori" ColumnName="lot_fecori" />
+          <ScalarProperty Name="lot_custid" ColumnName="lot_custid" />
+          <ScalarProperty Name="lot_operie" ColumnName="lot_operie" />
+          <ScalarProperty Name="lot_clainv" ColumnName="lot_clainv" />
+          <ScalarProperty Name="lot_estrie" ColumnName="lot_estrie" />
+          <ScalarProperty Name="lot_errrie" ColumnName="lot_errrie" />
+          <ScalarProperty Name="lot_codlinc" ColumnName="lot_codlinc" />
+          <ScalarProperty Name="lot_nomsec" ColumnName="lot_nomsec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lot_obs">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lot_obs">
+        <MappingFragment StoreEntitySet="sbc_lot_obs">
+          <ScalarProperty Name="obs_key" ColumnName="obs_key" />
+          <ScalarProperty Name="lot_codope" ColumnName="lot_codope" />
+          <ScalarProperty Name="lot_numref" ColumnName="lot_numref" />
+          <ScalarProperty Name="obs_rut_usuario" ColumnName="obs_rut_usuario" />
+          <ScalarProperty Name="obs_fec" ColumnName="obs_fec" />
+          <ScalarProperty Name="obs_fec_ult_lleg" ColumnName="obs_fec_ult_lleg" />
+          <ScalarProperty Name="obs_descrip" ColumnName="obs_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lotg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lotg">
+        <MappingFragment StoreEntitySet="sbc_lotg">
+          <ScalarProperty Name="lotg_key" ColumnName="lotg_key" />
+          <ScalarProperty Name="lotg_tiplot" ColumnName="lotg_tiplot" />
+          <ScalarProperty Name="lotg_codope" ColumnName="lotg_codope" />
+          <ScalarProperty Name="lotg_numref" ColumnName="lotg_numref" />
+          <ScalarProperty Name="lotg_codofi" ColumnName="lotg_codofi" />
+          <ScalarProperty Name="lotg_codpai" ColumnName="lotg_codpai" />
+          <ScalarProperty Name="lotg_codswi" ColumnName="lotg_codswi" />
+          <ScalarProperty Name="lotg_rutemp" ColumnName="lotg_rutemp" />
+          <ScalarProperty Name="lotg_numrut" ColumnName="lotg_numrut" />
+          <ScalarProperty Name="lotg_dvemp" ColumnName="lotg_dvemp" />
+          <ScalarProperty Name="lotg_fecini" ColumnName="lotg_fecini" />
+          <ScalarProperty Name="lotg_fecven" ColumnName="lotg_fecven" />
+          <ScalarProperty Name="lotg_codmnd" ColumnName="lotg_codmnd" />
+          <ScalarProperty Name="lotg_mtoori" ColumnName="lotg_mtoori" />
+          <ScalarProperty Name="lotg_mtoope" ColumnName="lotg_mtoope" />
+          <ScalarProperty Name="lotg_estado" ColumnName="lotg_estado" />
+          <ScalarProperty Name="lotg_coderr" ColumnName="lotg_coderr" />
+          <ScalarProperty Name="lotg_nombre" ColumnName="lotg_nombre" />
+          <ScalarProperty Name="lotg_tiptr" ColumnName="lotg_tiptr" />
+          <ScalarProperty Name="lotg_operie" ColumnName="lotg_operie" />
+          <ScalarProperty Name="lotg_clainv" ColumnName="lotg_clainv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lptr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lptr">
+        <MappingFragment StoreEntitySet="sbc_lptr">
+          <ScalarProperty Name="lptr_bcoswi" ColumnName="lptr_bcoswi" />
+          <ScalarProperty Name="lptr_mtovig" ColumnName="lptr_mtovig" />
+          <ScalarProperty Name="lptr_codmnd" ColumnName="lptr_codmnd" />
+          <ScalarProperty Name="lptr_fecrev" ColumnName="lptr_fecrev" />
+          <ScalarProperty Name="lptr_rutusr" ColumnName="lptr_rutusr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lre">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lre">
+        <MappingFragment StoreEntitySet="sbc_lre">
+          <ScalarProperty Name="lre_key" ColumnName="lre_key" />
+          <ScalarProperty Name="lre_codsis" ColumnName="lre_codsis" />
+          <ScalarProperty Name="lre_tiplre" ColumnName="lre_tiplre" />
+          <ScalarProperty Name="lre_codope" ColumnName="lre_codope" />
+          <ScalarProperty Name="lre_nomope" ColumnName="lre_nomope" />
+          <ScalarProperty Name="lre_numref" ColumnName="lre_numref" />
+          <ScalarProperty Name="lre_tipsubl" ColumnName="lre_tipsubl" />
+          <ScalarProperty Name="lre_plazo" ColumnName="lre_plazo" />
+          <ScalarProperty Name="lre_fecpro" ColumnName="lre_fecpro" />
+          <ScalarProperty Name="lre_codofi" ColumnName="lre_codofi" />
+          <ScalarProperty Name="lre_codswi" ColumnName="lre_codswi" />
+          <ScalarProperty Name="lre_nombco" ColumnName="lre_nombco" />
+          <ScalarProperty Name="lre_rutemp" ColumnName="lre_rutemp" />
+          <ScalarProperty Name="lre_dvemp" ColumnName="lre_dvemp" />
+          <ScalarProperty Name="lre_nomemp" ColumnName="lre_nomemp" />
+          <ScalarProperty Name="lre_fecini" ColumnName="lre_fecini" />
+          <ScalarProperty Name="lre_fecven" ColumnName="lre_fecven" />
+          <ScalarProperty Name="lre_codmnd" ColumnName="lre_codmnd" />
+          <ScalarProperty Name="lre_mtoope" ColumnName="lre_mtoope" />
+          <ScalarProperty Name="lre_tasa" ColumnName="lre_tasa" />
+          <ScalarProperty Name="lre_spread" ColumnName="lre_spread" />
+          <ScalarProperty Name="lre_estado" ColumnName="lre_estado" />
+          <ScalarProperty Name="lre_coderr" ColumnName="lre_coderr" />
+          <ScalarProperty Name="lre_swioper" ColumnName="lre_swioper" />
+          <ScalarProperty Name="lre_nomswop" ColumnName="lre_nomswop" />
+          <ScalarProperty Name="lre_paioper" ColumnName="lre_paioper" />
+          <ScalarProperty Name="lre_nompaiop" ColumnName="lre_nompaiop" />
+          <ScalarProperty Name="lre_obslot" ColumnName="lre_obslot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lsl">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lsl">
+        <MappingFragment StoreEntitySet="sbc_lsl">
+          <ScalarProperty Name="lsl_codswi" ColumnName="lsl_codswi" />
+          <ScalarProperty Name="lsl_codsubl" ColumnName="lsl_codsubl" />
+          <ScalarProperty Name="lsl_plazo" ColumnName="lsl_plazo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mac">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mac">
+        <MappingFragment StoreEntitySet="sbc_mac">
+          <ScalarProperty Name="mac_codswi" ColumnName="mac_codswi" />
+          <ScalarProperty Name="mac_fecmac" ColumnName="mac_fecmac" />
+          <ScalarProperty Name="mac_codofi" ColumnName="mac_codofi" />
+          <ScalarProperty Name="mac_nomsuc" ColumnName="mac_nomsuc" />
+          <ScalarProperty Name="mac_subtvig" ColumnName="mac_subtvig" />
+          <ScalarProperty Name="mac_subtdeu" ColumnName="mac_subtdeu" />
+          <ScalarProperty Name="mac_subtapr" ColumnName="mac_subtapr" />
+          <ScalarProperty Name="mac_mtotc" ColumnName="mac_mtotc" />
+          <ScalarProperty Name="mac_totvigp" ColumnName="mac_totvigp" />
+          <ScalarProperty Name="mac_totdeup" ColumnName="mac_totdeup" />
+          <ScalarProperty Name="mac_totaprp" ColumnName="mac_totaprp" />
+          <ScalarProperty Name="mac_carcli" ColumnName="mac_carcli" />
+          <ScalarProperty Name="mac_lincp" ColumnName="mac_lincp" />
+          <ScalarProperty Name="mac_linlp" ColumnName="mac_linlp" />
+          <ScalarProperty Name="mac_clfbco" ColumnName="mac_clfbco" />
+          <ScalarProperty Name="mac_fecrev" ColumnName="mac_fecrev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_macb">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_macb">
+        <MappingFragment StoreEntitySet="sbc_macb">
+          <ScalarProperty Name="macb_codswi" ColumnName="macb_codswi" />
+          <ScalarProperty Name="macb_fecapr" ColumnName="macb_fecapr" />
+          <ScalarProperty Name="macb_codpai" ColumnName="macb_codpai" />
+          <ScalarProperty Name="macb_fecini" ColumnName="macb_fecini" />
+          <ScalarProperty Name="macb_fecven" ColumnName="macb_fecven" />
+          <ScalarProperty Name="macb_estado" ColumnName="macb_estado" />
+          <ScalarProperty Name="macb_codmnd" ColumnName="macb_codmnd" />
+          <ScalarProperty Name="macb_mtomac" ColumnName="macb_mtomac" />
+          <ScalarProperty Name="macb_mtoout" ColumnName="macb_mtoout" />
+          <ScalarProperty Name="macb_mtores" ColumnName="macb_mtores" />
+          <ScalarProperty Name="macb_mtodis" ColumnName="macb_mtodis" />
+          <ScalarProperty Name="macb_ruting" ColumnName="macb_ruting" />
+          <ScalarProperty Name="macb_dving" ColumnName="macb_dving" />
+          <ScalarProperty Name="macb_fecing" ColumnName="macb_fecing" />
+          <ScalarProperty Name="macb_rutmod" ColumnName="macb_rutmod" />
+          <ScalarProperty Name="macb_dvmod" ColumnName="macb_dvmod" />
+          <ScalarProperty Name="macb_fecmod" ColumnName="macb_fecmod" />
+          <ScalarProperty Name="macb_nompai" ColumnName="macb_nompai" />
+          <ScalarProperty Name="macb_mndswf" ColumnName="macb_mndswf" />
+          <ScalarProperty Name="macb_nombco" ColumnName="macb_nombco" />
+          <ScalarProperty Name="macb_tiplin" ColumnName="macb_tiplin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_macd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_macd">
+        <MappingFragment StoreEntitySet="sbc_macd">
+          <ScalarProperty Name="macd_codswi" ColumnName="macd_codswi" />
+          <ScalarProperty Name="macd_fecmac" ColumnName="macd_fecmac" />
+          <ScalarProperty Name="macd_numcor" ColumnName="macd_numcor" />
+          <ScalarProperty Name="macd_naprob" ColumnName="macd_naprob" />
+          <ScalarProperty Name="macd_codfin" ColumnName="macd_codfin" />
+          <ScalarProperty Name="macd_txtmac" ColumnName="macd_txtmac" />
+          <ScalarProperty Name="macd_mtovig" ColumnName="macd_mtovig" />
+          <ScalarProperty Name="macd_mtodeu" ColumnName="macd_mtodeu" />
+          <ScalarProperty Name="macd_mtoapr" ColumnName="macd_mtoapr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_macp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_macp">
+        <MappingFragment StoreEntitySet="sbc_macp">
+          <ScalarProperty Name="macp_codpai" ColumnName="macp_codpai" />
+          <ScalarProperty Name="macp_fecapr" ColumnName="macp_fecapr" />
+          <ScalarProperty Name="macp_fecven" ColumnName="macp_fecven" />
+          <ScalarProperty Name="macp_estado" ColumnName="macp_estado" />
+          <ScalarProperty Name="macp_codmnd" ColumnName="macp_codmnd" />
+          <ScalarProperty Name="macp_mtomac" ColumnName="macp_mtomac" />
+          <ScalarProperty Name="macp_mtooutb" ColumnName="macp_mtooutb" />
+          <ScalarProperty Name="macp_mtoouta" ColumnName="macp_mtoouta" />
+          <ScalarProperty Name="macp_mtooutn" ColumnName="macp_mtooutn" />
+          <ScalarProperty Name="macp_mtores" ColumnName="macp_mtores" />
+          <ScalarProperty Name="macp_mtoresb" ColumnName="macp_mtoresb" />
+          <ScalarProperty Name="macp_mtorese" ColumnName="macp_mtorese" />
+          <ScalarProperty Name="macp_mtodis" ColumnName="macp_mtodis" />
+          <ScalarProperty Name="macp_sublfin" ColumnName="macp_sublfin" />
+          <ScalarProperty Name="macp_sublfinu" ColumnName="macp_sublfinu" />
+          <ScalarProperty Name="macp_sublfind" ColumnName="macp_sublfind" />
+          <ScalarProperty Name="macp_sublcrp" ColumnName="macp_sublcrp" />
+          <ScalarProperty Name="macp_sublcrpu" ColumnName="macp_sublcrpu" />
+          <ScalarProperty Name="macp_sublcrpd" ColumnName="macp_sublcrpd" />
+          <ScalarProperty Name="macp_sublfc" ColumnName="macp_sublfc" />
+          <ScalarProperty Name="macp_sublfcu" ColumnName="macp_sublfcu" />
+          <ScalarProperty Name="macp_sublfcd" ColumnName="macp_sublfcd" />
+          <ScalarProperty Name="macp_ruting" ColumnName="macp_ruting" />
+          <ScalarProperty Name="macp_dving" ColumnName="macp_dving" />
+          <ScalarProperty Name="macp_fecing" ColumnName="macp_fecing" />
+          <ScalarProperty Name="macp_rutmod" ColumnName="macp_rutmod" />
+          <ScalarProperty Name="macp_dvmod" ColumnName="macp_dvmod" />
+          <ScalarProperty Name="macp_fecmod" ColumnName="macp_fecmod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mbd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mbd">
+        <MappingFragment StoreEntitySet="sbc_mbd">
+          <ScalarProperty Name="mbd_codswi" ColumnName="mbd_codswi" />
+          <ScalarProperty Name="mbd_codlin" ColumnName="mbd_codlin" />
+          <ScalarProperty Name="mbd_codpai" ColumnName="mbd_codpai" />
+          <ScalarProperty Name="mbd_codlint" ColumnName="mbd_codlint" />
+          <ScalarProperty Name="mbd_codlinc" ColumnName="mbd_codlinc" />
+          <ScalarProperty Name="mbd_codmnd" ColumnName="mbd_codmnd" />
+          <ScalarProperty Name="mbd_prc" ColumnName="mbd_prc" />
+          <ScalarProperty Name="mbd_mtomac" ColumnName="mbd_mtomac" />
+          <ScalarProperty Name="mbd_mtoout" ColumnName="mbd_mtoout" />
+          <ScalarProperty Name="mbd_mtodis" ColumnName="mbd_mtodis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mbr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mbr">
+        <MappingFragment StoreEntitySet="sbc_mbr">
+          <ScalarProperty Name="mbr_codswi" ColumnName="mbr_codswi" />
+          <ScalarProperty Name="mbr_codlin" ColumnName="mbr_codlin" />
+          <ScalarProperty Name="mbr_codpai" ColumnName="mbr_codpai" />
+          <ScalarProperty Name="mbr_fecapr" ColumnName="mbr_fecapr" />
+          <ScalarProperty Name="mbr_fecven" ColumnName="mbr_fecven" />
+          <ScalarProperty Name="mbr_estado" ColumnName="mbr_estado" />
+          <ScalarProperty Name="mbr_codmnd" ColumnName="mbr_codmnd" />
+          <ScalarProperty Name="mbr_mtomac" ColumnName="mbr_mtomac" />
+          <ScalarProperty Name="mbr_mtoout" ColumnName="mbr_mtoout" />
+          <ScalarProperty Name="mbr_mtodis" ColumnName="mbr_mtodis" />
+          <ScalarProperty Name="mbr_ruting" ColumnName="mbr_ruting" />
+          <ScalarProperty Name="mbr_dving" ColumnName="mbr_dving" />
+          <ScalarProperty Name="mbr_fecing" ColumnName="mbr_fecing" />
+          <ScalarProperty Name="mbr_rutmod" ColumnName="mbr_rutmod" />
+          <ScalarProperty Name="mbr_dvmod" ColumnName="mbr_dvmod" />
+          <ScalarProperty Name="mbr_fecmod" ColumnName="mbr_fecmod" />
+          <ScalarProperty Name="mbr_tiplin" ColumnName="mbr_tiplin" />
+          <ScalarProperty Name="mbr_estadovi" ColumnName="mbr_estadovi" />
+          <ScalarProperty Name="mbr_fecha_visado" ColumnName="mbr_fecha_visado" />
+          <ScalarProperty Name="mbr_rutauto" ColumnName="mbr_rutauto" />
+          <ScalarProperty Name="mbr_dvauto" ColumnName="mbr_dvauto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mbs">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mbs">
+        <MappingFragment StoreEntitySet="sbc_mbs">
+          <ScalarProperty Name="mbs_codswi" ColumnName="mbs_codswi" />
+          <ScalarProperty Name="mbs_sublim" ColumnName="mbs_sublim" />
+          <ScalarProperty Name="mbs_plazo" ColumnName="mbs_plazo" />
+          <ScalarProperty Name="mbs_codpai" ColumnName="mbs_codpai" />
+          <ScalarProperty Name="mbs_codmnd" ColumnName="mbs_codmnd" />
+          <ScalarProperty Name="mbs_sublmto" ColumnName="mbs_sublmto" />
+          <ScalarProperty Name="mbs_sublout" ColumnName="mbs_sublout" />
+          <ScalarProperty Name="mbs_subldis" ColumnName="mbs_subldis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mpd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mpd">
+        <MappingFragment StoreEntitySet="sbc_mpd">
+          <ScalarProperty Name="mpd_codpai" ColumnName="mpd_codpai" />
+          <ScalarProperty Name="mpd_codlin" ColumnName="mpd_codlin" />
+          <ScalarProperty Name="mpd_codlint" ColumnName="mpd_codlint" />
+          <ScalarProperty Name="mpd_codlinc" ColumnName="mpd_codlinc" />
+          <ScalarProperty Name="mpd_codmnd" ColumnName="mpd_codmnd" />
+          <ScalarProperty Name="mpd_prc" ColumnName="mpd_prc" />
+          <ScalarProperty Name="mpd_mtomac" ColumnName="mpd_mtomac" />
+          <ScalarProperty Name="mpd_mtoout" ColumnName="mpd_mtoout" />
+          <ScalarProperty Name="mpd_mtodis" ColumnName="mpd_mtodis" />
+          <ScalarProperty Name="mpd_waiver" ColumnName="mpd_waiver" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mpr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mpr">
+        <MappingFragment StoreEntitySet="sbc_mpr">
+          <ScalarProperty Name="mpr_codpai" ColumnName="mpr_codpai" />
+          <ScalarProperty Name="mpr_codlin" ColumnName="mpr_codlin" />
+          <ScalarProperty Name="mpr_fecapr" ColumnName="mpr_fecapr" />
+          <ScalarProperty Name="mpr_fecven" ColumnName="mpr_fecven" />
+          <ScalarProperty Name="mpr_estado" ColumnName="mpr_estado" />
+          <ScalarProperty Name="mpr_codmnd" ColumnName="mpr_codmnd" />
+          <ScalarProperty Name="mpr_mtomac" ColumnName="mpr_mtomac" />
+          <ScalarProperty Name="mpr_mtoout" ColumnName="mpr_mtoout" />
+          <ScalarProperty Name="mpr_mtodis" ColumnName="mpr_mtodis" />
+          <ScalarProperty Name="mpr_ruting" ColumnName="mpr_ruting" />
+          <ScalarProperty Name="mpr_dving" ColumnName="mpr_dving" />
+          <ScalarProperty Name="mpr_fecing" ColumnName="mpr_fecing" />
+          <ScalarProperty Name="mpr_rutmod" ColumnName="mpr_rutmod" />
+          <ScalarProperty Name="mpr_dvmod" ColumnName="mpr_dvmod" />
+          <ScalarProperty Name="mpr_fecmod" ColumnName="mpr_fecmod" />
+          <ScalarProperty Name="mpr_clasinv" ColumnName="mpr_clasinv" />
+          <ScalarProperty Name="mpr_estadovi" ColumnName="mpr_estadovi" />
+          <ScalarProperty Name="mpr_fecha_visado" ColumnName="mpr_fecha_visado" />
+          <ScalarProperty Name="mpr_rutauto" ColumnName="mpr_rutauto" />
+          <ScalarProperty Name="mpr_dvauto" ColumnName="mpr_dvauto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_mps">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_mps">
+        <MappingFragment StoreEntitySet="sbc_mps">
+          <ScalarProperty Name="mps_codpai" ColumnName="mps_codpai" />
+          <ScalarProperty Name="mps_sublim" ColumnName="mps_sublim" />
+          <ScalarProperty Name="mps_codmnd" ColumnName="mps_codmnd" />
+          <ScalarProperty Name="mps_sublmto" ColumnName="mps_sublmto" />
+          <ScalarProperty Name="mps_sublout" ColumnName="mps_sublout" />
+          <ScalarProperty Name="mps_subldis" ColumnName="mps_subldis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_niv">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_niv">
+        <MappingFragment StoreEntitySet="sbc_niv">
+          <ScalarProperty Name="niv_codniv" ColumnName="niv_codniv" />
+          <ScalarProperty Name="niv_nomniv_e" ColumnName="niv_nomniv_e" />
+          <ScalarProperty Name="niv_nomniv_i" ColumnName="niv_nomniv_i" />
+          <ScalarProperty Name="niv_consup" ColumnName="niv_consup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_nyc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_nyc">
+        <MappingFragment StoreEntitySet="sbc_nyc">
+          <ScalarProperty Name="nyc_codswi" ColumnName="nyc_codswi" />
+          <ScalarProperty Name="nyc_cuenta" ColumnName="nyc_cuenta" />
+          <ScalarProperty Name="nyc_codpai" ColumnName="nyc_codpai" />
+          <ScalarProperty Name="nyc_ciudad" ColumnName="nyc_ciudad" />
+          <ScalarProperty Name="nyc_codmnd" ColumnName="nyc_codmnd" />
+          <ScalarProperty Name="nyc_chqemi" ColumnName="nyc_chqemi" />
+          <ScalarProperty Name="nyc_estado" ColumnName="nyc_estado" />
+          <ScalarProperty Name="nyc_corresp" ColumnName="nyc_corresp" />
+          <ScalarProperty Name="nyc_tipocta" ColumnName="nyc_tipocta" />
+          <ScalarProperty Name="nyc_fecape" ColumnName="nyc_fecape" />
+          <ScalarProperty Name="nyc_codbde" ColumnName="nyc_codbde" />
+          <ScalarProperty Name="nyc_ruting" ColumnName="nyc_ruting" />
+          <ScalarProperty Name="nyc_dving" ColumnName="nyc_dving" />
+          <ScalarProperty Name="nyc_fecing" ColumnName="nyc_fecing" />
+          <ScalarProperty Name="nyc_rutact" ColumnName="nyc_rutact" />
+          <ScalarProperty Name="nyc_dvact" ColumnName="nyc_dvact" />
+          <ScalarProperty Name="nyc_fecact" ColumnName="nyc_fecact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ofi">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ofi">
+        <MappingFragment StoreEntitySet="sbc_ofi">
+          <ScalarProperty Name="ofi_codofi" ColumnName="ofi_codofi" />
+          <ScalarProperty Name="ofi_nomofi" ColumnName="ofi_nomofi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ope">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ope">
+        <MappingFragment StoreEntitySet="sbc_ope">
+          <ScalarProperty Name="ope_codope" ColumnName="ope_codope" />
+          <ScalarProperty Name="ope_codgrp" ColumnName="ope_codgrp" />
+          <ScalarProperty Name="ope_nomope" ColumnName="ope_nomope" />
+          <ScalarProperty Name="ope_codsis" ColumnName="ope_codsis" />
+          <ScalarProperty Name="ope_numcta" ColumnName="ope_numcta" />
+          <ScalarProperty Name="ope_numto" ColumnName="ope_numto" />
+          <ScalarProperty Name="ope_aladi" ColumnName="ope_aladi" />
+          <ScalarProperty Name="ope_enviada" ColumnName="ope_enviada" />
+          <ScalarProperty Name="ope_recibida" ColumnName="ope_recibida" />
+          <ScalarProperty Name="ope_enlot" ColumnName="ope_enlot" />
+          <ScalarProperty Name="ope_enlre" ColumnName="ope_enlre" />
+          <ScalarProperty Name="ope_comex" ColumnName="ope_comex" />
+          <ScalarProperty Name="ope_prccom" ColumnName="ope_prccom" />
+          <ScalarProperty Name="ope_prcpai" ColumnName="ope_prcpai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_open">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_open">
+        <MappingFragment StoreEntitySet="sbc_open">
+          <ScalarProperty Name="open_codope" ColumnName="open_codope" />
+          <ScalarProperty Name="open_tipope" ColumnName="open_tipope" />
+          <ScalarProperty Name="open_nomope" ColumnName="open_nomope" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_pair">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_pair">
+        <MappingFragment StoreEntitySet="sbc_pair">
+          <ScalarProperty Name="pair_codpai" ColumnName="pair_codpai" />
+          <ScalarProperty Name="pair_fecha" ColumnName="pair_fecha" />
+          <ScalarProperty Name="pair_nompai" ColumnName="pair_nompai" />
+          <ScalarProperty Name="pair_codgru" ColumnName="pair_codgru" />
+          <ScalarProperty Name="pair_swfpai" ColumnName="pair_swfpai" />
+          <ScalarProperty Name="pair_filler" ColumnName="pair_filler" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_par">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_par">
+        <MappingFragment StoreEntitySet="sbc_par">
+          <ScalarProperty Name="par_codpar" ColumnName="par_codpar" />
+          <ScalarProperty Name="par_fecpar" ColumnName="par_fecpar" />
+          <ScalarProperty Name="par_agno" ColumnName="par_agno" />
+          <ScalarProperty Name="par_mes" ColumnName="par_mes" />
+          <ScalarProperty Name="par_codmnd" ColumnName="par_codmnd" />
+          <ScalarProperty Name="par_mtopar" ColumnName="par_mtopar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_pex">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_pex">
+        <MappingFragment StoreEntitySet="sbc_pex">
+          <ScalarProperty Name="pex_swift" ColumnName="pex_swift" />
+          <ScalarProperty Name="pex_codope" ColumnName="pex_codope" />
+          <ScalarProperty Name="pex_numref" ColumnName="pex_numref" />
+          <ScalarProperty Name="pex_estado" ColumnName="pex_estado" />
+          <ScalarProperty Name="pex_ofiori" ColumnName="pex_ofiori" />
+          <ScalarProperty Name="pex_codmnd" ColumnName="pex_codmnd" />
+          <ScalarProperty Name="pex_mtoope" ColumnName="pex_mtoope" />
+          <ScalarProperty Name="pex_fecini" ColumnName="pex_fecini" />
+          <ScalarProperty Name="pex_fecven" ColumnName="pex_fecven" />
+          <ScalarProperty Name="pex_tiptas" ColumnName="pex_tiptas" />
+          <ScalarProperty Name="pex_tasa" ColumnName="pex_tasa" />
+          <ScalarProperty Name="pex_spread" ColumnName="pex_spread" />
+          <ScalarProperty Name="pex_tastot" ColumnName="pex_tastot" />
+          <ScalarProperty Name="pex_codsubl" ColumnName="pex_codsubl" />
+          <ScalarProperty Name="pex_plazo" ColumnName="pex_plazo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_pro">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_pro">
+        <MappingFragment StoreEntitySet="sbc_pro">
+          <ScalarProperty Name="pro_periodo" ColumnName="pro_periodo" />
+          <ScalarProperty Name="pro_codtab" ColumnName="pro_codtab" />
+          <ScalarProperty Name="pro_regtot" ColumnName="pro_regtot" />
+          <ScalarProperty Name="pro_regpro" ColumnName="pro_regpro" />
+          <ScalarProperty Name="pro_regok" ColumnName="pro_regok" />
+          <ScalarProperty Name="pro_regerr" ColumnName="pro_regerr" />
+          <ScalarProperty Name="pro_mtopro" ColumnName="pro_mtopro" />
+          <ScalarProperty Name="pro_mtook" ColumnName="pro_mtook" />
+          <ScalarProperty Name="pro_mtoerr" ColumnName="pro_mtoerr" />
+          <ScalarProperty Name="pro_coderr" ColumnName="pro_coderr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prvcho">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prvcho">
+        <MappingFragment StoreEntitySet="sbc_prvcho">
+          <ScalarProperty Name="prv_periodo" ColumnName="prv_periodo" />
+          <ScalarProperty Name="prv_rutcli" ColumnName="prv_rutcli" />
+          <ScalarProperty Name="prv_digcli" ColumnName="prv_digcli" />
+          <ScalarProperty Name="prv_nomcli" ColumnName="prv_nomcli" />
+          <ScalarProperty Name="prv_clarie" ColumnName="prv_clarie" />
+          <ScalarProperty Name="prv_codpai" ColumnName="prv_codpai" />
+          <ScalarProperty Name="prv_coddiv" ColumnName="prv_coddiv" />
+          <ScalarProperty Name="prv_area" ColumnName="prv_area" />
+          <ScalarProperty Name="prv_colmes" ColumnName="prv_colmes" />
+          <ScalarProperty Name="prv_prcrie" ColumnName="prv_prcrie" />
+          <ScalarProperty Name="prv_mtoprv" ColumnName="prv_mtoprv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prvd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prvd">
+        <MappingFragment StoreEntitySet="sbc_prvd">
+          <ScalarProperty Name="prvd_periodo" ColumnName="prvd_periodo" />
+          <ScalarProperty Name="prvd_codofi" ColumnName="prvd_codofi" />
+          <ScalarProperty Name="prvd_codpai" ColumnName="prvd_codpai" />
+          <ScalarProperty Name="prvd_tipcli" ColumnName="prvd_tipcli" />
+          <ScalarProperty Name="prvd_codswf" ColumnName="prvd_codswf" />
+          <ScalarProperty Name="prvd_rutcli" ColumnName="prvd_rutcli" />
+          <ScalarProperty Name="prvd_digcli" ColumnName="prvd_digcli" />
+          <ScalarProperty Name="prvd_nomcli" ColumnName="prvd_nomcli" />
+          <ScalarProperty Name="prvd_clarie" ColumnName="prvd_clarie" />
+          <ScalarProperty Name="prvd_prcrie" ColumnName="prvd_prcrie" />
+          <ScalarProperty Name="prvd_colmes" ColumnName="prvd_colmes" />
+          <ScalarProperty Name="prvd_mtoprv" ColumnName="prvd_mtoprv" />
+          <ScalarProperty Name="prvd_coldlr" ColumnName="prvd_coldlr" />
+          <ScalarProperty Name="prvd_prvdlr" ColumnName="prvd_prvdlr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prve">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prve">
+        <MappingFragment StoreEntitySet="sbc_prve">
+          <ScalarProperty Name="prv_periodo" ColumnName="prv_periodo" />
+          <ScalarProperty Name="prv_codofi" ColumnName="prv_codofi" />
+          <ScalarProperty Name="prv_codpai" ColumnName="prv_codpai" />
+          <ScalarProperty Name="prv_codlin" ColumnName="prv_codlin" />
+          <ScalarProperty Name="prv_mtotot" ColumnName="prv_mtotot" />
+          <ScalarProperty Name="prv_prcprv" ColumnName="prv_prcprv" />
+          <ScalarProperty Name="prv_mtoprv" ColumnName="prv_mtoprv" />
+          <ScalarProperty Name="prv_codmnd" ColumnName="prv_codmnd" />
+          <ScalarProperty Name="prv_totdlr" ColumnName="prv_totdlr" />
+          <ScalarProperty Name="prv_prvdlr" ColumnName="prv_prvdlr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prvr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prvr">
+        <MappingFragment StoreEntitySet="sbc_prvr">
+          <ScalarProperty Name="prvr_periodo" ColumnName="prvr_periodo" />
+          <ScalarProperty Name="prvr_estpro" ColumnName="prvr_estpro" />
+          <ScalarProperty Name="prvr_totent" ColumnName="prvr_totent" />
+          <ScalarProperty Name="prvr_entusd" ColumnName="prvr_entusd" />
+          <ScalarProperty Name="prvr_entusp" ColumnName="prvr_entusp" />
+          <ScalarProperty Name="prvr_entchd" ColumnName="prvr_entchd" />
+          <ScalarProperty Name="prvr_entchp" ColumnName="prvr_entchp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_recf">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_recf">
+        <MappingFragment StoreEntitySet="sbc_recf">
+          <ScalarProperty Name="recf_periodo" ColumnName="recf_periodo" />
+          <ScalarProperty Name="recf_codpai" ColumnName="recf_codpai" />
+          <ScalarProperty Name="recf_famswi" ColumnName="recf_famswi" />
+          <ScalarProperty Name="recf_codope" ColumnName="recf_codope" />
+          <ScalarProperty Name="recf_codofi" ColumnName="recf_codofi" />
+          <ScalarProperty Name="recf_codmnd" ColumnName="recf_codmnd" />
+          <ScalarProperty Name="recf_volopep" ColumnName="recf_volopep" />
+          <ScalarProperty Name="recf_mtoopep" ColumnName="recf_mtoopep" />
+          <ScalarProperty Name="recf_volopea" ColumnName="recf_volopea" />
+          <ScalarProperty Name="recf_mtoopea" ColumnName="recf_mtoopea" />
+          <ScalarProperty Name="recf_voloprp" ColumnName="recf_voloprp" />
+          <ScalarProperty Name="recf_mtooprp" ColumnName="recf_mtooprp" />
+          <ScalarProperty Name="recf_volopra" ColumnName="recf_volopra" />
+          <ScalarProperty Name="recf_mtoopra" ColumnName="recf_mtoopra" />
+          <ScalarProperty Name="recf_volbalp" ColumnName="recf_volbalp" />
+          <ScalarProperty Name="recf_mtobalp" ColumnName="recf_mtobalp" />
+          <ScalarProperty Name="recf_volbala" ColumnName="recf_volbala" />
+          <ScalarProperty Name="recf_mtobala" ColumnName="recf_mtobala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_reco">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_reco">
+        <MappingFragment StoreEntitySet="sbc_reco">
+          <ScalarProperty Name="reco_periodo" ColumnName="reco_periodo" />
+          <ScalarProperty Name="reco_codpai" ColumnName="reco_codpai" />
+          <ScalarProperty Name="reco_famswi" ColumnName="reco_famswi" />
+          <ScalarProperty Name="reco_codswi" ColumnName="reco_codswi" />
+          <ScalarProperty Name="reco_codope" ColumnName="reco_codope" />
+          <ScalarProperty Name="reco_codofi" ColumnName="reco_codofi" />
+          <ScalarProperty Name="reco_codmnd" ColumnName="reco_codmnd" />
+          <ScalarProperty Name="reco_nombco" ColumnName="reco_nombco" />
+          <ScalarProperty Name="reco_volopep" ColumnName="reco_volopep" />
+          <ScalarProperty Name="reco_mtoopep" ColumnName="reco_mtoopep" />
+          <ScalarProperty Name="reco_volopea" ColumnName="reco_volopea" />
+          <ScalarProperty Name="reco_mtoopea" ColumnName="reco_mtoopea" />
+          <ScalarProperty Name="reco_voloprp" ColumnName="reco_voloprp" />
+          <ScalarProperty Name="reco_mtooprp" ColumnName="reco_mtooprp" />
+          <ScalarProperty Name="reco_volopra" ColumnName="reco_volopra" />
+          <ScalarProperty Name="reco_mtoopra" ColumnName="reco_mtoopra" />
+          <ScalarProperty Name="reco_volbalp" ColumnName="reco_volbalp" />
+          <ScalarProperty Name="reco_mtobalp" ColumnName="reco_mtobalp" />
+          <ScalarProperty Name="reco_volbala" ColumnName="reco_volbala" />
+          <ScalarProperty Name="reco_mtobala" ColumnName="reco_mtobala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_res">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_res">
+        <MappingFragment StoreEntitySet="sbc_res">
+          <ScalarProperty Name="res_codswi" ColumnName="res_codswi" />
+          <ScalarProperty Name="res_rutemp" ColumnName="res_rutemp" />
+          <ScalarProperty Name="res_dvemp" ColumnName="res_dvemp" />
+          <ScalarProperty Name="res_fecini" ColumnName="res_fecini" />
+          <ScalarProperty Name="res_codpai" ColumnName="res_codpai" />
+          <ScalarProperty Name="res_fecven" ColumnName="res_fecven" />
+          <ScalarProperty Name="res_tipres" ColumnName="res_tipres" />
+          <ScalarProperty Name="res_estado" ColumnName="res_estado" />
+          <ScalarProperty Name="res_codofi" ColumnName="res_codofi" />
+          <ScalarProperty Name="res_codmnd" ColumnName="res_codmnd" />
+          <ScalarProperty Name="res_mtores" ColumnName="res_mtores" />
+          <ScalarProperty Name="res_mtotas" ColumnName="res_mtotas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_rsg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_rsg">
+        <MappingFragment StoreEntitySet="sbc_rsg">
+          <ScalarProperty Name="rsg_codgru" ColumnName="rsg_codgru" />
+          <ScalarProperty Name="rsg_tramo1" ColumnName="rsg_tramo1" />
+          <ScalarProperty Name="rsg_tramo2" ColumnName="rsg_tramo2" />
+          <ScalarProperty Name="rsg_tramo3" ColumnName="rsg_tramo3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_rstd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_rstd">
+        <MappingFragment StoreEntitySet="sbc_rstd">
+          <ScalarProperty Name="rstd_codgru" ColumnName="rstd_codgru" />
+          <ScalarProperty Name="rstd_codrst" ColumnName="rstd_codrst" />
+          <ScalarProperty Name="rstd_codpai" ColumnName="rstd_codpai" />
+          <ScalarProperty Name="rstd_mtoval" ColumnName="rstd_mtoval" />
+          <ScalarProperty Name="rstd_mtoreal" ColumnName="rstd_mtoreal" />
+          <ScalarProperty Name="rstd_codmnd" ColumnName="rstd_codmnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_rstg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_rstg">
+        <MappingFragment StoreEntitySet="sbc_rstg">
+          <ScalarProperty Name="rstg_codgru" ColumnName="rstg_codgru" />
+          <ScalarProperty Name="rstg_desgru" ColumnName="rstg_desgru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_rstt">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_rstt">
+        <MappingFragment StoreEntitySet="sbc_rstt">
+          <ScalarProperty Name="rstt_codgru" ColumnName="rstt_codgru" />
+          <ScalarProperty Name="rstt_codrst" ColumnName="rstt_codrst" />
+          <ScalarProperty Name="rstt_numrst" ColumnName="rstt_numrst" />
+          <ScalarProperty Name="rstt_letrst" ColumnName="rstt_letrst" />
+          <ScalarProperty Name="rstt_desrst" ColumnName="rstt_desrst" />
+          <ScalarProperty Name="rstt_estado" ColumnName="rstt_estado" />
+          <ScalarProperty Name="rstt_mtoval" ColumnName="rstt_mtoval" />
+          <ScalarProperty Name="rstt_mtoreal" ColumnName="rstt_mtoreal" />
+          <ScalarProperty Name="rstt_proceso" ColumnName="rstt_proceso" />
+          <ScalarProperty Name="rstt_codmnd" ColumnName="rstt_codmnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_rutsw">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_rutsw">
+        <MappingFragment StoreEntitySet="sbc_rutsw">
+          <ScalarProperty Name="rutsw_numrut" ColumnName="rutsw_numrut" />
+          <ScalarProperty Name="rutsw_digv" ColumnName="rutsw_digv" />
+          <ScalarProperty Name="rutsw_codswi" ColumnName="rutsw_codswi" />
+          <ScalarProperty Name="rutsw_trncrp" ColumnName="rutsw_trncrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_sitf">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_sitf">
+        <MappingFragment StoreEntitySet="sbc_sitf">
+          <ScalarProperty Name="sitf_codswi" ColumnName="sitf_codswi" />
+          <ScalarProperty Name="sitf_fecsit" ColumnName="sitf_fecsit" />
+          <ScalarProperty Name="sitf_codpai" ColumnName="sitf_codpai" />
+          <ScalarProperty Name="sitf_codmnd" ColumnName="sitf_codmnd" />
+          <ScalarProperty Name="sitf_indmto" ColumnName="sitf_indmto" />
+          <ScalarProperty Name="sitf_mtoact" ColumnName="sitf_mtoact" />
+          <ScalarProperty Name="sitf_mtoactr" ColumnName="sitf_mtoactr" />
+          <ScalarProperty Name="sitf_mtocol" ColumnName="sitf_mtocol" />
+          <ScalarProperty Name="sitf_mtocolr" ColumnName="sitf_mtocolr" />
+          <ScalarProperty Name="sitf_mtodep" ColumnName="sitf_mtodep" />
+          <ScalarProperty Name="sitf_mtodepr" ColumnName="sitf_mtodepr" />
+          <ScalarProperty Name="sitf_mtopat" ColumnName="sitf_mtopat" />
+          <ScalarProperty Name="sitf_mtopatr" ColumnName="sitf_mtopatr" />
+          <ScalarProperty Name="sitf_mtouti" ColumnName="sitf_mtouti" />
+          <ScalarProperty Name="sitf_mtoutir" ColumnName="sitf_mtoutir" />
+          <ScalarProperty Name="sitf_lvr" ColumnName="sitf_lvr" />
+          <ScalarProperty Name="sitf_roa" ColumnName="sitf_roa" />
+          <ScalarProperty Name="sitf_roe" ColumnName="sitf_roe" />
+          <ScalarProperty Name="sitf_bis" ColumnName="sitf_bis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_subl">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_subl">
+        <MappingFragment StoreEntitySet="sbc_subl">
+          <ScalarProperty Name="subl_codsubl" ColumnName="subl_codsubl" />
+          <ScalarProperty Name="subl_plazo" ColumnName="subl_plazo" />
+          <ScalarProperty Name="subl_sindiv" ColumnName="subl_sindiv" />
+          <ScalarProperty Name="subl_nomsubl" ColumnName="subl_nomsubl" />
+          <ScalarProperty Name="subl_codsis" ColumnName="subl_codsis" />
+          <ScalarProperty Name="subl_activa" ColumnName="subl_activa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_syr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_syr">
+        <MappingFragment StoreEntitySet="sbc_syr">
+          <ScalarProperty Name="syr_nrocor" ColumnName="syr_nrocor" />
+          <ScalarProperty Name="syr_estado" ColumnName="syr_estado" />
+          <ScalarProperty Name="syr_codswi" ColumnName="syr_codswi" />
+          <ScalarProperty Name="syr_nombco" ColumnName="syr_nombco" />
+          <ScalarProperty Name="syr_codpai" ColumnName="syr_codpai" />
+          <ScalarProperty Name="syr_numref" ColumnName="syr_numref" />
+          <ScalarProperty Name="syr_idparty" ColumnName="syr_idparty" />
+          <ScalarProperty Name="syr_nomparty" ColumnName="syr_nomparty" />
+          <ScalarProperty Name="syr_mndope" ColumnName="syr_mndope" />
+          <ScalarProperty Name="syr_mtoope" ColumnName="syr_mtoope" />
+          <ScalarProperty Name="syr_codsyr" ColumnName="syr_codsyr" />
+          <ScalarProperty Name="syr_msgent" ColumnName="syr_msgent" />
+          <ScalarProperty Name="syr_codres" ColumnName="syr_codres" />
+          <ScalarProperty Name="syr_msgsal" ColumnName="syr_msgsal" />
+          <ScalarProperty Name="syr_rutesp" ColumnName="syr_rutesp" />
+          <ScalarProperty Name="syr_nomesp" ColumnName="syr_nomesp" />
+          <ScalarProperty Name="syr_ruteje" ColumnName="syr_ruteje" />
+          <ScalarProperty Name="syr_dveje" ColumnName="syr_dveje" />
+          <ScalarProperty Name="syr_fecsol" ColumnName="syr_fecsol" />
+          <ScalarProperty Name="syr_fecres" ColumnName="syr_fecres" />
+          <ScalarProperty Name="syr_vispla" ColumnName="syr_vispla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_syrc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_syrc">
+        <MappingFragment StoreEntitySet="sbc_syrc">
+          <ScalarProperty Name="syrc_codsyrc" ColumnName="syrc_codsyrc" />
+          <ScalarProperty Name="syrc_descrip" ColumnName="syrc_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_sys">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_sys">
+        <MappingFragment StoreEntitySet="sbc_sys">
+          <ScalarProperty Name="sys_codswi" ColumnName="sys_codswi" />
+          <ScalarProperty Name="sys_numcor" ColumnName="sys_numcor" />
+          <ScalarProperty Name="sys_nombre" ColumnName="sys_nombre" />
+          <ScalarProperty Name="sys_consolida" ColumnName="sys_consolida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tcom">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tcom">
+        <MappingFragment StoreEntitySet="sbc_tcom">
+          <ScalarProperty Name="tcom_codcom" ColumnName="tcom_codcom" />
+          <ScalarProperty Name="tcom_codprod" ColumnName="tcom_codprod" />
+          <ScalarProperty Name="tcom_nombre" ColumnName="tcom_nombre" />
+          <ScalarProperty Name="tcom_observ" ColumnName="tcom_observ" />
+          <ScalarProperty Name="tcom_periodo" ColumnName="tcom_periodo" />
+          <ScalarProperty Name="tcom_speriodo" ColumnName="tcom_speriodo" />
+          <ScalarProperty Name="tcom_smto" ColumnName="tcom_smto" />
+          <ScalarProperty Name="tcom_sporc" ColumnName="tcom_sporc" />
+          <ScalarProperty Name="tcom_nveces" ColumnName="tcom_nveces" />
+          <ScalarProperty Name="tcom_snveces" ColumnName="tcom_snveces" />
+          <ScalarProperty Name="tcom_tipcom" ColumnName="tcom_tipcom" />
+          <ScalarProperty Name="tcom_allin" ColumnName="tcom_allin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tem">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tem">
+        <MappingFragment StoreEntitySet="sbc_tem">
+          <ScalarProperty Name="tem_codtem" ColumnName="tem_codtem" />
+          <ScalarProperty Name="tem_nomtem" ColumnName="tem_nomtem" />
+          <ScalarProperty Name="tem_obliga" ColumnName="tem_obliga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tpro">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tpro">
+        <MappingFragment StoreEntitySet="sbc_tpro">
+          <ScalarProperty Name="tpro_codprod" ColumnName="tpro_codprod" />
+          <ScalarProperty Name="tpro_nombre" ColumnName="tpro_nombre" />
+          <ScalarProperty Name="tpro_observ" ColumnName="tpro_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_txt">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_txt">
+        <MappingFragment StoreEntitySet="sbc_txt">
+          <ScalarProperty Name="txt_tiptxt" ColumnName="txt_tiptxt" />
+          <ScalarProperty Name="txt_nomtxt" ColumnName="txt_nomtxt" />
+          <ScalarProperty Name="txt_limite" ColumnName="txt_limite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tyc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tyc">
+        <MappingFragment StoreEntitySet="sbc_tyc">
+          <ScalarProperty Name="tyc_codswi" ColumnName="tyc_codswi" />
+          <ScalarProperty Name="tyc_codgru" ColumnName="tyc_codgru" />
+          <ScalarProperty Name="tyc_nomgru" ColumnName="tyc_nomgru" />
+          <ScalarProperty Name="tyc_fecvig" ColumnName="tyc_fecvig" />
+          <ScalarProperty Name="tyc_fecven" ColumnName="tyc_fecven" />
+          <ScalarProperty Name="tyc_medio" ColumnName="tyc_medio" />
+          <ScalarProperty Name="tyc_backup" ColumnName="tyc_backup" />
+          <ScalarProperty Name="tyc_ruting" ColumnName="tyc_ruting" />
+          <ScalarProperty Name="tyc_dving" ColumnName="tyc_dving" />
+          <ScalarProperty Name="tyc_fecing" ColumnName="tyc_fecing" />
+          <ScalarProperty Name="tyc_rutmod" ColumnName="tyc_rutmod" />
+          <ScalarProperty Name="tyc_dvmod" ColumnName="tyc_dvmod" />
+          <ScalarProperty Name="tyc_fecmod" ColumnName="tyc_fecmod" />
+          <ScalarProperty Name="tyc_contacto" ColumnName="tyc_contacto" />
+          <ScalarProperty Name="tyc_observ" ColumnName="tyc_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tyc2">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tyc2">
+        <MappingFragment StoreEntitySet="sbc_tyc2">
+          <ScalarProperty Name="tyc2_nrocor" ColumnName="tyc2_nrocor" />
+          <ScalarProperty Name="tyc2_codcom" ColumnName="tyc2_codcom" />
+          <ScalarProperty Name="tyc2_codswi" ColumnName="tyc2_codswi" />
+          <ScalarProperty Name="tyc2_codpai" ColumnName="tyc2_codpai" />
+          <ScalarProperty Name="tyc2_codpro" ColumnName="tyc2_codpro" />
+          <ScalarProperty Name="tyc2_nveces" ColumnName="tyc2_nveces" />
+          <ScalarProperty Name="tyc2_mtoadi" ColumnName="tyc2_mtoadi" />
+          <ScalarProperty Name="tyc2_dias" ColumnName="tyc2_dias" />
+          <ScalarProperty Name="tyc2_codmnd" ColumnName="tyc2_codmnd" />
+          <ScalarProperty Name="tyc2_prccom" ColumnName="tyc2_prccom" />
+          <ScalarProperty Name="tyc2_valmin" ColumnName="tyc2_valmin" />
+          <ScalarProperty Name="tyc2_period" ColumnName="tyc2_period" />
+          <ScalarProperty Name="tyc2_valpar" ColumnName="tyc2_valpar" />
+          <ScalarProperty Name="tyc2_fecpar" ColumnName="tyc2_fecpar" />
+          <ScalarProperty Name="tyc2_valmind" ColumnName="tyc2_valmind" />
+          <ScalarProperty Name="tyc2_mtoadid" ColumnName="tyc2_mtoadid" />
+          <ScalarProperty Name="tyc2_observ" ColumnName="tyc2_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tyca">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tyca">
+        <MappingFragment StoreEntitySet="sbc_tyca">
+          <ScalarProperty Name="tyca_codswi" ColumnName="tyca_codswi" />
+          <ScalarProperty Name="tyca_codgru" ColumnName="tyca_codgru" />
+          <ScalarProperty Name="tyca_codpro" ColumnName="tyca_codpro" />
+          <ScalarProperty Name="tyca_nrocor" ColumnName="tyca_nrocor" />
+          <ScalarProperty Name="tyca_rngini" ColumnName="tyca_rngini" />
+          <ScalarProperty Name="tyca_rngfin" ColumnName="tyca_rngfin" />
+          <ScalarProperty Name="tyca_rnginid" ColumnName="tyca_rnginid" />
+          <ScalarProperty Name="tyca_rngfind" ColumnName="tyca_rngfind" />
+          <ScalarProperty Name="tyca_codmnd" ColumnName="tyca_codmnd" />
+          <ScalarProperty Name="tyca_prcall" ColumnName="tyca_prcall" />
+          <ScalarProperty Name="tyca_valmin" ColumnName="tyca_valmin" />
+          <ScalarProperty Name="tyca_valpar" ColumnName="tyca_valpar" />
+          <ScalarProperty Name="tyca_fecpar" ColumnName="tyca_fecpar" />
+          <ScalarProperty Name="tyca_valmind" ColumnName="tyca_valmind" />
+          <ScalarProperty Name="tyca_observ" ColumnName="tyca_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tycc">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tycc">
+        <MappingFragment StoreEntitySet="sbc_tycc">
+          <ScalarProperty Name="tycc_codswi" ColumnName="tycc_codswi" />
+          <ScalarProperty Name="tycc_codgru" ColumnName="tycc_codgru" />
+          <ScalarProperty Name="tycc_codpro" ColumnName="tycc_codpro" />
+          <ScalarProperty Name="tycc_codcom" ColumnName="tycc_codcom" />
+          <ScalarProperty Name="tycc_codmnd" ColumnName="tycc_codmnd" />
+          <ScalarProperty Name="tycc_prccom" ColumnName="tycc_prccom" />
+          <ScalarProperty Name="tycc_valmin" ColumnName="tycc_valmin" />
+          <ScalarProperty Name="tycc_nveces" ColumnName="tycc_nveces" />
+          <ScalarProperty Name="tycc_mtoadi" ColumnName="tycc_mtoadi" />
+          <ScalarProperty Name="tycc_dias" ColumnName="tycc_dias" />
+          <ScalarProperty Name="tycc_period" ColumnName="tycc_period" />
+          <ScalarProperty Name="tycc_valpar" ColumnName="tycc_valpar" />
+          <ScalarProperty Name="tycc_fecpar" ColumnName="tycc_fecpar" />
+          <ScalarProperty Name="tycc_valmind" ColumnName="tycc_valmind" />
+          <ScalarProperty Name="tycc_observ" ColumnName="tycc_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tycd">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tycd">
+        <MappingFragment StoreEntitySet="sbc_tycd">
+          <ScalarProperty Name="tycd_codswi" ColumnName="tycd_codswi" />
+          <ScalarProperty Name="tycd_codgru" ColumnName="tycd_codgru" />
+          <ScalarProperty Name="tycd_codpro" ColumnName="tycd_codpro" />
+          <ScalarProperty Name="tycd_nrocor" ColumnName="tycd_nrocor" />
+          <ScalarProperty Name="tycd_codcom" ColumnName="tycd_codcom" />
+          <ScalarProperty Name="tycd_rngini" ColumnName="tycd_rngini" />
+          <ScalarProperty Name="tycd_rngfin" ColumnName="tycd_rngfin" />
+          <ScalarProperty Name="tycd_nveces" ColumnName="tycd_nveces" />
+          <ScalarProperty Name="tycd_mtoadi" ColumnName="tycd_mtoadi" />
+          <ScalarProperty Name="tycd_dias" ColumnName="tycd_dias" />
+          <ScalarProperty Name="tycd_period" ColumnName="tycd_period" />
+          <ScalarProperty Name="tycd_valpar" ColumnName="tycd_valpar" />
+          <ScalarProperty Name="tycd_fecpar" ColumnName="tycd_fecpar" />
+          <ScalarProperty Name="tycd_mtoadid" ColumnName="tycd_mtoadid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tyce">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tyce">
+        <MappingFragment StoreEntitySet="sbc_tyce">
+          <ScalarProperty Name="tyce_codswi" ColumnName="tyce_codswi" />
+          <ScalarProperty Name="tyce_codgru" ColumnName="tyce_codgru" />
+          <ScalarProperty Name="tyce_codpro" ColumnName="tyce_codpro" />
+          <ScalarProperty Name="tyce_codcom" ColumnName="tyce_codcom" />
+          <ScalarProperty Name="tyce_codmnd" ColumnName="tyce_codmnd" />
+          <ScalarProperty Name="tyce_prccom" ColumnName="tyce_prccom" />
+          <ScalarProperty Name="tyce_valmin" ColumnName="tyce_valmin" />
+          <ScalarProperty Name="tyce_period" ColumnName="tyce_period" />
+          <ScalarProperty Name="tyce_valpar" ColumnName="tyce_valpar" />
+          <ScalarProperty Name="tyce_fecpar" ColumnName="tyce_fecpar" />
+          <ScalarProperty Name="tyce_valmind" ColumnName="tyce_valmind" />
+          <ScalarProperty Name="tyce_observ" ColumnName="tyce_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tycg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tycg">
+        <MappingFragment StoreEntitySet="sbc_tycg">
+          <ScalarProperty Name="tycg_codswi" ColumnName="tycg_codswi" />
+          <ScalarProperty Name="tycg_codgru" ColumnName="tycg_codgru" />
+          <ScalarProperty Name="tycg_nomgru" ColumnName="tycg_nomgru" />
+          <ScalarProperty Name="tycg_fecvig" ColumnName="tycg_fecvig" />
+          <ScalarProperty Name="tycg_fecven" ColumnName="tycg_fecven" />
+          <ScalarProperty Name="tycg_ruting" ColumnName="tycg_ruting" />
+          <ScalarProperty Name="tycg_dving" ColumnName="tycg_dving" />
+          <ScalarProperty Name="tycg_fecing" ColumnName="tycg_fecing" />
+          <ScalarProperty Name="tycg_rutmod" ColumnName="tycg_rutmod" />
+          <ScalarProperty Name="tycg_dvmod" ColumnName="tycg_dvmod" />
+          <ScalarProperty Name="tycg_fecmod" ColumnName="tycg_fecmod" />
+          <ScalarProperty Name="tycg_observ" ColumnName="tycg_observ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tycp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tycp">
+        <MappingFragment StoreEntitySet="sbc_tycp">
+          <ScalarProperty Name="tycp_codswi" ColumnName="tycp_codswi" />
+          <ScalarProperty Name="tycp_codgru" ColumnName="tycp_codgru" />
+          <ScalarProperty Name="tycp_codpai" ColumnName="tycp_codpai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tycq">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tycq">
+        <MappingFragment StoreEntitySet="sbc_tycq">
+          <ScalarProperty Name="tycq_codswi" ColumnName="tycq_codswi" />
+          <ScalarProperty Name="tycq_codgru" ColumnName="tycq_codgru" />
+          <ScalarProperty Name="tycq_codpai" ColumnName="tycq_codpai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_usr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_usr">
+        <MappingFragment StoreEntitySet="sbc_usr">
+          <ScalarProperty Name="usr_rutusr" ColumnName="usr_rutusr" />
+          <ScalarProperty Name="usr_dvusr" ColumnName="usr_dvusr" />
+          <ScalarProperty Name="usr_nombre" ColumnName="usr_nombre" />
+          <ScalarProperty Name="usr_cargo" ColumnName="usr_cargo" />
+          <ScalarProperty Name="usr_direccion" ColumnName="usr_direccion" />
+          <ScalarProperty Name="usr_ciudad" ColumnName="usr_ciudad" />
+          <ScalarProperty Name="usr_cpostal" ColumnName="usr_cpostal" />
+          <ScalarProperty Name="usr_pais" ColumnName="usr_pais" />
+          <ScalarProperty Name="usr_codpain" ColumnName="usr_codpain" />
+          <ScalarProperty Name="usr_codpais" ColumnName="usr_codpais" />
+          <ScalarProperty Name="usr_nivel" ColumnName="usr_nivel" />
+          <ScalarProperty Name="usr_rutsup" ColumnName="usr_rutsup" />
+          <ScalarProperty Name="usr_dvsup" ColumnName="usr_dvsup" />
+          <ScalarProperty Name="usr_ruting" ColumnName="usr_ruting" />
+          <ScalarProperty Name="usr_dving" ColumnName="usr_dving" />
+          <ScalarProperty Name="usr_fecing" ColumnName="usr_fecing" />
+          <ScalarProperty Name="usr_rutact" ColumnName="usr_rutact" />
+          <ScalarProperty Name="usr_dvact" ColumnName="usr_dvact" />
+          <ScalarProperty Name="usr_fecact" ColumnName="usr_fecact" />
+          <ScalarProperty Name="usr_cotiza" ColumnName="usr_cotiza" />
+          <ScalarProperty Name="usr_ordcallr" ColumnName="usr_ordcallr" />
+          <ScalarProperty Name="usr_infbco" ColumnName="usr_infbco" />
+          <ScalarProperty Name="usr_oficina" ColumnName="usr_oficina" />
+          <ScalarProperty Name="usr_reslin" ColumnName="usr_reslin" />
+          <ScalarProperty Name="usr_crecor" ColumnName="usr_crecor" />
+          <ScalarProperty Name="usr_matrie" ColumnName="usr_matrie" />
+          <ScalarProperty Name="usr_email" ColumnName="usr_email" />
+          <ScalarProperty Name="usr_mac" ColumnName="usr_mac" />
+          <ScalarProperty Name="usr_fmac" ColumnName="usr_fmac" />
+          <ScalarProperty Name="usr_visado" ColumnName="usr_visado" />
+          <ScalarProperty Name="usr_activo" ColumnName="usr_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_vis">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_vis">
+        <MappingFragment StoreEntitySet="sbc_vis">
+          <ScalarProperty Name="vis_codswi" ColumnName="vis_codswi" />
+          <ScalarProperty Name="vis_codcor" ColumnName="vis_codcor" />
+          <ScalarProperty Name="vis_fecvis" ColumnName="vis_fecvis" />
+          <ScalarProperty Name="vis_entidad" ColumnName="vis_entidad" />
+          <ScalarProperty Name="vis_ciudad" ColumnName="vis_ciudad" />
+          <ScalarProperty Name="vis_pais" ColumnName="vis_pais" />
+          <ScalarProperty Name="vis_codpai" ColumnName="vis_codpai" />
+          <ScalarProperty Name="vis_referen" ColumnName="vis_referen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_visp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_visp">
+        <MappingFragment StoreEntitySet="sbc_visp">
+          <ScalarProperty Name="visp_codswi" ColumnName="visp_codswi" />
+          <ScalarProperty Name="visp_codcor" ColumnName="visp_codcor" />
+          <ScalarProperty Name="visp_fecvis" ColumnName="visp_fecvis" />
+          <ScalarProperty Name="visp_numcor" ColumnName="visp_numcor" />
+          <ScalarProperty Name="visp_nompar" ColumnName="visp_nompar" />
+          <ScalarProperty Name="visp_carpar" ColumnName="visp_carpar" />
+          <ScalarProperty Name="visp_tippar" ColumnName="visp_tippar" />
+          <ScalarProperty Name="visp_rutusr" ColumnName="visp_rutusr" />
+          <ScalarProperty Name="visp_dvusr" ColumnName="visp_dvusr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_vist">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_vist">
+        <MappingFragment StoreEntitySet="sbc_vist">
+          <ScalarProperty Name="vist_codswi" ColumnName="vist_codswi" />
+          <ScalarProperty Name="vist_codcor" ColumnName="vist_codcor" />
+          <ScalarProperty Name="vist_fecvis" ColumnName="vist_fecvis" />
+          <ScalarProperty Name="vist_codtem" ColumnName="vist_codtem" />
+          <ScalarProperty Name="vist_numlin" ColumnName="vist_numlin" />
+          <ScalarProperty Name="vist_texto" ColumnName="vist_texto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcberes">
+      <EntityTypeMapping TypeName="sbcorModel.sbcbere">
+        <MappingFragment StoreEntitySet="sbcbere">
+          <ScalarProperty Name="bere_codswi" ColumnName="bere_codswi" />
+          <ScalarProperty Name="bere_agno" ColumnName="bere_agno" />
+          <ScalarProperty Name="bere_codpai" ColumnName="bere_codpai" />
+          <ScalarProperty Name="bere_mes" ColumnName="bere_mes" />
+          <ScalarProperty Name="bere_feccta" ColumnName="bere_feccta" />
+          <ScalarProperty Name="bere_fecing" ColumnName="bere_fecing" />
+          <ScalarProperty Name="bere_audita" ColumnName="bere_audita" />
+          <ScalarProperty Name="bere_codmnd" ColumnName="bere_codmnd" />
+          <ScalarProperty Name="bere_nemmnd" ColumnName="bere_nemmnd" />
+          <ScalarProperty Name="bere_paridad" ColumnName="bere_paridad" />
+          <ScalarProperty Name="bere_nummes" ColumnName="bere_nummes" />
+          <ScalarProperty Name="bere_obsber" ColumnName="bere_obsber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcberps">
+      <EntityTypeMapping TypeName="sbcorModel.sbcberp">
+        <MappingFragment StoreEntitySet="sbcberp">
+          <ScalarProperty Name="berp_codswi" ColumnName="berp_codswi" />
+          <ScalarProperty Name="berp_agno" ColumnName="berp_agno" />
+          <ScalarProperty Name="berp_mes" ColumnName="berp_mes" />
+          <ScalarProperty Name="berp_codpai" ColumnName="berp_codpai" />
+          <ScalarProperty Name="berp_codcta" ColumnName="berp_codcta" />
+          <ScalarProperty Name="berp_feccta" ColumnName="berp_feccta" />
+          <ScalarProperty Name="merp_mtoori" ColumnName="merp_mtoori" />
+          <ScalarProperty Name="merp_mtodol" ColumnName="merp_mtodol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcerrs">
+      <EntityTypeMapping TypeName="sbcorModel.sbcerr">
+        <MappingFragment StoreEntitySet="sbcerr">
+          <ScalarProperty Name="err_coderr" ColumnName="err_coderr" />
+          <ScalarProperty Name="err_nomerr" ColumnName="err_nomerr" />
+          <ScalarProperty Name="err_tiperr" ColumnName="err_tiperr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcgrps">
+      <EntityTypeMapping TypeName="sbcorModel.sbcgrp">
+        <MappingFragment StoreEntitySet="sbcgrp">
+          <ScalarProperty Name="grp_codgrp" ColumnName="grp_codgrp" />
+          <ScalarProperty Name="grp_nomgrp" ColumnName="grp_nomgrp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcopes">
+      <EntityTypeMapping TypeName="sbcorModel.sbcope">
+        <MappingFragment StoreEntitySet="sbcope">
+          <ScalarProperty Name="ope_codope" ColumnName="ope_codope" />
+          <ScalarProperty Name="ope_codgrp" ColumnName="ope_codgrp" />
+          <ScalarProperty Name="ope_nomope" ColumnName="ope_nomope" />
+          <ScalarProperty Name="ope_codsis" ColumnName="ope_codsis" />
+          <ScalarProperty Name="ope_numcta" ColumnName="ope_numcta" />
+          <ScalarProperty Name="ope_numto" ColumnName="ope_numto" />
+          <ScalarProperty Name="ope_aladi" ColumnName="ope_aladi" />
+          <ScalarProperty Name="ope_enviada" ColumnName="ope_enviada" />
+          <ScalarProperty Name="ope_recibida" ColumnName="ope_recibida" />
+          <ScalarProperty Name="ope_enlot" ColumnName="ope_enlot" />
+          <ScalarProperty Name="ope_enlre" ColumnName="ope_enlre" />
+          <ScalarProperty Name="ope_activa" ColumnName="ope_activa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcsitfs">
+      <EntityTypeMapping TypeName="sbcorModel.sbcsitf">
+        <MappingFragment StoreEntitySet="sbcsitf">
+          <ScalarProperty Name="sitf_codswi" ColumnName="sitf_codswi" />
+          <ScalarProperty Name="sitf_fecsit" ColumnName="sitf_fecsit" />
+          <ScalarProperty Name="sitf_codpai" ColumnName="sitf_codpai" />
+          <ScalarProperty Name="sitf_codmnd" ColumnName="sitf_codmnd" />
+          <ScalarProperty Name="sitf_mtoact" ColumnName="sitf_mtoact" />
+          <ScalarProperty Name="sitf_mtocol" ColumnName="sitf_mtocol" />
+          <ScalarProperty Name="sitf_mtodep" ColumnName="sitf_mtodep" />
+          <ScalarProperty Name="sitf_mtopat" ColumnName="sitf_mtopat" />
+          <ScalarProperty Name="sitf_mtouti" ColumnName="sitf_mtouti" />
+          <ScalarProperty Name="sitf_lvr" ColumnName="sitf_lvr" />
+          <ScalarProperty Name="sitf_roa" ColumnName="sitf_roa" />
+          <ScalarProperty Name="sitf_roe" ColumnName="sitf_roe" />
+          <ScalarProperty Name="sitf_bis" ColumnName="sitf_bis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcvis">
+      <EntityTypeMapping TypeName="sbcorModel.sbcvi">
+        <MappingFragment StoreEntitySet="sbcvis">
+          <ScalarProperty Name="vis_codswi" ColumnName="vis_codswi" />
+          <ScalarProperty Name="vis_fecvis" ColumnName="vis_fecvis" />
+          <ScalarProperty Name="vis_ciudad" ColumnName="vis_ciudad" />
+          <ScalarProperty Name="vis_pais" ColumnName="vis_pais" />
+          <ScalarProperty Name="vis_codpai" ColumnName="vis_codpai" />
+          <ScalarProperty Name="vis_referen" ColumnName="vis_referen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcvisps">
+      <EntityTypeMapping TypeName="sbcorModel.sbcvisp">
+        <MappingFragment StoreEntitySet="sbcvisp">
+          <ScalarProperty Name="visp_codswi" ColumnName="visp_codswi" />
+          <ScalarProperty Name="visp_fecvis" ColumnName="visp_fecvis" />
+          <ScalarProperty Name="visp_numcor" ColumnName="visp_numcor" />
+          <ScalarProperty Name="visp_nompar" ColumnName="visp_nompar" />
+          <ScalarProperty Name="visp_carpar" ColumnName="visp_carpar" />
+          <ScalarProperty Name="visp_tippar" ColumnName="visp_tippar" />
+          <ScalarProperty Name="visp_rutusr" ColumnName="visp_rutusr" />
+          <ScalarProperty Name="visp_dvusr" ColumnName="visp_dvusr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbcvists">
+      <EntityTypeMapping TypeName="sbcorModel.sbcvist">
+        <MappingFragment StoreEntitySet="sbcvist">
+          <ScalarProperty Name="vist_codswi" ColumnName="vist_codswi" />
+          <ScalarProperty Name="vist_fecvis" ColumnName="vist_fecvis" />
+          <ScalarProperty Name="vist_codtem" ColumnName="vist_codtem" />
+          <ScalarProperty Name="vist_numlin" ColumnName="vist_numlin" />
+          <ScalarProperty Name="vist_texto" ColumnName="vist_texto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sce_bic">
+      <EntityTypeMapping TypeName="sbcorModel.sce_bic">
+        <MappingFragment StoreEntitySet="sce_bic">
+          <ScalarProperty Name="bic_swf" ColumnName="bic_swf" />
+          <ScalarProperty Name="bic_sec" ColumnName="bic_sec" />
+          <ScalarProperty Name="bic_nom" ColumnName="bic_nom" />
+          <ScalarProperty Name="bic_des" ColumnName="bic_des" />
+          <ScalarProperty Name="bic_ciu" ColumnName="bic_ciu" />
+          <ScalarProperty Name="bic_dir" ColumnName="bic_dir" />
+          <ScalarProperty Name="bic_pos" ColumnName="bic_pos" />
+          <ScalarProperty Name="bic_pai" ColumnName="bic_pai" />
+          <ScalarProperty Name="bic_ala" ColumnName="bic_ala" />
+          <ScalarProperty Name="bic_cod" ColumnName="bic_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sce_cou">
+      <EntityTypeMapping TypeName="sbcorModel.sce_cou">
+        <MappingFragment StoreEntitySet="sce_cou">
+          <ScalarProperty Name="cou_pai" ColumnName="cou_pai" />
+          <ScalarProperty Name="cou_nom" ColumnName="cou_nom" />
+          <ScalarProperty Name="cou_cod" ColumnName="cou_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_mnd">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_mnd">
+        <MappingFragment StoreEntitySet="sgt_mnd">
+          <ScalarProperty Name="mnd_mndcod" ColumnName="mnd_mndcod" />
+          <ScalarProperty Name="mnd_mndcbc" ColumnName="mnd_mndcbc" />
+          <ScalarProperty Name="mnd_mndsbf" ColumnName="mnd_mndsbf" />
+          <ScalarProperty Name="mnd_mndnom" ColumnName="mnd_mndnom" />
+          <ScalarProperty Name="mnd_mndnmc" ColumnName="mnd_mndnmc" />
+          <ScalarProperty Name="mnd_mndswf" ColumnName="mnd_mndswf" />
+          <ScalarProperty Name="mnd_mndpai" ColumnName="mnd_mndpai" />
+          <ScalarProperty Name="mnd_mndfiv" ColumnName="mnd_mndfiv" />
+          <ScalarProperty Name="mnd_mndftv" ColumnName="mnd_mndftv" />
+          <ScalarProperty Name="mnd_mndina" ColumnName="mnd_mndina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_pai">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_pai">
+        <MappingFragment StoreEntitySet="sgt_pai">
+          <ScalarProperty Name="pai_paicod" ColumnName="pai_paicod" />
+          <ScalarProperty Name="pai_painom" ColumnName="pai_painom" />
+          <ScalarProperty Name="pai_paiala" ColumnName="pai_paiala" />
+          <ScalarProperty Name="pai_noming" ColumnName="pai_noming" />
+          <ScalarProperty Name="pai_paiabr" ColumnName="pai_paiabr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_vmc">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_vmc">
+        <MappingFragment StoreEntitySet="sgt_vmc">
+          <ScalarProperty Name="vmc_vmccod" ColumnName="vmc_vmccod" />
+          <ScalarProperty Name="vmc_vmcfec" ColumnName="vmc_vmcfec" />
+          <ScalarProperty Name="vmc_vmcprc" ColumnName="vmc_vmcprc" />
+          <ScalarProperty Name="vmc_vmctca" ColumnName="vmc_vmctca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rbc_ilot">
+      <EntityTypeMapping TypeName="sbcorModel.rbc_ilot">
+        <MappingFragment StoreEntitySet="rbc_ilot">
+          <ScalarProperty Name="fecpro" ColumnName="fecpro" />
+          <ScalarProperty Name="paicod" ColumnName="paicod" />
+          <ScalarProperty Name="painom" ColumnName="painom" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+          <ScalarProperty Name="mndswf" ColumnName="mndswf" />
+          <ScalarProperty Name="mtomac" ColumnName="mtomac" />
+          <ScalarProperty Name="mtooutn" ColumnName="mtooutn" />
+          <ScalarProperty Name="mtores" ColumnName="mtores" />
+          <ScalarProperty Name="mtodis" ColumnName="mtodis" />
+          <ScalarProperty Name="fecapr" ColumnName="fecapr" />
+          <ScalarProperty Name="fecven" ColumnName="fecven" />
+          <ScalarProperty Name="sublfc" ColumnName="sublfc" />
+          <ScalarProperty Name="sublfcu" ColumnName="sublfcu" />
+          <ScalarProperty Name="mtorese" ColumnName="mtorese" />
+          <ScalarProperty Name="sublfcd" ColumnName="sublfcd" />
+          <ScalarProperty Name="keylot" ColumnName="keylot" />
+          <ScalarProperty Name="tiplot" ColumnName="tiplot" />
+          <ScalarProperty Name="codope" ColumnName="codope" />
+          <ScalarProperty Name="numref" ColumnName="numref" />
+          <ScalarProperty Name="codmnd" ColumnName="codmnd" />
+          <ScalarProperty Name="mtoope" ColumnName="mtoope" />
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecini" ColumnName="fecini" />
+          <ScalarProperty Name="fecfin" ColumnName="fecfin" />
+          <ScalarProperty Name="codofi" ColumnName="codofi" />
+          <ScalarProperty Name="nomope" ColumnName="nomope" />
+          <ScalarProperty Name="mpfapr" ColumnName="mpfapr" />
+          <ScalarProperty Name="mpfven" ColumnName="mpfven" />
+          <ScalarProperty Name="codpai" ColumnName="codpai" />
+          <ScalarProperty Name="nompai" ColumnName="nompai" />
+          <ScalarProperty Name="paimat" ColumnName="paimat" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="tipotrn" ColumnName="tipotrn" />
+          <ScalarProperty Name="sublim" ColumnName="sublim" />
+          <ScalarProperty Name="plazo" ColumnName="plazo" />
+          <ScalarProperty Name="b_banco" ColumnName="b_banco" />
+          <ScalarProperty Name="b_mtomac" ColumnName="b_mtomac" />
+          <ScalarProperty Name="b_mtoout" ColumnName="b_mtoout" />
+          <ScalarProperty Name="b_mtores" ColumnName="b_mtores" />
+          <ScalarProperty Name="b_mtodis" ColumnName="b_mtodis" />
+          <ScalarProperty Name="b_fecapr" ColumnName="b_fecapr" />
+          <ScalarProperty Name="b_fecven" ColumnName="b_fecven" />
+          <ScalarProperty Name="prcpai" ColumnName="prcpai" />
+          <ScalarProperty Name="mtopai" ColumnName="mtopai" />
+          <ScalarProperty Name="paigar_" ColumnName="paigar_" />
+          <ScalarProperty Name="tasa" ColumnName="tasa" />
+          <ScalarProperty Name="spread" ColumnName="spread" />
+          <ScalarProperty Name="tasat" ColumnName="tasat" />
+          <ScalarProperty Name="codswi" ColumnName="codswi" />
+          <ScalarProperty Name="parrafo" ColumnName="parrafo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_ape">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_ape">
+        <MappingFragment StoreEntitySet="sbc_ape">
+          <ScalarProperty Name="ape_codcct" ColumnName="ape_codcct" />
+          <ScalarProperty Name="ape_codpro" ColumnName="ape_codpro" />
+          <ScalarProperty Name="ape_codesp" ColumnName="ape_codesp" />
+          <ScalarProperty Name="ape_codofi" ColumnName="ape_codofi" />
+          <ScalarProperty Name="ape_codope" ColumnName="ape_codope" />
+          <ScalarProperty Name="ape_sucursal" ColumnName="ape_sucursal" />
+          <ScalarProperty Name="ape_unidad" ColumnName="ape_unidad" />
+          <ScalarProperty Name="ape_moneda" ColumnName="ape_moneda" />
+          <ScalarProperty Name="ape_operacion" ColumnName="ape_operacion" />
+          <ScalarProperty Name="ape_etapa" ColumnName="ape_etapa" />
+          <ScalarProperty Name="ape_adv_acc" ColumnName="ape_adv_acc" />
+          <ScalarProperty Name="ape_montovig_ent" ColumnName="ape_montovig_ent" />
+          <ScalarProperty Name="ape_montovig_pto" ColumnName="ape_montovig_pto" />
+          <ScalarProperty Name="ape_montovig_dec" ColumnName="ape_montovig_dec" />
+          <ScalarProperty Name="ape_party_rem" ColumnName="ape_party_rem" />
+          <ScalarProperty Name="ape_pais" ColumnName="ape_pais" />
+          <ScalarProperty Name="ape_cliente" ColumnName="ape_cliente" />
+          <ScalarProperty Name="ape_numrutcli" ColumnName="ape_numrutcli" />
+          <ScalarProperty Name="ape_guirutcli" ColumnName="ape_guirutcli" />
+          <ScalarProperty Name="ape_dvrrutcli" ColumnName="ape_dvrrutcli" />
+          <ScalarProperty Name="ape_montoori_ent" ColumnName="ape_montoori_ent" />
+          <ScalarProperty Name="ape_montoori_pto" ColumnName="ape_montoori_pto" />
+          <ScalarProperty Name="ape_montoori_dec" ColumnName="ape_montoori_dec" />
+          <ScalarProperty Name="ape_sistema" ColumnName="ape_sistema" />
+          <ScalarProperty Name="ape_producto" ColumnName="ape_producto" />
+          <ScalarProperty Name="ape_fechacrea" ColumnName="ape_fechacrea" />
+          <ScalarProperty Name="ape_fechavcto" ColumnName="ape_fechavcto" />
+          <ScalarProperty Name="ape_fechaiint" ColumnName="ape_fechaiint" />
+          <ScalarProperty Name="ape_cuenta" ColumnName="ape_cuenta" />
+          <ScalarProperty Name="ape_tasabas" ColumnName="ape_tasabas" />
+          <ScalarProperty Name="ape_spread_ent" ColumnName="ape_spread_ent" />
+          <ScalarProperty Name="ape_spread_pto" ColumnName="ape_spread_pto" />
+          <ScalarProperty Name="ape_spread_dec" ColumnName="ape_spread_dec" />
+          <ScalarProperty Name="ape_reflag" ColumnName="ape_reflag" />
+          <ScalarProperty Name="ape_codaeco" ColumnName="ape_codaeco" />
+          <ScalarProperty Name="ape_flag_alalc" ColumnName="ape_flag_alalc" />
+          <ScalarProperty Name="ape_montodol_ent" ColumnName="ape_montodol_ent" />
+          <ScalarProperty Name="ape_tipocamb_ent" ColumnName="ape_tipocamb_ent" />
+          <ScalarProperty Name="ape_mercaderia" ColumnName="ape_mercaderia" />
+          <ScalarProperty Name="ape_tipocc" ColumnName="ape_tipocc" />
+          <ScalarProperty Name="ape_fecpro" ColumnName="ape_fecpro" />
+          <ScalarProperty Name="ape_nombre_bco" ColumnName="ape_nombre_bco" />
+          <ScalarProperty Name="ape_ciudad_bco" ColumnName="ape_ciudad_bco" />
+          <ScalarProperty Name="ape_codpais" ColumnName="ape_codpais" />
+          <ScalarProperty Name="ape_filler1" ColumnName="ape_filler1" />
+          <ScalarProperty Name="ape_swift_bco" ColumnName="ape_swift_bco" />
+          <ScalarProperty Name="ape_tipo_bco" ColumnName="ape_tipo_bco" />
+          <ScalarProperty Name="ape_centrocosto" ColumnName="ape_centrocosto" />
+          <ScalarProperty Name="ape_oficina" ColumnName="ape_oficina" />
+          <ScalarProperty Name="ape_filler2" ColumnName="ape_filler2" />
+          <ScalarProperty Name="ape_dircli" ColumnName="ape_dircli" />
+          <ScalarProperty Name="ape_ciucli" ColumnName="ape_ciucli" />
+          <ScalarProperty Name="ape_codpaicli" ColumnName="ape_codpaicli" />
+          <ScalarProperty Name="ape_nompaicli" ColumnName="ape_nompaicli" />
+          <ScalarProperty Name="ape_numrutben" ColumnName="ape_numrutben" />
+          <ScalarProperty Name="ape_guirutben" ColumnName="ape_guirutben" />
+          <ScalarProperty Name="ape_dvrrutben" ColumnName="ape_dvrrutben" />
+          <ScalarProperty Name="ape_nomben" ColumnName="ape_nomben" />
+          <ScalarProperty Name="ape_dirben" ColumnName="ape_dirben" />
+          <ScalarProperty Name="ape_ciuben" ColumnName="ape_ciuben" />
+          <ScalarProperty Name="ape_codpaiben" ColumnName="ape_codpaiben" />
+          <ScalarProperty Name="ape_nompaiben" ColumnName="ape_nompaiben" />
+          <ScalarProperty Name="ape_bcouno" ColumnName="ape_bcouno" />
+          <ScalarProperty Name="ape_bcodos" ColumnName="ape_bcodos" />
+          <ScalarProperty Name="ape_bcotres" ColumnName="ape_bcotres" />
+          <ScalarProperty Name="ape_confirm" ColumnName="ape_confirm" />
+          <ScalarProperty Name="ape_gascli" ColumnName="ape_gascli" />
+          <ScalarProperty Name="ape_mtovista_ent" ColumnName="ape_mtovista_ent" />
+          <ScalarProperty Name="ape_mtovista_pto" ColumnName="ape_mtovista_pto" />
+          <ScalarProperty Name="ape_mtovista_dec" ColumnName="ape_mtovista_dec" />
+          <ScalarProperty Name="ape_mtomevc_ent" ColumnName="ape_mtomevc_ent" />
+          <ScalarProperty Name="ape_mtomevc_pto" ColumnName="ape_mtomevc_pto" />
+          <ScalarProperty Name="ape_mtomevc_dec" ColumnName="ape_mtomevc_dec" />
+          <ScalarProperty Name="ape_mtopagad_ent" ColumnName="ape_mtopagad_ent" />
+          <ScalarProperty Name="ape_mtopagad_pto" ColumnName="ape_mtopagad_pto" />
+          <ScalarProperty Name="ape_mtopagad_dec" ColumnName="ape_mtopagad_dec" />
+          <ScalarProperty Name="ape_mtoplazo_ent" ColumnName="ape_mtoplazo_ent" />
+          <ScalarProperty Name="ape_mtoplazo_pto" ColumnName="ape_mtoplazo_pto" />
+          <ScalarProperty Name="ape_mtoplazo_dec" ColumnName="ape_mtoplazo_dec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_apev">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_apev">
+        <MappingFragment StoreEntitySet="sbc_apev">
+          <ScalarProperty Name="ape_sucursal" ColumnName="ape_sucursal" />
+          <ScalarProperty Name="ape_unidad" ColumnName="ape_unidad" />
+          <ScalarProperty Name="ape_moneda" ColumnName="ape_moneda" />
+          <ScalarProperty Name="ape_operacion" ColumnName="ape_operacion" />
+          <ScalarProperty Name="ape_etapa" ColumnName="ape_etapa" />
+          <ScalarProperty Name="ape_adv_acc" ColumnName="ape_adv_acc" />
+          <ScalarProperty Name="ape_montovig_ent" ColumnName="ape_montovig_ent" />
+          <ScalarProperty Name="ape_montovig_pto" ColumnName="ape_montovig_pto" />
+          <ScalarProperty Name="ape_montovig_dec" ColumnName="ape_montovig_dec" />
+          <ScalarProperty Name="ape_party_rem" ColumnName="ape_party_rem" />
+          <ScalarProperty Name="ape_pais" ColumnName="ape_pais" />
+          <ScalarProperty Name="ape_cliente" ColumnName="ape_cliente" />
+          <ScalarProperty Name="ape_numrutcli" ColumnName="ape_numrutcli" />
+          <ScalarProperty Name="ape_guirutcli" ColumnName="ape_guirutcli" />
+          <ScalarProperty Name="ape_dvrrutcli" ColumnName="ape_dvrrutcli" />
+          <ScalarProperty Name="ape_montoori_ent" ColumnName="ape_montoori_ent" />
+          <ScalarProperty Name="ape_montoori_pto" ColumnName="ape_montoori_pto" />
+          <ScalarProperty Name="ape_montoori_dec" ColumnName="ape_montoori_dec" />
+          <ScalarProperty Name="ape_sistema" ColumnName="ape_sistema" />
+          <ScalarProperty Name="ape_producto" ColumnName="ape_producto" />
+          <ScalarProperty Name="ape_fechacrea" ColumnName="ape_fechacrea" />
+          <ScalarProperty Name="ape_fechavcto" ColumnName="ape_fechavcto" />
+          <ScalarProperty Name="ape_fechaiint" ColumnName="ape_fechaiint" />
+          <ScalarProperty Name="ape_cuenta" ColumnName="ape_cuenta" />
+          <ScalarProperty Name="ape_tasabas" ColumnName="ape_tasabas" />
+          <ScalarProperty Name="ape_spread_ent" ColumnName="ape_spread_ent" />
+          <ScalarProperty Name="ape_spread_pto" ColumnName="ape_spread_pto" />
+          <ScalarProperty Name="ape_spread_dec" ColumnName="ape_spread_dec" />
+          <ScalarProperty Name="ape_reflag" ColumnName="ape_reflag" />
+          <ScalarProperty Name="ape_codaeco" ColumnName="ape_codaeco" />
+          <ScalarProperty Name="ape_flag_alalc" ColumnName="ape_flag_alalc" />
+          <ScalarProperty Name="ape_montodol_ent" ColumnName="ape_montodol_ent" />
+          <ScalarProperty Name="ape_tipocamb_ent" ColumnName="ape_tipocamb_ent" />
+          <ScalarProperty Name="ape_mercaderia" ColumnName="ape_mercaderia" />
+          <ScalarProperty Name="ape_nombre_bco" ColumnName="ape_nombre_bco" />
+          <ScalarProperty Name="ape_ciudad_bco" ColumnName="ape_ciudad_bco" />
+          <ScalarProperty Name="ape_codpais" ColumnName="ape_codpais" />
+          <ScalarProperty Name="ape_filler1" ColumnName="ape_filler1" />
+          <ScalarProperty Name="ape_swift_bco" ColumnName="ape_swift_bco" />
+          <ScalarProperty Name="ape_tipo_bco" ColumnName="ape_tipo_bco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_bcoi">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_bcoi">
+        <MappingFragment StoreEntitySet="sbc_bcoi">
+          <ScalarProperty Name="bcoi_codswi" ColumnName="bcoi_codswi" />
+          <ScalarProperty Name="bcoi_codpai" ColumnName="bcoi_codpai" />
+          <ScalarProperty Name="bcoi_tipbco" ColumnName="bcoi_tipbco" />
+          <ScalarProperty Name="bcoi_swimat" ColumnName="bcoi_swimat" />
+          <ScalarProperty Name="bcoi_paimat" ColumnName="bcoi_paimat" />
+          <ScalarProperty Name="bcoi_rutbco" ColumnName="bcoi_rutbco" />
+          <ScalarProperty Name="bcoi_dvbco" ColumnName="bcoi_dvbco" />
+          <ScalarProperty Name="bcoi_rutsuper" ColumnName="bcoi_rutsuper" />
+          <ScalarProperty Name="bcoi_dvsuper" ColumnName="bcoi_dvsuper" />
+          <ScalarProperty Name="bcoi_codbde" ColumnName="bcoi_codbde" />
+          <ScalarProperty Name="bcoi_nombre" ColumnName="bcoi_nombre" />
+          <ScalarProperty Name="bcoi_direccion" ColumnName="bcoi_direccion" />
+          <ScalarProperty Name="bcoi_ciudad" ColumnName="bcoi_ciudad" />
+          <ScalarProperty Name="bcoi_cpostal" ColumnName="bcoi_cpostal" />
+          <ScalarProperty Name="bcoi_pais" ColumnName="bcoi_pais" />
+          <ScalarProperty Name="bcoi_corresp" ColumnName="bcoi_corresp" />
+          <ScalarProperty Name="bcoi_deudor" ColumnName="bcoi_deudor" />
+          <ScalarProperty Name="bcoi_acreedor" ColumnName="bcoi_acreedor" />
+          <ScalarProperty Name="bcoi_rnkpai" ColumnName="bcoi_rnkpai" />
+          <ScalarProperty Name="bcoi_rnkmun" ColumnName="bcoi_rnkmun" />
+          <ScalarProperty Name="bcoi_clfbco" ColumnName="bcoi_clfbco" />
+          <ScalarProperty Name="bcoi_catbcoa" ColumnName="bcoi_catbcoa" />
+          <ScalarProperty Name="bcoi_catbcom" ColumnName="bcoi_catbcom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_cci">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_cci">
+        <MappingFragment StoreEntitySet="sbc_cci">
+          <ScalarProperty Name="ape_codcct" ColumnName="ape_codcct" />
+          <ScalarProperty Name="ape_codpro" ColumnName="ape_codpro" />
+          <ScalarProperty Name="ape_codesp" ColumnName="ape_codesp" />
+          <ScalarProperty Name="ape_codofi" ColumnName="ape_codofi" />
+          <ScalarProperty Name="ape_codope" ColumnName="ape_codope" />
+          <ScalarProperty Name="ape_sucursal" ColumnName="ape_sucursal" />
+          <ScalarProperty Name="ape_unidad" ColumnName="ape_unidad" />
+          <ScalarProperty Name="ape_moneda" ColumnName="ape_moneda" />
+          <ScalarProperty Name="ape_operacion" ColumnName="ape_operacion" />
+          <ScalarProperty Name="ape_etapa" ColumnName="ape_etapa" />
+          <ScalarProperty Name="ape_adv_acc" ColumnName="ape_adv_acc" />
+          <ScalarProperty Name="ape_montovig_ent" ColumnName="ape_montovig_ent" />
+          <ScalarProperty Name="ape_montovig_pto" ColumnName="ape_montovig_pto" />
+          <ScalarProperty Name="ape_montovig_dec" ColumnName="ape_montovig_dec" />
+          <ScalarProperty Name="ape_party_rem" ColumnName="ape_party_rem" />
+          <ScalarProperty Name="ape_pais" ColumnName="ape_pais" />
+          <ScalarProperty Name="ape_cliente" ColumnName="ape_cliente" />
+          <ScalarProperty Name="ape_numrutcli" ColumnName="ape_numrutcli" />
+          <ScalarProperty Name="ape_guirutcli" ColumnName="ape_guirutcli" />
+          <ScalarProperty Name="ape_dvrrutcli" ColumnName="ape_dvrrutcli" />
+          <ScalarProperty Name="ape_montoori_ent" ColumnName="ape_montoori_ent" />
+          <ScalarProperty Name="ape_montoori_pto" ColumnName="ape_montoori_pto" />
+          <ScalarProperty Name="ape_montoori_dec" ColumnName="ape_montoori_dec" />
+          <ScalarProperty Name="ape_sistema" ColumnName="ape_sistema" />
+          <ScalarProperty Name="ape_producto" ColumnName="ape_producto" />
+          <ScalarProperty Name="ape_fechacrea" ColumnName="ape_fechacrea" />
+          <ScalarProperty Name="ape_fechavcto" ColumnName="ape_fechavcto" />
+          <ScalarProperty Name="ape_fechaiint" ColumnName="ape_fechaiint" />
+          <ScalarProperty Name="ape_cuenta" ColumnName="ape_cuenta" />
+          <ScalarProperty Name="ape_tasabas" ColumnName="ape_tasabas" />
+          <ScalarProperty Name="ape_spread_ent" ColumnName="ape_spread_ent" />
+          <ScalarProperty Name="ape_spread_pto" ColumnName="ape_spread_pto" />
+          <ScalarProperty Name="ape_spread_dec" ColumnName="ape_spread_dec" />
+          <ScalarProperty Name="ape_reflag" ColumnName="ape_reflag" />
+          <ScalarProperty Name="ape_codaeco" ColumnName="ape_codaeco" />
+          <ScalarProperty Name="ape_flag_alalc" ColumnName="ape_flag_alalc" />
+          <ScalarProperty Name="ape_montodol_ent" ColumnName="ape_montodol_ent" />
+          <ScalarProperty Name="ape_tipocamb_ent" ColumnName="ape_tipocamb_ent" />
+          <ScalarProperty Name="ape_mercaderia" ColumnName="ape_mercaderia" />
+          <ScalarProperty Name="ape_tipocc" ColumnName="ape_tipocc" />
+          <ScalarProperty Name="ape_fecpro" ColumnName="ape_fecpro" />
+          <ScalarProperty Name="ape_swf_bconot" ColumnName="ape_swf_bconot" />
+          <ScalarProperty Name="ape_nom_bconot" ColumnName="ape_nom_bconot" />
+          <ScalarProperty Name="ape_ciu_bconot" ColumnName="ape_ciu_bconot" />
+          <ScalarProperty Name="ape_codpais" ColumnName="ape_codpais" />
+          <ScalarProperty Name="ape_tipo_bco" ColumnName="ape_tipo_bco" />
+          <ScalarProperty Name="ape_filler1" ColumnName="ape_filler1" />
+          <ScalarProperty Name="ape_swf_bcofin" ColumnName="ape_swf_bcofin" />
+          <ScalarProperty Name="ape_nom_bcofin" ColumnName="ape_nom_bcofin" />
+          <ScalarProperty Name="ape_swf_bcocor" ColumnName="ape_swf_bcocor" />
+          <ScalarProperty Name="ape_nom_bcocor" ColumnName="ape_nom_bcocor" />
+          <ScalarProperty Name="ape_swf_bcoavi" ColumnName="ape_swf_bcoavi" />
+          <ScalarProperty Name="ape_nom_bcoavi" ColumnName="ape_nom_bcoavi" />
+          <ScalarProperty Name="ape_centrocosto" ColumnName="ape_centrocosto" />
+          <ScalarProperty Name="ape_oficina" ColumnName="ape_oficina" />
+          <ScalarProperty Name="ape_confirm" ColumnName="ape_confirm" />
+          <ScalarProperty Name="ape_gascli" ColumnName="ape_gascli" />
+          <ScalarProperty Name="ape_filler2" ColumnName="ape_filler2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_crp_ope">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_crp_ope">
+        <MappingFragment StoreEntitySet="sbc_crp_ope">
+          <ScalarProperty Name="crp_ope_tp_reg" ColumnName="crp_ope_tp_reg" />
+          <ScalarProperty Name="crp_ope_rut" ColumnName="crp_ope_rut" />
+          <ScalarProperty Name="crp_ope_dv" ColumnName="crp_ope_dv" />
+          <ScalarProperty Name="crp_ope_suc_ptmo" ColumnName="crp_ope_suc_ptmo" />
+          <ScalarProperty Name="crp_ope_num_ptmo" ColumnName="crp_ope_num_ptmo" />
+          <ScalarProperty Name="crp_ope_operie" ColumnName="crp_ope_operie" />
+          <ScalarProperty Name="crp_ope_clainv" ColumnName="crp_ope_clainv" />
+          <ScalarProperty Name="crp_ope_fecmod" ColumnName="crp_ope_fecmod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_datos_grilla_mod">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_datos_grilla_mod">
+        <MappingFragment StoreEntitySet="sbc_datos_grilla_mod">
+          <ScalarProperty Name="mbd_mtomac_det_ori" ColumnName="mbd_mtomac_det_ori" />
+          <ScalarProperty Name="mbd_mtomac_det_mod" ColumnName="mbd_mtomac_det_mod" />
+          <ScalarProperty Name="mbd_codpai" ColumnName="mbd_codpai" />
+          <ScalarProperty Name="mbd_codswi" ColumnName="mbd_codswi" />
+          <ScalarProperty Name="mbd_codlint" ColumnName="mbd_codlint" />
+          <ScalarProperty Name="mbd_codlinc" ColumnName="mbd_codlinc" />
+          <ScalarProperty Name="mbd_codlin" ColumnName="mbd_codlin" />
+          <ScalarProperty Name="rut_mod" ColumnName="rut_mod" />
+          <ScalarProperty Name="dv_mod" ColumnName="dv_mod" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="id_pantalla" ColumnName="id_pantalla" />
+          <ScalarProperty Name="autorizado" ColumnName="autorizado" />
+          <ScalarProperty Name="waiver_ori" ColumnName="waiver_ori" />
+          <ScalarProperty Name="waiver_mod" ColumnName="waiver_mod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_datos_superiores_mod">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_datos_superiores_mod">
+        <MappingFragment StoreEntitySet="sbc_datos_superiores_mod">
+          <ScalarProperty Name="mbd_codpai" ColumnName="mbd_codpai" />
+          <ScalarProperty Name="mbd_codswi" ColumnName="mbd_codswi" />
+          <ScalarProperty Name="mbd_codlint" ColumnName="mbd_codlint" />
+          <ScalarProperty Name="mbd_codlinc" ColumnName="mbd_codlinc" />
+          <ScalarProperty Name="mbd_codlin" ColumnName="mbd_codlin" />
+          <ScalarProperty Name="mbr_fecven" ColumnName="mbr_fecven" />
+          <ScalarProperty Name="mbr_mtomac" ColumnName="mbr_mtomac" />
+          <ScalarProperty Name="rut_mod" ColumnName="rut_mod" />
+          <ScalarProperty Name="dv_mod" ColumnName="dv_mod" />
+          <ScalarProperty Name="fecha_modificacion" ColumnName="fecha_modificacion" />
+          <ScalarProperty Name="id_pantalla" ColumnName="id_pantalla" />
+          <ScalarProperty Name="modifica_fec" ColumnName="modifica_fec" />
+          <ScalarProperty Name="modifica_mto" ColumnName="modifica_mto" />
+          <ScalarProperty Name="mpr_codlin" ColumnName="mpr_codlin" />
+          <ScalarProperty Name="mpr_clasinv" ColumnName="mpr_clasinv" />
+          <ScalarProperty Name="mpr_tiplin" ColumnName="mpr_tiplin" />
+          <ScalarProperty Name="mpr_fecapr" ColumnName="mpr_fecapr" />
+          <ScalarProperty Name="mpr_fecven" ColumnName="mpr_fecven" />
+          <ScalarProperty Name="modifica_linea" ColumnName="modifica_linea" />
+          <ScalarProperty Name="modifica_clasi" ColumnName="modifica_clasi" />
+          <ScalarProperty Name="modifica_fec_aper" ColumnName="modifica_fec_aper" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_fmi">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_fmi">
+        <MappingFragment StoreEntitySet="sbc_fmi">
+          <ScalarProperty Name="fori_id" ColumnName="fori_id" />
+          <ScalarProperty Name="fori_type" ColumnName="fori_type" />
+          <ScalarProperty Name="fori_saldo" ColumnName="fori_saldo" />
+          <ScalarProperty Name="fori_codpai" ColumnName="fori_codpai" />
+          <ScalarProperty Name="fori_status" ColumnName="fori_status" />
+          <ScalarProperty Name="fori_fecaper" ColumnName="fori_fecaper" />
+          <ScalarProperty Name="fori_ufecaper" ColumnName="fori_ufecaper" />
+          <ScalarProperty Name="fori_fecven" ColumnName="fori_fecven" />
+          <ScalarProperty Name="fori_accno" ColumnName="fori_accno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_fny">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_fny">
+        <MappingFragment StoreEntitySet="sbc_fny">
+          <ScalarProperty Name="fori_id" ColumnName="fori_id" />
+          <ScalarProperty Name="fori_type" ColumnName="fori_type" />
+          <ScalarProperty Name="fori_saldo" ColumnName="fori_saldo" />
+          <ScalarProperty Name="fori_codpai" ColumnName="fori_codpai" />
+          <ScalarProperty Name="fori_status" ColumnName="fori_status" />
+          <ScalarProperty Name="fori_fecaper" ColumnName="fori_fecaper" />
+          <ScalarProperty Name="fori_ufecaper" ColumnName="fori_ufecaper" />
+          <ScalarProperty Name="fori_fecven" ColumnName="fori_fecven" />
+          <ScalarProperty Name="fori_accno" ColumnName="fori_accno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_inflot">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_inflot">
+        <MappingFragment StoreEntitySet="sbc_inflot">
+          <ScalarProperty Name="paicod" ColumnName="paicod" />
+          <ScalarProperty Name="painom" ColumnName="painom" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+          <ScalarProperty Name="mndswf" ColumnName="mndswf" />
+          <ScalarProperty Name="mtomac" ColumnName="mtomac" />
+          <ScalarProperty Name="mtooutn" ColumnName="mtooutn" />
+          <ScalarProperty Name="mtores" ColumnName="mtores" />
+          <ScalarProperty Name="mtodis" ColumnName="mtodis" />
+          <ScalarProperty Name="fecapr" ColumnName="fecapr" />
+          <ScalarProperty Name="fecven" ColumnName="fecven" />
+          <ScalarProperty Name="sublfc" ColumnName="sublfc" />
+          <ScalarProperty Name="sublfcu" ColumnName="sublfcu" />
+          <ScalarProperty Name="mtorese" ColumnName="mtorese" />
+          <ScalarProperty Name="sublfcd" ColumnName="sublfcd" />
+          <ScalarProperty Name="keylot" ColumnName="keylot" />
+          <ScalarProperty Name="tiplot" ColumnName="tiplot" />
+          <ScalarProperty Name="codope" ColumnName="codope" />
+          <ScalarProperty Name="numref" ColumnName="numref" />
+          <ScalarProperty Name="codmnd" ColumnName="codmnd" />
+          <ScalarProperty Name="mtoope" ColumnName="mtoope" />
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecini" ColumnName="fecini" />
+          <ScalarProperty Name="fecfin" ColumnName="fecfin" />
+          <ScalarProperty Name="codofi" ColumnName="codofi" />
+          <ScalarProperty Name="nomope" ColumnName="nomope" />
+          <ScalarProperty Name="mpfapr" ColumnName="mpfapr" />
+          <ScalarProperty Name="mpfven" ColumnName="mpfven" />
+          <ScalarProperty Name="codpai" ColumnName="codpai" />
+          <ScalarProperty Name="nompai" ColumnName="nompai" />
+          <ScalarProperty Name="paimat" ColumnName="paimat" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="tipotrn" ColumnName="tipotrn" />
+          <ScalarProperty Name="sublim" ColumnName="sublim" />
+          <ScalarProperty Name="plazo" ColumnName="plazo" />
+          <ScalarProperty Name="b_banco" ColumnName="b_banco" />
+          <ScalarProperty Name="b_mtomac" ColumnName="b_mtomac" />
+          <ScalarProperty Name="b_mtoout" ColumnName="b_mtoout" />
+          <ScalarProperty Name="b_mtores" ColumnName="b_mtores" />
+          <ScalarProperty Name="b_mtodis" ColumnName="b_mtodis" />
+          <ScalarProperty Name="b_fecapr" ColumnName="b_fecapr" />
+          <ScalarProperty Name="b_fecven" ColumnName="b_fecven" />
+          <ScalarProperty Name="prcpai" ColumnName="prcpai" />
+          <ScalarProperty Name="mtopai" ColumnName="mtopai" />
+          <ScalarProperty Name="paigar_" ColumnName="paigar_" />
+          <ScalarProperty Name="paigar" ColumnName="paigar" />
+          <ScalarProperty Name="tasa" ColumnName="tasa" />
+          <ScalarProperty Name="spread" ColumnName="spread" />
+          <ScalarProperty Name="tasat" ColumnName="tasat" />
+          <ScalarProperty Name="codswi" ColumnName="codswi" />
+          <ScalarProperty Name="parrafo" ColumnName="parrafo" />
+          <ScalarProperty Name="nomsec" ColumnName="nomsec" />
+          <ScalarProperty Name="flagerr" ColumnName="flagerr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_infmatr">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_infmatr">
+        <MappingFragment StoreEntitySet="sbc_infmatr">
+          <ScalarProperty Name="lot_codpai" ColumnName="lot_codpai" />
+          <ScalarProperty Name="pai_painom" ColumnName="pai_painom" />
+          <ScalarProperty Name="mpr_mtomac" ColumnName="mpr_mtomac" />
+          <ScalarProperty Name="mpr_mtoout" ColumnName="mpr_mtoout" />
+          <ScalarProperty Name="mpr_mtodis" ColumnName="mpr_mtodis" />
+          <ScalarProperty Name="mbr_mtomac" ColumnName="mbr_mtomac" />
+          <ScalarProperty Name="mbr_mtoout" ColumnName="mbr_mtoout" />
+          <ScalarProperty Name="mbr_mtodis" ColumnName="mbr_mtodis" />
+          <ScalarProperty Name="mbd_mtomac" ColumnName="mbd_mtomac" />
+          <ScalarProperty Name="mbd_mtoout" ColumnName="mbd_mtoout" />
+          <ScalarProperty Name="mbd_mtodis" ColumnName="mbd_mtodis" />
+          <ScalarProperty Name="lot_tiplot" ColumnName="lot_tiplot" />
+          <ScalarProperty Name="lot_codswi" ColumnName="lot_codswi" />
+          <ScalarProperty Name="lot_nombre" ColumnName="lot_nombre" />
+          <ScalarProperty Name="lot_codope" ColumnName="lot_codope" />
+          <ScalarProperty Name="lot_nomope" ColumnName="lot_nomope" />
+          <ScalarProperty Name="lot_numref" ColumnName="lot_numref" />
+          <ScalarProperty Name="lot_fecini" ColumnName="lot_fecini" />
+          <ScalarProperty Name="lot_fecven" ColumnName="lot_fecven" />
+          <ScalarProperty Name="plazo_res" ColumnName="plazo_res" />
+          <ScalarProperty Name="lot_mtoope" ColumnName="lot_mtoope" />
+          <ScalarProperty Name="lot_codofi" ColumnName="lot_codofi" />
+          <ScalarProperty Name="lot_operie" ColumnName="lot_operie" />
+          <ScalarProperty Name="lot_codlinc" ColumnName="lot_codlinc" />
+          <ScalarProperty Name="linp_deslinc" ColumnName="linp_deslinc" />
+          <ScalarProperty Name="linp_flagpla" ColumnName="linp_flagpla" />
+          <ScalarProperty Name="linp_plaini" ColumnName="linp_plaini" />
+          <ScalarProperty Name="linp_incini" ColumnName="linp_incini" />
+          <ScalarProperty Name="linp_plafin" ColumnName="linp_plafin" />
+          <ScalarProperty Name="linp_incfin" ColumnName="linp_incfin" />
+          <ScalarProperty Name="mnd_mndcod" ColumnName="mnd_mndcod" />
+          <ScalarProperty Name="mnd_mndswf" ColumnName="mnd_mndswf" />
+          <ScalarProperty Name="lot_paigar" ColumnName="lot_paigar" />
+          <ScalarProperty Name="lot_paigar_" ColumnName="lot_paigar_" />
+          <ScalarProperty Name="lot_prcpai" ColumnName="lot_prcpai" />
+          <ScalarProperty Name="lot_mtopai" ColumnName="lot_mtopai" />
+          <ScalarProperty Name="lot_glosa" ColumnName="lot_glosa" />
+          <ScalarProperty Name="lot_tasa" ColumnName="lot_tasa" />
+          <ScalarProperty Name="lot_flagerr" ColumnName="lot_flagerr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_lotasg">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_lotasg">
+        <MappingFragment StoreEntitySet="sbc_lotasg">
+          <ScalarProperty Name="lotasg_codope" ColumnName="lotasg_codope" />
+          <ScalarProperty Name="lotasg_numref" ColumnName="lotasg_numref" />
+          <ScalarProperty Name="lotasg_refsec" ColumnName="lotasg_refsec" />
+          <ScalarProperty Name="lotasg_codofi" ColumnName="lotasg_codofi" />
+          <ScalarProperty Name="lotasg_tiplot" ColumnName="lotasg_tiplot" />
+          <ScalarProperty Name="lotasg_codpai" ColumnName="lotasg_codpai" />
+          <ScalarProperty Name="lotasg_nompai" ColumnName="lotasg_nompai" />
+          <ScalarProperty Name="lotasg_codswi" ColumnName="lotasg_codswi" />
+          <ScalarProperty Name="lotasg_rutemp" ColumnName="lotasg_rutemp" />
+          <ScalarProperty Name="lotasg_nombre" ColumnName="lotasg_nombre" />
+          <ScalarProperty Name="lotasg_smart" ColumnName="lotasg_smart" />
+          <ScalarProperty Name="lotasg_matriz" ColumnName="lotasg_matriz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_nomp">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_nomp">
+        <MappingFragment StoreEntitySet="sbc_nomp">
+          <ScalarProperty Name="nomp_codswi" ColumnName="nomp_codswi" />
+          <ScalarProperty Name="nomp_cuenta" ColumnName="nomp_cuenta" />
+          <ScalarProperty Name="nomp_codmnd" ColumnName="nomp_codmnd" />
+          <ScalarProperty Name="nomp_codpai" ColumnName="nomp_codpai" />
+          <ScalarProperty Name="nomp_nomina" ColumnName="nomp_nomina" />
+          <ScalarProperty Name="nomp_swicor" ColumnName="nomp_swicor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_opee">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_opee">
+        <MappingFragment StoreEntitySet="sbc_opee">
+          <ScalarProperty Name="opee_periodo" ColumnName="opee_periodo" />
+          <ScalarProperty Name="opee_codpai" ColumnName="opee_codpai" />
+          <ScalarProperty Name="opee_famswi" ColumnName="opee_famswi" />
+          <ScalarProperty Name="opee_codswi" ColumnName="opee_codswi" />
+          <ScalarProperty Name="opee_codope" ColumnName="opee_codope" />
+          <ScalarProperty Name="opee_fecpro" ColumnName="opee_fecpro" />
+          <ScalarProperty Name="opee_numref" ColumnName="opee_numref" />
+          <ScalarProperty Name="opee_codmnd" ColumnName="opee_codmnd" />
+          <ScalarProperty Name="opee_mtoope" ColumnName="opee_mtoope" />
+          <ScalarProperty Name="opee_paridad" ColumnName="opee_paridad" />
+          <ScalarProperty Name="opee_mtooped" ColumnName="opee_mtooped" />
+          <ScalarProperty Name="opee_codofi" ColumnName="opee_codofi" />
+          <ScalarProperty Name="opee_codsis" ColumnName="opee_codsis" />
+          <ScalarProperty Name="opee_estado" ColumnName="opee_estado" />
+          <ScalarProperty Name="opee_coderr" ColumnName="opee_coderr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_oper">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_oper">
+        <MappingFragment StoreEntitySet="sbc_oper">
+          <ScalarProperty Name="oper_periodo" ColumnName="oper_periodo" />
+          <ScalarProperty Name="oper_codpai" ColumnName="oper_codpai" />
+          <ScalarProperty Name="oper_famswi" ColumnName="oper_famswi" />
+          <ScalarProperty Name="oper_codswi" ColumnName="oper_codswi" />
+          <ScalarProperty Name="oper_codope" ColumnName="oper_codope" />
+          <ScalarProperty Name="oper_fecpro" ColumnName="oper_fecpro" />
+          <ScalarProperty Name="oper_numref" ColumnName="oper_numref" />
+          <ScalarProperty Name="oper_codmnd" ColumnName="oper_codmnd" />
+          <ScalarProperty Name="oper_mtoope" ColumnName="oper_mtoope" />
+          <ScalarProperty Name="oper_paridad" ColumnName="oper_paridad" />
+          <ScalarProperty Name="oper_mtooped" ColumnName="oper_mtooped" />
+          <ScalarProperty Name="oper_codofi" ColumnName="oper_codofi" />
+          <ScalarProperty Name="oper_codsis" ColumnName="oper_codsis" />
+          <ScalarProperty Name="oper_estado" ColumnName="oper_estado" />
+          <ScalarProperty Name="oper_coderr" ColumnName="oper_coderr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prvcus">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prvcus">
+        <MappingFragment StoreEntitySet="sbc_prvcus">
+          <ScalarProperty Name="prv_fecprv" ColumnName="prv_fecprv" />
+          <ScalarProperty Name="prv_codofi" ColumnName="prv_codofi" />
+          <ScalarProperty Name="prv_custidn" ColumnName="prv_custidn" />
+          <ScalarProperty Name="prv_custnum" ColumnName="prv_custnum" />
+          <ScalarProperty Name="prv_clasrie" ColumnName="prv_clasrie" />
+          <ScalarProperty Name="prv_custnam" ColumnName="prv_custnam" />
+          <ScalarProperty Name="prv_mtocap" ColumnName="prv_mtocap" />
+          <ScalarProperty Name="prv_mtoint" ColumnName="prv_mtoint" />
+          <ScalarProperty Name="prv_mtocon" ColumnName="prv_mtocon" />
+          <ScalarProperty Name="prv_mtotot" ColumnName="prv_mtotot" />
+          <ScalarProperty Name="prv_prvclf" ColumnName="prv_prvclf" />
+          <ScalarProperty Name="prv_prvcar" ColumnName="prv_prvcar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_prvusa">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_prvusa">
+        <MappingFragment StoreEntitySet="sbc_prvusa">
+          <ScalarProperty Name="prv_fecprv" ColumnName="prv_fecprv" />
+          <ScalarProperty Name="prv_codofi" ColumnName="prv_codofi" />
+          <ScalarProperty Name="prv_custidn" ColumnName="prv_custidn" />
+          <ScalarProperty Name="prv_custnum" ColumnName="prv_custnum" />
+          <ScalarProperty Name="prv_custnam" ColumnName="prv_custnam" />
+          <ScalarProperty Name="prv_clasrie" ColumnName="prv_clasrie" />
+          <ScalarProperty Name="prv_numacc" ColumnName="prv_numacc" />
+          <ScalarProperty Name="prv_pairie" ColumnName="prv_pairie" />
+          <ScalarProperty Name="prv_codmb1" ColumnName="prv_codmb1" />
+          <ScalarProperty Name="prv_operie" ColumnName="prv_operie" />
+          <ScalarProperty Name="prv_fecini" ColumnName="prv_fecini" />
+          <ScalarProperty Name="prv_fecfin" ColumnName="prv_fecfin" />
+          <ScalarProperty Name="prv_tasaint" ColumnName="prv_tasaint" />
+          <ScalarProperty Name="prv_mtocap" ColumnName="prv_mtocap" />
+          <ScalarProperty Name="prv_mtoint" ColumnName="prv_mtoint" />
+          <ScalarProperty Name="prv_mtotot" ColumnName="prv_mtotot" />
+          <ScalarProperty Name="prv_prvusa" ColumnName="prv_prvusa" />
+          <ScalarProperty Name="prv_prvtot" ColumnName="prv_prvtot" />
+          <ScalarProperty Name="prv_codgrp" ColumnName="prv_codgrp" />
+          <ScalarProperty Name="prv_prcgrp" ColumnName="prv_prcgrp" />
+          <ScalarProperty Name="prv_prvpai" ColumnName="prv_prvpai" />
+          <ScalarProperty Name="prv_patbco" ColumnName="prv_patbco" />
+          <ScalarProperty Name="prv_patprc" ColumnName="prv_patprc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_top">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_top">
+        <MappingFragment StoreEntitySet="sbc_top">
+          <ScalarProperty Name="topcta" ColumnName="topcta" />
+          <ScalarProperty Name="topold" ColumnName="topold" />
+          <ScalarProperty Name="toptop" ColumnName="toptop" />
+          <ScalarProperty Name="topfec" ColumnName="topfec" />
+          <ScalarProperty Name="topest" ColumnName="topest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbc_tyc1">
+      <EntityTypeMapping TypeName="sbcorModel.sbc_tyc1">
+        <MappingFragment StoreEntitySet="sbc_tyc1">
+          <ScalarProperty Name="tyc1_nrocor" ColumnName="tyc1_nrocor" />
+          <ScalarProperty Name="tyc1_estado" ColumnName="tyc1_estado" />
+          <ScalarProperty Name="tyc1_codswi" ColumnName="tyc1_codswi" />
+          <ScalarProperty Name="tyc1_nombco" ColumnName="tyc1_nombco" />
+          <ScalarProperty Name="tyc1_contacto" ColumnName="tyc1_contacto" />
+          <ScalarProperty Name="tyc1_codpai" ColumnName="tyc1_codpai" />
+          <ScalarProperty Name="tyc1_ciudad" ColumnName="tyc1_ciudad" />
+          <ScalarProperty Name="tyc1_codpro" ColumnName="tyc1_codpro" />
+          <ScalarProperty Name="tyc1_tipcom" ColumnName="tyc1_tipcom" />
+          <ScalarProperty Name="tyc1_tipcome" ColumnName="tyc1_tipcome" />
+          <ScalarProperty Name="tyc1_numref" ColumnName="tyc1_numref" />
+          <ScalarProperty Name="tyc1_refsec" ColumnName="tyc1_refsec" />
+          <ScalarProperty Name="tyc1_idimport" ColumnName="tyc1_idimport" />
+          <ScalarProperty Name="tyc1_idexport" ColumnName="tyc1_idexport" />
+          <ScalarProperty Name="tyc1_nomimport" ColumnName="tyc1_nomimport" />
+          <ScalarProperty Name="tyc1_nomexport" ColumnName="tyc1_nomexport" />
+          <ScalarProperty Name="tyc1_fpago" ColumnName="tyc1_fpago" />
+          <ScalarProperty Name="tyc1_letras" ColumnName="tyc1_letras" />
+          <ScalarProperty Name="tyc1_gastos" ColumnName="tyc1_gastos" />
+          <ScalarProperty Name="tyc1_validez" ColumnName="tyc1_validez" />
+          <ScalarProperty Name="tyc1_mndope" ColumnName="tyc1_mndope" />
+          <ScalarProperty Name="tyc1_mtoope" ColumnName="tyc1_mtoope" />
+          <ScalarProperty Name="tyc1_parope" ColumnName="tyc1_parope" />
+          <ScalarProperty Name="tyc1_mtooped" ColumnName="tyc1_mtooped" />
+          <ScalarProperty Name="tyc1_codmnd" ColumnName="tyc1_codmnd" />
+          <ScalarProperty Name="tyc1_prcall" ColumnName="tyc1_prcall" />
+          <ScalarProperty Name="tyc1_valmin" ColumnName="tyc1_valmin" />
+          <ScalarProperty Name="tyc1_valpar" ColumnName="tyc1_valpar" />
+          <ScalarProperty Name="tyc1_fecpar" ColumnName="tyc1_fecpar" />
+          <ScalarProperty Name="tyc1_valmind" ColumnName="tyc1_valmind" />
+          <ScalarProperty Name="tyc1_codcct" ColumnName="tyc1_codcct" />
+          <ScalarProperty Name="tyc1_codesp" ColumnName="tyc1_codesp" />
+          <ScalarProperty Name="tyc1_fecing" ColumnName="tyc1_fecing" />
+          <ScalarProperty Name="tyc1_feccot" ColumnName="tyc1_feccot" />
+          <ScalarProperty Name="tyc1_ruteje" ColumnName="tyc1_ruteje" />
+          <ScalarProperty Name="tyc1_dveje" ColumnName="tyc1_dveje" />
+          <ScalarProperty Name="tyc1_fecres" ColumnName="tyc1_fecres" />
+          <ScalarProperty Name="tyc1_observ" ColumnName="tyc1_observ" />
+          <ScalarProperty Name="tyc1_obsesp" ColumnName="tyc1_obsesp" />
+          <ScalarProperty Name="tyc1_nomesp" ColumnName="tyc1_nomesp" />
+          <ScalarProperty Name="tyc1_fonoesp" ColumnName="tyc1_fonoesp" />
+          <ScalarProperty Name="tyc1_tipocci" ColumnName="tyc1_tipocci" />
+          <ScalarProperty Name="tyc1_rutcot" ColumnName="tyc1_rutcot" />
+          <ScalarProperty Name="tyc1_dvcot" ColumnName="tyc1_dvcot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_suc">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_suc">
+        <MappingFragment StoreEntitySet="sgt_suc">
+          <ScalarProperty Name="suc_succod" ColumnName="suc_succod" />
+          <ScalarProperty Name="suc_sucnom" ColumnName="suc_sucnom" />
+          <ScalarProperty Name="suc_succui" ColumnName="suc_succui" />
+          <ScalarProperty Name="suc_succor" ColumnName="suc_succor" />
+          <ScalarProperty Name="suc_sucdir" ColumnName="suc_sucdir" />
+          <ScalarProperty Name="suc_sucfon" ColumnName="suc_sucfon" />
+          <ScalarProperty Name="suc_sucfax" ColumnName="suc_sucfax" />
+          <ScalarProperty Name="suc_flgfic" ColumnName="suc_flgfic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_tba">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_tba">
+        <MappingFragment StoreEntitySet="sgt_tba">
+          <ScalarProperty Name="tba_cod" ColumnName="tba_cod" />
+          <ScalarProperty Name="tba_nom" ColumnName="tba_nom" />
+          <ScalarProperty Name="tba_cpa" ColumnName="tba_cpa" />
+          <ScalarProperty Name="tba_rut" ColumnName="tba_rut" />
+          <ScalarProperty Name="tba_fap" ColumnName="tba_fap" />
+          <ScalarProperty Name="tba_fci" ColumnName="tba_fci" />
+          <ScalarProperty Name="tba_csw" ColumnName="tba_csw" />
+          <ScalarProperty Name="tba_rnk" ColumnName="tba_rnk" />
+          <ScalarProperty Name="tba_frk" ColumnName="tba_frk" />
+          <ScalarProperty Name="tba_cat" ColumnName="tba_cat" />
+          <ScalarProperty Name="tba_cal" ColumnName="tba_cal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sgt_vmd2">
+      <EntityTypeMapping TypeName="sbcorModel.sgt_vmd2">
+        <MappingFragment StoreEntitySet="sgt_vmd2">
+          <ScalarProperty Name="vmd_vmdcod" ColumnName="vmd_vmdcod" />
+          <ScalarProperty Name="vmd_vmdfec" ColumnName="vmd_vmdfec" />
+          <ScalarProperty Name="vmd_vmdmbc" ColumnName="vmd_vmdmbc" />
+          <ScalarProperty Name="vmd_vmdmbv" ColumnName="vmd_vmdmbv" />
+          <ScalarProperty Name="vmd_vmdmcc" ColumnName="vmd_vmdmcc" />
+          <ScalarProperty Name="vmd_vmdmcv" ColumnName="vmd_vmdmcv" />
+          <ScalarProperty Name="vmd_vmdprd" ColumnName="vmd_vmdprd" />
+          <ScalarProperty Name="vmd_vmdacd" ColumnName="vmd_vmdacd" />
+          <ScalarProperty Name="vmd_vmdobs" ColumnName="vmd_vmdobs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="pro_sbc_bancos_MS" FunctionName="sbcorModel.Store.pro_sbc_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="pro_sbc_bancos_count_MS" FunctionName="sbcorModel.Store.pro_sbc_bancos_count_MS" />
+  </EntityContainerMapping>
+</Mapping>

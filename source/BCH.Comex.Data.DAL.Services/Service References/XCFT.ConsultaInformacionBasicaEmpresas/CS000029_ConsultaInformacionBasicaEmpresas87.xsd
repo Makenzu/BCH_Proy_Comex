@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaInformacionBasicaEmpresas/OpConsultarInfoBasicaRequest" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaInformacionBasicaEmpresas/OpConsultarInfoBasicaRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="datosEntrada">
+    <xsd:sequence>
+      <xsd:element name="rutEmpresa" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

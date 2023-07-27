@@ -1,0 +1,214 @@
+﻿@using BCH.Comex.Core.Entities.Cext01.GeneracionMT300
+@model BCH.Comex.UI.Web.Areas.GeneracionMT300.Models.CargaViewModel
+
+@{
+    ViewBag.Title = "Generación MT300";
+    //ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+
+@*<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Home")">Cargar archivos</a></li>
+                                <li><a href="@Url.Action("MensajesNack", "Home")">Mensajes con NACK</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12"><h2>Generación MT300</h2></div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "formPrecarga", enctype = "multipart/form-data", @class = "form-horizontal" }))
+                {
+                    <!--div class="form-group"-->
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="radio" style="padding-bottom:10px">
+                                <label style="padding-right:20px">
+                                    @Html.RadioButton("tipoArchivo", "VALUTA") Eventos de Capital
+                                </label>
+                                <label>
+                                    @Html.RadioButton("tipoArchivo", "TREASURY") Compra Venta
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            @Html.TextBox("file", "", new { @class = "form-control input-sm", type = "file", accept = ".xls,.xlsx,.xlsm" })
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="submit" id="btnPrecarga" class="btn btn-primary">Precarga</button>
+                        </div>
+                    </div>
+                    <!--/div-->
+                }
+                </!--div>
+            </div>
+        </div>
+        @if (Model != null && Model.archivoCargado)
+        {
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="row">
+                                        <h4 class="text-center">Resumen Archivo Precargado</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Archivo:</strong></div>
+                                        <div class="col-xs-6">@Model.archivo.nombre</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Tipo de planilla:</strong></div>
+                                        <div class="col-xs-6">@(@Model.archivo.tipo_archivo == "TREASURY" ? "Compra Venta" : @Model.archivo.tipo_archivo == "VALUTA" ? "Eventos de Capital" : "")</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros totales:</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosTotales</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros candidatos :</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosCandidatos</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros no candidatos :</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosNoCantidatos</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="row">
+                                        <h4 class="text-center">Detalle Candidatos </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros con error de formato:</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosErrorFormato</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros con error de caracteres:</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosErrorCaracteres</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros con MT300 previo:</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosExistentes</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-right"><strong>Registros MT300 a generar:</strong></div>
+                                        <div class="col-xs-6">@Model.nRegistrosNuevosOK</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            if (Model.nRegistrosExistentes > 0)
+            {
+                <div class="row">
+                    <div class="panel panel-default" id="pnlRegistrosExistentes">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" href="#collapseExistentes">
+                                    <h4 class="panel-title">Registros ya existentes (@Model.nRegistrosExistentes)</h4>
+                                    <small>Estos registros ya fueron generados previamente, no se incluiran en esta ejecuci&oacute;n.</small>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseExistentes" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table id="tablaRegistrosExistentes"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            if (Model.nRegistrosNuevosOK > 0)
+            {
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" href="#collapseNuevos">Registros a generar (@Model.nRegistrosNuevosOK)</a>
+                                </h4>
+                            </div>
+                            <div id="collapseNuevos" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="tablaRegistrosNuevos"></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-xs-12 text-right">
+                        @using (Html.BeginForm("GenerarSwiftMasivo", null, FormMethod.Post, new { id = "frmSwift", name = "frmSwift" }))
+                        {
+                            <button type="submit" id="btnGenerarSwiftMasivo" class="btn btn-primary" @(@Model.nRegistrosNuevosOK < 1 ? "disabled = \"disabled\"" : "")>Generar</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/GeneracionMT300/Index")
+    <script type="text/javascript">
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+}
+
+@section css
+{
+    <style>
+        .panel-heading .accordion-toggle:after {
+            /* symbol for "opened" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e113";
+            float: right;
+            color: grey;
+        }
+
+        .panel-heading .accordion-toggle.collapsed:after {
+            /* symbol for "collapsed" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e114";
+            float: right;
+            color: grey;
+        }
+    </style>
+}

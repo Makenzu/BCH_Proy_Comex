@@ -1,0 +1,190 @@
+﻿@{
+    //ViewBag.Title = "Administrador de Participantes";
+    //BCH.Comex.Common.XGPY.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+@{ Html.RenderPartial("_MenuMain"); }
+@{ Html.RenderPartial("_ModalRazonSocial"); }
+@{ Html.RenderPartial("_ModalDireccion"); }
+@{ Html.RenderPartial("_ModalMessageEliminaParticipante"); }
+@{ Html.RenderPartial("_ModalMessages"); }
+
+<div class="panel panel-default">
+    <div class="col-md-1">
+        <div class="row">
+            <a class="btn btn-transparent btn-padding margin-horizontal-half" id="nuevaRazonSocialP" href="#">
+                <img title="Nueva Razón Social" class="img-func" style="width: 24px; height: 24px;" src="~/Content/images/ButtonsBarMnu/Nuevo.png">
+            </a>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <strong>Razones Sociales</strong>
+    </div>
+    <table id="tableRazonSocial"></table>
+</div>
+
+<div class="panel panel-default">
+    <div class="col-md-1">
+        <div class="row">
+            <a class="btn btn-transparent btn-padding margin-horizontal-half" id="nuevaDireccionP" href="#">
+                <img title="Nueva Dirección" class="img-func" style="width: 24px; height: 24px;" src="~/Content/images/ButtonsBarMnu/Nuevo.png">
+            </a>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <strong>Direcciones</strong>
+    </div>
+    <table id="tableDireccion"></table>
+</div>
+
+@*<div id="confirm" class="modal hide fade">
+    <div class="modal-body">
+        Este cambio puede provocar problemas con planillas al Banco Central.<br />
+        ¿Desea Continuar?
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-primary" id="aceptar">Aceptar</button>
+        <button type="button" data-dismiss="modal" class="btn">Cancelar</button>
+    </div>
+</div>*@
+
+<div class="modal fade" tabindex="-1" role="dialog" id="confirmActivarRazon">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">SCE_Participantes de comercio exterior</h4>
+            </div>
+            <div class="modal-body">
+                <p>Este cambio puede provocar problemas con planillas al Banco Central.</p>
+                <p>¿Desea Continuar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="aceptarActivarRazon">Aceptar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<input type="hidden" id='memoryUrlAddRazonSocial' data-url='@Url.Action("AddRazonSocial")' />
+<input type="hidden" id='memoryUrlUpdateRazonSocial' data-url='@Url.Action("UpdateRazonSocial")' />
+<inptu type="hidden" id='memoryUrlDeleteRazonSocial' data-url='@Url.Action("DeleteRazonSocial")' />
+<input type="hidden" id='memoryUrlAddDireccion' data-url='@Url.Action("AddDireccion")' />
+<input type="hidden" id='memoryUrlUpdateDireccion' data-url='@Url.Action("UpdateDireccion")' />
+<inptu type="hidden" id='memoryUrlDeleteDireccion' data-url='@Url.Action("DeleteDireccion")' />
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    
+    <script>
+        var urlGetCurrentUICuentasData = '@Url.Action( "getCurrentUICuentasData", "AdminParticipantes", null, this.Request.Url.Scheme)';
+
+        CustomSave = function () {
+            $('#mnuSalvarParticipante').trigger('click');
+            //sessionStorage.removeItem('modificando');
+           // window.location.href = $('#urlNuevoParticipante').data('url');
+        }
+
+        $(function () {
+            var $botonActivar = $('#tbr_Activar');
+            var $botonActivarOpcion = $('#mnuPrtyActivar');
+            var $tablaRazonSocial = $('#tableRazonSocial');
+                       
+            $tablaRazonSocial.on('check.bs.table', function (row, $element) {
+                $botonActivar.attr("href", "#");
+                if ($(this).find('tr.selected').children('td:last').html() == '[Inactivo]') {
+                    $botonActivar.removeAttr('disabled');
+                } else {
+                    $botonActivar.attr('disabled', 'disabled');
+                }
+            });
+
+            $botonActivar.on('click', function (e) {
+                if (!$(this).hasClass('disabled')) {
+                    e.preventDefault();
+
+                    var seleccionado = $tablaRazonSocial.find('tr.selected').data('index');
+
+                    if (seleccionado == null) {
+                        f_messageBlock('Activar Razon Social', 'Debe seleccionar una razon social.', 'warning');
+                        return;
+                    }
+
+                    if ((typeof $(this).attr('disabled') == typeof undefined && $(this).attr('disabled') !== false)) {
+                        $('#confirmActivarRazon').modal({ backdrop: 'static', keyboard: false }).one('click', '#aceptarActivarRazon', function () {
+
+                            var razonSocialSeleccionada = $('#tableRazonSocial').bootstrapTable('getSelections')[0].nombre;
+                            var list = [];
+
+                            v_iObject.PRTGLOB.nom.forEach(function (nom) {
+                                if (nom.nombre == razonSocialSeleccionada) {
+                                    nom.estado = 3;
+                                    nom.borrado = 0;
+                                    list.push(nom);
+                                }
+                                else {
+                                    nom.estado = 3;
+                                    nom.borrado = 1;
+                                    list.push(nom);
+                                }
+                            });
+
+                            $('#confirmActivarRazon').modal('hide');
+                            v_iObject.PRTGLOB.nom = list;
+                            v_iObject.PRTGLOB.Party.estado = 5; //Para activar la modal
+                            sessionStorage.setItem(_I_OBJECT_, JSON.stringify(v_iObject));
+                            $('#tableRazonSocial').bootstrapTable('load', v_iObject.PRTGLOB.nom);
+                        });
+                    }
+                }
+            });
+
+            $botonActivarOpcion.on('click', function (e) {
+                e.preventDefault();
+
+                var seleccionado = $tablaRazonSocial.find('tr.selected').data('index');
+
+                if (seleccionado == null) {
+                    f_messageBlock('Activar Razon Social', 'Debe seleccionar una razon social.', 'warning');
+                    return;
+                }
+
+                if ((typeof $(this).attr('disabled') == typeof undefined && $(this).attr('disabled') !== false)) {   
+                    $('#confirmActivarRazon').modal({ backdrop: 'static', keyboard: false }).one('click', '#aceptarActivarRazon', function () {
+
+                        var razonSocialSeleccionada = $('#tableRazonSocial').bootstrapTable('getSelections')[0].nombre;
+                        var list = [];
+
+                        v_iObject.PRTGLOB.nom.forEach(function (nom) {
+                            if (nom.nombre == razonSocialSeleccionada) {
+                                nom.estado = 3;
+                                nom.borrado = 0;
+                                list.push(nom);
+                            }
+                            else {
+                                nom.estado = 3;
+                                nom.borrado = 1;
+                                list.push(nom);
+                            }
+                        });
+
+                        $('#confirmActivarRazon').modal('hide');
+                        v_iObject.PRTGLOB.nom = list;
+                        v_iObject.PRTGLOB.Party.estado = 5; //Para activar la modal
+                        sessionStorage.setItem(_I_OBJECT_, JSON.stringify(v_iObject));
+                        $('#tableRazonSocial').bootstrapTable('load', v_iObject.PRTGLOB.nom);
+                    });
+                }
+            });
+
+        });
+    </script>
+
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/main")
+    @Scripts.Render("~/bundles/AdminParticipantes/del")
+}

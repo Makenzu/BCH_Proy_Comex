@@ -1,0 +1,345 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 50px 0px 158px 76px;
+            padding: 0px;
+            border: none;
+            width: 740px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_1 #id_1_1 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 390px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_2 {
+                    float: left;
+                    border: none;
+                    margin: 0px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 350px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 31px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_2 #id_2_1 {
+                    float: left;
+                    border: none;
+                    margin: 1px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 380px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_2 #id_2_2 {
+                    float: left;
+                    border: none;
+                    margin: 0px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 360px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_3 {
+                border: none;
+                margin: 15px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_4 {
+                border: none;
+                margin: 410px 0px 0px 429px;
+                padding: 0px;
+                border: none;
+                width: 311px;
+                overflow: hidden;
+            }
+
+        .ft0 {
+            font: bold 16px 'Times New Roman';
+            line-height: 19px;
+        }
+
+        .ft1 {
+            font: 13px 'Times New Roman';
+            line-height: 15px;
+        }
+
+        .ft2 {
+            font: bold 13px 'Times New Roman';
+            line-height: 15px;
+        }
+
+        .ft3 {
+            font: 13px 'Times New Roman';
+            line-height: 14px;
+        }
+
+        .ft4 {
+            font: italic bold 13px 'Times New Roman';
+            line-height: 15px;
+        }
+
+        .ft5 {
+            font: italic bold 13px 'Times New Roman';
+            line-height: 16px;
+        }
+
+        .ft6 {
+            font: italic bold 13px 'Times New Roman';
+            line-height: 14px;
+        }
+
+        .ft7 {
+            font: bold 13px 'Times New Roman';
+            text-decoration: underline;
+            line-height: 15px;
+        }
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            padding-left: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p3 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p4 {
+            text-align: left;
+            padding-left: 6px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p5 {
+            text-align: left;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .p6 {
+            text-align: left;
+            padding-left: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-right: 156px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p8 {
+            text-align: left;
+            padding-left: 246px;
+            margin-top: 33px;
+            margin-bottom: 0px;
+        }
+
+        .p9 {
+            text-align: left;
+            padding-right: 157px;
+            margin-top: 29px;
+            margin-bottom: 0px;
+        }
+
+        .p10 {
+            text-align: left;
+            padding-right: 224px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 121px;
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 127px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 186px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 163px;
+            vertical-align: bottom;
+        }
+
+        .tr0 {
+            height: 15px;
+        }
+
+        .tr1 {
+            height: 14px;
+        }
+
+        .tr2 {
+            height: 16px;
+        }
+
+        .tr3 {
+            height: 17px;
+        }
+
+        .t0 {
+            width: 248px;
+            font: 13px 'Times New Roman';
+        }
+
+        .t1 {
+            width: 349px;
+            margin-left: 188px;
+            margin-top: 12px;
+            font: 13px 'Times New Roman';
+        }
+    </style>
+</head>
+<body>
+        <div id="page_1">
+            <div id="id_1">
+                <div id="id_1_1">
+                    <p class="p0 ft0">@Model.TituloCabezal</p>
+                </div>
+                <div id="id_1_2">
+                    <p class="p0 ft1">@Model.Ciudad</p>
+                    <table cellpadding=0 cellspacing=0 class="t0">
+                        <tr>
+                            <td class="tr0 td0"><p class="p1 ft2">@Model.NuestraReferencia</p></td>
+                            <td class="tr0 td1"><p class="p2 ft2"><nobr>@Model.NuestraReferenciaValue</nobr></p></td>
+                        </tr>
+                        <tr>
+                            <td class="tr1 td0"><p class="p3 ft3">@Model.SuReferencia</p></td>
+                            <td class="tr1 td1"><p class="p4 ft3">@Model.SuReferenciaValue</p></td>
+                        </tr>
+                        <tr>
+                            <td class="tr2 td0"><p class="p3 ft1">@Model.CobradorReferencia</p></td>
+                            <td class="tr2 td1"><p class="p4 ft1"><nobr>@Model.CobradorReferenciaValue</nobr></p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="id_2">
+                <div id="id_2_1">
+                    <p class="p0 ft4">@Model.Tratamiento1</p>
+                    <p class="p0 ft4">@Model.Direccion1</p>
+                    <p class="p0 ft4">@Model.SubDireccion1</p>
+                    <p class="p5 ft5">@Model.Paso1</p>
+                </div>
+                <div id="id_2_2">
+                    <p class="p0 ft6">@Model.Girado</p>
+                    <p class="p0 ft1">@Model.Direccion2</p>
+                    <p class="p0 ft1">@Model.SubDireccion2</p>
+                    <p class="p0 ft1">@Model.Paso2</p>
+                    <p class="p6 ft1">@Model.Pais2</p>
+                </div>
+            </div>
+            <div id="id_3">
+                <p class="p7 ft1">@Model.Parrafo1</p>
+                <p class="p8 ft7">@Model.DetalleAceptacion</p>
+                <table cellpadding=0 cellspacing=0 class="t1">
+                    @foreach (var item in Model.Letras)
+                    {
+                        <tr>
+                            <td class="tr3 td2"><p class="p3 ft1">@item.LetraNro</p></td>
+                            <td class="tr3 td3"><p class="p3 ft1">@item.Monto</p></td>
+                            <td class="tr3 td4"><p class="p3 ft1">@item.Vence</p></td>
+                        </tr>
+                    }
+                </table>
+                <p class="p9 ft1" style="white-space: pre-wrap;">@Model.PiePagina</p>
+            </div>
+            <div id="id_4">
+                <p class="p0 ft4">_______________________</p>
+                <p class="p11 ft5">Banco de Chile</p>
+            </div>
+        </div>
+</body>
+</html>
+
+

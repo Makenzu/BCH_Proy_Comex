@@ -1,0 +1,49 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.ContabilidadGenerica.UI_Forms.UI_PrtEnt09
+@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div class="container">
+    <h3 class="margin-bottom-double">Participantes</h3>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmConParticipantes", name = "frmConParticipantes" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset class="form-horizontal margin-bottom-triple">
+            <legend>Consulta de Participantes</legend>
+            <div class="row margin-bottom-double">
+                <div class="col-xs-2 label-div">
+                    <label>Nombre o Razón Social</label>
+                </div>
+                <div class="col-xs-3">
+                    @Html.EditorFor(model => model.caja.Text, new { htmlAttributes = new { @class = "form-control", tabindex = "1" } })
+                </div>
+                <div class="col-xs-6">
+                    <button id="btnBuscar" tabindex="2" name="btnBuscar" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="margin-bottom-triple">
+            <legend>Resultado</legend>
+            <div class="table-responsive">
+                <table id="tableParticipantes" name="tableParticipantes" class="table"></table>
+            </div>
+        </fieldset>
+    }
+    <input type="submit" id="btnVolver" name="Command" class="btn btn-default" value="Volver" />
+
+   
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        var queryUrl = '@Url.Action("Consultar_Datos", "Participantes")';
+        var participantesUrl = '@Url.Action("Identificar", "Participantes")';
+
+    </script>
+    @Scripts.Render("~/bundles/ContabilidadGenerica/ParticipanteConsultar")
+}
+
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css" />
+}

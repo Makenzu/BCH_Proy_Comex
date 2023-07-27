@@ -1,0 +1,139 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.Supervisor.FrmTraspDTO
+@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+}
+
+<h2>Reemplazo de usuarios</h2>
+
+@using (Html.BeginForm("Reemplazar", null, FormMethod.Post, new { id = "FrmTrasp", name = "FrmTrasp" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="row" style="margin-bottom:15px">
+                        <div class="col-xs-5">
+                            <label>Usuario a quien reemplazar</label>
+                            @Html.DropDownList("activo", new SelectList(Model.UsuariosActivos), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-xs-5">
+                            <label>Usuario que reemplaza</label>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col-xs-5">
+                            @Html.DropDownList("nuevo", new SelectList(Model.UsuariosNuevos), htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-1">
+                            <button id="btn_ok" tabindex="12" class="btn btn-success input-group-addon" style="width: 39px; color: #fff" data-bind="click: add_btn_click">
+                                <i class="glyphicon glyphicon-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <input type="hidden" id="reemplazanUsuarios" name="reemplazanUsuarios" />
+                            <select id="usuarios" name="usuarios" tabindex="4" data-bind="options: usuariosActuales, optionsText: 'id', optionsValue: 'nombre', value: selected" size="5" class="form-control"></select>
+                        </div>
+                        <div class="col-xs-1">
+                            <button id="btn_no" tabindex="14" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff" data-bind="click: remove_btn_click">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8" style="margin-top:25px;">
+                            <input type="submit" name="Command" id="btnAceptar" value="Aceptar" class="btn btn-primary" />
+                            <input type="button" name="Command" id="btnCancelar" value="Cancelar" class="btn btn-default" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        @*<div class="col-xs-10">
+                            <fieldset class="margin-bottom-triple">
+                                <label class="control-label">@Model.X_Mxg</label>
+                                <hr />
+                                <div class="table-responsive">
+                                    <table id="tableEspecialistas" name="tableEspecialistas" class="table"></table>
+                                </div>
+                            </fieldset>
+
+                        </div>*@
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        var baseUrl = $("#base_url").val();
+        $("#btnCancelar").click(function () { window.location.href = baseUrl + "Supervisor"; });
+
+        var viewModel = {
+            usuariosActuales: ko.observableArray([]),
+            selected: ko.observable(),
+            add_btn_click: function () {
+                var newValue = $("#nuevo").val();
+                var matching = viewModel.usuariosActuales().filter(function (item) {
+                    return item.id == newValue;
+                });
+                if (matching.length == 0) {
+                    viewModel.usuariosActuales.push({ id: newValue, nombre: newValue });
+                } else {
+                    showAlert("Error en la operación.", "Detalles: El Especialista que acaba de seleccionar ya se encuentra como reemplazante del Especialista : " + $("#activo").val(), "alert-danger", true);
+                }
+                    
+            },
+            remove_btn_click: function () {
+                viewModel.usuariosActuales.remove(function (item) {
+                    return item.id == viewModel.selected();
+                });
+            }
+        }
+        $(document).ready(function () {
+            ko.applyBindings(viewModel);
+
+            $("#activo").change(obtenerRemplazos);
+            obtenerRemplazos();
+
+            @*$("#btnCancelar").click(function () {
+                window.location = '@Url.Action("Index", "Inicio")';
+            });*@
+
+            $("#FrmTrasp").submit(function () {
+                $("#reemplazanUsuarios").val(viewModel.usuariosActuales().map(function (i) { return i.id; }).join(";"));
+                return true;
+            });
+        });
+
+        function obtenerRemplazos() {
+            $.getJSON('@Url.Action("ObtenerReemplazos")', { usuario: $("#activo").val() }, function (data) {
+                var items = viewModel.usuariosActuales;
+                items.removeAll();
+                items.push.apply(items, data);
+            });
+        }
+
+        
+    </script>
+    @*<script src='@Url.Content("~/Areas/Supervisor/Scripts/Supervisor.Especialistas.js")'></script>*@
+}

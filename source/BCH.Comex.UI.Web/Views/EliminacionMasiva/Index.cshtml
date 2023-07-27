@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Eliminación Masiva Mensajes Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/eliminacion-masiva-inv.png");
+}
+
+<div class="container" id="msg-zone" style="padding-top: 20px;">
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>
+            <i class="glyphicon glyphicon-check"></i>&nbsp;Eliminar por mensaje
+        </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title" id="titleFiltro">Seleccionar Mensaje a Eliminar</h2>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("BuscarSwifts", "ConsultaSwift"))
+                {
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("Sesion", "Sesión", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        @Html.TextBox("sesion", null, new { @class = "form-control", @type = "number", @min = "0", @max = "999", @maxlength = "3", @oninput = "Largo(this)", @onkeypress = "return EsNumerico(event)" })
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorSesion">La sesión es requerida</label>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Secuencia", "Secuencia", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        @Html.TextBox("secuencia", null, new { @class = "form-control", @type = "number", @min = "0", @max = "999999", @maxlength = "6", @oninput = "Largo(this)", @onkeypress = "return EsNumerico(event)" })
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorSecuencia">La secuencia es requerida</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-xs-10">
+                                    <div class="btn-group">
+                                        <button type="button" id="btnEliminar" class="btn btn-primary"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;&nbsp;Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalConfirmar" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">ELIMINA MENSAJES</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtMensajeAlerta">¿Está seguro que desea Eliminar todos los Mensajes SWIFT de la(s) Casilla(s) Seleccionada(s) ?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnOkConfirmar" style="margin-bottom: 0px">Confirmar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="reloadtable">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        function Largo(object) {
+            if (object.value.length > object.maxLength)
+                object.value = object.value.slice(0, object.maxLength)
+        }
+
+        function EsNumerico(evt) {
+            var theEvent = evt || window.event;
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+
+        $(document).ready(function () {
+            $.fx.off = true;
+            $.ajaxSetup({
+                cache: false
+            });
+            //activo el bloquear la UI en requests asincronos
+            $(document).ajaxStart(function () { $.blockUI({ message: '<h6>Cargando...</h6>' }) })
+                .ajaxStop($.unblockUI);
+
+            var eliminar = function () {
+                $('#lblErrorSesion').hide()
+                $('#lblErrorSecuencia').hide()
+                //Validamos los campos que no estén vacíos
+                var sesion = $('#sesion');
+                var secuencia = $('#secuencia');
+                if (sesion.val() == '') {
+                    sesion.focus();
+                    $('#lblErrorSesion').show()
+                    return;
+                }
+                if (secuencia.val() == '') {
+                    secuencia.focus();
+                    $('#lblErrorSecuencia').show()
+                    return;
+                }
+                $.get('@Url.Action("BuscaMensajeEliminar")', { sesion: sesion.val(), secuencia: secuencia.val() }, function (data) {
+                    var mensaje = "ATENCION. El mensaje se encuentra en la casilla " + data.Casilla + " en el estado " + data.Estado + " ¿Desea Continuar la eliminación?";
+                    $('#txtMensajeAlerta').text(mensaje);
+                    $('#modalConfirmar').modal();
+                }).fail(function () {
+                    //console.log("Falla la búsqueda");
+                    showAlert("", "ATENCIÓN. El mensaje no existe.", "alert-warning", true);
+                    //console.log("Después de mostrar el mensaje");
+                });
+            };
+
+            var confirmar = function () {
+                var sesion = $('#sesion').val();
+                var secuencia = $('#secuencia').val();
+                $.post('@Url.Action("EliminaMensaje")', { sesion: sesion, secuencia: secuencia }, function () {
+                    showAlert("", "ATENCIÓN. El mensaje se ha eliminado correctamente.", "alert-success", true);
+                    $('#sesion').val("");
+                    $('#secuencia').val("");
+                });
+            };
+            //showAlert("Fsasasas", "ATENCIÓN. El mensaje no existe.", "alert-warning", false);
+            $('#btnEliminar').click(eliminar);
+            $('#btnOkConfirmar').click(confirmar);
+
+        })
+    </script>
+}
+

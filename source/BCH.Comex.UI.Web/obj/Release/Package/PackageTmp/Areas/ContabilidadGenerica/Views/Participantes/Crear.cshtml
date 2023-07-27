@@ -1,0 +1,145 @@
+﻿@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+<div style="margin-left: 40px; margin-top: 40px;" id="frmCrear">
+    <div class="row">
+        <label data-bind="text: Text"></label>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label data-bind="text: _Label_0.Text"></label>
+                <!-- ko if: Rut.Tag()=='0' -->
+                <input id="RUT" type="text" tabindex="1" class="form-control" data-bind="value: MaskedRut" />
+                <!-- /ko -->
+                <!-- ko if: Rut.Tag()=='1' -->
+                <input id="RUT" type="text" tabindex="1" class="form-control" data-bind="value: MaskedRut" />
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="checkbox">
+                <label style="padding-top: 20px;">
+                    <input type="checkbox" tabindex="2" data-bind="checked: EsBanco.Checked, event:{change:es_banco_change} " />
+                    Es Banco
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Nombre o Razón Social</label>
+                <input type="text" tabindex="3" class="form-control" data-bind="value: Nombre.Text" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text" tabindex="4" class="form-control" data-bind="value: Direccion.Text" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Comuna o Localidad</label>
+                <input type="text" tabindex="5" class="form-control" data-bind="value: comuna.Text" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Región o Estado</label>
+                <input type="text" tabindex="6" class="form-control" data-bind="value: Estado.Text" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>País</label>
+                <select id="Pais" tabindex="7" data-bind="options: Pais.Items, optionsText: 'Value', optionsValue: 'Data', value: Pais.Value,optionsCaption: '--Seleccione--', event:{change:pais_change}" class="form-control"></select>
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Ciudad</label>
+                <input type="text" tabindex="7" class="form-control" data-bind="value: Ciudad.Text" />
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 40px;">
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input id="Telefono" type="text" tabindex="8" class="form-control" data-bind="value: MaskedPhone" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Casilla Banco Chile</label>
+                <input type="text" class="form-control" tabindex="9" data-bind="value: cas_bco.Text, event:{blur:cas_bco_lost_focus}" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Casilla Postal</label>
+                <input type="text" class="form-control" tabindex="10" data-bind="value: cas_postal.Text, event:{blur:cas_pos_lost_focus}" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Código Postal</label>
+                <input type="text" class="form-control" tabindex="11" data-bind="value: Postal.Text" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Fax</label>
+                <input id="Fax" type="text" class="form-control" tabindex="12" data-bind="value: MaskedFax, event:{blur:fax_lost_focus}" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="form-group">
+                <label>Télex</label>
+                <input type="text" class="form-control" tabindex="13" data-bind="value: Telex.Text" />
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <label>Enviar Correspondencia A</label>
+            <br />
+            <label class="radio-inline">
+                <input type="radio" name="enviar" tabindex="14" value="DI" data-bind="checked: enviaCorrespondencia, enable: _envio_0.Enabled" />
+                Dirección
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="enviar" tabindex="15" value="FA" data-bind="checked: enviaCorrespondencia, enable: _envio_1.Enabled" />
+                Fax
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="enviar" tabindex="16" value="CB" data-bind="checked: enviaCorrespondencia, enable: _envio_2.Enabled" />
+                Casilla Bco. Chile
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="enviar" tabindex="17" value="CP" data-bind="checked: enviaCorrespondencia, enable: _envio_3.Enabled" />
+                Casilla Postal
+            </label>
+        </div>
+        <div class="col-xs-5">
+            <button type="button" class="btn btn-danger pull-left" tabindex="18" name="cancel" data-bind="click: cancelar">Cancelar</button>
+            <button type="button" class="btn btn-primary pull-right" tabindex="19" name="accept" data-bind="click: aceptar">Aceptar</button>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/ParticipanteCrear")
+}
+
+@section css{
+    <style>
+        /*#frmCrear input{
+            text-transform: uppercase!important;
+        }*/
+    </style>
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="646ca40e-518d-4b3c-87cc-0a8a4d611a3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas8.xsd" MetadataType="Schema" ID="4ca6c2fb-b104-4c96-be8a-643c2f04c7a5" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FCS000029_ConsultaInformacionBasicaEmpresas%2FSpecifications%2FWSDL%2FCS000029_OpConsultarInfoBasicaResponse" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas81.xsd" MetadataType="Schema" ID="1ac4ee4f-c103-4b6a-a345-8398d3c9fd23" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="ConsultaInformacionBasicaEmpresas1.wsdl" MetadataType="Wsdl" ID="ed77e761-dc3a-42b8-8f0f-435ad4a1591d" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?WSDL" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas82.xsd" MetadataType="Schema" ID="aa54a448-735f-4c67-87fc-324bfbda82d2" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDireccion" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas83.xsd" MetadataType="Schema" ID="0f46823c-5d49-461a-95ca-456f571c625a" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas84.xsd" MetadataType="Schema" ID="9669cd38-999d-4168-81ae-ff5c39e1440f" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FTelefono" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas85.xsd" MetadataType="Schema" ID="ed5e3083-6e4e-44bb-a64c-771f946a6d8d" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDatosEjecutivo" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas86.xsd" MetadataType="Schema" ID="4169e354-a791-4017-b894-93e93bd9fb5c" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FEmail" />
+    <MetadataFile FileName="CS000029_ConsultaInformacionBasicaEmpresas87.xsd" MetadataType="Schema" ID="3b029db8-5754-4de2-984f-e8b1c12abea3" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000029_ConsultaInformacionBasicaEmpresas?SCHEMA%2FPX_SiebelClientes%2FCS000029_ConsultaInformacionBasicaEmpresas%2FSpecifications%2FWSDL%2FCS000029_OpConsultarInfoBasicaRequest" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,165 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ReportePlanillaViewModel
+@using BCH.Comex.Core.BL.XGPL
+@{
+    ViewBag.Title = Model.Titulo;    
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-planillas-inv.png")" />
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-table")
+    @Scripts.Render("~/bundles/bootstrap-table-export")
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    <script>
+        var $tabla;
+
+        $.blockUI({ message: '<h6>Cargando...</h6>' });
+
+        $(function () {
+
+            $tabla = $('#tablaPlanillas');
+            $tabla.bootstrapTable({
+                classes: 'table-sm table-bordered table-condensed',
+                pagination: true,
+                sortable: true,
+                locale: "es-SP",
+                pageSize: 10,
+                pageList: [10, 25, 50, 100, 200, 500, 1000, 2000],
+                search: true,
+                showExport: true,
+                exportTypes: ['excel', 'pdf'],
+                exportDataType: 'all',
+                exportOptions: {
+                    fileName: '@Model.Titulo - @DateTime.Now.ToString("ddMMyyyy_hhmmss")',
+                    worksheetName: ['@Model.Titulo'],
+                    tableName: '@Model.Titulo'
+                },
+            });
+
+            $.unblockUI();
+            $('#tablaPlanillas').show();
+        });
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .t0 {
+            width: 100%;
+        }
+
+        .t0_td0 {
+            width: 40%;
+        }
+
+        .t0_td1 {
+            width: 70%;
+        }
+
+        .t0_td2 {
+            width: 10%;
+        }
+
+        .t0_td3 {
+            width: 20%;
+        }
+
+        .subtotal td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="width: 100%; background-color: #0066a6; height: 40px; top: 0px; background-color: #002464;">
+            <div class="tit">&nbsp;</div>
+        </div>
+            
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="t0_td0" align="left">
+                    <h3 style="font-style: italic; font-family: 'Times New Roman'"><strong>Comercio Exterior</strong></h3>
+                </td>
+                <td class="t0_td1"><h3><u><strong>Planillas (Sección)</strong></u></h3></td>
+            </tr>
+        </table>
+
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8">Fecha</div>
+            <div class="col-xs-3">: @Model.Fecha.FormatoFecha()</div>
+        </div>
+
+        <p>Especialista: @Model.Especialista</p>
+        @if (Model != null)
+        {
+            <table id="tablaPlanillas" style="display:none">
+                <thead>
+                    <tr>
+                        <th data-align="center" data-sortable="true" data-field="NumeroPresentacion"># Plan.</th>
+                        <th data-align="center" data-sortable="true" data-field="FechaPresentacion">Fecha Presentacion</th>
+                        <th data-align="center" data-sortable="true" data-field="tipo">Tipo</th>
+                        <th data-align="center" data-sortable="true" data-field="TipoPlanilla">Cód.</th>
+                        <th data-align="center" data-sortable="true" data-field="CodComercio">Cód. Com</th>
+                        <th data-align="center" data-sortable="true" data-field="Operacion">Operación</th>
+                        <th data-align="center" data-sortable="true" data-field="CentroCostoCodigoUsuario">Espec.</th>
+                        <th data-align="center" data-sortable="true" data-field="NombreCliente">Nombre</th>
+                        <th data-align="center" data-sortable="true" data-field="prtexp">Rut</th>
+                        <th data-align="center" data-sortable="true" data-field="SiglaMoneda">Moneda</th>
+                        <th data-align="center" data-sortable="true" data-field="CodigoMoneda">Cod. Mon</th>
+                        <th data-align="center" data-sortable="true" data-field="MontoLiquidadoEgr">Egresos</th>
+                        <th data-align="center" data-sortable="true" data-field="MontoLiquidadoIngr">Ingresos</th>
+                        <th data-align="center" data-sortable="true" data-field="OpeRelacionada">Ope. Rel</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.Planillas)
+                {
+                <tr>
+                    <td data-align="center">@item.NumeroPresentacion</td>
+                    <td data-align="center">@item.FechaPresentacion</td>
+                    <td data-align="center">@item.tipo</td>
+                    <td data-align="center">@item.TipoPlanilla</td>
+                    <td data-align="center">@item.CodComercio</td>
+                    <td data-align="center">@item.Operacion</td>
+                    <td data-align="center">@item.CentroCosto-@item.CodigoUsuario</td>
+                    <td data-align="center">@item.NombreCliente</td>
+                    <td data-align="center">@item.rutexp.TrimStart('0').FormatoRut()</td>
+                    <td data-align="center">@item.SiglaMoneda</td>
+                    <td data-align="center"> @(item.CodigoMoneda.HasValue ? item.CodigoMoneda.ToString() : "")</td>
+                    <td data-align="center" class="monto">@item.MontoLiquidadoEgr.FormatoDecimal()</td>
+                    <td data-align="center" class="monto">@item.MontoLiquidadoIngr.FormatoDecimal()</td>
+                    <td data-align="center">@item.OpeRelacionada</td>
+                </tr>
+                }
+            </table>
+        }
+    </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,445 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.FundTransfer.DataTypes.PlanillaInvisible
+@{
+    Layout = null;
+}
+
+<style type="text/css">
+    body {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    #page_1 {
+        position: relative;
+        overflow: hidden;
+        margin: 48px 0px 639px 12px;
+        padding: 0px;
+        border: none;
+        width: 804px;
+    }
+
+    textLabel {
+        background-color: green;
+        color: red;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+
+
+    .ft0 {
+        font: 1px 'Times New Roman';
+        line-height: 1px;
+    }
+
+    .ft1 {
+        font: 12px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .ft2 {
+        font: 12px 'Times New Roman';
+        line-height: 13px;
+    }
+
+    .ft3 {
+        font: 1px 'Times New Roman';
+        line-height: 6px;
+    }
+
+    .ft4 {
+        font: 11px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .ft5 {
+        font: 12px 'Times New Roman';
+        line-height: 15px;
+    }
+
+    .ft6 {
+        font: 1px 'Times New Roman';
+        line-height: 11px;
+    }
+
+    .ft7 {
+        font: 12px 'Times New Roman';
+        line-height: 11px;
+    }
+
+    .ft8 {
+        font: 12px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft9 {
+        font: 1px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft10 {
+        font: 1px 'Times New Roman';
+        line-height: 10px;
+    }
+
+    .ft11 {
+        font: 9px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .p0 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p1 {
+        text-align: left;
+        padding-left: 134px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p2 {
+        text-align: left;
+        padding-left: 78px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p3 {
+        text-align: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p4 {
+        text-align: left;
+        padding-left: 29px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p5 {
+        text-align: left;
+        padding-left: 137px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p6 {
+        text-align: right;
+        padding-right: 35px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p7 {
+        text-align: left;
+        padding-left: 64px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p8 {
+        text-align: right;
+        padding-right: 78px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p9 {
+        text-align: right;
+        padding-right: 13px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p10 {
+        text-align: left;
+        padding-left: 674px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .p11 {
+        text-align: left;
+        padding-left: 138px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .p12 {
+        text-align: left;
+        padding-left: 633px;
+        margin-top: 17px;
+        margin-bottom: 0px;
+    }
+
+    .p13 {
+        text-align: left;
+        padding-left: 419px;
+        margin-top: 134px;
+        margin-bottom: 0px;
+    }
+
+    .td0 {
+        padding: 0px;
+        margin: 0px;
+        width: 41px;
+        vertical-align: bottom;
+    }
+
+    .td1 {
+        padding: 0px;
+        margin: 0px;
+        width: 277px;
+        vertical-align: bottom;
+    }
+
+    .td2 {
+        padding: 0px;
+        margin: 0px;
+        width: 81px;
+        vertical-align: bottom;
+    }
+
+    .td3 {
+        padding: 0px;
+        margin: 0px;
+        width: 74px;
+        vertical-align: bottom;
+    }
+
+    .td4 {
+        padding: 0px;
+        margin: 0px;
+        width: 190px;
+        vertical-align: bottom;
+    }
+
+    .td5 {
+        padding: 0px;
+        margin: 0px;
+        width: 140px;
+        vertical-align: bottom;
+    }
+
+    .td6 {
+        padding: 0px;
+        margin: 0px;
+        width: 358px;
+        vertical-align: bottom;
+    }
+
+    .tr0 {
+        height: 15px;
+    }
+
+    .tr1 {
+        height: 21px;
+    }
+
+    .tr2 {
+        height: 6px;
+    }
+
+    .tr3 {
+        height: 23px;
+    }
+
+    .tr4 {
+        height: 11px;
+    }
+
+    .tr5 {
+        height: 12px;
+    }
+
+    .tr6 {
+        height: 27px;
+    }
+
+    .tr7 {
+        height: 24px;
+    }
+
+    .tr8 {
+        height: 34px;
+    }
+
+    .tr9 {
+        height: 10px;
+    }
+
+    .tr10 {
+        height: 16px;
+    }
+
+    .t0 {
+        width: 803px;
+        font: 12px 'Times New Roman';
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div id="page_1">
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="tr0 td0"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr0 td1"><p class="p1 ft1">@*154029*@@Html.DisplayFor(model => model.Vplis_NumPli)</p></td>
+                <td class="tr0 td2"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr0 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td rowspan=2 class="tr1 td4"><p class="p2 ft2">@*Alemania*@@Html.DisplayFor(model => model.VPai_Pai_PaiNom)</p></td>
+                <td rowspan=2 class="tr1 td5"><p class="p2 ft2">@Html.DisplayFor(model => model.Vplis_codpai)</p></td>
+            </tr>
+           
+             <tr>
+                <td class="tr2 td0"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td1"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td2"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td3"><p class="p0 ft3">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr3 td0"><p class="p3 ft1">@*210*@@Html.DisplayFor(model => model.Vplis_CodOci)</p></td>
+                <td class="tr3 td1"><p class="p1 ft2">@*11/03/2015*@@Html.DisplayFor(model => model.Vplis_FecPli)</p></td>
+                <td class="tr3 td2"><p class="p0 ft4">@*SANTIAGO*@@Html.DisplayFor(model => model.VPbc_Pbc_PbcDes)</p></td>
+                <td class="tr3 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr3 td4"><p class="p4 ft5">@*25*@@Html.DisplayFor(model => model.Vplis_PlzBcc)</p></td>
+                <td class="tr3 td5"><p class="p0 ft0">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr4 td0"><p class="p0 ft6">&nbsp;</p></td>
+                <td class="tr4 td1"><p class="p0 ft6">&nbsp;</p></td>
+                <td class="tr4 td2"><p class="p0 ft6">&nbsp;</p></td>
+                <td class="tr4 td3"><p class="p0 ft6">&nbsp;</p></td>
+                <td class="tr4 td4"><p class="p3 ft7">@*Euro*@@Html.DisplayFor(model => model.VMnd_Mnd_MndNom)</p></td>
+                <td class="tr4 td5"><p class="p2 ft7">@*142*@@Html.DisplayFor(model => model.Vplis_CodMndBC)</p></td>
+            </tr>
+            <tr>
+                <td class="tr5 td0"><p class="p6 ft8">@*9*@@Html.DisplayFor(model => model.Vplis_TipPln)</p></td>
+                <td class="tr5 td1"><p class="p0 ft9">&nbsp;</p></td>
+                <td class="tr5 td2"><p class="p0 ft9">&nbsp;</p></td>
+                <td class="tr5 td3"><p class="p3 ft8"><nobr>@*076007212-5*@@Html.DisplayFor(model => model.Vplis_rutcli)</nobr></p></td>
+                <td class="tr5 td4"><p class="p0 ft9">&nbsp;</p></td>
+                <td class="tr5 td5"><p class="p0 ft9">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft0">&nbsp;</p></td>
+                <td rowspan=2 class="tr6 td1"><p class="p7 ft1">@*Aguas CCU-Nestle Chile S.A.*@@Html.DisplayFor(model => model.DatPrt1)</p></td>
+                <td class="tr1 td2"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td4"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td5"><p class="p8 ft1">@*214,15*@@Html.DisplayFor(model => model.Vplis_MtoOpe)</p></td>
+            </tr>
+            <tr>
+                <td class="tr2 td0"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td2"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td3"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td4"><p class="p0 ft3">&nbsp;</p></td>
+                <td class="tr2 td5"><p class="p0 ft3">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr7 td0"><p class="p0 ft0">&nbsp;</p></td>
+                <td rowspan=2 class="tr8 td1"><p class="p7 ft2">@*Vitacura No.2670 Piso 23*@@Html.DisplayFor(model => model.DatPrt2)</p></td>
+                <td class="tr7 td2"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr7 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr7 td4"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr7 td5"><p class="p8 ft1">@*0,8925*@@Html.DisplayFor(model => model.Vplis_Mtopar)</p></td>
+            </tr>
+            <tr>
+                <td class="tr9 td0"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td2"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td3"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td4"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td5"><p class="p0 ft10">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td1"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td2"><p class="p0 ft0">&nbsp;</p></td>
+                <td rowspan=2 class="tr6 td3"><p class="p9 ft2">@*20.00.00*@@Html.DisplayFor(model => model.Vplis_codcom)</p></td>
+                <td rowspan=2 class="tr6 td4"><p class="p4 ft2">@*000*@@Html.DisplayFor(model => model.Vplis_Concep)</p></td>
+                <td class="tr1 td5"><p class="p8 ft2">@*239,94*@@Html.DisplayFor(model => model.Vplis_MtoDol)</p></td>
+            </tr>
+            <tr>
+                <td class="tr2 td0"><p class="p0 ft3"></p></td>
+                <td colspan=2 rowspan=2 class="tr10 td6"><p class="p7 ft5">@Model.VTcp_DesTcp</p></td>
+                <td class="tr2 td5"><p class="p0 ft3"></p></td>
+            </tr>
+            <tr>
+                <td class="tr9 td0"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td3"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td4"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td5"><p class="p0 ft10">&nbsp;</p></td>
+            </tr>
+
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td1"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr1 td2"><p class="p0 ft0">&nbsp;</p></td>
+                <td rowspan=2 class="tr6 td3"><p class="p9 ft2">&nbsp;</p></td>
+                <td rowspan=2 class="tr6 td4"><p class="p4 ft2">&nbsp;</p></td>
+                <td class="tr1 td5"><p class="p8 ft2">@*615,94*@@Html.DisplayFor(model => model.Vplis_TipCam)</p></td>
+            </tr>
+
+            <tr>
+                <td class="tr9 td0"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td3"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td4"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td5"><p class="p0 ft10">&nbsp;</p></td>
+            </tr>
+
+            <tr>
+                <td class="tr3 td0"><p class="p3 ft1">&nbsp;</p></td>
+                <td class="tr3 td1"><p class="p1 ft2">@*017822*@@Html.DisplayFor(model => model.Vplis_AnuNum)</p></td>
+                <td class="tr3 td2"><p class="p0 ft4">@*14/10/2015*@@Html.DisplayFor(model => model.Vplis_AnuFec)</p></td>
+                <td class="tr3 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr3 td4"><p class="p4 ft5">@*25*@@Html.DisplayFor(model => model.Vplis_AnuPbc)</p></td>
+                <td class="tr3 td5"><p class="p0 ft0">&nbsp;</p></td>
+            </tr>
+
+            <tr>
+                <td class="tr9 td0"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td3"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td4"><p class="p0 ft10">&nbsp;</p></td>
+                <td class="tr9 td5"><p class="p0 ft10">&nbsp;</p></td>
+            </tr>
+
+            <tr>
+                <td class="tr3 td0"><p class="p3 ft1">&nbsp;</p></td>
+                <td class="tr3 td1"><p class="p1 ft2">&nbsp;</p></td>
+                <td class="tr3 td2"><p class="p0 ft4">&nbsp;</p></td>
+                <td class="tr3 td3"><p class="p0 ft0">&nbsp;</p></td>
+                <td class="tr3 td4"><p class="p4 ft5">@*25*@@Html.DisplayFor(model => model.Vplis_ApcPbc)</p></td>
+                <td class="tr3 td5"><p class="p0 ft0">&nbsp;</p></td>
+            </tr>
+        
+        </table>
+        @*<p class="p10 ft7">@Html.DisplayFor(model => model.Vplis_TipCam)</p>*@
+        <p class="p12 ft5">@*147.271,00*@@Html.DisplayFor(model=>model.Vplis_MtoNac)</p>
+        <p class="p13 ft8" style="padding-left:0;">@*0000000*@@Html.DisplayFor(model => model.Vplis_CodEOR)</p>
+        <p class="p13 ft5" style="margin-top: 0px;">@*753-20-57-000-16878*@@String.Join(Environment.NewLine,Model.Palabras.ToArray())</p>
+        <table class="t0" style="margin-top:20px">
+            <tr>
+                <td style="padding-left:21px;  width:120px;">
+                    @Model.Vplis_NumCre
+                </td>
+                <td style="width:120px">@(Model.Vplis_FecCr == "01-01-1900" ? "" : Model.Vplis_FecCr)</td>
+                <td>@Model.Vplis_MndCre</td>
+            </tr>
+        </table>
+        <p class="t0" style="margin-top: 20px; padding-left:135px;">@Model.Vplis_MtoCre</p>
+    </div>
+}

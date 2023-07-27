@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaDireccionesProducto/OpConsultarDireccionesProductoRequest" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaDireccionesProducto/OpConsultarDireccionesProductoRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="datosEntrada">
+    <xsd:sequence>
+      <xsd:element name="rutCliente" type="xsd:string" />
+      <xsd:element name="numeroProducto" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

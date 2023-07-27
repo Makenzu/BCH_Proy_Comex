@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE544081-C6B2-4C2D-9236-4FF67BFEFBDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Core.Entities.Swift</RootNamespace>
+    <AssemblyName>BCH.Comex.Core.Entities.Swift</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureTest|AnyCPU'">
+    <OutputPath>bin\AzureTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISTest|AnyCPU'">
+    <OutputPath>bin\IISTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\IISRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\IISDesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PaymentPlus.cs" />
+    <Compile Include="CampoMonto.cs" />
+    <Compile Include="Centinela\Alerta.cs" />
+    <Compile Include="Centinela\ConfiguracionAlerta.cs" />
+    <Compile Include="EstadisticaCasillla.cs" />
+    <Compile Include="ImageStringEnvioAutomatico.cs" />
+    <Compile Include="joal.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LineaEditorMensajeSwift.cs" />
+    <Compile Include="origen_recep_s01_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partials\proc_sw_env_trae_datos_msg_Result.cs" />
+    <Compile Include="Partials\proc_sw_env_trae_detfile_MS_Result.cs" />
+    <Compile Include="Partials\proc_sw_env_trae_detfile_Result.cs" />
+    <Compile Include="Partials\proc_sw_env_trae_files_fecha_string_MS_Result.cs" />
+    <Compile Include="Partials\proc_sw_env_trae_nop_MS_Result.cs" />
+    <Compile Include="Partials\proc_sw_env_trae_nop_Result.cs" />
+    <Compile Include="Partials\proc_sw_log_trae_msg_Result.cs" />
+    <Compile Include="Partials\proc_sw_trae_fmt_largo_Result.cs" />
+    <Compile Include="Partials\sw_casillas.cs" />
+    <Compile Include="Partials\sw_monedas.cs" />
+    <Compile Include="Partials\sw_tipos_msg.cs" />
+    <Compile Include="Partials\sw_msgsend_firma.cs" />
+    <Compile Include="PoderUsuario.cs" />
+    <Compile Include="ProcSwTraeFmtCampos.cs" />
+    <Compile Include="LineaDetalleMensajeSwift.cs" />
+    <Compile Include="Partials\ResultadoBusquedaSwift.cs" />
+    <Compile Include="proc_rh_swi_001DTO.cs" />
+    <Compile Include="proc_sw_busca_eliminar_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_del_firnulDTO.cs" />
+    <Compile Include="proc_sw_env_del_firnul_Result.cs" />
+    <Compile Include="proc_sw_env_del_nopDTO.cs" />
+    <Compile Include="proc_sw_env_estadist_msgDTO.cs" />
+    <Compile Include="proc_sw_env_estadist_msg_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_graba_bloDTO.cs" />
+    <Compile Include="proc_sw_env_graba_desbloDTO.cs" />
+    <Compile Include="proc_sw_env_graba_envDTO.cs" />
+    <Compile Include="proc_sw_env_graba_fileDTO.cs" />
+    <Compile Include="proc_sw_env_graba_ftp_reeDTO.cs" />
+    <Compile Include="proc_sw_env_graba_nulDTO.cs" />
+    <Compile Include="proc_sw_env_graba_recDTO.cs" />
+    <Compile Include="proc_sw_env_graba_resDTO.cs" />
+    <Compile Include="proc_sw_env_msg_por_rut_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_msg_por_rut_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_test_firma_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_aup_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_detfile_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_files_fecha_string_MS_Result.cs" />
+    <Compile Include="proc_sw_env_trae_ftp_err_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_nop_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_log_trae_enc_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_log_trae_msg_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_aut_pend_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_aut_pend_Result.cs" />
+    <Compile Include="proc_sw_env_trae_aut_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_aut_rango_Result.cs" />
+    <Compile Include="proc_sw_env_trae_blo_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_blo_rango_Result.cs" />
+    <Compile Include="proc_sw_env_trae_datos_msg_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_cnf_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_enc_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_datos_msg_Result.cs" />
+    <Compile Include="proc_sw_env_trae_detfile_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_imp_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_iny_rango_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_dev_firma_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_dev_firma_Result.cs" />
+    <Compile Include="proc_sw_env_trae_env_rangoDTO.cs" />
+    <Compile Include="proc_sw_env_trae_env_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_ree_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_bancos2_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_bancos_MS_DTO.cs" />
+    <Compile Include="proc_sw_env_trae_filesDTO.cs" />
+    <Compile Include="proc_sw_env_trae_files_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_files_Result.cs" />
+    <Compile Include="proc_sw_env_trae_firmas_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_firmas_Result.cs" />
+    <Compile Include="proc_sw_env_trae_ftp_err_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_bancos_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_bancos_verificados_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_CampoMensajes_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_CampoMensajes_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_CaracterInvalido_MS_DTO.cs" />
+    <Compile Include="proc_sw_env_trae_ing_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_CaracterInvalido_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_casillas_MS_DTO.cs" />
+    <Compile Include="proc_sw_env_trae_mod_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_casillas_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_count_bancos_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_firma_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_fmt_largo_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_noaut_rangoDTO.cs" />
+    <Compile Include="proc_sw_env_trae_nop_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_nul_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_nul_rango_Result.cs" />
+    <Compile Include="proc_sw_env_trae_pro_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_env_trae_pro_rango_Result.cs" />
+    <Compile Include="proc_sw_env_trae_rech_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_FormatoMensajes_MS_DTO.cs" />
+    <Compile Include="proc_sw_env_trae_rech_swiDTO.cs" />
+    <Compile Include="proc_sw_log_trae_aut_rangoDTO.cs" />
+    <Compile Include="proc_sw_log_trae_enc_rangoDTO.cs" />
+    <Compile Include="proc_sw_log_trae_msgsendDTO.cs" />
+    <Compile Include="proc_sw_log_trae_msgsend_MS_Result.cs" />
+    <Compile Include="proc_sw_rec_controlDTO.cs" />
+    <Compile Include="proc_sw_rec_estadist_msgDTO.cs" />
+    <Compile Include="proc_sw_rec_trae_datos_msg_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_FormatoMensajes_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_GlosaCampos_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_GlosaCampos_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_monedas_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_monedas_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_paridades_MS_DTO.cs" />
+    <Compile Include="proc_sw_rec_trae_enc_rango_Result.cs" />
+    <Compile Include="proc_sw_rec_trae_iny_rangoDTO.cs" />
+    <Compile Include="proc_sw_rec_trae_otr_rango_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_rec_trae_otr_rango_Result.cs" />
+    <Compile Include="proc_sw_rec_trae_resumen_msgDTO.cs" />
+    <Compile Include="proc_sw_trae_firma_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_paridad_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_TiposMensajes_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_TiposMensajes_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_usuarios_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_usuarios_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_usuarios_MS_Result1.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_valoresCampos_MS_DTO.cs" />
+    <Compile Include="proc_sw_trae_fmt_largo_Result.cs" />
+    <Compile Include="proc_sw_trae_MensajesEliminar_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_sw_trae_valoresCampos_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_trae_bancos_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_trae_bancos_Result.cs" />
+    <Compile Include="proc_trae_tipo_campos_MS_Result.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_trae_tipo_campos_Result.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoBusquedaSwift.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SwiftModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_bancos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_bancos_autorizados.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_campos_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_caracter_error.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_casillas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_ciclos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_configura.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_estados_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_firmas_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_folios.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_formatos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_formato_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_glosa_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_log_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_mensajes.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_mensajes_add.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_monedas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_add.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_cambio_estados.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_cmx.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_cmx_dia.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_detfile.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_files.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_firma.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_firmaDTO.cs" />
+    <Compile Include="sw_msgsend_ftp.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_log.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_msgsend_nop.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_orden_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_paridad.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_regla_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_sce_bic.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_tipos_campos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_tipos_firmas.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_tipos_msg.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_users_srm.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_users_swift.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sw_valor_campos.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_sw_nets.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_sw_nets_det.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_sw_nets_sor.cs">
+      <DependentUpon>SwiftModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="SwiftModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SwiftModel1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

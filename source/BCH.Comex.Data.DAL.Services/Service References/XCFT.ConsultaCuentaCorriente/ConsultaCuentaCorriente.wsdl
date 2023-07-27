@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N1="http://osb.bancochile.cl/ConsultaCuentaCorriente/" name="ConsultaCuentaCorriente" targetNamespace="http://osb.bancochile.cl/ConsultaCuentaCorriente/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:tns="http://osb.bancochile.cl/ConsultaCuentaCorriente/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:Q1="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteRequest" xmlns:Q2="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteResponse" xmlns:Q3="http://osb.bancochile.cl/common/HeaderRequest" xmlns:Q4="http://osb.bancochile.cl/common/HeaderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://osb.bancochile.cl/ConsultaCuentaCorriente/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" namespace="http://osb.bancochile.cl/common/HeaderResponse" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" namespace="http://osb.bancochile.cl/common/HeaderRequest" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FPX_Cosmos%2FCS002027_ConsultaCuentaCorriente%2FSpecification%2FXSD%2FCS002027_ConsultaCuentaCorrienteResponse" namespace="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteResponse" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FPX_Cosmos%2FCS002027_ConsultaCuentaCorriente%2FSpecification%2FXSD%2FCS002027_ConsultaCuentaCorrienteRequest" namespace="http://osb.bancochile.cl/ESB/ConsultaCuentaCorriente/OpConsultaCuentaCorrienteRequest" />
+      <xsd:element name="headerRequest" type="Q3:datosHeaderRequest" />
+      <xsd:element name="headerResponse" type="Q4:datosHeaderResponse" />
+      <xsd:element name="ConsultaCuentaCorriente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="reqConsultaCuentaCorriente" type="Q1:reqConsultaCuentaCorriente" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaCuentaCorrienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="respConsultaCuentaCorriente" type="Q2:respConsultaCuentaCorriente" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ConsultaCuentaCorrienteRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:ConsultaCuentaCorriente" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ConsultaCuentaCorrienteResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:ConsultaCuentaCorrienteResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerRequestMessage">
+    <WL5G3N0:part name="headerRequest" element="WL5G3N1:headerRequest" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="headerResponseMessage">
+    <WL5G3N0:part name="headerResponse" element="WL5G3N1:headerResponse" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ConsultaCuentaCorriente">
+    <WL5G3N0:operation name="ConsultaCuentaCorriente">
+      <WL5G3N0:input message="WL5G3N1:ConsultaCuentaCorrienteRequest" />
+      <WL5G3N0:output message="WL5G3N1:ConsultaCuentaCorrienteResponse" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ConsultaCuentaCorrienteSOAP" type="WL5G3N1:ConsultaCuentaCorriente">
+    <WL5G3N2:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="ConsultaCuentaCorriente">
+      <WL5G3N2:operation soapAction="http://osb.bancochile.cl//ConsultaCuentaCorriente/ConsultaCuentaCorriente" />
+      <WL5G3N0:input>
+        <WL5G3N2:header message="WL5G3N1:headerRequestMessage" part="headerRequest" use="literal" />
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:header message="WL5G3N1:headerResponseMessage" part="headerResponse" use="literal" />
+        <WL5G3N2:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ConsultaCuentaCorriente">
+    <WL5G3N0:port name="ConsultaCuentaCorrienteSOAP" binding="WL5G3N1:ConsultaCuentaCorrienteSOAP">
+      <WL5G3N2:address location="http://osb.bancochile.cl:8019/Cosmos/CS002027_ConsultaCuentaCorriente" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

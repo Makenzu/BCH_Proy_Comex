@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRs/mpi" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRs/mpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation> Estructura de salida de la consulta del cliente ficha full. </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="consultarFichaClienteFullRs" type="tns:consultarFichaClienteFullRsType" />
+  <xsd:complexType name="consultarFichaClienteFullRsType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="codigoRespuesta" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> Codigo de respuesta de la consulta </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="glosaRespuesta" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> Glosa de respuesta de la consulta </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="respuesta" type="tns:respuestaType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="respuestaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> rut del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombre" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> nombre del cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> apellido Paterno </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> apellido Materno </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="oficinaEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> oficina del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> codigo del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> nombre del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaternoEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> apellido Paterno del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaternoEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> apellido Materno del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> email  del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> codigode Pais del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> codigoCiudadEjecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="telefono" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> telefono </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="segmento" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> segmento </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="marca" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>marca </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="banca" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> banca </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="clasificacionRiesgo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>clasificacion de Riesgo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="actividadEconomica" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>actividad Economica </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="categoria" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>categoria </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoSegmento" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Segmento </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoMarca" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Marca </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoBanca" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Banca </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoActividadEconomica" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Actividad Economica </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fecha de Nacimiento </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreOficina" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>nombre de la Oficina </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sexo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>sexo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="direccion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>direccion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="numeroDireccion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>numero de Direccion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="complementoDireccion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>complemento de Direccion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="comuna" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>comuna </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ciudad" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ciudad </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="region" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>region </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="pais" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>pais </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoDespacho" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Despacho </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cui" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>cui </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCategoria" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo Categoria </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rowIdDireccion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>row Id Direccion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisFonoPartCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Pais, telefono Particular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadPartCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Ciudad Particular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fonoParticularCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>telefono Particular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisCelularCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Pais del Celular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadCelularCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo de Ciudad del Celular Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="celularParticularCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>celular Particular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailParticularCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>email Particular del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisFonoComCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo Pais telefono Complementario Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadFonoComCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>codigo Ciudad telefono Complementario Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fonoComercialCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>telefono Comercial del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailComercialCliente" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>correo Comercial del Cliente </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailAlternativoEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>correo Alternativo del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutEjecutivo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>rut del Ejecutivo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="inhabilidad" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>inhabilidad </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nacionalidad" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>nacionalidad </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paisOrigen" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>pais de Origen </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="estadoCivil" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>estado Civil </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="regimenMatrimonial" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>regimen Matrimonial </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoFATCA" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo FATCA </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tinNumSeguroSocial" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tin Numero de Seguro Social </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutContacto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>rut del Contacto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreContacto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>nombre del Contacto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaternoContacto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>apellido Paterno del Contacto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaternoContacto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>apellido Materno  del Contacto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoRelacionContacto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Relacion del Contacto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutConyuge" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>rut del Conyuge </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoVivienda" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Vivienda </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nroDependencia" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>numero de Dependencia </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="anoResidencia" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ano de Residencia </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="marcaFuncionario" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>marca del Funcionario </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nivelEstudios" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>nivel de Estudios </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="profesion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>profesion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rutEmpleador" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>rut del Empleador </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nombreEmpleador" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>nombre del Empleador </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cargo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>cargo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoContrato" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Contrato </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaContrato" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fecha de Contrato </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoRenta" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Renta </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoPagoPension" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo de Pago Pension </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fondoPension" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fondo de Pension </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="usoBancoMonto" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>uso Banco Monto </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoIngrLiquido" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>tipo Ingreso Liquido </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="montoIngreso" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>monto del Ingreso </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaActualizacionIngreso" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fecha de Actualizacion Ingreso </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="marcaComparteBcaPrivada" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>marca Comparte Banca Privada </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="idioma" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>idioma </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="flagEnviaCorreo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>flag Envia Correo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="desSexo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> descripcion Sexo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="desCui" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> descripcion Cui </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="comportamiento" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> comportamiento </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fechaDefuncion" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> fecha de Defuncion </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="composicionInstitucional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> composicion Institucional </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="evaluacionRiesgo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> evaluacion de Riesgo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoClienteNormativo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation> tipo Cliente Normativo </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,48 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL\obj\Release\BCH.Comex.Data.DAL.pdb

@@ -1,0 +1,34 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Portal\obj\Release\BCH.Comex.Core.Entities.Portal.pdb

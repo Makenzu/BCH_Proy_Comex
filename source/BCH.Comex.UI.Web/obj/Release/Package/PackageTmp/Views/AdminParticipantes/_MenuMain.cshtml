@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Titulo = "Página Principal - Administración Participantes";
+
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+<h1>Administrador de Participantes</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#adminParty-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href='@Url.Action("Index")' id="titleNavParty">
+                        <i class="fa fa-users"></i>&nbsp; RUT : <small id="titlePrty"></small>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="adminParty-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown" id="mnuMainArchivo">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Archivo&nbsp;<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="Archivo">
+                                @foreach (var item in Mdi_Principal.Archivo)
+                                {
+                                    if (item.Tag == "separator")
+                                    {
+                                        <li role="separator" class="divider"></li>
+                                    }
+                                    else
+                                    {
+                                        if (!item.Enabled)
+                                        {
+                                            <li class="dropdown disabled">
+                                                <a>
+                                                    @if (!String.IsNullOrEmpty(item.ImgPath))
+                                                    {
+                                                        <i class="@item.ImgPath"></i>
+                                                    }
+                                                    @item.Text
+                                                </a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li id="@item.ID" class="dropdown">
+                                                <a href="@Url.Content((string)item.Tag)">
+                                                    @if (!String.IsNullOrEmpty(item.ImgPath))
+                                                    {
+                                                        <i class="@item.ImgPath"></i>
+                                                    }
+                                                    @item.Text
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="dropdown " id="mnuMainOpciones">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Opciones <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="Opciones">
+                                @foreach (var item in Mdi_Principal.Opciones)
+                                {
+                                    if (item.Tag == "separator")
+                                    {
+                                        <li role="separator" class="divider"></li>
+                                    }
+                                    else
+                                    {
+                                        if (!item.Enabled)
+                                        {
+                                            <li id="@item.ID" class="dropdown disabled">
+                                                <a href="#">
+                                                    @if (!String.IsNullOrEmpty(item.ImgPath))
+                                                    {
+                                                        <i class="@item.ImgPath"></i>
+                                                    }
+                                                    @item.Text
+                                                </a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li id="@item.ID" class="dropdown">
+                                                <a href="@Url.Content((string)item.Tag)">
+                                                    @if (!String.IsNullOrEmpty(item.ImgPath))
+                                                    {
+                                                        <i class="@item.ImgPath"></i>
+                                                    }
+                                                    @item.Text
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                }
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid text-center panel" id="toolbarMainPrty">
+
+            @foreach (var item in Mdi_Principal.BUTTONS)
+            {
+
+                if (!item.Value.Enabled)
+                {
+                    <a id="@item.Value.ID" disabled href="#" class="btn btn-transparent btn-no-padding margin-horizontal-half">
+                        <img class="img-func" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath)" style="width:32px;height:32px;pointer-events: none" />
+                    </a>
+                }
+                else
+                {
+                    <a id="@item.Value.ID" href="@Url.Content((string)item.Value.Tag)" class="btn btn-transparent btn-no-padding margin-horizontal-half">
+                        <img class="img-func" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath)" style="width:32px;height:32px" />
+                    </a>
+                }
+            }
+        </div>
+
+        <div class="container-fluid text-center panel" id="toolbarMainPrty_afterSave" style="display:none">
+
+            @foreach (var item in Mdi_Principal.BUTTONS)
+            {
+
+                if (item.Key == "tbr_nuevoParticipante" || item.Key == "tbr_AbrirParticipante")
+                {
+                    <a id="@item.Value.ID +_1" href="@Url.Content((string)item.Value.Tag)" class="btn btn-transparent btn-no-padding margin-horizontal-half">
+                        <img class="img-func" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath)" style="width:32px;height:32px" />
+                    </a>
+                }
+                else if (item.Key == "tbr_Caracteristicas")
+                {
+                    <a id="@item.Value.ID +_1" disabled href="#" class="btn btn-transparent btn-no-padding margin-horizontal-half">
+                        <img class="img-func" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath)" style="width:32px;height:32px;pointer-events: none" />
+                    </a>
+                }
+                else
+                {
+                    <a id="@item.Value.ID +_1" disabled href="#" class="btn btn-transparent btn-no-padding margin-horizontal-half">
+                        <img class="img-func" title="@item.Value.Text" src="@Url.Content(item.Value.ImgPath.Replace(".png","_F.png"))" style="width:32px;height:32px;pointer-events: none" />
+                    </a>
+                }
+            }
+        </div>
+        <div id="messageBlock">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id='urlGetComuna' data-url='@Url.Action("GetComunasLocalidades")' />
+<input type="hidden" id='urlGetPais' data-url='@Url.Action("GetPais")' />
+<input type="hidden" id='urlIndex' data-url='@Url.Action("/")' />
+<input type="hidden" id='urlDataObject' data-url='@Url.Action("DataObject")' />
+<input type="hidden" id='urlDataObjectSave' data-url='@Url.Action("DataObjectSave")' />
+<input type="hidden" id='urlDataObjectSaveAddress' data-url='@Url.Action("DataObjectSaveAddress")' />
+<input type="hidden" id='urlGetHasRazonesSociales' data-url='@Url.Action("GetIfHasRazonesSociales")' />
+<input type="hidden" id='urlGetHasDirecciones' data-url='@Url.Action("GetIfHasDirecciones")' />
+<input type="hidden" id='urlGetPreviousRazonSocial' data-url='@Url.Action("GetPreviousRazonSocial")' />
+<input type="hidden" id='urlGetPreviousDireccion' data-url='@Url.Action("GetPreviousDireccion")' />
+<input type="hidden" id='urlGetCurrentUITipClieData' data-url='@Url.Action("GetCurrentUITipClieData")' />
+
+<input type="hidden" id='urlGuardaParticipanteGlobal' data-url='@Url.Action("GuardaParticipanteGlobal")' />
+<input type="hidden" id='urlEliminarParticipante' data-url='@Url.Action("EliminarParticipante")' />
+<input type="hidden" id='urlRazonSocial' data-url='@Url.Action("RazonSocial")' />
+<input type="hidden" id='urlDireccion' data-url='@Url.Action("Direccion")' />
+<input type="hidden" id='urlAddRazonSocial' data-url='@Url.Action("AddRazonSocia")' />
+<input type="hidden" id='urlUpdateRazonSocial' data-url='@Url.Action("UpdateRazonSocial")' />
+<input type="hidden" id='urlDeleteRazonSocial' data-url='@Url.Action("DeleteRazonSocial")' />
+<input type="hidden" id='urlAddDireccion' data-url='@Url.Action("AddDireccion")' />
+<input type="hidden" id='urlUpdateDireccion' data-url='@Url.Action("UpdateDireccion")' />
+<input type="hidden" id='urlDeleteDireccion' data-url='@Url.Action("DeleteDireccion")' />
+<input type="hidden" id='urlGetInitObject' data-url='@Url.Action("GetInitObject")' />
+
+<input type="hidden" id='urlNuevoParticipante' data-url='@Url.Action("NuevoParticipante")' />
+<input type="hidden" id='urlAbrirParticipante' data-url='@Url.Action("AbrirParticipante")' />
+
+<input type="hidden" id='urlSyGet_Cta' data-url='@Url.Action("SyGet_Cta")' />
+
+<input type="hidden" id='urlGetListaDeParticipanteByUser' data-url='@Url.Action("GetListaDeParticipanteByUser")' />
+<input type="hidden" id='urlGetListaDeParticipantesByRazonSocial' data-url='@Url.Action("GetListaDeParticipantesByRazonSocial")' />
+
+<input type="hidden" id='urlNewPrty' data-url='@Url.Action("NewPrty")' />
+<input type="hidden" id='urlSetIdPartyIdNombreIdDir' data-url='@Url.Action("SetIdPartyIdNombreIdDir")' />
+<input type="hidden" id='urlChangeDeleteStatusPartyById' data-url='@Url.Action("ChangeDeleteStatusPartyById")' />
+<input type="hidden" id='urlGetPartyDataFromServer' data-url='@Url.Action("GetPartyDataFromServer")' />
+<input type="hidden" id='urlGetPrty' data-url='@Url.Action("GetPrty")' />
+<input type="hidden" id='urlGetPartyByIdParty' data-url='@Url.Action("GetPartyByIdParty")' />
+<input type="hidden" id='urlPrtyReActivar' data-url='@Url.Action("PrtyReActivar")' />
+<input type="hidden" id='urlAddPartyByDataBic' data-url='@Url.Action("AddPartyByDataBic")' />
+
+<input type="hidden" id='urlSavePrty' data-url='@Url.Action("SavePrty")' />
+<input type="hidden" id='urlPrtyDelInteres' data-url='@Url.Action("PrtyDelInteres")' />
+<input type="hidden" id='urlPrtyDelComisiones' data-url='@Url.Action("PrtyDelComisiones")' />
+<input type="hidden" id='urlPrtyDelGastos' data-url='@Url.Action("PrtyDelGastos")' />
+
+<input type="hidden" id='urlAceptaParty' data-url='@Url.Action("AceptaParty")' />
+<input type="hidden" id='urllee_ejecutivosSy' data-url='@Url.Action("lee_ejecutivosSy")' />
+<input type="hidden" id='urlSygetn_Ejecutivos' data-url='@Url.Action("Sygetn_Ejecutivos")' />
+<input type="hidden" id='urlexistesy' data-url='@Url.Action("existesy")' />
+
+<input type="hidden" id='urlSalvaInfopartySy' data-url='@Url.Action("SalvaInfopartySy")' />
+<input type="hidden" id='urlSalvaRelCltEjc' data-url='@Url.Action("SalvaRelCltEjc")' />
+<input type="hidden" id='urlSalvaRazonesSy' data-url='@Url.Action("SalvaRazonesSy")' />
+<input type="hidden" id='urlSalvaDireccionSy' data-url='@Url.Action("SalvaDireccionSy")' />
+<input type="hidden" id='urlSalvaGastoSy' data-url='@Url.Action("SalvaGastoSy")' />
+<input type="hidden" id='urlSalvaInteresSy' data-url='@Url.Action("SalvaInteresSy")' />
+<input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+<input type="hidden" id='urlSalvaLineasSy' data-url='@Url.Action("SalvaLineasSy")' />
+<input type="hidden" id='urlSalvaCtaBcoSy' data-url='@Url.Action("SalvaCtaBcoSy")' />
+<input type="hidden" id='urlSalvaCuentasSy' data-url='@Url.Action("SalvaCuentasSy")' />
+<input type="hidden" id='urlSalvaInstruccionSy' data-url='@Url.Action("SalvaInstruccionSy")' />
+
+<input type="hidden" id='urlCuentasParticipante' data-url='@Url.Action("CuentasParticipante")' />
+
+<input type="hidden" id='urllee_tcomSy' data-url='@Url.Action("lee_tcomSy")' />
+<input type="hidden" id='urllee_tgasSy' data-url='@Url.Action("lee_tgasSy")' />
+<input type="hidden" id='urllee_tintSy' data-url='@Url.Action("lee_tintSy")' />
+@*<input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />
+    <input type="hidden" id='urlSalvaComisionSy' data-url='@Url.Action("SalvaComisionSy")' />*@
+<input type="hidden" id='urlCaracteristicaParticipante' data-url='@Url.Action("CaracteristicasParticipante")' />
+<input type="hidden" id='urlInstruccionesParticipante' data-url='@Url.Action("InstruccionesEspeciales")' />
+<input type="hidden" id='urlCuentasParticipante' data-url='@Url.Action("CuentasParticipante")' />
+<input type="hidden" id='urlTasasParticipante' data-url='@Url.Action("TasasEspecialesParticipante")' />
+
+<input type="hidden" id='urlReloadSessionObject' data-url='@Url.Action("ReloadSessionObject")' />
+<input type="hidden" id='urlGetTamanoCuentas' data-url='@Url.Action("GetNumeroCuentas")' />

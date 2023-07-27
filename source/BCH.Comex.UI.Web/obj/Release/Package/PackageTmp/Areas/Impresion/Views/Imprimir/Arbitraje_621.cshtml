@@ -1,0 +1,774 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.DocumentoReporteModel
+@{
+    Layout = null;
+}
+@using BCH.Comex.Core.Entities.Portal
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Arbitraje</title>
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0px 181px 76px;
+            padding: 0px;
+            border: none;
+            width: 740px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+                #page_1 #id_1 #id_1_1 {
+                    float: left;
+                    border: none;
+                    margin: 4px 0px 0px 0px;
+                    padding: 0px;
+                    border: none;
+                    width: 390px;
+                    overflow: hidden;
+                }
+
+                #page_1 #id_1 #id_1_2 {
+                    border: none;
+                    margin: 0px 0px 0px 400px;
+                    padding: 0px;
+                    border: none;
+                    width: 740px;
+                    overflow: hidden;
+                }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 29px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_3 {
+                border: none;
+                margin: 107px 0px 0px 500px;
+                padding: 0px;
+                border: none;
+                width: 740px;
+                overflow: hidden;
+            }
+
+        .p0 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2_1 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p3 {
+            text-align: left;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .p4 {
+            text-align: left;
+            margin-top: 11px;
+            margin-bottom: 0px;
+        }
+
+        .p5 {
+            text-align: right;
+            padding-right: 97px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p6 {
+            text-align: left;
+            padding-left: 26px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p7 {
+            text-align: right;
+            padding-right: 21px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p8 {
+            text-align: right;
+            padding-right: 58px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p9 {
+            text-align: left;
+            margin-top: 16px;
+            margin-bottom: 0px;
+            padding-right: 10%;
+        }
+
+        .p10 {
+            text-align: right;
+            padding-right: 64px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-left: 218px;
+            margin-top: 34px;
+            margin-bottom: 0px;
+        }
+
+        .p13 {
+            text-align: left;
+            margin-top: 12px;
+            margin-bottom: 0px;
+        }
+
+        .p14 {
+            text-align: left;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p15 {
+            text-align: left;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p16 {
+            text-align: right;
+            padding-right: 41px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p17 {
+            text-align: right;
+            padding-right: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p18 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p19 {
+            text-align: left;
+            padding-right: 191px;
+            margin-top: 57px;
+            margin-bottom: 0px;
+        }
+
+        .p20 {
+            text-align: left;
+            padding-right: 224px;
+            margin-top: 16px;
+            margin-bottom: 0px;
+        }
+
+        .p21 {
+            text-align: left;
+            padding-left: 17px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 130px;
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 138px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 125px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 125px;
+            vertical-align: bottom;
+        }
+
+        .td3_1 {
+            padding: 0px;
+            margin: 0px;
+            width: 71px;
+            vertical-align: bottom;
+        }
+
+        .td4 {
+            padding: 0px;
+            margin: 0px;
+            width: 54px;
+            vertical-align: bottom;
+        }
+
+        .td5 {
+            padding: 0px;
+            margin: 0px;
+            width: 181px;
+            vertical-align: bottom;
+        }
+
+        .td6 {
+            padding: 0px;
+            margin: 0px;
+            width: 71px;
+            vertical-align: bottom;
+        }
+
+        .td7 {
+            padding: 0px;
+            margin: 0px;
+            width: 74px;
+            vertical-align: bottom;
+        }
+
+        .td8 {
+            padding: 0px;
+            margin: 0px;
+            width: 190px;
+            vertical-align: bottom;
+        }
+
+        .td9 {
+            padding: 0px;
+            margin: 0px;
+            width: 225px;
+            vertical-align: bottom;
+        }
+
+        .td10 {
+            padding: 0px;
+            margin: 0px;
+            width: 79px;
+            vertical-align: bottom;
+        }
+
+        .td11 {
+            padding: 0px;
+            margin: 0px;
+            width: 106px;
+            vertical-align: bottom;
+        }
+
+        .td {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: bottom;
+        }
+
+        .td12 {
+            padding: 0px;
+            margin: 0px;
+            width: 153px;
+            vertical-align: bottom;
+        }
+
+        .td13 {
+            padding: 0px;
+            margin: 0px;
+            width: 247px;
+            vertical-align: bottom;
+        }
+
+        .td14 {
+            padding: 0px;
+            margin: 0px;
+            width: 47px;
+            vertical-align: bottom;
+        }
+
+        .td15 {
+            padding: 0px;
+            margin: 0px;
+            width: 67px;
+            vertical-align: bottom;
+        }
+
+        .td16 {
+            padding: 0px;
+            margin: 0px;
+            width: 59px;
+            vertical-align: bottom;
+        }
+
+        .td17 {
+            padding: 0px;
+            margin: 0px;
+            width: 35px;
+            vertical-align: bottom;
+        }
+
+        .td18 {
+            padding: 0px;
+            margin: 0px;
+            width: 400px;
+            vertical-align: bottom;
+        }
+
+        .td19 {
+            padding: 0px;
+            margin: 0px;
+            width: 83px;
+            vertical-align: bottom;
+        }
+
+        .td20 {
+            padding: 0px;
+            margin: 0px;
+            width: 51px;
+            vertical-align: bottom;
+        }
+
+        .td21 {
+            border-bottom: #000000 1px solid;
+            padding: 0px;
+            margin: 0px;
+            width: 35px;
+            vertical-align: bottom;
+        }
+
+        .td22 {
+            border-bottom: #000000 1px solid;
+            padding: 0px;
+            margin: 0px;
+            width: 83px;
+            vertical-align: bottom;
+        }
+
+        .tr0 {
+            height: 15px;
+        }
+
+        .tr1 {
+            height: 30px;
+        }
+
+        .tr2 {
+            height: 29px;
+        }
+
+        .tr3 {
+            height: 18px;
+        }
+
+        .tr4 {
+            height: 14px;
+        }
+
+        .tr5 {
+            height: 46px;
+        }
+    </style>
+
+    <style>
+        @{
+            var printFormat = ViewData[BCH.Comex.UI.Web.Helpers.Extensions.ControllerExtensions.PrintFormatViewDataKey] as PrintFormat? ?? PrintFormat.HTML;
+            if (printFormat == PrintFormat.TIFF)
+            {
+                @:.ft0 {
+                @:    font: bold 16px 'Times New Roman';
+                @:    line - height: 19px;
+                @:}
+
+                @:.ft1 {
+                @:    font: 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft2 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft3 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft4 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    line - height: 16px;
+                @:}
+
+                @:.ft5 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft6 {
+                @:    font: 1px 'Times New Roman';
+                @:    line - height: 1px;
+                @:}
+
+                @:.ft7 {
+                @:    font: bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft8 {
+                @:    font: 13px 'Times New Roman';
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft9 {
+                @:    font: 1px 'Times New Roman';
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft10 {
+                @:    font: italic bold 13px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.t0 {
+                @:    width: 268px;
+                @:    margin - left: 2px;
+                @:    margin - top: 3px;
+                @:    font: bold 13px 'Times New Roman';
+                @:}
+
+                @:.t1 {
+                @:    width: 650px;
+                @:    margin - left: 31px;
+                @:    margin - top: 29px;
+                @:    font: 13px 'Times New Roman';
+                @:}
+
+                @:.t2 {
+                @:    width: 650px;
+                @:    margin - left: 28px;
+                @:    margin - top: 15px;
+                @:    font: 13px 'Times New Roman';
+                @:}
+
+                @:.t3 {
+                @:    width: 650px;
+                @:    margin - top: 12px;
+                @:    font: 13px 'Times New Roman';
+                @:}
+            }
+            else
+            {
+                @:.ft0 {
+                @:    font: bold 23px 'Times New Roman';
+                @:    line - height: 19px;
+                @:}
+
+                @:.ft1 {
+                @:    font: 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft2 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft3 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft4 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    line - height: 16px;
+                @:}
+
+                @:.ft5 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft6 {
+                @:    font: 7px 'Times New Roman';
+                @:    line - height: 1px;
+                @:}
+
+                @:.ft7 {
+                @:    font: bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.ft8 {
+                @:    font: 20px 'Times New Roman';
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft9 {
+                @:    font: 7px 'Times New Roman';
+                @:    line - height: 14px;
+                @:}
+
+                @:.ft10 {
+                @:    font: italic bold 20px 'Times New Roman';
+                @:    text - decoration: underline;
+                @:    line - height: 15px;
+                @:}
+
+                @:.t0 {
+                @:    width: 268px;
+                @:    margin - left: 2px;
+                @:    margin - top: 3px;
+                @:    font: bold 20px 'Times New Roman';
+                @:}
+
+                @:.t1 {
+                @:    width: 650px;
+                @:    margin - left: 31px;
+                @:    margin - top: 29px;
+                @:    font: 20px 'Times New Roman';
+                @:}
+
+                @:.t2 {
+                @:    width: 650px;
+                @:    margin - left: 28px;
+                @:    margin - top: 15px;
+                @:    font: 20px 'Times New Roman';
+                @:}
+
+                @:.t3 {
+                @:    width: 650px;
+                @:    margin - top: 12px;
+                @:    font: 20px 'Times New Roman';
+                @:}
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page_1">
+        <div id="id_1">
+            <div id="id_1_1">
+                <p class="p0 ft0">@Model.TituloCabezal.ToUpper()</p>
+            </div>
+            <div id="id_1_2">
+                <p class="p0 ft1">@Model.Ciudad</p>
+                <table cellpadding=0 cellspacing=0 class="t0">
+                    <tr>
+                        <td class="tr0 td0"><p class="p1 ft2">@Model.NuestraReferencia</p></td>
+                        <td class="tr0 td1"><p class="p2_1 ft2"><nobr>@Model.NuestraReferenciaValue</nobr></p></td>
+                    </tr>
+                    @if (Model.SuReferenciaValue != null)
+                       {
+                        <tr>
+                            <td class="tr0 td0"><p class="p1 ft2">@Model.SuReferencia</p></td>
+                            <td class="tr0 td1"><p class="p2_1 ft2"><nobr>@Model.SuReferenciaValue</nobr></p></td>
+                         </tr>
+                       }
+                </table>
+            </div>
+        </div>
+        <div id="id_2">
+            <p class="p0 ft3">Señores</p>
+            <p class="p0 ft3">@Model.NombreCliente</p>
+            <p class="p0 ft3">@Model.DireccionCliente</p>
+            <p class="p0 ft4">@Model.CiudadCliente</p>
+            @*<p class="p3 ft4">Santiago</p>*@
+            @if (Model.LineasDivisa.Count > 0)
+            {
+                <p class="p4 ft1">Hemos efectuado Arbitraje de Divisas, según el siguiente detalle/distribución:</p>
+                <table cellpadding=0 cellspacing=0 class="t1">
+                    <tr>
+                        <td colspan=2 class="tr0 td2"><p class="p5 ft5">Compra de Divisas:</p></td>
+                        <td colspan=2 class ="tr0 td3"><p class="p6 ft5">Venta de Divisas:</p></td>
+                        <td class="tr0 td5"><p class="p7 ft5">Paridades:</p></td>
+                    </tr>
+                    @foreach (var item in Model.LineasDivisa)
+                    {
+                        <tr>
+                            <td class="tr1 td6"><p class="p1 ft1">@item.MonedaCompra</p></td>
+                            <td class="tr1 td7"><p class="p8 ft1">@item.MontoCompra</p></td>
+                            <td class="tr1 td3_1"><p class="p1 ft1">@item.MonedaVenta</p></td>
+                            <td class="tr1 td4"><p class="p2 ft1">@item.MontoVenta</p></td>
+                            <td class="tr1 td5"><p class="p2 ft1">@item.Paridades</p></td>
+                        </tr>
+                    }
+                    @*<tr>
+                        <td class="tr1 td6"><p class="p1 ft1">US$</p></td>
+                        <td class="tr1 td7"><p class="p8 ft1">18.779,04</p></td>
+                        <td class="tr1 td3"><p class="p1 ft1">EUR</p></td>
+                        <td class="tr1 td4"><p class="p2 ft1">15.120,00</p></td>
+                        <td class="tr1 td5"><p class="p2 ft1">0,805152</p></td>
+                    </tr>*@
+                </table>
+            }
+            @if (Model.LineasRemesa.Count > 0)
+            {
+                <p class="p9 ft1">La moneda extranjera vendida fue distribuida de la siguiente forma :</p>
+                <table cellpadding=0 cellspacing=0 class="t2">
+                    <tr>
+                        <td class="tr0 td8"><p class="p1 ft5">Beneficiario</p></td>
+                        <td class="tr0 td9"><p class="p1 ft5">Vía de la Remesa</p></td>
+                        <td class="tr0 td10"><p class="p1 ft6">&nbsp;</p></td>
+                        <td class="tr0 td11"><p class="p10 ft5">Monto</p></td>
+                    </tr>
+                    @foreach (var item in Model.LineasRemesa)
+                    {
+                        <tr>
+                            <td class="tr2 td8"><p class="p11 ft1">@item.Beneficiario</p></td>
+                            <td class="tr2 td9"><p class="p11 ft1">@item.ViaRemesa</p></td>
+                            <td class="tr2 td10"><p class="p1 ft1">@item.Moneda</p></td>
+                            <td class="tr2 td11"><p class="p2 ft1">@item.Monto</p></td>
+                        </tr>
+                    }
+                    @*<tr>
+                        <td class="tr2 td8"><p class="p11 ft1"><nobr>Kipco-damaco</nobr> Nv</p></td>
+                        <td class="tr2 td9"><p class="p11 ft1">Orden de Pago O.Paises</p></td>
+                        <td class="tr2 td10"><p class="p1 ft1">EUR</p></td>
+                        <td class="tr2 td11"><p class="p2 ft1">15.120,00</p></td>
+                    </tr>*@
+                </table>
+            }
+            @if (Model.LineasCargoAbono.Count > 0)
+            {
+                <p class="p12 ft7">Cargos y/o Abonos</p>
+                <p class="p13 ft1">En consecuencia efectuamos los débitos y/o abonos que se detallan:</p>
+                <table cellpadding=0 cellspacing=0 class="t3">
+                    <tr style="height:0px;">
+                        <td class="tr3 td12"></td>
+                        <td class="tr3 td13"></td>
+                        <td class="tr3 td14"></td>
+                        <td class="tr3 td14"></td>
+                        <td class="tr3 td15"></td>
+                        <td class="tr3 td15"></td>
+                    </tr>
+                    @foreach (var item in Model.LineasCargoAbono)
+                    {
+                        <tr>
+                            <td class="tr3 td"><p class="p14 ft1">@item.DescripcionVia</p></td>
+                            <td class="tr3 td"><p class="p1 ft1">@item.NombreVia</p></td>
+                            <td colspan=2 class="tr3 td"><p class="p15 ft1">@item.Moneda</p></td>
+                            <td colspan=2 class="tr3 td"><p class="p2 ft1">@item.Monto</p></td>
+                        </tr>
+                    }
+                    @if (Model.LineasComisionGasto.Count > 0)
+                    {
+                        <tr>
+                            <td colspan=2 class="tr5 td"><p class="p1 ft10">Detalle comisiones y gastos cobrados:</p></td>
+                            <td class="tr5 td"><p class="p1 ft6">&nbsp;</p></td>
+                            <td class="tr5 td"><p class="p1 ft6">&nbsp;</p></td>
+                            <td class="tr5 td"><p class="p1 ft6">&nbsp;</p></td>
+                            <td class="tr5 td"><p class="p1 ft6">&nbsp;</p></td>
+                        </tr>
+                        foreach (var item in Model.LineasComisionGasto)
+                        {
+                            <tr>
+                                <td class="tr1 td"><p class="p1 ft1">@item.TipoOperacion</p></td>
+                                <td class="tr1 td"><p class="p1 ft6">&nbsp;</p></td>
+                                <td class="tr1 td"><p class="p16 ft1">@item.Moneda</p></td>
+                                <td class="tr1 td"><p class="p1 ft6">&nbsp;</p></td>
+                                <td class="tr1 td"><p class="p17 ft1">@item.Monto</p></td>
+                                <td class="tr1 td"><p class="p1 ft6">&nbsp;</p></td>
+                            </tr>
+                        }
+                        
+                        <tr>
+                          <!--<td class="tr0 td12"><p class="p17 ft6">&nbsp;</p></td>-->
+                          <td colspan=6 class="tr3 td"><p class="p18 ft2">___________________________________</p></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="tr3 td"><p class="p1 ft6">&nbsp;</p></td>
+                            <td class="tr3 td"><p class="p18 ft2">Total</p></td>
+                            <td class="tr3 td"><p class="p16 ft1">$</p></td>
+                            <td class="tr3 td"><p class="p1 ft6">&nbsp;</p></td>
+                            <td class="tr3 td"><p class="p17 ft1">@Model.TotalComisionGasto</p></td>
+                            <td class="tr3 td"><p class="p1 ft6">&nbsp;</p></td>
+                        </tr>
+                    }
+                    
+                </table>
+            }
+            
+            <p class="p9 ft1" style="white-space: pre-wrap;word-wrap: break-word;">@Model.PiePagina</p>
+        </div>
+        <div id="id_3">
+            <p class="p0 ft3">_______________________</p>
+            <p class="p21 ft4">Banco de Chile</p>
+        </div>
+    </div>
+</body>
+</html>

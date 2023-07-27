@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{889F7437-C885-4877-A730-70442AE318F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Common</RootNamespace>
+    <AssemblyName>BCH.Comex.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\IISRelease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\IISDesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheConfigurationManager.cs" />
+    <Compile Include="Caching\CacheFactory.cs" />
+    <Compile Include="Caching\CacheManager\MemoryCacheManager.cs" />
+    <Compile Include="Caching\CacheManager\NoCacheManager.cs" />
+    <Compile Include="Caching\CachePolicyConfiguration.cs" />
+    <Compile Include="Caching\Configuration\CachePolicyElement.cs" />
+    <Compile Include="Caching\Configuration\CachePolicyElementCollection.cs" />
+    <Compile Include="Caching\Configuration\CachingSection.cs" />
+    <Compile Include="Caching\Enumerations.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\PolicyConfiguration.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionHandlingSection.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyElement.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyElementCollection.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeElement.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeElementCollection.cs" />
+    <Compile Include="ExceptionHandling\ExceptionPolicy.cs" />
+    <Compile Include="ExceptionHandling\ExceptionPolicyConfiguration.cs" />
+    <Compile Include="ExceptionHandling\HandlingAction.cs" />
+    <Compile Include="ExceptionHandling\PolicyConfiguration.cs" />
+    <Compile Include="Exceptions\CacheException.cs" />
+    <Compile Include="Exceptions\ComexBaseException.cs" />
+    <Compile Include="Exceptions\ComexApplicationException.cs" />
+    <Compile Include="Exceptions\ComexUserException.cs" />
+    <Compile Include="Exceptions\ExceptionHandlingException.cs" />
+    <Compile Include="Exceptions\InstrumentationException.cs" />
+    <Compile Include="Exceptions\TraceException.cs" />
+    <Compile Include="GlobalConstants.cs" />
+    <Compile Include="Instrumentation\Configuration\InstrumentationSection.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterCategoryElement.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterCategoryElementCollection.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterElement.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterElementCollection.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterInstanceElement.cs" />
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterInstanceElementCollection.cs" />
+    <Compile Include="Instrumentation\Counter\CounterCategoryData.cs" />
+    <Compile Include="Instrumentation\Counter\CounterData.cs" />
+    <Compile Include="Instrumentation\Counter\CounterInstanceData.cs" />
+    <Compile Include="Instrumentation\Enumerations.cs" />
+    <Compile Include="Instrumentation\InstrumentationConfigurationManager.cs" />
+    <Compile Include="Instrumentation\InstrumentationProvider.cs" />
+    <Compile Include="Instrumentation\PerformanceCounterContainer.cs" />
+    <Compile Include="Instrumentation\Utils.cs" />
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracing\EventType.cs" />
+    <Compile Include="Tracing\Listeners\AsyncTraceListener.cs" />
+    <Compile Include="Tracing\Listeners\ComexTextWriterTraceListener.cs" />
+    <Compile Include="Tracing\Listeners\ComexXmlWriterTraceListener.cs" />
+    <Compile Include="Tracing\Listeners\Log4netTraceListener.cs" />
+    <Compile Include="Tracing\LogFileCleanupTask.cs" />
+    <Compile Include="Tracing\Tracer.cs" />
+    <Compile Include="Tracing\TraceRecord.cs" />
+    <Compile Include="UI_Modulos\UI_Commons.cs" />
+    <Compile Include="UI_Modulos\UI_Message.cs" />
+    <Compile Include="Utility\ExcelHelper.cs" />
+    <Compile Include="Utility\FileHelper.cs" />
+    <Compile Include="Utility\PerformanceCountersHelper.cs" />
+    <Compile Include="Utility\Printer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

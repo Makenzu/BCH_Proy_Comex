@@ -1,0 +1,148 @@
+﻿@model BCH.Comex.Core.Entities.Swift.proc_sw_rec_trae_datos_msg_MS_Result
+
+@{
+    Layout = null;
+}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Datos de Swift Recibido</h4>
+</div>
+<div class="modal-body" style="max-height: 100%;">
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title text-center"><strong>Tipo MT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>@Html.DisplayFor(model => model.tipo_msg) - @Html.DisplayFor(model => model.nombre_tipo)</h1>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-4"><strong>Sesión: </strong>@Html.DisplayFor(model => model.sesion) &nbsp;</div>
+                    <div class="col-xs-4"><strong>Prioridad: </strong>@BCH.Comex.UI.Web.Common.FormatUtils.PrioridadDesc(Model.prioridad, Model.tipo_msg) &nbsp;</div>
+                    <div class="col-xs-4"><strong>Recepción Swift: </strong>@Html.DisplayFor(model => model.fecha_send) &nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4"><strong>Secuencia: </strong>@Html.DisplayFor(model => model.secuencia) &nbsp;</div>
+                    <div class="col-xs-4"><strong>Estado: </strong>@Html.DisplayFor(model => model.descripcion) &nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"><strong>Referencia: </strong>@Html.DisplayFor(model => model.referencia) &nbsp;</div>
+                    <div class="col-xs-6"><strong>Beneficiario: </strong>@Html.DisplayFor(model => model.beneficiario) &nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"><strong>Monto: </strong>@Html.DisplayFor(model => model.cod_moneda) &nbsp; &nbsp;@(Model.monto.HasValue ? Model.monto.Value.ToString("#,#.00") : "0,00")</div>
+                    <div class="col-xs-6"><strong>Comentario: </strong>@Html.DisplayFor(model => model.comentario) &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Banco Emisor</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6"><strong>Código Swift: </strong>@Html.DisplayFor(model => model.cod_banco_em)@Html.DisplayFor(model => model.branch_em) &nbsp;</div>
+                    <div class="col-xs-6"><strong>Nombre: </strong>@Html.DisplayFor(model => model.nombre_banco) &nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><strong>Sucursal: </strong>@Html.DisplayFor(model => model.oficina_banco) &nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"><strong>Ciudad: </strong>@Html.DisplayFor(model => model.ciudad_banco) &nbsp;</div>
+                    <div class="col-xs-6"><strong>País: </strong>@Html.DisplayFor(model => model.pais_banco) &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Encasillamiento</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-4"><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha_ack) &nbsp;</div>
+                    <div class="col-xs-4"><strong>Casilla Destino: </strong>@Html.DisplayFor(model => model.casilla) @Html.DisplayFor(model => model.nombre_casilla) &nbsp;</div>
+                    <div class="col-xs-4"><strong>Rut: </strong>@(Model.rut_entry.HasValue ? Model.rut_entry.Value.ToString("#,#") : String.Empty)</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><strong>Observaciones: </strong>@Html.DisplayFor(model => model.observ_encas)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Confirmación Usuario</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(model => model.unidad_recibe) &nbsp;</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.rut_autoriza.HasValue ? Model.rut_autoriza.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha_recibe) &nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Impresión</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(model => model.unidad_imprime) &nbsp;</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.rut_imprime.HasValue ? Model.rut_imprime.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha_imprime) &nbsp;</div>
+                            <div class="col-xs-6"><strong>N° Impresiones: </strong>@Html.DisplayFor(model => model.total_imp) &nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Rechazos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Unidad: </strong>@Html.DisplayFor(model => model.unidad_rechazo) &nbsp;</div>
+                            <div class="col-xs-6"><strong>Rut: </strong>@(Model.rut_rechazo.HasValue ? Model.rut_rechazo.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha_rechazo) &nbsp;</div>
+                            <div class="col-xs-6"><strong>N° Rechazos: </strong>@Html.DisplayFor(model => model.veces_rechazo) &nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Motivo: </strong>@Html.DisplayFor(model => model.texto_rechazo) &nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Reenvíos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Rut: </strong>@(Model.rut_reenvio.HasValue ? Model.rut_reenvio.Value.ToString("#,#") : String.Empty)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha_reenvio) &nbsp;</div>
+                            <div class="col-xs-6"><strong>N° Reenvios: </strong>@Html.DisplayFor(model => model.veces_reenvio) &nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"><strong>Observación: </strong>@Html.DisplayFor(model => model.texto_reenvio) &nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

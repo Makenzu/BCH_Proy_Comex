@@ -1,0 +1,61 @@
+﻿@model BCH.Comex.UI.Web.Areas.ContabilidadGenerica.Models.SeleccionOficinaViewModel
+
+@{
+    ViewBag.Titulo = "Selección Oficina";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmOfi", name = "FrmOfi" }))
+        {
+            <div class="form-horizontal">
+                <div class="form-body">
+                    <div class="container" style="max-width: 600px">
+                        <h3>Selección Oficina</h3>
+                        <h4>Oficinas Banco de Chile</h4>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        @Html.EditorFor(model => model.Cb_Oficina, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-right">
+                                <input type="submit" id="btnAceptar" name="cmdButton" class="btn btn-primary" value="Aceptar" />
+                                <input type="submit" id="btnCancelar" name="cmdButton" class="btn btn-default" value="Cancelar" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            //datos en formato Json
+            var modelCompleto = @Html.Raw(Json.Encode(Model));
+
+            $("#btnAceptar").focus();
+
+            loadMessages(modelCompleto.ListaErrores);
+            focusOnErrorControl(modelCompleto.ListaErrores);
+
+            $('#btnAceptar').click(function () {
+                $("#FrmOfi").submit(function () {
+                    $("#btnAceptar").attr("disabled", "disabled");
+                    $("#btnCancelar").attr("disabled", "disabled");
+                    $(this).append('<input type="hidden" name="cmdButton" value="Aceptar" />');
+                });
+            });
+        });
+
+    </script>
+}

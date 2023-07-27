@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "Eliminación Masiva Mensajes Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/eliminacion-masiva-inv.png");
+}
+
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones Eliminación Masiva</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Eliminación por casilla</a></li>
+                <li><a href="@Url.Action("EliminarMensaje")">Eliminar por mensaje</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>
+            <i class="glyphicon glyphicon-check"></i>&nbsp;Eliminar por mensaje
+        </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title" id="titleFiltro">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("BuscarSwifts", "ConsultaSwift"))
+                {
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("Sesion", "Sesión", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        @Html.TextBox("sesion")
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorSesion">La sesión es requerida</label>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Secuencia", "Secuencia", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        @Html.TextBox("secuencia")
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorSecuencia">La secuencia es requerida</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-xs-10">
+                                    <div class="btn-group">
+                                        <button type="button" id="btnEliminar" class="btn btn-primary"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;&nbsp;Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalConfirmar" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="myModalLabel">Confirmación</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtMensajeAlerta">¿Está seguro que desea Eliminar todos los Mensajes SWIFT de la(s) Casilla(s) Seleccionada(s) ?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnOkConfirmar">Confirmar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="reloadtable">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fx.off = true;
+            $.ajaxSetup({
+                cache: false
+            });
+            //activo el bloquear la UI en requests asincronos
+            $(document).ajaxStart(function () { $.blockUI({ message: '<h6>Cargando...</h6>' }) })
+                .ajaxStop($.unblockUI);
+
+            var eliminar = function () {
+                $('#lblErrorSesion').hide()
+                $('#lblErrorSecuencia').hide()
+                //Validamos los campos que no estén vacíos
+                var sesion = $('#sesion');
+                var secuencia = $('#secuencia');
+                if (sesion == '') {
+                    $('#lblErrorSesion').show()
+                    return;
+                }
+                if (secuencia == '') {
+                    $('#lblErrorSecuencia').show()
+                    return;
+                }
+                $.get('@Url.Action("BuscaMensajeEliminar")', { sesion: sesion, secuencia: secuencia }, function (data) {
+                    console.log(data.Casilla);
+                });
+                var casillasSeleccionadas = [];
+                $('input[name=chkCasillaSeleccionada]:checked').each(function () {
+                    casillasSeleccionadas.push($(this).val());
+                });
+                if (casillasSeleccionadas.length > 0) {
+                    //Solo en caso seleccione una mostramos la modal
+                    $('#modalConfirmar').modal();
+                }
+            };
+
+            var buscarEliminar = function () {
+                var casillasSeleccionadas = [];
+                $('input[name=chkCasillaSeleccionada]:checked').each(function () {
+                    casillasSeleccionadas.push($(this).val());
+                });
+                //iteramos sobre las casillas y las mandamos a borrar
+                $.each( casillasSeleccionadas, function( key, value ) {
+                    $.post('@Url.Action("LimpiarCasilla")', { idCasilla: value });
+                });
+                showAlert("", "Se limpiaron con éxito las casillas.", "alert-success", false);
+
+            };
+            showAlert("", "Se limpiaron con éxito las casillas.", "alert-success", false);
+            $('#btnEliminar').click(eliminar);
+            $('#btnOkConfirmar').click(confirmar);
+
+        })
+    </script>
+}
+

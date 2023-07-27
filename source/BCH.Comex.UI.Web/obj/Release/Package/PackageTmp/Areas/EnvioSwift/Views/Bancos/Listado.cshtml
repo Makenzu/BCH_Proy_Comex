@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Consulta de Banca Mundial";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/envio-msj-swift-inv.png");
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+}
+
+
+
+<div class="container">
+    <h1>Consulta de Banca Mundial</h1>
+    <br />
+    <h4 style="color:#428bca">Ingrese algún dato del banco para la búsqueda</h4>
+    <hr style="margin-top: 0px;" />
+
+
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row filter-group">
+        <div class="col-md-6">
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Swift o Flia.</label>
+                    <div class="col-sm-9">
+                        <input id="txtSwift" type="text" maxlength="13">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">País</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownList("ddl_paises", ViewBag.lst_Paises as IEnumerable<SelectListItem>, "-- Lista de paises --", new { @class = "ddl", maxlength = 35 })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Ciudad</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudad" type="text" maxlength="35">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Banco</label>
+                <div class="col-sm-9">
+                    <input id="txtBanco" type="text" maxlength="70">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Dirección</label>
+                <div class="col-sm-9">
+                    <input type="text" id="txtDireccion" maxlength="70">
+                </div>
+            </div>
+            @* se saca porque esta consulta no tiene postal
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Postal</label>
+                <div class="col-sm-9">
+                    <input id="txtPostal" type="text">
+                </div>
+            </div>*@
+        </div>
+    </div>
+
+    <div class="row btn-box">
+        <button type="button" onclick="buscar();" class="btn btn-primary">Buscar</button>
+        <div class="col-xs-6">
+            <button type="button" onclick="imprimir();" class="btn btn-default pull-left"><i class="glyphicon glyphicon-print"></i> Imprimir</button>
+            <button type="button" onclick="excel();" class="btn btn-success pull-left"><i class="glyphicon glyphicon-file"></i> Excel</button>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h4 style="color:#428bca">Lista de bancos según información ingresada&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantResultados">0</span></h4>
+            <table id="tableBancos" class="table-bordered table-striped" data-toggle="table">
+                <thead>
+                    <tr>
+                        <th data-field="cod_banco" data-sortable="true">Código Banco</th>
+                        <th data-field="branch" data-sortable="true">Branch</th>
+                        <th data-field="nombre_banco" data-sortable="true">Nombre de Banco</th>
+                        <th data-field="direccion_banco" data-sortable="true">Dirección</th>
+                        <th data-field="ciudad_banco" data-sortable="true">Ciudad</th>
+                        <th data-field="pais_banco" data-sortable="true">País</th>
+                        <th data-field="oficina_banco" data-sortable="true">Oficina</th>
+                        <th data-field="intercambio_clave" data-sortable="true">Clave</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <input id="urlBancaMundial" type="hidden" value="@Url.Action("Buscar", "Bancos",new { area="EnvioSwift" })" />
+    <input id="urlBancaMundialImprimir" type="hidden" value="@Url.Action("Imprimir", "Bancos",new { area="EnvioSwift" })" />
+    <input id="urlBancaMundialExcel" type="hidden" value="@Url.Action("Excel", "Bancos",new { area="EnvioSwift" })" />
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/EnvioSwift/listado")
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+}

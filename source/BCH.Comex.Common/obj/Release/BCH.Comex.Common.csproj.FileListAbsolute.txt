@@ -1,0 +1,32 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.Messages.resources
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.GenerateResource.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Common\obj\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Common\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Common\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.Messages.resources
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.GenerateResource.cache
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Common\obj\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Common\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Common\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.Messages.resources
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.GenerateResource.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Common\obj\Release\BCH.Comex.Common.pdb

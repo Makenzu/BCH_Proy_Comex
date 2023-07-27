@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="92e1554c-e7e4-434c-be85-681657cec359" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\Source\xml_2015\WSDL Exportados\ReversaCosmos\CS002025_ReversaCosmos_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS002025_ReversaCosmos_1.xsd" MetadataType="Schema" ID="92660158-31c8-4e74-9513-0e436ae8f0e1" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/ReversaCosmos/CS002025_ReversaCosmos_1.xsd" />
+    <MetadataFile FileName="CS002025_ReversaCosmos.xsd" MetadataType="Schema" ID="d0ece477-3213-42a2-b1dc-91f93bfd68ec" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/ReversaCosmos/CS002025_ReversaCosmos.xsd" />
+    <MetadataFile FileName="CS002025_ReversaCosmos_1_2.xsd" MetadataType="Schema" ID="c05775f3-4170-4e86-b335-f544ea6da5b4" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/ReversaCosmos/CS002025_ReversaCosmos_1_2.xsd" />
+    <MetadataFile FileName="ReversaCosmos.wsdl" MetadataType="Wsdl" ID="a4c6a44b-9068-4d27-ae30-62fe97ee4499" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/ReversaCosmos/CS002025_ReversaCosmos_1.wsdl" />
+    <MetadataFile FileName="CS002025_ReversaCosmos_1_2_3.xsd" MetadataType="Schema" ID="82603cc6-1c3b-4fca-87bb-c17e70790a96" SourceId="1" SourceUrl="file:///D:/Source/xml_2015/WSDL Exportados/ReversaCosmos/CS002025_ReversaCosmos_1_2_3.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

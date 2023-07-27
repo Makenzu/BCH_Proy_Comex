@@ -1,0 +1,388 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ReemAnulacionPlanillaVisibleImportViewModel
+@{
+    ViewBag.Title = "Reemplazo Planilla Visible de Importación";
+}
+
+@using(Html.BeginForm(null, null, FormMethod.Post, new { id = "ReemAnulacionPlanillaVisibleImport", name = "ReemAnulacionPlanillaVisibleImport" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <h3 class="margin-bottom-double">Reemplazo Planilla Visible de Importación @ViewBag.Caption</h3>
+            <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-default padding-base">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Declaración de Importación</label>
+                                            @Html.EditorFor(model => model.Tx_NumDec, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Fecha Declaración</label>
+                                            @Html.EditorFor(model => model.Tx_FecDec, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Cod. Forma de Pago</label>
+                                            @Html.EditorFor(model => model.Tx_CodPag, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="form-group" style="margin-top: 25px">
+                                <button type="button" id="btnCancel" class="btn btn-danger btn-sm no-margin">Cancelar</button>
+                                <button type="button" id="btnAccept" class="btn btn-primary btn-sm no-margin">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                                    <label>N° Conocimiento</label>
+                                                        @Html.EditorFor(model => model.Tx_NroCon, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                    </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                                    <label>Fecha Conocimiento</label>
+                                                        @Html.EditorFor(model => model.Tx_FecCon, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                    </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                <label>Fec. Vcto. Operación</label>
+                                                        @Html.EditorFor(model => model.Tx_FecVen, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default padding-base">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Nro. Presentación</label>
+                                            @Html.EditorFor(model => model.Pn_NroPre, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Plaza Banco Central de Chile</label>
+                                @Html.EditorFor(model => model.Cb_Pbc, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>Importador</label>
+                                            @Html.EditorFor(model => model.Pn_Import, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                        <label>R.U.T.</label>
+                                            @Html.EditorFor(model => model.Pn_RutImp, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div class="form-group no-margin">
+                                        <label>Pais</label>
+                                            @Html.EditorFor(model => model.Tx_CodPai, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                        <label>Pais de Pago</label>
+                                        @Html.EditorFor(model => model.Pn_PPago, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="form-group no-margin">
+                                        <label>Cod.</label>
+                                            @Html.EditorFor(model => model.Pn_CodMon, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                        <label>Moneda</label>
+                                        @Html.EditorFor(model => model.Pn_Moneda, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    <div class="row">
+            <div class="col-xs-8">
+                <div class="panel panel-default padding-base">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                    @Html.EditorFor(model => model.Ch_ConvCre, new { htmlAttributes = new { @class = "" } })
+                                    @Html.Label("lblChk_1", "Convenio Crédito Recíproco")
+                                </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                    @Html.EditorFor(model => model.Ch_Acuerdo, new { htmlAttributes = new { @class = "" } })
+                                    @Html.Label("lblChk_2", "Acuerdos")
+                                </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group no-margin">
+                                    @Html.EditorFor(model => model.Ch_CPagos, new { htmlAttributes = new { @class = "" } })
+                                    @Html.Label("lblChk_3", "Cuadro de Pagos")
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="panel">
+                            <div class="row">
+                        <div class="col-xs-4">
+                            <div class="panel panel-default padding-base">
+                                    <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label>Fecha aut.de débito</label>
+                                            @Html.EditorFor(model => model.Tx_FecDeb, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label>Doc en Chile</label>
+                                            @Html.EditorFor(model => model.Tx_DocChi, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group no-margin">
+                                            <label>Doc Extr.</label>
+                                            @Html.EditorFor(model => model.Tx_DocExt, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-default padding-base">
+                                            <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label>Cant</label>
+                                                    @Html.EditorFor(model => model.Tx_CantAc, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                </div>
+                                            </div>
+                                </div>
+                                            <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group no-margin">
+                                            <label># Acuerdos</label>
+                                                    @Html.EditorFor(model => model.Tx_NumAc1, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group no-margin">
+                                            <label>&nbsp;</label>
+                                                    @Html.EditorFor(model => model.Tx_NumAc2, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                </div>
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <div class="col-xs-4">
+                            <div class="panel panel-default padding-base">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group no-margin">
+                                            <label>N°</label>                                            
+                                                @Html.EditorFor(model => model.Tx_NCpago, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group no-margin">
+                                            <label>Cuota N°</label>                                            
+                                                @Html.EditorFor(model => model.Tx_NCuota, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                <div class="panel">
+                            <div class="row">
+                        <div class="col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Antecedentes Planilla Reemplazada
+                                </div>
+                                <div class="panel-body">
+                                        <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <label>N° Presentación</label>
+                                                @Html.EditorFor(model => model.Tx_NroPre, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                @Html.EditorFor(model => model.Tx_FecRee, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            </div>
+                                        </div>
+                                    </div>
+                                            <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label>Observaciones</label>
+                                                    @Html.EditorFor(model => model.Tx_Observ, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                    </div>
+                                    </div>
+                        <div class="col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="form-group">                                        
+                                        @Html.EditorFor(model => model.Lt_Final, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                    </div>
+                                    <button type="button" id="btnAccept" class="btn btn-primary btn-block no-margin">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                </div>
+                                </div>
+            <div class="col-xs-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Montos Planilla<br />Valor FOB
+                        </div>
+                    <div class="panel-body">
+                        <table class="table no-margin">
+                                    <tr>
+                                        <td>
+                                            <label>Flete</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_MtoFle, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Seguro</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_MtoSeg, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Valor Cif</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Pn_ValCif, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Intereses</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_IntPla, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Gastos Bancarios</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_GasBan, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Valor Total</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Pn_MtoTot, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Gastos Bancarios</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_GasBan, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Valor Cif en US$</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Pn_CifDol, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Valor Total en US$</label>
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Pn_TotDol, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Tipo Cambio @Model.Lb_NemTC.Text </label> 
+                                            
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_TipCam, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Tipo Cambio Eq. US$</label>
+                                        </td>
+                                        <td>
+                                            <label>Paridad a US$</label>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.EditorFor(model => model.Pn_TCDol, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                        <td>
+                                            @Html.EditorFor(model => model.Tx_Paridad, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        <div class="text-right margin-bottom-triple">
+            <button type="button" id="btnAccept" class="btn btn-primary no-margin">Aceptar</button>
+            <button type="button" id="btnCancel" class="btn btn-default no-margin">Salir</button>
+        </div>
+ </div>
+
+
+
+}

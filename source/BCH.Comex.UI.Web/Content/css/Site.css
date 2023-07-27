@@ -1,0 +1,335 @@
+﻿.row-padding {
+    padding-top: 20px;
+}
+
+.header {
+    width: 100%;
+    background-color: #0066a6;
+    height: 40px;
+    top: 0px;
+    background-color: #002464;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.padding-base {
+    padding: 15px !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.header .container {
+    position: relative;
+}
+
+.header a img {
+    max-height: 100%;
+}
+
+.header .user-box {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    min-width: 275px;
+    color: #ffffff;
+}
+
+.user-access,
+.user-logout a {
+    font-size: 12px;
+}
+
+.btn-box {
+    text-align: right;
+}
+
+    .btn-box button {
+        margin-top: 20px;
+        margin-right: 15px;
+    }
+
+.filter-group input,
+.filter-group select,
+.filter-group textarea {
+    width: 280px;
+}
+
+.col-md-6 {
+    width: 50%;
+    float: left;
+}
+
+.col-sm-3 {
+    width: 25%;
+    float: left;
+}
+
+.col-sm-9 {
+    width: 75%;
+    float: left;
+}
+
+.form-group {
+    display: block;
+    clear: both;
+}
+
+.header .dir {
+    color: white;
+    font-size: 14px;
+}
+
+.header .cerrar > a {
+    color: #F7F7F7;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pad-right {
+    padding-right: 20px;
+}
+
+.padding-vertical-base {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.margin-bottom-base {
+    margin-bottom: 18px;
+}
+
+.navigation ul {
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+/*.btn{
+    margin-bottom: 15px;
+}*/
+
+#btn_ok, #btn_no {
+    color: #fff;
+    width: 40px;
+}
+
+div .comex-left-menu {
+    width: 170px;
+    float: left;
+}
+
+/*force scroll if smaller that 700*/
+body {
+    min-width: 700px;
+    color: #000000;
+}
+
+#header_layout {
+    background-color: white;
+}
+
+.img-func {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.label-div {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.padding-vertical-double {
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+.margin-horizontal-half {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.margin-bottom-double {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-triple {
+    margin-bottom: 45px;
+}
+
+.no-border {
+    border: none !important;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px; @estanislao: comento esto
+    */
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.ddl {
+    height: 25px;
+}
+
+.lbox {
+    height: 227px !important;
+}
+
+/* Estilo para que los modales de boostrap nunca excedan el tamaño de la pantalla */
+.modal .modal-body {
+    max-height: 650px;
+    overflow-y: auto;
+}
+
+/*Manuel B: se agrega estilo "extra large" de modales */
+.modal-dialog.xlg {
+    width: 80%;
+}
+
+#msg-zone, #alertPlaceholder {
+    position: fixed;
+    top: 40px;
+    left: 5px;
+    right: 5px;
+    width: 98%;
+    z-index: 1100 !important;
+}
+
+    #msg-zone .alert {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+#alertdiv {
+    margin: 0 auto;
+}
+
+
+/*(moo) 2015-10-14 Efecto Sombra*/
+.efx-box {
+    width: 100%;
+    height: 100%;
+    background: white;
+    margin: 5px auto;
+    padding: 10px;
+    border: 1px solid;
+    border-color: #bacfd4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.efx-shadow {
+    position: relative;
+}
+
+    .efx-shadow:before, .efx-shadow:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+
+    .efx-shadow:after {
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+
+
+#contenedorAlertas {
+    float: right;
+    margin-right: 350px;
+    margin-top: 1.5px;
+}
+
+#popoverAlertas {
+    width: auto;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.blue-text {
+    color: blue;
+}
+
+#custom-toolbar {
+    margin-right: 20px;
+}
+
+@media(max-width:767px) {
+    /*body {
+        font-size: 10px;
+    }*/
+    /*.header{
+        height: 40px;
+    }*/
+}
+
+@media(min-width:768px) {
+}
+
+@media(min-width:992px) {
+}
+
+@media(min-width:1200px) {
+}

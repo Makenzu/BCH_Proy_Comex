@@ -1,0 +1,71 @@
+﻿@using BCH.Comex.Core.Entities.Swift
+@model IEnumerable<sw_bancos>
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Listado de Bancos</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/envio-msj-swift-inv.png")" />
+    <script type="text/javascript">
+         window.onload = function () { window.print(); }
+    </script>
+
+    
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-6">
+            <h3>Listado de Bancos</h3>
+        </div>
+        <div class="col-xs-3">
+            <div class="row">
+                <b>Fecha: </b>@DateTime.Now.GetDate().ToString("dd/MM/yyyy")
+                <br />
+                <b>Hora: </b>@DateTime.Now.GetTime().ToString("hh:mm:ss")
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="active">
+                    <th>Clave</th>
+                    <th>Código Swift</th>
+                    <th>Nombre de Banco</th>
+                    <th>País</th>
+                    <th>Ciudad</th>
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (sw_bancos item in Model)
+                {
+                    <tr>
+                        <td>@item.intercambio_clave</td>
+                        <td>@(item.cod_banco.Trim() + item.branch.Trim())</td>
+                        <td>@item.nombre_banco</td>
+                        <td>@item.pais_banco</td>
+                        <td>@item.ciudad_banco</td>
+                        <td>@item.oficina_banco</td>
+                        <td>@item.direccion_banco</td>
+                    </tr>
+                            }
+            </tbody>
+        </table>
+    </div>
+    
+   
+    </body>
+</html>

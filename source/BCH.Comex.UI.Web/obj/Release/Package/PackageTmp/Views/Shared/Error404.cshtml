@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Error404";
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+}
+
+<div class="container">
+    <h1 class="text-danger">Error</h1>
+    <h2 class="text-danger">La ruta de acceso no es válida</h2>
+    <a class="btn btn-default" id="Volver" href="~/">
+        Volver al portal
+    </a>
+</div>
+
+<script>
+    var btn = document.getElementById("Volver");
+    if (btn != null)
+        btn.focus();
+</script>

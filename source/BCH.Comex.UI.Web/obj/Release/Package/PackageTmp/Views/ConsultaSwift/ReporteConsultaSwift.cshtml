@@ -1,0 +1,130 @@
+﻿@model BCH.Comex.UI.Web.Models.ConsultaSwift.ReporteConsultaSwiftViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes @Model.Verbo por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" /> 
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/consulta-msj-swift-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Mensajes @Model.Verbo por Sistema</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h4>
+    @string.Format("Mensajes {0} {1} {2} {3}",
+            Model.Verbo,
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Total mensajes: </strong></div>
+            <div class="col-xs-3">
+                @Model.Registros.Count
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Casilla: </strong></div>
+            <div class="col-xs-3">@Model.Casilla</div>
+        </div>
+
+        @if (!Model.Enviados)
+        {
+            <div class="row">
+                <div class="col-xs-3"><strong>Estado: </strong></div>
+                <div class="col-xs-3">@Model.Filtro</div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+
+            <table class="table table-condensed">
+                <thead>
+                    @if (Model.Enviados)
+                    {
+                        <tr>
+                            <th>Número</th>
+                            <th>Tipo MT</th>
+                            <th>Sesión</th>
+                            <th>Secuencia</th>
+                            <th>Banco Receptor</th>
+                            <th>Referencia</th>
+                            <th>Mnda</th>
+                            <th style="text-align:right">Monto</th>
+                            <th>Fecha/Hora Envío</th>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Sesión</th>
+                            <th>Secuencia</th>
+                            <th>Tipo MT</th>
+                            <th>Estado</th>
+                            <th>Banco Emisor</th>
+                            <th>Referencia</th>
+                            <th>Mnda</th>
+                            <th style="text-align:right">Monto</th>
+                            <th>Fecha Recepción</th>
+                        </tr>
+                    }
+                </thead>
+                <tbody>
+
+                    @if (Model.Enviados)
+                    {
+                        foreach (var row in Model.Registros)
+                        {
+                            <tr>
+                                <td>@row.id_mensaje</td>
+                                <td>@row.tipo_msg</td>
+                                <td>@row.sesion</td>
+                                <td>@row.secuencia</td>
+                                <td>@row.CodigoYBranchReceptor</td>
+                                <td>@row.referencia</td>
+                                <td>@row.cod_moneda</td>
+                                <td style="text-align:right">@(row.monto.HasValue ? row.monto.Value.ToString("#,#.00") : "0,00")</td>
+                                <td>@(row.fecha_ingr + " " + row.hora_ingr)</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        int indiceRow = 0;
+                        foreach (var row in Model.Registros)
+                        {
+                            <tr>
+                                <td>@(++indiceRow)</td>
+                                <td>@row.sesion</td>
+                                <td>@row.secuencia</td>
+                                <td>@row.tipo_msg</td>
+                                <td>@row.estado_msg</td>
+                                <td>@row.CodigoYBranchEmisor</td>
+                                <td>@row.referencia</td>
+                                <td>@row.cod_moneda</td>
+                                <td style="text-align:right">@(row.monto.HasValue ? row.monto.Value.ToString("#,#.00") : "0,00")</td>
+                                <td>@row.fecha_rec</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+</body>
+</html>

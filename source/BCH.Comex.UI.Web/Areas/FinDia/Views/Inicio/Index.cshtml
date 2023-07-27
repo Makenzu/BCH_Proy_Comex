@@ -1,0 +1,389 @@
+﻿@model BCH.Comex.UI.Web.Areas.FinDia.Models.InicioViewModel
+
+@{
+    ViewBag.Title = "Fin de dia de Comercio Exterior.";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+
+<div id="modalContableErroneoSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Reporte contable erroneo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Proceso de fin de dia de comercio exterior.</h4>
+                <label class="control-label" id="lblTitulo">Reportes contables erroneos</label>
+            </div>
+            <div class="panel-body" id="divContableErroneoSwift">
+                <div id="DivElemtosContableErroneo">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="pull-left col-sm-1">
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="alert alert-danger" role="dialog">
+                                    <strong>Error!</strong><br />
+                                    <label id="LblAlertaMensajeContable"></label><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="pull-left col-sm-1">
+                            </div>
+                            <div class="col-lg-10">
+                                <strong style="margin-left: 40px;">N° Operación</strong><strong style="margin-left: 60px;">N° Reporte</strong><strong style="margin-left: 60px;">Fecha contable</strong>
+                                <select multiple class="form-control" id="SeleccionValores" size="10"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div id="divReportePlanillas" class="panel-body">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="pull-left col-sm-1">
+                        </div>
+                        <div class="col-lg-10">
+                            <table id="tablaReportePlanillas">
+                                <thead>
+                                    <tr>
+                                        <th data-field="NroReporte">N° presentación</th>
+                                        <th data-field="FechaContable">Fecha presentación</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" id="DivFooterContableErroneo">
+                <a class="btn btn-default align-btn-fix" data-dismiss="modal" aria-hidden="true" id="btnAceptarModal"><span class="glyphicon glyphicon-ok"></span>Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalReporte" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Reporte">
+    <div class="modal-dialog">
+        <div class="panel">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="panel" id="divmodalReporte">
+            </div>
+            <div class="modal-footer" id="DivFooterReporteDesc">
+                <a class="btn btn-default align-btn-fix" data-dismiss="modal" aria-hidden="true" id="btnAceptarModal"><span class="glyphicon glyphicon-ok"></span>Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalReporteFrmResDesc" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="FrmResDesc">
+    <div class="modal-body">
+        <div class="panel">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Proceso de fin de dia de comercio exterior.</h4>
+                <label class="control-label" id="lblTitulo">Reporte descuadre.</label>
+            </div>
+            <div class="panel" id="divmodalReporteFrmResDesc">
+            </div>
+            <div class="modal-footer" id="DivFooterFrmResDesc">
+                <a class="btn btn-default align-btn-fix" id="BtnAceptaFrmResDesc" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok"></span>Reporte</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalCuadratura" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Autorización de mensaje Swift">
+    <div class="modal-body">
+        <div class="panel">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Proceso de fin de dia de comercio exterior.</h4>
+                <label class="control-label">Lista MT.</label>
+            </div>
+            <div class="panel" id="divCuadratura">
+            </div>
+            <div class="modal-footer" id="DivFooterClave">
+                <a class="btn btn-default align-btn-fix" id="BtnAceptaReporte" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok"></span>&nbsp;Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalVisor" class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="Visor Problemas">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*@
+                <h4 class="modal-title" id="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-body"></div>
+                <div id="FormConfirmacion">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <label id="lbFormConfirmacion" class="control-label"></label>
+                        </div>
+                        <div class="col-xs-2">
+                            <input class="form-control" type="text" id="txtDatoConfirmacion" />
+                        </div>
+                        <div class="col-xs-6">
+                            <label id="lbMensaje" class="control-label label label-danger"></label>
+                        </div>
+                        <div class='col-xs-10'>
+                            <div id='divAlerta'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" id="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalCuadraturaSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Cuadratura info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle">Proceso de fin de dia de comercio exterior.</h4>
+                <label class="control-label">Información</label>
+            </div>
+            <div class="panel-body" id="divCuadraturaErroneoSwift">
+                <div id="DivElemtosCuadraturaErroneo">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="pull-left col-sm-1">
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="alert alert-danger" role="dialog">
+                                    <strong>Error!</strong><br />
+                                    <label id="LblCuadraturaInfo"></label><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div class="modal-footer" id="DivFooterCuadraturaErroneo">
+                <a class="btn btn-default align-btn-fix" id="BtnAceptaInfoCuadratura" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok"></span>Aceptar</a>
+                <a class="btn btn-default align-btn-fix pull-right" id="BtnCancelaInfoCuadratura" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalClave" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Clave">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle">Proceso de fin de dia de comercio exterior.</h4>
+                <label class="control-label">Clave</label>
+            </div>
+            <div class="panel-body" id="divClave">
+                <div id="DivElemtosClave">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="pull-left col-sm-1">
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Clave:</label>
+                                        <div class="col-sm-9">
+                                            <input id="TxtClave" type="text" class="input-sm" size="30">
+                                            <br />
+                                            <span id="ErrorClave"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div class="modal-footer" id="DivFooterClave">
+                <a class="btn btn-default align-btn-fix" id="BtnAceptaClave"><span class="glyphicon glyphicon-ok"></span>Aceptar</a>
+                <a class="btn btn-default align-btn-fix pull-right" id="BtnCancelaClave" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalReporteSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalReporte">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle">Reporte cuadratura.</h4>
+            </div>
+            <div class="panel-body" id="divmodalReporteSwift">
+                <div id="DivElemtosClave">
+                    <br />
+                </div>
+            </div>
+            <div class="modal-footer" id="DivFooterReporte">
+                <a class="btn btn-default align-btn-fix" id="BtnCierraReporte" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok"></span>Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="header_layout">
+    <div class="row" id="texto_func">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Archivo <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Archivo">
+                        <li><a href="~/FinDia/TotalesContables?opcion=0" target="_blank">Totales Contables Usuario</a></li>
+                        <li><a href="~/FinDia/TotalesContables?opcion=1" target="_blank">Totales Contables Sección</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="">Salir</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Opciones <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Opciones" id="mnuOpciones">
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkActualizarNovedades) Actualizar Novedades
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Configuración <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Configuración" id="mnuConfiguracion">
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionListado) Impresión de Listados
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container form-horizontal">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="btn btn-default align-btn-fix" id="BtnValidacion"><span class="glyphicon glyphicon-floppy-open"></span>&nbsp;&nbsp;FINALIZAR</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel-heading">
+                <h2 class="panel-title">&nbsp;&nbsp;&nbsp;</h2>
+            </div>
+            <div class="panel-body">
+                <table id="tablaUsuarios">
+                    <thead>
+                        <tr>
+                            <th data-field="Usuario">Usuario</th>
+                            <th data-field="Nombre">Nombre</th>
+                            <th data-field="Lider">Lider</th>
+                            <th data-field="Seccion">Sección</th>
+                            <th data-field="Ciudad">Ciudad</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@*<a class="btn btn-default align-btn-fix" id="BtnValidacion"><span class="glyphicon glyphicon-print">Reporte contable erroneo</span></a>
+<br />
+<a class="btn btn-default align-btn-fix" id="BtnValidacionCuadraturaSwift"><span class="glyphicon glyphicon-print">Cuadratura Swift</span></a>
+<br />
+<a class="btn btn-default align-btn-fix" id="BtnFrmResDesc"><span class="glyphicon glyphicon-print">FrmResDesc</span></a>*@
+
+@section css {
+<style type="text/css">
+    #ErrorClave {
+        color: red;
+    }
+</style>
+    }
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/FinDia/Inicio")
+<script type="text/javascript">
+    var clasup;
+    var cancelado_Proceso=false;
+    var VistaReporte=false;
+    /** todas estas variables se utilizan en el archivo FundTransfer.GenerarSwift.js  **/
+
+    //datos en formato Json
+    var modelTabla = @Html.Raw(Json.Encode(Model.ListaUsuarios));
+    var urlEjecuatarFinDia_1 = '@Url.Action("btnBajarDatos_Click")';
+    var urlValidacionConfirmacion = '@Url.Action("btnAceptar_Confirmacion")';
+    var urlValidacionindex = '@Url.Action("Index")';
+    var urlEjecuatarFinDia = '@Url.Action("btnBajarDatos_Click_")';
+    var urlSet_MODCUACC_true = '@Url.Action("Set_MODCUACC_true")';
+    var urlGetPassword = '@Url.Action("GetPassword")';
+    var urlImpresionPorInyectar = '@Url.Action("ImpresionPorInyectar")';
+    var urlImpresionListado = '@Url.Action("ImpresionListado")';
+    var urlValidacionCuadraturaSwift = '@Url.Action("ValidacionCuadraturaSwift")';
+    var urlListadoCuadraturaSwift = '@Url.Action("ListadoCuadraturaSwift")';
+    var urlFrmResDesc = '@Url.Action("FrmResDesc")';
+    var urlReporteDescuadre =  '@Url.Action("ReporteDescuadre")';
+    var urlImpresionDescuadre =  '@Url.Action("ImpresionDescuadre")';
+    var urlGetContabilidadVigente =  '@Url.Action("GetContabilidadVigente")';
+    var urlReporteCuadratura = '@Url.Action("ReporteCuadratura")';
+    var urlValidaCuadSwf = '@Url.Action("Get_MODCUACC_ABONO_VB")';
+
+    function BtnFrmResDesc()
+    {
+        $.get('@Url.Action("FrmRes")', {}).done(function (data) {
+            var count= data;
+            if(count.length > 0)
+            {
+                $.get('@Url.Action("FrmResDesc")', {}).done(function (data) {
+                    $('#divmodalReporteFrmResDesc').html(data);
+                    $('#modalReporteFrmResDesc').modal();
+                });
+            }
+        });
+    };
+
+    function BtnFrmResDescReporte_()
+    {
+        $.get('@Url.Action("ReporteDescuadre")', {}).done(function (data) {
+            $('#divmodalReporte').html(data);
+            $('#modalReporte').modal();
+        });
+    }
+
+    $('#BtnFrmResDesc').click(BtnFrmResDesc);
+    // $('#BtnAceptaFrmResDesc').click(BtnFrmResDescReporte);
+
+
+</script>
+}

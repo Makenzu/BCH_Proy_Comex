@@ -1,0 +1,111 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.AnulacionPlanillaVisibleImportViewModel
+@{
+    ViewBag.Title = "Anulación Planillas Visibles de Importación";
+    <script>
+        var MensajesDeError = @Html.Raw(Json.Encode(ViewBag.MdiPrincipal.MESSAGES));
+    </script>
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "AnulacionPlanillaVisibleImport", name = "AnulacionPlanillaVisibleImport" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-body " style="width: 1024px;margin: auto;">
+        <h3 class="margin-bottom">Anulación Planillas Visibles de Importación @ViewBag.Caption</h3>
+        <div class="panel panel-default" style="max-width: 750px;">
+            <div class=" panel-heading">Operación de Anulación</div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label>Operación</label>
+                            <table class="table" style="width:500px; margin-bottom:0px;">
+                                <tr>
+                                    <td style="vertical-align:middle;width:80px">
+                                        @Html.EditorFor(model => model.Tx_NroOpe_000, new { htmlAttributes = new { @class = "form-control", min = "0", max = "999", maxlength = "3", data_inputmask = "'mask': '9' ,'repeat': 3, 'greedy' : false" } })
+                                    </td>
+                                    <td style="vertical-align: middle; width: 50px">
+                                        @Html.EditorFor(model => model.Tx_NroOpe_001, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99", maxlength = "2", tabindex = "1", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                    </td>
+                                    <td style="vertical-align: middle; width: 50px">
+                                        @Html.EditorFor(model => model.Tx_NroOpe_002, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99", maxlength = "2", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                    </td>
+                                    <td style="vertical-align: middle; width: 50px">
+                                        @Html.EditorFor(model => model.Tx_NroOpe_003, new { htmlAttributes = new { @class = "form-control", min = "0", max = "999", maxlength = "3", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                    </td>
+                                    <td style="vertical-align: middle; width: 80px">
+                                        @Html.EditorFor(model => model.Tx_NroOpe_004, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99999", maxlength = "5", tabindex = "2", data_inputmask = "'mask': '9','repeat': 5,'greedy' : false" } })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:150px;vertical-align:middle">
+                            <label>Fecha Presentación</label>
+                            <table class="table" style="margin-bottom:0px;">
+                                <tr>
+                                    <td>
+                                        @Html.EditorFor(model => model.Tx_FecPre, new { htmlAttributes = new { @class = "form-control input-sm", data_inputmask = "'alias': 'date'", tabindex = "3" } })
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="padding-top: 25px;">
+                            <button id="btnComando" name="btnComando" tabindex="4" type="submit" value="Ok" class="btn btn-success btn-sm" style="margin-bottom:-39px">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div>
+                                <label>Planillas para Anular</label>
+                                <br>
+                                <label class="mono">   N° Participación &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num.Idi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Num.Dec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monto Total </label>
+                                @Html.EditorFor(model => model.Lt_PlAnul, new { htmlAttributes = new { @id = "Lt_PlAnul", @class = "form-control input-sm", tabindex = "5" } })
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <table>
+                                <tr>
+                                    <td style="width: 125px"><label>Monto a Anular</label></td>
+                                    <td style="width:200px;padding:10px">@Html.EditorFor(model => model.Tx_MtoAnu, new { htmlAttributes = new { @id = "Tx_MtoAnu", @class = "form-control input-sm" } })</td>
+                                    <td style="width: 150px"><label>Tipo Autorización</label></td>
+                                    <td style="vertical-align: top; padding: 10px; width: 200px;">
+                                        @Html.EditorFor(model => model.Cb_TipAut, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 125px"><label>Tipo de Cambio</label></td>
+                                    <td style="width:200px;padding:10px">
+                                        @Html.EditorFor(model => model.Tx_TipCam, new { htmlAttributes = new { @id = "Tx_TipCam", @class = "form-control input-sm" } })
+                                    </td>
+                                    <td style="width: 150px"><label>Número de Autorización</label></td>
+                                    <td style="vertical-align: top; padding: 10px; width:200px;">@Html.EditorFor(model => model.Tx_NumAut, new { htmlAttributes = new { @class = "form-control input-sm", data_inputmask = "'mask': '9','repeat': 8, 'greedy' : false" } })</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align:top; padding-top: 12px; width: 125px"><label>Observaciones</label></td>
+                                    <td style="width:200px;padding:10px">@Html.EditorFor(model => model.Tx_ObsAnu, new { htmlAttributes = new { @id = "Tx_ObsAnu", @class = "form-control" } })</td>
+                                    <td style="vertical-align:top; padding-top: 12px; width: 150px;"><label>Fecha Autorización</label></td>
+                                    <td style="vertical-align: top; padding: 10px; width: 200px;">
+                                        @Html.EditorFor(model => model.Tx_FecAut, new { htmlAttributes = new { @class = "form-control input-sm", data_inputmask = "'alias': 'date'" } })
+                                        @Html.EditorFor(model => model.Ch_Reemp, new { htmlAttributes = new { @id = "Ch_Reemp" } })
+                                        @Html.Label("lblChk_Reemp", "Reemplazar")
+                                        <div class="row text-right" style="margin-top:100px; margin-right:10px">
+                                            <input id="btnAccept" tabindex="6" name="btnComando" type="submit" value="Aceptar" class="btn btn-primary" />
+                                            <input id="btnCancel" name="btnComando" type="submit" value="Cancelar" class="btn btn-default" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     @section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/AnulacionPlanillaVisibleImport")
+    }
+}

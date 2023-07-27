@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Banca Mundial";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/consulta-banca-mundial-inv.png");
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+
+}
+
+<div class="container">
+    <h1>Consulta de Banca Mundial</h1>
+    <br />
+    <h4 style="color:#428bca">Ingrese algún dato del banco para la búsqueda</h4>
+    <hr style="margin-top: 0px;" />
+
+
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row filter-group">
+        <div class="col-md-6">
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Swift o Flia.</label>
+                    <div class="col-sm-9">
+                        <input id="txtSwift" type="text" style="text-transform: uppercase" maxlength="19" size="19" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">País</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownList("ddl_paises", ViewBag.lst_Paises as IEnumerable<SelectListItem>, "-- Lista de paises --", new { @class = "ddl" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Ciudad</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudad" type="text" maxlength="28" size="28" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Banco</label>
+                <div class="col-sm-9">
+                    <input id="txtBanco" type="text" maxlength="68" size="68" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Dirección</label>
+                <div class="col-sm-9">
+                    <input type="text" id="txtDireccion" maxlength="68" size="68" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Postal</label>
+                <div class="col-sm-9">
+                    <input id="txtPostal" type="text" maxlength="68" size="68" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row btn-box">
+        <button type="button" onclick="buscar();" class="btn btn-primary">Buscar</button>
+        @*<div class="col-xs-6">
+            <button type="button" onclick="imprimir();" class="btn btn-default pull-left"><i class="glyphicon glyphicon-print"></i> Imprimir</button>
+            <button type="button" onclick="excel();" class="btn btn-success pull-left"><i class="glyphicon glyphicon-file"></i> Excel</button>
+        </div>*@
+    </div>
+    <div>
+        <div>
+            <h4 style="color:#428bca">Lista de bancos según información ingresada&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantResultados">0</span></h4>
+            <table id="tableBancos" class="table-bordered table-striped" data-toggle="table">
+                <thead>
+                    <tr>
+                        <th data-field="bic_swf" data-sortable="true">Swift</th>
+                        <th data-field="bic_nom" data-sortable="true">Nombre</th>
+                        <th data-field="bic_ciu" data-sortable="true">Ciudad</th>
+                        <th data-field="bic_pai" data-sortable="true">Pais</th>
+                        <th data-field="bic_dir" data-sortable="true">Dirección</th>
+                        <th data-field="bic_pos" data-sortable="true">Cod. Postal</th>
+                        <th data-field="bic_des" data-sortable="true">Des</th>
+                        <th data-field="bic_ala" data-sortable="true">Aladi</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <input id="urlBancaMundial" type="hidden" value="@Url.Action("Buscar", "BancaMundial")"/>
+    @*<input id="urlBancaMundialImprimir" type="hidden" value="@Url.Action("Imprimir", "BancaMundial")" />*@
+    <input id="urlBancaMundialExcel" type="hidden" value="@Url.Action("DescargarExcel", "BancaMundial")" />
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/BancaMundial")
+}

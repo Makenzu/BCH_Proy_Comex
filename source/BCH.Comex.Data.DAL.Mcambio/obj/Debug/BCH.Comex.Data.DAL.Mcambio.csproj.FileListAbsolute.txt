@@ -1,0 +1,76 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\bin\Debug\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Mcambio\obj\Debug\BCH.Comex.Data.DAL.Mcambio.pdb

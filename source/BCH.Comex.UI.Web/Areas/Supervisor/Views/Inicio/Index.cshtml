@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+
+
+<div class="container" id="header_layout">
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Supervisor</h2>
+        </div>
+    </div>
+    @if (ViewBag.DiaFinalizado)
+    {
+        <div class="alert alert-warning">
+            <strong>Atención!</strong> Algunas opciones se han deshabilitado porque el día no se encuentra abierto. Por favor inicie día antes de operar.
+        </div>
+    }
+    <div class="row">
+
+            <div class="col-xs-6">
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="@Url.Action("Index", "VisualizacionUsuario")">Visualización Usuarios</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "DocumentosValorados")">Documentos Valorados</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "ReemplazarUsuario")">Reemplazo Usuarios</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "CederCartera")">Ceder Cartera</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "Productividad")">Productividad</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "CambioClave")">Cambio Clave Sup.</a></li>
+                    <li role="presentation"><a href="@Url.Action("Index", "RelacionesIdiDec")">Relaciones IDI_DEC</a></li>
+                    <li role="presentation" @(ViewBag.DiaFinalizado ? "class=disabled" : "")><a href="@(ViewBag.DiaFinalizado ? "#" : Url.Action("Index", "InyectarYReversar"))">Inyectar y Reversar Cargos y Abonos</a></li>
+
+
+                    @*Se comenta esto ya que esta siempre deshabilitado (las funciones no hacen nada), pero ademas ahora confunde ya que pueden haber funciones deshabilitadas por no haber hecho inicio de dia*@
+                     @*<li role="presentation" class="disabled"><a href="#">Listado Neg. Aladi Vig.</a></li>
+                    <li role="presentation" class="disabled"><a href="#">Relaciones Oper - ALADI</a></li>
+                    <li role="presentation" class="disabled"><a href="#">Reembolsos Sinacofi</a></li>*@
+                </ul>
+            </div>
+        </div>
+   
+</div>

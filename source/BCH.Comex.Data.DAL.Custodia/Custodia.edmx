@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CUSTODIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CUSTODIA.dbo.CAMBIOS_GRAL_SCE_CTA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CAMBIOS_GRAL_SCE_CTA">
+          <Key>
+            <PropertyRef Name="cta_nem" />
+            <PropertyRef Name="cta_mon" />
+            <PropertyRef Name="cta_num" />
+            <PropertyRef Name="cta_nom" />
+            <PropertyRef Name="cta_gl" />
+            <PropertyRef Name="cta_nroto" />
+            <PropertyRef Name="cta_indto" />
+            <PropertyRef Name="cta_cit" />
+            <PropertyRef Name="cta_cvt" />
+            <PropertyRef Name="cta_cap" />
+            <PropertyRef Name="cta_ctd" />
+            <PropertyRef Name="cta_pos" />
+            <PropertyRef Name="cta_cdr" />
+          </Key>
+          <Property Name="cta_nem" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="cta_mon" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="cta_num" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="cta_nom" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="cta_gl" Type="bit" Nullable="false" />
+          <Property Name="cta_nroto" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="cta_indto" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="cta_cit" Type="bit" Nullable="false" />
+          <Property Name="cta_cvt" Type="bit" Nullable="false" />
+          <Property Name="cta_cap" Type="bit" Nullable="false" />
+          <Property Name="cta_ctd" Type="bit" Nullable="false" />
+          <Property Name="cta_pos" Type="bit" Nullable="false" />
+          <Property Name="cta_cdr" Type="bit" Nullable="false" />
+          <Property Name="cta_gto" Type="tinyint" />
+          <Property Name="cta_nroptd" Type="int" />
+          <Property Name="cta_vigtbl" Type="int" />
+        </EntityType>
+        <Function Name="cambios_gral_consulta_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_callfax_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="rut" Type="bigint" Mode="In" />
+          <Parameter Name="cuenta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_check_list_log_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="check_list" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_citidoc_consulta_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_citidoc_duplicados_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_citidoc_duplicados_hora_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="cambios_mift_cliente_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="rut" Type="bigint" Mode="In" />
+          <Parameter Name="cuenta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_cliente_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_contratos_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="rut" Type="bigint" Mode="In" />
+          <Parameter Name="cuenta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_cuenta_00_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="rut" Type="bigint" Mode="In" />
+          <Parameter Name="cuenta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_log_insert_2_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Fecha_hora" Type="varchar" Mode="In" />
+          <Parameter Name="Fecha" Type="varchar" Mode="In" />
+          <Parameter Name="Rut" Type="varchar" Mode="In" />
+          <Parameter Name="RutDv" Type="varchar" Mode="In" />
+          <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="NombreClte" Type="varchar" Mode="In" />
+          <Parameter Name="Segmento" Type="varchar" Mode="In" />
+          <Parameter Name="Ejecutivo" Type="varchar" Mode="In" />
+          <Parameter Name="Moneda" Type="varchar" Mode="In" />
+          <Parameter Name="monto" Type="bigint" Mode="In" />
+          <Parameter Name="CuentaBnf" Type="varchar" Mode="In" />
+          <Parameter Name="NombreBnf" Type="varchar" Mode="In" />
+          <Parameter Name="BancoInt" Type="varchar" Mode="In" />
+          <Parameter Name="BancoBnf" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Otros" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Mift" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Fax" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Citi" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Fax_NY" Type="varchar" Mode="In" />
+          <Parameter Name="Ind_Con_Mail" Type="varchar" Mode="In" />
+          <Parameter Name="Txt_Con_Otros" Type="varchar" Mode="In" />
+          <Parameter Name="Resultado" Type="varchar" Mode="In" />
+          <Parameter Name="Mensaje" Type="varchar" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_mensajes_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo" Type="tinyint" Mode="In" />
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_mesa_cvd_00a_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="smallint" Mode="In" />
+          <Parameter Name="rut_cliente" Type="bigint" Mode="In" />
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_mesa_cvd_00b_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="smallint" Mode="In" />
+          <Parameter Name="rut_cliente" Type="bigint" Mode="In" />
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_recurrencia_01b_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ord_rut_aux" Type="bigint" Mode="In" />
+          <Parameter Name="ord_cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_nombre" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="varchar" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_recurrencia_02_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="ord_rut" Type="varchar" Mode="In" />
+          <Parameter Name="ord_cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="varchar" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_recurrencia_manual_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opcion" Type="tinyint" Mode="In" />
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="ord_nombre" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_nombre" Type="varchar" Mode="In" />
+          <Parameter Name="bnf_swfbco" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_reparo_log_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="rut" Type="varchar" Mode="In" />
+          <Parameter Name="nomcli" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+          <Parameter Name="doc_name" Type="varchar" Mode="In" />
+          <Parameter Name="mailejec" Type="varchar" Mode="In" />
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="reparo_list" Type="varchar" Mode="In" />
+          <Parameter Name="otro_1" Type="varchar" Mode="In" />
+          <Parameter Name="otro_2" Type="varchar" Mode="In" />
+          <Parameter Name="otro_3" Type="varchar" Mode="In" />
+          <Parameter Name="otro_4" Type="varchar" Mode="In" />
+          <Parameter Name="otro_5" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_tarifas_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_tarifas_obs_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accnum" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_tarifas_pizarra_01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo" Type="varchar" Mode="In" />
+          <Parameter Name="sub_tipo" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="cambios_mift_tarifas_pizarra_02_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo" Type="varchar" Mode="In" />
+          <Parameter Name="sub_tipo" Type="varchar" Mode="In" />
+          <Parameter Name="moneda" Type="char" Mode="In" />
+          <Parameter Name="monto" Type="numeric" Mode="In" />
+        </Function>
+        <EntityContainer Name="CUSTODIAModelStoreContainer">
+          <EntitySet Name="CAMBIOS_GRAL_SCE_CTA" EntityType="Self.CAMBIOS_GRAL_SCE_CTA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nem] AS [cta_nem], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_mon] AS [cta_mon], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_num] AS [cta_num], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nom] AS [cta_nom], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_gl] AS [cta_gl], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nroto] AS [cta_nroto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_indto] AS [cta_indto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cit] AS [cta_cit], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cvt] AS [cta_cvt], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cap] AS [cta_cap], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_ctd] AS [cta_ctd], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_pos] AS [cta_pos], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_cdr] AS [cta_cdr], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_gto] AS [cta_gto], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_nroptd] AS [cta_nroptd], 
+    [CAMBIOS_GRAL_SCE_CTA].[cta_vigtbl] AS [cta_vigtbl]
+    FROM [dbo].[CAMBIOS_GRAL_SCE_CTA] AS [CAMBIOS_GRAL_SCE_CTA]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CUSTODIAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CustodiaEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="cambios_gral_consulta_00_MS" ReturnType="Collection(CUSTODIAModel.cambios_gral_consulta_00_MS_Result)">
+          <Parameter Name="opcion" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_callfax_00_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_callfax_00_MS_Result)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="rut" Mode="In" Type="Int64" />
+            <Parameter Name="cuenta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_check_list_log_01_MS">
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="check_list" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_citidoc_consulta_01_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_citidoc_consulta_01_MS_Result)">
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_citidoc_duplicados_01_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_citidoc_duplicados_01_MS_Result)">
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_citidoc_duplicados_hora_01_MS" ReturnType="Collection(String)" />
+          <FunctionImport Name="cambios_mift_cliente_01_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_cliente_01_MS_Result)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_contratos_00_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_contratos_00_MS_Result)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="rut" Mode="In" Type="Int64" />
+            <Parameter Name="cuenta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_cuenta_00_MS" ReturnType="Collection(Int32)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="rut" Mode="In" Type="Int64" />
+            <Parameter Name="cuenta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_log_insert_2_MS">
+            <Parameter Name="Fecha_hora" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="String" />
+            <Parameter Name="Rut" Mode="In" Type="String" />
+            <Parameter Name="RutDv" Mode="In" Type="String" />
+            <Parameter Name="Cuenta" Mode="In" Type="String" />
+            <Parameter Name="NombreClte" Mode="In" Type="String" />
+            <Parameter Name="Segmento" Mode="In" Type="String" />
+            <Parameter Name="Ejecutivo" Mode="In" Type="String" />
+            <Parameter Name="Moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Int64" />
+            <Parameter Name="CuentaBnf" Mode="In" Type="String" />
+            <Parameter Name="NombreBnf" Mode="In" Type="String" />
+            <Parameter Name="BancoInt" Mode="In" Type="String" />
+            <Parameter Name="BancoBnf" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Otros" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Mift" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Fax" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Citi" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Fax_NY" Mode="In" Type="String" />
+            <Parameter Name="Ind_Con_Mail" Mode="In" Type="String" />
+            <Parameter Name="Txt_Con_Otros" Mode="In" Type="String" />
+            <Parameter Name="Resultado" Mode="In" Type="String" />
+            <Parameter Name="Mensaje" Mode="In" Type="String" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_mensajes_01_MS" ReturnType="Collection(String)">
+            <Parameter Name="tipo" Mode="In" Type="Byte" />
+            <Parameter Name="accnum" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_mesa_cvd_00a_MS">
+            <Parameter Name="opcion" Mode="In" Type="Int16" />
+            <Parameter Name="rut_cliente" Mode="In" Type="Int64" />
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_mesa_cvd_00b_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_mesa_cvd_00b_MS_Result)">
+            <Parameter Name="opcion" Mode="In" Type="Int16" />
+            <Parameter Name="rut_cliente" Mode="In" Type="Int64" />
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_recurrencia_02_MS" ReturnType="Collection(Int16)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="ord_rut" Mode="In" Type="String" />
+            <Parameter Name="ord_cuenta" Mode="In" Type="String" />
+            <Parameter Name="bnf_swfbco" Mode="In" Type="String" />
+            <Parameter Name="bnf_cuenta" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_recurrencia_manual_01_MS">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="ord_nombre" Mode="In" Type="String" />
+            <Parameter Name="bnf_cuenta" Mode="In" Type="String" />
+            <Parameter Name="bnf_nombre" Mode="In" Type="String" />
+            <Parameter Name="bnf_swfbco" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_reparo_log_01_MS">
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="rut" Mode="In" Type="String" />
+            <Parameter Name="nomcli" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+            <Parameter Name="doc_name" Mode="In" Type="String" />
+            <Parameter Name="mailejec" Mode="In" Type="String" />
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="reparo_list" Mode="In" Type="String" />
+            <Parameter Name="otro_1" Mode="In" Type="String" />
+            <Parameter Name="otro_2" Mode="In" Type="String" />
+            <Parameter Name="otro_3" Mode="In" Type="String" />
+            <Parameter Name="otro_4" Mode="In" Type="String" />
+            <Parameter Name="otro_5" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_tarifas_obs_01_MS" ReturnType="Collection(String)">
+          <Parameter Name="accnum" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_tarifas_pizarra_01_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_tarifas_pizarra_01_MS_Result)">
+            <Parameter Name="tipo" Mode="In" Type="String" />
+            <Parameter Name="sub_tipo" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_tarifas_pizarra_02_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_tarifas_pizarra_02_MS_Result)">
+            <Parameter Name="tipo" Mode="In" Type="String" />
+            <Parameter Name="sub_tipo" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <EntitySet Name="CAMBIOS_GRAL_SCE_CTA" EntityType="CUSTODIAModel.CAMBIOS_GRAL_SCE_CTA" />
+          <FunctionImport Name="cambios_mift_recurrencia_01b_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_recurrencia_01b_MS_Result)">
+            <Parameter Name="ord_rut_aux" Mode="In" Type="Int64" />
+            <Parameter Name="ord_cuenta" Mode="In" Type="String" />
+            <Parameter Name="bnf_swfbco" Mode="In" Type="String" />
+            <Parameter Name="bnf_cuenta" Mode="In" Type="String" />
+            <Parameter Name="bnf_nombre" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_cliente_00_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_cliente_00_MS_Result)">
+            <Parameter Name="opcion" Mode="In" Type="Byte" />
+            <Parameter Name="rut" Mode="In" Type="Int64" />
+            <Parameter Name="cuenta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cambios_mift_tarifas_01_MS" ReturnType="Collection(CUSTODIAModel.cambios_mift_tarifas_01_MS_Result)">
+            <Parameter Name="accnum" Mode="In" Type="String" />
+            <Parameter Name="moneda" Mode="In" Type="String" />
+            <Parameter Name="monto" Mode="In" Type="Decimal" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="cambios_gral_consulta_00_MS_Result">
+          <Property Type="String" Name="mnd_mndswf" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="mnd_mndnmc" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="mnd_mndnom" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_callfax_00_MS_Result">
+          <Property Type="Int64" Name="rut" Nullable="true" />
+          <Property Type="String" Name="cuenta" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="mensaje_01" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="mensaje_02" Nullable="true" />
+          <Property Type="Int32" Name="mensaje_03" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_citidoc_consulta_01_MS_Result">
+          <Property Type="String" Name="rut" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Nombre_Cliente" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Document_Name" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_citidoc_duplicados_01_MS_Result">
+          <Property Type="String" Name="hora" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Folder" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="document_name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="referencia" Nullable="false" MaxLength="150" />
+          <Property Type="Decimal" Name="Monto" Nullable="true" Precision="20" Scale="2" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="255" />
+          <Property Type="Int64" Name="base" Nullable="true" />
+          <Property Type="String" Name="Scanner" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="rut" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="nombre_cliente" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_cliente_01_MS_Result">
+          <Property Type="String" Name="accnum" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_contratos_00_MS_Result">
+          <Property Type="String" Name="indicador_fax_local" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_fax_local" Nullable="false" MaxLength="24" />
+          <Property Type="String" Name="indicador_citi_offshore" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_citi_offshore" Nullable="false" MaxLength="34" />
+          <Property Type="String" Name="indicador_mift" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_mift" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="indicador_fax_NY_Londres" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_fax_NY_Londres" Nullable="false" MaxLength="33" />
+          <Property Type="String" Name="indicador_otros" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_otros" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="indicador_anexo_mail" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="contrato_anexo_mail" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="result_contrato" Nullable="true" MaxLength="3" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_mesa_cvd_00b_MS_Result">
+          <Property Type="String" Name="chk" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="fecha" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="monto" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="precio" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="mdn_com" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="mnd_vta" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="tipo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="mtoPesos" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="mtoUSD" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="FVALOR" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="idComex" Nullable="true" MaxLength="12" />
+          <Property Type="Int32" Name="estado" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_tarifas_pizarra_01_MS_Result">
+          <Property Type="String" Name="Pizarra" Nullable="false" MaxLength="11" />
+          <Property Type="Decimal" Name="USD_Min" Nullable="true" Precision="19" Scale="2" />
+          <Property Type="Decimal" Name="USD_Max" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Tasa" Nullable="true" MaxLength="31" />
+          <Property Type="Decimal" Name="Minimo" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="Maximo" Nullable="true" Precision="12" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_tarifas_pizarra_02_MS_Result">
+          <Property Type="String" Name="Pizarra" Nullable="false" MaxLength="5" />
+          <Property Type="Decimal" Name="Valor" Nullable="true" Precision="12" Scale="2" />
+        </ComplexType>
+        <EntityType Name="CAMBIOS_GRAL_SCE_CTA">
+          <Key>
+            <PropertyRef Name="cta_nem" />
+            <PropertyRef Name="cta_mon" />
+            <PropertyRef Name="cta_num" />
+            <PropertyRef Name="cta_nom" />
+            <PropertyRef Name="cta_gl" />
+            <PropertyRef Name="cta_nroto" />
+            <PropertyRef Name="cta_indto" />
+            <PropertyRef Name="cta_cit" />
+            <PropertyRef Name="cta_cvt" />
+            <PropertyRef Name="cta_cap" />
+            <PropertyRef Name="cta_ctd" />
+            <PropertyRef Name="cta_pos" />
+            <PropertyRef Name="cta_cdr" />
+          </Key>
+          <Property Name="cta_nem" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="cta_mon" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="cta_num" Type="String" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="cta_nom" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cta_gl" Type="Boolean" Nullable="false" />
+          <Property Name="cta_nroto" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+          <Property Name="cta_indto" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="cta_cit" Type="Boolean" Nullable="false" />
+          <Property Name="cta_cvt" Type="Boolean" Nullable="false" />
+          <Property Name="cta_cap" Type="Boolean" Nullable="false" />
+          <Property Name="cta_ctd" Type="Boolean" Nullable="false" />
+          <Property Name="cta_pos" Type="Boolean" Nullable="false" />
+          <Property Name="cta_cdr" Type="Boolean" Nullable="false" />
+          <Property Name="cta_gto" Type="Byte" />
+          <Property Name="cta_nroptd" Type="Int32" />
+          <Property Name="cta_vigtbl" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="cambios_mift_recurrencia_01b_MS_Result">
+          <Property Type="String" Name="ord_rut" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="ord_cuenta" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="ord_nombre" Nullable="false" MaxLength="1" />
+          <Property Type="Int64" Name="cantidad" Nullable="true" />
+          <Property Type="String" Name="bnf_cuenta" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="bnf_nombre" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="bnf_swbcoint" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="bnf_swfbco" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="bnf_nombco" Nullable="true" MaxLength="150" />
+          <Property Type="Int16" Name="retorno" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_cliente_00_MS_Result">
+          <Property Type="Int64" Name="rut" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="segmento" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ejecutivo" Nullable="true" MaxLength="60" />
+          <Property Type="Byte" Name="est_recurrencia" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="cambios_mift_tarifas_01_MS_Result">
+          <Property Type="String" Name="Rut" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Tarifas" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Mon" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Valor" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Observacion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Impto" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Tipo" Nullable="true" MaxLength="1" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CUSTODIAModelStoreContainer" CdmEntityContainer="CustodiaEntities" >
+          <FunctionImportMapping FunctionImportName="cambios_gral_consulta_00_MS" FunctionName="CUSTODIAModel.Store.cambios_gral_consulta_00_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_gral_consulta_00_MS_Result">
+                <ScalarProperty Name="mnd_mndswf" ColumnName="mnd_mndswf" />
+                <ScalarProperty Name="mnd_mndnmc" ColumnName="mnd_mndnmc" />
+                <ScalarProperty Name="mnd_mndnom" ColumnName="mnd_mndnom" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_callfax_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_callfax_00_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_callfax_00_MS_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+                <ScalarProperty Name="mensaje_01" ColumnName="mensaje_01" />
+                <ScalarProperty Name="mensaje_02" ColumnName="mensaje_02" />
+                <ScalarProperty Name="mensaje_03" ColumnName="mensaje_03" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_check_list_log_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_check_list_log_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_consulta_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_consulta_01_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_citidoc_consulta_01_MS_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+                <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_duplicados_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_duplicados_01_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_citidoc_duplicados_01_MS_Result">
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="Folder" ColumnName="Folder" />
+                <ScalarProperty Name="document_name" ColumnName="document_name" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Document_Type" ColumnName="Document_Type" />
+                <ScalarProperty Name="base" ColumnName="base" />
+                <ScalarProperty Name="Scanner" ColumnName="Scanner" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_duplicados_hora_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_duplicados_hora_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_cliente_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cliente_01_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_cliente_01_MS_Result">
+                <ScalarProperty Name="accnum" ColumnName="accnum" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_contratos_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_contratos_00_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_contratos_00_MS_Result">
+                <ScalarProperty Name="indicador_fax_local" ColumnName="indicador_fax_local" />
+                <ScalarProperty Name="contrato_fax_local" ColumnName="contrato_fax_local" />
+                <ScalarProperty Name="indicador_citi_offshore" ColumnName="indicador_citi_offshore" />
+                <ScalarProperty Name="contrato_citi_offshore" ColumnName="contrato_citi_offshore" />
+                <ScalarProperty Name="indicador_mift" ColumnName="indicador_mift" />
+                <ScalarProperty Name="contrato_mift" ColumnName="contrato_mift" />
+                <ScalarProperty Name="indicador_fax_NY_Londres" ColumnName="indicador_fax_NY_Londres" />
+                <ScalarProperty Name="contrato_fax_NY_Londres" ColumnName="contrato_fax_NY_Londres" />
+                <ScalarProperty Name="indicador_otros" ColumnName="indicador_otros" />
+                <ScalarProperty Name="contrato_otros" ColumnName="contrato_otros" />
+                <ScalarProperty Name="indicador_anexo_mail" ColumnName="indicador_anexo_mail" />
+                <ScalarProperty Name="contrato_anexo_mail" ColumnName="contrato_anexo_mail" />
+                <ScalarProperty Name="result_contrato" ColumnName="result_contrato" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_cuenta_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cuenta_00_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_log_insert_2_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_log_insert_2_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_mensajes_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mensajes_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_mesa_cvd_00a_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mesa_cvd_00a_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_mesa_cvd_00b_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mesa_cvd_00b_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_mesa_cvd_00b_MS_Result">
+                <ScalarProperty Name="chk" ColumnName="chk" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="mdn_com" ColumnName="mdn_com" />
+                <ScalarProperty Name="mnd_vta" ColumnName="mnd_vta" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="mtoPesos" ColumnName="mtoPesos" />
+                <ScalarProperty Name="mtoUSD" ColumnName="mtoUSD" />
+                <ScalarProperty Name="FVALOR" ColumnName="FVALOR" />
+                <ScalarProperty Name="idComex" ColumnName="idComex" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_02_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_02_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_manual_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_manual_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_reparo_log_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_reparo_log_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_obs_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_obs_01_MS" />
+          <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_pizarra_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_pizarra_01_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_pizarra_01_MS_Result">
+                <ScalarProperty Name="Pizarra" ColumnName="Pizarra" />
+                <ScalarProperty Name="USD_Min" ColumnName="USD_Min" />
+                <ScalarProperty Name="USD_Max" ColumnName="USD_Max" />
+                <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+                <ScalarProperty Name="Minimo" ColumnName="Minimo" />
+                <ScalarProperty Name="Maximo" ColumnName="Maximo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_pizarra_02_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_pizarra_02_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_pizarra_02_MS_Result">
+                <ScalarProperty Name="Pizarra" ColumnName="Pizarra" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CAMBIOS_GRAL_SCE_CTA">
+            <EntityTypeMapping TypeName="CUSTODIAModel.CAMBIOS_GRAL_SCE_CTA">
+              <MappingFragment StoreEntitySet="CAMBIOS_GRAL_SCE_CTA">
+                <ScalarProperty Name="cta_vigtbl" ColumnName="cta_vigtbl" />
+                <ScalarProperty Name="cta_nroptd" ColumnName="cta_nroptd" />
+                <ScalarProperty Name="cta_gto" ColumnName="cta_gto" />
+                <ScalarProperty Name="cta_cdr" ColumnName="cta_cdr" />
+                <ScalarProperty Name="cta_pos" ColumnName="cta_pos" />
+                <ScalarProperty Name="cta_ctd" ColumnName="cta_ctd" />
+                <ScalarProperty Name="cta_cap" ColumnName="cta_cap" />
+                <ScalarProperty Name="cta_cvt" ColumnName="cta_cvt" />
+                <ScalarProperty Name="cta_cit" ColumnName="cta_cit" />
+                <ScalarProperty Name="cta_indto" ColumnName="cta_indto" />
+                <ScalarProperty Name="cta_nroto" ColumnName="cta_nroto" />
+                <ScalarProperty Name="cta_gl" ColumnName="cta_gl" />
+                <ScalarProperty Name="cta_nom" ColumnName="cta_nom" />
+                <ScalarProperty Name="cta_num" ColumnName="cta_num" />
+                <ScalarProperty Name="cta_mon" ColumnName="cta_mon" />
+                <ScalarProperty Name="cta_nem" ColumnName="cta_nem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_01b_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_01b_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_recurrencia_01b_MS_Result">
+                <ScalarProperty Name="ord_rut" ColumnName="ord_rut" />
+                <ScalarProperty Name="ord_cuenta" ColumnName="ord_cuenta" />
+                <ScalarProperty Name="ord_nombre" ColumnName="ord_nombre" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="bnf_cuenta" ColumnName="bnf_cuenta" />
+                <ScalarProperty Name="bnf_nombre" ColumnName="bnf_nombre" />
+                <ScalarProperty Name="bnf_swbcoint" ColumnName="bnf_swbcoint" />
+                <ScalarProperty Name="bnf_swfbco" ColumnName="bnf_swfbco" />
+                <ScalarProperty Name="bnf_nombco" ColumnName="bnf_nombco" />
+                <ScalarProperty Name="retorno" ColumnName="retorno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_cliente_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cliente_00_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_cliente_00_MS_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="segmento" ColumnName="segmento" />
+                <ScalarProperty Name="ejecutivo" ColumnName="ejecutivo" />
+                <ScalarProperty Name="est_recurrencia" ColumnName="est_recurrencia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_01_MS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_01_MS_Result">
+                <ScalarProperty Name="Rut" ColumnName="Rut" />
+                <ScalarProperty Name="Tarifas" ColumnName="Tarifas" />
+                <ScalarProperty Name="Mon" ColumnName="Mon" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Impto" ColumnName="Impto" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

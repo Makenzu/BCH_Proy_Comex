@@ -1,0 +1,49 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ReferenciasBAEBCHViewModel
+@{
+    ViewBag.Title = "Referencias BAE - BCH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+
+
+<div class="panel">
+    @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form-inline" }))
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary();
+        <div class="panel-heading">
+            <h2>@ViewBag.Title</h2>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="">Ref. BAE</label>
+                <input type="search" class="form-control upper" id="" name="keyword" placeholder="Ref. BAE" maxlength="14" >
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 0px">Buscar</button>
+        </div>
+    }
+    <table class="table table-bordered" data-height="300" id="listadoReferencias">
+        <thead>
+            <tr>
+                <th>Op. Banco de Chile</th>
+                <th>Referencia BAE</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Detalle != null)
+            {
+                foreach (var item in Model.Detalle)
+                {
+                    <tr>
+                        <td>@item.OperacionBancoChile</td>
+                        <td>@item.ReferenciaNueva</td>                        
+                    </tr>
+                }
+            }
+            
+        </tbody>
+
+    </table>
+</div>

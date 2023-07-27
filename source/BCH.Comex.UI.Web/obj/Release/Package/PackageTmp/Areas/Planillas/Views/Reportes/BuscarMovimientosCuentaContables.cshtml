@@ -1,0 +1,140 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode
+
+@{
+    ViewBag.Title = "Movimientos Cuentas Contables";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+<div class="container form-horizontal">
+    <h3 class="margin-bottom-base" id="caption">@ViewBag.Title</h3>
+    <div class="row">
+        @using (Html.BeginForm("MovimientosCuentaContables", null, FormMethod.Get))
+        {
+            @Html.ValidationSummary();
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label>@(Model == BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode.NemonicoCuenta ? "Nemonico Cuenta :" : "Numero Cuenta :")</label>
+                            </div>
+                            <div class=" col-xs-4">
+                                <input type="text" class="form-control input-sm upper" id="txtCuenta" name="Cuenta" value="" maxlength="64" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-2">
+                                <label>Fecha :</label>
+                            </div>
+                            <div class=" col-xs-4">
+                                <div class="input-group date" id="dtpFecha">
+                                    <input type="text" class="form-control input-sm" id="txtFecha" name="Fecha" data-inputmask="'alias': 'date'" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnBuscar" type="button" class="btn btn-primary">Buscar</button>
+                    
+                    <div style="padding-top: 10px; padding-bottom: 10px">
+                        <table class="table" data-toggle="table" id="tablaMovimientos">
+                            <thead>
+                                <tr>
+                                    <th>Referencia</th>
+                                    <th>Num. Rep.</th>
+                                    <th>Moneda</th>
+                                    <th>Monto</th>
+                                    @if (Model != BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode.NumeroCuenta)
+                                    {
+                                        <th>Num. Cuenta</th>
+                                    }
+                                    <th>D/H</th>
+                                    <th>Num.Cte.</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-danger" id="btnSalir">Salir</button>
+
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    <script type="text/javascript">
+        function montoFormatter(value, row, index) {
+            if (row["Moneda"] == 'USD') {
+                return numeral(value).format("0,0.00");
+            } else if (row["Moneda"] == 'GBP') {
+                return numeral(value).format("0,0.00");
+            } else if (row["Moneda"] == 'EUR') {
+                return numeral(value).format("0,0.00");
+            } else if (row["Moneda"] == 'GBP') {
+                return numeral(value).format("0,0.00");
+            } else if (row["Moneda"] != null) {
+                return numeral(value).format("0,0.00");
+            } else {
+                return numeral(value).format("0,0.00");
+            }
+        }
+
+        $(function () {
+            $("#txtCuenta").focus().select();
+            $('#dtpFecha').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: Date.now(), maxDate: Date.now(), debug: true });
+            $tablaMovimientos = $('#tablaMovimientos');
+            $(window).resize(function () { $tablaMovimientos.bootstrapTable('resetView'); });
+
+            $('#btnBuscar').on('click', function (e) {
+                var fecha = $('#dtpFecha').data('DateTimePicker').date().format('YYYY-MM-DD');
+
+                e.preventDefault();
+                $tablaMovimientos.bootstrapTable('destroy');
+                $tablaMovimientos.bootstrapTable({
+                    url: '@Url.Action("MovimientosCuentaContables")',
+                    method: 'get',
+                    cache: false,
+                    height: 300,
+                    search: true,
+                    showRefresh: true,
+                    clickToSelect: false,
+                    singleSelect: false,
+                    queryParams: function (p) {
+                        return { fecha: fecha, mode: '@Model.ToString()', valor: $('#txtCuenta').val().toUpperCase() };
+                    },
+                    locale: "es-CL",
+                    columns: [
+                        { field: 'referencia', title: 'Referencia' },
+                        { field: 'nrorpt', title: 'Num. Rep.' },
+                        { field: 'nemmon', title: 'Moneda' },
+                        { field: 'mtomcd', title: 'Monto', formatter: montoFormatter, align: 'right' },
+                        @if (Model != BCH.Comex.UI.Web.Areas.Planillas.Models.CuentaContableMovimientosMode.NumeroCuenta)
+                    {
+                     @:{ field: 'numcta', title: 'Num. Cuenta', align: 'right' },
+
+                    }
+                        { field: 'cod_dh', title: 'D/H' },
+                        { field: 'numcct', title: 'Num. Cte.', align: 'right' }
+                    ],
+                    onCheck: function (row) {
+
+                    }
+                });
+            })
+
+            $('#btnSalir').on('click', function () {
+                close();
+            });
+
+        });
+    </script>
+}
+
+
+

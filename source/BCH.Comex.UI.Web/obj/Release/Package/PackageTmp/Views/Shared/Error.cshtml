@@ -1,0 +1,35 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+    ViewBag.SimpleLayout = true;
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+}
+
+<div class="container">
+    <h1 class="text-danger">Error</h1>
+    <h2 class="text-danger" style="display:none;">@Model.Exception.Message</h2>
+    <h2 class="text-danger">Se ha producido un error en la aplicación, favor reintentar</h2>
+
+    @{  
+        var ex = @Model.Exception;
+        var inner = ex.InnerException;
+        
+        string hidden = string.Empty;
+        if (ex is BCH.Comex.Common.Exceptions.ComexUserException)
+            hidden = "hidden";
+     }
+    
+    <a class="btn btn-default" href="~/" >
+        Volver al portal
+    </a>
+
+    <p style="display: none;">
+        <br />
+        <b>Controller:</b> @Model.ControllerName<br />
+        <b>Action:</b> @Model.ActionName<br />
+        <b>Hora:</b> @DateTime.Now.ToLongDateString() @DateTime.Now.ToLongTimeString()<br />
+        <b>Actvidad ID:</b> @Model.Exception.HelpLink<br />
+    </p>
+
+</div>

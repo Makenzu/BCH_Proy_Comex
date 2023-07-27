@@ -1,0 +1,228 @@
+﻿@using BCH.Comex.Core.Entities.Cext01.FundTransfer.UI_Modulos;
+@model BCH.Comex.UI.Web.Models.FundTransfer.ParticipantesCrearViewModel
+
+@{
+    ViewBag.Title = "Crear Participantes";
+}
+
+<div class="container"> 
+
+    <h3>Identificar Participantes @Model.Caption</h3>
+
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmParticipantesCrear", name = "frmParticipantesCrear" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @*<div class="container" id="msg-zone" style="padding-top: 20px;">
+            @if (Model.MensajesDeError != null)
+            {
+                foreach (var item in Model.MensajesDeError)
+                {
+                    string tipo = String.Empty;
+                    if (item.Type != TipoMensaje.Nada)
+                    {
+                        if (item.Type == TipoMensaje.Informacion)
+                        {
+                            tipo = "alert-info";
+                        }
+                        else if (item.Type == TipoMensaje.Correcto)
+                        {
+                            tipo = "alert-success";
+                        }
+                        else if (item.Type == TipoMensaje.Error)
+                        {
+                            tipo = "alert-danger";
+                        }
+                        <div class="alert @tipo">
+                            <b>@item.Title: </b>@item.Text
+                        </div>
+                    }
+                }
+            }
+        </div>*@
+
+        @Html.HiddenFor(model => model.CargaAutomatica)
+        @Html.HiddenFor(model => model.NuestroPais)
+
+        <div class="row">
+            <div class="col-xs-2 label-div">
+                @Html.LabelFor(model => model.Rut)
+            </div>
+            <div class="col-xs-8">
+                @Html.EditorFor(model => model.Rut, new { htmlAttributes = new { @class = "form-control" ,tabindex= "1"} })
+            </div>
+            <div class="col-xs-1 label-div">
+                @Html.LabelFor(model => model.EsBanco)
+            </div>
+            <div class="col-xs-1 label-div">
+                @Html.EditorFor(model => model.EsBanco,new { htmlAttributes = new {tabindex= "2"} })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2 label-div">
+                @Html.LabelFor(model => model.RazonSocial)
+            </div>
+            <div class="col-xs-10">
+                @Html.EditorFor(model => model.RazonSocial, new { htmlAttributes = new { @class = "form-control" ,tabindex="3"} })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2 label-div">
+                @Html.LabelFor(model => model.Direccion)
+            </div>
+            <div class="col-xs-10">
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control", tabindex = "4" } })
+            </div>
+        </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Localidad)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Localidad, new { htmlAttributes = new { @class = "form-control", tabindex = "5" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.CodPostal)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.CodPostal, new { htmlAttributes = new { @class = "form-control", tabindex = "11" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Region)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Region, new { htmlAttributes = new { @class = "form-control", tabindex = "6" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Telefono)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", tabindex = "12" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Ciudad)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Ciudad, new { htmlAttributes = new { @class = "form-control", tabindex = "7" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Fax)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Fax, new { htmlAttributes = new { @class = "form-control", tabindex = "13" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Pais)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.DropDownListFor(model => model.Pais, Model.ListaPais, "Selecciones un país...",
+                            htmlAttributes: new { @class = "form-control" , @disabled = "disabled"})
+                                    @Html.EditorFor(model => model.OtroPais, new { htmlAttributes = new { @class = "form-control hidden", tabindex = "8" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.Telex)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.Telex, new { htmlAttributes = new { @class = "form-control", tabindex = "14" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.CasillaBanco)
+                                </div>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.CasillaBanco, new { htmlAttributes = new { @class = "form-control", tabindex = "9" } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-4 label-div">
+                                    @Html.LabelFor(model => model.EnvioCorrespondencia)
+                                </div>
+                                <div class="col-xs-8">
+                                    <select id="ddlEnvio" class="form-control">
+                                        <option tabindex="15" value="0" selected="selected">Dirección</option>
+                                        <option tabindex="16" value="1" disabled="disabled">Fax</option>
+                                        <option tabindex="17" value="2" disabled="disabled">Casilla Bco. Chile</option>
+                                        <option tabindex="18" value="3" disabled="disabled">Casilla Postal</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row margin-bottom-double">
+                        <div class="col-xs-2 label-div">
+                            @Html.LabelFor(model => model.CasillaPostal)
+                        </div>
+                        <div class="col-xs-4">
+                            @Html.EditorFor(model => model.CasillaPostal, new { htmlAttributes = new { @class = "form-control", tabindex = "10" } })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <input id="btnGenerar" tabindex="36" type="button" value="Generar" class="btn btn-success" />
+                            <input id="btnSubmit" tabindex="19" name="btnSubmit" type="submit" value="Aceptar" class="btn btn-primary" />
+                            <input id="btnSubmit" tabindex="20" name="btnSubmit" type="submit" value="Cancelar" class="btn btn-default" />
+                        </div>
+                    </div>
+                    }
+
+                    <div>
+                        @Html.ActionLink("Volver", "Index", new { id = 1 }, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/FundTransfer/ParticipantesCrear")
+                }

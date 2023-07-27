@@ -1,0 +1,249 @@
+﻿<div id="DestinoFondos">
+    <div class="container">
+        <h3>Destinos de Fondos @ViewBag.Caption</h3>
+        <input type="hidden" data-bind="value: MostrarVolverADefinir" />
+        <div class="col-xs-4">
+            <div style="height:auto; overflow: auto;">
+                <table class="table table-hover table-bordered" style="overflow: auto;" id="l_mto">
+                    <thead>
+                        <tr data-bind="foreach: l_mto.Header">
+                            <th data-bind="text: $data"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: l_mto.Items">
+                        <tr style="max-height:40px;" data-bind="click: $parent.l_mto_click($index), style:{color:$parent.l_mto.ListIndex()==$index() ? 'blue' : 'black'}, css:{'info': $parent.l_mto.ListIndex() == $index() }">
+                            <td data-bind="text: columns.NemMon"></td>
+                            <td data-bind="text: columns.MtoTot"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+                <label>Moneda</label>
+                <select id="L_Mnd" data-bind="options: L_Mnd.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Mnd.Value, event:{blur:l_mnd_blur,change:l_mnd_change}" class="form-control input-sm"></select>
+            </div>
+            <div class="form-group">
+                <label>Beneficiario</label>
+                <select id="L_Partys" data-bind="options: L_Partys.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Partys.Value, event:{blur:l_party_blur,change:l_partys_change}" class="form-control input-sm"></select>
+            </div>
+            <div class="form-group">
+                <select id="L_Cuentas" tabindex="6" data-bind="enable: L_Cuentas.Enabled, visible: L_Cuentas.Visible, options: L_Cuentas.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Cuentas.Value, event:{blur:l_cuentas_blur,change:l_cuentas_change}" class="form-control input-sm"></select>
+            </div>
+            <div class="form-group">
+                <select id="Cb_Destino" data-bind="enable: Cb_Destino.Enabled, visible: Cb_Destino.Visible, options: Cb_Destino.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Destino.Value,optionsCaption: '--Seleccione--' , enable: Cb_Destino.Enabled, event:{blur:cb_destino_blur,change:cb_destino_change}" class="form-control input-sm"></select>
+            </div>
+
+            <div class="form-group" data-bind="visible: cmb_codtran.Visible">
+                <label>Seleccione Tipo de Transacción</label>
+                <select id="cmb_codtran" tabindex="7" data-bind="options: cmb_codtran.Items, optionsText: 'Value', optionsValue: 'Data', value: cmb_codtran.Value, optionsCaption: '--Seleccione--' ,enable: cmb_codtran.Enabled, event:{blur:cmb_codtran_blur,change: cmb_codtran_change}" class="form-control input-sm"></select>
+            </div>
+
+        </div>
+        <div class="col-xs-8">
+            <div style="max-height: 210px; overflow: auto;">
+                <table class="table table-hover table-bordered header-fixed" style="overflow: auto;">
+                    <thead>
+                        <tr data-bind="foreach: l_via.Header">
+                            <th data-bind="text: $data"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: l_via.Items">
+                        <tr style="max-height:40px;" data-bind="click: $parent.l_via_click($index), css:{'info': $parent.l_via.ListIndex() == $index() }, scrollTo: $parent.scrollToItem">
+                            <td data-bind="text: columns.NomVia"></td>
+                            <td data-bind="text: columns.NemMon"></td>
+                            <td data-bind="text: columns.MtoTot"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Destino de los Fondos</label>
+                        <select id="L_Cta" tabindex="1" data-bind="options: L_Cta.Items, optionsText: 'Value',  optionsValue: 'Data', value: L_Cta.Value , event:{blur:l_cta_blur,change:l_cta_change}" class="form-control input-sm" style="width:100%;"></select>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <label>Monto</label>
+                            <input id="MtoVia" type="text" tabindex="2" maxlength="15" data-bind="textInput: MtoVia.Text" class="col-xs-10 form-control monto input-sm" />
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group text-right" style="margin-top: 20px">
+                                <button id="btn_ok" tabindex="8" class="btn btn-success input-group-addon" data-bind="click: btn_ok_click">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button id="btn_no" disabled="disabled" class="btn btn-danger input-group-addon" data-bind="click: btn_no_click">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-bind="if: Lb_Datos()[1].Visible() || Lb_Datos()[2].Visible() || Lb_Datos()[0].Visible() || BNem.Visible()">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <!-- ko if: Lb_Datos()[0].Visible -->
+                        <div class="col-xs-3" data-bind="if: Lb_Datos()[0].Visible">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label data-bind="text: Lb_Datos()[0].Text"></label>
+                                    <input id="Tx_Datos_0" style="text-transform: uppercase" type="text" tabindex="3" class="form-control tx_datos input-sm" data-bind="textInput: Tx_Datos()[0].Text, event:{blur:tx_datos_change_toUpper,keydown: tx_datos_keypress_Nemonico,focus:selectInput}, attr :{ maxlength: Tx_Datos()[0].MaxLength }" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: Lb_Datos()[1].Visible -->
+                        <div class="col-xs-3" data-bind="if: Lb_Datos()[1].Visible">
+                            <div class="form-group">
+                                <label data-bind="text: Lb_Datos()[1].Text"></label>
+                                <input maxlength="20" id="Tx_Datos_1" style="text-transform: uppercase" type="text" tabindex="4" class="form-control tx_datos input-sm" data-bind="textInput: Tx_Datos()[1].Text, event:{blur:tx_datos_change_toUpper,keypress:tx_datos_keypress,focus:selectInput}, attr :{ maxlength: Tx_Datos()[1].MaxLength }" />
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: Lb_Datos()[2].Visible -->
+                        <div class="col-xs-3" data-bind="if: Lb_Datos()[2].Visible">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label data-bind="text: Lb_Datos()[2].Text"></label>
+                                    <input id="Tx_Datos_2" style="text-transform: uppercase" type="text" tabindex="5" class="form-control tx_datos" data-bind="textInput: Tx_Datos()[2].Text, event:{blur:tx_datos_change_toUpper,keypress:tx_datos_keypress,focus:selectInput}, attr :{ maxlength: Tx_Datos()[2].MaxLength }" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <div class="col-xs-1" data-bind="if: BNem.Visible">
+                            <button id="bnem" data-bind="click: bnem_click, enable: BNem.Enabled" class="btn btn-default" style="display: inline-block; margin-top: 19px;">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-4" style="padding-top: 20px;" data-bind="visible: Lb_Oficina.Visible">
+                            <div class="form-group">
+                                <label data-bind="text: Lb_Oficina.Text"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-bind="if: txtNumRef.Visible">
+                <div class="col-xs-4 col-xs-offset-6">
+                    <div class="form-group" data-bind="visible: txtNumRef.Visible">
+                        <label>Número de Partida</label>
+                        <input type="text" class="form-control input-sm" data-bind="textInput: txtNumRef.Text" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-bind="if:  Ch_ImpChq.Visible || Ch_GenPln.Visible || Bt_PlnTrn.Visible ||  frm_datos.Visible">
+                <div class="col-xs-6" data-bind="visible: frm_datos.Visible">
+                    <div class="form-group">
+                        <label>Por Orden de</label>
+                        <!--,event: {keypress:tx_datos_keypress_ConPunto, keyup:tx_datos_change_toUpper,focus:selectInput}-->
+                        <input class="form-control text-uppercase input-sm" id="Text0_Text" type="text" maxlength="35" data-bind="enable: Text1()[0].Enabled, textInput: Text1()[0].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper,focus:selectInput}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Detalle</label>
+                        <input class="form-control text-uppercase input-sm" id="Text1_Text" type="text" maxlength="35" data-bind="enable: Text1()[1].Enabled,textInput: Text1()[1].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper,focus:selectInput}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Detalle</label>
+                        <input class="form-control text-uppercase input-sm" id="Text2_Text" type="text" maxlength="35" data-bind="enable: Text1()[2].Enabled,textInput: Text1()[2].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper,focus:selectInput}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Detalle</label>
+                        <input class="form-control text-uppercase input-sm" id="Text3_Text" type="text" maxlength="35" data-bind="enable: Text1()[3].Enabled,textInput: Text1()[3].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper,focus:selectInput}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Referencia</label>
+                        <input class="form-control text-uppercase input-sm" type="text" data-bind="enable: Text1()[4].Enabled,textInput: Text1()[4].Text,event: {keypress:tx_datos_keypress, keyup:tx_datos_change_toUpper,focus:selectInput}" />
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group" data-bind="visible: Ch_ImpChq.Visible, enable: Ch_ImpChq.Enabled">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-bind="checked: Ch_ImpChq.Checked" />
+                                Impuesto Sobre
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" data-bind="visible: Ch_GenPln.Visible, enable: Ch_GenPln.Enabled">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-bind="checked: Ch_GenPln.Checked" />
+                                Generar Planillas
+                            </label>
+                        </div>
+                    </div>
+                    <button id="Bt_PlnTrn" type="button" class="btn btn-default pull-right" data-bind="click: bt_plntrn_click, visible: Bt_PlnTrn.Visible">Planillas</button>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-bind="if: frm_infoctagap.Visible, enable: frm_infoctagap.Enabled">
+            <div class="col-xs-8">
+                <div class="form-group">
+                    <label>Información de Cuentas GAP</label>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Cuenta</label>
+                        <input id="txt_cuenta" class="form-control" type="text" data-bind="textInput: txt_cuenta.Text" />
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>C. R. Number</label>
+                        <input id="txt_CRN" type="text" class="form-control" data-bind="textInput: txt_CRN.Text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 text-right">
+            <button class="btn btn-primary" disabled="disabled" tabindex="9" id="btnAccept" data-bind="click: aceptar">Aceptar</button>
+            <button class="btn btn-default" id="btnCancel" data-bind="click: cancelar">Cancelar</button>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/DestinoFondos")
+}
+
+@section css{
+    <style>
+        .header-fixed {
+            width: 100%;
+        }
+
+        .header-fixed > thead,
+        .header-fixed > tbody,
+        .header-fixed > thead > tr,
+        .header-fixed > tbody > tr,
+        .header-fixed > thead > tr > th,
+        .header-fixed > tbody > tr > td {
+            display: block;            
+        }
+
+        .header-fixed > tbody > tr:after,
+        .header-fixed > thead > tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .header-fixed > tbody {
+            overflow: auto;
+            height: 122px;
+        }
+
+        .header-fixed > tbody > tr > td,
+        .header-fixed > thead > tr > th {
+            width: 33.33%;
+            float: left;
+        }
+
+    </style>
+}

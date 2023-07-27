@@ -1,0 +1,248 @@
+﻿.scrollit {
+    overflow: auto;
+    height: 432px; /*476px;*/
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#tb_CDD {
+    width: 100%;
+    text-align: center;
+}
+.tg-ct {
+    width: 1256px; /*1125px;*/
+    height: 518px;
+}
+.tg-ct-Arb {
+    width: 1360px;
+    height: 518px;
+}
+.tg tbody tr {
+    height: 15px;
+}
+
+    .tg th {
+        background-color: #002464;
+        border-color: #ffffff;
+        border-style: solid;
+        border-width: thin;
+        color: #ffffff;
+        font-size: 11px;
+        text-align: center;
+        vertical-align: middle;
+        height: 45px;
+    }
+
+    .tg .tg-th {
+        background-color: #002464;
+        border-color: #ffffff;
+        color: #ffffff;
+        font-size: 12px;
+        /*font-weight: bold;*/
+        text-align: center;
+        vertical-align: middle;
+        height: 35px;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-td {
+        /*background-color: #dbe4f2;*/
+        border-color: #ffffff;
+        font-size: 11px;
+        vertical-align: middle
+    }
+
+    .tg .w55 {
+        width: 55px;
+    }
+    .tg .w56 {
+        width: 56px;
+    }
+    .tg .w58 {
+        width: 58px;
+    }
+    .tg .w59 {
+        width: 59px;
+    }
+    .tg .w60 {
+        width: 60px;
+    }
+    .tg .w61 {
+        width: 61px;
+    }
+    .tg .w62 {
+        width: 62px;
+    }
+    .tg .w63 {
+        width: 63px;
+    }
+    .tg .w64 {
+        width: 64px;
+    }
+    .tg .w65 {
+        width: 65px;
+    }
+    .tg .w68 {
+        width: 68px;
+    }
+    .tg .w69 {
+        width: 69px;
+    }
+    .tg .w70 {
+        width: 70px;
+    }
+    .tg .w71 {
+        width: 71px;
+    }
+    .tg .w74 {
+        width: 74px;
+    }
+    .tg .w77 {
+        width: 77px;
+    }
+    .tg .w78 {
+        width: 78px;
+    }
+    .tg .w79 {
+        width: 79px;
+    }
+    .tg .w80 {
+        width: 80px;
+    }
+    .tg .w81 {
+    width: 81px;
+}
+
+    .tg .w88 {
+        width: 88px;
+    }
+    .tg .w89 {
+        width: 89px;
+    }
+    .tg .w90 {
+    width: 90px;
+}
+
+    .tg .w92 {
+        width: 92px;
+    }
+    .tg .w93 {
+        width: 93px;
+    }
+    .tg .w94 {
+        width: 94px;
+    }
+    .tg .w97 {
+        width: 97px;
+    }
+    .tg .w98 {
+        width: 98px;
+    }
+    .tg .w100 {
+        width: 100px;
+    }
+
+    .tg .w102 {
+        width: 102px;
+    }
+    .tg .w104 {
+        width: 104px;
+    }
+    .tg .w106 {
+        width: 106px;
+    }
+    .tg .w110 {
+    width: 110px;
+}
+
+    .tg .w120 {
+        width: 120px;
+    }
+
+    .tg .w124 {
+        width: 124px;
+    }
+    .tg .w132 {
+        width: 132px;
+    }
+    .tg .w134 {
+        width: 134px;
+    }
+    .tg .w136 {
+        width: 136px;
+    }
+    .tg .w155 {
+        width: 155px;
+    }
+
+.bcf {
+    background-color: #dbe4f2;
+}
+
+.bcs {
+    background-color: #e9eff7;
+}
+
+.al {
+    text-align: left;
+}
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.mdCDD {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: table;
+    position: absolute;
+    left: -301px;
+    right: 0;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-40%);
+}
+.mdCDD-Arb {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: table;
+    position: absolute;
+    left: -393px; /*-301px;*/
+    right: 0;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-40%);
+}
+.clPop {
+    width: 19px;
+    height: 20px;
+    color: #fff;
+    border-color: black;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    border-radius: 20px;
+}

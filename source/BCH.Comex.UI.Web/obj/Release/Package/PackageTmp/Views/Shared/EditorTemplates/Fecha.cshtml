@@ -1,0 +1,29 @@
+﻿@model DateTime?
+@{
+    // Editor para fechas con formato fijo dd/MM/yyyy.
+    // Para activar datepicker, usar el siguiente código en la vista:
+    //
+    // <script type="text/javascript">
+    //    $(document).ready(function () {
+    //        var dateNow = moment().startOf("day").utc();
+    //        $('.datepicker').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow });
+    //    });
+    // </script>
+    //
+    
+    string texto = String.Empty;
+    var MinDate =  new DateTime(1900, 01, 01, 00, 00, 00);
+    
+    if (Model.HasValue) {
+        if (Model.Value > MinDate) {            
+            texto = Model.Value.ToString("dd/MM/yyyy");
+        }
+    }
+}
+<div class="input-group datepicker">
+    @Html.TextBox("", texto, ViewData["htmlAttributes"])
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+</div>
+<label class="control-label has-error" style="display:none"></label>

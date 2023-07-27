@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="McambioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="McambioEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="CambioDeEstadoCFXT" ReturnType="Collection(McambioModel.CambioDeEstadoCFXT_Result)">
+      <Parameter Name="rut" Mode="In" Type="String" />
+      <Parameter Name="gb_folio" Mode="In" Type="Int32" />
+      <Parameter Name="gb_estado" Mode="In" Type="String" />
+      <Parameter Name="gb_cod_estado_contable" Mode="In" Type="Int32" />
+      <Parameter Name="gb_canal" Mode="In" Type="String" />
+      <Parameter Name="gb_responsable" Mode="In" Type="String" />
+      <Parameter Name="ls_ejecucion" Mode="InOut" Type="Boolean" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaDealsDisponible" ReturnType="Collection(McambioModel.ConsultaDealsDisponible_Result)">
+      <Parameter Name="rutCliente" Mode="In" Type="String" />
+      <Parameter Name="tipoTransaccion" Mode="In" Type="String" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CrearDealChileFxTesoreria" ReturnType="Collection(McambioModel.CrearDealChileFxTesoreria_Result)">
+      <Parameter Name="p_rutCliente" Mode="In" Type="String" />
+      <Parameter Name="p_nombreCliente" Mode="In" Type="String" />
+      <Parameter Name="p_parMoneda1" Mode="In" Type="String" />
+      <Parameter Name="p_parMoneda2" Mode="In" Type="String" />
+      <Parameter Name="p_precioCliente" Mode="In" Type="Double" />
+      <Parameter Name="p_fechaValuta" Mode="In" Type="DateTime" />
+      <Parameter Name="p_codBcoCentral" Mode="In" Type="Int32" />
+      <Parameter Name="p_monto_me" Mode="In" Type="Double" />
+      <Parameter Name="p_fechaTransaccion" Mode="In" Type="DateTime" />
+      <Parameter Name="p_tipoCambioPizarra" Mode="In" Type="Double" />
+      <Parameter Name="p_tipoTransaccion" Mode="In" Type="String" />
+      <Parameter Name="p_identificadorConsulta" Mode="In" Type="String" />
+      <Parameter Name="ls_folio" Mode="InOut" Type="Int32" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="IncorporacionNumeroOperacionSCE">
+      <Parameter Name="rutCliente" Mode="In" Type="String" />
+      <Parameter Name="numeroDealChileFX" Mode="In" Type="Int32" />
+      <Parameter Name="numeroOperacionSCE" Mode="In" Type="String" />
+      <Parameter Name="montoSCE" Mode="In" Type="Decimal" />
+      <Parameter Name="montoChileFX" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoEstadoContable" Mode="In" Type="Int32" />
+      <Parameter Name="glosaError" Mode="In" Type="String" />
+      <Parameter Name="exepcionado" Mode="In" Type="Boolean" />
+      <Parameter Name="vbJefatura" Mode="In" Type="Boolean" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pro_cvd_ni_consulta_precios" ReturnType="Collection(McambioModel.pro_cvd_ni_consulta_precios_Result)">
+      <Parameter Name="gb_fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="gb_compra_venta" Mode="In" Type="String" />
+      <Parameter Name="gb_moneda1" Mode="In" Type="String" />
+      <Parameter Name="gb_moneda2" Mode="In" Type="String" />
+      <Parameter Name="gb_monto_cliente" Mode="In" Type="Decimal" />
+      <Parameter Name="gb_rut_cliente" Mode="In" Type="Int32" />
+      <Parameter Name="gb_canal" Mode="In" Type="String" />
+      <Parameter Name="gb_valor_spread" Mode="In" Type="Decimal" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_chilefx_deal_sce" EntityType="McambioModel.tbl_chilefx_deal_sce" />
+    <FunctionImport Name="pro_cvd_ni_consulta_precios2" ReturnType="Collection(McambioModel.pro_cvd_ni_consulta_precios2_Result)">
+      <Parameter Name="gb_fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="gb_compra_venta" Mode="In" Type="String" />
+      <Parameter Name="gb_moneda1" Mode="In" Type="String" />
+      <Parameter Name="gb_moneda2" Mode="In" Type="String" />
+      <Parameter Name="gb_monto_cliente" Mode="In" Type="Decimal" />
+      <Parameter Name="gb_rut_cliente" Mode="In" Type="Int32" />
+      <Parameter Name="gb_canal" Mode="In" Type="String" />
+      <Parameter Name="gb_segmento" Mode="In" Type="String" />
+      <Parameter Name="gb_valuta" Mode="In" Type="DateTime" />
+      <Parameter Name="ls_codret" Mode="InOut" Type="String" />
+      <Parameter Name="ls_msgret" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CambioDeEstadoCFXT_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Column2" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ConsultaDealsDisponible_Result">
+    <Property Type="String" Name="rutCliente" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="nombreCliente" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="numeroDeal" Nullable="true" />
+    <Property Type="String" Name="moneda1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="moneda2" Nullable="true" MaxLength="5" />
+    <Property Type="Double" Name="precioPoolMoneda1" Nullable="true" />
+    <Property Type="Double" Name="precioPoolMoneda2" Nullable="true" />
+    <Property Type="Double" Name="precioCliente" Nullable="true" />
+    <Property Type="DateTime" Name="fechaValuta1" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="fechaValuta2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="codigoBancoCentral" Nullable="true" MaxLength="6" />
+    <Property Type="Double" Name="montoBancoRecibe" Nullable="true" />
+    <Property Type="Double" Name="montoClienteRecibe" Nullable="true" />
+    <Property Type="Double" Name="delta" Nullable="true" />
+    <Property Type="DateTime" Name="fechaTransaccion" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="tipoCambioPizarra" Nullable="true" />
+    <Property Type="String" Name="tipoTransaccion" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="codigoEstadoDeal" Nullable="true" />
+    <Property Type="Int32" Name="codigoFormaPago1" Nullable="true" />
+    <Property Type="Int32" Name="codigoFormaPago2" Nullable="true" />
+    <Property Type="Int32" Name="codigoEstadoPago" Nullable="true" />
+    <Property Type="Int32" Name="codigoReferenciaComex" Nullable="true" />
+    <Property Type="Int32" Name="codigoOrigenCarga" Nullable="true" />
+    <Property Type="Int32" Name="codigoTipoOperacion" Nullable="true" />
+    <Property Type="Int32" Name="codigoEstadoContable" Nullable="true" />
+    <Property Type="String" Name="ultimoNumeroTransitoria" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="ultimoNumeroContingente" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="CrearDealChileFxTesoreria_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Column2" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="pro_cvd_ni_consulta_precios_Result">
+    <Property Type="Int32" Name="retorno_decimales" Nullable="true" />
+    <Property Type="Decimal" Name="precio_final" Nullable="false" Precision="11" Scale="5" />
+    <Property Type="Decimal" Name="monto_segunda_moneda" Nullable="false" Precision="17" Scale="2" />
+    <Property Type="String" Name="identificador_consulta" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="tiempo_consulta" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tbl_chilefx_deal_sce">
+    <Key>
+      <PropertyRef Name="id_chilefx" />
+      <PropertyRef Name="mto_chilefx" />
+      <PropertyRef Name="fecha_hora_registro" />
+      <PropertyRef Name="fecha_registro" />
+      <PropertyRef Name="codigo_contable" />
+      <PropertyRef Name="rut_cliente" />
+    </Key>
+    <Property Name="id_chilefx" Type="Int64" Nullable="false" />
+    <Property Name="id_sce" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="mto_chilefx" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+    <Property Name="mto_sce" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="fecha_hora_registro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="codigo_contable" Type="Int32" Nullable="false" />
+    <Property Name="rut_cliente" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="glosa_error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="exepcionado" Type="Boolean" />
+    <Property Name="vb_jefatura" Type="Boolean" />
+    <Property Name="codcom" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="pro_cvd_ni_consulta_precios2_Result">
+    <Property Type="Int32" Name="retorno_decimales" Nullable="true" />
+    <Property Type="Decimal" Name="precio_final" Nullable="false" Precision="11" Scale="5" />
+    <Property Type="Decimal" Name="monto_segunda_moneda" Nullable="false" Precision="17" Scale="2" />
+    <Property Type="String" Name="identificador_consulta" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="tiempo_consulta" Nullable="true" />
+    <Property Type="DateTime" Name="fec_valuta" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,167 @@
+﻿@using BCH.Comex.UI.Web.Models.FundTransfer
+@model CargaOperacionesViewModel
+
+<div class="container">
+    <h3 class="margin-bottom-triple" id="caption">Carga Automática de Operaciones</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="toolbar">
+                <form class="form-inline">
+                    <label for="txt_folio" class="control-label" style="margin-right:10px">Estado:</label>
+                    <select id="cmb_estado" tabindex="2" class="form-control">
+                        <option value=1>Vigente</option>
+                        <option value=2>Cursada</option>
+                        <option value=3>Anulada</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;
+                    <div class="form-group" id="AccionBotonesGrid">
+                        <div class="col-xs-13 columns btn-group pull-right">
+                            <button type="button" tabindex="9" id="lbl_limpiar" onclick="limpiar();" class="btn btn-default pull-right" style="margin-left:10px">Limpiar</button>
+                            <button type="button" tabindex="6" id="lbl_Cerrar" onclick="salir();" class="btn btn-default pull-right" style="margin-left:10px">Cerrar</button>
+                            <button type="button" tabindex="10" id="lbl_exportar" onclick="exportar();" class="btn btn-default pull-right" style="margin-left:10px">Exportar</button>
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;
+                        @*<div class="form-group">
+                        <label for="txtFechaIngreso" class="control-label" style="margin-right:10px">Limitar Año:</label>
+                        <div class='input-group date' id='txtFechaIngreso'>
+                            <input type='text' class="form-control" style="width: 90px;"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;*@
+                </form>
+            </div>
+            <table id="gridOperaciones" class="table-bordered">
+                <thead>
+                    <tr>
+                        <th data-field="FCCFT" data-visible="false">Nº Transacción</th>
+                        <th data-radio="true" data-visible="true"></th>
+                        <th data-field="fecingreso" data-sortable="true">Fecha de Ingreso</th>
+                        <th data-field="razonSocial" data-sortable="true">Razon Social</th>
+                        <th data-field="mnd_mndnom" data-sortable="true">Moneda</th>
+                        <th data-field="DRAMT" data-sortable="true" data-formatter="montoFormatter">Monto</th>
+                        <th data-field="MontoParaBusqueda" data-searchable="true" data-visible="false">Monto para busqueda (oculto)</th>
+                        <th data-field="XREF" data-sortable="true">N° Referencia</th>
+                        <th data-field="desc_ft" data-sortable="true">Estado</th>
+                        <th data-field="codmnd_bch" data-sortable="true">Cod. Moneda</th>
+                        <th data-field="TIPO_TRX" data-sortable="true">Tipo TRX.</th>
+                        <th data-field="Beneficiario" data-sortable="true">Beneficiario</th>
+                        <th data-field="Ordenante" data-sortable="true">Ordenante</th>
+                        <th data-field="ORD_INST1" data-sortable="true">ORD_INST1</th>
+                        <th data-field="PMNT_DET1" data-sortable="true">PMNT_DET1</th>
+                        <th data-field="PMNT_DET2" data-sortable="true">PMNT_DET2</th>
+                        <th data-field="PMNT_DET3" data-sortable="true">PMNT_DET3</th>
+                        <th data-field="PMNT_DET4" data-sortable="true">PMNT_DET4</th>
+                        <th data-field="DEBIT_REF" data-sortable="true">DEBIT_REF</th>
+                        <th data-field="str_cod_estado" data-sortable="true">cod_estado</th>
+                        <th data-field="desc_ft" data-sortable="true">Observacion</th>
+                        <th data-field="str_swft" data-sortable="true">SWF</th>
+                        <th data-field="BEN_INST1" data-sortable="true">BEN_INST1</th>
+                        <th data-field="ULT_BEN1" data-sortable="true">ULT_BEN1</th>
+                        <th data-field="ULT_BEN2" data-sortable="true">ULT_BEN2</th>
+                        <th data-field="ULT_BEN3" data-sortable="true">ULT_BEN3</th>
+                        <th data-field="ULT_BEN4" data-sortable="true">ULT_BEN4</th>
+                        <th data-field="CHG_WHOM" data-sortable="true">CHG_WHOM</th>
+                        <th data-field="DRVALDT" data-sortable="true">DRVALDT</th>
+                        <th data-field="INTRMD1" data-sortable="true">INTRMD1</th>
+                        <th data-field="INTRMD2" data-sortable="true">INTRMD2</th>
+                        <th data-field="US_PAY_ID" data-sortable="true">US_PAY_ID</th>
+                        <th data-field="RECVR_CORRES1" data-sortable="true">RECVR_CORRES1</th>
+                        <th data-field="RECVR_CORRES2" data-sortable="true">RECVR_CORRES2</th>
+                        <th data-field="SNDR_RECVR_INFO1" data-sortable="true">LC_SNDR_RECVR_INFO1</th>
+                        <th data-field="SNDR_RECVR_INFO2" data-sortable="true">LC_SNDR_RECVR_INFO2</th>
+                        <th data-field="SNDR_RECVR_INFO3" data-sortable="true">LC_SNDR_RECVR_INFO3</th>
+                        <th data-field="SNDR_RECVR_INFO4" data-sortable="true">LC_SNDR_RECVR_INFO4</th>
+                        <th data-field="trxid" data-sortable="true">TRANSACCION ID</th>
+                        <th data-field="contract_reference" data-sortable="true">C. R. Number</th>
+                        <th data-field="SNDR_RECVR_INFO5" data-sortable="true">LC_SNDR_RECVR_INFO5</th>
+                        <th data-field="SNDR_RECVR_INFO6" data-sortable="true">LC_SNDR_RECVR_INFO6</th>
+                        <th data-field="MONTO_ORIGINAL" data-sortable="true">MONTO ORIGINAL</th>
+                        <th data-field="row" data-visible="true"></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row ">
+                <div class="col-xs-6">
+                    <label>Al hacer doble clic sobre una operación se realizará la carga automática</label>
+                </div>
+
+                <div class="col-xs-6 text-right form-inline">
+                    <label for="txt_tot_oper" class="control-label">Total de Operaciones</label>
+                    <input type="text" id="txt_tot_oper" class="form-control" disabled="disabled" style="width:100px" />
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-6">
+                    <img src="~/Content/images/blue_square.png" />
+                    <label style="margin-right: 10px;">Operaciones Vigentes</label>
+
+                    <img src="~/Content/images/black_square.png" />
+                    <label style="margin-right: 10px;">Operaciones Cursadas</label>
+
+                    <img src="~/Content/images/red_square.png" />
+                    <label>Operaciones Anuladas</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmar acción</h4>
+            </div>
+            <div class="modal-body">
+                <p>Al no limitar a un año la busqueda, puede demorar más del tiempo esperado. ¿Desea continuar con la acción?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnModalSi">Si</button>
+                <button type="button" class="btn btn-default" id="btnModalNo" data-dismiss="modal">No</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/knockout-3.3.0.js"></script>
+    <script type="text/javascript" src="~/Scripts/knockout.mapping-latest.js"></script>
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    <script type="text/javascript">
+        var urlCargarOperaciones = '@Url.Action("Frm_Consulta_img_Buscar_Click", "Fundtransfer")';
+        var urlCargarOperacionesPage = '@Url.Action("Frm_Consulta_img_Buscar_Click_Page", "Fundtransfer")'; 
+        var urlExportarAExcel = '@Url.Action("ExportarOperaciones", "Fundtransfer")';
+
+        var dataInicial = @Html.Raw(Json.Encode(Model.Data));
+        var mensajesIniciales = @Html.Raw(Json.Encode(Model.Messages));
+    </script>
+
+    @Scripts.Render("~/bundles/FundTransfer/CargarOperaciones")
+}
+
+@section css{
+    <style>
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: #B6D8FF;
+        }
+
+        .selectedRow {
+            background-color: #B6D8FF !important;
+        }
+
+    </style>
+    }

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CUSTODIAModelStoreContainer" CdmEntityContainer="CustodiaEntities">
+    <FunctionImportMapping FunctionImportName="cambios_gral_consulta_00_MS" FunctionName="CUSTODIAModel.Store.cambios_gral_consulta_00_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_gral_consulta_00_MS_Result">
+          <ScalarProperty Name="mnd_mndswf" ColumnName="mnd_mndswf" />
+          <ScalarProperty Name="mnd_mndnmc" ColumnName="mnd_mndnmc" />
+          <ScalarProperty Name="mnd_mndnom" ColumnName="mnd_mndnom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_callfax_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_callfax_00_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_callfax_00_MS_Result">
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="mensaje_01" ColumnName="mensaje_01" />
+          <ScalarProperty Name="mensaje_02" ColumnName="mensaje_02" />
+          <ScalarProperty Name="mensaje_03" ColumnName="mensaje_03" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_check_list_log_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_check_list_log_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_consulta_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_consulta_01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_citidoc_consulta_01_MS_Result">
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+          <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_duplicados_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_duplicados_01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_citidoc_duplicados_01_MS_Result">
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="Folder" ColumnName="Folder" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Document_Type" ColumnName="Document_Type" />
+          <ScalarProperty Name="base" ColumnName="base" />
+          <ScalarProperty Name="Scanner" ColumnName="Scanner" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_citidoc_duplicados_hora_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_citidoc_duplicados_hora_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_cliente_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cliente_01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_cliente_01_MS_Result">
+          <ScalarProperty Name="accnum" ColumnName="accnum" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_contratos_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_contratos_00_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_contratos_00_MS_Result">
+          <ScalarProperty Name="indicador_fax_local" ColumnName="indicador_fax_local" />
+          <ScalarProperty Name="contrato_fax_local" ColumnName="contrato_fax_local" />
+          <ScalarProperty Name="indicador_citi_offshore" ColumnName="indicador_citi_offshore" />
+          <ScalarProperty Name="contrato_citi_offshore" ColumnName="contrato_citi_offshore" />
+          <ScalarProperty Name="indicador_mift" ColumnName="indicador_mift" />
+          <ScalarProperty Name="contrato_mift" ColumnName="contrato_mift" />
+          <ScalarProperty Name="indicador_fax_NY_Londres" ColumnName="indicador_fax_NY_Londres" />
+          <ScalarProperty Name="contrato_fax_NY_Londres" ColumnName="contrato_fax_NY_Londres" />
+          <ScalarProperty Name="indicador_otros" ColumnName="indicador_otros" />
+          <ScalarProperty Name="contrato_otros" ColumnName="contrato_otros" />
+          <ScalarProperty Name="indicador_anexo_mail" ColumnName="indicador_anexo_mail" />
+          <ScalarProperty Name="contrato_anexo_mail" ColumnName="contrato_anexo_mail" />
+          <ScalarProperty Name="result_contrato" ColumnName="result_contrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_cuenta_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cuenta_00_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_log_insert_2_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_log_insert_2_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_mensajes_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mensajes_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_mesa_cvd_00a_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mesa_cvd_00a_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_mesa_cvd_00b_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_mesa_cvd_00b_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_mesa_cvd_00b_MS_Result">
+          <ScalarProperty Name="chk" ColumnName="chk" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="mdn_com" ColumnName="mdn_com" />
+          <ScalarProperty Name="mnd_vta" ColumnName="mnd_vta" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="mtoPesos" ColumnName="mtoPesos" />
+          <ScalarProperty Name="mtoUSD" ColumnName="mtoUSD" />
+          <ScalarProperty Name="FVALOR" ColumnName="FVALOR" />
+          <ScalarProperty Name="idComex" ColumnName="idComex" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_02_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_02_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_manual_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_manual_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_reparo_log_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_reparo_log_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_obs_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_obs_01_MS" />
+    <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_pizarra_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_pizarra_01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_pizarra_01_MS_Result">
+          <ScalarProperty Name="Pizarra" ColumnName="Pizarra" />
+          <ScalarProperty Name="USD_Min" ColumnName="USD_Min" />
+          <ScalarProperty Name="USD_Max" ColumnName="USD_Max" />
+          <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+          <ScalarProperty Name="Minimo" ColumnName="Minimo" />
+          <ScalarProperty Name="Maximo" ColumnName="Maximo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_pizarra_02_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_pizarra_02_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_pizarra_02_MS_Result">
+          <ScalarProperty Name="Pizarra" ColumnName="Pizarra" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CAMBIOS_GRAL_SCE_CTA">
+      <EntityTypeMapping TypeName="CUSTODIAModel.CAMBIOS_GRAL_SCE_CTA">
+        <MappingFragment StoreEntitySet="CAMBIOS_GRAL_SCE_CTA">
+          <ScalarProperty Name="cta_vigtbl" ColumnName="cta_vigtbl" />
+          <ScalarProperty Name="cta_nroptd" ColumnName="cta_nroptd" />
+          <ScalarProperty Name="cta_gto" ColumnName="cta_gto" />
+          <ScalarProperty Name="cta_cdr" ColumnName="cta_cdr" />
+          <ScalarProperty Name="cta_pos" ColumnName="cta_pos" />
+          <ScalarProperty Name="cta_ctd" ColumnName="cta_ctd" />
+          <ScalarProperty Name="cta_cap" ColumnName="cta_cap" />
+          <ScalarProperty Name="cta_cvt" ColumnName="cta_cvt" />
+          <ScalarProperty Name="cta_cit" ColumnName="cta_cit" />
+          <ScalarProperty Name="cta_indto" ColumnName="cta_indto" />
+          <ScalarProperty Name="cta_nroto" ColumnName="cta_nroto" />
+          <ScalarProperty Name="cta_gl" ColumnName="cta_gl" />
+          <ScalarProperty Name="cta_nom" ColumnName="cta_nom" />
+          <ScalarProperty Name="cta_num" ColumnName="cta_num" />
+          <ScalarProperty Name="cta_mon" ColumnName="cta_mon" />
+          <ScalarProperty Name="cta_nem" ColumnName="cta_nem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_recurrencia_01b_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_recurrencia_01b_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_recurrencia_01b_MS_Result">
+          <ScalarProperty Name="ord_rut" ColumnName="ord_rut" />
+          <ScalarProperty Name="ord_cuenta" ColumnName="ord_cuenta" />
+          <ScalarProperty Name="ord_nombre" ColumnName="ord_nombre" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="bnf_cuenta" ColumnName="bnf_cuenta" />
+          <ScalarProperty Name="bnf_nombre" ColumnName="bnf_nombre" />
+          <ScalarProperty Name="bnf_swbcoint" ColumnName="bnf_swbcoint" />
+          <ScalarProperty Name="bnf_swfbco" ColumnName="bnf_swfbco" />
+          <ScalarProperty Name="bnf_nombco" ColumnName="bnf_nombco" />
+          <ScalarProperty Name="retorno" ColumnName="retorno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_cliente_00_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_cliente_00_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_cliente_00_MS_Result">
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="segmento" ColumnName="segmento" />
+          <ScalarProperty Name="ejecutivo" ColumnName="ejecutivo" />
+          <ScalarProperty Name="est_recurrencia" ColumnName="est_recurrencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cambios_mift_tarifas_01_MS" FunctionName="CUSTODIAModel.Store.cambios_mift_tarifas_01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CUSTODIAModel.cambios_mift_tarifas_01_MS_Result">
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="Tarifas" ColumnName="Tarifas" />
+          <ScalarProperty Name="Mon" ColumnName="Mon" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Impto" ColumnName="Impto" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

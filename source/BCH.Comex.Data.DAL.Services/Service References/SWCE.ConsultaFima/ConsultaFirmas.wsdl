@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N1:definitions xmlns:WL5G3N2="http://osb.bancochile.cl/ConsultaFirmas/" xmlns:WL5G3N0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" name="ConsultaFirmas" targetNamespace="http://osb.bancochile.cl/ConsultaFirmas/" xmlns:WL5G3N1="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy WL5G3N1:Required="true" />
+  <wsp:Policy WL5G3N0:Id="Mtom.xml">
+    <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+  </wsp:Policy>
+  <WL5G3N1:types>
+    <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://osb.bancochile.cl/ConsultaFirmas/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://osb.bancochile.cl/ConsultaFirmas/" xmlns:Q1="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasRequest" xmlns:Q2="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasResponse" xmlns:Q3="http://osb.bancochile.cl/common/HeaderRequest" xmlns:Q4="http://osb.bancochile.cl/common/HeaderResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://osb.bancochile.cl/ConsultaFirmas/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/chequeras/CS000007_ConsultaFirmas?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" namespace="http://osb.bancochile.cl/common/HeaderResponse" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/chequeras/CS000007_ConsultaFirmas?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" namespace="http://osb.bancochile.cl/common/HeaderRequest" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/chequeras/CS000007_ConsultaFirmas?SCHEMA%2FPX_Chequeras%2FCS000007_ConsultaFirmas%2FSpecifications%2FWSDL%2FCS000007_OpConsultarFirmasResponse" namespace="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasResponse" />
+      <xsd:import schemaLocation="http://osb.bancochile.cl:8011/chequeras/CS000007_ConsultaFirmas?SCHEMA%2FPX_Chequeras%2FCS000007_ConsultaFirmas%2FSpecifications%2FWSDL%2FCS000007_OpConsultarFirmasRequest" namespace="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasRequest" />
+      <xsd:element name="headerRequest" type="Q3:datosHeaderRequest" />
+      <xsd:element name="headerResponse" type="Q4:datosHeaderResponse" />
+      <xsd:element name="ConsultarFirmas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="datosEntrada" type="Q1:datosEntrada" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultarFirmasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="datosSalida" type="Q2:datosSalida" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WL5G3N1:types>
+  <WL5G3N1:message name="ConsultarFirmasRequest">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ConsultarFirmas" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="ConsultarFirmasResponse">
+    <WL5G3N1:part name="parameters" element="WL5G3N2:ConsultarFirmasResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="headerRequestMessage">
+    <WL5G3N1:part name="headerRequest" element="WL5G3N2:headerRequest" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="headerResponseMessage">
+    <WL5G3N1:part name="headerResponse" element="WL5G3N2:headerResponse" />
+  </WL5G3N1:message>
+  <WL5G3N1:portType name="ConsultaFirmas">
+    <WL5G3N1:operation name="ConsultarFirmas">
+      <WL5G3N1:input message="WL5G3N2:ConsultarFirmasRequest" />
+      <WL5G3N1:output message="WL5G3N2:ConsultarFirmasResponse" />
+    </WL5G3N1:operation>
+  </WL5G3N1:portType>
+  <WL5G3N1:binding name="ConsultaFirmasSOAP" type="WL5G3N2:ConsultaFirmas">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#Mtom.xml" />
+    </wsp:Policy>
+    <WL5G3N3:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N1:operation name="ConsultarFirmas">
+      <WL5G3N3:operation soapAction="http://osb.bancochile.cl/ConsultaFirmas/ConsultarFirmas" />
+      <WL5G3N1:input>
+        <WL5G3N3:header message="WL5G3N2:headerRequestMessage" part="headerRequest" use="literal" />
+        <WL5G3N3:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N3:header message="WL5G3N2:headerResponseMessage" part="headerResponse" use="literal" />
+        <WL5G3N3:body use="literal" />
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+  </WL5G3N1:binding>
+  <WL5G3N1:service name="ConsultaFirmas">
+    <WL5G3N1:port name="ConsultaFirmasSOAP" binding="WL5G3N2:ConsultaFirmasSOAP">
+      <WL5G3N3:address location="http://osb.bancochile.cl:8013/chequeras/CS000007_ConsultaFirmas" />
+    </WL5G3N1:port>
+  </WL5G3N1:service>
+</WL5G3N1:definitions>

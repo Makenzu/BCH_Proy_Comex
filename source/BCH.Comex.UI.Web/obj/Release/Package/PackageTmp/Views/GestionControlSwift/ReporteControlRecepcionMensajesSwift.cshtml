@@ -1,0 +1,81 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.ReporteControlRecepcionMensajesSwiftViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Verbo</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8"><strong>Fecha</strong></div>
+            <div class="col-xs-3"><strong>: @DateTime.Now.ToShortDateString()</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8"><strong>Hora</strong></div>
+            <div class="col-xs-3"><strong>: @DateTime.Now.ToString("HH:mm:ss")</strong></div>
+        </div>
+
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td> 
+                    <h4 style="font-style: italic; font-family: 'Times New Roman'">@Model.Verbo</h4>
+                </td>
+                <td><h4 style="text-align:right "><pre style="width: 400px;height:1%; background: #9C9A9A"></pre></h4></td>
+            </tr>
+        </table>
+
+        <table cellpadding=0 cellspacing=0 class="t1" style="width:20%" align="center">
+            <caption>
+                <h3 style="color: blue; text-align: left; font-family:'Times New Roman';font-style:italic">
+                    <strong>
+                        @string.Format("{0} {1} {2} {3} {4} {5}",
+                        "Fecha de Control:",Model.FechaDesde.Day," de ",Model.FechaDesde.ToString("MMMM")," de ",Model.FechaDesde.ToString("yyyy"))
+                    </strong>
+                </h3>
+            </caption>
+
+            <tbody>
+                @foreach (var bigRow in Model.Registros)
+                {
+                    <tr>
+                        <td style="background: #F6EBB1;height:1%"><h5 style="font-family:'Times New Roman'"><b>@("Casilla " + @bigRow.ElementAt(0).nombre_casilla +  "[" + @bigRow.Key + "]")</b></h5></td>
+                        <td align="center" style="background: #F6EBB1;height:1%"><h5 style="text-align:center">@("")</h5></td>
+                        <td style="background: #F6EBB1;height:1%"><h5 style="text-align:left"><strong>@("")</strong></h5></td>
+                    </tr>
+
+                    foreach (var row in bigRow)
+                    {
+                        <tr style="width:1%">
+                            <td><h6 style="text-align:left; font-family:'Arial Rounded MT'"><strong>@("Estado  " + @row.descripcion)</strong></h6></td>
+                            <td align="center"><h5 style="text-align:center">@(":")</h5></td>
+                            <td width="100px" align="center"><h5><strong>@(@row.cantidad)</strong></h5></td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>@("_________________________________________________________________")</td>
+                    </tr>
+                    <tr>
+                        <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:center">@("Total Mensajes Casilla")</h5></td>
+                        <td style="text-align:center"><h5 style="text-align:center"><strong>@(":")</strong></h5></td>
+                        <td><h5 style="font-family:'Times New Roman';font-style:italic;text-align:center"><strong>@bigRow.Sum(i => i.cantidad)</strong></h5></td>
+                   </tr>
+                }
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
+

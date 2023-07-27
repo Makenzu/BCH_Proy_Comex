@@ -1,0 +1,774 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ApplicationInsights.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Antlr3.Runtime.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\CustomTextMessageEncoder.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Humanizer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\itextsharp.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Newtonsoft.Json.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\PdfSharp.Charting.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\PdfSharp.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\RazorPDF.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Helpers.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Http.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Mvc.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Optimization.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Razor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\WebGrease.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\SpreadsheetLight.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\DocumentFormat.OpenXml.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\MigrationSupport.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\CodeArchitects.VBLibrary.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.Web.Services3.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ADODB.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Antlr3.Runtime.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Humanizer.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Humanizer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\Newtonsoft.Json.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\PdfSharp.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\PdfSharp.Charting.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Helpers.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Http.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Mvc.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Optimization.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.Razor.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\SpreadsheetLight.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\af\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ar\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\bg\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\bn-BD\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\cs\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\da\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\de\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\el\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\fa\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\fi-FI\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\fr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\fr-BE\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\he\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\hu\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\id\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\it\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ja\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\nb\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\nb-NO\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\nl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\pl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\pt\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ro\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\ru\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\sk\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\sl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\sr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\sr-Latn\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\sv\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\tr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\uk\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\vi\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\zh-CN\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\zh-Hans\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\zh-Hant\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\de\PdfSharp.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\de\PdfSharp.Charting.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.Helpers.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.Mvc.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.Razor.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.App_GlobalResources.BCH.resources
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.GenerateResource.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ApplicationInsights.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Antlr3.Runtime.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\CustomTextMessageEncoder.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Humanizer.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\itextsharp.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\log4net.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Newtonsoft.Json.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\PdfSharp.Charting.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\PdfSharp.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\RazorPDF.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Helpers.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Http.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Mvc.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Optimization.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Razor.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\WebGrease.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\SpreadsheetLight.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\MigrationSupport.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.Web.Services3.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ADODB.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Antlr3.Runtime.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Humanizer.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Humanizer.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\log4net.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\Newtonsoft.Json.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\PdfSharp.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\PdfSharp.Charting.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Helpers.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Http.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Mvc.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Optimization.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.Razor.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\SpreadsheetLight.xml
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\af\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ar\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\bg\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\bn-BD\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\cs\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\da\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\de\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\el\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\fa\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\fi-FI\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\fr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\fr-BE\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\he\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\hu\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\id\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\it\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ja\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\nb\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\nb-NO\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\nl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\pl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\pt\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ro\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\ru\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\sk\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\sl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\sr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\sr-Latn\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\sv\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\tr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\uk\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\vi\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\zh-CN\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\zh-Hans\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\zh-Hant\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\de\PdfSharp.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\de\PdfSharp.Charting.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.Helpers.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.Razor.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.App_GlobalResources.BCH.resources
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.GenerateResource.cache
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.dll
+D:\3IT\COMEX\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ApplicationInsights.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.UI.Web.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Antlr3.Runtime.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\CustomTextMessageEncoder.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Humanizer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\itextsharp.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Newtonsoft.Json.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\PdfSharp.Charting.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\PdfSharp.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\RazorPDF.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Helpers.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Http.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Mvc.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Optimization.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Razor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\WebGrease.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\SpreadsheetLight.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\MigrationSupport.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.Web.Services3.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ADODB.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.BancaMundial.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Centinela.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.ControlIntegral.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.MT300Planilla.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWAU.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWBO.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWCE.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEM.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWEN.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWGC.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWMA.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWRE.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XCFT.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XEVA.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCN.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGCV.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGFD.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGGL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGID.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGPY.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Utils.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Antlr3.Runtime.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ExpressiveAnnotations.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.PdfSharp.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\HtmlRenderer.WinForms.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Humanizer.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Humanizer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.Web.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Microsoft.ApplicationInsights.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\Newtonsoft.Json.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\PdfSharp.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\PdfSharp.Charting.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Net.Http.Formatting.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Helpers.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Http.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Http.WebHost.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Mvc.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Optimization.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.Razor.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.Deployment.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\System.Web.WebPages.Razor.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\SpreadsheetLight.xml
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Mcambio.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Data.DAL.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\af\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ar\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\bg\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\bn-BD\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\cs\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\da\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\de\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\el\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\fa\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\fi-FI\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\fr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\fr-BE\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\he\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\hu\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\id\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\it\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ja\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\nb\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\nb-NO\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\nl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\pl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\pt\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ro\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\ru\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\sk\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\sl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\sr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\sr-Latn\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\sv\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\tr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\uk\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\vi\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\zh-CN\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\zh-Hans\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\zh-Hant\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\de\PdfSharp.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\de\PdfSharp.Charting.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.Helpers.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.Razor.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.App_GlobalResources.BCH.resources
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.GenerateResource.cache
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.dll
+D:\3IT\COMEX - version QA\BCH.Comex.UI.Web\obj\Release\BCH.Comex.UI.Web.pdb

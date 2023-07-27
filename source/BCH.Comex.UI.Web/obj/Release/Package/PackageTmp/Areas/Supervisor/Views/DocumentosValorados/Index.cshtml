@@ -1,0 +1,103 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.DocumentosValoradosViewModel
+
+@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+<h2>Impresión de Documentos Valorados</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmgChq", name = "FrmgChq" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-xs-2 well well-sm" style="margin-left:5px">
+                            <label>Documentos</label>
+                            <div class="radio">
+                                <label><input type="radio" name="opciones" value="0" checked="checked" id="opciones_1">Cheque</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="opciones" value="1" id="opciones_2">Vale Vista</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 well well-sm" style="margin-left:5px">
+                            <label>Plaza Pago</label>
+                            <div class="radio">
+                                <label><input type="radio" name="plazaPago" value="0" checked="checked" id="plazaPago_1">Cualquier Plaza</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="plazaPago" value="1" id="plazaPago_2">En Nueva York</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <label> N° de Folio del Cheque</label>
+                            @Html.TextBox("NroFol", string.Empty, new { @class = "form-control input-sm", disabled = true })
+                        </div>
+                        <div class="col-xs-2" style="margin-top:50px; padding:0px">
+                            <input type="button" name="Command" id="btnActualizar" value="Actualizar" class="btn btn-primary" />
+                            <input type="submit" name="Command" id="Cancelar" value="Cerrar" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom:20px">
+                        <div class="col-xs-4">
+                            <div class="form-group" id="grpFechaEmision">
+                                @Html.Label("FechaEmision", "FechaEmision", new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-7">
+                                    <div class="input-group date" id="dtpFechaEmision">
+                                        <input type="text" class="form-control" id="txtFechaEmision" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFechaEmision">La fecha debe ser mayor o igual a la fecha desde</label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2 checkbox" style="margin-left:30px">
+                            <label><input type="checkbox" id="chkTodos">Todos los Cheques</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 checkbox">
+                            <button type="button" class="btn btn-info" name="Command" id="btnImprimir" disabled><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>&nbsp;&nbsp;Imprimir seleccionados&nbsp;&nbsp;<span class="badge" id="badgeCantSeleccionados">0</span></button>&nbsp;
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="pnlTablaDetalle">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Cheque / Vale Vista&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeDetalle">0</span></h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div class="table-responsive">
+                                    <table id="tableDetalle" name="tableDetalle" class="table"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+@section scripts {
+    <script>
+        var urlBuscar = '@Url.Action("DocumentosValorados_Buscar")';
+        var urlImprimirCheque = '@Url.Action("Cheque")';
+
+    </script>
+    @Scripts.Render("~/bundles/Supervisor/DocumentosValorados")
+}

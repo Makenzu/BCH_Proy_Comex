@@ -1,0 +1,423 @@
+﻿
+@model BCH.Comex.UI.Web.Models.FundTransfer.GenerarSwiftViewModel
+@{
+    ViewBag.Title = "ComponerSwift";
+    Layout = "~/Views/FundTransfer/_Layout.cshtml";
+}
+@section scripts {
+
+    <script>
+        /** todas estas variables se utilizan en el archivo FundTransfer.GenerarSwift.js  **/
+
+        //datos en formato Json
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+
+        //otras constantes
+        var valueBancoAladi = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoAla);
+        var valueBancoPagador = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoPag);
+        var valueBancoIntermediario = @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGSWF.BcoInt);
+        var valueMonedaDolares =  @(BCH.Comex.Core.Entities.Cext01.Common.T_MODGTAB0.MndDol);
+
+        //urls de acciones
+        var urlGetCorresponsales = '@Url.Action("GetCorresponsales")';
+        var urlGetBancoPorSwift = '@Url.Action("GetBancosPorCodigoSwift")';
+        var urlValidarSwiftCompleto = '@Url.Action("ValidarYGenerarSwift")';
+        var urlValidarCodCom = '@Url.Action("ValidarCodCom")';
+        var urlHome = '@Url.Action("Index")';
+        var urlValidarFechaPago = '@Url.Action("GenerarSwiftValidaFechaPago")';
+        var urlGetCondicionesPais = '@Url.Action("GetCondicionesPais")';
+
+    </script>
+
+    @Scripts.Render("~/bundles/FundTransfer/GenerarSwift")
+
+}
+
+@section css
+{
+    <style>
+        #alertdiv {
+            margin: 0 auto;
+        }
+
+        .letraMonospace {
+            font-family: Consolas;
+        }
+
+        .accionTablaCampo23 {
+            vertical-align: middle;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            margin-bottom: 0px !important; /* el diseño global esta agregando 10px de margen a los botones */
+        }
+
+        .accionRow {
+            font-size: 1.2em;
+        }
+
+        .panel-heading .accordion-toggle:after {
+            /* symbol for "opened" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e113";
+            float: right;
+            color: grey;
+        }
+
+        .panel-heading .accordion-toggle.collapsed:after {
+            /* symbol for "collapsed" panels */
+            font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+            content: "\e114";
+            float: right;
+            color: grey;
+        }
+
+        input {
+            text-transform: uppercase;
+        }
+    </style>
+}
+
+<div class="container form-horizontal" id="divContainer">
+    <h2>Generar Swift @ViewBag.Caption</h2>
+    <div class="row">
+        <div class="col-xs-6">
+            <!-- Col izquierda -->
+            <div class="col-xs-12">
+
+                <div class="panel panel-default">
+                    @*<div class="panel-heading">
+                            <h1 class="panel-title text-center">Planillas</h1>
+                        </div>*@
+                    <div class="panel-body">
+                        <table id="tablaPlanillas">
+                            <thead>
+                                <tr>
+                                    <th data-field="IndMT" data-visible="false"></th>
+                                    <th data-checkbox="true"></th>
+                                    <th data-field="SwfMon">Moneda</th>
+                                    <th data-field="mtoswf" data-formatter="montoFormatter" data-cell-style="montoCellStyle" data-halign="right">Monto</th>
+                                    <th data-field="TipoOpSegunAladi">Tipo OP</th>
+                                    <th data-field="EstaGen" data-formatter="generadoFormatter" data-halign="center">Generado</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Gastos</legend>
+                    <div class="form-group">
+                        <div class="col-xs-6"><label class="control-label">Código de operación bancaria: </label></div>
+                        <div class="col-xs-6"><select class="form-control input-sm" id="codOpBancaria"><option value="1">CRED - Standard</option></select></div>
+                    </div>
+                    <div class="form-group" id="frmGroupCampo23E">
+                        <div class="col-xs-6"><label class="control-label">Campo 23E: </label></div>
+                        <div class="col-xs-6">
+                            <button type="button" id="btnToogleCampo23" class="btn" data-toggle="collapse" data-target="#divCampo23" aria-expanded="false" aria-controls="divCampo23">
+                                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="divCampo23" class="collapse col-xs-12">
+                        <div class="form-group" id="formGroupTablaCampo23">
+                            <div class="well">
+                                <table id="tablaCodigosDeOrden" class="table table-condensed">
+                                    <thead>
+                                        <tr style="vertical-align: top">
+                                            <th style="vertical-align:top">Código</th>
+                                            <th style="vertical-align:top">Texto Adicional</th>
+                                            <th style="vertical-align:top"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="vertical-align: top" id="headTablaCodigosDeOrden">
+                                            <td>
+                                                <select id="ddlCodigosDeOrden" class="form-control input-sm" data-bind="options: CodigosDeOrdenPosiblesCampo23, optionsText: 'CodigoDesc', optionsValue: 'Codigo', optionsCaption: '-- Código --', value: indiceCodigo23, valueUpdate:'afterkeydown'"></select>
+                                            </td>
+                                            <td><input class="form-control" type="text" id="txtTextoAdicionalCodigoOrden" data-bind="value: (viewModel.indiceCodigo23() != null ? CodigosDeOrdenPosiblesCampo23[viewModel.indiceCodigo23()].TextoAdicional : ''),   enable: (viewModel.indiceCodigo23() != null ? CodigosDeOrdenPosiblesCampo23[viewModel.indiceCodigo23()].PermiteTextoAdicional : false), valueUpdate:'afterkeydown'" /></td>
+                                            <td class="accionTablaCampo23">
+                                                <button type="button" id="btnAgregarCodigoDeOrden">
+                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <!-- ko foreach: viewModel.Planillas()[viewModel.IndiceP()].CodigosDeOrdenCampo23 -->
+                                        <tr>
+                                            <td style="vertical-align: middle;"><span data-bind="text: CodigoDesc, valueUpdate:'afterkeydown'"></span></td>
+                                            <td style="vertical-align: middle;"><span data-bind="text: TextoAdicional, valueUpdate:'afterkeydown'"></span></td>
+                                            <td class='accionTablaCampo23'><button type="button" class="btnEliminarCodigoDeOrden" data-bind="click: $parent.removerCodigo23, valueUpdate:'afterkeydown'"><span class="glyphicon glyphicon-trash" aria-hidden='true'></span></button></td>
+                                        </tr>
+                                        <!-- /ko -->
+                                    </tbody>
+                                </table>
+                                <div class="alert alert-info" id="divAyudaCodigoDeOrden" style="display: none;" data-bind="text: viewModel.indiceCodigo23() != null ? CodigosDeOrdenPosiblesCampo23[viewModel.indiceCodigo23()].DescripcionAyuda : 'Seleccione un Código de Órden', valueUpdate:'afterkeydown'"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6"><label class="control-label">Gastos (71A): </label></div>
+                        <div class="col-xs-6">
+                            <select tabindex="1" class="form-control input-sm" id="ddlGastos71A" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.TipGas, valueUpdate:'afterkeydown'">
+                                <option value="1">BEN</option>
+                                <option value="2">OUR</option>
+                                <option value="3">SHA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6"><label class="control-label">Gastos Emisor (71F): </label></div>
+                        <div class="col-xs-6"><input type="text" id="txtGastosEmisor" class="form-control monto input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Montos.GasEmi, enable: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.TipGas() == 1" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6"><label class="control-label">Gastos Receptor (71G): </label></div>
+                        <div class="col-xs-6"><input type="text" id="txtGastosReceptor" class="form-control monto input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Montos.GasRec, enable: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.TipGas() == 2" /></div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Datos beneficiario</legend>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xs-offset-2 checkbox">
+                            <label>
+                                <input type="checkbox" id="chk59F" data-bind="checked: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.Es59F, valueUpdate:'afterkeydown'"><strong>59F</strong>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Función: </label></div>
+                        <div class="col-xs-4"><select id="ddlBeneficiario" class="form-control input-sm" data-bind="options: BeneficiariosIniciales, optionsText: 'FunBen', optionsValue: 'IndBen', value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.IndBen, valueUpdate:'afterkeydown'"></select></div>
+                        <div class="col-xs-6">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon">
+                                    <label style="display:inline;">
+                                        <input type="checkbox" id="chkBeneficiarioEsBanco" data-bind="checked: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.EsBanco, valueUpdate:'afterkeydown'">
+                                        Banco
+                                    </label>
+                                </span>
+                                <input type="text" id="txtSwiftBancoBeneficiario" class="form-control" data-bind="enable: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.EsBanco, value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.SwfBen, valueUpdate:'afterkeydown'" />
+                                <span class="input-group-addon" id="btnBuscarBancoPorSwift" data-bind="enable: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.EsBanco, valueUpdate:'afterkeydown'">
+                                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Cuenta: </label></div>
+                        <div class="col-xs-10"><input type="text" tabindex="2" id="txtCuentaBeneficiario" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.ctacte.extend({ maxLength: 34 }), valueUpdate:'afterkeydown'" maxlength="34" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Nombre: </label></div>
+                        <div class="col-xs-10"><textarea type="text" tabindex="3" id="txtNombreBeneficiario" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.NomBen.extend({ maxLength: 66 }), valueUpdate:'afterkeydown'" maxlength="66" rows="2" cols="33"></textarea></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Dirección: </label></div>
+                        <div class="col-xs-10"><textarea type="text" tabindex="4" id="txtDir1Beneficiario" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.DirBen1.extend({ maxLength: 66 }), valueUpdate:'afterkeydown'" maxlength="66" rows="2" cols="33"></textarea></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xs-offset-2"><input type="text" tabindex="5" id="txtDir2Beneficiario" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.DirBen2.extend({ maxLength: 33 }), valueUpdate:'afterkeydown'" maxlength="33" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">País: </label></div>
+                        <div class="col-xs-10">
+                            <select id="ddlPaisBeneficiario" tabindex="6" class="form-control input-sm" data-bind="options: PaisesTPai, optionsText: 'Text', optionsValue: 'Value', value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.PaiBen, visible: !Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.Es59F(), valueAllowUnset: true, valueUpdate:'afterkeydown'"></select>
+                            <select id="ddlPaisBeneficiario59F" tabindex="7" class="form-control input-sm" data-bind="options: PaisesCPai, optionsText: 'Text', optionsValue: 'Value', value: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.PaiBen59F, visible: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.Es59F(), valueAllowUnset: true, valueUpdate:'afterkeydown'"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Refer.: </label></div>
+                        <div class="col-xs-10"><textarea tabindex="8" id="txtReferBeneficiario" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.RefOpe.extend({ maxLength: 135 }), valueUpdate: ['afterkeydown']" maxlength="135" rows="4" cols="35"></textarea></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Plaza de Pago: </label></div>
+                        <div class="col-xs-10"><select id="ddlPaisPlazaDePago" tabindex="9" class="form-control input-sm" data-bind="options: PaisesTPai, optionsText: 'Text', optionsValue: 'Value', value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.PlzPag, valueAllowUnset: true, valueUpdate:'afterkeydown'"></select></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12"><label class="control-label">Corresponsales: </label></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12"><select size="5" tabindex="10" id="lstCorresponsales" class="form-control letraMonospace" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.SwfCor, valueAllowUnset: true, disable: Planillas()[viewModel.IndiceP()].DatosSwift.EsAladi(), valueUpdate:'afterkeydown'"></select></div>
+                    </div>
+                </fieldset>
+            </div>
+        </div><!-- End Col izquierda -->
+        <div class="col-xs-6">
+            <!-- Col derecha -->
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Datos Banco</legend>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Bancos: </label></div>
+                        <div class="col-xs-10"><select class="form-control input-sm" tabindex="11" id="ddlTipoBanco" data-bind="options: TipoBancosSiBeneficiarioNoEsBanco, optionsText: 'Text', optionsValue: 'Value',  value: tipoBanco, valueUpdate:'afterkeydown'"></select></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">C. Comp:</label></div>
+                        <div class="col-xs-10"><input type="text" id="txtCodCompBanco" tabindex="12" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].CodCom, enable: tipoBanco() <= valueBancoIntermediario, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Swift: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtSwiftBanco" tabindex="13" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].SwfBco, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Nombre: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtNombreBanco" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].NomBco, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Dirección: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtDir1Banco" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].DirBco1, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xs-offset-2"><input type="text" id="txtDir2Banco" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].DirBco2, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">País: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtPaisBanco" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Bancos[viewModel.tipoBanco()].PaiBco, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Datos Cliente</legend>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xs-offset-2 checkbox">
+                            <label>
+                                <input type="checkbox" id="chk50F" data-bind="checked: Cliente.Es50F, valueUpdate:'afterkeydown'"><strong>50F</strong>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Nombre: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtClienteNombre" class="form-control input-sm" data-bind="value: Cliente.NomCli, valueUpdate:'afterkeydown'" maxlength="66" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">Dirección: </label></div>
+                        <div class="col-xs-10"><input type="text" id="txtClienteDir1" class="form-control input-sm" data-bind="value: Cliente.DirCli1, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xs-offset-2"><input type="text" id="txtClienteDir2" class="form-control input-sm" data-bind="value: Cliente.DirCli2, valueUpdate:'afterkeydown'" maxlength="35" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2"><label class="control-label">País: </label></div>
+                        <div class="col-xs-10">
+                            <input type="text" id="txtClientePais" class="form-control input-sm" data-bind="value: Cliente.PaiCli, visible: !Cliente.Es50F(), valueUpdate:'afterkeydown'" />
+                            <select id="ddlPaisesCliente" class="form-control input-sm" data-bind="options: PaisesCPai, optionsText: 'Text', optionsValue: 'Value', value: Cliente.PaiCliCod, visible: Cliente.Es50F(), valueAllowUnset: true, valueUpdate:'afterkeydown'"></select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend><input type="checkbox" id="chkMontoOriginal" data-bind="checked: Planillas()[viewModel.IndiceP()].Montos.Ch_Ori, disable: Planillas()[viewModel.IndiceP()].DatosSwift.BenSwf.EsBanco(), valueUpdate:'afterkeydown'" />&nbsp;&nbsp;Monto Original</legend>
+                    <div class="form-group">
+                        <div class="col-xs-3"><label class="control-label">Moneda Original (33B): </label></div>
+                        <div class="col-xs-9"><select id="ddlMonedaOriginal" class="form-control input-sm" data-bind="options: Monedas, optionsText: 'Text', optionsValue: 'Value', value: Planillas()[viewModel.IndiceP()].Montos.MndOri, enable: Planillas()[viewModel.IndiceP()].Montos.Ch_Ori, valueUpdate:'afterkeydown'"></select></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-3"><label class="control-label">Monto Original (33B): </label></div>
+                        <div class="col-xs-9"><input type="text" id="txtMontoOriginal" class="form-control monto input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Montos.MtoOri.extend({numeral: '0,0.00'}), enable: Planillas()[viewModel.IndiceP()].Montos.Ch_Ori, valueUpdate:'afterkeydown'" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-3"><label class="control-label">Paridad Original (36): </label></div>
+                        <div class="col-xs-9"><input type="text" id="txtParidadOriginal" class="form-control monto input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].Montos.TipCam.extend({numeral: '0.00000000'}), enable: Planillas()[viewModel.IndiceP()].Montos.Ch_Ori, valueUpdate:'afterkeydown'" /></div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-xs-3"><label class="control-label">Fecha de pago:</label></div>
+                            <div class="col-xs-9 input-group date">
+                                <input type="text" tabindex="14" id="txtFechaPago" name="txtFechaPago" class="form-control input-sm" data-bind="value: Planillas()[viewModel.IndiceP()].DatosSwift.DatSwf.FecPag, valueUpdate:'afterkeydown'"  data-data-format="dd/mm/yyyy" data-provide="datepicker" data-inputmask="'alias': 'date'"/>
+                                @*<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Col derecha -->
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title text-center"><a class="accordion-toggle collapsed" data-toggle="collapse" href="#divCuerpoCamposManuales">Campos manuales</a></h1>
+                </div>
+                <div id="divCuerpoCamposManuales" class="panel-body panel-collapse collapse" role="tabpanel">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Incluir</th>
+                                <th>Campo</th>
+                                <th>Desc</th>
+                                <th>Texto</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: { data: Planillas()[viewModel.IndiceP()].LineasManuales, as: 'principal'}">
+                            <tr data-bind="visible: viewModel.lineaManualEsVisible(principal)">
+                                <td><input type="checkbox" data-bind="checked: principal.Incluido, valueUpdate:'afterkeydown'" /></td>
+                                <td><span data-bind="text: principal.CodCam, valueUpdate:'afterkeydown'"></span></td>
+                                <td><span data-bind="text: principal.Descripcion, valueUpdate:'afterkeydown'"></span></td>
+                                <!-- ko if: principal.LineasSecundarias()[0].ValorCampo().length > 0 -->
+                                <td>
+                                    <select class="form-control input-sm" data-bind="value: Detalle,options: principal.LineasSecundarias()[0].ValorCampo, optionsText: 'Text', optionsValue: 'Value', enable: principal.Incluido, valueUpdate:'afterkeydown', attr: {tabindex:viewModel.tabindex()}"></select>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: principal.LineasSecundarias()[0].ValorCampo().length > 0 -->
+                                <td><div class="form-group-sm"><input type="text" class="form-control input-sm" data-bind="value: principal.Detalle, attr: { tabindex:viewModel.tabindex(), id: 'txtLineaManualMT'+principal.CodMT()+'Cod'+principal.CodCam().trim()+'Principal' }, enable: principal.Incluido" maxlength="33" /></div></td>
+                                <!-- /ko -->
+                            </tr>
+                            <!-- ko foreach: LineasSecundarias -->
+                            <tr data-bind="visible: (principal.Incluido() && viewModel.lineaManualEsVisible(principal))">
+                                <td colspan="3"></td>
+                                <td>
+                                    <div class="form-group-sm">
+                                        <input type="text" class="form-control input-sm" data-bind="value: Detalle, attr: { tabindex:viewModel.tabindex(), id: 'txtLineaManualMT'+principal.CodMT()+'Cod'+principal.CodCam().trim()+'Ind'+$index() }" maxlength="33" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="text-align: right">
+        @using (Html.BeginForm("AceptarGenerarSwift", null, FormMethod.Post, new { id = "frmSwift", name = "frmSwift" }))
+        {
+            @*<button type="button" id="btnGenerarSwift" class="btn btn-primary"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;&nbsp;Generar</button>*@
+            <button type="button" tabindex="30" id="btnGenerarSwift" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar</button>
+            <button type="button" tabindex="31" id="btnVisualizarSwift" class="btn btn-info" data-bind="enable: Planillas()[viewModel.IndiceP()].DatosSwift.EstaGen"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>&nbsp;&nbsp;Visualizar</button>
+            @*<button type="submit" id="btnAceptar" class="btn btn-success" data-bind="enable: planillasIncompletas().length == 0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Aceptar</button>*@
+            <button type="submit" tabindex="32" id="btnAceptar" class="btn btn-primary" data-bind="enable: planillasIncompletas().length == 0">Aceptar</button>
+            <button type="button" id="btnCancelar" class="btn btn-default">Cancelar</button>
+        }
+    </div>
+    <div class="row">
+        <div class="col-xs-12">&nbsp;@*solo para dejar un margen inferior*@</div>
+    </div>
+</div>
+
+<div id="alertPlaceholder"></div>
+
+<div id="modalVisor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Detalle de swift generado</h4>
+            </div>
+            <div class="modal-body">
+                <div id="divCuerpoSwift" style="white-space: pre; font-family: Consolas; font-weight: bold; line-height: 1; align-content: center; margin: 10px;"></div>
+            </div>
+        </div>
+    </div>
+</div>

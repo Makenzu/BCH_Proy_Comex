@@ -1,0 +1,411 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillaVisibleExportViewModel
+
+
+@{
+    ViewBag.Title = "Planilla Visible Exportaciones";
+}
+
+<style type="text/css">
+    .left {
+        text-align: left !important; 
+    }
+</style>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmPlanillaVisibleExport", name = "frmPlanillaVisibleExport" }))
+{
+    @*@Html.AntiForgeryToken()*@
+    <div id="divPlanillaVisibleExport" class="container">
+        <div class="form-horizontal">
+            <h3>Planilla Visible Exportaciones @ViewBag.Caption</h3>
+            <hr />
+            <div class="row">
+                @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h1 class="panel-title text-center">Declaración Exportación</h1>
+                        </div>
+                        <div class="panel panel-body" id="divDeclaracionImportacion">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtNumeroDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4 left"})
+                                    @Html.LabelFor(model => model.TxtFechaDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4 left"})
+                                    @Html.LabelFor(model => model.TxtCodigoDeclaracion, htmlAttributes: new { @class = "control-label col-xs-3 left" })
+                                </div>
+                                
+                                <div class="col-xs-12">
+                                    <div class="input">
+                                        <div class="col-xs-4" style="padding-right:0">
+                                            @Html.EditorFor(model => model.TxtNumeroDeclaracion,
+      new {                                 htmlAttributes = new { id = "Tx_NumDec", @class = "form-control", @data_bind = "value: Tx_NumDec.Text", data_inputmask = "'mask': '9','repeat': 9, 'greedy' : false" } })
+                                        </div>
+                                        <div class="col-xs-4" style="padding-right:0; padding-left:0">
+                                            @Html.EditorFor(model => model.TxtFechaDeclaracion, new { htmlAttributes = new { @class = "form-control" , data_inputmask="'alias': 'date'" } })
+                                        </div>
+                                        <div class="col-xs-2" style="padding-right:0; padding-left:0">
+                                            @Html.EditorFor(model => model.TxtCodigoDeclaracion, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                        <div class="col-xs-2" style="padding-right:0; padding-left:0">
+                                                @Html.EditorFor(model => model.BtnOkDeclaracion, new
+                                       {
+                                           htmlAttributes = new
+                                           {
+                                               @class = "btn btn-default",
+                                               type = "button",
+                                               name = "btnCommand"
+                                           }
+                                       })
+                                            @*<input type="button" id="btnOKDec" value="OK" class="btn btn-default" />*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValBrutoDeclaracion, htmlAttributes: new {
+                                    @class = "control-label col-xs-4"                                    
+                                })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValBrutoDeclaracion, new { htmlAttributes = new {
+                                       @class = "form-control tx_mtodec monto",
+                                       @data_indice = 0,
+                                       maxlength = "13"
+                                       }
+                                       })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValComisionDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8 form-inline">
+                                    @Html.EditorFor(model => model.TxtValComisionDeclaracion, new { htmlAttributes = new {
+                                       @class = "form-control tx_mtodec monto",
+                                       @data_indice = 1,
+                                       maxlength = "13"
+                                       }
+                                       })
+                                    @Html.EditorFor(model => model.ChkValComisionesDeclaracion, new { htmlAttributes = new { 
+                                   @class = "ch_deduc", @data_indice = 0 } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValFleteDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8 form-inline">
+                                    @Html.EditorFor(model => model.TxtValFleteDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 2,
+                                   maxlength = "13"
+                               }
+                               })
+                                    @Html.EditorFor(model => model.ChkValFleteDeclaracion, new { htmlAttributes = new {
+                                   @class = "ch_deduc",
+                                   @data_indice = 1,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValSeguroDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8 form-inline">
+                                    @Html.EditorFor(model => model.TxtValSeguroDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 3,
+                                   maxlength = "13"
+                               }
+                               })
+                                    @Html.EditorFor(model => model.ChkValSeguroDeclaracion, new { htmlAttributes = new {
+                                   @class = "ch_deduc",
+                                   @data_indice = 2,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValGastoCorredorDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValGastoCorredorDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 4,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValAjusteDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValAjusteDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 5,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValLiquidoDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValLiquidoDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 6,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValTranVariasDeclaracion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValTranVariasDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 7,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValTotalCompraDeclaracion, htmlAttributes: new {
+                               @class = "control-label col-xs-4"
+                           })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValTotalCompraDeclaracion, new { htmlAttributes = new {
+                                   @class = "form-control tx_mtodec monto",
+                                   @data_indice = 8,
+                                   maxlength = "13"
+                               }
+                               })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*Anticipos Comprador*@
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h1 class="panel-title text-center">Anticipos Comprador</h1>
+                        </div>
+                        <div class="panel panel-body">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CmbSecEcBen, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.CmbSecEcBen, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CmbSecEcInv, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.CmbSecEcInv, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValPorcentParticipante, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValPorcentParticipante, new { htmlAttributes = new { @class = "form-control monto", maxlength = "4" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtNombreComprador, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtNombreComprador, new { htmlAttributes = new { @class = "form-control", maxlength = "30" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*Planillas*@
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h1 class="panel-title text-center">Planillas</h1>
+                        </div>
+                        <div class="panel panel-body">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValTotalPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValTotalPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CmbTipoPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.CmbTipoPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValBrutoPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValBrutoPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValComisionPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValComisionPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtOtrosGastosPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtOtrosGastosPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtValLiquidoPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtValLiquidoPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtTipoCambioPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtTipoCambioPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TxtFecVencRetornoPlanilla, htmlAttributes: new { @class = "control-label col-xs-4" })
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(model => model.TxtFecVencRetornoPlanilla, new { htmlAttributes = new { @class = "form-control monto" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtObservacionesPlanilla, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtObservacionesPlanilla, new { htmlAttributes = new { @class = "form-control", maxlength = "255" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*Monto a Informar*@
+                <div class="col-xs-3">
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h1 class="panel-title text-center">Monto a informar</h1>
+                        </div>
+                        <div class="panel panel-body">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtPlazoFinanciamiento, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtPlazoFinanciamiento, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtNumPresentacion, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtNumPresentacion, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtFechaPresentacion, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtFechaPresentacion, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.CmbBanco, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.CmbBanco, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.CmbPlazaBancoCentral, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.CmbPlazaBancoCentral, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.CmbTipoPlanillaInformar, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.CmbTipoPlanillaInformar, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtFechaInscripcion, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtFechaInscripcion, new { htmlAttributes = new { @class = "form-control", data_inputmask = "'alias': 'date'" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.TxtNumeroInscripcion, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.TxtNumeroInscripcion, new { htmlAttributes = new { @class = "form-control"} })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(model => model.CmbPaisOperacion, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                                    @Html.EditorFor(model => model.CmbPaisOperacion, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*Botones*@
+                <div class="col-xs-1">
+
+                    <div class="input-group text-right" style="margin-top: 26px">
+                        <button id="BtnOK" type="button" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                        <br>
+                        <button id="BtnNO" type="button" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </div>
+                 </div>
+            </div>
+
+            @*Montos*@
+            <div class="row">
+                <div class="col-xs-10 form-group">
+                    <div class="col-xs-5">
+                        @Html.LabelFor(model => model.LstMontos, htmlAttributes: new { @class = "control-label col-xs-12 left" })
+                        @Html.EditorFor(model => model.LstMontos, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="col-xs-7">
+                        @*@Html.LabelFor(model => model.LstPlanillas, htmlAttributes: new { @class = "control-label col-xs-12 left" })*@
+                        <label class="mono"> Planillas       #Dec.       IDE     Mnd.               Monto</label> 
+                        @Html.EditorFor(model => model.LstPlanillas, new { htmlAttributes = new { @class = "form-control"} })
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="row">
+                        @Html.EditorFor(model => model.BtnAceptar, new { htmlAttributes = new { 
+                            @class = "btn btn-primary", 
+                            type = "submit", 
+                            name="btnCommand" } })
+                        @*<input type="submit" name="btnCommand" id="btnAceptar" value="Aceptar" class="btn btn-primary" />*@
+                    </div>
+                    <div class="row">
+                        @Html.EditorFor(model => model.BtnVisualizar, new { htmlAttributes = new { 
+                            @class = "btn btn-default", 
+                            type = "submit", 
+                            name="btnCommand" } })
+                        @*<input type="submit" name="btnCommand" id="btnVisualizar" value="Visualizar" class="btn btn-default" />*@
+                    </div>
+                    <div class="row">
+                        @Html.EditorFor(model => model.BtnCancelar, new { htmlAttributes = new {
+                           @class = "btn btn-default",
+                           type = "submit",
+                           name = "btnCommand" } })
+                        @*<input type="submit" name="btnCommand" id="btnCancelar" value="Cancelar" class="btn btn-default" />*@
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/PlanillaVisibleExport")
+}
+

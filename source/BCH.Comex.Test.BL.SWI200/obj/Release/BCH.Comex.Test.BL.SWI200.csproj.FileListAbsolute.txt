@@ -1,0 +1,2 @@
+D:\3IT\COMEX\BCH.Comex.Test.BL.SWI200\obj\Release\BCH.Comex.Test.BL.SWI200.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Test.BL.SWI200\obj\Release\BCH.Comex.Test.BL.SWI200.csproj.CoreCompileInputs.cache

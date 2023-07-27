@@ -1,0 +1,178 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ReporteMovimientosCuentaCorrienteViewModel
+@using BCH.Comex.Core.BL.XGPL;
+@{
+    ViewBag.Title = "Reporte Movimientos Ctas. Ctes.";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-planillas-inv.png")" />
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-table")
+    @Scripts.Render("~/bundles/bootstrap-table-export")
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    <script>
+        var $tabla;
+
+        $.blockUI({ message: '<h6>Cargando...</h6>' });
+
+        function referenciaFormatter(value, row, index) {
+            if (!isNaN(value) && value != '') {
+                return '\'' + value;
+            } else {
+                return value;
+            }
+        }
+
+        $(function () {
+
+            $tabla = $('#tablaPlanillas');
+            $tabla.bootstrapTable({
+                classes: 'table-sm table-bordered table-condensed',
+                pagination: true,
+                sortable: true,
+                locale: "es-SP",
+                pageSize: 10,
+                pageList: [10, 25, 50, 100, 200, 500, 1000, 2000],
+                search: true,
+                showExport: true,
+                exportTypes: ['excel', 'pdf'],
+                exportDataType: 'all',
+                exportOptions: {
+                    fileName: '@Model.Titulo - @DateTime.Now.ToString("ddMMyyyy_hhmmss")',
+                    worksheetName: ['@Model.Titulo'],
+                    tableName: '@Model.Titulo'
+                },
+            });
+
+            $.unblockUI();
+            $('#tablaPlanillas').show();
+        });
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .t0 {
+            width: 100%;
+        }
+
+        .t0_td0 {
+            width: 40%;
+        }
+
+        .t0_td1 {
+            width: 70%;
+        }
+
+        .t0_td2 {
+            width: 10%;
+        }
+
+        .t0_td3 {
+            width: 20%;
+        }
+
+        .subtotal td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <br>
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td align="left">
+                    <h4 style="font-style: italic; font-family: 'Times New Roman'"><strong>Comercio Exterior</strong></h4>
+                </td>
+                <td width="630px" align="center"><h4 style="text-align:center;font-family:'Times New Roman'"><u><strong>Movimientos Cuenta Corriente</strong></u></h4></td>
+            </tr>
+        </table>
+
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8">Fecha</div>
+            <div class="col-xs-3">:@DateTime.Now.ToShortDateString()</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-1 col-xs-offset-8">N° Página</div>
+            <div class="col-xs-3">: 1</div>
+        </div>
+
+        <p><h6>Fecha de Movimiento: @Model.FechaMovimiento.ToShortDateString()</h6></p>
+        <table id="tablaPlanillas" style="display:none">
+            <thead>
+                <tr>
+                    <th data-align="center" data-formatter="referenciaFormatter" data-sortable="true"># Operación</th>
+                    <th data-align="center" data-sortable="true">Espec.</th>
+                    <th data-align="center" data-sortable="true">Mnd</th>
+                    <th data-align="center" data-sortable="true">Monto</th>
+                    <th data-align="center" data-sortable="true">D/H</th>
+                    <th data-align="center" data-sortable="true">Nº C.Cte.</th>
+                    <th data-align="center" data-sortable="true">Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Detalle)
+                {
+                    <tr>
+                        <td data-align="center">@item.CodigoOperacion</td>
+                        <td data-align="center">@item.CodigoEspecialista</td>
+                        <td data-align="center">@item.NemMoneda</td>
+                        <td data-align="center" class="monto">@item.MontoMcd.FormatoDecimal()</td>
+                        <td data-align="center">@item.CodigoDh</td>
+                        <td data-align="center">@item.NumeroCme</td>
+                        <td data-align="center">@item.RutCliente</td>
+                    </tr>
+                }
+                <tr class="subtotal">
+                    <td data-align="center" colspan="3"><strong>Total Debe</strong></td>
+                    <td data-align="center" class="monto"><strong>@Model.TotalDebe.FormatoDecimal()</strong></td>
+                </tr>
+                <tr class="subtotal">
+                    <td data-align="center" colspan="3"><strong>Total Haber</strong></td>
+                    <td data-align="center" class="monto"><strong>@Model.TotalHaber.FormatoDecimal()</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <br />
+        <label><strong>*:Movimientos Anulados.</strong></label>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

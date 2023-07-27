@@ -1,0 +1,70 @@
+<WL5G3N1:definitions name="AbonoCuentaCosmosCodFC" targetNamespace="http://osb.bancochile.cl/AbonoCuentaCosmosCodFC/" xmlns:WL5G3N0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N1="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N2="http://osb.bancochile.cl/AbonoCuentaCosmosCodFC/" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy WL5G3N1:Required="true"/>
+  <wsp:Policy WL5G3N0:Id="Mtom.xml">
+    <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+  </wsp:Policy>
+  <WL5G3N1:types>
+    <xsd:schema targetNamespace="http://osb.bancochile.cl/AbonoCuentaCosmosCodFC/" xmlns:Q1="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCRequest" xmlns:Q2="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCResponse" xmlns:Q3="http://osb.bancochile.cl/common/HeaderRequest" xmlns:Q4="http://osb.bancochile.cl/common/HeaderResponse" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://osb.bancochile.cl/AbonoCuentaCosmosCodFC/" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://osb.bancochile.cl/AbonoCuentaCosmosCodFC/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://osb.bancochile.cl/common/HeaderResponse" schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002031_AbonoCuentaCosmosCodFC?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse"/>
+      <xsd:import namespace="http://osb.bancochile.cl/common/HeaderRequest" schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002031_AbonoCuentaCosmosCodFC?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest"/>
+      <xsd:import namespace="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCResponse" schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002031_AbonoCuentaCosmosCodFC?SCHEMA%2FPX_Cosmos%2FCS002031_AbonoCuentaCosmosCodFC%2FSpecification%2FXSD%2FCS002031_AbonoCuentaCosmosCodFCResponse"/>
+      <xsd:import namespace="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCRequest" schemaLocation="http://osb.bancochile.cl:8011/Cosmos/CS002031_AbonoCuentaCosmosCodFC?SCHEMA%2FPX_Cosmos%2FCS002031_AbonoCuentaCosmosCodFC%2FSpecification%2FXSD%2FCS002031_AbonoCuentaCosmosCodFCRequest"/>
+      <xsd:element name="headerRequest" type="Q3:datosHeaderRequest"/>
+      <xsd:element name="headerResponse" type="Q4:datosHeaderResponse"/>
+      <xsd:element name="AbonoCuentaCosmosCodFC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="reqAbonoCuentaCosmosCodFC" type="Q1:reqAbonoCuentaCosmosCodFC"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AbonoCuentaCosmosCodFCResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="respAbonoCuentaCosmosCodFC" type="Q2:respAbonoCuentaCosmosCodFC"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WL5G3N1:types>
+  <WL5G3N1:message name="AbonoCuentaCosmosCodFCRequest">
+    <WL5G3N1:part element="WL5G3N2:AbonoCuentaCosmosCodFC" name="parameters"/>
+  </WL5G3N1:message>
+  <WL5G3N1:message name="AbonoCuentaCosmosCodFCResponse">
+    <WL5G3N1:part element="WL5G3N2:AbonoCuentaCosmosCodFCResponse" name="parameters"/>
+  </WL5G3N1:message>
+  <WL5G3N1:message name="headerRequestMessage">
+    <WL5G3N1:part element="WL5G3N2:headerRequest" name="headerRequest"/>
+  </WL5G3N1:message>
+  <WL5G3N1:message name="headerResponseMessage">
+    <WL5G3N1:part element="WL5G3N2:headerResponse" name="headerResponse"/>
+  </WL5G3N1:message>
+  <WL5G3N1:portType name="AbonoCuentaCosmosCodFC">
+    <WL5G3N1:operation name="AbonoCuentaCosmosCodFC">
+      <WL5G3N1:input message="WL5G3N2:AbonoCuentaCosmosCodFCRequest"/>
+      <WL5G3N1:output message="WL5G3N2:AbonoCuentaCosmosCodFCResponse"/>
+    </WL5G3N1:operation>
+  </WL5G3N1:portType>
+  <WL5G3N1:binding name="AbonoCuentaCosmosCodFCSOAP" type="WL5G3N2:AbonoCuentaCosmosCodFC">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#Mtom.xml"/>
+    </wsp:Policy>
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N1:operation name="AbonoCuentaCosmosCodFC">
+      <WL5G3N3:operation soapAction="http://osb.bancochile.cl//AbonoCuentaCosmosCodFC/AbonoCuentaCosmosCodFC"/>
+      <WL5G3N1:input>
+        <WL5G3N3:header message="WL5G3N2:headerRequestMessage" part="headerRequest" use="literal"/>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N1:input>
+      <WL5G3N1:output>
+        <WL5G3N3:header message="WL5G3N2:headerResponseMessage" part="headerResponse" use="literal"/>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N1:output>
+    </WL5G3N1:operation>
+  </WL5G3N1:binding>
+  <WL5G3N1:service name="AbonoCuentaCosmosCodFC">
+    <WL5G3N1:port binding="WL5G3N2:AbonoCuentaCosmosCodFCSOAP" name="AbonoCuentaCosmosCodFCSOAP">
+      <WL5G3N3:address location="http://osb.bancochile.cl:8013/Cosmos/CS002031_AbonoCuentaCosmosCodFC"/>
+    </WL5G3N1:port>
+  </WL5G3N1:service>
+</WL5G3N1:definitions>

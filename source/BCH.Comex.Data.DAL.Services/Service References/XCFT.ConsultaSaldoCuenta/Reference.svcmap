@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="053bcfd1-bbfe-4fa9-8ae1-ee53fa34e676" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000069_ConsultaSaldoCuenta.xsd" MetadataType="Schema" ID="18392eb3-619e-4fc8-abc4-8eea63ba3db6" SourceId="1" SourceUrl="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="CS000069_ConsultaSaldoCuenta1.xsd" MetadataType="Schema" ID="c669e6c5-443c-494c-a1ae-d8541b5b4efe" SourceId="1" SourceUrl="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FPX_SaldosCartolas%2FCS000069_ConsultaSaldoCuenta%2FSpecificactions%2FWSDL%2FCS000069Response" />
+    <MetadataFile FileName="CS000069_ConsultaSaldoCuenta2.xsd" MetadataType="Schema" ID="2ca11b5b-1764-4301-8635-87f14e47b5f4" SourceId="1" SourceUrl="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FPX_SaldosCartolas%2FCS000069_ConsultaSaldoCuenta%2FSpecificactions%2FWSDL%2FCS000069Request" />
+    <MetadataFile FileName="CS000069_ConsultaSaldoCuenta3.xsd" MetadataType="Schema" ID="ff2504ae-e9ae-4f51-84eb-ddd60b9dbb89" SourceId="1" SourceUrl="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="ConsultasSaldoCuenta.wsdl" MetadataType="Wsdl" ID="3f07005f-1047-4a18-9e08-129269106dd5" SourceId="1" SourceUrl="http://osb.sb:8011/SaldosCartolas/CS000069_ConsultaSaldoCuenta?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

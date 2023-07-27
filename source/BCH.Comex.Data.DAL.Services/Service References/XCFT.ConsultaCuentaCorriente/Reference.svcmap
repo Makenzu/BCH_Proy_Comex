@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a3c77362-8326-4969-aa09-0e7984b54b76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS002027_ConsultaCuentaCorriente.xsd" MetadataType="Schema" ID="db1360cc-4a08-432f-b76c-0e71ce232334" SourceId="1" SourceUrl="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS002027_ConsultaCuentaCorriente1.xsd" MetadataType="Schema" ID="735f1fc5-7192-4754-b8f1-e8930ec70cea" SourceId="1" SourceUrl="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FPX_Cosmos%2FCS002027_ConsultaCuentaCorriente%2FSpecification%2FXSD%2FCS002027_ConsultaCuentaCorrienteRequest" />
+    <MetadataFile FileName="CS002027_ConsultaCuentaCorriente2.xsd" MetadataType="Schema" ID="f67c0372-d51e-443b-9dff-a56240eea77e" SourceId="1" SourceUrl="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="ConsultaCuentaCorriente.wsdl" MetadataType="Wsdl" ID="8e6b126f-c733-4d2f-befc-d40b7e9ab98a" SourceId="1" SourceUrl="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?wsdl" />
+    <MetadataFile FileName="CS002027_ConsultaCuentaCorriente3.xsd" MetadataType="Schema" ID="c7e72f01-0294-408a-b1ef-411979f0dea0" SourceId="1" SourceUrl="http://200.14.147.250:8011/Cosmos/CS002027_ConsultaCuentaCorriente?SCHEMA%2FPX_Cosmos%2FCS002027_ConsultaCuentaCorriente%2FSpecification%2FXSD%2FCS002027_ConsultaCuentaCorrienteResponse" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

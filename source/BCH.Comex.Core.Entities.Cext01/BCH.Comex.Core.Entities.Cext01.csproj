@@ -1,0 +1,1439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4169AC2F-554B-4F30-8405-2F3F0FAE44C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Core.Entities.Cext01</RootNamespace>
+    <AssemblyName>BCH.Comex.Core.Entities.Cext01</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureTest|AnyCPU'">
+    <OutputPath>bin\AzureTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISTest|AnyCPU'">
+    <OutputPath>bin\IISTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\IISRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\IISDesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeArchitects.VBLibrary">
+      <HintPath>..\References\CodeArchitects.VBLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbonoCargoResultDTO.cs" />
+    <Compile Include="AdminParticipantes\Datatypes\InitializationObject.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_MODGRNG.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_MODGSGT.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_MODGUSR.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_MODWS.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_PARTY.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_PRTGLOB.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_PRTYENT.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_PRTYENT2.cs" />
+    <Compile Include="AdminParticipantes\T_Modulos\T_UTILES.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_Commons.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_Mdi_Principal.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt00.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt01.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt04.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt06.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt07.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt08.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt09.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt10.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt11.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt13.cs" />
+    <Compile Include="AdminParticipantes\UI_Modulos\UI_PrtEnt14.cs" />
+    <Compile Include="AutorizacionSwift\ResultItem.cs" />
+    <Compile Include="BusquedaPlanilla\FrmBPlaDTO.cs" />
+    <Compile Include="Cext01Model.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="CodigoDeOrdenCampo23Swift.cs" />
+    <Compile Include="Common\EstructUsuario.cs" />
+    <Compile Include="Common\T_MODGBIC.cs" />
+    <Compile Include="Common\T_MODGTAB0.cs" />
+    <Compile Include="Common\T_MODGUSR.cs" />
+    <Compile Include="ContabilidadGenerica\DatosGlobales.cs" />
+    <Compile Include="ContabilidadGenerica\FrmgAsoDTO.cs" />
+    <Compile Include="ContabilidadGenerica\FrmgAsoNCDTO.cs" />
+    <Compile Include="ContabilidadGenerica\FrmGlanuMovimientoDTO.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_CONTAB01.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_CONTABGL.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODCONGL.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODCTA.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGADC.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGCHQ.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGCON0.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGCON1.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGLORI.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGLOV.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGMTS.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGNCTA.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGNPRT.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGPYF0.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGRNG.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGSCE.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_ModNotc.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGTIC.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODMMT.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_ModSaldo.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_Modswen.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODTDME.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXANU.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXDATA.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXDOC0.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXPRN1.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXSWF.cs" />
+    <Compile Include="Common\T_MOD_50F.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MOD_ADIC.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_GLOBAL.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGASO.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGCVD.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGL.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGMTA.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODGOVD.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXORI.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_MODXPLN0.cs" />
+    <Compile Include="ContabilidadGenerica\T_Modulos\T_SYGETPRT.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_Frm.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_FrmgChq.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_FrmGlanu.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_FrmGLOV.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_Frm_Cta.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_Frm_SeleccionOficina.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_GetPrty0.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_GetPrty1.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_GetPrty2.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_GetPrty3.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_gl.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_PrtEnt09.cs" />
+    <Compile Include="ContabilidadGenerica\UI_Forms\UI_Tickets.cs" />
+    <Compile Include="Devengo\DatosGlobales.cs" />
+    <Compile Include="Devengo\DevengIntReaj.cs" />
+    <Compile Include="Devengo\T_CDR.cs" />
+    <Compile Include="Devengo\T_CTACTE.cs" />
+    <Compile Include="Devengo\T_DevHist.cs" />
+    <Compile Include="Devengo\T_INFORME.cs" />
+    <Compile Include="Devengo\T_MODDIFDEV.cs" />
+    <Compile Include="Devengo\T_MODGPYF0.cs" />
+    <Compile Include="Devengo\T_MODGUSR.cs" />
+    <Compile Include="DocumentoOperacion.cs" />
+    <Compile Include="DocumentoReporteModel.cs" />
+    <Compile Include="ejc_prty_ejc_s_01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinDia\DatosGlobales.cs" />
+    <Compile Include="FinDia\ReporteMonedasDTO.cs" />
+    <Compile Include="FinDia\Sum_Cta.cs" />
+    <Compile Include="FinDia\Tipo_CtaMon.cs" />
+    <Compile Include="FinDia\T_CCIRLLVR.cs" />
+    <Compile Include="FinDia\T_MODCUACC.cs" />
+    <Compile Include="FinDia\T_MODCUAD.cs" />
+    <Compile Include="FinDia\T_MODFDIA.cs" />
+    <Compile Include="FinDia\T_MODGPLN.cs" />
+    <Compile Include="FinDia\T_MODGTAB0.cs" />
+    <Compile Include="FinDia\T_MODGUSR.cs" />
+    <Compile Include="FundTransfer\DataTypes\DataImpresion.cs" />
+    <Compile Include="FundTransfer\DataTypes\DetalleIntereses.cs" />
+    <Compile Include="FundTransfer\DataTypes\Enums.cs" />
+    <Compile Include="FundTransfer\DataTypes\ImprimirPlanilla.cs" />
+    <Compile Include="FundTransfer\DataTypes\InitializationObject.cs" />
+    <Compile Include="FundTransfer\DataTypes\Planilla.cs" />
+    <Compile Include="FundTransfer\DataTypes\Planilla401.cs" />
+    <Compile Include="FundTransfer\DataTypes\Planilla500.cs" />
+    <Compile Include="FundTransfer\DataTypes\PlanillaEstadistica.cs" />
+    <Compile Include="FundTransfer\DataTypes\PlanillaInvisible.cs" />
+    <Compile Include="FundTransfer\DataTypes\PlanillaReemplazo.cs" />
+    <Compile Include="FundTransfer\DataTypes\PlanillaVisibleAnulada.cs" />
+    <Compile Include="FundTransfer\DataTypes\PlanillaVisibleExportacion.cs" />
+    <Compile Include="FundTransfer\DataTypes\Planilla_xPlv.cs" />
+    <Compile Include="FundTransfer\Domain\EstructUsuarios.cs" />
+    <Compile Include="FundTransfer\Domain\T_Adn.cs" />
+    <Compile Include="FundTransfer\Domain\T_Aso.cs" />
+    <Compile Include="FundTransfer\Domain\T_Cmd.cs" />
+    <Compile Include="FundTransfer\Domain\T_FraGen.cs" />
+    <Compile Include="FundTransfer\Domain\T_Gen.cs" />
+    <Compile Include="FundTransfer\Domain\T_InsEsp.cs" />
+    <Compile Include="FundTransfer\Domain\T_Pbc.cs" />
+    <Compile Include="FundTransfer\Domain\T_Prn.cs" />
+    <Compile Include="FundTransfer\Domain\T_Tcp.cs" />
+    <Compile Include="FundTransfer\Domain\T_TDoc.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_Mdl_Funciones.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_Mdl_Funciones_Varias.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODABDC.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODANUVI.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODCARAB.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODCARMAS.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_ModChVrf.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODCONT.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODCVDIM.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODCVDIMMM.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGANU.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGARB.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGASO.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGCHQ.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGCON0.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGCON1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGCVD.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGFRA.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGFYS.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGMTA.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGMTS.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGNCTA.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGPLI1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGPYF0.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGPYF1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGPYF2.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGRNG.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGSCE.cs" />
+    <Compile Include="Common\T_MODGSWF.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGSYB.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODGTAB1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODPREEM.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_ModSaldo.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODSWENN.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_Module1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODVPLE.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXANU.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXORI.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXPLN0.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXPLN1.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXSWF.cs" />
+    <Compile Include="FundTransfer\T_Modulos\T_MODXVIA.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Commons.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_FrmChq.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_FrmFact.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_frmganu.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_FrmgAso.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frmgnota.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frmgrev.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_frmnroa.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_FrmxAnu.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_FrmxPln0.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Anu_Vi.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Arbitrajes.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_ChVrf.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Comercio_Invisibles.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Comisiones.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Consulta.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Con_Participantes.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Crea_Participante.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Cta.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Declaracion.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Destino_Fondos.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Iden_Participantes.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Ingreso_Valores.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Origen_Fondos.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Participantes.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Parti_No.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Pln_cob.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Pln_Invisible.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Pln_VisExp.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_PlvSO.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Principal.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Rem_PVI.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_SeleccionOficina.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_Ticket.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Frm_VisE.cs" />
+    <Compile Include="FundTransfer\UI_Modulos\UI_Mdi_Principal.cs" />
+    <Compile Include="MT300Common\Mt300ArchivoProcesado.cs" />
+    <Compile Include="MT300Common\Mt300Custodia.cs" />
+    <Compile Include="MT300Common\Mt300Bitacora.cs" />
+    <Compile Include="GeneracionMT300\T_ModCarga.cs" />
+    <Compile Include="MT300Common\Archivo.cs" />
+    <Compile Include="MT300Common\ArchivoDetalle.cs" />
+    <Compile Include="GeneracionMT300\DatosGlobales.cs" />
+    <Compile Include="GestionControlSwift\ResultItem.cs" />
+    <Compile Include="Impresion\T_Modulos\T_MODGCON0.cs" />
+    <Compile Include="Impresion\T_Modulos\T_MODGNCTA.cs" />
+    <Compile Include="Impresion\T_Modulos\T_ModImpresion.cs" />
+    <Compile Include="LineaDetalleMensajeSwift.cs" />
+    <Compile Include="LstAcEco_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LstEjec_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LstRiesgo_MS1_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LstRiesgo_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MT300Gestion\DatosIndex.cs" />
+    <Compile Include="MT300Gestion\ResultadoBusquedaMT300.cs" />
+    <Compile Include="MT300Gestion\DatosGlobales.cs" />
+    <Compile Include="MT300Planilla\ResultadoDetalleArchivosMT300.cs" />
+    <Compile Include="MT300Planilla\DetalleMensajeMT300.cs" />
+    <Compile Include="MT300Planilla\ResumenArchivosMT300.cs" />
+    <Compile Include="MT300Planilla\DatosGlobales.cs" />
+    <Compile Include="MT300Planilla\ResultadoArchivosMT300.cs" />
+    <Compile Include="MT300Planilla\ResumenDetalleArchivosMT300.cs" />
+    <Compile Include="ParametroComex.cs" />
+    <Compile Include="MontosModel.cs" />
+    <Compile Include="MovimientoContasContablesExtension.cs" />
+    <Compile Include="Partials\pro_sce_prty_s04_Result.cs" />
+    <Compile Include="Partials\sce_mcd.cs" />
+    <Compile Include="Partials\sce_mch_s01_Result.cs" />
+    <Compile Include="Partials\sce_nov_s01_MS_Result.cs" />
+    <Compile Include="Partials\sce_usr.cs" />
+    <Compile Include="Partials\sce_xdoc.cs" />
+    <Compile Include="proc_get_cantidad_inyecciones_pendientes_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_rh_swi_001_Result.cs" />
+    <Compile Include="proc_UpdateCargoYAbono_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pro_sce_codtran_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_codtran_s01_Result.cs" />
+    <Compile Include="pro_sce_ctas_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_dad_s01_MS_Result.cs" />
+    <Compile Include="pro_sce_inpl_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_ovd_ft_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_ovd_ft_s01_Result.cs" />
+    <Compile Include="pro_sce_prty_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_prty_s01_Result.cs" />
+    <Compile Include="pro_sce_prty_s02_2_Result.cs" />
+    <Compile Include="pro_sce_prty_s02_3_Result.cs" />
+    <Compile Include="pro_sce_prty_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_prty_s02_Result.cs" />
+    <Compile Include="pro_sce_prty_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_prty_s03_Result.cs" />
+    <Compile Include="pro_sce_prty_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_prty_s05_01_Result.cs" />
+    <Compile Include="pro_sce_prty_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_prty_s06_MS_Result.cs" />
+    <Compile Include="pro_sce_prty_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_rsa_s01_MS_Result.cs" />
+    <Compile Include="pro_sce_suc_s01_MS.cs" />
+    <Compile Include="pro_sce_swf_pendientes_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_sce_swf_pendientes_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_sce_xdec_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pro_sce_xdec_s01_Result.cs" />
+    <Compile Include="ReporteContable.cs" />
+    <Compile Include="scedev_difdh_dev_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="scedev_difdh_dev_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scejacp_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="scejacp_s05_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_abr_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_acon_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_acon_s01_Result.cs" />
+    <Compile Include="sce_acr_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_acr_s05_Result.cs" />
+    <Compile Include="sce_adn_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_adn_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_anu_u03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_anu_u12_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_aut_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_aut_s01_Result.cs" />
+    <Compile Include="sce_bco_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_bco_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_bcta_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_bic.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_bic_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_blin_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_campos_cla_cliente_S01_Result.cs" />
+    <Compile Include="sce_ccde_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ccde_s01_Result.cs" />
+    <Compile Include="sce_ccof_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ccof_s01_Result.cs" />
+    <Compile Include="sce_ccpl_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ccpl_s01_Result.cs" />
+    <Compile Include="sce_cctx_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_cctx_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cdev_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_chq_i01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_chq_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_chq_u01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cla_cliente_w01_Result.cs" />
+    <Compile Include="sce_cor_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cor_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cpai.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cred_cla_cliente_S01_Result.cs" />
+    <Compile Include="sce_ctas.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ctas_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ctas_s03_Result.cs" />
+    <Compile Include="sce_ctas_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cta_s01_1_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cta_s01_1_Result.cs" />
+    <Compile Include="sce_cta_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cta_s06_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cuadra_inyecciones_ctacte_MS_DTO.cs" />
+    <Compile Include="sce_cuadra_inyecciones_ctacte_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cuadra_inyecciones_ctacte_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cvd1_s03_Result.cs" />
+    <Compile Include="Sce_Cvd1_S04_Result.cs" />
+    <Compile Include="sce_cvd_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_cvd_s06_DTO.cs" />
+    <Compile Include="sce_cvd_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dad.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dad_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dad_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dad_s08_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dev_cdr_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dev_cdr_MS_Result_Devengo.cs" />
+    <Compile Include="sce_dev_cons_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_dev_cons_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_dev_cons_Result_r.cs" />
+    <Compile Include="sce_dfc.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_fdp.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_fer.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_fer_s01_Result.cs" />
+    <Compile Include="sce_fra_s06_alt_Result.cs" />
+    <Compile Include="sce_fra_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_fra_s06_Result.cs" />
+    <Compile Include="sce_gcar_s05_MS_Result.cs" />
+    <Compile Include="sce_gcar_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gcar_u03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s10_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_gpln_s10_Result.cs" />
+    <Compile Include="sce_gpln_s11_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s11_Result.cs" />
+    <Compile Include="sce_gpln_s12_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s12_Result.cs" />
+    <Compile Include="sce_gpln_s13_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s13_Result.cs" />
+    <Compile Include="sce_gpln_s15_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s16_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_gpln_s16_Result.cs" />
+    <Compile Include="sce_grdo_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_grio_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ini_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ini_s01_Result.cs" />
+    <Compile Include="sce_inpl_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_intr_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_intr_s01_Result.cs" />
+    <Compile Include="sce_jprt_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcdh.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcdh_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s04_Result.cs" />
+    <Compile Include="sce_mcd_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s20_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s20_Result.cs" />
+    <Compile Include="sce_mcd_s28_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s28_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s40_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s56_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s56_Result.cs" />
+    <Compile Include="sce_mcd_s61_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s65_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s66_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s70_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s71_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s71_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mcd_s76_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_mcd_s77_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_mcd_s78_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_mchh_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s11_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s12_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s14_MS_DTO.cs" />
+    <Compile Include="sce_mch_s14_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mch_s15_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_mch_s16_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_mch_u01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_memg_d01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_memg_d01_Result.cs" />
+    <Compile Include="sce_memg_i01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_memg_i01_Result.cs" />
+    <Compile Include="sce_mta0_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta1_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta1_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta1_s06_Result.cs" />
+    <Compile Include="sce_mta1_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta1_s07_Result.cs" />
+    <Compile Include="sce_mta1_s09_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta1_s09_Result.cs" />
+    <Compile Include="sce_mta2_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta2_s03_Result.cs" />
+    <Compile Include="sce_mta3_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta3_s01_Result.cs" />
+    <Compile Include="sce_mta3_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mta3_s03_Result.cs" />
+    <Compile Include="sce_mts_d01_Result.cs" />
+    <Compile Include="sce_mts_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_mts_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_nom_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_nom_s01_Result.cs" />
+    <Compile Include="sce_nov_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ovd_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pcol_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s07_Result.cs" />
+    <Compile Include="sce_plan_s16_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s16_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s17_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s18_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plan_s19_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_pldc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pldc_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pldc_s02_Result.cs" />
+    <Compile Include="sce_pldc_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plia_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plia_s01_Result.cs" />
+    <Compile Include="sce_pli_05_Result.cs" />
+    <Compile Include="sce_pli_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pli_s05_Result.cs" />
+    <Compile Include="sce_pli_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pli_s06_Result.cs" />
+    <Compile Include="sce_pli_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_pli_s08_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_pli_w06_Result.cs" />
+    <Compile Include="sce_plrm_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plrm_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_plrm_s03_Result.cs" />
+    <Compile Include="sce_pope.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ppae_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prd_i01_MS_Result.cs" />
+    <Compile Include="sce_prd_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prty.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prty_i01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prty_i01_Result.cs" />
+    <Compile Include="sce_prty_s08_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prty_s10_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_prty_w01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_prty_w01_Result.cs" />
+    <Compile Include="sce_ref_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_ref_s01_Result.cs" />
+    <Compile Include="sce_rng_i01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rng_i01_Result.cs" />
+    <Compile Include="sce_rng_u01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rng_u01_Result.cs" />
+    <Compile Include="sce_rsa.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_i01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_parti_listDir_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_parti_listRazon_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_parti_list_MS_Result.cs" />
+    <Compile Include="sce_rsa_s05_MS_Result.cs" />
+    <Compile Include="sce_rsa_s06_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_s07_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_rsa_u01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_sec_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_sec_s01_Result.cs" />
+    <Compile Include="sce_serv_imp_01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_serv_imp_01_Result.cs" />
+    <Compile Include="sce_tccs.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tccs_s04_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tcom_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tcom_s03_Result.cs" />
+    <Compile Include="sce_tcom_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tcp_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tcp_s01_Result.cs" />
+    <Compile Include="sce_tdme.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tdme_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tdme_s01_Result.cs" />
+    <Compile Include="sce_tgas_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tgas_s03_Result.cs" />
+    <Compile Include="sce_tgas_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_tint_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_trng_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_trng_s01_Result.cs" />
+    <Compile Include="sce_usr.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s02_Result.cs" />
+    <Compile Include="sce_usr_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s03_Result.cs" />
+    <Compile Include="sce_usr_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s04_Result.cs" />
+    <Compile Include="sce_usr_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s05_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s10_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_s10_Result.cs" />
+    <Compile Include="sce_usr_s16_MS_DTO.cs" />
+    <Compile Include="sce_usr_s26_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_usr_s34_MS_Result.cs" />
+    <Compile Include="sce_usr_s35_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_u01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_u02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_u02_Result.cs" />
+    <Compile Include="sce_usr_u03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_usr_u03_Result.cs" />
+    <Compile Include="sce_vgt_s02_s21_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_vvi_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xanu_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xanu_s01_Result.cs" />
+    <Compile Include="sce_xanu_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xanu_s02_Result.cs" />
+    <Compile Include="sce_xanu_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_xanu_u03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xanu_u03_Result.cs" />
+    <Compile Include="sce_xcob_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xdec_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xdec_s01_Result.cs" />
+    <Compile Include="sce_xdoc.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xdoc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xdoc_s01_Result.cs" />
+    <Compile Include="sce_xdoc_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_xplv_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xplv_s08_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xplv_s08_Result.cs" />
+    <Compile Include="sce_xplv_s10_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xplv_s11_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sce_xplv_s12_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sce_xret_s05_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_aec_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_clf_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_ejc_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_ejc_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_ejc_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_loc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_mnd_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_mnd_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_mnd_s02_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_mnd_s03_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sgt_pai_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_pai_s02_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_pbc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_pbc_s01_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_suc.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_suc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_suc_s01_Result.cs" />
+    <Compile Include="sgt_suc_s04_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_suc_s04_Result.cs" />
+    <Compile Include="sgt_vmc_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_vmd_s02_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sgt_vmd_s02_Result.cs" />
+    <Compile Include="Supervisor\DatosGlobales.cs" />
+    <Compile Include="Supervisor\FrmAyMDTO.cs" />
+    <Compile Include="Supervisor\FrmCamClDTO.cs" />
+    <Compile Include="Supervisor\FrmCederDTO.cs" />
+    <Compile Include="Supervisor\FrmgChqDTO.cs" />
+    <Compile Include="Supervisor\FrmgUsrDTO.cs" />
+    <Compile Include="Supervisor\FrmTraspDTO.cs" />
+    <Compile Include="Supervisor\T_MODCEDER.cs" />
+    <Compile Include="tbl_datos_usuario_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_prty_ejc_MS.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tbl_sce_codtran_ft.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tbl_sce_fts.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tbl_sce_ovd_ft.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tbl_sce_parametros_ft.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tbl_sce_tabcomex_num_s01_MS_Result.cs">
+      <DependentUpon>Cext01Model.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCH.Comex.Common\BCH.Comex.Common.csproj">
+      <Project>{889f7437-c885-4877-a730-70442ae318f5}</Project>
+      <Name>BCH.Comex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Mcambio\BCH.Comex.Core.Entities.Mcambio.csproj">
+      <Project>{4E37A4B2-A5EF-4781-9DFC-39BDD68596B6}</Project>
+      <Name>BCH.Comex.Core.Entities.Mcambio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Portal\BCH.Comex.Core.Entities.Portal.csproj">
+      <Project>{256d32fc-c4a9-43d8-be75-785f1b569a15}</Project>
+      <Name>BCH.Comex.Core.Entities.Portal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ContabilidadGenerica\Domain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cext01Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cext01Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

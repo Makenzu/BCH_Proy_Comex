@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Rechazar";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/recepcion-swift-inv.png");
+    Layout = null;
+}
+<div class="row">
+    @using (Html.BeginForm("Rechazar", "RecibirMensaje", FormMethod.Post, new { id = "frmRechazo", @class = "form-horizontal well", @style = "margin-left: 10px; margin-right: 10px", @role = "form" }))
+    {
+        <div class="form-group">
+            <label style="text-align:left" for="comentario">Motivo rechazo :</label>
+            @Html.TextArea("comentario", new { placeholder = "Ingrese un motivo", @class = "form-control", id = "comentario", @rows = "6", maxlength = "90" })
+            <label class="control-label has-error" style="display:none" id="lblErrorComentario">El comentario es requerido.</label>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-12" style="margin-top: 20px;">
+                <button class="btn btn-primary pull-right" id="btnAceptar">Aceptar</button>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#frmRechazo').submit(function (e) {
+            e.preventDefault();
+            if ($('#comentario').val() == '') {
+                $('#comentario').closest(".form-group").addClass("has-error");
+                $("#lblErrorComentario").show();
+            } else {
+
+                if (rowUltimaAccion != null)
+                {
+                    var url = '@Url.Action("Rechazar", "RecibirMensaje")';
+                    var comentario = $('#comentario').val();
+                    $.post(url,
+                        {
+                            casilla: rowUltimaAccion.Casilla,
+                            sesion: rowUltimaAccion.Sesion,
+                            secuencia: rowUltimaAccion.Secuencia,
+                            estado: '@ViewBag.Estado', /// seleccionados[0].Estado
+                            texto: comentario
+                        },
+                        function (data) {
+                            //success
+                            $('#pnlBotones').hide();
+                            $('#modalRechazarSwift').modal('hide');
+                            showAlert("Rechazar mensaje swift", "Se rechazó con éxito el mensaje.", "alert-success", true);
+                            //lastMethod();
+                            //$('#modalSwiftSuccess').modal();
+                            //$('#txtTitleModal').text("Rechazar mensaje swift");
+                            //$('#txtSuccess').text("Se rechazó con éxito el mensaje.");
+                        });
+                }
+                
+                
+            }
+        });
+    });
+</script>

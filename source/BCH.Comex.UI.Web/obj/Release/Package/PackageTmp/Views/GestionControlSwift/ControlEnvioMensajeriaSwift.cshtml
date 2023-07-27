@@ -1,0 +1,508 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.Index
+@{
+    ViewBag.Title = "Gestión y Control Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/gestion-y-control-inv.png");
+}
+@*
+    <h2>ControlEnvioMensajeriaSwift</h2>*@
+@section css{
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+
+        .clickable .glyphicon {
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+        a.clickable:hover {
+            text-decoration: none;
+        }
+
+        .pagination-detail{
+            visibility:collapse;
+            height:0px;
+        }
+    </style>
+}
+<div id="msg-zone">
+
+</div>
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("ControlEnvioMensajeriaSwift")">Control de Envío</a></li>
+                <li><a href="@Url.Action("ControlSwift")">Control de Recepción</a></li>
+                <li><a href="@Url.Action("Index")">Gestión Mensajes Recibidos</a></li>
+                <li><a href="@Url.Action("GestionEnviados")">Gestión Mensajes Enviados</a></li>
+                <li><a href="@Url.Action("EstadisticaEnviarRecibir")">Estadísticas Enviar/Recibir</a></li>
+            </ul>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Encasillamiento</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("EncasillamientoManualSwift")">Encasillamiento Manual</a></li>
+                <li><a href="@Url.Action("EncasillamientoAutomaticoSwift")">Encasillamiento Automático</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Control de Envío Mensajería Swift</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("dtpFechaDesde", "Fecha de Control", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaDesde">
+                                        <input type="text" class="form-control" id="txtFechaDesde" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-default" id="pnlResultados" hidden>
+    <div class="panel-heading">
+        <h2 class="panel-title">Resultados</h2>
+    </div>
+    <div class="col-xs-12" id="pnlResultados3" hidden style="padding-top:20px;">
+        <button class="btn btn-info" id="btnVerificar">Verificar</button>
+    </div>
+    <div class="col-xs-12" id="pnlResultados2" hidden>
+        <div class="input-group col-xs-12">
+            <label class="radio-inline">
+                <input type="radio" name="direccion" id="archivoTerminado" value="1" checked>Archivos Terminados
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="direccion" id="archivoNoTerminado" value="2">Archivos No Terminados
+            </label>
+            <button class="btn btn-info" id="btnReporte" hidden>Reporte</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-3">
+            <table id="tablaSwifts"></table>
+        </div>
+        <div class="col-md-3">
+            <table id="tablaSwifts02"></table>
+        </div>
+        <div class="col-md-3">
+            <table id="tablaSwifts03"></table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        //$.fx.off = true;
+
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        var ultimosParamsConsultaSwift = null;
+        var formatoPOST = "DD/MM/YYYY";
+        var formatoGET = "YYYY/MM/DD";
+        var _data;
+        var _data2;
+        var _data3;
+        var _globalSecuencia;
+        var _globalSecuenciaFinal;
+        var _globalSesion;
+        var rowSelected;
+
+        var fd_archivo;
+        var nombre_archivo;
+        var fecha_creacion;
+        var fecha_confirma;
+        var estado_archivo;
+        var total_mensajes;
+        var total_envios;
+        var total_rechazos;
+        var ArrayGrillaFila = new Array();
+        var ArrayGrillaColumna = new Array();
+        var _Array;
+
+
+        var configColumnas = [
+            { field: 'fd_archivo', title: 'Archivo', visible: false },
+            { field: 'nombre_archivo', title: 'Archivos Generados', visible: true },
+            { field: 'fecha_creacion', title: 'Fecha Creacion', visible: false },
+            { field: 'fecha_confirma', title: 'Fecha Confirma', visible: false },
+            { field: 'estado_archivo', title: 'Estado', visible: false },
+            { field: 'total_mensajes', title: 'Total Mensajes', visible: false },
+            { field: 'total_envios', title: 'Total Envios', visible: false },
+            { field: 'total_rechazos', title: 'Total Rechazos', visible: false },
+        ];
+        var configColumnas01 = [
+            { field: 'fd_archivo', title: 'Archivo', visible: false },
+            { field: 'nombre_archivo', title: 'Archivos Terminados', visible: true },
+            { field: 'fecha_creacion', title: 'Fecha Creacion', visible: false },
+            { field: 'fecha_confirma', title: 'Fecha Confirma', visible: false },
+            { field: 'estado_archivo', title: 'Estado', visible: false },
+            { field: 'total_mensajes', title: 'Total Mensajes', visible: false },
+            { field: 'total_envios', title: 'Total Envios', visible: false },
+            { field: 'total_rechazos', title: 'Total Rechazos', visible: false },
+        ];
+        var configColumnas02 = [
+            { field: 'fd_archivo', title: 'Archivo', visible: false },
+            { field: 'nombre_archivo', title: 'Archivos No Terminados', visible: true },
+            { field: 'fecha_creacion', title: 'Fecha Creacion', visible: false },
+            { field: 'fecha_confirma', title: 'Fecha Confirma', visible: false },
+            { field: 'estado_archivo', title: 'Estado', visible: false },
+            { field: 'total_mensajes', title: 'Total Mensajes', visible: false },
+            { field: 'total_envios', title: 'Total Envios', visible: false },
+            { field: 'total_rechazos', title: 'Total Rechazos', visible: false },
+        ];
+
+
+        var dateNow = moment().startOf("day").utc();
+        var fechaMin = new Date('01/01/1975');
+
+        $('#dtpFechaDesde').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, minDate: fechaMin, debug: true });
+
+
+        $('#dtpFechaDesde').on("dp.change", function (e) {
+            //console.log($('#txtFechaDesde').val());
+            //var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+            //var fechaDesde = $('#txtFechaDesde').val();
+            var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+            buscarPorFecha(fechaDesde);
+        });
+
+        var Load = function () {
+            var url = '@Url.Action("Get_proc_sw_env_trae_files02", "GestionControlSwift")';
+            var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+            var fechaHasta = fechaDesde;
+            $('#pnlResultados').show();
+            //$('#pnlResultados3').hidden();
+            $('#tablaSwifts').bootstrapTable({
+                classes: 'table',
+                url: url,
+                queryParams: function (p) {
+                    return {
+                        fechaDesde: fechaDesde.format("YYYY/MM/DD"),
+                        fechaHasta: fechaHasta.format("YYYY/MM/DD")
+                    };
+                },
+                locale: "es-SP",
+                columns: configColumnas,
+                searchAlign: 'left',
+                showRefresh: false,
+                clickToSelect: true,
+                search: false,
+                checkboxHeader: false,
+                toolbar: '#custom-toolbar',
+                striped: true,
+                pagination: true,
+                pageSize: 20,
+                pageList: [10, 25, 50, 100, 200]
+            });
+        }
+
+        function buscarPorFecha(fechaDesde) {
+            @*var url = '@Url.Action("Get_proc_sw_env_trae_files", "GestionControlSwift")';*@
+            var url = '@Url.Action("Get_proc_sw_env_trae_files02", "GestionControlSwift")';
+            var fechaHasta = fechaDesde;
+            $('#pnlResultados').show();
+            //$('#pnlResultados2').show();
+            $('#pnlResultados3').show();
+            $('#tablaSwifts').bootstrapTable('destroy');
+            $('#tablaSwifts02').bootstrapTable('destroy');
+            $('#tablaSwifts03').bootstrapTable('destroy');
+            $('#tablaSwifts').bootstrapTable({
+                classes: 'table',
+                url: url,
+                queryParams: function GetParamsParaBusquedaSwift(p) {
+                    ultimosParamsConsultaSwift = {
+                        fechaDesde: fechaDesde.format("YYYY/MM/DD"),
+                        fechaHasta: fechaHasta.format("YYYY/MM/DD")
+                    };
+                    return ultimosParamsConsultaSwift;
+                },
+                locale: "es-SP",
+                columns: configColumnas,
+                searchAlign: 'left',
+                showRefresh: false,
+                clickToSelect: true,
+                search: false,
+                checkboxHeader: false,
+                toolbar: '#custom-toolbar',
+                striped: true,
+                pagination: true,
+                pageSize: 20,
+                pageList: [10, 25, 50, 100, 200],
+                onLoadError: function (arg1, arg2, arg3) {
+                    if (arg1 == "500") {
+                        showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                    }
+                }
+            });
+        };
+
+        Load();
+
+        $('#tablaSwifts').on('load-success.bs.table', function (e, data) {
+            _data = $('#tablaSwifts').bootstrapTable('getData');
+            //alert(JSON.stringify(_data));
+            _Array = new Array(_data.length);
+
+            //var arrayPrueba = new Array(7)
+            for (var i = 0; i < _Array.length; i++) {
+                _Array[i] = new Array(9);
+
+            }
+
+            var sumaTotalEnviosRechazos = 0;
+            for (var i = 0; i < _data.length; i++) {
+
+                _Array[i][0] = _data[i]["fd_archivo"];
+                _Array[i][1] = _data[i]["nombre_archivo"];
+                _Array[i][2] = _data[i]["fecha_creacion"];
+                _Array[i][3] = _data[i]["fecha_confirma"];
+                _Array[i][4] = _data[i]["estado_archivo"];
+                _Array[i][5] = _data[i]["total_mensajes"];
+                _Array[i][6] = _data[i]["total_envios"];
+                _Array[i][7] = _data[i]["total_rechazos"];
+                //_Array[i][8] = "8:" + 0;
+                total_mensajes = _data[i]["total_mensajes"];
+                total_envios = _data[i]["total_envios"];
+                total_rechazos = _data[i]["total_rechazos"];
+                sumaTotalEnviosRechazos = (total_envios + total_rechazos);
+
+                if (total_mensajes == sumaTotalEnviosRechazos) {
+                    // alert("grilla 2");
+                    _Array[i][8] = 2;
+                }
+                else {
+                    //alert("grilla 3");
+                    _Array[i][8] = 3;
+                }
+
+            }
+
+            //for (var i = 0; i < _Array.length; i++) {
+            //    for (var j = 0; j < 7; j++) {
+            //        _Array[i][j] = _data[i][j];
+            //    }
+            //}
+
+            for (var i = 0; i < _Array.length; i++) {
+                for (var j = 0; j < 9; j++) {
+                    //alert( _Array[i][j]);
+                }
+            }
+        });
+
+        $('#tablaSwifts02').on('load-success.bs.table', function (e, data) {
+            _data2 = $('#tablaSwifts02').bootstrapTable('getData');
+            //JSON.stringify(data);
+            //alert(JSON.stringify(data));
+        });
+
+        $('#tablaSwifts03').on('load-success.bs.table', function (e, data) {
+            // alert("hello")
+            _data3 = $('#tablaSwifts03').bootstrapTable('getData');
+            //JSON.stringify(data);
+            //alert(JSON.stringify(_data3));
+        });
+
+        var verificarGrilla01 = function () {
+            //recorro la grilla01
+            //aplico la logica
+            $('#tablaSwifts02').bootstrapTable('destroy');
+            $('#tablaSwifts03').bootstrapTable('destroy');
+            $('#pnlResultados2').show();
+            $('#tablaSwifts02').bootstrapTable({
+                classes: 'table',
+                locale: "es-SP",
+                pagination: false,
+                columns: configColumnas01,
+                searchAlign: 'left',
+                showRefresh: false,
+                clickToSelect: true,
+                search: false,
+                checkboxHeader: false,
+                toolbar: '#custom-toolbar',
+                striped: true,
+                pagination: true,
+                pageSize: 20,
+                pageList: [10, 25, 50, 100, 200],
+                onLoadError: function (arg1, arg2, arg3) {
+                    if (arg1 == "500") {
+                        showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                    }
+                }
+            });
+
+            $('#tablaSwifts03').bootstrapTable({
+                classes: 'table',
+                locale: "es-SP",
+                pagination: false,
+                columns: configColumnas02,
+                searchAlign: 'left',
+                showRefresh: false,
+                clickToSelect: true,
+                search: false,
+                checkboxHeader: false,
+                toolbar: '#custom-toolbar',
+                striped: true,
+                pagination: true,
+                pageSize: 20,
+                pageList: [10, 25, 50, 100, 200],
+                onLoadError: function (arg1, arg2, arg3) {
+                    if (arg1 == "500") {
+                        showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                    }
+                }
+            });
+
+            for (var i = 0; i < _data.length; i++) {
+                fd_archivo = _data[i]["fd_archivo"];
+                nombre_archivo = _data[i]["nombre_archivo"];
+                fecha_creacion = _data[i]["fecha_creacion"];
+                fecha_confirma = _data[i]["fecha_confirma"];
+                estado_archivo = _data[i]["estado_archivo"];
+                total_mensajes = _data[i]["total_mensajes"];
+                total_envios = _data[i]["total_envios"];
+                total_rechazos = _data[i]["total_rechazos"];
+                var sumaTotalEnviosRechazos = (total_envios + total_rechazos);
+                if (total_mensajes == sumaTotalEnviosRechazos) {
+                    //insertar en la grilla2
+                    $('#tablaSwifts02').bootstrapTable('insertRow', {
+                        index: 1,
+                        row: {
+                            fd_archivo: fd_archivo,
+                            nombre_archivo: nombre_archivo,
+                            fecha_creacion: fecha_creacion,
+                            fecha_confirma: fecha_confirma,
+                            estado_archivo: estado_archivo,
+                            total_mensajes: total_mensajes,
+                            total_envios: total_envios,
+                            total_rechazos: total_rechazos
+                        }
+                    });
+                }
+                else {
+                    //insertar en la grilla3
+                    $('#tablaSwifts03').bootstrapTable('insertRow', {
+                        index: 1,
+                        row: {
+                            fd_archivo: fd_archivo,
+                            nombre_archivo: nombre_archivo,
+                            fecha_creacion: fecha_creacion,
+                            fecha_confirma: fecha_confirma,
+                            estado_archivo: estado_archivo,
+                            total_mensajes: total_mensajes,
+                            total_envios: total_envios,
+                            total_rechazos: total_rechazos
+                        }
+                    });
+                }
+            }
+        };
+
+        var reporte = function () {
+            var _direccion = 1;
+            if ($('#archivoNoTerminado').is(':checked')) {
+                _direccion = 2;
+            }
+            if (_direccion == 1) {
+                var _urlReporte = '@Url.Action("ReporteControlEnvioMensajeriaSwiftt", "GestionControlSwift")';
+                var p = ultimosParamsConsultaSwift;
+                if (p != null) {
+                    //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                    var urlReporte = _urlReporte + "?fechaDesde=" + encodeURIComponent(moment(p['fechaDesde']).format(formatoGET)) +
+                                                   "&fechaHasta=" + encodeURIComponent(moment(p['fechaHasta']).format(formatoGET));
+                    //alert(urlReporte);
+                    var w = window.open(urlReporte, "_blank");
+                    return true;
+                }
+            }
+            else {
+                var _urlReporte = '@Url.Action("ReporteControlEnvioMensajeriaSwift", "GestionControlSwift")';
+                var p = ultimosParamsConsultaSwift;
+                if (p != null) {
+                    //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+                    var urlReporte = _urlReporte + "?fechaDesde=" + encodeURIComponent(moment(p['fechaDesde']).format(formatoGET)) +
+                                                   "&fechaHasta=" + encodeURIComponent(moment(p['fechaHasta']).format(formatoGET));
+                    //alert(urlReporte);
+                    var w = window.open(urlReporte, "_blank");
+                    return true;
+                }
+            }
+        };
+        $('#btnVerificar').click(verificarGrilla01);
+        $('#btnReporte').click(reporte);
+        $('#tablaSwifts').on('check.bs.table', function (e, row) {
+            rowSelected = row;
+        });
+
+    </script>
+}
+
+

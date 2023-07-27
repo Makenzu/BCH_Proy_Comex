@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/entities/contactabilidad/Telefono" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/entities/contactabilidad/Telefono" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="telefono">
+    <xsd:sequence>
+      <xsd:element name="codPais" type="xsd:string" />
+      <xsd:element name="codArea" type="xsd:string" />
+      <xsd:element name="numero" type="xsd:string" />
+      <xsd:element name="anexo" type="xsd:string" />
+      <xsd:element name="tipoTelefono" type="xsd:string" />
+      <xsd:element name="estado" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

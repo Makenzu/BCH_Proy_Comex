@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaDireccionesProducto/OpConsultarDireccionesProductoResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaDireccionesProducto/OpConsultarDireccionesProductoResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="direccionesPro">
+    <xsd:sequence>
+      <xsd:element name="rowIdDir" type="xsd:string" />
+      <xsd:element name="direccion" type="xsd:string" />
+      <xsd:element name="numero" type="xsd:string" />
+      <xsd:element name="departamento" type="xsd:string" />
+      <xsd:element name="region" type="xsd:string" />
+      <xsd:element name="ciudad" type="xsd:string" />
+      <xsd:element name="comuna" type="xsd:string" />
+      <xsd:element name="tipoDireccion" type="xsd:string" />
+      <xsd:element name="codigoPostal" type="xsd:string" />
+      <xsd:element name="tipoDespacho" type="xsd:string" />
+      <xsd:element name="fechaActualizacion" nillable="true" type="xsd:dateTime" />
+      <xsd:element name="fechaInhibicion" nillable="true" type="xsd:dateTime" />
+      <xsd:element name="inhibicionDespacho" type="xsd:string" />
+      <xsd:element name="correspondenciaDev" type="xsd:string" />
+      <xsd:element name="motivoCorrespondencia" type="xsd:string" />
+      <xsd:element name="tipoRelacion" type="xsd:string" />
+      <xsd:element name="estadoCorrespondencia" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listaDireccionesPro">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="direccionesPro" nillable="true" type="tns:direccionesPro" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosSalida">
+    <xsd:sequence>
+      <xsd:element name="listaDireccionesPro" type="tns:listaDireccionesPro" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

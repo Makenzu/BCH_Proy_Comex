@@ -1,0 +1,316 @@
+﻿@model BCH.Comex.UI.Web.Areas.Impresion.Models.ReporteContableViewModel
+@{
+    Layout = null;
+    int cont = 1;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reporte Contable - @Model.Reporte.Cabecera.NroOperacion</title>
+    
+    <style type="text/css">
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 48px 0px 63px 12px;
+            padding: 0px 0px 0px 50px;
+            border: none;
+            width: 92%;
+        }
+
+        .t0 {
+            width: 100%;
+        }
+
+        .t0_td {
+            padding: 0px 0px 0px 10px;
+            margin: 0px;
+            vertical-align: bottom;
+        }
+
+        .t0_td0 {
+            width: 20%;
+        }
+
+        .t0_td1 {
+            width: 35%;
+        }
+
+        .t0_td2 {
+            width: 10%;
+        }
+
+        .t0_td3 {
+            width: 10%;
+        }
+
+        .t0_td4 {
+            width: 25%;
+        }
+
+
+
+
+
+
+        .h3 {
+            font-size: 24px;
+        }
+
+        .h4 {
+            font-size: 18px;
+        }
+
+        .strong {
+            font-weight: bold;
+        }
+
+        .body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+        .table-bordered th,
+        .table-bordered {
+            border: 1px solid #ddd !important;
+        }
+        .table > thead > tr > td.active,
+        .table > tbody > tr > td.active,
+        .table > tfoot > tr > td.active,
+        .table > thead > tr > th.active,
+        .table > tbody > tr > th.active,
+        .table > tfoot > tr > th.active,
+        .table > thead > tr.active > td,
+        .table > tbody > tr.active > td,
+        .table > tfoot > tr.active > td,
+        .table > thead > tr.active > th,
+        .table > tbody > tr.active > th,
+        .table > tfoot > tr.active > th {
+            background-color: #f5f5f5;
+        }
+        .active {
+            background-color: #f5f5f5;
+            
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .t1 {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .t1_td {
+            padding: 10px 5px 5px 5px;
+            border: 1px solid #ddd !important;
+            margin: 0px;
+            font-size: 14px;
+        }
+        .t1_td0 {
+            width: 50%;
+            padding: 0px 5px 0px 5px;
+        }
+        .t1_td1 {
+            width: 10%;
+            padding: 0px 5px 0px 5px;
+        }
+        .t1_td2 {
+            padding: 0px 5px 0px 5px;
+            width: 20%;
+        }
+
+        .t1_th {
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .p1{
+            margin:0px
+        }
+    </style>
+</head>
+<body class="body">
+    <div id="page_1">
+        <table cellpadding=0 cellspacing=0 class="t0" >
+            <tr style="height:0px;">
+                <td class="t0_td0"></td>
+                <td class="t0_td1"></td>
+                <td class="t0_td2"></td>
+                <td class="t0_td3"></td>
+                <td class="t0_td4"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="t0_td"><h3 class="h3">COMERCIO EXTERIOR</h3></td>
+                <td class="t0_td"></td>
+                <td colspan="2" class="t0_td"><h4 class="h4">REPORTE CONTABLE</h4></td>
+            </tr>
+            <tr style="height:40px;">
+                <td class="t0_td">&nbsp;</td>
+                <td class="t0_td">&nbsp;</td>
+                <td class="t0_td">&nbsp;</td>
+                <td class="t0_td">&nbsp;</td>
+                <td class="t0_td">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="t0_td"></td>
+                <td class="t0_td"><strong class="strong">Página</strong></td>
+                <td class="t0_td">: 1</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="t0_td"></td>
+                <td class="t0_td"><strong class="strong">Fecha</strong></td>
+                <td class="t0_td">: @DateTime.Now.ToShortDateString()</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="t0_td"></td>
+                <td class="t0_td"><strong class="strong">Hora</strong></td>
+                <td class="t0_td">: @DateTime.Now.ToShortTimeString()</td>
+            </tr>
+            <tr>
+                <td class="t0_td"><strong class="strong">Operación</strong></td>
+                <td class="t0_td">: @Model.Reporte.Cabecera.NroOperacion</td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+            </tr>
+            <tr>
+                <td class="t0_td"><strong class="strong">Cliente</strong></td>
+                <td class="t0_td">: @Model.Reporte.Cabecera.nomcli</td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+            </tr>
+            <tr>
+                <td class="t0_td"><strong class="strong">Función</strong></td>
+                <td class="t0_td">: @Model.Reporte.Cabecera.DescripcionFuncionContable</td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+            </tr>
+            <tr>
+                <td class="t0_td"><strong class="strong">Transacción</strong></td>
+                <td class="t0_td">: @Model.Reporte.Cabecera.nrorpt - @Model.Reporte.Cabecera.fecmov.ToShortDateString()</td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+            </tr>
+            <tr>
+                <td class="t0_td"><strong class="strong">Usuario</strong></td>
+                <td class="t0_td">: @Model.Reporte.Cabecera.NombreEspecialista</td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+                <td class="t0_td"></td>
+            </tr>
+            @if (!String.IsNullOrEmpty(Model.Reporte.Cabecera.desgen))
+            {
+                <tr>
+                    <td class="t0_td"><strong class="strong">Op. Relacionada</strong></td>
+                    <td colspan="2" class="t0_td">: @Model.Reporte.Cabecera.desgen</td>
+                    <td class="t0_td"></td>
+                    <td class="t0_td"></td>
+                </tr>
+            }
+        </table>
+
+        <br />
+        @if (Model.Reporte.Cabecera.estado == BCH.Comex.Core.Entities.Cext01.FundTransfer.T_Modulos.T_MODGCON0.ECC_ANU)
+        {
+            <div class="alert alert-danger text-center" style="font-size:1.2em;" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>&nbsp;&nbsp;ANULADO</div>
+        }
+
+        <table class="t1 table table-bordered" cellpadding=0 cellspacing=0>
+            <thead>
+                <tr>
+                    <th class="table table-bordered active t1_td0 t1_th">CUENTA</th>
+                    <th class="table table-bordered active t1_td1 t1_th">MND</th>
+                    <th class="table table-bordered active t1_td2 t1_th" style="text-align:right">DEBE</th>
+                    <th class="table table-bordered active t1_td2 t1_th" style="text-align:right">HABER</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var linea in Model.Reporte.LineasOrdenada())
+                {
+                    @*  Se identifico que al generar un reporte contable con más de 19 fila, la contabilidad no queda bien 
+                        visualmente, para evitar eso cada 19 filas se agrega una fila en blanco. *@
+                    if (((cont++ % 19) == 0))
+                    {
+                        <tr>
+                            <td class="t1_td">&nbsp;</td>
+                            <td class="t1_td">&nbsp;</td>
+                            @if (linea.cod_dh == "D") //debe
+                            {
+                                <td class="t1_td" style="text-align:right">&nbsp;</td>
+                                <td class="t1_td">&nbsp;</td>
+                            }
+                            else if (linea.cod_dh == "H") //haber
+                            {
+                                <td class="t1_td">&nbsp;</td>
+                                <td class="t1_td" style="text-align:right">&nbsp;</td>
+                            }
+                        </tr>
+                    }
+                    <tr>
+                        <td class="t1_td">
+                            @linea.NumCtaConFormato&nbsp;@linea.NombreCuenta
+                            @if (!String.IsNullOrEmpty(linea.DescAdicional))
+                            {
+                                <p class="p1"><small>@linea.DescAdicional</small></p>
+                            }
+                        </td>
+                        <td class="t1_td">@linea.nemmon</td>
+                        @if (linea.cod_dh == "D") //debe
+                        {
+                            <td class="t1_td" style="text-align:right">@linea.mtomcd.ToString("#,###,###,###,##0.00")</td>
+                            <td class="t1_td">&nbsp;</td>
+                        }
+                        else if (linea.cod_dh == "H") //haber
+                        {
+                            <td class="t1_td">&nbsp;</td>
+                            <td class="t1_td" style="text-align:right">@linea.mtomcd.ToString("#,###,###,###,##0.00")</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                @{
+                    bool esPrimero = true;
+                    foreach (var lineaTotal in Model.Reporte.CalcularTotales())
+                    {
+                        <tr class="active">
+                            <td class="table table-bordered active t1_td0 t1_th" style="text-align:right"><strong class="strong">@(esPrimero ? "TOTALES" : string.Empty)</strong></td>
+                            <td class="table table-bordered active t1_td1 t1_th">@lineaTotal.NemMoneda</td>
+                            <td class="table table-bordered active t1_td2 t1_th" style="text-align:right">@lineaTotal.TotalDebe.ToString("#,###,###,###,##0.00")</td>
+                            <td class="table table-bordered active t1_td2 t1_th" style="text-align:right">@lineaTotal.TotalHaber.ToString("#,###,###,###,##0.00")</td>
+                        </tr>
+                        esPrimero = false;
+                    }
+                }
+            </tfoot>
+        </table>
+
+    </div>
+</body>
+</html>

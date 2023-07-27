@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://osb.bancochile.cl/common/HeaderRequest" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://osb.bancochile.cl/common/HeaderRequest">
+
+	<complexType name="datosConsumidor">
+		<sequence>
+
+			<element name="idApp" minOccurs="1" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+
+			<element name="usuario" minOccurs="1" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+
+		</sequence>
+	</complexType>
+
+	<complexType name="datosTransaccion">
+		<sequence>
+
+			<element name="internalCode" minOccurs="0" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+
+			<element name="idTransaccionNegocio" minOccurs="1" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+			
+			<element name="fechaHora" minOccurs="1" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:dateTime">
+						<xsd:minInclusive value="1000-01-01T00:00:00"/>
+					</restriction>
+				</simpleType>
+			</element>
+			
+			<element name="canal" minOccurs="1" maxOccurs="1">
+				<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+			
+			<element name="sucursal" minOccurs="0" maxOccurs="1">
+			<simpleType>
+					<restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+			
+		</sequence>
+	</complexType>
+
+	<complexType name="datosHeaderRequest">
+		<sequence>
+			<element name="consumidor" type="tns:datosConsumidor"/>
+			<element name="transaccion" type="tns:datosTransaccion"/>
+		</sequence>
+		<anyAttribute namespace="##other" processContents="lax"/>
+	</complexType>
+
+</schema>

@@ -1,0 +1,145 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.ContabilidadGenerica.UI_Forms.UI_GetPrty0
+@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/ParticipanteIdentificar")
+}
+
+<div class="container">
+
+    <h3 class="margin-bottom-double" id="tituloParticipantes">Participantes @Model.OPE</h3>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmParticipantes", name = "frmParticipantes" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-sm-6">
+                <fieldset>
+                    <legend>Identificar Participantes</legend>
+
+                    <div class="row margin-bottom-double">
+                        <div class="col-xs-4">
+                            <label>@Model.Label1.Text</label>
+                        </div>
+                        <div class="col-xs-8">
+                            @Html.EditorFor(x => x.LstPartys, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group text-right">
+                        <input type="submit" id="btnAceptar" name="Command" tabindex="3" value="Aceptar" class="btn btn-primary"
+                               @(Model.Aceptar.Enabled ? "" : "disabled = 'disabled'") />
+                        <input type="submit" id="btnCancelar" name="Command" value="Cancelar" class="btn btn-default" />
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-sm-6">
+                <fieldset>
+                    <legend>Identificar</legend>
+                    <div class="row">
+                        <div class="col-xs-4 label-div">
+                            <label>@Model.Label2.Text</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.Llave, new { htmlAttributes = new { @class = "form-control", tabindex = "1", maxlength="12" } })
+                                <span class="input-group-btn">
+                                    <a id="Bot_Nem" data-href="@Url.Action("Consulta")" @(Model.Bot_Nem.Enabled ? "href=" + Url.Action("Consulta") : "disabled=disabled href=#") name="Bot_Nem" class="btn btn-default" role="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 label-div">
+                        </div>
+                        <div class="col-xs-8">
+                            @Html.TextAreaFor(model => model.Tx_Dir.Text, new { @class = "form-control", @rows = "4", @disabled = "disabled", tabindex = "10", @id = "Tx_Dir" })
+                            @Html.ValidationMessageFor(model => model.Tx_Dir, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-bottom-double">
+                        <label class="control-label col-xs-4">Donde</label>
+                        <div class="col-xs-8" id="dondeContainer">
+                            <div class="radio">
+                                <label>
+                                    @if (Model._Donde_0.Checked)
+                                    {
+                                        @Html.RadioButtonFor(model => model.Donde,"Donde_0",new Dictionary<string, object> { { "checked", "checked" }})
+                                    }
+                                        else{
+                                        @Html.RadioButtonFor(model => model.Donde, "Donde_0")
+                                    }
+                                    Base de Participantes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    @if (Model._Donde_1.Checked)
+                                    {
+                                        @Html.RadioButtonFor(model => model.Donde, "Donde_1", new Dictionary<string, object> { { "checked", "checked" } })
+                                    }
+                                    else
+                                    {
+                                        @Html.RadioButtonFor(model => model.Donde, "Donde_1")
+                                    }
+                                    En Operación
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group text-right">
+                                <input type="button" id="btnIdentificar" tabindex="2" name="Command" value="@Model.Identificar.Text" class="btn btn-primary"
+                                       @(Model.Identificar.Enabled ? "" : "disabled = 'disabled'") />
+                                <input type="button" id="btnEliminar" name="Command" value="Eliminar" class="btn btn-danger"
+                                       @(Model.Eliminar.Enabled ? "" : "disabled = 'disabled'") />
+                                <input type="button" id="btnInstruccion" name="Command" value="Instrucción" class="btn btn-default"
+                                       disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    }
+        
+</div>
+
+<!-- Modal Identificacion de Participantes -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Identificar Participantes" id="ParticipantesIdentificar">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                <h4 class="modal-title">Identificar Participantes</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_ParticipantesIdentificar")
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnAceptarPIdentificar">Aceptar</button>
+                </div>*@
+
+            <div class="modal-footer">
+                <div class="col-xs-12 text-right">
+                    <button type="button" class="btn btn-primary" id="btnAceptarPIdentificar">Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

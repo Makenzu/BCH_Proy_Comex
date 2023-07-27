@@ -1,0 +1,225 @@
+﻿<div class="container" id="Arbitrajes">
+    <style>
+        .modal-arbt {
+            width: 80vw; /* Aumentar el ancho del modal en un 80% en relación con la pantalla */
+            max-width: 100%;
+            margin: 1.75rem auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .table-arbt {
+            border-collapse: collapse; /* fusionar bordes de las celdas adyacentes */
+            width: 100%;
+            text-align: center; /* alinear el texto a la izquierda */
+            margin: 0 auto; /* centrar la tabla en su contenedor */
+        }
+
+        .td-arbt {
+            border: 1px solid #ddd; /* agregar borde de 1px sólido con color gris claro */
+            padding: 8px; /* agregar relleno de 8px en todas las celdas */
+            text-align: center; /* alinear el texto a la izquierda */
+            white-space: nowrap;
+        }
+
+        .th-arbt {
+            background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+            font-weight: bold; /* agregar negrita al texto de encabezado */
+            white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+            color: white;
+            font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+        }
+
+        .table-container {
+            width: 99%;
+            overflow-x: auto; /* agregar scroll horizontal */
+        }
+
+
+        .table-header {
+            background-color: #002464; /* agregar color de fondo gris claro a las celdas de encabezado */
+            font-weight: bold; /* agregar negrita al texto de encabezado */
+            white-space: nowrap; /* evitar envolver texto en celdas de encabezado */
+            color: white;
+            font: 10px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            text-align: center; /* alinear el texto a la izquierda */
+        }
+    </style>
+    <div>
+        <h3>
+            Arbitraje de Monedas @ViewBag.Caption, Numero de deal:  <label data-bind="text: nroDeal"></label> <button id="btn_chilefx" class="btn btn-info" tabindex="4" color: #fff data-bind="click: btn_chilefx_click">
+                ChileFx
+            </button>
+        </h3>
+
+
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Moneda Compra</label>
+                <select id="Cb_Moneda_Compra" tabindex="1" data-bind="enable: Cb_Moneda_Compra.Enabled, options: Cb_Moneda_Compra.Items, optionsText: 'Value', optionsValue: 'Data',optionsCaption: '--Seleccione--' , value: Cb_Moneda_Compra.Value, event:{blur:cb_moneda_compra_blur, change:cb_moneda_compra_change}" class="form-control input-sm"></select>
+            </div>
+            <div class="form-group">
+                <label>Monto Compra</label>
+                <input id="Tx_Monto_Compra" type="text" tabindex="5" maxlength="15" data-bind="textInput: Tx_Mtoarb()[2].Text, enable: Tx_Mtoarb()[2].Enabled, event:{blur:tx_modarb_blur(2)}" class="form-control monto input-sm" />
+            </div>
+            <div class="form-group">
+                <label>Paridad Plan Compra</label>
+                <input id="Tx_Paridad_Plan_Compra" type="text" tabindex="8" data-bind="textInput: Tx_Mtoarb()[4].Text, enable: Tx_Mtoarb()[4].Enabled, event:{blur:tx_modarb_blur(4)}" class="form-control monto input-sm" />
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Moneda Venta</label>
+                <select id="Cb_Moneda_Venta" tabindex="2" data-bind="enable: Cb_Moneda_Venta.Enabled, options: Cb_Moneda_Venta.Items, optionsText: 'Value', optionsValue: 'Data',optionsCaption: '--Seleccione--' , value: Cb_Moneda_Venta.Value, event:{blur:cb_moneda_venta_blur, change:cb_moneda_venta_change}" class="form-control input-sm"></select>
+            </div>
+            <div class="form-group">
+                <label>Monto Venta</label>
+                <input id="Tx_Monto_Venta" type="text" tabindex="6" maxlength="15" data-bind="textInput: Tx_Mtoarb()[3].Text, enable: Tx_Mtoarb()[3].Enabled, event:{blur:tx_modarb_blur(3)}" class="form-control monto input-sm" />
+            </div>
+            <div class="form-group">
+                <label>Paridad Plan Venta</label>
+                <input id="Tx_Paridad_Plan_Venta" type="text" tabindex="9" data-bind="textInput: Tx_Mtoarb()[5].Text, enable: Tx_Mtoarb()[5].Enabled, event:{blur:tx_modarb_blur(5)}" class="form-control monto input-sm" />
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Tipo Cambio US$</label>
+                <input id="TipoC" type="text" maxlength="12" tabindex="3" data-bind="textInput: Tx_Mtoarb()[0].Text, enable: Tx_Mtoarb()[0].Enabled, event:{blur:tx_modarb_blur(0)}" class="form-control monto input-sm" />
+            </div>
+            <div class="form-group">
+                <label>Paridad Arbitraje</label>
+                <input id="Tx_Paridad_Arbitraje" type="text" tabindex="7" maxlength="12" data-bind="textInput: Tx_Mtoarb()[1].Text, enable: Tx_Mtoarb()[1].Enabled, event:{blur:tx_modarb_blur(1)}" class="form-control monto input-sm" />
+            </div>
+            <div class="form-group">
+                <label>País</label>
+                <select id="Cb_Pais" tabindex="10" data-bind="enable: Cb_Pais.Enabled, options: Cb_Pais.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Pais.Value" class="form-control input-sm"></select>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="input-group pull-right">
+                <button id="btn_ok" tabindex="11" class="btn btn-success input-group-addon" data-bind="click: ok_click">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button id="btn_no" class="btn btn-danger input-group-addon" data-bind="click: no_click">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" tabindex="26">
+                    <caption>Operaciones</caption>
+                    <thead>
+                        <tr>
+                            <th>Mda. Compra</th>
+                            <th>Monto Compra</th>
+                            <th>Mda. Venta</th>
+                            <th>Monto Venta</th>
+                        </tr>
+                        <tr data-bind="foreach: Lt_Operacion.Headers">
+                            <th data-bind="text: $data"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="operaciones" data-bind="foreach: Lt_Operacion.Items">
+                        <tr data-bind="click: $parent.operacion_click($index)">
+                            <td data-bind="text: columns.mdacom"></td>
+                            <td data-bind="text: columns.moncom"></td>
+                            <td data-bind="text: columns.mdaven"></td>
+                            <td data-bind="text: columns.monven"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <div class="checkbox pull-left">
+                    <label>
+                        <input type="checkbox" tabindex="25" data-bind="checked: Ch_Futuro.Checked" />
+                        Arbitraje a Futuro
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button type="button" id="btnAccept" class="btn btn-primary" tabindex="12" data-bind="click: accept">Aceptar</button>
+            <button type="button" id="btnCancel" class="btn btn-default" tabindex="13" data-bind="click: cancel">Cancelar</button>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="ConsultaDealsDisponible">
+    <div class="modal-dialog modal-arbt">
+        <div class="modal-content">
+            <div class="modal-header table-header">
+                <h5 class="modal-title">
+                    Deals Cliente y valor tipo cambio pizarra
+                </h5>
+            </div>
+            <div class="modal-body table-container ">
+                <table class="table-arbt">
+                    <thead>
+                        <tr class="tg-th">
+                            <th class="w63 td-arbt th-arbt">Selección</th>
+                            <th class="w63 td-arbt th-arbt">Tipo</th>
+                            <th class="w70 td-arbt th-arbt">ID<br />ChileFX</th>
+                            <th class="w100 td-arbt th-arbt">Monto original moneda 1</th>
+                            <th class="w60 td-arbt th-arbt">Moneda 1 (Compra)</th>
+                            <th class="w100 td-arbt th-arbt">Saldo Moneda 1 </th>
+                            <th class="w60 td-arbt th-arbt">Paridad</th>
+                            <th class="w100 td-arbt th-arbt">Monto original moneda 2</th>
+                            <th class="w60 td-arbt th-arbt">Moneda 2 (Venta)</th>
+                            <th class="w100 td-arbt th-arbt">Saldo Moneda 2</th>
+
+                            <th class="w80 td-arbt th-arbt">Fecha deal</th>
+                            <th class="w80 td-arbt th-arbt">Fecha valuta</th>
+                            <th class="w71 td-arbt th-arbt">Origen</th>
+                            <th class="w136 td-arbt th-arbt">Num SCE Transitoria</th>
+                            <th class="w136 td-arbt th-arbt">Num SCE Contingente</th>
+                            <th class="w94 td-arbt th-arbt">Código<br />comercio</th>
+                            <th class="w55 td-arbt th-arbt" hidden>TipoCambio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tb_CDD">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" role="dialog" id="msg_us" style="top: 25%;">
+    <div class="modal-dialog" style="text-align:center; width:450px;">
+        <div class="modal-content">
+            <div class="modal-title" style="background-color:red; color:white; margin-top:-8px;">
+                &nbsp;
+            </div>
+            <div class="modal-body">
+                <br /><br /><br />
+                <h2 class="modal-title">Monto ingresado no valido.</h2>
+                <h4>Supera la tolerancia de hasta +5% ó +100 USD.</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" tabindex="101" id="btn_Close_Adv" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/Arbitrajes")
+    <script src="~/Scripts/sweetalert2.all.min.js"></script>
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/FundTransfer.css" />
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Rechazar";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/autorizacion-swift-inv.png");
+    Layout = null;
+}
+<div class="row">
+    @using (Html.BeginForm("Rechazar", "AutorizacionSwift", FormMethod.Post, new { id = "frmRechazo", @class = "form-horizontal well", @style = "margin-left: 10px; margin-right: 10px", @role = "form" }))
+    {
+        <div class="form-group">
+            <label style="text-align:left" for="comentario">Motivo rechazo</label>
+            @Html.TextArea("comentario", new { placeholder = "Ingrese un comentario", @class = "form-control", id = "comentario", @rows = "6", maxlength = "80" })
+        </div>
+        <div class="form-group">
+            @Html.Hidden("idMensajeRechazar", (object)ViewBag.IdMensaje)
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12" style="margin-top: 20px;">
+                <button class="btn btn-primary pull-right" id="btnAceptar">Aceptar</button>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $('#frmRechazo').submit(function (e) {
+        var url = '@Url.Action("Rechazar", "AutorizacionSwift")';
+        var idMensaje = $('#idMensajeRechazar').val();
+        var comentario = $('#comentario').val();
+        //var formData = JSON.stringify($("#frmRechazo").serializeArray());
+        $.post(url, { idMensaje : idMensaje, comentario : comentario}, function (data) {
+            //success
+            $('#pnlBotones').hide();
+            $('#modalRechazarSwift').modal('toggle');
+            $('#modalSwiftSuccess').modal();
+            $('#txtTitleModal').text("Rechazar mensaje swift");
+            $('#txtSuccess').text("Se rechazó con éxito el mensaje Nº" + idMensaje);
+        });
+        e.preventDefault();
+    });
+</script>

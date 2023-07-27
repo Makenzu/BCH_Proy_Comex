@@ -1,0 +1,317 @@
+﻿@model BCH.Comex.UI.Web.Models.ConsultaSwift.RecibirMensajeViewModel
+@{
+    ViewBag.Title = "RecibirMensaje";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/bootstrap-table.min.css">
+    <style>
+              .clickable {
+            cursor: pointer;
+        }
+
+        .clickable .glyphicon {
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+        a.clickable:hover {
+            text-decoration: none;
+        }
+
+    </style>
+
+}
+
+@{ Html.RenderPartial("_MenuRecepcionMensajeriaSwift"); }
+<h3>Recibir Mensaje</h3>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-horizontal">
+            <div class="form-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading clickable">
+                        <h2 class="panel-title" id="titleFiltro">Filtros de búsqueda</h2>
+                        <span class="pull-right"><i class="glyphicon glyphicon-minus"></i></span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    @Html.Label("Casilla", "Casilla", new { @class = "control-label col-xs-2" })
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            @Html.DropDownList("idCasilla", Model.CasillasVisibles, "-- Seleccione --", new { @class = "selectpicker form-control", data_live_search = "true" })
+                                            <span class="input-group-btn">
+                                                <button id="btnConfigurarCasillas" class="btn btn-default" type="button" data-toggle="modal" data-backdrop="false" title="Configure las casillas que desea ver en esta lista" data-target="#modalAdminCasillas">
+                                                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorCasilla">La casilla es requerida</label>
+                                    <button type="button" onclick="buscarInforme();" class="btn btn-primary">Generar Informe</button>
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("dtpFechaDesde", "Fecha", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                    <div class="col-xs-6">
+                                        <div class="input-group date" id="dtpFechaDesde">
+                                            <input type="text" class="form-control" id="txtFechaDesde" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="chkPeriodoFechas"> Período
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorFechaDesde">La fecha debe ser menor o igual a la fecha del día</label>
+                                </div>
+                                <div class="form-group" id="grpFechaHasta">
+                                    @Html.Label("Hasta", "Hasta", new { @class = "control-label col-xs-2" })
+                                    <div class="col-xs-6">
+                                        <div class="input-group date" id="dtpFechaHasta">
+                                            <input type="text" class="form-control" id="txtFechaHasta" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <label class="control-label has-error" style="display:none" id="lblErrorFechaHasta">La fecha debe ser menor o igual a la fecha desde</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="col-xs-12" id="TipoContainer">
+                                        @{
+                                            foreach (var item in Model.TipoTitulos)
+                                            {
+                                        <div class="col-xs-3">
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(model => model.SelectedTipoTitulos, item.ID)
+                                                    @item.Value
+                                                </label>
+                                            </div>
+                                        </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <h4 style="color:#428bca"><span class="caption" id="lblMensaje"></span>&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantResultados">0</span></h4>
+                        <div class="col-xs-12" id="divPendientes">
+                            <table id="TablaPendientes" class="table-bordered table-striped" data-toggle="table">
+                                <thead>
+                                    <tr>
+                                        <th data-field="sesion" data-sortable="true">Sesion</th>
+                                        <th data-field="secuencia" data-sortable="true">Secuencia</th>
+                                        <th data-field="casilla" data-sortable="true">Casilla</th>
+                                        <th data-field="nombre_casilla" data-sortable="true">Nombre Casilla</th>
+                                        <th data-field="tipo_msg" data-sortable="true">Tipo Msg</th>
+                                        <th data-field="nombre_tipo" data-sortable="true">nombre tipo</th>
+                                        <th data-field="prioridad" data-sortable="true">Prioridad</th>
+                                        <th data-field="estado_msg" data-sortable="true">Estado msg</th>
+                                        <th data-field="fecha_env" data-sortable="true">fecha env</th>
+                                        <th data-field="hora_env" data-sortable="true">hora env</th>
+                                        <th data-field="fecha_enc" data-sortable="true">fecha enc</th>
+                                        <th data-field="hora_enc" data-sortable="true">hora enc</th>
+                                        <th data-field="cod_banco_rec" data-sortable="true">cod banco rec</th>
+                                        <th data-field="branch_rec" data-sortable="true">branch rec</th>
+                                        <th data-field="cod_banco_em" data-sortable="true">cod banco em</th>
+                                        <th data-field="branch_em" data-sortable="true">branch em</th>
+                                        <th data-field="nombre_banco" data-sortable="true">nombre banco</th>
+                                        <th data-field="ciudad_banco" data-sortable="true">ciudad banco</th>
+                                        <th data-field="pais_banco" data-sortable="true">pais banco</th>
+                                        <th data-field="oficina_banco" data-sortable="true">Oficina banco</th>
+                                        <th data-field="cod_moneda" data-sortable="true">Cod moneda</th>
+                                        <th data-field="monto" data-sortable="true">Monto</th>
+                                        <th data-field="referencia" data-sortable="true">Referencia</th>
+                                        <th data-field="beneficiario" data-sortable="true">Beneficiario</th>
+                                        <th data-field="total_imp" data-sortable="true">total imp</th>
+                                        <th data-field="comentario" data-sortable="true">Comentario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="col-xs-12" id="divConfirmados">
+                            <table id="TablaConfirmados" class="table-bordered table-striped" data-toggle="table">
+                                <thead>
+                                    <tr>
+                                        <th data-field="sesion" data-sortable="true">Sesion</th>
+                                        <th data-field="secuencia" data-sortable="true">Secuencia</th>
+                                        <th data-field="casilla" data-sortable="true">Casilla</th>
+                                        <th data-field="nombre_casilla" data-sortable="true">Nombre Casilla</th>
+                                        <th data-field="tipo_msg" data-sortable="true">Tipo Msg</th>
+                                        <th data-field="nombre_tipo" data-sortable="true">nombre tipo</th>
+                                        <th data-field="prioridad" data-sortable="true">Prioridad</th>
+                                        <th data-field="estado_msg" data-sortable="true">Estado msg</th>
+                                        <th data-field="fecha_enc" data-sortable="true">Fecha Enc</th>
+                                        <th data-field="hora_enc" data-sortable="true">Hora Enc</th>
+                                        <th data-field="fecha_rcb" data-sortable="true">Fecha Rcb</th>
+                                        <th data-field="hora_rcb" data-sortable="true">Hora Rcb</th>
+                                        <th data-field="cod_banco_rec" data-sortable="true">cod banco rec</th>
+                                        <th data-field="branch_rec" data-sortable="true">branch rec</th>
+                                        <th data-field="cod_banco_em" data-sortable="true">cod banco em</th>
+                                        <th data-field="branch_em" data-sortable="true">branch em</th>
+                                        <th data-field="nombre_banco" data-sortable="true">nombre banco</th>
+                                        <th data-field="ciudad_banco" data-sortable="true">ciudad banco</th>
+                                        <th data-field="pais_banco" data-sortable="true">pais banco</th>
+                                        <th data-field="oficina_banco" data-sortable="true">Oficina banco</th>
+                                        <th data-field="cod_moneda" data-sortable="true">Cod moneda</th>
+                                        <th data-field="monto" data-sortable="true">Monto</th>
+                                        <th data-field="referencia" data-sortable="true">Referencia</th>
+                                        <th data-field="beneficiario" data-sortable="true">Beneficiario</th>
+                                        <th data-field="total_imp" data-sortable="true">total imp</th>
+                                        <th data-field="comentario" data-sortable="true">Comentario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="col-xs-12" id="divImpresos">
+                            <table id="TablaImpresos" class="table-bordered table-striped" data-toggle="table">
+                                <thead>
+                                    <tr>
+                                        <th data-field="sesion" data-sortable="true">Sesion</th>
+                                        <th data-field="secuencia" data-sortable="true">Secuencia</th>
+                                        <th data-field="casilla" data-sortable="true">Casilla</th>
+                                        <th data-field="nombre_casilla" data-sortable="true">Nombre Casilla</th>
+                                        <th data-field="tipo_msg" data-sortable="true">Tipo Msg</th>
+                                        <th data-field="nombre_tipo" data-sortable="true">nombre tipo</th>
+                                        <th data-field="prioridad" data-sortable="true">Prioridad</th>
+                                        <th data-field="estado_msg" data-sortable="true">Estado msg</th>
+                                        <th data-field="fecha_enc" data-sortable="true">Fecha Enc</th>
+                                        <th data-field="hora_enc" data-sortable="true">Hora Enc</th>
+                                        <th data-field="fecha_imp" data-sortable="true">Fecha Imp</th>
+                                        <th data-field="hora_imp" data-sortable="true">Hora Imp</th>
+                                        <th data-field="cod_banco_rec" data-sortable="true">cod banco rec</th>
+                                        <th data-field="branch_rec" data-sortable="true">branch rec</th>
+                                        <th data-field="cod_banco_em" data-sortable="true">cod banco em</th>
+                                        <th data-field="branch_em" data-sortable="true">branch em</th>
+                                        <th data-field="nombre_banco" data-sortable="true">nombre banco</th>
+                                        <th data-field="ciudad_banco" data-sortable="true">ciudad banco</th>
+                                        <th data-field="pais_banco" data-sortable="true">pais banco</th>
+                                        <th data-field="oficina_banco" data-sortable="true">Oficina banco</th>
+                                        <th data-field="cod_moneda" data-sortable="true">Cod moneda</th>
+                                        <th data-field="monto" data-sortable="true">Monto</th>
+                                        <th data-field="referencia" data-sortable="true">Referencia</th>
+                                        <th data-field="beneficiario" data-sortable="true">Beneficiario</th>
+                                        <th data-field="total_imp" data-sortable="true">total imp</th>
+                                        <th data-field="comentario" data-sortable="true">Comentario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="col-xs-12" id="divReenviados">
+                            <table id="TablaReenviados" class="table-bordered table-striped" data-toggle="table">
+                                <thead>
+                                    <tr>
+                                        <th data-field="sesion" data-sortable="true">Sesion</th>
+                                        <th data-field="secuencia" data-sortable="true">Secuencia</th>
+                                        <th data-field="casilla" data-sortable="true">Casilla</th>
+                                        <th data-field="nombre_casilla" data-sortable="true">Nombre Casilla</th>
+                                        <th data-field="tipo_msg" data-sortable="true">Tipo Msg</th>
+                                        <th data-field="nombre_tipo" data-sortable="true">nombre tipo</th>
+                                        <th data-field="prioridad" data-sortable="true">Prioridad</th>
+                                        <th data-field="estado_msg" data-sortable="true">Estado msg</th>
+                                        <th data-field="fecha_rec" data-sortable="true">Fecha Rec</th>
+                                        <th data-field="hora_rec" data-sortable="true">Hora Rec</th>
+                                        <th data-field="fecha_ree" data-sortable="true">Fecha Ree</th>
+                                        <th data-field="hora_ree" data-sortable="true">Hora Ree</th>
+                                        <th data-field="cod_banco_rec" data-sortable="true">cod banco rec</th>
+                                        <th data-field="branch_rec" data-sortable="true">branch rec</th>
+                                        <th data-field="cod_banco_em" data-sortable="true">cod banco em</th>
+                                        <th data-field="branch_em" data-sortable="true">branch em</th>
+                                        <th data-field="nombre_banco" data-sortable="true">nombre banco</th>
+                                        <th data-field="ciudad_banco" data-sortable="true">ciudad banco</th>
+                                        <th data-field="pais_banco" data-sortable="true">pais banco</th>
+                                        <th data-field="oficina_banco" data-sortable="true">Oficina banco</th>
+                                        <th data-field="cod_moneda" data-sortable="true">Cod moneda</th>
+                                        <th data-field="monto" data-sortable="true">Monto</th>
+                                        <th data-field="referencia" data-sortable="true">Referencia</th>
+                                        <th data-field="beneficiario" data-sortable="true">Beneficiario</th>
+                                        <th data-field="total_imp" data-sortable="true">total imp</th>
+                                        <th data-field="comentario" data-sortable="true">Comentario</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <input id="urlMensajePendientes" type="hidden" value="@Url.Action("ListaMensajesPendiente", "ConsultaSwift")" />
+                <input id="urlMensajeConfirmados" type="hidden" value="@Url.Action("ListaMensajesConfirmados", "ConsultaSwift")" />
+                <input id="urlMensajeImpresos" type="hidden" value="@Url.Action("ListaMensajesImpresos", "ConsultaSwift")" />
+                <input id="urlMensajeReenviados" type="hidden" value="@Url.Action("ListaMensajesReenviados", "ConsultaSwift")" />
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/scripts/ConsultaSwift/RecibirMensaje.Index.js")
+
+    <script type="text/javascript">
+
+        $(document).on('hidden.bs.modal', function (e) {
+            $(e.target).removeData('bs.modal');
+        });
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+
+
+
+
+
+    </script>
+}

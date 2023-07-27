@@ -1,0 +1,65 @@
+﻿<div class="container" id="ticket" style="max-width: 600px">
+    <h3>Ticket @ViewBag.Caption</h3>
+    <div class="row margin-bottom-double">
+        <form class="col-xs-12">
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label>Nombre</label>
+                    <input type="text" id="CAM_Nombre" tabindex="0" class="form-control" maxlength="255" data-bind="value: CAM_Nombre.Text" readonly="readonly" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-12">
+                    <label>Monto</label>
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" id="CAM_Nemonico" tabindex="1" class="form-control" data-bind="value: CAM_Nemonico.Text" readonly="readonly" />
+                </div>
+                <div class="col-xs-10">
+                    <input type="text" id="CAM_Monto" tabindex="2" class="form-control" maxlength="15" data-bind="value: CAM_Monto.Text" readonly="readonly" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Cuenta Corriente</label>
+                <input type="text" id="CAM_Cuenta" tabindex="3" class="form-control" data-bind="value: CAM_Cuenta.Text" maxlength="20" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label>Debe/Haber</label>
+                <select id="CBO_DeHa" tabindex="4" data-bind="options: CBO_DeHa.Items, optionsText: 'Value', optionsValue: 'Data', value: CBO_DeHa.Value" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label>Concepto Ticket</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <select id="Cb_ticket" tabindex="5" data-bind="options: Cb_ticket.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_ticket.Value, event: {change:cb_ticket_change}" class="form-control"></select>
+                    </div>
+                    <div class="col-sm-3 label-div">
+                        @*<input id="check" name="check" type="checkbox" tabindex="6" data-bind="checked: otro.Checked, event:{change:otro_change}" />*@
+                       
+                        <input type="checkbox" id="check" name="check" tabindex="6" data-bind="checked: otro.Checked, click: otro_change" />
+                        <label for="check">
+                            Demás Tickets
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="CAM_Concepto.Text" tabindex="7" class="form-control" maxlength="255" data-bind="value: CAM_Concepto.Text" />
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-right">
+            <button id="aceptar" class="btn btn-primary" data-bind="click:aceptar, clickBubble: false" tabindex="8">Aceptar</button>
+            <button id="cancelar" class="btn btn-default" data-bind="click:cancelar, clickBubble: false" style="display: none;" tabindex="9">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/Ticket")
+}

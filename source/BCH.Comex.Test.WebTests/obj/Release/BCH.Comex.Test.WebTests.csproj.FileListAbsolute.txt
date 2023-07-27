@@ -1,0 +1,7 @@
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\bin\Release\FT-CompraCosmos.webtest
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\bin\Release\FT-TEgresoBCH.webtest
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\bin\Release\BCH.Comex.Test.WebTests.dll
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\bin\Release\BCH.Comex.Test.WebTests.pdb
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\obj\Release\BCH.Comex.Test.WebTests.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\obj\Release\BCH.Comex.Test.WebTests.dll
+D:\3IT\COMEX\BCH.Comex.Test.WebTests\obj\Release\BCH.Comex.Test.WebTests.pdb

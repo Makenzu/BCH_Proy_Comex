@@ -1,0 +1,552 @@
+﻿@{
+    ViewBag.Title = "Autorización de mensajes Swift";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/autorizacion-swift-inv.png");
+}
+
+
+
+
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Mensajes</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Revisar Mensaje</a></li>
+                <li><a href="@Url.Action("ConsultaMensaje")">Consultar Mensajes</a></li>
+                <li><a href="@Url.Action("SeguimientoMensaje")">Log Mensaje</a></li>
+            </ul>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones Alarma</b> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Alertas")">Configurar</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="container" id="msg-zone" style="padding-top: 20px;z-index: 1001;">
+</div>
+
+<h2>Autorización de mensajes Swift</h2>
+
+<div class="row">
+    <button class="btn btn-primary" id="btnPendientes">Pendientes de aprobación</button>
+    <button class="btn btn-primary" id="btnDevueltos">Devueltos</button>
+    <button class="btn btn-primary" id="btnFirmasPendientes">Con firmas pendientes</button>
+
+    <div class="panel panel-default" id="pnlResultados">
+        <div class="panel-heading">
+            <h2 class="panel-title" id="lblResultados">Resultados</h2>
+        </div>
+        <div class="panel-body">
+            <button class="btn btn-info" id="btnExportar" style="display: inline">Exportar a Excel</button>
+            <div id="pnlBotones" style="display: inline">
+                <button class="btn btn-info" id="btnVerDatos">Ver datos</button>
+                <button class="btn btn-info" id="btnVisualizar">Visualizar</button>
+                <button class="btn btn-info" id="btnAutorizar">Autorizar</button>
+                <button class="btn btn-info" id="btnRechazar">Rechazar</button>
+                <button class="btn btn-info" id="btnDevolver">Devolver</button>
+                <button class="btn btn-info" id="btnSolFirmas">Solicitar Firmas</button>
+                <button class="btn btn-info" id="btnImprimir">Imprimir</button>
+            </div>
+            <table id="tablaSwift"></table>
+        </div>
+    </div>
+</div>
+
+@*Este se llena por Ajax*@
+<div id="divSolFirmasSwift"></div>
+
+<div id="modalVisorSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg xlg">
+        <div class="modal-content">
+            <div id="divCuerpoMensajeSwift"></div>
+        </div>
+    </div>
+</div>
+
+<div id="modalVisorIndividualSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body text-center" id="divCuerpoSwift"></div>
+            <div class="modal-footer">
+                <button class="btn" style="margin-bottom: 0;" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" id="btnImprimirMensajeIndividual"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>  Imprimir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalRechazarSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Rechazo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Rechazar mensaje</h4>
+            </div>
+            <div class="modal-body" id="divRechazoSwift">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div id="modalDevolverSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Devolver Mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Devolver mensaje</h4>
+            </div>
+            <div class="modal-body" id="divDevolverSwift">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="modalSwiftSuccess" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="txtTitleModal">Deshacer Encasillamiento Manual</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtSuccess">Modal Body</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="reloadtable">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    <script type="text/javascript">
+        $(document).on('click', '.panel-heading span.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this);
+            if (!$this.hasClass('panel-collapsed')) {
+                $this.parents('.panel').find('.panel-body').slideUp();
+                $this.addClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            } else {
+                $this.parents('.panel').find('.panel-body').slideDown();
+                $this.removeClass('panel-collapsed');
+                $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            }
+        });
+        $(document).ready(function () {
+            $.fx.off = true;
+            //activo el bloquear la UI en requests asincronos
+            $(document).ajaxStart(function () {
+                $.blockUI({
+                    message: '<h6>Cargando...</h6>',
+                    baseZ: 2000
+                })
+            })
+                .ajaxStop($.unblockUI);
+            var urlDetalleSwift = '@Url.Action("DetalleSwift", "ConsultaSwift")';
+            var urlVerMultiples = '@Url.Action("Multiple", "Imprimir", new { area = "Impresion" })';
+            var lastMethod;
+
+            var nameUltimoSort = null;
+            var orderUltimoSort = "asc";
+
+            var vistos = [];
+            var getHeight = function () {
+                return $(window).height() - $('h2').outerHeight(true);
+            };
+            var rowSelected;
+            var configColumnas = [{
+                //field: 'state',
+                radio: true
+            }, {
+                field: 'NroMensaje',
+                title: 'Nº Mensaje',
+                sortable: true
+            }, {
+                field: 'Sesion',
+                title: 'Sesión',
+                visible: false
+            }, {
+                field: 'Secuencia',
+                title: 'Secuencia',
+                visible: false
+            }, {
+                field: 'Tipo',
+                title: 'Tipo',
+                sortable: true
+            }, {
+                field: 'Unidad',
+                title: 'Unidad',
+                sortable: true
+            }, {
+                field: 'Moneda',
+                title: 'Mnda',
+                sortable: true
+            }, {
+                field: 'Monto',
+                title: 'Monto',
+                sortable: true,
+                align: "right",
+                formatter: montoFormatter
+            }, {
+                field: 'Referencia',
+                title: 'Referencia',
+                sortable: true
+            }, {
+                field: 'Beneficiario',
+                title: 'Beneficiario',
+                sortable: true
+            }, {
+                field: 'BancoReceptor',
+                title: 'Banco Receptor',
+                sortable: true
+            }, {
+                field: 'FechaIngreso',
+                title: 'Fecha ingreso',
+                sortable: true,
+                sorter: dateSorter
+            }, ];
+            var actualizaLabelResultados = function (texto) {
+                $('#lblResultados').text("Resultados: " + texto)
+            };
+
+            var descargarArchivo = function (location, titulo) {
+                $.blockUI({ message: '<h6>Generando...</h6>' })
+                //console.log(location);
+                if ($('#tablaSwift').bootstrapTable('getData').length > 0) {
+                    var tituloLocal = '';
+                    if (typeof titulo != 'undefined')
+                        tituloLocal = titulo;
+                    $.fileDownload(location)
+                        .done(function () { $.unblockUI(); /* nada que alertar, con la ventanita del browser pidiendo para bajar el archivo alcanza*/ })
+                        .fail(function () { showAlert("Error en la descarga.", "El archivo de " + tituloLocal + " no se pudo generar, posiblemente no hayan registros.", "alert-danger", true); $.unblockUI(); });
+                } else {
+                    $.unblockUI();
+                    //alert('No hay resultados que exportar');
+                }
+
+            };
+
+            function montoFormatter(value, row, index) {
+                if ((row["Moneda"] == 'CLP') || (row["Moneda"] == '')) {
+                    return numeral(value).format("0,0");
+                } else {
+                    return numeral(value).format("0,0.00");
+                }
+            }
+
+            var verMensaje = function () {
+                //Por el momento asumo que selecciona al menos uno de ellos
+                var idMensaje = rowSelected["NroMensaje"];
+                $.get('@Url.Action("DatosSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+                    $('#divCuerpoMensajeSwift').html(data);
+                    $('#modalVisorSwift').modal();
+                });
+            };
+            var visualizar = function () {
+                //Por el momento asumo que selecciona al menos uno de ellos
+                var idMensaje = rowSelected["NroMensaje"];
+                vistos[idMensaje] = true;
+                //console.log("se esta visualizando");
+                $.get('@Url.Action("DetalleSwift", "ConsultaSwift")', { idMensaje: idMensaje, sesion: 0, secuencia: 0, htmlCompleto: false }, function (data) {
+                    $('#divCuerpoSwift').html(data);
+                    $('#modalVisorIndividualSwift').modal();
+                });
+            };
+            var rechazar = function () {
+                var idMensaje = rowSelected["NroMensaje"];
+                $.get('@Url.Action("Rechazar")', { idMensaje: idMensaje }, function (data) {
+                    $('#divRechazoSwift').html(data);
+                    $('#modalRechazarSwift').modal();
+                });
+            }
+
+            var devolver = function () {
+                var idMensaje = rowSelected["NroMensaje"];
+                $.get('@Url.Action("Devolver")', { idMensaje: idMensaje }, function (data) {
+                    $('#divDevolverSwift').html(data);
+                    $('#modalDevolverSwift').modal();
+                });
+            }
+
+            var solicitarFirmas = function () {
+                var idMensaje = rowSelected["NroMensaje"];
+                var tipo = rowSelected["Tipo"];
+                var moneda = rowSelected["Moneda"];
+                var monto = rowSelected["Monto"];
+                var casilla = rowSelected["Unidad"];
+
+                $.ajax({
+                    url: '@Url.Action("SolicitarFirmas")',
+                    data: { idMensaje: idMensaje, monto: monto, casilla: casilla },
+                    type: "POST",
+                    success: function (data) {
+                        $('#divSolFirmasSwift').html(data);
+                        $('#modalSolFirmasSwift').modal({ backdrop: false });
+                        $('#lblMensaje').text(idMensaje);
+                        $('#lblTipo').text(tipo);
+                        $('#lblMoneda').text(moneda);
+                        $('#lblMonto').text(numeral(monto).format("0,0.00"));
+                        onFirmasSuccess(firmasSolicitadasSuccess);  //este "handler" onFirmasSuccess está en SolFirmas.cshtml
+                    },
+                    error: function (xhr, status) {
+                        showAlert("Error en la operación.", xhr.status + " " + xhr.statusText, "alert-danger", true);
+                    }
+                });
+            };
+
+            var firmasSolicitadasSuccess = function () {
+                lastMethod();
+            }
+
+            var pendientes = function () {
+                var ie_fix = new Date().getTime();
+                vistos = [];
+                lastMethod = pendientes;
+                $('#btnAutorizar').show();
+                $('#btnRechazar').show();
+                $('#btnDevolver').show();
+                $('#pnlBotones').hide();
+                $('#btnExportar').unbind('click')
+                $('#btnExportar').click(function () {
+                    descargarArchivo('@Url.Action("ExportarPendientes")', 'descarga de pendientes');
+                });
+                actualizaLabelResultados("Pendientes");
+                var url = '@Url.Action("GetPendientesAutorizacion")';
+
+                $('#tablaSwift').bootstrapTable('destroy');
+                $('#tablaSwift').bootstrapTable({
+                    height: 550,
+                    url: url,
+                    queryParams: function (p) {
+                        return {
+                            ie_fix: ie_fix
+                        };
+                    },
+                    cache: false,
+                    pagination: true,
+                    sidePagination: 'client',
+                    pageSize: 25,
+                    pageList: [10, 25, 50, 100, 200],
+                    columns: configColumnas,
+                    searchAlign: 'left',
+                    showRefresh: true,
+                    clickToSelect: true,
+                    search: true,
+                    showExport: false,
+                    exportTypes: ['excel', 'txt'],
+                    exportDataType: 'all',
+                    sortName: nameUltimoSort,
+                    sortOrder: orderUltimoSort                    
+                });
+
+                $('#tablaSwift').on('sort.bs.table', tablaSwiftOnSort);
+            };
+
+            function dateSorter(a, b) {
+                if (toDate(a) > toDate(b)) return 1;
+                if (toDate(a) < toDate(b)) return -1;
+                return 0;
+            }
+
+            var devueltos = function () {
+                var ie_fix = new Date().getTime();
+                vistos = [];
+                lastMethod = devueltos;
+                $('#btnAutorizar').show();
+                $('#btnRechazar').show();
+                $('#btnDevolver').show();
+                $('#pnlBotones').hide();
+                $('#btnExportar').unbind('click')
+                $('#btnExportar').click(function () {
+                    descargarArchivo('@Url.Action("ExportarDevueltos")', 'descarga de pendientes');
+                });
+                actualizaLabelResultados("Devueltos");
+                var url = '@Url.Action("GetDevueltos")';
+
+                $('#tablaSwift').bootstrapTable('destroy');
+                $('#tablaSwift').bootstrapTable({
+                    height: 550,
+                    url: url,
+                    queryParams: function (p) {
+                        return {
+                            ie_fix: ie_fix
+                        };
+                    },
+                    pagination: true,
+                    sidePagination: 'client',
+                    pageSize: 25,
+                    pageList: [10, 25, 50, 100, 200],
+                    cache: false,
+                    columns: configColumnas,
+                    searchAlign: 'left',
+                    showRefresh: true,
+                    clickToSelect: true,
+                    search: true,
+                    showExport: false,
+                    exportTypes: ['excel', 'txt'],
+                    exportDataType: 'all',
+                    sortName: nameUltimoSort,
+                    sortOrder: orderUltimoSort
+
+                });
+
+                $('#tablaSwift').on('sort.bs.table', tablaSwiftOnSort);
+            };
+
+            function tablaSwiftOnSort(sender, name, order) {
+                nameUltimoSort = name;
+                orderUltimoSort = order;
+            }
+
+            var firmasPendientes = function () {
+                var ie_fix = new Date().getTime();
+                vistos = [];
+                lastMethod = firmasPendientes;
+                $('#pnlBotones').hide();
+                $('#btnAutorizar').hide();
+                $('#btnRechazar').hide();
+                $('#btnDevolver').hide();
+                $('#btnExportar').unbind('click')
+                $('#btnExportar').click(function () {
+                    descargarArchivo('@Url.Action("ExportarFirmasPendientes")', 'descarga de pendientes');
+                });
+                actualizaLabelResultados("Firmas pendientes");
+                var url = '@Url.Action("GetFirmasPendientes")';
+
+                $('#tablaSwift').bootstrapTable('destroy');
+                $('#tablaSwift').bootstrapTable({
+                    height: 550,
+                    url: url,
+                    queryParams: function (p) {
+                        return {
+                            ie_fix: ie_fix
+                        };
+                    },
+                    cache: false,
+                    pagination: true,
+                    sidePagination: 'client',
+                    pageSize: 25,
+                    pageList: [10, 25, 50, 100, 200],
+                    columns: configColumnas,
+                    searchAlign: 'left',
+                    showRefresh: true,
+                    clickToSelect: true,
+                    search: true,
+                    showExport: false,
+                    exportTypes: ['excel', 'txt'],
+                    exportDataType: 'all',
+                    sortName: nameUltimoSort,
+                    sortOrder: orderUltimoSort
+                });
+
+                $('#tablaSwift').on('sort.bs.table', tablaSwiftOnSort);
+            };
+            var autorizar = function () {
+                var url = '@Url.Action("Autorizar", "AutorizacionSwift")';
+                var idMensaje = rowSelected["NroMensaje"];
+                //if (vistos[idMensaje] == undefined) {
+                //    console.log(vistos);
+                //    showAlert("", "Antes de Autorizar el Mensaje Swift Nº" + idMensaje + " debe visualizarlo y revisarlo.", "alert-warning", true);
+                //    return;
+                //}
+                $.post(url, { idMensaje: idMensaje }, function (data) {
+                    //success
+                    if (data.resultado) {
+                        $('#pnlBotones').hide();
+                        showAlert("", data.mensaje, "alert-success", true);
+                        var tempArray = vistos;
+                        lastMethod();
+                        vistos = tempArray;
+                    } else {
+                        $('#modalSwiftSuccess').modal();
+                        $('#txtTitleModal').text("AUTORIZACIÓN");
+                        $('#txtSuccess').text(data.mensaje);
+                    }
+
+                    //$('#modalSwiftSuccess').modal();
+                    //$('#txtTitleModal').text("Autorización");
+                    //$('#txtSuccess').text("Se autorizó con éxito el mensaje Nº" + idMensaje);
+                }).fail(function () {
+                    //Procedemos a mostrar la alerta indicando que debe de solicitar más firmas
+                    $('#modalSwiftSuccess').modal();
+                    $('#txtTitleModal').text("AUTORIZACIÓN");
+                    $('#txtSuccess').text("Antes de firmar el mensaje Nº" + idMensaje + " debe solicitar más firmas para él");
+                });
+            };
+
+            var imprimirMensajeIndividual = function () {
+                var location = urlDetalleSwift + '?sesion=0&secuencia=0&htmlCompleto=false&pdf=false';
+                location = location + "&idMensaje=" + rowSelected["NroMensaje"];
+
+                var w = window.open();
+                w.location = location;
+            };
+
+            function ObtenerRequestRowDeTabla(row) {
+                var result = {};
+                result.type = "SwiftBaseSwift";
+                result.BaseSwift = {
+                    sesion: row.Sesion,
+                    secuencia: row.Secuencia,
+                    idMensaje: row.NroMensaje
+                }
+
+                return result;
+            }
+
+            $('#tablaSwift').on('load-success.bs.table', function (data) {
+                var mensajesSeleccionados = $('#tablaSwift').bootstrapTable('getData');
+                var UltimoIndex = mensajesSeleccionados.length;
+                if (UltimoIndex > 0) {
+                    //$('.panel div.clickable').click();
+                };
+            });
+
+            $('#btnImprimirMensajeIndividual').click(imprimirMensajeIndividual);
+            $('#btnVerDatos').click(verMensaje);
+            $('#btnVisualizar').click(visualizar);
+            $('#btnPendientes').click(pendientes);
+            $('#btnDevueltos').click(devueltos);
+            $('#btnRechazar').click(rechazar);
+            $('#btnDevolver').click(devolver);
+            $('#btnSolFirmas').click(solicitarFirmas);
+            $('#btnAutorizar').click(autorizar);
+            $('#btnImprimir').click(imprimirMensajeIndividual);
+
+            $('#btnFirmasPendientes').click(firmasPendientes);
+            $('#tablaSwift').on('check.bs.table', function (e, row) {
+                rowSelected = row;
+                $('#pnlBotones').show();
+            });
+            $('#modalSwiftSuccess').on('hidden.bs.modal', function () {
+                var tempArray = vistos;
+                lastMethod();
+                vistos = tempArray;
+            });
+            pendientes();
+        });
+    </script>
+}
+
+

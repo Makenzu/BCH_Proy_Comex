@@ -1,0 +1,336 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillaVisibleImportEditarViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Planilla de Cobertura Egreso Comercio Visible (Importaciones)";
+}
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "PlanillaVisibleImportEditar", name = "PlanillaVisibleImportEditar" }))
+{
+    <div class="form-horizontal container">
+        <div class="form-group">
+            <h3 class="margin-bottom-double">Planilla de Cobertura Egreso Comercio Visible (Importaciones) @ViewBag.Caption</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td style="width:10%">
+                        @Html.Label("lblNumpresentacion", "Nº Presentación")
+                    </td>
+                    <td style="width:50%">
+                        @Html.Label("lblEntidad", "Entidad que representa la Planilla")
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label("lblCod", "Cód.")
+                    </td>
+                    <td style="width:35%" rowspan="2">
+                        @Html.Label("lblUso", "Uso Exclusivo Banco Central de Chile")
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%">
+                        @Html.Label(Model.Lb_NumPre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:50%">
+                        @Html.Label("lblEntidadBanco", "Banco de Chile")
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label("lblCodVal", "15")
+                    </td>
+                    
+                </tr>
+            </table>
+            <table class="table table-bordered">
+                <tr>
+                    <td style="width:10%">
+                        @Html.Label("lblCod", "Código")
+                    </td>
+                    <td style="width:50%">
+                        @Html.Label("lblPlaza", "Plaza Banco Central de Chile")
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label("lblCod", "Cód.")
+                    </td>
+                    <td style="width:12%">
+                        @Html.Label("lblPaisPago", "Pais de Pago")
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label("lblCod3", "Cód.")
+                    </td>
+                    <td style="width:12%">
+                        @Html.Label("lblMoneda", "Moneda")
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label("lblCod4", "Cód.")
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:10%">
+                        @Html.Label("lblCod5", "20.50.00")
+                    </td>
+                    <td style="width:50%">
+                        @Html.Label(Model.Lb_NomPla, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label(Model.Lb_CodPla, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:12%">
+                        @Html.Label(Model.Lb_NomPai, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label(Model.Lb_CodPai, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:12%">
+                        @Html.Label(Model.Lb_NomMon, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:5%">
+                        @Html.Label(Model.Lb_CodMon, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-bordered">
+                <tr>
+                    <td style="width:15%">
+                        @Html.Label("lblFecha", "Fecha Venta")
+                    </td>
+                    <td style="width:15%" colspan="2">
+                        @Html.Label("lblImportador", "Importador")
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label("lblRut", "R.U.T.")
+                    </td>
+                    <td style="width: 15%; text-align: left" rowspan="8">
+                        @Html.Label("lblValorfob", "Valor Fob")
+                        <br />
+                        @Html.Label("lblFlete", "Flete")
+                        <br />
+                        @Html.Label("lblSeguro", "Seguro")
+                        <br />
+                        @Html.Label("lblvalorCIF", "Valor CIF")
+                        <br />
+                        @Html.Label("lblvalorTotal", "Valor Total")
+                        <br />
+                        @Html.Label("lblvalorCIFUS", "Valor CIF en US$")
+                        <br />
+                        @Html.Label("lblvalorTotalUS", "Valor Tot. en US$ ")
+                    </td>
+                    <td style="width:15%;text-align:left" rowspan="8">
+                        @Html.Label("Lb_MtoFob", Model.Lb_MtoFob)
+                        <br />
+                        @Html.Label("Lb_MtoFle", Model.Lb_MtoFle)
+                        <br />
+                        @Html.Label("Lb_MtoSeg", Model.Lb_MtoSeg)
+                        <br />
+                        @Html.Label("Lb_MtoCif", Model.Lb_MtoCif)
+                        <br />
+                        @Html.Label("Lb_ValTot", Model.Lb_ValTot)
+                        <br />
+                        @Html.Label("Lb_CifDol", Model.Lb_CifDol)
+                        <br />
+                        @Html.Label("Lb_TotDol", Model.Lb_TotDol)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:15%">
+                        @Html.EditorFor(model => model.Tx_FecVen.Text, new { htmlAttributes = new { @class = "form-control" } })
+                    </td>
+                    <td style="width:15%" colspan="2">
+                        @Model.Lb_NomImp
+                        @*@Html.Label(Model.Lb_NomImp, htmlAttributes: new { @class = "control-label col-md-6" })*@
+                    </td>
+                    <td style="width:15%">
+                        @Model.Lb_RutImp
+                        @*@Html.Label(Model.Lb_RutImp, htmlAttributes: new { @class = "col-md-6" })*@
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:15%">
+                        @Html.Label("lblDeclaracion", "Declareación Importación")
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label("lblFechaDeclaracion", "Fecha Declaración")
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label("lblCodFormaPago", "Cód. Forma de Pago")
+                    </td>
+                    <td style="width:15%"></td>
+
+                </tr>
+                <tr>
+                    <td style="width:15%">
+                        @Html.Label(Model.Lb_NumIdi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label(Model.Lb_FecIdi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label(Model.Lb_PagIdi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td style="width:15%"></td>
+                </tr>
+                <tr>
+                    <td style="width:15%">
+                        @Html.Label("lblNumCono", "Nº Conocimiento")
+                    </td>
+                    <td style="width:15%">
+                        @Html.Label("lblFechaConociemiento", "Fecha Conocimiento")
+                    </td>
+                    <td style="width:15%"></td>
+                    <td style="width:15%"></td>
+                </tr>
+                <tr>
+                    <td style="width:15%">
+                        <label>@Model.Lb_NumCon</label>
+                        @*@Html.Label(Model.Lb_NumCon, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    </td>
+                    <td style="width:15%">
+                        <label>@Model.Lb_FecCon</label>
+                        @*@Html.Label(Model.Lb_FecCon, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    </td>
+                    <td style="width:15%"></td>
+                    <td style="width:15%"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.Label("lblCuadroPagos", "Cuadro de pagos")
+                    </td>
+                    <td colspan="2">
+                        @Html.Label("lblAcuerdo", "Acuerdo a que se acoge (cant.) ")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("lblNum", "Nº")
+                    </td>
+                    <td>
+                        <label>@Model.Lb_NumCua</label>
+                    </td>
+                    <td>
+                        @Html.Label("lblNumCuota", "Cuota Nº")
+                    </td>
+                    <td>
+                        <label>@Model.Lb_NumCuo</label>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-bordered">
+                <tr>
+                    <td colspan="4">
+                        @Html.Label("lblAnt", "Antecedentes de Planilla de Cobertura Reemplazada")
+                    </td>
+                    <td>
+                        @Html.Label("lblTipoCambio", "Tipo de Cambio de la Operación $")
+                    </td>
+                    <td>
+                        @Html.Label("lblTipoParidad", "Paridad a US$")
+                    </td>
+                    <td>
+                        @Html.Label("lblpor", "Por 1")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("lblNumPresentacion", "Nº Presentación")
+                    </td>
+                    <td>
+                        @Html.Label("lblFecPresentacion", "Fecha")
+                    </td>
+                    <td>
+                        @Html.Label("lblCodplza", "Cód. Plaza BCCH")
+                    </td>
+                    <td>
+                        @Html.Label("lblCodEntidad", "Cód. Entidad")
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_TipCam)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_ParPag)
+                    </td>
+                    <td>
+                        @Html.Label("lblLogUS", "US$")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label(Model.Lb_NumPlnR)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_FecPlnR)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_CodPlzR)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_CodEntR)
+                    </td>
+                    <td colspan="2">
+                        @Html.Label("lblConvenio", "Convenio Crédito Recíproco")
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(model => model.Ch_ZonFra)  @Html.Label("lblchk", "Zona Franca")
+                        @*@Html.CheckBox("Ch_ZonFra", Model.Ch_ZonFra)*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("lblNumCono", "Nº Conocimiento")
+                    </td>
+                    <td>
+                        @Html.Label("lblFecCono", "Fecha Conocimiento")
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        @Html.Label("lblChile", "a) En Chile")
+                        <br />
+                        @Html.Label("lblChile", "Fecha Aut. de Débito")
+                    </td>
+                    <td colspan="2" rowspan="4">
+                        <div class="text-center">
+                            <input type="submit" value="<<" id="Bot_Ant" name="Command" class="btn btn-default"
+                                   @(Model.Bot_Ant.Enabled ? "" : "disabled = 'disabled'") />
+                            @*<input type="submit" value="Ok" id="bot_Ok" name="Command" class="btn btn-default" />*@
+                            <button id="bot_Ok" type="submit" name="Command" value="Ok" class="btn btn-success" style="width: 39px; color: #fff">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+
+                            <input type="submit" value=">>" id="Bot_Sig" name="Command" class="btn btn-default"
+                                   @(Model.Bot_Sig.Enabled ? "" : "disabled = 'disabled'") />
+                            <br />
+                            <input type="submit" value="Aceptar" id="bot_Aceptar" name="Command" class="btn btn-primary" />
+                            <input type="submit" value="Cancelar" id="bot_Cancelar" name="Command" class="btn btn-default" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label(Model.Lb_NumConR)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Lb_FecConR)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        @Html.Label("lblNumDoc", "Nº Documento")
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align:left">
+                        @Html.Label("lblObs", "Observaciones")
+                        @*@Model.Tx_Observ*@
+                        @Html.TextAreaFor(model => model.Tx_Observ, new { cols = "90", rows = "10", maxlength = "255" })
+                    </td>
+                    <td>
+                        @Html.Label("lblChile", "b) En el extranjero")
+                        <br />
+                        @Html.Label("lblNumDoc", "Nº Documento")
+                    </td>
+                </tr>
+            </table>
+</div>
+    </div>
+}

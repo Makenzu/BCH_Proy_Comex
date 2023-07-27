@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/ConsultaFirmas/OpConsultarFirmasResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="datosFirma">
+    <xsd:sequence>
+      <xsd:element name="rut" type="xsd:string" />
+      <xsd:element name="imagen" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="arrayFirmas">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="firma" nillable="true" type="tns:datosFirma" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosSalida">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="codRetornoSRM" type="xsd:string" />
+      <xsd:element minOccurs="0" name="glosaRetornoSRM" type="xsd:string" />
+      <xsd:element minOccurs="0" name="firmas" type="tns:arrayFirmas" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

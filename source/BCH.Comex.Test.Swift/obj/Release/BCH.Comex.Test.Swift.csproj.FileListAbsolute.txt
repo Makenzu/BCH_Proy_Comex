@@ -1,0 +1,87 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\bin\Release\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Test.Swift\bin\Release\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Test.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\bin\Release\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Test.Swift\obj\Release\BCH.Comex.Test.Swift.pdb

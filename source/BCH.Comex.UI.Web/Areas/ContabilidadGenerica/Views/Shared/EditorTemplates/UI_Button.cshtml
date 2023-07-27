@@ -1,0 +1,31 @@
+﻿@using System.Collections;
+@using System.Web.Mvc;
+
+@model BCH.Comex.Common.UI_Modulos.UI_Button
+
+@{
+    var htmlAttributes = (object)ViewData["htmlAttributes"];
+    var newAttrs = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    var fieldName = ViewData.TemplateInfo.HtmlFieldPrefix;
+
+    //si no existen, agrego el id y name
+    if (!newAttrs.ContainsKey("id"))
+    {
+        newAttrs.Add("id", fieldName);
+    }
+    if (!newAttrs.ContainsKey("name"))
+    {
+        newAttrs.Add("name", fieldName);
+    }
+
+    if (!Model.Enabled)
+    {
+        newAttrs.Add("disabled", "disabled");
+    }
+
+}
+
+<input @foreach (var item in newAttrs) { @: @item.Key="@item.Value.ToString()"
+       	}
+       value="@Model.Text" />
+

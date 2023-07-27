@@ -1,0 +1,333 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.FundTransfer.DataTypes.PlanillaVisibleExportacion
+@{
+    Layout = null;
+}
+<title>Imprimir Planilla</title>
+<style type="text/css">
+    body {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    #page_1 {
+        position: relative;
+        overflow: hidden;
+        margin: 52px 0px 47px 3px;
+        padding: 0px;
+        border: none;
+        width: 813px;
+    }
+
+    #page_2 {
+        position: relative;
+        overflow: hidden;
+        margin: 2px 0px 1039px 3px;
+        padding: 0px;
+        border: none;
+        width: 813px;
+    }
+
+    .ft0 {
+        font: 12px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .ft1 {
+        font: 1px 'Times New Roman';
+        line-height: 1px;
+    }
+
+    .ft2 {
+        font: 11px 'Times New Roman';
+        line-height: 12px;
+    }
+
+    .ft3 {
+        font: 13px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .ft4 {
+        font: 13px 'Times New Roman';
+        line-height: 15px;
+    }
+
+    .ft5 {
+        font: 12px 'Times New Roman';
+        line-height: 15px;
+    }
+
+    .ft6 {
+        font: 11px 'Times New Roman';
+        line-height: 14px;
+    }
+
+    .p0 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p1 {
+        text-align: left;
+        padding-left: 35px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p2 {
+        text-align: left;
+        padding-left: 12px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p3 {
+        text-align: left;
+        padding-left: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p4 {
+        text-align: left;
+        padding-left: 14px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p5 {
+        text-align: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        white-space: nowrap;
+    }
+
+    .p6 {
+        text-align: left;
+        padding-left: 44px;
+        margin-top: 17px;
+        margin-bottom: 0px;
+    }
+
+    .p7 {
+        text-align: left;
+        padding-left: 44px;
+        margin-top: 82px;
+        margin-bottom: 0px;
+    }
+
+    .p8 {
+        text-align: left;
+        padding-left: 54px;
+        margin-top: 18px;
+        margin-bottom: 0px;
+    }
+
+    .p9 {
+        text-align: left;
+        padding-left: 44px;
+        margin-top: 14px;
+        margin-bottom: 0px;
+    }
+
+    .p10 {
+        text-align: left;
+        margin-top: 56px;
+        margin-bottom: 0px;
+    }
+
+    .p11 {
+        text-align: left;
+        padding-left: 44px;
+        margin-top: 81px;
+        margin-bottom: 0px;
+    }
+
+    .p12 {
+        text-align: left;
+        padding-left: 54px;
+        margin-top: 19px;
+        margin-bottom: 0px;
+    }
+
+    .p13 {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .td0 {
+        padding: 0px;
+        margin: 0px;
+        width: 91px;
+        vertical-align: bottom;
+    }
+
+    .td1 {
+        padding: 0px;
+        margin: 0px;
+        width: 346px;
+        vertical-align: bottom;
+    }
+
+    .td2 {
+        padding: 0px;
+        margin: 0px;
+        width: 271px;
+        vertical-align: bottom;
+    }
+
+    .td3 {
+        padding: 0px;
+        margin: 0px;
+        width: 437px;
+        vertical-align: bottom;
+    }
+
+    .td4 {
+        padding: 0px;
+        margin: 0px;
+        width: 101px;
+        vertical-align: bottom;
+    }
+
+    .td5 {
+        padding: 0px;
+        margin: 0px;
+        width: 59px;
+        vertical-align: bottom;
+    }
+
+    .tr0 {
+        height: 15px;
+    }
+
+    .tr1 {
+        height: 24px;
+    }
+
+    .tr2 {
+        height: 34px;
+    }
+
+    .tr3 {
+        height: 17px;
+    }
+
+    .tr4 {
+        height: 16px;
+    }
+
+    .t0 {
+        width: 708px;
+        margin-left: 48px;
+        font: 12px 'Times New Roman';
+    }
+
+    .t1 {
+        width: 160px;
+        margin-left: 11px;
+        margin-top: 47px;
+        font: 11px 'Times New Roman';
+    }
+
+    .t2 {
+        width: 708px;
+        margin-left: 48px;
+        margin-top: 130px;
+        font: 12px 'Times New Roman';
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div id="page_1">
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="tr0 td0"><p class="p0 ft0"><nobr>@*069650-7*@@Html.DisplayFor(model => model.Pl_num_planilla)</nobr></p></td>
+                <td class="tr0 td1"><p class="p0 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p0 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft0">@*11/03/2015*@@Html.DisplayFor(model => model.Pl_fecha_venta)</p></td>
+                <td class="tr1 td1"><p class="p1 ft2">SANTIAGO</p></td>
+                <td class="tr1 td2"><p class="p2 ft0">@*25*@@Html.DisplayFor(model => model.Pl_Cod_Plaza)</p></td>
+            </tr>
+            <tr>
+                <td class="tr2 td0"><p class="p0 ft1">&nbsp;</p></td>
+                <td class="tr2 td1"><p class="p1 ft2">DIVISAS RETORNADAS Y NO LIQUIDA</p></td>
+                <td class="tr2 td2"><p class="p2 ft0">@*511*@@Html.DisplayFor(model => model.Pl_Cod_Paispago)</p></td>
+            </tr>
+            <tr>
+                <td colspan=2 class="tr2 td3"><p class="p3 ft3">@*Comercializadora Forestal Ltda.*@@Html.DisplayFor(model => model.Pl_NomImport)</p></td>
+                <td class="tr2 td2"><p class="p0 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td colspan=2 class="tr3 td3"><p class="p4 ft4">Avda. B. O"higgins Nr. 77 Of..1205 Edificio Independencia CONCEPCION</p></td>
+                <td class="tr3 td2"><p class="p5 ft5"><nobr>@Html.DisplayFor(model => model.Pl_rut)</nobr></p></td>
+            </tr>
+        </table>
+        <table cellpadding=0 cellspacing=0 class="t1">
+            <tr>
+                <td class="tr4 td4"><p class="p0 ft6">@*DOLAR USA*@@Html.DisplayFor(model => model.Pl_nombre_moneda)</p></td>
+                <td class="tr4 td5"><p class="p5 ft5">@*013*@@Html.DisplayFor(model => model.Pl_cod_moneda)</p></td>
+            </tr>
+        </table>
+        <p class="p6 ft5">23.737,60</p>
+        <p class="p7 ft5">23.737,60</p>
+        <p class="p8 ft5" >1,0000</p>
+        <p class="p9 ft5">23.737,60</p>
+        <p class="p10 ft5">Ope. 729098122508018 Planilla de transferencia.</p>
+
+
+        @*Se repite tabla*@
+
+
+        <table cellpadding=0 cellspacing=0 class="t2">
+            <tr>
+                <td class="tr0 td0"><p class="p0 ft0"><nobr>@*069650-7*@@Html.DisplayFor(model => model.Pl_num_planilla)</nobr></p></td>
+                <td class="tr0 td1"><p class="p0 ft1">&nbsp;</p></td>
+                <td class="tr0 td2"><p class="p0 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td class="tr1 td0"><p class="p0 ft0">@*11/03/2015*@@Html.DisplayFor(model => model.Pl_fecha_venta)</p></td>
+                <td class="tr1 td1"><p class="p1 ft2">SANTIAGO</p></td>
+                <td class="tr1 td2"><p class="p2 ft0">@*25*@@Html.DisplayFor(model => model.Pl_Cod_Plaza)</p></td>
+            </tr>
+            <tr>
+                <td class="tr2 td0"><p class="p0 ft1">&nbsp;</p></td>
+                <td class="tr2 td1"><p class="p1 ft2">DIVISAS RETORNADAS Y NO LIQUIDA</p></td>
+                <td class="tr2 td2"><p class="p2 ft0">@*511*@@Html.DisplayFor(model => model.Pl_Cod_Paispago)</p></td>
+            </tr>
+            <tr>
+                <td colspan=2 class="tr2 td3"><p class="p3 ft3">@*Comercializadora Forestal Ltda.*@@Html.DisplayFor(model => model.Pl_NomImport)</p></td>
+                <td class="tr2 td2"><p class="p0 ft1">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td colspan=2 class="tr3 td3"><p class="p4 ft4">Avda. B. O"higgins Nr. 77 Of..1205 Edificio Independencia CONCEPCION</p></td>
+                <td class="tr3 td2"><p class="p5 ft5"><nobr>@Html.DisplayFor(model => model.Pl_rut)</nobr></p></td>
+            </tr>
+        </table>
+        <table cellpadding=0 cellspacing=0 class="t1">
+            <tr>
+                <td class="tr4 td4"><p class="p0 ft6">@*DOLAR USA*@@Html.DisplayFor(model => model.Pl_nombre_moneda)</p></td>
+                <td class="tr4 td5"><p class="p5 ft5">@*013*@@Html.DisplayFor(model => model.Pl_cod_moneda)</p></td>
+            </tr>
+        </table>
+        <p class="p6 ft5">23.737,60</p>
+        <p class="p11 ft5">23.737,60</p>
+        <p class="p12 ft5">1,0000</p>
+        <p class="p9 ft5">23.737,60</p>
+    </div>
+    <div id="page_2">
+
+
+        <p class="p13 ft5">Ope. 729098122508018 Planilla de transferencia.</p>
+    </div>
+}

@@ -1,0 +1,87 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.GanuViewModel
+@{
+    ViewBag.Titulo = "Anulación Operaciones";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmganu", name = "frmganu" }))
+{
+    <div class="container form-horizontal">
+        <h3 class="margin-bottom-double">Anulación Operaciones @* @ViewBag.Caption*@</h3>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label class="col-sm-0 control-label">Identificación Operación</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-5">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.Tx_NroOpe_0, new { htmlAttributes = new { @class = "form-control", maxlength = "3", min = "0", max = "999", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_1, new { htmlAttributes = new { @class = "form-control", maxlength = "2", min = "0", max = "99", tabindex = "1", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_2, new { htmlAttributes = new { @class = "form-control", maxlength = "2", min = "0", max = "99", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_3, new { htmlAttributes = new { @class = "form-control", maxlength = "3", min = "0", max = "999", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_4, new { htmlAttributes = new { @class = "form-control", maxlength = "5", min = "0", max = "99999", tabindex = "2", data_inputmask = "'mask': '9','repeat': 5, 'greedy' : false" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <button id="@Model.Cmd_Ok" type="submit" tabindex="3" name="Command" value="√" class="btn btn-success pull-left" style="width: 39px; color: #fff">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="submit" id="@Model.Co_Boton_0" name="Command" tabindex="4" value="Aceptar" class="btn btn-primary" />
+                            <input type="submit" id="@Model.Co_Boton_1" name="Command" value="Cancelar" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label>Cliente</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-6">
+                            @Html.TextAreaFor(model => model.Tx_Prty.Text, new { @class = "form-control", @disabled = "disabled", tabindex = "16" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label>Planillas</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-6">
+                            @Html.TextAreaFor(model => model.Lt_Pln.Text, new { @class = "form-control", @disabled = "disabled", tabindex = "17" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                }
+@section scripts{
+    <script>
+        var modelCompleto = @Html.Raw(Json.Encode(Model));
+    </script>
+    @Scripts.Render("~/bundles/FundTransfer/AnulacionOperacion")
+
+}

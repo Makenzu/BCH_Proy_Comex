@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ed8e89d-3ad9-43c0-8ce7-8bdd6f881ba9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="transfer.wsdl" MetadataType="Wsdl" ID="8c7d900e-c0a3-4ab2-80fd-16a30e988a00" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="ActiveDirectory.wsdl" MetadataType="Wsdl" ID="a11312e6-ba41-4bd0-a0df-8784e3ebc867" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="enumeration.wsdl" MetadataType="Wsdl" ID="2507cfc4-3dd7-439c-b9de-4284102770b5" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="CustomActions.wsdl" MetadataType="Wsdl" ID="7e6c5f4b-a80b-43bd-a115-900045dbb87d" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="Message.xsd" MetadataType="Schema" ID="8fae3acc-b40e-4140-9767-65eb031328a6" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="addressing.xsd" MetadataType="Schema" ID="06e30408-5b26-4815-a5c8-1bd3a99db992" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="ActiveDirectory.xsd" MetadataType="Schema" ID="a46247c6-2366-4301-8cfb-e956024985c8" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="DirectoryAccess.xsd" MetadataType="Schema" ID="acdb41c6-6a3e-4137-8d70-6f0e8f880fae" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="wsman.xsd" MetadataType="Schema" ID="b563532d-51d2-4cee-aebd-752997aa3e1e" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="transfer.xsd" MetadataType="Schema" ID="710fffe0-82ca-4cca-aff2-b6626026f360" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="enumeration.xsd" MetadataType="Schema" ID="3ba8cf34-a18c-4d37-b738-e6f9db94fcf3" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="CustomActions.xsd" MetadataType="Schema" ID="f2b64bb5-6e7b-4912-87cd-17e997abeb7d" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ea290087-64e4-47e6-bf28-b1fe65958ffe" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="2a6527d8-b69b-41d7-beff-d13dfb878cb0" SourceId="1" SourceUrl="net.tcp://testadjpb.cloudapp.net:9389/ActiveDirectoryWebServices/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

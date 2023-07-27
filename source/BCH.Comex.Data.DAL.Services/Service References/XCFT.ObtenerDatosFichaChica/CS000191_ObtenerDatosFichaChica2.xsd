@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/RenovacionInternet/ObtenerDatosFichaChica/OpObtenerResponse" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/RenovacionInternet/ObtenerDatosFichaChica/OpObtenerResponse" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="respObtener">
+    <xsd:sequence>
+      <xsd:element ref="tns:Cuerpo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Cuerpo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="codigoRetorno" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="rutCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="nombre" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaterno" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaterno" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="oficinaEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="nombreEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="apellidoPaternoEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="apellidoMaternoEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="emailEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoPaisEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoCiudadEjecutivo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="telefono" nillable="true" type="xsd:integer" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="segmento" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="marca" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="banca" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="clasificacionRiesgo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="actividadEconomica" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="categoria" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoSegmento" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoMarca" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoBanca" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoActividadEconomica" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="fechaNacimiento" nillable="true" type="xsd:dateTime" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="nombreOficina" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="tipoCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="sexo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="direccion" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="numeroDireccion" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="complementoDireccion" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="comuna" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="ciudad" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="region" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="pais" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="tipoDespacho" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="cui" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="codigoCategoria" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="rowIdDireccion" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoPaisFonoPartCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoCiudadPartCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="FonoParticularCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoPaisCelularCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoCiudadCelularCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CelularParticularCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="EmailParticularCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoPaisFonoComCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodigoCiudadFonoComCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="FonoComercialCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="EmailComercialCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="EmailAlternativoEjecutivo" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

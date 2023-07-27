@@ -1,0 +1,98 @@
+﻿@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div class="container margin-bottom-triple">
+    <div class="row">
+        <h4 data-bind="text: Operacion.Text"></h4>
+    </div>
+    <div class="row" data-bind="visible: Lb_Info.Visible">
+        <div class="col-xs-12">
+            <div class="alert alert-info">
+                <strong>Información:</strong> <span data-bind="text: Lb_Info.Text"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label data-bind="text: Label1_000.Text"></label>
+                <input type="text" class="form-control" data-bind="value: Tx_NomCta.Text, enable: Tx_NomCta.Enabled" />
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Moneda</label>
+                        <select id="moneda" class="form-control" data-bind="options: Cb_Mnd.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Mnd.Value,optionsCaption: '--Seleccione--', event:{change:moneda_change}, enable: Cb_Mnd.Enabled"></select>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Monto</label>
+                        <input id="monto" type="text" class="form-control" data-bind="value: Tx_Mto.Text , enable: Cb_Mnd.Enabled"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label>Cuentas Corrientes</label>
+                <select id="cuentas" tabindex="1" class="form-control" data-bind="options: L_Cuentas.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Cuentas.Value, enable: L_Cuentas.Enabled, optionsCaption: '--Seleccione--', event:{change:cuentas_change}"></select>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Datos_000.Text"></label>
+                        <input maxlength="11" id="Tx_Datos_000" tabindex="2" type="text" class="form-control upperCaseField upper" 
+                               data-bind="value: Tx_Datos()[0].Text, event:{blur:tx_datos_blur(0), keypress:tx_datos_keypress}, visible: Tx_Datos()[0].Visible, valueUpdate:['afterkeydown']" />
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Datos_001.Text"></label>
+                        <input type="text" id="Tx_Datos_001" tabindex="3" class=" form-control uppercasefield"
+                               data-bind="value: Tx_Datos()[1].Text, event:{blur:tx_datos_blur(1)}, visible: Tx_Datos()[1].Visible, valueUpdate:['afterkeydown']" maxlength="15" />
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Datos_002.Text"></label>
+                        <input type="text" id="Tx_Datos_002" tabindex="4" class="form-control upperCaseField"
+                               data-bind="value: Tx_Datos()[2].Text, event:{blur:tx_datos_blur(2)}, visible: Tx_Datos()[2].Visible, valueUpdate:['afterkeydown']" maxlength="15" />
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Datos_003.Text"></label>
+                        <div class="input-group date input-group-sm" id="dtpFechaVencimiento">
+                            <input type="text" class="form-control upperCaseField upper" id="txtFechaVencimiento"
+                                   maxlength="10" tabindex="5" data-bind="value: Tx_Datos()[3].Text,  event:{blur:tx_fecha_vencimiento_blur()}, visible: Tx_Datos()[3].Visible, valueUpdate:['afterkeydown']" />
+                            <span class="input-group-addon" data-bind="visible: Tx_Datos()[3].Visible">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-6">
+            <label data-bind="text: Lb_Oficina.Text"></label>
+        </div>
+    </div>
+</div>
+<div class="container margin-bottom-triple text-right">
+    <button type="button" class="btn btn-primary" id="aceptar" tabindex="5" data-bind="click: aceptar">Aceptar</button>
+    <button type="button" class="btn btn-default" id="cancelar" data-bind="click: cancelar">Cancelar</button>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/Adicionales")
+}

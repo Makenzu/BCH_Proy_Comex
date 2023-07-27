@@ -1,0 +1,42 @@
+﻿@using BCH.Comex.UI.Web.Models.FundTransfer
+@model IngresoValoresViewModel
+
+<div class="container">
+    <h3 class="margin-bottom-double">@Model.Caption @ViewBag.Caption</h3> 
+    @using (Html.BeginForm("Ingreso_Valores", "FundTransfer", FormMethod.Post))
+    {
+        <div class="row col-sm-6 col-sm-offset-3">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Moneda</label>
+                    @Html.TextBoxFor(x => x.Moneda, new { @class = "form-control", @disabled = "disabled", tabindex="1" })
+                </div>
+                <div class="form-group">
+                    <label>Paridad</label>
+                    @Html.TextBoxFor(x => x.Paridad, new { @id = "txtPar", tabindex = "3", @class = "form-control monto", @required = "required", @formated_number = "##,###0.0000", maxlength = "8" })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Fecha</label>
+                    @Html.TextBoxFor(x => x.Fecha, new { @class = "form-control", @disabled = "disabled" , tabindex="2"})
+                </div>
+                <div class="form-group">
+                    <label>Tipo Cambio Observado</label>
+                    @Html.TextBoxFor(x => x.TipoCambio, new { @id = "txtCam", tabindex = "4", @class = "form-control monto", @required = "required", @formated_number = "##,###0.0000", maxlength = "15" })
+                </div>
+            </div>
+        </div>
+    <div class="row col-sm-6 col-sm-offset-3">
+        <div class="col-xs-12 text-right">
+            <button class="btn btn-primary" tabindex="5" id="btnAceptar">Aceptar</button>
+            <button class="btn btn-default" tabindex="6" id="btnCancelar">Cancelar</button>
+        </div>
+    </div>
+    }
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/IngresoValores")
+}
+

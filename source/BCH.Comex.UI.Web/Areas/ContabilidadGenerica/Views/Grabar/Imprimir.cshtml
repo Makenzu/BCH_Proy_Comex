@@ -1,0 +1,13 @@
+﻿@model BCH.Comex.UI.Web.Areas.ContabilidadGenerica.Models.ImprimirModel
+@using BCH.Comex.UI.Web.Helpers
+
+<script>
+    var documentos = "@Html.Raw(String.Join(",",Model.Documentos.ToArray()))";
+    var fileName = "@Model.FileName";
+    var ConfigImpres_PrintFormat = "@HttpContext.Current.GetCurrentUser().GetDatosUsuario().ConfigImpres_PrintFormat";
+</script>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/GrabarImprimir")
+}

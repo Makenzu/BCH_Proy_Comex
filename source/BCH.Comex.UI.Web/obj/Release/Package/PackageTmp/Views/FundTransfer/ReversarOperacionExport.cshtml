@@ -1,0 +1,218 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ReversarOperacionExportViewModel
+@{
+    ViewBag.Title = "Reversar Operacion";
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+<style>
+    .panel{
+        margin-bottom: 5px;
+    }
+    .panel-body {
+        padding: 10px;
+    }
+</style>
+
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmgrev", name = "frmgrev" }))
+{
+    <div class="container form-horizontal" style="max-width:800px">
+        <h3 class="margin-bottom">Reversar Operación @ViewBag.Caption</h3>
+        @Html.HiddenFor(model => model.TipoAnuls)
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label class="col-sm-0 control-label">Identificación Operación</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-8">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.Tx_NroOpe_000, new { htmlAttributes = new { @class = "form-control", min = "0", max = "999", maxlength = "3", tabindex = "", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_001, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99", maxlength = "2", tabindex = "1", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_002, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99", maxlength = "2", tabindex = "", data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_003, new { htmlAttributes = new { @class = "form-control", min = "0", max = "999", maxlength = "3", tabindex = "", data_inputmask = "'mask': '9','repeat': 3, 'greedy' : false" } })
+                                <div class="input-group-addon">-</div>
+                                @Html.EditorFor(model => model.Tx_NroOpe_004, new { htmlAttributes = new { @class = "form-control", min = "0", max = "99999", maxlength = "5", tabindex = "2", data_inputmask = "'mask': '9','repeat': 5, 'greedy' : false" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <button type="submit" tabindex="3" value="Boton_ok_operacion" id="BtnOkOperacion" name="Command" class="btn btn-success input-group-addon" style="width: 39px; color: #fff">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="submit" tabindex="5" value="Aceptar" id="btnAceptar" name="Command" class="btn btn-primary"
+                                   @(Model.BtnAceptar.Enabled ? "" : "disabled = 'disabled'") />
+                            <input type="submit" tabindex="" value="Cancelar" id="BtnCancelar" name="Command" class="btn btn-default"
+                                   @(Model.BtnCancelar.Enabled ? "" : "disabled = 'disabled'") />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label>Cliente</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-6">
+                            @Html.TextBoxFor(x => x.Tx_Cliente, new { style = "width: 450px;", @class = "form-control input-sm", tabindex = "7", @disabled = "disabled" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label>Planillas</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-6">
+                            @Html.EditorFor(model => model.CmbPlanilla, new { htmlAttributes = new { @class = "form-control input-sm", multiple = "", tabindex = "4" } })
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-sm-12">Tip.Anu</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.Cb_TipAnu, new { htmlAttributes = new { style = "width: 100px;", @class = "form-control input-sm", tabindex = "" } })
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <label class="col-sm-12">Tip/Cam</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.CamTipCam, new { htmlAttributes = new { style = "width: 100px;", @class = "form-control input-sm", tabindex = "" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-6">
+                            <input type="button" id="BtnObservacion" name="Command" value="Observacion" tabindex="" class="btn btn-default"
+                                   @(Model.BtnObservacion.Enabled ? "" : "disabled = 'disabled'") />
+
+                            <input type="button" id="BtnDeclaracion" name="Command" value="Declaracion" tabindex="" class="btn btn-default"
+                                   @(Model.BtnDeclaracion.Enabled ? "" : "disabled = 'disabled'") />
+
+                            <button type="button" style="width: 39px; color: #fff" @(Model.BtnOk.Enabled ? "" : "disabled = 'disabled'") tabindex="" id="btnOk" data-bind="click: btn_ok_click" value="Boton_ok" class=" btn btn-success">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="divAutorizacion" class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label>Autorización previa del Banco Central</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                            <label class="col-sm-3 control-label">Número</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { style = "width: 100px;", @class = "form-control input-sm", tabindex = "", data_inputmask = "'mask': '9','repeat': 10, 'greedy' : false" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-sm-3 control-label">Fecha</label>
+                            <div>
+                                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { style = "width: 100px;", tabindex = "", @class = "form-control input-sm", data_inputmask = "'alias': 'date'" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 form-group">
+                        <div class="col-sm-12">
+                            <label class="col-sm-3">Sucursal BCCH</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.Cb_SucursalBCCH, new { htmlAttributes = new { style = "width: 250px;", @class = "form-control input-sm", tabindex = "" } })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label class="col-sm-3">Motivo</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.Motivo, new { htmlAttributes = new { style = "width: 250px;", @class = "form-control input-sm", tabindex = "" } })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label class="col-sm-3">Tipo</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.Cb_Tipo, new { htmlAttributes = new { style = "width: 250px;", @class = "form-control input-sm", tabindex = "" } })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label class="col-sm-3">Tipo Cambio</label>
+                            <div class="col-sm-6">
+                                @Html.EditorFor(model => model.Tx_TipCam, new { htmlAttributes = new { style = "width: 90px;", @class = "form-control monto", tabindex = "" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-default hidden" id="divObservacion">
+                <div class="panel-body">
+                    <div class="col-xs-10 form-group">
+                        <div class="col-xs-5">
+                            @Html.Label("Observaciones de", new { @id = "txtObservaciones" })
+                            @Html.EditorFor(model => model.Tx_Observacion, new { htmlAttributes = new { @class = "form-control", multiple = "", tabindex = "" } })
+                            <input type="button" tabindex=" 39" id="BtnVolver" name="Command" value="Volver" class="btn btn-default pull-left" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Modal Identificacion de Participantes -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="ReversarOperacionDeclaracion">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Devolver Saldos a la Declaración</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_ReversarOperacionDeclaracion")
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAceptarReversaOperacionDeclaracion">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap-table-es-SP.js"></script>
+    @Scripts.Render("~/bundles/FundTransfer/ReversaOperacion")
+}

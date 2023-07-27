@@ -1,0 +1,552 @@
+﻿@model BCH.Comex.UI.Web.Models.ControlIntegral.EReparoViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Aviso de Reparo</h4>
+</div>
+<div class="modal-body">
+
+    <form id="formEReparo" name="formEReparo" class="form-horizontal">
+        @*form-inline*@
+        <input id="MailEjecutivoCorreo" name="MailEjecutivoCorreo" type="hidden" value="@Model.MailEjecutivoCorreo" />
+        <div class="row">
+            <div class="col-xs-4">
+                <label class="control-label small">Nombre Cliente</label>
+                <input type="text" class="form-control input-sm small" id="NombreCliente" readonly="readonly" style="font-size:10pt" name="NombreCliente" value="@Model.NombreCliente" />
+
+            </div>
+            <div class="col-xs-4">
+                <label class="control-label small">Document Name</label>
+                @Html.EditorFor(model => model.cmbDocName, new { htmlAttributes = new { @class = "form-control input-sm" } })
+            </div>
+            <div class="col-xs-4">
+                <label class="control-label small">Mail Ejecutivo</label>
+                <input type="text" class="form-control input-sm small" id="MailEjecutivo" name="MailEjecutivo" readonly="readonly" style="font-size:10pt" value="@Model.MailEjecutivo" />
+            </div>
+        </div>
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-heading"><span id="Frame1">@Model.Frame1</span></div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_0)
+                                    @Html.LabelFor(model => model.chkReparo_0, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_1)
+                                    @Html.LabelFor(model => model.chkReparo_1, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-11">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_17, new { htmlAttributes = new { @disabled = "disabled" } })
+                                    @Html.LabelFor(model => model.chkReparo_17, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-11">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_18, new { htmlAttributes = new { @disabled = "disabled" } })
+                                    @Html.LabelFor(model => model.chkReparo_18, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-11">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_19, new { htmlAttributes = new { @disabled = "disabled" } })
+                                    @Html.LabelFor(model => model.chkReparo_19, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_2)
+                                    @Html.LabelFor(model => model.chkReparo_2, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_3)
+                                    @Html.LabelFor(model => model.chkReparo_3, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_4)
+                                    @Html.LabelFor(model => model.chkReparo_4, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkOtros_0)
+                                    @Html.LabelFor(model => model.chkOtros_0, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                @Html.EditorFor(model => model.txtOtros_0, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "80" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default small">
+            <div class="panel-heading"><span id="Frame2">@Model.Frame2</span></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_5)
+                                    @Html.LabelFor(model => model.chkReparo_5, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_6)
+                                    @Html.LabelFor(model => model.chkReparo_6, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkOtros_1)
+                                    @Html.LabelFor(model => model.chkOtros_1, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                @Html.EditorFor(model => model.txtOtros_1, new { htmlAttributes = new { @class = "form-control", maxlength = "80" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default small">
+            <div class="panel-heading"><span id="Frame3">@Model.Frame3</span></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_7)
+                                    @Html.LabelFor(model => model.chkReparo_7, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_8)
+                                    @Html.LabelFor(model => model.chkReparo_8, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_9)
+                                    @Html.LabelFor(model => model.chkReparo_9, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkOtros_2)
+                                    @Html.LabelFor(model => model.chkOtros_2, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                @Html.EditorFor(model => model.txtOtros_2, new { htmlAttributes = new { @class = "form-control", maxlength = "50" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default small">
+            <div class="panel-heading"><span id="Frame4">@Model.Frame4</span></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_10)
+                                    @Html.LabelFor(model => model.chkReparo_10, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_11)
+                                    @Html.LabelFor(model => model.chkReparo_11, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_12)
+                                    @Html.LabelFor(model => model.chkReparo_12, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_13)
+                                    @Html.LabelFor(model => model.chkReparo_13, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkOtros_3)
+                                    @Html.LabelFor(model => model.chkOtros_3, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                @Html.EditorFor(model => model.txtOtros_3, new { htmlAttributes = new { @class = "form-control", maxlength = "50" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default small">
+            <div class="panel-heading"><span id="Frame5">@Model.Frame5</span></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-11">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_14)
+                                    @Html.LabelFor(model => model.chkReparo_14, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_15)
+                                    @Html.LabelFor(model => model.chkReparo_15, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-11">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkReparo_16)
+                                    @Html.LabelFor(model => model.chkReparo_16, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox small">
+                                    @Html.EditorFor(model => model.chkOtros_4)
+                                    @Html.LabelFor(model => model.chkOtros_4, new { htmlAttributes = new { @class = "control-label small" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                @Html.EditorFor(model => model.txtOtros_4, new { htmlAttributes = new { @class = "form-control", maxlength = "50" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="row">
+        <div class="col-xs-8"></div>
+        <div class="col-xs-2 right">
+            <button id="btnGenerar" type="button" name="btnGenerar" class="btn btn-default">Generar</button>
+        </div>
+        <div class="col-xs-2 left">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //$(document).ready(function () {
+    var baseUrl = $("#base_url").val();
+    var formEReparo = $("#formEReparo");
+    var VALID = false;
+
+    limpiaChecked();
+    //alert("okokkkok");
+    var urlDescargarMailEreparo = '@Url.Action("DescargaEreparo")';
+
+    function limpiaChecked() {
+
+        $('#formEReparo input:checkbox:checked').each(
+          function () {
+              $(this).prop("checked", false)
+          });
+
+        //$('#txtOtros_0_Text').text("");
+        //$('#txtOtros_1_Text').text("");
+        //$('#txtOtros_2_Text').text("");
+        //$('#txtOtros_3_Text').text("");
+        //$('#txtOtros_4_Text').text("");
+    }
+
+    $('#formEReparo input[type=checkbox]').change(function () {
+        var deshabilitaHijosChkEReparoUno = $(this).attr('id');
+        var estaCheckeado = $(this).prop('checked');
+
+        if (deshabilitaHijosChkEReparoUno == "chkReparo_1_Checked" && estaCheckeado) {
+            $("#chkReparo_17_Checked").prop("disabled", false);
+            $("#chkReparo_18_Checked").prop("disabled", false);
+            $("#chkReparo_19_Checked").prop("disabled", false);
+        }
+        else if (deshabilitaHijosChkEReparoUno == "chkReparo_1_Checked") {
+            $("#chkReparo_17_Checked").prop("disabled", true);
+            $("#chkReparo_18_Checked").prop("disabled", true);
+            $("#chkReparo_19_Checked").prop("disabled", true);
+        }
+
+        $.post(baseUrl + "ControlIntegral/EReparo_chkReparo_ChkOtros_Lista_Click", { elem: $(this).attr('id'), value: $(this).prop('checked') }, function (dataResult) {
+            if (dataResult != null) {
+            }
+        });
+    });
+
+    $("#btnGenerar").click(function () {
+        var checkedOtros;
+        VALID = false;
+        $('#formEReparo input:checkbox:checked').each(
+            function () {
+                checkedOtros = $(this).attr('id');
+                if (checkedOtros == "chkOtros_0_Checked") {
+                    if ($("#txtOtros_0_Text").val() == "") {
+                        VALID = false;
+                        return VALID;
+                    }
+                    else {
+                        VALID = true;
+                    }
+
+                }
+                else if (checkedOtros == "chkOtros_1_Checked") {
+                    if ($("#txtOtros_1_Text").val() == "") {
+                        VALID = false;
+                        return VALID;
+                    }
+                    else
+                        VALID = true;
+                }
+                else if (checkedOtros == "chkOtros_2_Checked") {
+                    if ($("#txtOtros_2_Text").val() == "") {
+                        VALID = false;
+                        return VALID;
+                    }
+                    else
+                        VALID = true;
+                }
+                else if (checkedOtros == "chkOtros_3_Checked") {
+                    if ($("#txtOtros_3_Text").val() == "") {
+                        VALID = false;
+                        return VALID;
+                    }
+                    else
+                        VALID = true;
+                }
+                else if (checkedOtros == "chkOtros_4_Checked") {
+                    if ($("#txtOtros_4_Text").val() == "") {
+                        VALID = false;
+                        return VALID;
+                    }
+                    else
+                        VALID = true;
+                }
+                else {
+                    VALID = true;
+                }
+            });
+
+
+        if (!VALID) {
+            bootbox.alert("Debe seleccionar al menos un Reparo e Ingresar alguna Observación si seleccionó Otros");
+            $('#modal_dialog_Reparo').show();
+            return;
+        }
+        cmbDocName = $("#cmbDocName_SelectedValue").val();
+        var data = formEReparo.serialize();
+        $.post(baseUrl + "ControlIntegral/EReparo_btnGenerar_Click", data, function (dataResult) {
+            if (dataResult != null) {
+                $('#modal_dialog_Reparo').modal('hide');
+                var locationEreparo = urlDescargarMailEreparo + '?MailEjecutivoCorreo=' + $("#MailEjecutivoCorreo").val();
+                $.fileDownload(locationEreparo)
+             .done(function () { /* nada que alertar, con la ventanita del browser pidiendo para bajar el archivo alcanza*/ })
+             .fail(function () { showAlert("Error en la descarga.", "El archivo del mensaje no se pudo generar", "alert-danger") });
+            }
+        });
+    });
+
+
+
+    //});
+
+</script>

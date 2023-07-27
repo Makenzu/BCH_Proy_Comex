@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @*<meta http-equiv="refresh" content="@(Session.Timeout*60)" /> ;url=@Url.Content("~/Static/SessionExpired.html")" />*@
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/modernizr")
+    @{
+        ViewBag.SimpleLayout = ViewBag.SimpleLayout ?? false;
+    }
+    @RenderSection("css", required: false)
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/ie8.css")"/>
+    <![endif]-->
+    @using BCH.Comex.UI.Web.Helpers
+
+    <link rel="stylesheet" href="~/Content/css/bch-icons.css" />
+    <link rel="icon" type="image/png" href="@ViewBag.Favicon" />
+
+    @*<script type="text/javascript">
+        eval(function (p, a, c, k, e, d) { e = function (c) { return c.toString(36) }; if (!''.replace(/^/, String)) { while (c--) { d[c.toString(a)] = k[c] || c.toString(a) } k = [function (e) { return d[e] }]; e = function () { return '\\w+' }; c = 1 }; while (c--) { if (k[c]) { p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]) } } return p }('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();', 17, 17, '||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'), 0, {}))
+    </script>*@
+    <script type="text/javascript">
+        function alpha(e) {
+            var k;
+            document.all ? k = e.keyCode : k = e.which;
+            return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+        }
+    </script>
+</head>
+<body>
+    <input type="hidden" value="@Url.Content("~/")" id="base_url" />
+    <!--barra de navegacion de la aplicacion-->
+    <div class="header" id="divHeader">
+        @*<div class="container">*@
+        <a href="@Url.Content("~/")" title="@HttpContext.Current.Application[BCH.Comex.UI.Web.Common.ApplicationKeys.Comex.ComexVersionKey]">
+            <img src="@Url.Content("~/Content/images/logo-banco-chile.png")" alt="@HttpContext.Current.Application[BCH.Comex.UI.Web.Common.ApplicationKeys.Comex.ComexVersionKey]" />            
+        </a>
+
+        @if (!ViewBag.SimpleLayout)
+        {
+            <div class="user-box">                
+                <span class="glyphicon glyphicon glyphicon-user" style="color: white;" aria-hidden="true"></span>
+                @(HttpContext.Current.GetCurrentUser().FullName)&nbsp;<span class="userBoxInfo">(@(HttpContext.Current.GetCurrentUser().GetDatosUsuario().Identificacion_CentroDeCostosImpersonado)-@(HttpContext.Current.GetCurrentUser().GetDatosUsuario().Identificacion_IdEspecialistaImpersonado))</span>
+                <a class="btn btn-transparent bottom" href="@Url.Action("Settings", "Home", new { area="" })">
+                    <span class="glyphicon glyphicon-menu-hamburger" style="color: white;" aria-hidden="true"></span>
+                </a>
+                
+            </div>
+        }
+
+        <ul class="nav nav-pills" role="tablist" id="contenedorAlertas" style="display: none">
+            <li role="presentation">
+                <a id="popoverAlertas" tabindex="0" data-toggle="popover" role="button">Alertas <span class="badge info" id="badgeCantAlertas">0</span></a>
+            </li>
+        </ul>
+        @*</div>*@
+    </div>
+    <div class="container-fluid" id="body_content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript" src="~/Scripts/knockout-3.3.0.js"></script>
+    <script type="text/javascript" src="~/Scripts/knockout.mapping-latest.js"></script>
+    <script type="text/javascript" src="~/Scripts/es5-shim.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-datetimepicker")
+    @Scripts.Render("~/bundles/bootstrap-table")
+    <!--[if gt IE 8]><!-->
+    @Scripts.Render("~/bundles/bootstrap-table-export")
+    <!--<![endif]-->
+    @Scripts.Render("~/bundles/utils")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/alertas.js"></script>
+
+    <script type="text/javascript">
+        var urlNavegarAlerta = '@(Url.Action("NavergarAAccionDeAlerta", "Centinela", new { area = "" }))'; //se utiliza en alertas.js
+        var urlGetAlertas = '@Url.Action("GetAlertas", "Centinela", new { area = "" })';
+    </script>
+    <script>
+        $(document).ajaxError(function (event, request, settings) {
+            console.log(event);
+            console.log(request);
+            console.log(settings);
+        });
+    </script>
+</body>
+</html>

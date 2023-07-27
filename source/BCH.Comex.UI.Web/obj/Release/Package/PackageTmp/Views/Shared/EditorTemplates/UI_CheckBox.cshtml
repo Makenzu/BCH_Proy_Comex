@@ -1,0 +1,19 @@
+﻿@using System.Collections;
+@using System.Web.Mvc;
+
+
+@model BCH.Comex.Common.UI_Modulos.UI_CheckBox
+
+@{
+    var htmlAttributes = (object)ViewData["htmlAttributes"];
+    var newAttrs = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
+    if (!Model.Enabled)
+    {
+        newAttrs.Add("disabled", "disabled");
+    }
+
+}
+
+@Html.CheckBoxFor(model => model.Checked,
+                    htmlAttributes: @newAttrs)

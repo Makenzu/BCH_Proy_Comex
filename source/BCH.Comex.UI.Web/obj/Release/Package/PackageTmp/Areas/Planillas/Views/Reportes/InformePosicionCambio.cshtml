@@ -1,0 +1,282 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ReporteInformePosicionCambioViewModel
+@using BCH.Comex.Core.BL.XGPL;
+@using BCH.Comex.UI.Web.Areas.Planillas.Models;
+@using Newtonsoft.Json;
+@{
+    //var json = Model.Planillas == null ? JsonConvert.SerializeObject(new List<ReporteInformePosicionCambioResumenItemViewModel>()) : JsonConvert.SerializeObject(Model.Planillas.ToList());
+
+    var totalGeneral = new Dictionary<int, ReporteInformePosicionCambioResumenItemViewModel>();
+    ReporteInformePosicionCambioItemViewModel prev = null;
+    var aggr = new ReporteInformePosicionCambioResumenItemViewModel();
+    ViewBag.Title = Model.Titulo;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-planillas-inv.png")" />
+    @Styles.Render("~/Content/style")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-table")
+    @Scripts.Render("~/bundles/bootstrap-table-export")
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    <script>
+        var $tabla;
+
+        $.blockUI({ message: '<h6>Cargando...</h6>' });
+
+        function referenciaFormatter(value, row, index) {
+            if (!isNaN(value) && value != '') {
+                return '\'' + value;
+            } else {
+                return value;
+            }
+        }
+
+        $(function () {
+            $tabla = $('#tablaPlanillas');
+            $tabla.bootstrapTable({
+                classes: 'table-sm table-bordered table-condensed',
+                pagination: true,
+                sortable: true,
+                locale: "es-SP",
+                pageSize: 10,
+                pageList: [10, 25, 50, 100, 200, 500, 1000, 2000],
+                search: true,
+                showExport: true,
+                exportTypes: ['excel', 'pdf'],
+                exportDataType: 'all',
+                exportOptions: {
+                    fileName: '@Model.Titulo - @DateTime.Now.ToString("ddMMyyyy_hhmmss")',
+                    worksheetName: ['@Model.Titulo'],
+                    tableName: '@Model.Titulo'
+                },
+            });
+
+            $.unblockUI();
+            $('#tablaPlanillas').show();
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="width: 100%; background-color: #0066a6; height: 40px; top: 0px; background-color: #002464;">
+            <div class="tit">&nbsp;</div>
+        </div>
+
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="t0_td0" align="left">
+                    <h3 style="font-style: italic; font-family: 'Times New Roman'"><strong>Comercio Exterior</strong></h3>
+                </td>
+                <td class="t0_td1"><h3><u><strong>Planillas (Sección)</strong></u></h3></td>
+            </tr>
+        </table>
+
+        <table cellpadding=0 cellspacing=0 class="t0">
+            <tr>
+                <td class="t0_td1">
+                    &nbsp;
+                </td>
+                <td class="t0_td2">
+                    Fecha
+                </td>
+                <td class="t0_td3">
+                    : @Model.Fecha.FormatoFecha()
+                </td>
+            </tr>
+        </table>
+
+        <p>Centro de Costo: @Model.CentroCosto</p>
+
+        <table id="tablaPlanillas" style="display:none">
+            <thead>
+                <tr>
+                    <th data-align="center" data-sortable="true" data-field="NumeroPlanilla">Número Pln.</th>
+                    <th data-align="center" data-sortable="true" data-field="Fecha">Fecha Pln.</th>
+                    <th data-align="center" data-sortable="true" data-field="CodigoOperacion">Cód. Op.</th>
+                    <th data-align="center" data-sortable="true" data-formatter="referenciaFormatter" data-field="Operacion">Operación Número</th>
+                    <th data-align="center" data-sortable="true" data-field="CodigoEspecialista">Cód. Esp.</th>
+                    <th data-align="center" data-sortable="true" data-field="RutCliente">Cliente Rut</th>
+                    <th data-align="center" data-sortable="true" data-field="CodigoMoneda">Moneda Origen</th>
+                    <th data-align="center" data-sortable="true" data-field="MontoOrigen">Monto Origen</th>
+                    <th data-align="center" data-sortable="true" data-field="Egreso">Egresos US$</th>
+                    <th data-align="center" data-sortable="true" data-field="Ingreso">Ingresos US$</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Planillas)
+                {
+                    if (prev != null && item.CodigoOperacion != prev.CodigoOperacion)
+                    {
+                        // Totales
+                        <tr class="subtotal">
+                            <td data-align="center" colspan="2"><strong>Total</strong></td>
+                            <td data-align="center"><strong>@aggr.Cantidad</strong></td>
+                            <td data-align="center" colspan="5"><strong>Planilla@(aggr.Cantidad > 1 ? "s" : "")</strong></td>
+                            <td data-align="center" class="monto"><strong>@aggr.Egreso.FormatoDecimal()</strong></td>
+                            <td data-align="center" class="monto"><strong>@aggr.Ingreso.FormatoDecimal()</strong></td>
+                        </tr>
+                        totalGeneral.Add(aggr.CodigoOperacion, aggr);
+                        aggr = new ReporteInformePosicionCambioResumenItemViewModel();
+                    }
+
+                    <tr>
+                        <td data-align="center">@item.NumeroPlanilla</td>
+                        <td data-align="center">@item.Fecha.FormatoFecha()</td>
+                        <td data-align="center">@item.CodigoOperacion</td>
+                        <td data-align="center" data-detail-formatter="referenciaFormatter">@item.Operacion</td>
+                        <td data-align="center">@item.CodigoEspecialista</td>
+                        <td data-align="center">@item.RutCliente</td>
+                        <td data-align="center">@item.CodigoMoneda</td>
+                        <td data-align="center" class="monto">@item.MontoOrigen.FormatoDecimal()</td>
+                        <td data-align="center" class="monto">@item.Egreso.FormatoDecimal()</td>
+                        <td data-align="center" class="monto">@item.Ingreso.FormatoDecimal()</td>
+                    </tr>
+                    aggr.CodigoOperacion = item.CodigoOperacion;
+                    aggr.Ingreso += item.Ingreso;
+                    aggr.Egreso += item.Egreso;
+                    aggr.Cantidad++;
+                    prev = item;
+                }
+                @if (prev != null)
+                {
+                    // Totales
+                    <tr class="subtotal">
+                        <td data-align="center" colspan="2"><strong>Total</strong></td>
+                        <td data-align="center"><strong>@aggr.Cantidad</strong></td>
+                        <td data-align="center" colspan="5"><strong>Planilla@(aggr.Cantidad > 1 ? "s" : "")</strong></td>
+                        <td data-align="center" class="monto"><strong>@aggr.Egreso.FormatoDecimal()</strong></td>
+                        <td data-align="center" class="monto"><strong>@aggr.Ingreso.FormatoDecimal()</strong></td>
+                    </tr>
+                    totalGeneral.Add(aggr.CodigoOperacion, aggr);
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="10"><strong>TOTAL GENERAL</strong></td>
+                </tr>
+                @foreach (var pair in totalGeneral)
+                {
+                    <tr>
+                        <td data-align="center" colspan="2"><strong>@pair.Value.CodigoOperacion</strong></td>
+                        <td data-align="center"><strong>@pair.Value.Cantidad</strong></td>
+                        <td data-align="center" colspan="5"><strong>Planilla@(aggr.Cantidad > 1 ? "s" : "")</strong></td>
+                        <td data-align="center" class="monto"><strong>@pair.Value.Egreso.FormatoDecimal()</strong></td>
+                        <td data-align="center" class="monto"><strong>@pair.Value.Ingreso.FormatoDecimal()</strong></td>
+                    </tr>
+                }
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
+
+@section css {
+    <style>
+        .subtotal td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .t0 {
+            width: 100%;
+        }
+
+        .t0_td0 {
+            width: 40%;
+        }
+
+        .t0_td1 {
+            width: 70%;
+        }
+
+        .t0_td2 {
+            width: 10%;
+        }
+
+        .t0_td3 {
+            width: 20%;
+        }
+
+
+        .table-bordered {
+            border: 1px solid #ddd;
+        }
+
+        .bordered {
+            border: 1px solid #ddd;
+        }
+
+        .thead-bordered {
+            border-bottom-width: 2px;
+        }
+
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            background-color: transparent;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .table-rows {
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+            padding: 5px;
+        }
+
+        .thead-rows {
+            vertical-align: bottom;
+            border-bottom: 2px solid #ddd;
+        }
+    </style>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

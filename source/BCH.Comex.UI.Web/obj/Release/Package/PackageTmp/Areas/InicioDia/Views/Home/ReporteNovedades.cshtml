@@ -1,0 +1,108 @@
+﻿@model BCH.Comex.UI.Web.Areas.InicioDia.Views.Models.ReporteNovedadesViewModel
+
+@{
+    ViewBag.Title = "Reporte de Novedades del Día";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reporte de Novedades al día @Model.FechaReporte.ToString("dd/MM/yyyy")</title>
+
+    <link href="~/Content/css/bootstrap-compiled.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bch-icons.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/css/site.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/inicio-dia-inv.png")" />
+
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/bootstrap-table.js"></script>
+    <script src="~/Scripts/numeral.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/numeral.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment-with-locales.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/numeral/languages/es-ES.js"></script>
+    <script src="~/Scripts/Commons.js"></script>
+    <script src="~/Scripts/bootbox/bootbox.min.js"></script>
+    <script src="~/Scripts/string.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/messages_es.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+    <script src="~/Scripts/jquery.inputmask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/jquery.inputmask/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask/jquery.inputmask.numeric.extensions.js"></script>
+                 
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/bootstrap-table.js"></script>
+    <script src="~/Scripts/bootstrap-table-es-SP.js"></script>
+    <script>
+        var datosNovedades = @Html.Raw(Json.Encode(Model.Novedades));
+        var impresion = true;
+        
+        window.onload = function () { window.print(); }
+    </script>
+    <script src="~/Areas/InicioDia/Scripts/Novedades.js"></script>
+    <style type="text/css">
+        h1, h2, h3, h4, h5 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div style="background-color: #333399; padding: 1px; color: white;">
+                    <h3>Banco de Chile</h3>
+                </div>
+                <h4 style="color: #2278CE;">COMERCIO EXTERIOR</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12  text-center"><h3>Listado de novedades al día @Model.FechaReporte.ToString("dd/MM/yyyy")</h3></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><h4>Usuario: @Model.Usuario</h4></div>
+        </div>
+
+        <div class="row" style="display: none;">
+            <div class="col-xs-12">
+                <div class="input-group date" id="txtFechaNovedad">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar">
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <table id="tablaNovedades" class="table table-bordered"></table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

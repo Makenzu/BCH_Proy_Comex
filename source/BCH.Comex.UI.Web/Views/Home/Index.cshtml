@@ -1,0 +1,243 @@
+﻿@model Dictionary<BCH.Comex.Core.Entities.Portal.GrupoAplicacion, List<BCH.Comex.Core.Entities.Portal.Aplicacion>>
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+}
+
+@section css{
+    <style type="text/css">
+        /*https://github.com/olton/Metro-UI-CSS/blob/master/LICENSE*/
+        .tile {
+            -webkit-user-select: none;
+            background-color: #002464;
+            border-collapse: collapse;
+            /*box-shadow: rgb(255, 255, 204) 0px 0px 1px 0px inset;*/
+            box-shadow: inset 0px 0px 2px #FFFFCC;
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            cursor: pointer;
+            display: block;
+            float: left;
+            font-family: 'Segoe UI', 'Open Sans', sans-serif, serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: normal;
+            height: 150px;
+            line-height: 15.3999996185303px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+            overflow-x: visible;
+            overflow-y: visible;
+            position: relative;
+            width: 150px;
+        }
+
+        .tile .tile-content {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin: 0;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .tile .tile-content.icon [class*="icon-"], .tile .tile-content.icon img {
+            line-height: 56px;
+            height: 56px;
+            width: 56px;
+            font-size: 48px;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            margin-top: -28px;
+            margin-left: -28px;
+            background-size: 56px 56px;
+            display: block;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .tile .tile-status {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 29px;
+            margin: 0;
+        }
+
+        .tile .tile-status .name {
+            display: block;
+            font-size: 10pt;
+            margin: 5px 20px 5px 5px;
+            background: transparent;
+            color: #ffffff;
+        }
+
+        .tile:hover {
+            outline: #999999 solid 3px;
+        }
+
+        .icon-SBCB {
+            background: url('@Url.Content("~/Content/img/apps/consulta-banca-mundial.png")') no-repeat;
+        }
+
+        .icon-XCFT {
+            background: url('@Url.Content("~/Content/img/apps/fund-transfer.png")') no-repeat;
+        }
+
+        .icon-SWCO {
+            background: url('@Url.Content("~/Content/img/apps/consulta-msj-swift.png")') no-repeat;
+        }
+
+        .icon-SWEM {
+            background: url('@Url.Content("~/Content/img/apps/envio-msj-swift.png")') no-repeat;
+        }
+
+        .icon-XGPL {
+            background: url('@Url.Content("~/Content/img/apps/admin-planillas.png")') no-repeat;
+        }
+
+        .icon-XGSV {
+            background: url('@Url.Content("~/Content/img/apps/apli-supervisor.png")') no-repeat;
+        }
+
+        .icon-SWAU {
+            background: url('@Url.Content("~/Content/img/apps/autorizacion-swift.png")') no-repeat;
+        }
+
+        .icon-SWEN {
+            background: url('@Url.Content("~/Content/img/apps/encasillamiento.png")') no-repeat;
+        }
+
+        .icon-XEVA {
+            background: url('@Url.Content("~/Content/img/apps/busqueda-planilla.png")') no-repeat;
+        }
+
+        .icon-XGFD {
+            background: url('@Url.Content("~/Content/img/apps/fin-de-dia.png")') no-repeat;
+        }
+
+        .icon-XGID {
+            background: url('@Url.Content("~/Content/img/apps/inicio-dia.png")') no-repeat;
+        }
+
+        .icon-SWGC {
+            background: url('@Url.Content("~/Content/img/apps/gestion-y-control.png")') no-repeat;
+        }
+
+        .icon-SWMA {
+            background: url('@Url.Content("~/Content/img/apps/tabla-swift.png")') no-repeat;
+        }
+
+        .icon-SWSE {
+            background: url('@Url.Content("~/Content/img/apps/envio-msj-swift.png")') no-repeat;
+        }
+
+        .icon-XGGL {
+            background: url('@Url.Content("~/Content/img/apps/ingreso-asientos.png")') no-repeat;
+        }
+
+        .icon-XGCN {
+            background: url('@Url.Content("~/Content/img/apps/info-de-devengo.png")') no-repeat;
+        }
+
+        .icon-SWCE {
+            background: url('@Url.Content("~/Content/img/apps/admin-de-envio-automatico.png")') no-repeat;
+        }
+
+        .icon-SWRE {
+            background: url('@Url.Content("~/Content/img/apps/recepcion-swift.png")') no-repeat;
+        }
+
+        .icon-XCIN {
+            background: url('@Url.Content("~/Content/img/apps/control-integral.png")') no-repeat;
+        }
+
+        .icon-XGPY {
+            background: url('@Url.Content("~/Content/img/apps/admin-participantes.png")') no-repeat;
+        }
+
+        .icon-SWBO {
+            background: url('@Url.Content("~/Content/img/apps/eliminacion-masiva.png")') no-repeat;
+        }
+
+        .icon-SWG3 {
+            background: url('@Url.Content("~/Content/img/apps/generacion-mt300.png")') no-repeat;
+        }
+        
+        .icon-MT300GESTION {
+            background: url('@Url.Content("~/Content/img/apps/gestion-mt300.png")') no-repeat;
+        }
+
+        .icon-MT300PLANILLA {
+            background: url('@Url.Content("~/Content/img/apps/planillas-mt300.png")') no-repeat;
+        }
+
+        .icon-MT300CONSULTA {
+            background: url('@Url.Content("~/Content/img/apps/consulta-mt300.png")') no-repeat;
+        }        
+    </style>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".apps").hide();
+        });
+
+        function showGroup(id) {
+            $(".apps").hide();
+            $("#group-" + id).show();
+        }
+
+    </script>
+}
+
+<div class="row row-padding">
+    <!--SIDEBAR-->
+    <div class="navigation list-group comex-left-menu">
+        @foreach (var group in Model.Keys)
+        {
+            <a class="list-group-item" onclick="showGroup('@(group.id.ToString())')">@group.name<i class="glyphicon glyphicon-chevron-right pull-right"></i></a>
+        }
+    </div>
+    <!--CONTENIDO-->
+    <div class="col-xs-9">
+        <div class="body-content">
+            @foreach (var group in Model)
+            {
+                <div class="row apps" id="group-@(group.Key.id.ToString())" style="display: none">
+                    @foreach (var app in group.Value)
+                    {
+                        <a href="@Url.Action(app.action ?? "Index", app.controller ?? "Home", BCH.Comex.UI.Web.Controllers.HomeController.ParseRouteValues(app))" target="_blank">
+                            <div class="tile">
+                                <div class="tile-content icon">
+                                    <i class="icon-@app.id"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">@app.name</span>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/Imports">
+      <xsd:import namespace="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing" />
+      <xsd:import namespace="http://schemas.microsoft.com/2008/1/ActiveDirectory" />
+      <xsd:import namespace="http://schemas.microsoft.com/2006/11/IdentityManagement/DirectoryAccess" />
+      <xsd:import namespace="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/ws/2004/09/transfer" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetADGroupMemberRequest">
+    <wsdl:part name="parameters" element="tns:GetADGroupMemberRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADGroupMemberRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADGroupMemberResponse">
+    <wsdl:part name="parameters" element="tns:GetADGroupMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_GetADGroupMember_GetADGroupMemberFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADGroupMemberFault" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalGroupMembershipRequest">
+    <wsdl:part name="parameters" element="tns:GetADPrincipalGroupMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalGroupMembershipRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalGroupMembershipResponse">
+    <wsdl:part name="parameters" element="tns:GetADPrincipalGroupMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_GetADPrincipalGroupMembership_GetADPrincipalGroupMembershipFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADPrincipalGroupMembershipFault" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordRequest">
+    <wsdl:part name="parameters" element="tns:SetPasswordRequest" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordResponse">
+    <wsdl:part name="parameters" element="tns:SetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_SetPassword_SetPasswordFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SetPasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordRequest">
+    <wsdl:part name="parameters" element="tns:ChangePasswordRequest" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordResponse">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_ChangePassword_ChangePasswordFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ChangePasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalAuthorizationGroupRequest">
+    <wsdl:part name="parameters" element="tns:GetADPrincipalAuthorizationGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalAuthorizationGroupRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADPrincipalAuthorizationGroupResponse">
+    <wsdl:part name="parameters" element="tns:GetADPrincipalAuthorizationGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_GetADPrincipalAuthorizationGroup_GetADPrincipalAuthorizationGroupFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADPrincipalAuthorizationGroupFault" />
+  </wsdl:message>
+  <wsdl:message name="TranslateNameRequest">
+    <wsdl:part name="parameters" element="tns:TranslateNameRequest" />
+  </wsdl:message>
+  <wsdl:message name="TranslateNameRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="TranslateNameResponse">
+    <wsdl:part name="parameters" element="tns:TranslateNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountManagement_TranslateName_TranslateNameFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TranslateNameFault" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainControllerRequest">
+    <wsdl:part name="parameters" element="tns:GetADDomainControllerRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainControllerRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainControllerResponse">
+    <wsdl:part name="parameters" element="tns:GetADDomainControllerResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_GetADDomainController_GetADDomainControllerFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADDomainControllerFault" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainRequest">
+    <wsdl:part name="parameters" element="tns:GetADDomainRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADDomainResponse">
+    <wsdl:part name="parameters" element="tns:GetADDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_GetADDomain_GetADDomainFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADDomainFault" />
+  </wsdl:message>
+  <wsdl:message name="MoveADOperationMasterRoleRequest">
+    <wsdl:part name="parameters" element="tns:MoveADOperationMasterRoleRequest" />
+  </wsdl:message>
+  <wsdl:message name="MoveADOperationMasterRoleRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="MoveADOperationMasterRoleResponse">
+    <wsdl:part name="parameters" element="tns:MoveADOperationMasterRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_MoveADOperationMasterRole_MoveADOperationMasterRoleFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:MoveADOperationMasterRoleFault" />
+  </wsdl:message>
+  <wsdl:message name="GetADForestRequest">
+    <wsdl:part name="parameters" element="tns:GetADForestRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetADForestRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="GetADForestResponse">
+    <wsdl:part name="parameters" element="tns:GetADForestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_GetADForest_GetADForestFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetADForestFault" />
+  </wsdl:message>
+  <wsdl:message name="ChangeOptionalFeatureRequest">
+    <wsdl:part name="parameters" element="tns:ChangeOptionalFeatureRequest" />
+  </wsdl:message>
+  <wsdl:message name="ChangeOptionalFeatureRequest_Headers">
+    <wsdl:part name="Server" element="tns:Server" />
+  </wsdl:message>
+  <wsdl:message name="ChangeOptionalFeatureResponse">
+    <wsdl:part name="parameters" element="tns:ChangeOptionalFeatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_ChangeOptionalFeature_ChangeOptionalFeatureFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ChangeOptionalFeatureFault" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionRequest">
+    <wsdl:part name="parameters" element="tns:GetVersionRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionResponse">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopologyManagement_GetVersion_GetVersionFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GetVersionFault" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="AccountManagement">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADGroupMember">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADGroupMember" name="GetADGroupMemberRequest" message="tns:GetADGroupMemberRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADGroupMemberResponse" name="GetADGroupMemberResponse" message="tns:GetADGroupMemberResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADGroupMemberFault" message="tns:AccountManagement_GetADGroupMember_GetADGroupMemberFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADPrincipalGroupMembership">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalGroupMembership" name="GetADPrincipalGroupMembershipRequest" message="tns:GetADPrincipalGroupMembershipRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalGroupMembershipResponse" name="GetADPrincipalGroupMembershipResponse" message="tns:GetADPrincipalGroupMembershipResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADPrincipalGroupMembershipFault" message="tns:AccountManagement_GetADPrincipalGroupMembership_GetADPrincipalGroupMembershipFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetPassword">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/SetPassword" name="SetPasswordRequest" message="tns:SetPasswordRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/SetPasswordResponse" name="SetPasswordResponse" message="tns:SetPasswordResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="SetPasswordFault" message="tns:AccountManagement_SetPassword_SetPasswordFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ChangePassword">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/ChangePassword" name="ChangePasswordRequest" message="tns:ChangePasswordRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/ChangePasswordResponse" name="ChangePasswordResponse" message="tns:ChangePasswordResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="ChangePasswordFault" message="tns:AccountManagement_ChangePassword_ChangePasswordFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADPrincipalAuthorizationGroup">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalAuthorizationGroup" name="GetADPrincipalAuthorizationGroupRequest" message="tns:GetADPrincipalAuthorizationGroupRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/GetADPrincipalAuthorizationGroupResponse" name="GetADPrincipalAuthorizationGroupResponse" message="tns:GetADPrincipalAuthorizationGroupResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADPrincipalAuthorizationGroupFault" message="tns:AccountManagement_GetADPrincipalAuthorizationGroup_GetADPrincipalAuthorizationGroupFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="TranslateName">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/TranslateName" name="TranslateNameRequest" message="tns:TranslateNameRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/AccountManagement/TranslateNameResponse" name="TranslateNameResponse" message="tns:TranslateNameResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="TranslateNameFault" message="tns:AccountManagement_TranslateName_TranslateNameFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="true" name="TopologyManagement">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADDomainController">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomainController" name="GetADDomainControllerRequest" message="tns:GetADDomainControllerRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomainControllerResponse" name="GetADDomainControllerResponse" message="tns:GetADDomainControllerResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADDomainControllerFault" message="tns:TopologyManagement_GetADDomainController_GetADDomainControllerFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADDomain">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomain" name="GetADDomainRequest" message="tns:GetADDomainRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADDomainResponse" name="GetADDomainResponse" message="tns:GetADDomainResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADDomainFault" message="tns:TopologyManagement_GetADDomain_GetADDomainFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MoveADOperationMasterRole">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/MoveADOperationMasterRole" name="MoveADOperationMasterRoleRequest" message="tns:MoveADOperationMasterRoleRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/MoveADOperationMasterRoleResponse" name="MoveADOperationMasterRoleResponse" message="tns:MoveADOperationMasterRoleResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="MoveADOperationMasterRoleFault" message="tns:TopologyManagement_MoveADOperationMasterRole_MoveADOperationMasterRoleFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetADForest">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADForest" name="GetADForestRequest" message="tns:GetADForestRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetADForestResponse" name="GetADForestResponse" message="tns:GetADForestResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetADForestFault" message="tns:TopologyManagement_GetADForest_GetADForestFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ChangeOptionalFeature">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/ChangeOptionalFeature" name="ChangeOptionalFeatureRequest" message="tns:ChangeOptionalFeatureRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/ChangeOptionalFeatureResponse" name="ChangeOptionalFeatureResponse" message="tns:ChangeOptionalFeatureResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="ChangeOptionalFeatureFault" message="tns:TopologyManagement_ChangeOptionalFeature_ChangeOptionalFeatureFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetVersion">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetVersion" name="GetVersionRequest" message="tns:GetVersionRequest" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions/TopologyManagement/GetVersionResponse" name="GetVersionResponse" message="tns:GetVersionResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/2008/1/ActiveDirectory/Data/fault" name="GetVersionFault" message="tns:TopologyManagement_GetVersion_GetVersionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

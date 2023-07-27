@@ -1,0 +1,254 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\CodeArchitects.VBLibrary.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\DocumentFormat.OpenXml.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\ADODB.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\CodeArchitects.VBLibrary.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\DocumentFormat.OpenXml.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\ADODB.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.xml
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\ADODB.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\System.Web.Mvc.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\System.Web.Mvc.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\ADODB.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\System.Web.Mvc.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWG3.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\SpreadsheetLight.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWSE.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI300.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI200.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Utils.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.BL.SWI102.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\System.Web.Mvc.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\bin\Debug\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.MT300Gestion\obj\Debug\BCH.Comex.Core.BL.MT300Gestion.pdb

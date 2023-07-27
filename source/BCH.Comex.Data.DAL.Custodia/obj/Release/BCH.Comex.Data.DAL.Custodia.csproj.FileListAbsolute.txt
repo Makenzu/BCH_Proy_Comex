@@ -1,0 +1,66 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Data.DAL.Custodia\obj\Release\BCH.Comex.Data.DAL.Custodia.pdb

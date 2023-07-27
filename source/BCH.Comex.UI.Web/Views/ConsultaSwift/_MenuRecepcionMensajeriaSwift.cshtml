@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Titulo = "Página Principal - Administración Participantes";
+    BCH.Comex.Core.BL.SWEM.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+<div class="container" id="header_layout">
+    <div class="row" id="texto_func">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Opciones <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Opciones">                     
+                        @foreach (var item in Mdi_Principal.Opciones)
+                        {
+                            if (item.Tag == "separator")
+                            {
+                                <li role="separator" class="divider"></li>
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <li class="dropdown disabled">
+                                        <a id="@item.ID" href="#">
+                                            @item.Text
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="dropdown">
+                                        <a id="@item.ID" href="@Url.Content((string)item.Tag)">
+                                            @item.Text
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Mensajes <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Mensajes">
+                        @*<li><a href="~/ConsultaSwift/RecibirMensajes">Recibir Mensajes</a></li>*@
+                        @foreach (var item in Mdi_Principal.Mensajes)
+                        {
+                            if (item.Tag == "separator")
+                            {
+                                <li role="separator" class="divider"></li>
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <li class="dropdown disabled">
+                                        <a id="@item.ID" href="#">
+                                            @item.Text
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="dropdown">
+                                        <a id="@item.ID" href="@Url.Content((string)item.Tag)">
+                                            @item.Text
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/ConsultaSwift/RecepcionMensajeriaSwift.Index.js"></script>
+}

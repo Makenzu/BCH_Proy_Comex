@@ -1,0 +1,78 @@
+﻿<div id="RelacionarOperacion" class="container">
+    <h3 id="caption">Asociación Operación @ViewBag.Caption</h3>
+    <div class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label class="col-sm-0 control-label">Identificación Operación</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-8">
+                        <div class="input-group input-group-sm">
+                            <input type="text" tabindex="2" min="0" max="99" id="Tx_NumOpe_000" maxlength="3" class="form-control" data-bind="enable:Tx_NumOpe_000.Enabled, value: Tx_NumOpe_000.Text, event:{change:Tx_NumOpe_000_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9' ,'repeat': 3, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" tabindex="3" min="0" max="99" id="Tx_NumOpe_001" maxlength="2" class="form-control" data-bind="enable:Tx_NumOpe_001.Enabled, value: Tx_NumOpe_001.Text, event:{change:Tx_NumOpe_001_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 2, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" tabindex="4" min="0" max="99" id="Tx_NumOpe_002" maxlength="2" class="form-control" data-bind="enable:Tx_NumOpe_002.Enabled, value: Tx_NumOpe_002.Text, event:{change:Tx_NumOpe_002_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 2, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" min="0" max="99" id="Tx_NumOpe_003" maxlength="3" class="form-control" data-bind="enable:Tx_NumOpe_003.Enabled, value: Tx_NumOpe_003.Text, event:{change:Tx_NumOpe_003_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 3, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" tabindex="5" min="0" max="99" id="Tx_NumOpe_004" maxlength="5" class="form-control" data-bind="enable:Tx_NumOpe_004.Enabled, value: Tx_NumOpe_004.Text, event:{change:Tx_NumOpe_004_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 5, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" min="0" max="99" id="Tx_NumOpe_005" maxlength="2" class="form-control" data-bind="enable:Tx_NumOpe_005.Enabled, value: Tx_NumOpe_005.Text, event:{change:Tx_NumOpe_005_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 2, 'greedy' : false" />
+                            <div class="input-group-addon">-</div>
+                            <input type="text" min="0" max="99" id="Tx_NumOpe_006" maxlength="2" class="form-control" data-bind="enable:Tx_NumOpe_006.Enabled, value: Tx_NumOpe_006.Text, event:{change:Tx_NumOpe_006_blur}, valueUpdate:['afterkeydown']" data-inputmask="'mask': '9','repeat': 2, 'greedy' : false" />
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="submit" tabindex="6" id="btn_ok" name="Command" value="btn_ok" class="btn btn-success" data-bind="click: btn_ok_click">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-primary" id="Boton_000" tabindex="7" style="width:80px;margin-left: -64px;" data-bind="enable:Boton_000.Enabled, event:{click:btn_aceptar_click}">Aceptar</button>
+                        <button class="btn btn-default" style="width:80px" data-bind="event:{click:btn_cancelar_click}">Cancelar</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <select id="Cb_Producto" tabindex="1" data-bind="options: Cb_Producto.Items, optionsText: 'Value', optionsValue: 'Data', value: Cb_Producto.SelectedValue, event:{change:Cb_Producto_blur}" class="form-control input-sm"></select>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Información del Cliente</legend>
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label>R.U.T del Cliente</label>
+                        </div>
+                        <div class=" col-xs-2">
+                            <input type="text" id="Tx_RutPrt" class="form-control input-sm" style="width: 180px;" data-bind="value: Tx_RutPrt.Text" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label>Nombre del Cliente</label>
+                        </div>
+                        <div class=" col-xs-4">
+                            <input type="text" id="Tx_NomPrt" class="form-control input-sm" style="width: 360px;" data-bind="value: Tx_NomPrt.Text" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label>Dirección del Cliente</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input type="text" id="Tx_DirPrt" class="form-control input-sm" style="width: 360px;" data-bind="value: Tx_DirPrt.Text" disabled="disabled" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/RelacionarOperacion")
+}

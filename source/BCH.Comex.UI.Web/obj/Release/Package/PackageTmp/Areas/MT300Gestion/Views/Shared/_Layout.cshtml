@@ -1,0 +1,52 @@
+﻿@using BCH.Comex.Common.UI_Modulos;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Gestión de Mensajes MT300";
+}
+
+<div class="container" id="msg-zone" style="padding-top: 20px;">
+    @{
+        if (Model != null && Model.ListaMensajes != null)
+        {
+            foreach (var item in Model.ListaMensajes)
+            {
+                string tipo = String.Empty;
+                if (item.Type != TipoMensaje.Nada)
+                {
+                    if (item.Type == TipoMensaje.Informacion)
+                    {
+                        tipo = "alert-info";
+                    }
+                    else if (item.Type == TipoMensaje.Correcto)
+                    {
+                        tipo = "alert-success";
+                    }
+                    else if ((item.Type == TipoMensaje.Error) || (item.Type == TipoMensaje.Critical))
+                    {
+                        tipo = "alert-danger";
+                    }
+                    <div class="alert @tipo">
+                        <a class="close" data-dismiss="alert">×</a>
+                        <span>
+                            <strong>@item.Title </strong> @item.Text
+                        </span>
+                    </div>
+                }
+            }
+        }
+    }
+</div>
+
+@RenderBody()
+
+@section scripts{
+    @*@Scripts.Render("~/bundles/GeneracionMT300/Layout")*@
+    @RenderSection("scripts", false)
+}
+
+@section css{
+    @Styles.Render("~/Content/css/layout.css")
+    @RenderSection("css", required: false)
+}
+
+

@@ -1,0 +1,62 @@
+﻿<div id="modalConfirmYesNo" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 id="lblTitleConfirmYesNo" class="modal-title">Advertencia</h4>
+            </div>
+            <div class="modal-body">
+                <p id="lblMsgConfirmYesNo"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnYesConfirmYesNo"
+                        type="button" class="btn btn-primary">
+                    Yes
+                </button>
+                <button id="btnNoConfirmYesNo"
+                        type="button" class="btn btn-default">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function AsyncConfirmYesNo(title, msg, yesFn, noFn) {
+        var $confirm = $("#modalConfirmYesNo");
+        $confirm.modal('show');
+        $("#lblTitleConfirmYesNo").html(title);
+        $("#lblMsgConfirmYesNo").html(msg);
+        $("#btnYesConfirmYesNo").off('click').click(function () {
+            yesFn();
+            $confirm.modal("hide");
+        });
+        $("#btnNoConfirmYesNo").off('click').click(function () {
+            noFn();
+            $confirm.modal("hide");
+        });
+    }
+
+    function ShowConfirmYesNo() {
+        AsyncConfirmYesNo(
+            "Yes & No Confirmation Box",
+            "Are you hungry?",
+            MyYesFunction,
+            MyNoFunction
+        );
+    }
+
+    function MyYesFunction() {
+        alert("Time to get off your workstation!");
+        $("#lblTestResult").html("You are hungry");
+    }
+
+    function MyNoFunction() {
+        alert("Well... just continue working.");
+        $("#lblTestResult").html("You are not hungry");
+    }
+</script>

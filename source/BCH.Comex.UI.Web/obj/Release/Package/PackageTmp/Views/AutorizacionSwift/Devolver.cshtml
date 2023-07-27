@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Devolver";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/autorizacion-swift-inv.png");
+    Layout = null;
+}
+<div class="row">
+    @using (Html.BeginForm("GrabaDevolver", "AutorizacionSwift", FormMethod.Post, new { id = "frmDevolucion", @class = "form-horizontal well", @style = "margin-left: 10px; margin-right: 10px", @role = "form" }))
+    {
+        <div class="form-group">
+            <label style="text-align:left" for="comentario">Usted procederá a Devolver un mensaje porque no le corresponde a Ud. firmarlo. Acepta la total Responsabilidad de la Devolución?</label>            
+        </div>
+        <div class="form-group">
+            @Html.Hidden("idMensajeDevolver", (object)ViewBag.IdMensaje)
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12" style="margin-top: 20px;">
+                <button class="btn btn-primary pull-right" id="btnAceptar">Aceptar</button>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $('#frmDevolucion').submit(function (e) {
+        var url = '@Url.Action("GrabaDevolver", "AutorizacionSwift")';
+        var idMensaje = $('#idMensajeDevolver').val();
+        //var formData = JSON.stringify($("#frmDevolucion").serializeArray());
+        $.post(url, { idMensaje : idMensaje }, function (data) {
+            //success
+            $('#pnlBotones').hide();
+            $('#modalDevolverSwift').modal('toggle');
+            $('#modalSwiftSuccess').modal();
+            $('#txtTitleModal').text("Deshacer encasillamiento manual");
+            $('#txtSuccess').text("Se devolvió con éxito el mensaje Nº" + idMensaje);
+        });
+        e.preventDefault();
+    });
+</script>

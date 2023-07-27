@@ -1,0 +1,27 @@
+﻿@using System.Collections;
+@using System.Web.Mvc;
+
+
+@model BCH.Comex.Common.UI_Modulos.UI_TextBox
+
+@{
+    var htmlAttributes = (object)ViewData["htmlAttributes"];
+    var newAttrs = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
+    if (!Model.Enabled)
+    {
+        newAttrs.Add("disabled", "disabled");
+    }
+    if (Model.EsTextArea)
+    {
+        newAttrs.Add("rows", Model.Rows);
+    }
+}
+@if (!Model.EsTextArea)
+{ 
+    @Html.TextBoxFor(model => model.Text, @newAttrs)
+}
+else
+{
+    @Html.TextAreaFor(model => model.Text, @newAttrs)
+}

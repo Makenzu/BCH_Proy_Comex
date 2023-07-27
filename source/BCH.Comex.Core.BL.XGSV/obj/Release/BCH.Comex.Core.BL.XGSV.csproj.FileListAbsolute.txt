@@ -1,0 +1,275 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\MigrationSupport.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.Web.Services3.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\ADODB.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\af\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\ar\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\bg\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\bn-BD\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\cs\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\da\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\de\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\el\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\es\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\fa\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\fi-FI\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\fr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\fr-BE\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\he\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\hu\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\id\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\it\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\ja\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\nb\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\nb-NO\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\nl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\pl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\pt\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\ro\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\ru\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\sk\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\sl\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\sr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\sr-Latn\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\sv\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\tr\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\uk\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\vi\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\zh-CN\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hans\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hant\Humanizer.resources.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\MigrationSupport.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.Web.Services3.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\ADODB.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\System.Web.Mvc.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\System.Web.Mvc.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\af\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\ar\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\bg\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\bn-BD\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\cs\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\da\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\de\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\el\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\es\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\fa\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\fi-FI\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\fr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\fr-BE\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\he\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\hu\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\id\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\it\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\ja\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\nb\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\nb-NO\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\nl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\pl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\pt\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\ro\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\ru\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\sk\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\sl\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\sr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\sr-Latn\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\sv\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\tr\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\uk\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\vi\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\zh-CN\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hans\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hant\Humanizer.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\bin\Release\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XGSV.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\DocumentFormat.OpenXml.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\MigrationSupport.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.Web.Services3.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\ADODB.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\System.Web.Mvc.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.BL.XEGI.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.Services.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\Humanizer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\SpreadsheetLight.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\System.Web.Mvc.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\af\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\ar\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\bg\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\bn-BD\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\cs\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\da\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\de\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\el\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\es\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\fa\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\fi-FI\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\fr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\fr-BE\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\he\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\hu\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\id\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\it\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\ja\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\nb\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\nb-NO\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\nl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\pl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\pt\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\ro\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\ru\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\sk\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\sl\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\sr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\sr-Latn\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\sv\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\tr\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\uk\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\uz-Latn-UZ\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\vi\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\zh-CN\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hans\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\zh-Hant\Humanizer.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\bin\Release\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.XGSV\obj\Release\BCH.Comex.Core.BL.XGSV.pdb

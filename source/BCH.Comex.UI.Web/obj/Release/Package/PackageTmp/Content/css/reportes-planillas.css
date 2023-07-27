@@ -1,0 +1,56 @@
+﻿/* Estilos para XGPL - Administrador Planillas, Reportes */
+.monto {
+    text-align: right;
+}
+
+table.tabla-reporte {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    min-width: 700px;
+}
+
+table.tabla-reporte thead tr:first-child th {
+    border-top: 4px double black;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+
+table.tabla-reporte thead tr:last-child th {
+    border-bottom: 4px double black;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+
+table.tabla-reporte tfoot tr:first-child td {
+    border-top: 4px double black;
+    border-bottom: 4px double black;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+
+table.tabla-reporte td {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: thin solid;
+    border-bottom: thin solid;
+}
+
+table.tabla-reporte-carta {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+
+table.tabla-reporte-carta thead {
+    border: 1px solid;
+}
+
+table.tabla-reporte-carta td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table.tabla-reporte-carta tr.titulos {
+    text-transform: uppercase;
+}

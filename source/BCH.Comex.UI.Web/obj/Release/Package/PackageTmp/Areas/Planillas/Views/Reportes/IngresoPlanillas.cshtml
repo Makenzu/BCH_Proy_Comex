@@ -1,0 +1,89 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.IngresoPlanillasViewModel
+    @{ 
+        ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+    }
+
+<div class="row" id="divIngresoPlanillas">
+
+    <div class="alert alert-danger hidden" role="alert" id="notFoundError">No existen planillas de importación para el número de presentación y fecha de presentación ingresados.</div>
+    
+    @using (Html.BeginForm("IngresoPlanillas", "Reportes", FormMethod.Post, new { id = "formIngresoPlanillas" }))
+    {
+        <div class="col-xs-4">
+            <fieldset>
+                <legend>Tipo planilla</legend>
+                <div class="radio">
+                    <label><input type="radio" name="tipoPlanilla" value="I" checked /> Importación</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="tipoPlanilla" value="E" /> Exportación</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.NumeroPresentacion)
+                @Html.EditorFor(m => m.NumeroPresentacion, new { htmlAttributes = new { @class = "form-control input-sm", autofocus = "true",  maxlength = "6", data_inputmask = "'mask': '9','repeat': 6, 'greedy' : false" } })
+                @Html.ValidationMessageFor(m => m.NumeroPresentacion)
+            </div>
+
+            <div class="form-group" id="grpFechaPresentacion">
+                <label for="FechaPresentacion">Fecha de presentación</label>
+                <div class="input-group date" id="dtpFechaPresentacion">
+                    <input type="text" class="form-control" id="txtFechaPresentacion" name="FechaPresentacion" value="@(DateTime.Now)" data-inputmask="'alias': 'date'" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <label class="control-label has-error" style="display:none" id="lblErrorFechaPresentacion"></label>
+            </div>
+            <button type="submit" class="btn btn-default" id="btnBuscar">Buscar</button>
+        </div>
+    }
+</div>
+
+@*<div class="row">*@
+    <div class="form-group col-xs-4">
+        @Html.LabelFor(m => m.NumeroPlanilla)
+        @Html.EditorFor(m => m.NumeroPlanilla, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+        @Html.ValidationMessageFor(m => m.NumeroPlanilla)
+    </div>
+    <div class="form-group col-xs-4">
+        @Html.LabelFor(m => m.MontoUSD)
+        @Html.EditorFor(m => m.MontoUSD, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+        @Html.ValidationMessageFor(m => m.MontoUSD)
+    </div>
+@*</div>*@
+
+@section scripts{
+    <script type="text/javascript">
+        
+        $(function () {
+                      
+            $('#formIngresoPlanillas').submit(function () {
+                if ($(this).valid()) {
+                    $.ajax({
+                        url: this.action,
+                        type: this.method,
+                        data: $(this).serialize(),
+                        success: function (result) {
+                            $('input[name="NumeroPlanilla"]').val(result.NumeroPlanilla);
+                            $('input[name="MontoUSD"]').val(result.MontoUSD);
+                            resultGlobal = result;
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            $('#notFoundError').show().removeClass('hidden');
+                        }
+
+                    });
+                }
+                return false;
+            });
+
+            var dateNow = new Date();
+            $('#dtpFechaPresentacion').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow });
+            $(":input").inputmask();
+        });
+    </script>
+
+}

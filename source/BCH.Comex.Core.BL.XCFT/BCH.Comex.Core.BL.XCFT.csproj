@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FC71E10-F313-4856-A815-2D2611434CE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCH.Comex.Core.BL.XCFT</RootNamespace>
+    <AssemblyName>BCH.Comex.Core.BL.XCFT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureTest|AnyCPU'">
+    <OutputPath>bin\AzureTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISTest|AnyCPU'">
+    <OutputPath>bin\IISTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IISRelease2|AnyCPU' ">
+    <OutputPath>bin\IISRelease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IISDesa|AnyCPU'">
+    <OutputPath>bin\IISDesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestBanco|AnyCPU' ">
+    <OutputPath>bin\TestBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Desarrollo|AnyCPU' ">
+    <OutputPath>bin\DesaBanco\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BCH.Certificacion|AnyCPU' ">
+    <OutputPath>bin\BCH.Certificacion\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Arkanosoft|AnyCPU'">
+    <OutputPath>bin\Arkanosoft\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BCH.SIT|AnyCPU'">
+    <OutputPath>bin\BCH.SIT\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ArkanoQA|AnyCPU'">
+    <OutputPath>bin\ArkanoQA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeArchitects.VBLibrary">
+      <HintPath>..\References\CodeArchitects.VBLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SpreadsheetLight">
+      <HintPath>..\packages\SpreadsheetLight.3.4.4\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Forms\FrmFact.cs" />
+    <Compile Include="Forms\frmganu.cs" />
+    <Compile Include="Forms\FrmgAso.cs" />
+    <Compile Include="Forms\Frmgnota.cs" />
+    <Compile Include="Forms\FrmGrev_Declaracion_Logic.cs" />
+    <Compile Include="Forms\frmnroa.cs" />
+    <Compile Include="Forms\frmOfi.cs" />
+    <Compile Include="Forms\FrmxAnu.cs" />
+    <Compile Include="Forms\FrmxPln0.cs" />
+    <Compile Include="Forms\Frmgrev_Logic.cs" />
+    <Compile Include="Forms\Frm_Anu_Vi.cs" />
+    <Compile Include="Forms\Frm_Arbitrajes_Logic.cs" />
+    <Compile Include="Forms\Frm_Chq_Logic.cs" />
+    <Compile Include="Forms\Frm_ChVrf.cs" />
+    <Compile Include="Forms\Frm_Comercio_Invisible_Logic.cs" />
+    <Compile Include="Forms\Frm_Comisiones.cs" />
+    <Compile Include="Forms\Frm_Consulta.cs" />
+    <Compile Include="Forms\Frm_Con_Participantes.cs" />
+    <Compile Include="Forms\Frm_Crea_Participante.cs" />
+    <Compile Include="Forms\Frm_Cta_Logic.cs" />
+    <Compile Include="Forms\Frm_Destino_Fondos_Logic.cs" />
+    <Compile Include="Forms\Frm_Iden_Participantes.cs" />
+    <Compile Include="Forms\Frm_Ingreso_Valores_Logic.cs" />
+    <Compile Include="Forms\Frm_Origen_Fondos_Logic.cs" />
+    <Compile Include="Forms\Frm_Participantes.cs" />
+    <Compile Include="Forms\Frm_Parti_No.cs" />
+    <Compile Include="Forms\Frm_Pln_cob.cs" />
+    <Compile Include="Forms\Frm_Pln_VisExp.cs" />
+    <Compile Include="Forms\Frm_Pln_Invisible.cs" />
+    <Compile Include="Forms\Frm_PlvSO.cs" />
+    <Compile Include="Forms\Frm_Rem_PVI.cs" />
+    <Compile Include="Forms\Frm_Swf0.cs" />
+    <Compile Include="Forms\Frm_Ticket_Logic.cs" />
+    <Compile Include="Forms\Frm_VisE_Logic.cs" />
+    <Compile Include="FundTransferService.cs" />
+    <Compile Include="Modulos\mdi_PrincipalLogic.cs" />
+    <Compile Include="Modulos\Mdl_Acceso.cs" />
+    <Compile Include="Modulos\Mdl_Funciones.cs" />
+    <Compile Include="Modulos\Mdl_Funciones_Varias.cs" />
+    <Compile Include="Modulos\MODABDC.cs" />
+    <Compile Include="Modulos\MODANUVI.cs" />
+    <Compile Include="Modulos\MODCARAB.cs" />
+    <Compile Include="Modulos\MODCARMAS.cs" />
+    <Compile Include="Modulos\MODCHQI.cs" />
+    <Compile Include="Modulos\ModChVrf.cs" />
+    <Compile Include="Modulos\MODCONT.cs" />
+    <Compile Include="Modulos\MODCVDIM.cs" />
+    <Compile Include="Modulos\MODCVDIMMM.cs" />
+    <Compile Include="Modulos\MODGANU.cs" />
+    <Compile Include="Modulos\MODGARB.cs" />
+    <Compile Include="Modulos\MODGASO.cs" />
+    <Compile Include="Modulos\MODGCHQ.cs" />
+    <Compile Include="Modulos\MODGCON0.cs" />
+    <Compile Include="Modulos\MODGCON1.cs" />
+    <Compile Include="Modulos\MODGCVD.cs" />
+    <Compile Include="Modulos\MODGEX40.cs" />
+    <Compile Include="Modulos\MODGFRA.cs" />
+    <Compile Include="Modulos\MODGFYS.cs" />
+    <Compile Include="Modulos\MODGMEM.cs" />
+    <Compile Include="Modulos\MODGMTA.cs" />
+    <Compile Include="Modulos\MODGNCTA.cs" />
+    <Compile Include="Modulos\MODGPLI1.cs" />
+    <Compile Include="Modulos\MODGPYF0.cs" />
+    <Compile Include="Modulos\MODGPYF1.cs" />
+    <Compile Include="Modulos\MODGPYF2.cs" />
+    <Compile Include="Modulos\MODGRNG.cs" />
+    <Compile Include="Modulos\MODGSCE.cs" />
+    <Compile Include="Modulos\MODGSWF.cs" />
+    <Compile Include="Modulos\MODGSYB.cs" />
+    <Compile Include="Modulos\MODGTAB0.cs" />
+    <Compile Include="Modulos\MODGTAB1.cs" />
+    <Compile Include="Modulos\MODGUSR.cs" />
+    <Compile Include="Modulos\MODPREEM.cs" />
+    <Compile Include="Modulos\ModSaldo.cs" />
+    <Compile Include="Modulos\MODSWENN.cs" />
+    <Compile Include="Modulos\MODSYGETPRT.cs" />
+    <Compile Include="Modulos\Module1.cs" />
+    <Compile Include="Modulos\MODVPLE.cs" />
+    <Compile Include="Modulos\MODXANU.cs" />
+    <Compile Include="Modulos\MODXORI.cs" />
+    <Compile Include="Modulos\MODXPLN0.cs" />
+    <Compile Include="Modulos\MODXPLN1.cs" />
+    <Compile Include="Modulos\MODXSWF.cs" />
+    <Compile Include="Modulos\MODXVIA.cs" />
+    <Compile Include="Printer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ExcelDataExporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCH.Comex.Common\BCH.Comex.Common.csproj">
+      <Project>{889f7437-c885-4877-a730-70442ae318f5}</Project>
+      <Name>BCH.Comex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWI200\BCH.Comex.Core.BL.SWI200.csproj">
+      <Project>{dba06ed1-3167-45fa-b24f-b56106189b10}</Project>
+      <Name>BCH.Comex.Core.BL.SWI200</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.SWI300\BCH.Comex.Core.BL.SWI300.csproj">
+      <Project>{ff1661e1-5b94-474b-95a9-2a0f42b163ad}</Project>
+      <Name>BCH.Comex.Core.BL.SWI300</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.BL.XEGI\BCH.Comex.Core.BL.XEGI.csproj">
+      <Project>{39767bcc-5ee0-464c-9594-868d50f36ecd}</Project>
+      <Name>BCH.Comex.Core.BL.XEGI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Cext01\BCH.Comex.Core.Entities.Cext01.csproj">
+      <Project>{4169ac2f-554b-4f30-8405-2f3f0fae44c0}</Project>
+      <Name>BCH.Comex.Core.Entities.Cext01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Portal\BCH.Comex.Core.Entities.Portal.csproj">
+      <Project>{256d32fc-c4a9-43d8-be75-785f1b569a15}</Project>
+      <Name>BCH.Comex.Core.Entities.Portal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Core.Entities.Swift\BCH.Comex.Core.Entities.Swift.csproj">
+      <Project>{ce544081-c6b2-4c2d-9236-4ff67bfefbdf}</Project>
+      <Name>BCH.Comex.Core.Entities.Swift</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Cext01\BCH.Comex.Data.DAL.Cext01.csproj">
+      <Project>{6e498f57-b0e7-4e37-b7b3-d78fe9e8039c}</Project>
+      <Name>BCH.Comex.Data.DAL.Cext01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Portal\BCH.Comex.Data.DAL.Portal.csproj">
+      <Project>{4b677a27-be65-4f98-81f0-eb6255579414}</Project>
+      <Name>BCH.Comex.Data.DAL.Portal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Services\BCH.Comex.Data.DAL.Services.csproj">
+      <Project>{7e90823f-f3db-473c-b4b9-a787eaaa7643}</Project>
+      <Name>BCH.Comex.Data.DAL.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL.Swift\BCH.Comex.Data.DAL.Swift.csproj">
+      <Project>{5aea2fe8-30f6-49a8-872b-84e9b3682414}</Project>
+      <Name>BCH.Comex.Data.DAL.Swift</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Data.DAL\BCH.Comex.Data.DAL.csproj">
+      <Project>{e54bd458-deaa-462c-ab9b-25b0f39932e0}</Project>
+      <Name>BCH.Comex.Data.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCH.Comex.Utils\BCH.Comex.Utils.csproj">
+      <Project>{0be08b03-e9ed-4299-a163-ad2f51d04d9d}</Project>
+      <Name>BCH.Comex.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

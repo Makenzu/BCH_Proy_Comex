@@ -1,0 +1,646 @@
+﻿@model BCH.Comex.UI.Web.Models.ConsultaSwift.DetalleSwiftEnviadoViewModel
+@{
+    Layout = null; //esto no hereda encabezado ni otros estilos
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/envio-msj-swift-inv.png");
+}
+
+<style>
+         #divComexDetalleSwift .header {
+    width: 100%;
+    height: 80px;
+    top:0px;
+	background-color: #002464;
+}
+
+	 #divComexDetalleSwift .header .tit {
+        color:white;
+		float: left;
+		display: block;
+		width: 253px;
+		height: 69px;
+		background-image: url('@Url.Content("~/content/img/logo-banco-chile.png")');
+		margin: 5px 0;
+    }
+
+
+        #divComexDetalleSwift {
+            text-align: left !important;
+            line-height: normal !important;
+        }
+
+            #divComexDetalleSwift p {
+                margin: 0 0 0 0;
+            }
+
+            #divComexDetalleSwift .textogeneral {
+                color: #003366;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+            }
+
+            #divComexDetalleSwift .textopiepag {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #003366;
+            }
+
+            #divComexDetalleSwift .bordecampos {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                color: #000066;
+                border: 1px solid #9AA3C0;
+                width: auto;
+            }
+
+            #divComexDetalleSwift .bordecampos2 {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #000099;
+                border: 1px solid #9AA3C0;
+                width: 15px;
+            }
+
+            #divComexDetalleSwift .encabezadotabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-weight: bold;
+                color: #000066;
+                background-color: #C6D5EC;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #9EB5D8;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: #DAE5F7;
+                border-right-style: none;
+                border-left-style: none;
+            }
+
+            #divComexDetalleSwift .textolegal {
+                color: #666666;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 9px;
+            }
+
+            #divComexDetalleSwift .encabezadotop1 {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                font-weight: bold;
+                color: #2278CE;
+            }
+
+            #divComexDetalleSwift .encabezadotop2 {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                font-weight: bold;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .tablacaja {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                background-color: #F2F2F2;
+            }
+
+            #divComexDetalleSwift td {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+            }
+
+            #divComexDetalleSwift select {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .linea1tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #f5f5f5;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #FFFFFF;
+            }
+
+            #divComexDetalleSwift .linea2tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #FFFFFF;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #f5f5f5;
+            }
+
+            #divComexDetalleSwift .subencabezadotabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-weight: bold;
+                color: #000066;
+                background-color: #E8E8E8;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #CAC6C6;
+                border-right-style: none;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-left-style: none;
+                border-top-color: #F3F0F0;
+            }
+
+            #divComexDetalleSwift .tablabordegris {
+                border: 1px solid #E4E4E4;
+            }
+
+            #divComexDetalleSwift body {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                background-color: #FFFFFF;
+            }
+
+            #divComexDetalleSwift tr {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+            }
+
+            #divComexDetalleSwift a:link {
+                color: #000099;
+                text-decoration: none;
+            }
+
+            #divComexDetalleSwift a:visited {
+                color: #000099;
+                text-decoration: none;
+            }
+
+            #divComexDetalleSwift a:hover {
+                color: #0000FF;
+                text-decoration: underline;
+            }
+
+            #divComexDetalleSwift a:active {
+                color: #000099;
+                text-decoration: none;
+            }
+
+            #divComexDetalleSwift .texto {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+            }
+
+            #divComexDetalleSwift .linea3tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #f5f5f5;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #CAC6C6;
+                border-top-width: 1px;
+                border-right-width: 1px;
+                border-left-width: 1px;
+                border-top-style: solid;
+                border-right-style: solid;
+                border-left-style: solid;
+                border-top-color: #FFFFFF;
+                border-right-color: #E4E4E4;
+                border-left-color: #E4E4E4;
+            }
+
+            #divComexDetalleSwift .linea4tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #f5f5f5;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #E4E4E4;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: #FFFFFF;
+            }
+
+            #divComexDetalleSwift .textoerror {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                color: #003366;
+            }
+
+            #divComexDetalleSwift .textotd {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+            }
+
+            #divComexDetalleSwift .textochico {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 9px;
+                color: #003366;
+            }
+
+            #divComexDetalleSwift .textdestacadoazul {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-weight: bold;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .linea5tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #f5f5f5;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: #E4E4E4;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: #FFFFFF;
+                font-weight: bold;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .textodestacado {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #003366;
+                font-weight: normal;
+            }
+
+            #divComexDetalleSwift .linea7tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                background-color: #F2F2F2;
+            }
+
+            #divComexDetalleSwift .linea6tabla {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-weight: bold;
+                color: #000066;
+                background-color: #F2F2F2;
+            }
+
+            #divComexDetalleSwift .textolegalpag {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+            }
+
+            #divComexDetalleSwift input {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift a.menu:link {
+                color: #000099;
+                text-decoration: underline;
+            }
+
+            #divComexDetalleSwift a.menu:visited {
+                color: #000099;
+                text-decoration: underline;
+            }
+
+            #divComexDetalleSwift a.menu:hover {
+                color: #0000FF;
+                text-decoration: underline;
+            }
+
+            #divComexDetalleSwift a.menu:active {
+                color: #000099;
+                text-decoration: underline;
+            }
+
+            #divComexDetalleSwift a.menu2:active {
+                color: #000099;
+                text-decoration: underline;
+                font-size: 9px;
+            }
+
+            #divComexDetalleSwift a.menu2:hover {
+                color: #000099;
+                text-decoration: underline;
+                font-size: 9px;
+            }
+
+            #divComexDetalleSwift a.menu2:link {
+                color: #000099;
+                text-decoration: underline;
+                font-size: 9px;
+            }
+
+            #divComexDetalleSwift a.menu2:visited {
+                color: #000099;
+                text-decoration: underline;
+                font-size: 9px;
+            }
+
+            #divComexDetalleSwift .txtchico {
+                <!-- -font-family: Verdana, Arial, Helvetica, sans-serif; -->
+                font-family: Courier New, Courier, mono;
+                font-size: 9px;
+                color: #000000;
+            }
+
+            #divComexDetalleSwift .datos {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .otros {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 18.0pt;
+                color: #000066;
+            }
+
+            #divComexDetalleSwift .otros2 {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 8.0pt;
+                color: #000066;
+            }
+</style>
+
+<div id="divComexDetalleSwift" class="ComexDetalleSwift">
+    <table width="95%" align="center" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td width="37%" height="24" valign="bottom" bgcolor="#333399"><span><big><strong><font color="#ffffff">BANCO DE CHILE</font></strong></big></span></td>
+            </tr>
+        </tbody>
+    </table>
+    @*<div class="row header">
+            <div class="tit"></div>
+        </div>*@
+
+    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="37%" height="24" valign="bottom" class="encabezadotop1"></td>
+            <td width="63%" height="24" align="right" class="encabezado"><span class="encabezadotop1">COMERCIO EXTERIOR</span></td>
+        </tr>
+        <tr valign="top" bgcolor="#000066">
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td height="25" class="encabezadotop2">&nbsp;</td>
+            <td height="25" align="right" class="encabezadotop2">EMISION DOCUMENTO SWIFT</td>
+        </tr>
+    </table>
+    <br>
+    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="100%">
+                            <table width="70%" border="0" align="right" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td height="15" align="right" class="texto" width="41%">
+                                        <p>Fecha</p>
+                                    </td>
+                                    <td width="4%">:</td>
+                                    <td width="55%">
+                                        <p>@DateTime.Now.ToShortDateString()</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="41%" height="15" align="right" class="texto"> Hora</td>
+                                    <td width="4%" class="texto">:</td>
+                                    <td width="55%" class="texto">@DateTime.Now.ToString("HH:mm:ss")</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="20">
+                                        <p><strong><i>Mensajer&iacute;a Swift</i></strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="500" border="0" cellspacing="2" cellpadding="0">
+                                            <tr>
+                                                <td width="120" nowrap>
+                                                    <strong>Tipo Mensaje</strong>
+                                                </td>
+                                                <td width="12"><strong>:</strong></td>
+                                                <td width="120">@Html.DisplayFor(m => m.Swift.tipo_msg)</td>
+                                                <td width="300">
+                                                    <b>Prioridad&nbsp;</b> : @BCH.Comex.UI.Web.Common.FormatUtils.PrioridadDesc(Model.Swift.prioridad, Model.Swift.tipo_msg)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="120">
+                                                    <strong>&nbsp;</strong>
+                                                </td>
+                                                <td width="12"><strong>&nbsp;</strong></td>
+                                                <td width="400">@Html.DisplayFor(m => m.Swift.nombre_tipo)</td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap><strong>Monto Asociado</strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td>
+                                                    @{
+                                                        double monto = (Model.Swift.monto.HasValue) ? Model.Swift.monto.Value : 0;
+                                                    }
+                                                    <p>@Html.DisplayFor(m => m.Swift.cod_moneda)  @monto.ToString("#,0.00")</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>&nbsp;</strong></td>
+                                                <td><strong>&nbsp;</strong></td>
+                                                <td height="15" colspan="3" class="txtchico"><p>(*Verifique monto en texto del mensaje) </p></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                    <td colspan="2" rowspan="15"></td>
+                                </tr>
+                                <tr>
+                                    <td height="1" bgcolor="#E4E4E4"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20">
+                                        <p><strong><i>Origen</i></strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="500" border="0" cellspacing="2" cellpadding="0">
+                                            <tr>
+                                                <td width="185">
+                                                    <p><strong>N&uacute;mero Mensaje</strong></p>
+                                                </td>
+                                                <td width="12"><strong>:</strong></td>
+                                                <td width="295">
+                                                    <p>@Model.Swift.id_mensaje</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Unidad </strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td><p>@Html.DisplayFor(m => m.Swift.nombre_casilla)</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Fecha Emisi&oacute;n</strong></p>
+                                                </td>
+                                                <td><strong>:</strong></td>
+                                                <td>
+                                                    <p>@Html.DisplayFor(m => m.Swift.fecha_ingr)   @Html.DisplayFor(m => m.Swift.hora_ingr)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p><strong>Banco Emisor</strong></p>
+                                                </td>
+                                                <td><strong>:</strong></td>
+                                                <td>
+                                                    <p>@(Model.Swift.CodigoYBranchEmisor)</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                    <td colspan="2" rowspan="15"></td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#E4E4E4"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20">
+                                        <p><strong><i>Destino</i></strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="500" border="0" cellspacing="2" cellpadding="0">
+                                            <tr>
+                                                <td width="120">
+                                                    <p> <strong>Banco Receptor </strong> </p>
+                                                </td>
+                                                <td width="7"><strong>:</strong></td>
+                                                <td width="122"><p>@(Model.Swift.CodigoYBranchReceptor)</p></td>
+                                                <td width="241">
+                                                    <p>@Html.DisplayFor(m => m.Swift.nombre_banco)-@Html.DisplayFor(m => m.Swift.ciudad_banco), @Html.DisplayFor(m => m.Swift.pais_banco)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p> <strong>Fecha Env&iacute;o </strong> </p>
+                                                </td>
+                                                <td><strong>:</strong></td>
+                                                <td nowrap><p>@Html.DisplayFor(m => m.Swift.fecha_env) @Html.DisplayFor(m => m.Swift.hora_env)</p></td>
+                                                <td>
+                                                    <p><strong>Sesi&oacute;n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </strong> @Html.DisplayFor(m => m.Swift.sesion)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>&nbsp;</strong></td>
+                                                <td><strong>&nbsp;</strong></td>
+                                                <td><strong>&nbsp;</strong></td>
+                                                <td> <strong>Secuencia :</strong> @Html.DisplayFor(m => m.Swift.secuencia)</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                </tr>
+                                <tr>
+                                    <td height="1" bgcolor="#E4E4E4"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20"></td>
+                                </tr>
+                                <tr>
+                                    <td height="20"><strong><i>Texto Mensaje</i></strong> </td>
+                                </tr>
+                                <tr>
+                                    <td height="20" class="textochico">
+                                        @if (Model.Swift.LineasDetalle != null)
+                                        {
+                                            <table>
+                                                @foreach (BCH.Comex.Core.Entities.Swift.LineaDetalleMensajeSwift linea in Model.Swift.LineasDetalle)
+                                                {
+                                                    <tr>
+                                                        <td width="2">@(linea.EsNuevaLineaDeCampo ? ":" : "-")</td>
+                                                        <td width="25">@linea.Codigo</td>
+                                                        <td width="2">@(linea.EsNuevaLineaDeCampo ? "/" : " ")</td>
+                                                        <td width="300">@linea.Descripcion</td>
+                                                        <td width="10">@(linea.EsNuevaLineaDeCampo ? ":" : " ")</td>
+                                                        <td width="475">@linea.Detalle</td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20">&nbsp;</td>
+                                </tr>
+                                @if (Model.Firmas != null && Model.Firmas.Count > 0)
+                                {
+                                    <tr>
+                                        <td height="20"></td>
+                                        <td colspan="2" rowspan="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="1" bgcolor="#E4E4E4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20">
+                                            <p><strong><i>Firmas autorizadas para el mensaje</i></strong></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20">
+                                            <ul>
+                                                @foreach (BCH.Comex.Core.Entities.Swift.sw_msgsend_firma firma in Model.Firmas)
+                                                {
+                                                    <li>@(firma.DescPersonaFirma + "     (" + firma.tipo_firma + ")")</li>
+                                                }
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

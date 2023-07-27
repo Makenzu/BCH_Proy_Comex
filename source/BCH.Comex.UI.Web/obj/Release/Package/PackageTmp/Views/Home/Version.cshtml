@@ -1,0 +1,24 @@
+﻿@model Dictionary<string, string>
+
+@{
+    ViewBag.Title = "Version";
+    ViewBag.Favicon = @Url.Content("~/favicon.ico");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Version</h2>
+
+<table class="table">
+    <tr>
+        <th>Type</th>
+        <th>Version</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Key</td>
+        <td>@item.Value</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,662 @@
+﻿@model BCH.Comex.UI.Web.Models.AutorizacionSwift.SolicitarFirmasViewModel
+@using System.Linq
+@{
+    ViewBag.Title = "Autorizar";
+    Layout = null;
+    bool esMultiple = Model.Multiple.Count > 1 ? true : false;
+}
+
+<div id="modalSolFirmasSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Autorización de mensaje Swift">
+    <div class="modal-dialog  modal-lg xlg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h4 class="modal-title" id="modalTitle">Autorizar Swift</h4>
+
+                <table id="tablaMensajes" class="table table-striped table-condensed"></table>
+
+            </div>
+            <div class="modal-body">
+
+                <div id="divConfirmacion" class="form-group" style="height: 100px">
+                    @if (!esMultiple)
+                    {
+                    <label style="text-align:left; margin-left: 30px" for="comentario">ATENCION, No es necesario solicitar mas firmas para el mensaje Nº @(Model.IdMensaje.ToString()) en este momento. ¿Quiere continuar esta operación?</label>
+                    }
+                    else
+                    {
+                        <label style="text-align:left; margin-left: 30px" for="comentario">ATENCION, No es necesario solicitar mas firmas para el mensaje Nº @(string.Join(",", Model.Multiple.Where(i => i.NecesitaConfirmacion == true).Select(i => i.IdMensaje))) en este momento. ¿Quiere continuar esta operación?</label>
+                    }
+                </div>
+                <div id="divPrincipal">
+                    <div id="alertasDentroModal"></div>
+                    <div>
+                        <div class="col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" data-toggle="collapse" href="#divFirmasSeccion">Selección de firmas</h3>
+                                </div>
+                                <div class="panel-body panel-collapse collapse in" id="divFirmasSeccion">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label class="control-label">Apellido:</label>
+                                            <input id="txtApellido" type="text" class="input-sm" size="38" maxlength="38" />
+                                            <button class="btn btn-info" id="btnBuscar" type="button" style="margin-bottom:0">Buscar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label class="control-label" id="LblApe" style="display:none">Usuarios: </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <table id="tablaUsuarios" class="table table-striped table-condensed col-xs-12"></table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" data-toggle="collapse" href="#divFirmasLocales">Firmas locales</h3>
+                                </div>
+                                <div class="panel-body panel-collapse collapse in" id="divFirmasLocales">
+                                    <table id="tablaFirmas" class="table table-striped table-condensed table-bordered">
+                                        <thead class="">
+                                            <tr>
+                                                <td>Nombre</td>
+                                                <td>Poder</td>
+                                                <td width="90" class="text-center">
+                                                    <a class="accionRow" title="Agregar todas las firmas"
+                                                       data-bind="click: solicitarTodasFirmasDesdeFirmasLocales"
+                                                       href="#"><i class="glyphicon glyphicon-forward"></i></a>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody data-bind="foreach: { data: FirmasLocales }">
+                                            <tr>
+                                                <td data-bind="text: Nombre"></td>
+                                                <td data-bind="text: Poder"></td>
+                                                <td>
+                                                    <a class="accionRow" title="Eliminar de firmas locales" data-bind="click: $parent.eliminarDeFirmasLocales" href="#"><i class="glyphicon glyphicon-star-empty"></i></a>
+                                                    &nbsp;&nbsp;
+                                                    <a class="accionRow" title="Agregar firma" data-bind="click: $parent.solicitarFirmaDesdeFirmasLocales" href="#"><i class="glyphicon glyphicon-forward"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" data-toggle="collapse" href="#divFirmasSolicitadas">Firmas solicitadas</h3>
+                                    </div>
+                                    <div class="panel-body panel-collapse collapse in" id="divFirmasSolicitadas">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <table id="tablaFirmas" class="table table-striped table-condensed table-bordered">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <td width="25" class="text-center">
+                                                                <a class="accionRow" title="Eliminar todas las firmas"
+                                                                   data-bind="click: eliminarTodasFirmas"
+                                                                   href="#"><i class="glyphicon glyphicon-backward"></i></a>
+                                                            </td>
+                                                            <td>Nombre</td>
+                                                            <td>Poder</td>
+                                                            <td>Firma/Revisa</td>
+                                                            <td>Estado</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody data-bind="foreach: { data: FirmasSolicitadas }">
+                                                        <tr>
+                                                            <td><a class="accionRow" title="Eliminar firma" data-bind="click: $parent.eliminarFirma" href="#"><i class="glyphicon glyphicon-backward"></i></a></td>
+                                                            <td data-bind="text: NombrePersonaFirma"></td>
+                                                            <td data-bind="text: tipo_firma"></td>
+                                                            <td>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" value="F" data-bind="checked: revisa_firma, attr: { name: 'radTipo' + $index() }, disable: tipo_firma() == null || tipo_firma().trim() == ''">F
+                                                                </label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" value="R" data-bind="checked: revisa_firma, attr: { name: 'radTipo' + $index() }">R
+                                                                </label>
+                                                            </td>
+                                                            <td data-bind="text: EstadoDesc"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12"><img id="ImgImagen"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" style="margin-bottom: 0px;" id="btnConfirmar">Continuar</button>
+                <button type="button" class="btn btn-primary" style="margin-bottom: 0px;" id="btnAceptar" data-bind="enable: viewModelSolFirmas.FirmasSolicitadas().length > 0">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $('#BtnVerImagenFirma').hide();
+
+    var viewModelSolFirmas = null;
+    var funcionParaOnSuccess = null;
+
+    window.eventosGrillaUsuarios = {
+        'click .agregarFirma': function (e, value, row, index) {
+            agregarFirma(row);
+        },
+        'click .verFirma': function (e, value, row, index) {
+            mostrarImagenFirma(row);
+        },
+        'click .agregarAFirmasLocales': function (e, value, row, index) {
+            agregarAFirmasLocales(row);
+        }
+    }
+
+    $(document).ready(function () {
+        @if (!esMultiple)
+        {
+            if (!Model.NecesitaConfirmacion)
+            {
+                @:$('#btnConfirmar').hide();
+                @:$('#divConfirmacion').hide();
+            }
+            else
+            {
+                @:$('#btnConfirmar').show();
+                @:$('#btnAceptar').hide();
+                @:$('#divPrincipal').hide();
+            }
+        }
+        else
+        {
+            if (!Model.Multiple.Any(i => i.NecesitaConfirmacion))
+            {
+                @:$('#btnConfirmar').hide();
+                @:$('#divConfirmacion').hide();
+            }
+            else
+            {
+                @:$('#btnConfirmar').show();
+                @:$('#btnAceptar').hide();
+                @:$('#divPrincipal').hide();
+            }
+        }
+
+        //inicializo knockout
+        var inicializarViewModel = function () {
+            var modelCompleto = @Html.Raw(Json.Encode(Model));
+            var vm = ko.mapping.fromJS(modelCompleto, {}, this);
+
+            vm.eliminarFirma = function (firma, event, mensajes) {
+
+                var estado_firma = firma.estado_firma();
+                if(vm.ruta() == 123) //Si viene desde Autorizacion Swift o Envío de Mensajes.
+                {
+                    if(firma.rut_solic() === undefined || firma.rut_solic() == vm.RutAis()){
+                        if (estado_firma == "F") {
+                            if(mensajes === undefined){
+                                showAlert("", "No puede eliminar al usuario " + " " + firma.NombrePersonaFirma() + ". El usuario ya autorizó el mensaje.", "alert-warning", true, "alertasDentroModal");
+                            }else{
+                                mensajes.push({ Title: "", Text: "No puede eliminar al usuario " + " " + firma.NombrePersonaFirma() + ". El usuario ya autorizó el mensaje.", Type: "alert-warning", AutoClose: true });
+                            }
+                        }
+                        else {
+                            vm.FirmasSolicitadas.remove(firma);
+                            if(firma.fecha_solic != null && firma.fecha_solic() != null){
+                                //era una firma existente, la marco para eliminarla del lado del servidor
+                                vm.FirmasEliminadas.push(firma);
+                            }
+
+                            $.each(vm.Multiple(),function (index, value) {
+                                for (var i = 0; i < value.FirmasSolicitadas().length; i++) {
+
+                                    ko.utils.arrayForEach(vm.Multiple()[index].FirmasSolicitadas(), function (elemento) {
+                                        if (elemento != undefined && elemento.NombrePersonaFirma() === firma.NombrePersonaFirma()) {
+                                            ko.utils.arrayRemoveItem(vm.Multiple()[index].FirmasSolicitadas(), elemento);
+                                        }
+                                    });
+
+                                    if (firma.fecha_solic != null && firma.fecha_solic() != null) {
+                                        //era una firma existente, la marco para eliminarla del lado del servidor
+                                        vm.Multiple()[index].FirmasEliminadas.push(firma);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else{
+                        if(mensajes === undefined){
+                            showAlert("ATENCION!", "No puede eliminar una firma solicitada por otro usuario. ", "alert-warning", true, "alertasDentroModal");
+                        }else{
+                            mensajes.push({ Title: "ATENCION!", Text: "No puede eliminar una firma solicitada por otro usuario.", Type: "alert-warning", AutoClose: true });
+                        }
+                    }
+                }
+                else //Si es que viene desde admin swift.
+                {
+                    if(firma.rut_solic() !== undefined || firma.rut_solic() == vm.RutAis()){
+
+                        vm.FirmasSolicitadas.remove(firma);
+                        if(firma.fecha_solic != null && firma.fecha_solic() != null){
+                            //era una firma existente, la marco para eliminarla del lado del servidor
+                            vm.FirmasEliminadas.push(firma);
+                        }
+
+                        $.each(vm.Multiple(), function (index, value) {
+                            for (var i = 0; i < value.FirmasSolicitadas().length; i++) {
+
+                                ko.utils.arrayForEach(vm.Multiple()[index].FirmasSolicitadas(), function (elemento) {
+                                    if (elemento != undefined && elemento.NombrePersonaFirma() === firma.NombrePersonaFirma()) {
+                                        ko.utils.arrayRemoveItem(vm.Multiple()[index].FirmasSolicitadas(), elemento);
+                                    }
+                                });
+
+                                if (firma.fecha_solic != null && firma.fecha_solic() != null) {
+                                    //era una firma existente, la marco para eliminarla del lado del servidor
+                                    vm.Multiple()[index].FirmasEliminadas.push(firma);
+                                }
+                            }
+                        });
+                    }
+                    else{
+                        if(mensajes === undefined){
+                            showAlert("ATENCION!", "No puede eliminar una firma solicitada por otro usuario. ", "alert-warning", true, "alertasDentroModal");
+                        }else{
+                            mensajes.push({ Title: "ATENCION!", Text: "No puede eliminar una firma solicitada por otro usuario.", Type: "alert-warning", AutoClose: true });
+                        }
+                    }
+                }
+
+            }
+
+            vm.eliminarTodasFirmas = function(model) {
+                var mensajes = [];
+                var event;
+                var largo = model.FirmasSolicitadas().length - 1;
+                for (i = largo; i >= 0; i--) {
+                    model.eliminarFirma(model.FirmasSolicitadas()[i], event, mensajes);
+                }
+
+                if(mensajes.length > 0){
+                    loadMessages(mensajes,"alertasDentroModal");
+                }
+            }
+
+            vm.eliminarDeFirmasLocales = function(firma) {
+                vm.FirmasLocales.remove( function (item) { return ko.mapping.toJSON(firma) == ko.mapping.toJSON(item); } )
+            };
+
+            vm.solicitarFirmaDesdeFirmasLocales = function(usuario) {
+                var plainUser = ko.mapping.toJS(usuario);
+                agregarFirma(plainUser);
+            };
+
+            vm.solicitarTodasFirmasDesdeFirmasLocales = function (model) {
+                for (var i = 0; i < model.FirmasLocales().length; i++) {
+                    model.solicitarFirmaDesdeFirmasLocales(model.FirmasLocales()[i]);
+                }
+            }
+        };
+
+        viewModelSolFirmas = new inicializarViewModel();
+
+        var nodo = $("#modalSolFirmasSwift").get(0);
+        ko.cleanNode(nodo);
+        ko.applyBindings(viewModelSolFirmas, nodo);
+
+        configColumnasUsuarios = [
+         { field: "Seleccionado", title: '#', visible: true, radio: true, },
+         { field: 'Nombre', title: 'Nombre', sortable: true, visible: true },
+         { field: 'Poder', title: 'Poder', sortable: true, visible: true },
+         { field: 'Rut', title: 'Rut', sortable: true, visible: false, },
+         { field: 'PoderTipoFirma', visible: false },
+         { field: 'RevisaFirma', title: 'RevisaFirma', sortable: true, visible: false },
+         { title: '', visible: true, formatter: accionesGridFormatter, width: "90px", events: eventosGrillaUsuarios }
+        ];
+
+        $('#txtApellido').keyup(function (e) {
+            if (e.keyCode == 13) {
+                if (!S($('#txtApellido').val()).isEmpty()) {
+                    $('#btnBuscar').click();
+                }
+            }
+        });
+    });
+
+    var BuscarUsuarios = function () {
+        var tablaUsuarios = $('#tablaUsuarios');
+
+        var url = '@Url.Action("GetUsuariosPorNombre")';
+        var nombre = $('#txtApellido').val();
+        tablaUsuarios.bootstrapTable('destroy');
+        tablaUsuarios.bootstrapTable({
+            url: url,
+            queryParams: function (p) {
+                return { nombre: nombre };
+            },
+            locale: "es-SP",
+            pagination: true,
+            sidePagination: 'client',
+            pageSize: 5,
+            pageList: [],
+            columns: configColumnasUsuarios,
+            searchAlign: 'left',
+            showRefresh: false,
+            clickToSelect: true,
+            singleSelect: true,
+            search: false,
+            cache: false,
+            uniqueId: 'Rut',
+        });
+
+        tablaUsuarios.on('check.bs.table', OnCheckUsuario);
+        tablaUsuarios.on("load-success.bs.table", OnTablaUsuariosLoadSuccess);
+    }
+
+    function OnTablaUsuariosLoadSuccess(result) {
+        var tablaUsuarios = $('#tablaUsuarios');
+        var data = tablaUsuarios.bootstrapTable('getData', true);
+
+        $('#LblApe').toggle(data.length > 0);
+
+        // resize del modal
+        if ($('#tablaMensajes').bootstrapTable('getData').length > 0) {
+            var heightModal = 0;
+            if ($('#tablaMensajes').bootstrapTable('getData').length == 1) {
+                heightModal = $(window).height() * 0.66;
+            }
+            else if ($('#tablaMensajes').bootstrapTable('getData').length == 2) {
+                heightModal = $(window).height() * 0.60;
+            }
+            else if ($('#tablaMensajes').bootstrapTable('getData').length == 3) {
+                heightModal = $(window).height() * 0.56;
+            }
+            else if ($('#tablaMensajes').bootstrapTable('getData').length >= 4) {
+                heightModal = $(window).height() * 0.46;
+            }
+            $('.modal .modal-body').css('max-height', heightModal);
+        }
+    }
+
+    var agregarFirma = function (row) {
+        var usuarioAAgregar = row;
+        var revisaOFirma = "F";
+        var yaExiste = false;
+
+        if (viewModelSolFirmas.Multiple().length > 0) {
+
+            $.each(viewModelSolFirmas.Multiple(), function (index, value) {
+                for (var x = 0; x < value.FirmasSolicitadas().length; x++) {
+                    var firma = value.FirmasSolicitadas()[x];
+                    var rutEnFormatoInt = usuarioAAgregar.Rut.substring(0, usuarioAAgregar.Rut.length - 1);
+                    rutEnFormatoInt = parseInt(rutEnFormatoInt, 10); //le saco los 00 delanteros
+                    if ((typeof firma.rut_firma != 'undefined' && firma.rut_firma() == rutEnFormatoInt) || (typeof firma.RutFirmaConDigitoVerificador != 'undefined' && firma.RutFirmaConDigitoVerificador() == usuarioAAgregar.Rut)) {
+                        yaExiste = true;
+                        showAlert("Firma ya fue solicitada.", "La firma <b>" + firma.NombrePersonaFirma() + "</b> ya fue solicitada en los mensajes.", "alert-warning", true, "alertasDentroModal");
+                        break;
+                    }
+                }
+            });
+
+        } else {
+
+            for (var x = 0; x < viewModelSolFirmas.FirmasSolicitadas().length; x++) {
+                var firma = viewModelSolFirmas.FirmasSolicitadas()[x];
+
+                var rutEnFormatoInt = usuarioAAgregar.Rut.substring(0, usuarioAAgregar.Rut.length - 1);
+                rutEnFormatoInt = parseInt(rutEnFormatoInt, 10); //le saco los 00 delanteros
+                if ((typeof firma.rut_firma != 'undefined' && firma.rut_firma() == rutEnFormatoInt) || (typeof firma.RutFirmaConDigitoVerificador != 'undefined' && firma.RutFirmaConDigitoVerificador() == usuarioAAgregar.Rut)) {
+                    yaExiste = true;
+                    showAlert("Firma ya solicitada", "La firma ya fue solicitada para este usuario", "alert-warning", true, "alertasDentroModal");
+                    break;
+                }
+            }
+        }
+
+        if (!yaExiste)
+        {
+            if (!usuarioAAgregar.RegistraPoder) {
+                revisaOFirma = "R";
+                if (!confirm("El usuario " + usuarioAAgregar.Nombre.trim() + " no tiene poder de firma. ¿Desea agregarlo de todas formas?")) {
+                    return;
+                }
+            }
+
+            if (viewModelSolFirmas.Multiple().length > 0) {
+                $.each(viewModelSolFirmas.Multiple(), function (index, value) {
+
+                    viewModelSolFirmas.Multiple()[index].FirmasSolicitadas.push({
+                        id_mensaje: value.IdMensaje(),
+                        RutFirmaConDigitoVerificador: ko.observable(usuarioAAgregar.Rut),
+                        NombrePersonaFirma: ko.observable(usuarioAAgregar.Nombre.trim()),
+                        tipo_firma: ko.observable(usuarioAAgregar.PoderTipoFirma),
+                        revisa_firma: ko.observable(revisaOFirma),
+                        EstadoDesc: "Nuevo",
+                        estado_firma: ko.observable("N"),
+                        rut_solic: ko.observable(viewModelSolFirmas.Multiple()[index].RutAis())
+                    });
+
+                });
+            }
+
+            viewModelSolFirmas.FirmasSolicitadas.push({
+                id_mensaje: @(Model.IdMensaje.ToString()),
+                RutFirmaConDigitoVerificador: ko.observable(usuarioAAgregar.Rut),
+                NombrePersonaFirma: ko.observable(usuarioAAgregar.Nombre.trim()),
+                tipo_firma: ko.observable(usuarioAAgregar.PoderTipoFirma),
+                revisa_firma: ko.observable(revisaOFirma),
+                EstadoDesc: "Nuevo",
+                estado_firma: ko.observable("N"),
+                rut_solic: ko.observable(viewModelSolFirmas.RutAis())
+            });
+        }
+
+    }
+
+    var Actualizar = function () {
+        var dateNow = moment().startOf("day").utc();
+        var fecha = dateNow;
+        var mensajesSeleccionados = $('#tablaUsuarios').bootstrapTable('getData');
+        var data = { model: ko.mapping.toJS(viewModelSolFirmas) };
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SaveFirmas")',
+            data: data,
+            success: function (data) {
+                if(data.OK)
+                {
+                    $('#modalSolFirmasSwift').modal('hide');
+                    showAlert("Operación exitosa!", data.Message, "alert-success", true);
+
+                    if(funcionParaOnSuccess != null)
+                    {
+                        funcionParaOnSuccess();
+                    }
+                }
+                else{
+                    if(!data.TieneFirmasNecesarias)
+                    {
+                        showAlert("Firmas insuficientes", "No se han ingresado las firmas suficientes para autorizar el Mensaje Swift", "alert-warning", true, "alertasDentroModal");
+                    }
+                }
+            },
+            error: function (response, type, message) {
+                try {
+                    //intento parsear la respesta como json.
+                    var responseJson = JSON.parse(response.responseText);
+                    showAlert("Error en la operación.", "Detalles: " + responseJson.Message, "alert-danger", true, "alertasDentroModal");
+                }
+                catch (err) {
+                    showAlert("Error en la operación.", "Detalles: " + message, "alert-danger", true, "alertasDentroModal");
+                }
+            },
+            //global: false,     // this makes sure ajaxStart is not triggered
+            dataType: 'json'
+        });
+
+        $('#tablaUsuarios').bootstrapTable('destroy');
+    }
+
+    var onFirmasSuccess = function(funcion)
+    {
+        funcionParaOnSuccess = funcion;
+    }
+
+    var mostrarImagenFirma = function (row) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ObtieneImagenFirma")',
+            data: { rut: row.Rut },
+            success: function (data) {
+                if(data != null && data.trim() != "")
+                {
+                    $("#ImgImagen").attr("src", "data:image/png;base64," + data);
+                    $("#ImgImagen").show();
+                    EmptySelectedZone("alertasDentroModal");
+                }
+                else
+                {
+                    showAlert("Firma no encontrada", "No se encontró la imagen de la firma.", "alert-danger", true, "alertasDentroModal");
+                    $("#ImgImagen").hide();
+                }
+            },
+            error: function (response, type, message) {
+                try {
+                    //intento parsear la respesta como json.
+                    var responseJson = JSON.parse(response.responseText);
+                    showAlert("Error en la operación.", "Detalles: " + responseJson.Message, "alert-danger", true, "alertasDentroModal");
+                }
+                catch (err) {
+                    showAlert("Error en la operación.", "Detalles: " + message, "alert-danger", true, "alertasDentroModal");
+                }
+            },
+            //global: false,     // this makes sure ajaxStart is not triggered
+            dataType: 'json'
+        });
+    };
+
+    var ConfirmarContinuar = function (e) {
+        $('#btnConfirmar').hide();
+        $('#btnAceptar').show();
+        $('#divConfirmacion').hide();
+        $('#divPrincipal').show();
+    };
+
+    $('#btnAceptar').click(Actualizar);
+    $('#btnBuscar').click(BuscarUsuarios);
+    $('#btnConfirmar').click(ConfirmarContinuar);
+
+    var OnCheckUsuario = function (target, row) {
+        if (row.Poder == null)
+        {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetPoderes")',
+                data: { rut: row.Rut },
+                cache: false,
+                success: function (data) {
+                    if (data.RegistraPoder) {
+                        row.Poder = data.Poder;
+                        row.RevisaFirma = "F";
+                        row.PoderTipoFirma = data.PoderTipoFirma;
+                        row.RegistraPoder = data.RegistraPoder;
+                    }
+                    else {
+                        row.Poder = "No registra poder";
+                        row.RevisaFirma = "R";
+                    };
+
+                    var indice = obtenerIndice($("#tablaUsuarios"), row);
+                    if (indice >= 0)  { //encontro el row
+                        $("#tablaUsuarios").bootstrapTable("updateRow", { index: indice, row: row });
+                    }
+                },
+                error: function (response, type, message) {
+                    row.Poder = "Usuario no encontrado";
+
+                    var indice = obtenerIndice($("#tablaUsuarios"), row);
+                    if (indice >= 0) {
+                        $("#tablaUsuarios").bootstrapTable("updateRow", { index: indice, row: row });
+                    }
+                },
+                //global: false,     // this makes sure ajaxStart is not triggered
+                dataType: 'json'
+            });
+        }
+    };
+
+    //obtiene el indice de la fila a partir de su rut
+    function obtenerIndice(table, row)
+    {
+        var data = table.bootstrapTable("getData");
+        var indice = -1;
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].Rut == row.Rut){
+                indice = i;
+                break;
+            }
+        }
+
+        return indice;
+    }
+
+    function agregarAFirmasLocales(row){
+        var yaExiste = false;
+        for (var x = 0; x < viewModelSolFirmas.FirmasLocales().length; x++) {
+            var usrExistente = viewModelSolFirmas.FirmasLocales()[x];
+            if (row.Rut == ko.mapping.toJS(usrExistente).Rut) {
+                yaExiste = true;
+                showAlert("Usuario ya agregado", "El usuario " + row.Nombre + " ya se encuentra en firmas locales", "alert-warning", true, "alertasDentroModal");
+                break;
+            }
+        }
+
+        if (!yaExiste)
+        {
+            viewModelSolFirmas.FirmasLocales.push(ko.observable({
+                Rut: row.Rut,
+                Nombre: row.Nombre.trim(),
+                Poder: row.Poder,
+                PoderTipoFirma: row.PoderTipoFirma,
+                RegistraPoder: row.RegistraPoder
+            }));
+        }
+    }
+
+    function accionesGridFormatter(value, row, index)
+    {
+        if(row.Poder != null) //esto esta en null cuando todavia no se posiciono en el usuario
+        {
+            var lineasHtmlAcciones = '<a class="agregarAFirmasLocales accionRow" href="#" title="Agregar a firmas locales"><i class="glyphicon glyphicon-star"></i></a>&nbsp;&nbsp;';
+            lineasHtmlAcciones += '<a class="verFirma accionRow" href="#" title="Ver firma"><i class="glyphicon glyphicon-eye-open"></i></a>&nbsp;&nbsp;';
+            if(row.RevisaFirma != null){ //esto esta en null si el usuario no fue encontrado en la tabla de poders
+                lineasHtmlAcciones += '<a class="agregarFirma accionRow" href="#" title="Agregar firma"><i class="glyphicon glyphicon-forward"></i></a>';
+            }
+
+            return lineasHtmlAcciones;
+        }
+        else{
+            return "";
+        }
+
+    }
+
+</script>

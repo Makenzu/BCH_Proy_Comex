@@ -1,0 +1,371 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillaInvisibleEditarViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Planilla Invisible Editar";
+}
+
+<h3>Planilla Invisible @ViewBag.Caption</h3>
+@using(Html.BeginForm(null, null, FormMethod.Post, new { id = "PlanillaInvisibleEditar", name = "PlanillaInvisibleEditar" }))
+{
+    @Html.AntiForgeryToken()
+    
+     <div class="form-horizontal" style="width: 1024px;margin: auto;">
+             <table border="1" width="1024">
+                 <tr>
+                     <td>
+                         @Html.Label("lblCodOper", "Cód. Operación")
+                         <br />
+                         @Html.EditorFor(model => model.codComercio, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "5", @readonly = "false" } })
+                     </td>
+                     <td>
+                         @Html.Label("lblNumero", "Número")
+                         @Html.EditorFor(model => model.nroPlanilla, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                     </td>
+                     <td>
+                         <h2>Banco de Chile</h2>
+                     </td>
+                     <td>
+                         @Html.Label("lblcodigo", "Código")
+                         <br />
+                         @Html.EditorFor(model => model.codigo1, new { htmlAttributes = new {  @class = "", maxlength = "3", size = "3", @readonly = "false" } })
+                     </td>
+                     <td>
+                         @Html.Label("lblPais", "País de Origen")
+                         <br />
+                         @Html.EditorFor(model => model.paisOrigen, new { htmlAttributes = new {  @class = "", maxlength = "50", size = "30", @readonly = "false" } })
+                         @Html.EditorFor(model => model.codPais, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "2", @readonly = "false" } })
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         @Html.Label("lblTipo", "Tipo")
+                         @Html.EditorFor(model => model.tipoPlanilla, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "5", @readonly = "false" } })
+                     </td>
+                     <td>
+                         @Html.Label("lblFecha", "Fecha")
+                         
+                         @if(Model.fechaPlanillaEnabled) { 
+                            @Html.EditorFor(model => model.fechaPlanilla, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10" } })
+                         }else{
+                             @Html.EditorFor(model => model.fechaPlanilla, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                         } 
+                     </td>
+                     <td>
+                         @Html.Label("lblPlaza", "Plaza Banco Central")
+                         <br />
+                         @Html.EditorFor(model => model.plazaBanco, new { htmlAttributes = new {  @class = "", maxlength = "50", size = "40", @readonly = "false" } })
+                     </td>
+                     <td>
+                         @Html.Label("lblcod", "Cód")
+                         @Html.EditorFor(model => model.codBcoPlzCentral, new { htmlAttributes = new {  @class = "", maxlength = "2", size = "2", @readonly = "false" } })
+                     </td>
+                 </tr>
+             </table>
+
+             <table border="1" width="1024">
+                 <tr>
+                     <td colspan="2">
+                         @Html.Label("lblRut", "Rut")
+                         @Html.EditorFor(model => model.rutParticipante, new { htmlAttributes = new {  @class = "", maxlength = "15", size = "15", @readonly = "false" } })
+
+                         @Html.Label("lblNombre", "Nombre")
+                         @Html.EditorFor(model => model.nombreParticipante, new { htmlAttributes = new {  @class = "", maxlength = "50", size = "50", @readonly = "false" } })
+                         <br />
+                         @Html.Label("lblDireccion", "Dirección")
+                         @Html.EditorFor(model => model.direccionParticipante, new { htmlAttributes = new {  @class = "", maxlength = "100", size = "75", @readonly = "false" } })
+                     </td>
+
+                     <td>
+                         @Html.Label("lblMoneda", "Moneda")
+                         <br />
+                         @Html.EditorFor(model => model.nombreMoneda, new { htmlAttributes = new {  @class = "", maxlength = "50", size = "30", @readonly = "false" } })
+                         @Html.EditorFor(model => model.codMoneda, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "2", @readonly = "false" } })
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         @Html.Label("lblNombCod", "Nombre Cód.")
+                         @Html.EditorFor(model => model.nombreComercio, new { htmlAttributes = new {  @class = "", maxlength = "70", size = "30", @readonly = "false" } })
+                         <br />
+                         @Html.Label("", "Comercio")
+                     </td>
+                     <td>
+                         @Html.Label("lblCod2", "Cód.")
+                         @Html.EditorFor(model => model.codOperacion, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "5", @readonly = "false" } })
+                         <br />
+                         @Html.Label("lblCOncepto", "Concepto")
+                         @Html.EditorFor(model => model.conceptoOperacion, new { htmlAttributes = new {  @class = "", maxlength = "5", size = "5", @readonly = "false" } })
+                     </td>
+                     <td rowspan="3">
+                         <table border="0">
+                             <tr>
+                                 <td width="140">
+                                    @Html.Label("lbl", "Monto Operación")
+                                 </td>
+                                 <td>
+                                     @Html.EditorFor(model => model.montoOperacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                    @Html.Label("lbl", "Paridad Bco C.")
+                                 </td>
+                                 <td>
+                                    @Html.EditorFor(model => model.paridadBcoC, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                    @Html.Label("lbl", "Monto en Dolares")
+                                 </td>
+                                 <td>
+                                    @Html.EditorFor(model => model.montoUSD, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })   
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                    @Html.Label("lbl", "Monto en Pesos al T/C por US$")
+                                 </td>
+                                 <td>
+                                    @Html.EditorFor(model => model.montoPesosTC, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                    @Html.Label("lbl", "Son $")
+                                 </td>
+                                 <td>
+                                    @Html.EditorFor(model => model.montoTotal, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+
+                 </tr>
+                 <tr>
+                     <td colspan="2">
+                         @Html.Label("lbl", "Num. Planilla")
+                         @Html.EditorFor(model => model.numPlanilla, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Fecha Anul.")
+                         @Html.EditorFor(model => model.fechaAnul, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Suc. BCCH")
+                         @Html.EditorFor(model => model.sucBCCHAnuPbc, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td colspan="2">
+                         @Html.Label("lbl", "Tipo")
+                         @Html.EditorFor(model => model.tipoPlanillaAnul, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Número")
+                         @Html.EditorFor(model => model.numeroPlanillaAnul, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Fecha")
+                         @Html.EditorFor(model => model.fechaApc, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Suc. BCCH")
+                         @Html.EditorFor(model => model.sucBCCHApcPbc, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <h4>Acuerdos a que se acoge(Cantidad)</h4>
+                         @Html.EditorFor(model => model.cantidad1, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                         @Html.EditorFor(model => model.cantidad2, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                         @Html.EditorFor(model => model.cantidad3, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                         <br />
+                         @Html.EditorFor(model => model.cantidad4, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                         @Html.EditorFor(model => model.cantidad5, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                         @Html.EditorFor(model => model.cantidad6, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                     </td>
+                     <td colspan="2" rowspan="3" align="left" valign="top">
+
+                         <div style="margin: auto; width:310px; border: 1px solid #808080; margin-right:0px ">
+                             @if(Model.zonaFrancaEnabled) { 
+                                @Html.CheckBoxFor(model => model.zonaFranca, new { id = "zonaFrancaChk" })
+                             }
+                             else { 
+                                @Html.CheckBoxFor(model => model.zonaFranca, new { id = "zonaFrancaChk", @readonly = "false" })
+                             }
+                             @Html.Label("lbl", "Zona Franca")
+                         </div>
+                                              
+                         <br />
+
+                         <h4>Convenio Crédito Recíproco</h4>
+                         <table>
+                             <tr>
+                                 <td>@Html.Label("lbl", "En Chile fec. Aut. Débito")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.FecechaDebConvenio, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Nro. Documento")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.nroDocumentoCh, new { htmlAttributes = new {  @class = "", maxlength = "30", size = "30", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "En el Ext. Nro. Doc.")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.nroDocumentoExt, new { htmlAttributes = new {  @class = "", maxlength = "30", size = "30", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Cod. Bco. Comercial Ext")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.codBcoExt, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <h4>Informe de Exportación</h4>
+                         @Html.Label("lbl", "Número")
+                         @Html.EditorFor(model => model.nroExportacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Fecha")
+                         @Html.EditorFor(model => model.fechaExportacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Plaza BCCHS")
+                         @Html.EditorFor(model => model.plazaBCCHExportacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                     </td>
+                     <td colspan="2"></td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <h4>Declaración de Exportaciones</h4>
+
+                         @Html.Label("lbl", "Nro. Acept")
+                         @Html.EditorFor(model => model.nroAceptacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Fecha A")
+                         @Html.EditorFor(model => model.fechaAceptacion, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Adua")
+                         @Html.EditorFor(model => model.codAduana, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                         @Html.Label("lbl", "Sec. E/")
+                         @Html.EditorFor(model => model.CodEOR, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+
+                     </td>
+                     <td colspan="2"></td>
+                 </tr>
+                 <tr>
+                     <td valign="top">
+                         <h4>Créditos Externos</h4>
+
+                         <table border="0">
+                             <tr>
+                                 <td>
+                                     @Html.Label("lbl", "Número del Crédito")
+                                     <br />
+                                     @Html.EditorFor(model => model.numCredito, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                                 <td>
+                                     @Html.Label("lbl", "Fec. Desembolso")
+                                     <br />
+                                     @Html.EditorFor(model => model.fechaDesembolso, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                                 <td>
+                                     @Html.Label("lbl", "Cod Mda Desembolso")
+                                     <br />
+                                     @Html.EditorFor(model => model.codMonedaDesembolso, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Monto Equivalente")</td>
+                                 <td colspan="2">
+                                    @Html.EditorFor(model => model.montoEquivalente, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Sec. Ec. Ben.")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.secEcBen, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                                 </td>
+                                 <td>
+                                     @Html.Label("lbl", "Sec. Ec.")
+                                     @Html.EditorFor(model => model.secEc, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Porcent. Part.")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.porcentajePart, new { htmlAttributes = new {  @class = "", maxlength = "10", size = "10", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                     <td rowspan="2" colspan="2" valign="top" align="center">
+
+                         <h5>Observaciones</h5>
+                         @if(Model.observacionesEnabled) { 
+                            @Html.TextAreaFor(model => model.observaciones, new { @rows = 13, @cols = 80 })
+                         }
+                         else { 
+                            @Html.TextAreaFor(model => model.observaciones, new { @rows = 13, @cols = 80, @readonly = "false" })
+                         }
+
+                         <div class="form-group" style="width:100%;position:static">
+                             <div>
+                                
+                                 <input id="btnComando" name="btnComando" type="submit" value="<<" alt="Atras" class="btn btn-default" @(Model.atras.Enabled ? "" : "disabled='disabled'") />
+                                 <input id="btnComando" name="btnComando" type="submit" value=">>" alt="Adelante" class="btn btn-default" @(Model.adelante.Enabled ? "" : "disabled='disabled'") />
+                                 <button id="btnComando" type="submit" name="btnComando" value="√" alt="Generar" class="btn btn-success" style="width: 39px; color: #fff">
+                                     <i class="glyphicon glyphicon-ok"></i>
+                                 </button>
+                                 @*<input id="btnComando" name="btnComando" type="submit" value="√" alt="Generar" class="btn btn-default" />*@
+                                 <br />
+                                 <input id="btnComando" name="btnComando" type="submit" value="Aceptar" class="btn btn-primary" @(Model.aceptar.Enabled ? "" : "disabled='disabled'") />
+                                 <input id="btnComando" name="btnComando" type="submit" value="Cancelar" class="btn btn-default" />
+                             </div>
+                         </div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td valign="top">
+                         <h4>Acuerdo 1657 - 3 (Diferencial cambiario)</h4>
+                         <table>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Acuerdo corresp. a:")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.acuerdoCorrespA, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Número Registro")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.nroRegistro, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>@Html.Label("lbl", "Rtu Deudor Original")</td>
+                                 <td>
+                                    @Html.EditorFor(model => model.rutDeudorOriginal, new { htmlAttributes = new {  @class = "", maxlength = "20", size = "20", @readonly = "false" } })
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                     <td></td>
+                 </tr>
+             </table>
+    </div>
+
+    @section scripts{
+        @Scripts.Render("~/bundles/FundTransfer/PlanillaInvisibleEditar")
+    }
+
+}
+

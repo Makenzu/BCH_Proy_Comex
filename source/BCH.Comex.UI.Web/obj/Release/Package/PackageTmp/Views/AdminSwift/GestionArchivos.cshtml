@@ -1,0 +1,946 @@
+﻿@model BCH.Comex.UI.Web.Models.AdministracionSwift.Index
+@{
+    ViewBag.Title = "Gestión de Archivos";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png");
+}
+@section css{
+    <style type="text/css">
+        .align-btn-fix {
+            margin-bottom: 0;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #20AAD6;
+            color: #fff !important;
+        }
+
+         .form-inline .form-control  {
+            vertical-align: baseline;
+            width: auto;
+            display: inline-block;
+        }
+
+
+    </style>
+    <style>
+        
+        .clickable {
+            cursor: pointer;
+        }
+
+            .clickable .glyphicon {
+                background: rgba(0, 0, 0, 0.15);
+                display: inline-block;
+                padding: 6px 12px;
+                border-radius: 4px;
+            }
+
+        .panel-heading span {
+            margin-top: -23px;
+            font-size: 15px;
+            margin-right: -9px;
+        }
+
+        a.clickable {
+            color: inherit;
+        }
+
+            a.clickable:hover {
+                text-decoration: none;
+            }
+    </style>
+}
+
+<nav class="navbar navbar-default navbar-static-top">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <b>Opciones</b><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index")">Gestión de Mensajes</a></li>
+                <li><a href="@Url.Action("GestionArchivos")">Gestión de Archivos</a></li>
+                <li><a href="@Url.Action("EliminaMensaje")">Eliminar Mensajes</a></li>
+                <li><a href="@Url.Action("ConsultaPoderes")">Consulta de poderes</a></li>
+                <li><a href="@Url.Action("Alertas")">Configurar alarmas</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<h2>Gestión de archivos</h2>
+<div class="panel panel-default">
+
+</div>
+
+<div id="msg-zone"></div>
+
+<div class="row" id="DivFiltro">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading clickable">
+                <h2 class="panel-title" id="titleFiltro">Filtros</h2>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+            </div>
+            <div class="panel-body">
+
+                <button class="btn btn-primary" id="btnPendientes">Pendientes</button>
+                <button class="btn btn-primary" id="btnRecepcionados">Recepcionados</button>
+                <button class="btn btn-primary" id="btnNoTransmitidos">No transmitidos</button>
+
+
+                <div class="panel-body">
+
+                    <div class="container">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("dtpFechaDesde", "Fecha", new { id = "lblFechaDesde", @class = "control-label  col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaDesde">
+                                        <input type="text" class="form-control" id="txtFechaDesde" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="chkPeriodoFechas"> Período
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFechaDesde">La fecha debe ser menor o igual a la fecha del día</label>
+                            </div>
+                            <div class="form-group" id="grpFechaHasta">
+                                @Html.Label("Hasta", "Hasta", new { @class = "control-label col-xs-2" })
+                                <div class="col-xs-3">
+                                    <div class="input-group date" id="dtpFechaHasta">
+                                        <input type="text" class="form-control" id="txtFechaHasta" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <label class="control-label has-error" style="display:none" id="lblErrorFechaHasta">La fecha debe ser menor o igual a la fecha desde</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" id="pnlResultados">
+    <div class="panel-heading">
+        <h2 class="panel-title">Resultados</h2>
+    </div>
+    <div class="panel-body">
+        <div id="custom-toolbar">
+            <div class="form-inline" role="form" id="toolbarResultados">
+                <div class="form-group">
+                </div>
+            </div>
+        </div>
+
+
+
+        <button class="btn btn-info" id="btnDetalle">Detalle</button>
+        <button class="btn btn-info" id="btnRecepcion">Recepción</button>
+        <button class="btn btn-info" id="btnReenviar">Reenviar</button>
+        <button class="btn btn-info" id="btnPareo">Parear</button>
+        <button class="btn btn-info" id="btnImprimir">Imprimir</button>
+        @*<h4 style="color:#428bca">Lista de archivos según información ingresada&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantResultados">0</span></h4>*@
+        <table id="tablaSwifts"></table>
+        <button class="btn btn-info" id="btnVerDatos">Ver Datos</button>
+        <button class="btn btn-info" id="btnVerLog">Ver Log</button>
+        <button class="btn btn-info" id="btnVisualizar">Visualizar</button>
+        <button class="btn btn-info" id="btnVolver">Volver</button>
+
+
+        <div id="toolbar">
+            <div class="form-inline" role="form" id="toolbarResultados">
+                <div class="form-group">
+                    <label for="selectFiltroEstado" id="idFiltroEstado">Estado</label>
+                    <select class="form-control" id="selectFiltroEstado" name="selectFiltroEstado" disabled>
+                        <option value="0">Todos</option>
+                        <option value="C">Con pareo completo</option>
+                        <option value="I">Con pareo incompleto</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="modalVisorSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+        <div class="modal-dialog modal-lg xlg">
+            <div class="modal-content">
+                <div id="divCuerpoMensajeSwift"></div>
+            </div>
+        </div>
+    </div>
+    <div id="modalLogSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center" id="divLogSwift"></div>
+            </div>
+        </div>
+    </div>
+    <div id="modalVisorIndividualSwift" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Visor individual de mensaje Swift">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center" id="divCuerpoSwift"></div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalPreguntaReenvio" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Desbloqueo de mensaje Swift">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Información</h4>
+            </div>
+            <div class="modal-body" id="divPreguntaReenvio">
+                <div class="alert alert-warning" role="dialog">
+                    <strong>Atención!</strong><br />
+                    <label id="LblValida"></label><br />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" id="btnAceptar" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+                @*<button class="btn btn-info" id="btnCancelar">Cancelar</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalPareo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Pareo" >
+    <div class="modal-body">
+        <div class="panel">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Pareo</h4>
+                <label class="control-label" id="NombrePareo">Archivo a parear: </label>
+                <label class="label-success" id="lblNombrePareo"></label>
+            </div>
+            <div class="panel" id="divmodalPareo">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalReporte" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Reporte">
+    <div class="modal-body">
+        <div class="panel">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="panel" id="divmodalReporte">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    <script type="text/javascript">
+    var seleccion = "nulo";
+    var CasillaName = "nulo";
+    var configColumnas = '';
+    var estado = '';
+    var rowSelected;
+    var seleccionado;
+    var grabeExitosamenteAlgunPareo = false; //esta variable se manipula en el partial de Pareo
+
+
+    $("#modalPareo").on("hidden.bs.modal", function () {
+        if ((($("#modalPareo").data('bs.modal')).isShown) == false) //este evento se ejecuta cuando se cierra el modal de visor de swift q esta dentro del modal de pareo, por eso tengo que hacer este chequeo extra
+        {
+            if (grabeExitosamenteAlgunPareo) //no voy a refrescar todo si solo abrio el modal y lo cerro sin guardar
+            {
+        //-->Estado Pendiente.
+        if (seleccionado == "P") {
+            Pendientes();
+        };
+        //-->Estado Recepcionado.
+        if (seleccionado == "R") {
+            Recepcionados();
+        };
+        //-->Estado No Transmitido.
+        if (seleccionado == "T") {
+            NoTransmitidos();
+        };
+            }
+        }
+    });
+
+    $("#btnDetalle").attr("disabled", true);
+    $("#btnRecepcion").attr("disabled", true);
+    $("#btnReenviar").attr("disabled", true);
+    $("#btnPareo").attr("disabled", true);
+    $("#btnImprimir").attr("disabled", true);
+    $("#btnVerDatos").attr("disabled", true);
+    $("#btnVerLog").attr("disabled", true);
+    $("#btnVisualizar").attr("disabled", true);
+    $("#btnVolver").attr("disabled", true);
+
+
+    $(document).on('hidden.bs.modal', function (e) {
+        $(e.target).removeData('bs.modal');
+    });
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+    $(document).on('click', '.panel div.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        }
+    });
+    $('#toolbar').hide();
+
+    $(document).ready(function () {
+        $.fx.off = true;
+        configColumnas = [{
+            field: 'state',
+            radio: true
+
+        }, {
+            field: 'fd_archivo',
+            title: 'N° Archivo',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'nombre_archivo',
+            title: 'Nombre archivo',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'fecha_creacion',
+            title: 'Fecha creación',
+            visible: true,
+            //formatter: FechaFormatter
+        }, {
+            field: 'fecha_confirma',
+            title: 'Fecha recepción',
+            visible: true
+        }, {
+            field: 'total_mensajes',
+            title: 'Total mensajes',
+            sortable: true
+        }, {
+            field: 'total_envios',
+            title: 'Total envíos',
+            sortable: true
+        }, {
+            field: 'total_rechazos',
+            title: 'Total rechazados',
+            sortable: true
+        }, ]
+        configColumnasDetalle = [{
+            field: 'state',
+            radio: true
+
+        }, {
+            field: 'id_mensaje',
+            title: 'Nº Mensaje',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'tipo_msg',
+            title: 'Tipo MT',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'casilla',
+            title: 'Casilla',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'estado_msg',
+            title: 'Estado',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'banco_rec',
+            title: 'Banco receptor',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'referencia',
+            title: 'Referencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'cod_moneda',
+            title: 'Mnda',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'monto',
+            title: 'Monto',
+            sortable: true,
+            visible: true,
+            align: 'right',
+            formatter: montoFormatter,
+        }, {
+            field: 'fecha_creacion',
+            title: 'Fecha proceso',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'sesion',
+            title: 'Sesión',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'secuencia',
+            title: 'Secuencia',
+            sortable: true,
+            visible: true
+        }, {
+            field: 'fecha_envio',
+            title: 'Fecha envío/Rech.',
+            sortable: true,
+            visible: true
+        }, ];
+
+        $('#btnVerDatos').hide();
+        $('#btnVolver').hide();
+        $('#btnVerLog').hide();
+        $('#btnVisualizar').hide();
+
+        $('#grpFechaHasta').hide();
+
+        var initialDate = moment(new Date()).utc().startOf('day');
+        var finalDate = moment(new Date()).utc().endOf('day');
+
+        $('#dtpFechaDesde').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+        $('#dtpFechaHasta').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: initialDate, maxDate: finalDate, debug: true });
+        $('#dtpFechaHasta').data("DateTimePicker").minDate(initialDate);
+        $('#grpFechaHasta').hide();
+        $("#dtpFechaDesde").on("dp.change", function (e) {
+            var checkbox = $('#chkPeriodoFechas');
+            if (!checkbox.is(':checked')) {
+                $('#dtpFechaHasta').data("DateTimePicker").date(e.date);
+            }
+
+            $('#dtpFechaHasta').data("DateTimePicker").minDate(e.date);
+        });
+
+        $('#chkPeriodoFechas').change(function () {
+            $('#grpFechaHasta').toggle();
+            if ($(this).is(':checked')) {
+                $('#lblFechaDesde').text("Desde");
+                $('#dtpFechaHasta').data("DateTimePicker").show();
+            }
+            else {
+                $('#lblFechaDesde').text("Fecha");
+                $('#dtpFechaHasta').data("DateTimePicker").hide();
+            }
+        });
+
+        //por ultimo, cuando cargo la 1era vez, disparo busqueda de pendientes
+        Pendientes();
+
+    });
+
+    var Pendientes = function () {
+        $('#selectFiltroEstado').val('0');
+        $('#toolbar').hide();
+
+        BloqueaBotones();
+        MuestraBotonesNuevaBusqueda();
+        seleccionado = "P";
+        estado = 'P';
+        var url = '@Url.Action("GetPendientes")';
+
+
+        var titleFiltro = 'Filtro actual: Pendientes (Todas las fechas).';
+        $('#titleFiltro').text(titleFiltro);
+
+        $('.panel-body .container').hide();
+
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts').bootstrapTable({
+            height: 500,
+            url: url,
+            locale: "es-SP",
+            sidePagination: 'client',
+            pagination: true,
+            pageSize: 25,
+            pageList: [10, 25, 50, 100, 200],
+            columns: configColumnas,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            search: true,
+            cache: false,
+            toolbar: '#toolbar',
+            showExport: true,
+            exportTypes: ['excel', 'txt'],
+            exportDataType: 'all'
+        });
+        $("#selectFiltroEstado").attr("disabled", false);
+
+    };
+
+    var Recepcionados = function () {
+
+        $('#alertdiv0').hide();
+        $('#selectFiltroEstado').val('0');
+        $('#toolbar').show();
+        BloqueaBotones();
+        MuestraBotonesNuevaBusqueda();
+        seleccionado = "R";
+        estado = 'E';
+        var url = '@Url.Action("GetRecepcionados", "AdminSwift")';
+        console.log(url);
+
+        $('.panel-body .container').show();
+
+        var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+
+        if ($("#chkPeriodoFechas").is(":checked")) {
+            fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+        }
+        else fechaHasta = fechaDesde;
+
+        var titleFiltro = 'Filtro actual: Recepcionados, Desde: ' + fechaDesde.format("DD-MM-YYYY") + ' Hasta: ' + fechaHasta.format("DD-MM-YYYY") + '.';
+        $('#titleFiltro').text(titleFiltro);
+
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts').bootstrapTable({
+            height: 500,
+            url: url,
+            queryParams: function GetParamsParaBusquedaSwift(p) {
+                ultimosParamsConsultaSwift = {
+                    estado: estado,
+                    fechaInicio: fechaDesde.format("MM/DD/YYYY"),
+                    fechaFin: fechaHasta.format("MM/DD/YYYY"),
+                    buscar: "1"
+                };
+                return ultimosParamsConsultaSwift;
+            },
+            onLoadSuccess: function (data) {
+                if (data == "LIMIT_EXCEEDED") {
+                    $('.no-records-found').find('td').text("Su búsqueda retornó demasiados resultados, debe agregar algún filtro");
+                    $('#badgeCantResultados').text(0);
+                }
+                else
+                {
+                    $('#badgeCantResultados').text(data.length);
+
+                }
+            },
+            locale: "es-SP",
+            pagination: true,
+            sidePagination: 'client',
+            pageSize: 25,
+            pageList: [10, 25, 50, 100, 200],
+            columns: configColumnas,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            search: true,
+            toolbar: '#toolbar',
+            showExport: true,
+            exportTypes: ['excel', 'txt'],
+            exportDataType: 'all',
+            onLoadError: function (arg1, arg2, arg3) {
+                if (arg1 == "500") {
+                    showAlert("Error", "Debe elegir un rango que contenga menos registros.", "alert-danger");
+                }
+            }
+        });
+        $("#selectFiltroEstado").attr("disabled", false);
+    };
+
+    var NoTransmitidos = function () {
+        $('#selectFiltroEstado').val('0');
+        BloqueaBotones();
+        MuestraBotonesNuevaBusqueda();
+        seleccionado = "T";
+        var url = '@Url.Action("GetNoTransmitidos")';
+        console.log(url);
+
+        $('.panel-body .container').show();
+        var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        var fechaHasta;
+        if ($("#chkPeriodoFechas").is(":checked")) {
+            fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+        }
+        else {
+            fechaHasta = fechaDesde;
+        }
+
+        var titleFiltro = 'Filtro actual: No transmitidos, Desde: ' + fechaDesde.format("DD-MM-YYYY") + ' Hasta: ' + fechaHasta.format("DD-MM-YYYY") + '.';
+        $('#titleFiltro').text(titleFiltro);
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts').bootstrapTable({
+            height: 500,
+            url: url,
+            queryParams: function (p) {
+                return { fechaInicio: fechaDesde.format("MM/DD/YYYY"), fechaFin: fechaHasta.format("MM/DD/YYYY") };
+            },
+            locale: "es-SP",
+            sidePagination: 'client',
+            pagination: true,
+            pageSize: 25,
+            pageList: [10, 25, 50, 100, 200],
+            columns: configColumnas,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            search: true,
+            cache: false,
+            toolbar: '#toolbar',
+            showExport: true,
+            exportTypes: ['excel', 'txt'],
+            exportDataType: 'all'
+        });
+        $("#selectFiltroEstado").attr("disabled", false);
+    };
+
+        function FechaFormatter(value, row, index) {
+            var x = row["fecha_creacion"].toString();
+            return x;
+        };
+
+
+    var Detalle = function () {
+        $("#btnVerDatos").attr("disabled", true);
+        $("#btnVerLog").attr("disabled", true);
+        $("#btnVisualizar").attr("disabled", true);
+
+        var url = '@Url.Action("GetDetalleArchivo")';
+        console.log(url);
+
+        $('#tablaSwifts').bootstrapTable('destroy');
+        $('#tablaSwifts').bootstrapTable({
+            height: 500,
+            url: url,
+            queryParams: function (p) {
+                return { idArchivo: rowSelected["fd_archivo"] };
+            },
+            locale: "es-SP",
+            pagination: true,
+            sidePagination: 'client',
+            pageSize: 25,
+            pageList: [10, 25, 50, 100, 200],
+            columns: configColumnasDetalle,
+            searchAlign: 'left',
+            showRefresh: true,
+            clickToSelect: true,
+            search: true,
+            cache: false,
+            showExport: true,
+            exportTypes: ['excel', 'txt'],
+            exportDataType: 'all'
+        });
+
+        $('#idFiltroEstado').hide();
+        $('#btnDetalle').hide();
+        $('#selectFiltroEstado').hide();
+        $('#btnVerDatos').show();
+        $('#btnVolver').show();
+        $('#btnVerLog').show();
+        $('#btnVisualizar').show();
+        $('#btnImprimir').hide();
+        $('#btnRecepcion').hide();
+        $('#btnReenviar').hide();
+        $('#btnPareo').hide();
+    };
+
+    var verMensaje = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("DatosSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+            $('#divCuerpoMensajeSwift').html(data);
+            $('#modalVisorSwift').modal();
+        });
+    };
+
+    var verLog = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("LogSwiftEnviado", "ConsultaSwift")', { idMensaje: idMensaje }, function (data) {
+            $('#divLogSwift').html(data);
+            $('#modalLogSwift').modal();
+        });
+    };
+
+
+    var visualizar = function () {
+
+        var idMensaje = rowSelected["id_mensaje"];
+        $.get('@Url.Action("DetalleSwift", "ConsultaSwift")', { idMensaje: idMensaje, sesion: 0, secuencia: 0 }, function (data) {
+            $('#divCuerpoSwift').html(data);
+            $('#modalVisorIndividualSwift').modal();
+        });
+    };
+
+        var recepcion = function () {
+
+            // El archivo de la fila seleccionada.
+            var idArchivo = rowSelected["fd_archivo"];
+
+            // Enviamos el nombre del archivo para efectos de las alertas de confirmacion y error.
+            var nombreArchivo = rowSelected["nombre_archivo"];
+
+            $.post('@Url.Action("Recepcion")', { idArchivo: idArchivo, nombreArchivo : nombreArchivo }, function (data) {
+                // se remueve el archivo de la tabla
+                $('#tablaSwifts').bootstrapTable('remove', { field: 'fd_archivo', values: [idArchivo] });
+
+                // se cargan los mensajes
+                ko.mapping.fromJS(data.Model, {});
+                if (data.Model.Mensajes.length > 0) {
+                    loadMessages(data.Model.Mensajes);
+                }
+            });
+        };
+
+    var reenviar = function () {
+        $('#divPreguntaReenvio').html();
+        $('#modalPreguntaReenvio').modal();
+        $('#LblValida').text("Solicitud de Reenvío de Archivo, Está seguro de solicitar el reenvío del Archivo: " + rowSelected["nombre_archivo"] + "");
+    };
+
+    
+
+    var aceptaReenvio = function () {
+        $('#Pregunta').hide();
+        $('#pnlResultados').show();
+        $('#DivFiltro').show();
+        var idArchivo = rowSelected["fd_archivo"];
+        $.post('@Url.Action("Reenvio")', { idArchivo: idArchivo }, function (data) {
+            $('#tablaSwifts').bootstrapTable('refresh');
+        });
+    };
+
+    var cancelaReenvio = function () {
+        $('#Pregunta').hide();
+        $('#pnlResultados').show();
+        $('#DivFiltro').show();
+    };
+
+    var BloqueaBotones = function () {
+        $("#btnRecepcion").attr("disabled", true);
+        $("#btnRecepcion").show();
+        $("#btnDetalle").attr("disabled", true);
+        $("#btnDetalle").show();
+        $("#btnVerLog").attr("disabled", true);
+        $("#btnVisualizar").attr("disabled", true);
+        $("#btnReenviar").attr("disabled", true);
+        $("#btnReenviar").show();
+        $("#btnPareo").attr("disabled", true);
+        $("#btnPareo").show();
+    };
+
+    var MuestraBotonesNuevaBusqueda = function () { //Se crea esta funcion para que muestre los botones de la cabezera, cuando se ejecuta...
+        $('#btnImprimir').show();                   //una nueva busqueda pero luego que el usuario vee el detalle de algun archivo, **-Bug 1462-**
+        $("#btnVerDatos").hide();
+        $("#btnVerLog").hide();
+        $("#btnVisualizar").hide();
+        $('#btnVolver').hide();
+    }
+
+    var Pareo = function () {
+        if ($('#selectFiltroEstado').val() == "0") {//Todos.
+            var Seleccionadas = $('#tablaSwifts').bootstrapTable('getSelections');
+            if (Seleccionadas[0].total_mensajes == Seleccionadas[0].total_envios) {
+                alert("ATENCION! El archivo ya fue pareado completamente.")
+                return;
+            }
+        }
+
+        if ($('#selectFiltroEstado').val() == "C") { //Con Pareo Completo.
+            alert("ATENCION! El archivo ya fue pareado completamente.")
+            return;
+        }
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("Parear")',
+            data: { idArchivo: rowSelected["fd_archivo"], ie_fix: new Date().getTime() },
+            cache: false,
+            success: function (data) {
+                grabeExitosamenteAlgunPareo = false;
+            $('#divmodalPareo').html(data);
+            $('#modalPareo').modal();
+            }
+        });
+        $('#lblNombrePareo').text(rowSelected["nombre_archivo"]);
+    };
+
+    var Imprimir = function () {
+        var fechaDesde = $('#dtpFechaDesde').data("DateTimePicker").date();
+        var url = '@Url.Action("ReporteGestionArchivos")'
+        var fechaHasta;
+        if ($("#chkPeriodoFechas").is(":checked")) {
+            fechaHasta = $('#dtpFechaHasta').data("DateTimePicker").date();
+        }
+        else {
+            fechaHasta = fechaDesde;
+        }
+
+        var urlReporte = url + "?estado=" + seleccionado +
+            "&fechaInicio=" + fechaDesde.format("MM/DD/YYYY") +
+            "&fechaFin=" + fechaHasta.format("MM/DD/YYYY")
+            var w = window.open(urlReporte, "_blank");
+            return true;
+    };
+
+    var volver = function () {
+
+        if (seleccionado == "P") {
+            Pendientes();
+        }
+        if (seleccionado == "R") {
+            Recepcionados();
+        }
+        if (seleccionado == "T") {
+            NoTransmitidos();
+        }
+        $('#idFiltroEstado').show();
+        $('#btnDetalle').show();
+        $('#selectFiltroEstado').show();
+        $('#btnRecepcion').show();
+        $('#btnPareo').show();
+        $('#btnReenviar').show();
+        $('#btnVerDatos').hide();
+        $('#btnVolver').hide();
+        $('#btnVerLog').hide();
+        $('#btnVisualizar').hide();
+        $('#btnImprimir').show();
+    };
+
+    $('#selectFiltroEstado').change(function () {
+        //$("#btnPareo").attr("disabled", true);
+
+        var filtro = $('#selectFiltroEstado').val();
+        if (filtro == "C") {
+            $('#tablaSwifts').bootstrapTable('filterBy', { PareoCompleto: true });
+        }
+        else if (filtro == "I")
+        {
+            $('#tablaSwifts').bootstrapTable('filterBy', { PareoCompleto: false });
+        }
+        else
+        {
+            $('#tablaSwifts').bootstrapTable('filterBy', null);
+        }
+
+
+    });
+
+    $('#btnPendientes').click(Pendientes);
+    $('#btnRecepcionados').click(Recepcionados);
+    $('#btnNoTransmitidos').click(NoTransmitidos);
+    $('#btnDetalle').click(Detalle);
+    $('#btnVerDatos').click(verMensaje);
+    $('#btnVolver').click(volver);
+    $('#btnVerLog').click(verLog);
+    $('#btnVisualizar').click(visualizar);
+    $('#btnRecepcion').click(recepcion);
+    $('#btnReenviar').click(reenviar);
+    $('#btnAceptar').click(aceptaReenvio);
+    $('#btnCancelar').click(cancelaReenvio);
+    $('#btnPareo').click(Pareo);
+    $('#btnImprimir').click(Imprimir);
+
+    $('#tablaSwifts').on('check.bs.table', function (e, row) {
+        rowSelected = row;
+
+        if (seleccionado == "P") {        //Estado Pendiente
+            $("#btnDetalle").attr("disabled", false);
+            $("#btnRecepcion").attr("disabled", false);
+            $("#btnReenviar").attr("disabled", true);
+            $("#btnPareo").attr("disabled", true);
+        }
+        else if (seleccionado == "R") { //Estado Recepcionado
+            $("#btnDetalle").attr("disabled", false);
+            $("#btnRecepcion").attr("disabled", true);
+            $("#btnReenviar").attr("disabled", true);
+            $("#btnPareo").attr("disabled", false);
+        }
+        else if (seleccionado == "T") {//Estado Transmitido.
+            $("#btnDetalle").attr("disabled", false);
+            $("#btnRecepcion").attr("disabled", true);
+            $("#btnReenviar").attr("disabled", false);
+            $("#btnPareo").attr("disabled", true);
+        }
+
+        $("#btnVerDatos").attr("disabled", false);
+        $("#btnVerLog").attr("disabled", false);
+        $("#btnVisualizar").attr("disabled", false);
+        $("#btnVolver").attr("disabled", false);
+    });
+
+    function montoFormatter(value, row, index) {
+        if (row["Moneda"] == 'USD') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'GBP') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'EUR') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] == 'GBP') {
+            return numeral(value).format("0,0.00");
+        } else if (row["Moneda"] != null) {
+            return numeral(value).format("0,0.00");
+        } else {
+            return numeral(value).format("0,0.00");
+        }
+    }
+
+    $('#tablaSwifts').on('load-success.bs.table', function (data) {
+        $("#btnImprimir").attr("disabled", true);
+        var elementos = $('#tablaSwifts').bootstrapTable('getData');
+        if (elementos.length > 0) {
+            $("#btnImprimir").attr("disabled", false);
+            $('.panel div.clickable').click();
+        }
+    });
+
+    var Reporte = function () {
+        var _urlReporte = '@Url.Action("ImprimirGestionDeArchivos", "AdminSwift")';
+        if (p != null) {
+            //tener en cuenta que al hacer un GET, las fechas .NET las toma en invariant culture, a diferencia de un POST donde las toma con la current culture
+            var urlReporte = _urlReporte + "?idCasilla=" + rowSelected['id_casilla'];
+
+            var w = window.open(urlReporte, "_blank");
+            return true;
+        }
+    };
+
+    </script>
+}

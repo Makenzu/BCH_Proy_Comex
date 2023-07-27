@@ -1,0 +1,77 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.InyectarYReversarViewModel
+
+@{
+    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    serializer.MaxJsonLength = Int32.MaxValue;
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+
+@section scripts {
+    @Scripts.Render("~/bundles/Supervisor/InyectarYReversar")
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    <script>
+
+    //todas estas variables se utilizan en el archivo FundTransfer.CargosYAbonos.js
+        var urlCargarDatos = '@Url.Action("BuscarCargosYAbonos")';
+        var urlInyectar = '@Url.Action("InyectarCargoYAbono")';
+        var urlReversar = '@Url.Action("ReversarCargoYAbono")';
+        var urlExportarAExcel = '@Url.Action("ExcelCargosYAbonos")';
+
+        var cargosYAbonosParaInyectar = @Html.Raw(serializer.Serialize(Model.CargosYAbonosParaInyectar));
+        var cargosYAbonosParaReversar = @Html.Raw(serializer.Serialize(Model.CargosYAbonosParaReversar));
+    </script>
+}
+
+@section css{
+
+    <style>
+        .btn-toolbar {
+            margin-right: 10px;
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="row">
+        <h2 class="margin-bottom-double">Cargos y Abonos</h2>
+        <ul class="nav nav-pills margin-bottom-double">
+            <li role="presentation" class="active"><a href="#tabInyectar" role="tab" data-toggle="tab">Inyectar <span class="badge" id="badgeInyectar">0</span></a></li>
+            <li role="presentation"><a href="#tabReversar" role="tab" data-toggle="tab">Reversar <span class="badge" id="badgeReversar">0</span></a></li>
+            <input type="button" id="btnVolver" name="Command" class="btn btn-default pull-right" value="Volver" />
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="tabInyectar">
+                <div class="panel panel-default" id="pnlResultadosInyectar">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Cargos y abonos para inyectar</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table id="tablaInyectar"></table>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabReversar">
+                <div class="panel panel-default" id="pnlResultadosReversar">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Cargos y abonos para reversar</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table id="tablaReversar"></table>
+                    </div>
+                </div>
+            </div>
+            @*<input type="submit" id="BtnVolver" name="Command" value="Volver" class="btn btn-default pull-right" />*@
+        </div>
+    </div>
+    <div id="toolbarInyectar">
+        <button type="submit" class="btn btn-primary btn-toolbar" id="btnExcelAbonosYCargosInyectar"><span class="glyphicon glyphicon-export" aria-hidden="true"></span>&nbsp;&nbsp;Exportar a Excel&nbsp;&nbsp;</button>
+        <button type="submit" class="btn btn-default btn-toolbar" id="btnRefreshInyectar"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;&nbsp;Refrescar&nbsp;&nbsp;</button>
+    </div>
+    <div id="toolbarReversar">
+        <button type="submit" class="btn btn-primary btn-toolbar" id="btnExcelAbonosYCargosReversar"><span class="glyphicon glyphicon-export" aria-hidden="true"></span>&nbsp;&nbsp;Exportar a Excel&nbsp;&nbsp;</button>
+        <button type="submit" class="btn btn-default btn-toolbar" id="btnRefreshReversar"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;&nbsp;Refrescar&nbsp;&nbsp;</button>
+    </div>
+</div>
+

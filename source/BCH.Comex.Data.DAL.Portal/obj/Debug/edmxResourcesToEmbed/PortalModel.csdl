@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="portalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="portalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aplicacions" EntityType="portalModel.Aplicacion" />
+    <EntitySet Name="GrupoAplicacions" EntityType="portalModel.GrupoAplicacion" />
+    <AssociationSet Name="FK_tbl_aplicacion_tbl_grupoaplicacion" Association="portalModel.FK_tbl_aplicacion_tbl_grupoaplicacion">
+      <End Role="tbl_grupoaplicacion" EntitySet="GrupoAplicacions" />
+      <End Role="tbl_aplicacion" EntitySet="Aplicacions" />
+    </AssociationSet>
+    <EntitySet Name="DatosUsuarios" EntityType="portalModel.DatosUsuario" />
+    <EntitySet Name="tbl_datos_usuario_codigos_sucursal" EntityType="portalModel.CodigosSucursal" />
+    <AssociationSet Name="FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario" Association="portalModel.FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario">
+      <End Role="DatosUsuario" EntitySet="DatosUsuarios" />
+      <End Role="tbl_datos_usuario_codigos_sucursal" EntitySet="tbl_datos_usuario_codigos_sucursal" />
+    </AssociationSet>
+    <FunctionImport Name="proc_sel_TBLSceTabcomex_MS" ReturnType="Collection(String)">
+      <Parameter Name="parametro" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Aplicacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="grupo_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ad_group_name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Grupo" Relationship="portalModel.FK_tbl_aplicacion_tbl_grupoaplicacion" FromRole="tbl_aplicacion" ToRole="tbl_grupoaplicacion" />
+    <Property Name="controller" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="action" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="parameters" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GrupoAplicacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Aplicaciones" Relationship="portalModel.FK_tbl_aplicacion_tbl_grupoaplicacion" FromRole="tbl_grupoaplicacion" ToRole="tbl_aplicacion" />
+  </EntityType>
+  <Association Name="FK_tbl_aplicacion_tbl_grupoaplicacion">
+    <End Type="portalModel.GrupoAplicacion" Role="tbl_grupoaplicacion" Multiplicity="1" />
+    <End Type="portalModel.Aplicacion" Role="tbl_aplicacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_grupoaplicacion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_aplicacion">
+        <PropertyRef Name="grupo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DatosUsuario">
+    <Key>
+      <PropertyRef Name="samAccountName" />
+    </Key>
+    <Property Name="samAccountName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigImpres_ImprimeCartas" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigImpres_ImprimePlanillas" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigImpres_ImprimeReporte" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Configuracion_Sonidos" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CtaCteLin_ArcHCCL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CtaCteLin_ArcLCCL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CtaCteLin_ServCCL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CtaCteLin_ServSOL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CtaCteLin_VistSOL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Entry_Usuario" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Exportaciones_DocSwf" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Exportaciones_TcpConDec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Exportaciones_TcpConvenio" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Exportaciones_TcpSinPai" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EXPOTAR_arch_export" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EXPOTAR_dir_arch_export" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EXPOTAR_ruta_excel" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="General_MndDol" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="General_MndNac" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="General_MndSinDec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="General_MontoIVA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Identificacion_Alias" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Identificacion_CCtUsr" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Identificacion_CCtUsro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Identificacion_Impresora" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Identificacion_Rut" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Importaciones_TcpAutBcoCen" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MODGUSR_UsrEsp_CentroCosto_CodBCCH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MODGUSR_UsrEsp_CentroCosto_CodBCH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MODGUSR_UsrEsp_CentroCosto_CodPBC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MODGUSR_UsrEsp_CentroCosto_SucBCH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Monedas_CodMonedaDolar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Monedas_CodMonedaNacional" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Oficinas_UsrEsp_CentroCosto" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Pais_CodPais" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Participantes_PartyEnRed" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Participantes_PartyNodo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Participantes_PartyServidor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SaldosCtaCte_NodoSalME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SaldosCtaCte_SerSalCCL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SaldosCtaCte_VisSalME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SaldosCtaCte_VisSalMN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SceIdi_PlazaCentral" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SgtCCLin_NodoSgt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SgtCCLin_ServSgt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SgtCCLin_TabSgt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SgtCCLin_VisSgt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Swift103_BICEMI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Swift103_BICREC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Swift_23E_Reglas" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SyBase_Base" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SyBase_Nodo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SyBase_Servidor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SyBase_Usuario" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ubicacion_Entry" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="WebServices_IP" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MinsAlertaEnvioSwift" Type="Int16" />
+    <Property Name="BCHComexSwem_Casillas" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FirmasLocales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ConfigImpres_ContabilidadGenerica" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_datos_usuario_codigos_sucursal" Relationship="portalModel.FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario" FromRole="DatosUsuario" ToRole="tbl_datos_usuario_codigos_sucursal" />
+    <Property Name="MinsAlertaAutorizacionSwift" Type="Int16" />
+    <Property Name="MinsAlertaAdminEnvioSwift" Type="Int16" />
+    <Property Name="MinsAlertaRecepcionSwift" Type="Int16" />
+    <Property Name="ConfigImpres_Formato" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CodigosSucursal">
+    <Key>
+      <PropertyRef Name="samAccountName" />
+      <PropertyRef Name="CentroCosto" />
+    </Key>
+    <Property Name="samAccountName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CentroCosto" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CodPBC" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CodBCH" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SucBCH" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CodBCCH" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_datos_usuario" Relationship="portalModel.FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario" FromRole="tbl_datos_usuario_codigos_sucursal" ToRole="DatosUsuario" />
+  </EntityType>
+  <Association Name="FK_tbl_datos_usuario_codigos_sucursal_tbl_datos_usuario">
+    <End Type="portalModel.DatosUsuario" Role="DatosUsuario" Multiplicity="1" />
+    <End Type="portalModel.CodigosSucursal" Role="tbl_datos_usuario_codigos_sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuario">
+        <PropertyRef Name="samAccountName" />
+      </Principal>
+      <Dependent Role="tbl_datos_usuario_codigos_sucursal">
+        <PropertyRef Name="samAccountName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

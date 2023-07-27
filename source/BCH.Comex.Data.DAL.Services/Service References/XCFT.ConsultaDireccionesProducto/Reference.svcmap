@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f5156a05-7efe-4cc6-a4c3-b4f3948543f4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000027_ConsultaDireccionesProducto.xsd" MetadataType="Schema" ID="2aba5fa2-d541-4b11-8519-99c44ace0490" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="ConsultaDireccionesProducto.wsdl" MetadataType="Wsdl" ID="f7e4758a-284e-41c7-b6af-47491e8a29dc" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?WSDL" />
+    <MetadataFile FileName="CS000027_ConsultaDireccionesProducto1.xsd" MetadataType="Schema" ID="cb752143-6211-4f2f-80a5-fb9047e33d2f" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS000027_ConsultaDireccionesProducto2.xsd" MetadataType="Schema" ID="ce8a75cb-e292-42c1-9251-cbc3c16b334c" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?SCHEMA%2FPX_SiebelClientes%2FCS000027_ConsultaDireccionesProducto%2FSpecifications%2FWSDL%2FCS000027_OpConsultarDireccionesProductoResponse" />
+    <MetadataFile FileName="CS000027_ConsultaDireccionesProducto3.xsd" MetadataType="Schema" ID="13eab326-d253-4b60-9c40-4a6f63880e1e" SourceId="1" SourceUrl="http://osb.sb:8011/contactabilidad/CS000027_ConsultaDireccionesProducto?SCHEMA%2FPX_SiebelClientes%2FCS000027_ConsultaDireccionesProducto%2FSpecifications%2FWSDL%2FCS000027_OpConsultarDireccionesProductoRequest" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

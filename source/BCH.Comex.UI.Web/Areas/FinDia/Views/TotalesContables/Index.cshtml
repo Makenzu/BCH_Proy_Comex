@@ -1,0 +1,16 @@
+﻿@model BCH.Comex.UI.Web.Areas.FinDia.Models.TotalesContablesViewModel
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Totales Contables";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+
+<div id="divCuerpoMensaje" style="white-space: pre; font-family: Consolas; 
+    font-weight: bold; line-height: 1; align-content: center; margin: 10px;">
+    @Model.Reporte
+</div>
+

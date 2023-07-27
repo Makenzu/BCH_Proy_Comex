@@ -1,0 +1,140 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\ADODB.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\ADODB.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\System.Web.Mvc.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\System.Web.Mvc.xml
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\bin\Release\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.BL.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\CodeArchitects.VBLibrary.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\ADODB.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\System.Web.Mvc.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Cext01.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Sbcor.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.Swift.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Data.DAL.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Utils.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Portal.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\System.Web.Mvc.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\bin\Release\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.BL.Common\obj\Release\BCH.Comex.Core.BL.Common.pdb

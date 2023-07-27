@@ -1,0 +1,937 @@
+﻿<!-- Modal -->
+@model BCH.Comex.UI.Web.Models.ControlIntegral.ChkListViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">CheckList Control</h4>
+</div>
+
+<div class="modal-body">
+    <form id="formListaControl" name="formListaControl" class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">SELECCIONE LOS CONTROLES REALIZADOS</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl1" class="label label-warning small">1. CONTENIDO DE CARTA ____</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl1)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl1, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl1, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl1, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl1, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl2" class="label label-warning small">2. INDEXACION DE DATOS____</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl2)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl2, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl2, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl2, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl2, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl3" class="label label-warning small">3. CONCEPTO BCCH__________</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl3)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl3, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl3, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl3, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl3, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl4" class="label label-warning small">4. ¿REQUIERE DJ/DI? ______</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl4)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl4, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl4, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl4, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl4, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl5" class="label label-warning small">5. CONTROL DE DUPLICIDAD__</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl5)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl5, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl5, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl5, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl5, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl6" class="label label-warning small">6. CIERRE CVD ____________</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl6)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl6, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl6, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl6, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl6, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl7" class="label label-warning small">7. MIFT __________________</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl7)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl7, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl7, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl7, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl7, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <span id="lblControl8" class="label label-warning small">8. PODERES (IUV) _________</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        @foreach (var item in Model.opCtrl8)
+                        {
+                            if (item.Selected)
+                            {
+                                if (item.Selected && !item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl8, item.ID, new Dictionary<string, object> { { "checked", "checked" }, { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl8, item.ID, new Dictionary<string, object> { { "checked", "checked" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                if (!item.Enabled)
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl8, item.ID, new Dictionary<string, object> { { "disabled", "disabled" } })
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label id="@item.Tag" class="radio-inline small">
+                                                @Html.RadioButtonFor(m => m.opCtrl8, item.ID)
+                                                @item.Value
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="row">
+        <div class="col-xs-8"></div>
+        <div class="col-xs-2 right">
+            <button id="btnCopiar" name="btnCopiar" type="submit" class="btn btn-default">Copiar</button>
+        </div>
+        <div class="col-xs-2 left">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/ControlIntegral/custom")
+@Scripts.Render("~/Scripts/jquery.validate.js")
+<script>
+
+    var CTRL = true;
+    var Txt = "";
+    var Texto = "";
+    var TextoBin = "";
+
+    var OpCtrl1 = "";
+    var OpCtrl2 = "";
+    var OpCtrl3 = "";
+    var OpCtrl4 = "";
+    var OpCtrl5 = "";
+    var OpCtrl6 = "";
+    var OpCtrl7 = "";
+    var OpCtrl8 = "";
+
+    var label1 = "";
+    var label2 = "";
+    var label3 = "";
+    var label4 = "";
+    var label5 = "";
+    var label6 = "";
+    var label7 = "";
+    var label8 = "";
+
+    var seleccion1 = "";
+    var seleccion2 = "";
+    var seleccion3 = "";
+    var seleccion4 = "";
+    var seleccion5 = "";
+    var seleccion6 = "";
+    var seleccion7 = "";
+    var seleccion8 = "";
+
+
+    var formularioControl = $("#formListaControl");
+    var baseUrl = $("#base_url").val();
+
+    CambiaColorLoadSeleccionados();
+
+    $("input[name=opCtrl1]:radio").click(function () {
+
+        OpCtrl1 = $('input[type=radio][name=opCtrl1]:checked').attr('value');
+        if (OpCtrl1 == "0" || OpCtrl1 == "1") {
+            $("#lblControl1").removeClass('label label-warning small');
+            $("#lblControl1").addClass('control-label small');
+        }
+    });
+
+    $("input[name=opCtrl2]:radio").click(function () {
+        OpCtrl2 = $('input[type=radio][name=opCtrl2]:checked').attr('value');
+        if (OpCtrl2 == "0" || OpCtrl2 == "1" || OpCtrl2 == "2") {
+            $("#lblControl2").removeClass('label label-warning');
+            $("#lblControl2").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl3]:radio").click(function () {
+        OpCtrl3 = $('input[type=radio][name=opCtrl3]:checked').attr('value');
+        if (OpCtrl3 == "0" || OpCtrl3 == "1" || OpCtrl3 == "2") {
+            $("#lblControl3").removeClass('label label-warning');
+            $("#lblControl3").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl4]:radio").click(function () {
+        OpCtrl4 = $('input[type=radio][name=opCtrl4]:checked').attr('value');
+        if (OpCtrl4 == "0" || OpCtrl4 == "1" || OpCtrl4 == "2") {
+            $("#lblControl4").removeClass('label label-warning');
+            $("#lblControl4").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl5]:radio").click(function () {
+        OpCtrl5 = $('input[type=radio][name=opCtrl5]:checked').attr('value');
+        if (OpCtrl5 == "0" || OpCtrl5 == "1") {
+            $("#lblControl5").removeClass('label label-warning');
+            $("#lblControl5").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl6]:radio").click(function () {
+        OpCtrl6 = $('input[type=radio][name=opCtrl6]:checked').attr('value');
+        if (OpCtrl6 == "0" || OpCtrl6 == "1" || OpCtrl6 == "2") {
+            $("#lblControl6").removeClass('label label-warning');
+            $("#lblControl6").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl7]:radio").click(function () {
+        OpCtrl7 = $('input[type=radio][name=opCtrl7]:checked').attr('value');
+        if (OpCtrl7 == "0" || OpCtrl7 == "1" || OpCtrl7 == "2") {
+            $("#lblControl7").removeClass('label label-warning');
+            $("#lblControl7").addClass('control-label');
+        }
+    });
+
+    $("input[name=opCtrl8]:radio").click(function () {
+        OpCtrl8 = $('input[type=radio][name=opCtrl8]:checked').attr('value');
+        if (OpCtrl8 == "0" || OpCtrl8 == "1" || OpCtrl8 == "2") {
+            $("#lblControl8").removeClass('label label-warning');
+            $("#lblControl8").addClass('control-label');
+        }
+    });
+
+    function NumParamChkLst(Opcion) {
+
+        var ParOut = 0;
+
+        switch (Opcion) {
+            case "OK":
+                ParOut = 1;
+                break;
+            case "SI":
+                ParOut = 1;
+                break;
+            case "REPARO":
+                ParOut = 2;
+                break;
+            case "CORREGIDA":
+                ParOut = 3;
+                break;
+            case "NO REQUIERE":
+                ParOut = 4;
+                break;
+            case "DUPLICADA":
+                ParOut = 5;
+                break;
+            case "NO":
+                ParOut = 9;
+                break;
+            default:
+                ParOut = 0;
+                break;
+        }
+
+        return ParOut;
+    }
+
+    function CambiaColorLoadSeleccionados() {
+
+        OpCtrl1 = $('input[type=radio][name=opCtrl1]:checked').attr('value');
+        OpCtrl2 = $('input[type=radio][name=opCtrl2]:checked').attr('value');
+        OpCtrl3 = $('input[type=radio][name=opCtrl3]:checked').attr('value');
+        OpCtrl4 = $('input[type=radio][name=opCtrl4]:checked').attr('value');
+        OpCtrl5 = $('input[type=radio][name=opCtrl5]:checked').attr('value');
+        OpCtrl6 = $('input[type=radio][name=opCtrl6]:checked').attr('value');
+        OpCtrl7 = $('input[type=radio][name=opCtrl7]:checked').attr('value');
+        OpCtrl8 = $('input[type=radio][name=opCtrl8]:checked').attr('value');
+
+
+        if (OpCtrl1 != undefined) {
+            $("#lblControl1").removeClass('label label-warning');
+            $("#lblControl1").addClass('control-label');
+        }
+        if (OpCtrl2 != undefined) {
+            $("#lblControl2").removeClass('label label-warning');
+            $("#lblControl2").addClass('control-label');
+        }
+        if (OpCtrl3 != undefined) {
+            $("#lblControl3").removeClass('label label-warning');
+            $("#lblControl3").addClass('control-label');
+        }
+        if (OpCtrl4 != undefined) {
+            $("#lblControl4").removeClass('label label-warning');
+            $("#lblControl4").addClass('control-label');
+        }
+        if (OpCtrl5 != undefined) {
+            $("#lblControl5").removeClass('label label-warning');
+            $("#lblControl5").addClass('control-label');
+        }
+        if (OpCtrl6 != undefined) {
+            $("#lblControl6").removeClass('label label-warning');
+            $("#lblControl6").addClass('control-label');
+        }
+        if (OpCtrl7 != undefined) {
+            $("#lblControl7").removeClass('label label-warning');
+            $("#lblControl7").addClass('control-label');
+        }
+        if (OpCtrl8 != undefined) {
+            $("#lblControl8").removeClass('label label-warning');
+            $("#lblControl8").addClass('control-label');
+
+        }
+
+
+    }
+
+    $("#btnCopiar").click(function () {
+
+        CTRL = true;
+        OpCtrl1 = "";
+        OpCtrl2 = "";
+        OpCtrl3 = "";
+        OpCtrl4 = "";
+
+        Txt = "";
+        Texto = "";
+        TextoBin = "";
+
+
+        label1 = "";
+        label2 = "";
+        label3 = "";
+        label4 = "";
+        label5 = "";
+        label6 = "";
+        label7 = "";
+        label8 = "";
+
+        seleccion1 = "";
+        seleccion2 = "";
+        seleccion3 = "";
+        seleccion4 = "";
+        seleccion5 = "";
+        seleccion6 = "";
+        seleccion7 = "";
+        seleccion8 = "";
+    
+        OpCtrl1 = $('input[type=radio][name=opCtrl1]:checked').attr('value');
+        if (parseInt(OpCtrl1) == 0 || parseInt(OpCtrl1) == 1) {
+            if (parseInt(OpCtrl1) == 0)
+                Txt = $("#lblCtrl1Ok").text();
+            if (parseInt(OpCtrl1) == 1)
+                Txt = $("#lblCtrl1Reparo").text();
+
+            Texto = Texto + $("#lblControl1").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label1 = $("#lblControl1").text() + " ";
+            seleccion1 = Txt;         
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl2 = $('input[type=radio][name=opCtrl2]:checked').attr('value');
+        if (parseInt(OpCtrl2) == 0 || parseInt(OpCtrl2) == 1 || parseInt(OpCtrl2) == 2) {
+            if (parseInt(OpCtrl2) == 0)
+                Txt = $("#lblCtrl2Ok").text();
+            if (parseInt(OpCtrl2) == 1)
+                Txt = $("#lblCtrl2Reparo").text();
+            if (parseInt(OpCtrl2) == 2)
+                Txt = $("#lblCtrl2Corregida").text();
+
+            Texto = Texto + $("#lblControl2").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label2 = $("#lblControl2").text() + " ";
+            seleccion2 = Txt;
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl3 = $('input[type=radio][name=opCtrl3]:checked').attr('value');
+        if (parseInt(OpCtrl3) == 0 || parseInt(OpCtrl3) == 1 || parseInt(OpCtrl3) == 2) {
+
+            if (parseInt(OpCtrl3) == 0)
+                Txt = $("#lblCtrl3Ok").text();
+            if (parseInt(OpCtrl3) == 1)
+                Txt = $("#lblCtrl3Reparo").text();
+            if (parseInt(OpCtrl3) == 2)
+                Txt = $("#lblCtrl3NoRequiere").text();
+
+            Texto = Texto + $("#lblControl3").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label3 = $("#lblControl3").text() + " ";
+            seleccion3 = Txt;
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl4 = $('input[type=radio][name=opCtrl4]:checked').attr('value');
+        //alert(OpCtrl4);
+        if (parseInt(OpCtrl4) == 0 || parseInt(OpCtrl4) == 1 || parseInt(OpCtrl4) == 2) {
+            if (parseInt(OpCtrl4) == 0)
+                Txt = $("#lblCtrl4Si").text();
+            if (parseInt(OpCtrl4) == 1)
+                Txt = $("#lblCtrl4Reparo").text();
+            if (parseInt(OpCtrl4) == 2)
+                Txt = $("#lblCtrl4NoRequiere").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            Texto = Texto + $("#lblControl4").text();
+
+            label4 = $("#lblControl4").text() + " ";
+            seleccion4 = Txt;
+          
+
+
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl5 = $('input[type=radio][name=opCtrl5]:checked').attr('value');
+        if (parseInt(OpCtrl5) == 0 || parseInt(OpCtrl5) == 1) {
+            if (parseInt(OpCtrl5) == 0)
+                Txt = $("#lblCtrl5Ok").text();
+            if (parseInt(OpCtrl5) == 1)
+                Txt = $("#lblCtrl5Duplicada").text();
+
+            Texto = Texto + $("#lblControl5").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label5 = $("#lblControl5").text() + " ";
+            seleccion5 = Txt;
+
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl6 = $('input[type=radio][name=opCtrl6]:checked').attr('value');
+        if (parseInt(OpCtrl6) == 0 || parseInt(OpCtrl6) == 1 || parseInt(OpCtrl6) == 2) {
+            if (parseInt(OpCtrl6) == 0)
+                Txt = $("#lblCtrl6Ok").text();
+            if (parseInt(OpCtrl6) == 1)
+                Txt = $("#lblCtrl6Reparo").text();
+            if (parseInt(OpCtrl6) == 2)
+                Txt = $("#lblCtrl6NoRequiere").text();
+
+            Texto = Texto + $("#lblControl6").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label6 = $("#lblControl6").text() + " ";
+            seleccion6 = Txt;
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl7 = $('input[type=radio][name=opCtrl7]:checked').attr('value');
+        if (parseInt(OpCtrl7) == 0 || parseInt(OpCtrl7) == 1 || parseInt(OpCtrl7) == 2) {
+            if (parseInt(OpCtrl7) == 0)
+                Txt = $("#lblCtrl7Ok").text();
+            if (parseInt(OpCtrl7) == 1)
+                Txt = $("#lblCtrl7Reparo").text();
+            if (parseInt(OpCtrl7) == 2)
+                Txt = $("#lblCtrl7NoRequiere").text();
+
+            Texto = Texto + $("#lblControl7").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label7 = $("#lblControl7").text() + " ";
+            seleccion7 = Txt;
+        }
+        else {
+            CTRL = false;
+        }
+
+        OpCtrl8 = $('input[type=radio][name=opCtrl8]:checked').attr('value');
+        if (parseInt(OpCtrl8) == 0 || parseInt(OpCtrl8) == 1 || parseInt(OpCtrl8) == 2) {
+            if (parseInt(OpCtrl8) == 0)
+                Txt = $("#lblCtrl8Ok").text();
+            if (parseInt(OpCtrl8) == 1)
+                Txt = $("#lblCtrl8Reparo").text();
+            if (parseInt(OpCtrl8) == 2)
+                Txt = $("#lblCtrl8NoRequiere").text();
+
+            Texto = Texto + $("#lblControl8").text();
+            TextoBin = TextoBin + NumParamChkLst(Txt);
+            label8 = $("#lblControl8").text() + " ";
+            seleccion8 = Txt;
+
+        }
+        else {
+            CTRL = false;
+        }
+        var data = formularioControl.serialize();
+        var StringCopiado = "";
+        if (CTRL) {
+            $.post(baseUrl + "ControlIntegral/BotonCopiar", { TextoBin: TextoBin }, function (dataresult) {
+                if (dataresult.estado == 1) {
+                    //StringCopiado = label1.trim().concat(seleccion1.trim()) + '\n\r\n\r' + label2.trim().concat(seleccion2.trim());
+                    StringCopiado = label1.trim().replace('\n', '').concat(seleccion1.trim()) + '\r\n' + label2.trim().replace('\n', '').concat(seleccion2.trim()) + '\r\n' + label3.trim().replace('\n', '').concat(seleccion3.trim()) + '\r\n' + label4.trim().replace('\n', '').concat(seleccion4.trim()) + '\r\n' + label5.trim().replace('\n', '').concat(seleccion5.trim()) + '\r\n' + label6.trim().replace('\n', '').concat(seleccion6.trim()) + '\r\n' + label7.trim().replace('\n', '').concat(seleccion7.trim()) + '\r\n' + label8.trim().replace('\n', '').concat(seleccion8.trim());
+                    copiar(StringCopiado);
+                    bootbox.alert("Datos guardados correctamente");
+                }
+                else
+                    bootbox.alert("Error al guarda los datos");
+
+            });
+        }
+        else
+            bootbox.alert("Debe marcar todos los controles");
+
+
+    });
+
+
+    function copiar(str) {
+        window.clipboardData.setData('Text', str);
+        toastr["success"]("Texto Copiado.", _ToastrTitulo);
+    }
+
+</script>

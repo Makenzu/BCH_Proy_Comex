@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCRequest" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/ESB/AbonoCuentaCosmosCodFC/OpAbonoCuentaCosmosCodFCRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="reqAbonoCuentaCosmosCodFC">
+    <xsd:sequence>
+      <xsd:element ref="tns:DatosCabeceraNegocio" />
+      <xsd:element ref="tns:DatosNegocio" />
+      <xsd:element ref="tns:dataMT942" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DatosCabeceraNegocio">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="rutOperadora" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="Cajero" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="bancoDestino" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="bancoOrigen" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="rutCliente" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="oficinaOrigenTx" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CUIOrigenTx" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="oficinaOrigenExternaTx" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="canalOrigenTx" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="rutSupervisor" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="supervisor" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="fechaContable" type="xsd:date" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="fechaHoraCorrienteTx" type="xsd:dateTime" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Horario" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="txid" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="txidParaReversar" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatosNegocio">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="Cuenta" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="Serialdelcheque" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodBanco" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CodPlaza" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CodProductoFC" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CodTransaccionFC" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CodExtendidoFC" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Monto" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="Moneda" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="nroBoleta" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="CuentadeCargo" nillable="true" type="xsd:string" />
+        <xsd:element ref="tns:ListadataCartola" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ListadataCartola">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="tns:DataCartola" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DataCartola">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="1" name="NombreCampo" nillable="true" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="ValorCampo" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="dataMT942">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:Mt942Campo61" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="mt942CodigoTxCosmos" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="mt942TipoProductoCosmos" type="xsd:string" />
+        <xsd:element minOccurs="0" maxOccurs="1" name="mt942InfoAdicional-2" nillable="true" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Mt942Campo61">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="1" name="FechaValuta" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="TxType" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="ReferenciaCliente" type="xsd:string" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="ReferenciaBCH" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

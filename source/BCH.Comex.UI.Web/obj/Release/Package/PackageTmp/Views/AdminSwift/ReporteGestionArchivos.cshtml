@@ -1,0 +1,67 @@
+﻿@model BCH.Comex.UI.Web.Models.AdministracionSwift.ReporteArchivosModel
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = Model.Titulo;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Envío Mensajes Swift</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-de-envio-automatico-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Archivos de Mensajes @Model.Archivos</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+        @if (Model != null)
+        {
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha Creación</th>
+                        <th>Fecha Recepción</th>
+                        <th style="text-align:right">Total Mensajes</th>
+                        <th style="text-align:right">Total Envíos</th>
+                        <th style="text-align:right">Total Rechazos</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.Detalle)
+                {
+                    <tr>
+                        <td>@item.nombre_archivo</td>
+                        <td>@item.fecha_creacion</td>
+                        <td>@item.fecha_confirma</td>
+                        <td style="text-align:right">@item.total_mensajes</td>
+                        <td style="text-align:right">@item.total_envios</td>
+                        <td style="text-align:right">@item.total_rechazos</td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+            <table cellpadding=0 cellspacing=0 class="t1" style="width:40%" align="right">
+                <tbody>
+                    <tr>
+                        <td><b>@Model.Total</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>

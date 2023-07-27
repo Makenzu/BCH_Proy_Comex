@@ -1,0 +1,157 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.ParticipantesViewModel
+
+@{
+    ViewBag.Title = "Participantes";
+}
+<div class="container">
+    <h3 id="tituloParticipantes">Participantes @ViewBag.Caption</h3>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmParticipantes", name = "frmParticipantes" }))
+    {
+        @Html.AntiForgeryToken()
+
+        if (Model.ParticipanteCongelado)
+        {
+            <div class="alert alert-warning">
+                <strong>Atención!</strong> En esta etapa ya no es posible modificar el participante, si debe hacerlo deberá comenzar una nueva operación.
+            </div>
+        }
+        <div class="row">
+            <div class="col-xs-6">
+                <fieldset>
+                    <legend>Identificar Participantes</legend>
+                    <div class="row form-group">
+                        <div class="col-xs-4">
+                            @Html.LabelFor(model => model.SelectedPartiList)
+                        </div>
+                        <div class="col-xs-8">
+                            @Html.DropDownListFor(model => model.SelectedPartiList, Model.PartiList, htmlAttributes: new { @class = "form-control input-sm", multiple = "" })
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <input type="submit" id="btnAceptar" name="Command" value="Aceptar" class="btn btn-primary" tabindex="5"
+                               @(Model.BtnAceptar.Enabled ? "" : "disabled = 'disabled'") />
+                        <input type="submit" id="btnCancelar" name="Command" value="Cancelar" class="btn btn-default" />
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-6">
+                <fieldset>
+                    <legend>Identificar</legend>
+                    <div class="row">
+                        @Html.LabelFor(model => model.TipoOperacion, htmlAttributes: new { @class = "control-label col-xs-4" })
+                        <div class="col-xs-8 radio" id="tipoOperacionContainer">
+
+                            @foreach (var item in Model.TipoOperacion)
+                            {
+                                <label class="radio-inline">
+                                    @if (item.Enabled)
+                                    {
+                                        @Html.RadioButtonFor(model => model.SelectedTipoOperacion, item.ID, new { tabindex = "2" })
+                                        @item.Value
+                                    }
+                                    else
+                                    {
+                                        @Html.RadioButtonFor(model => model.SelectedTipoOperacion, item.ID, new { disabled = "disabled" })
+                                        @item.Value
+                                    }
+                                </label>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 label-div">
+                            @Html.LabelFor(model => model.KeyText)
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.KeyText,
+                                Model.Llave.Enabled ? (object)(new { htmlAttributes = new { @class = "form-control input-sm", style = "text-transform: uppercase", maxlength = "12", tabindex = "3" } }) :
+                                (object)(new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } }))
+
+                                <span class="input-group-btn">
+                                    <a id="btnBuscar" data-href="@Url.Action("ConsultaParticipantes")" @(Model.BtnBuscar.Enabled ? "href=" + Url.Action("ConsultaParticipantes") : "disabled=disabled href=#") name="btnBuscar" class="btn btn-default btn-sm" role="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </a>
+                                </span>
+                            </div>
+                            @Html.ValidationMessageFor(model => model.KeyText, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 label-div">
+                            @Html.LabelFor(model => model.Tx_Dir)
+                        </div>
+                        <div class="col-xs-8">
+                            @Html.TextAreaFor(model => model.Tx_Dir, new { @class = "form-control input-sm", @rows = "4", @disabled = "disabled" })
+                            @Html.ValidationMessageFor(model => model.Tx_Dir, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        @Html.LabelFor(model => model.Donde, htmlAttributes: new { @class = "control-label col-xs-4" })
+                        <div class="col-xs-8 radio" id="dondeContainer">
+                            @foreach (var item in Model.Donde)
+                            {
+                                <label class="radio-inline">
+                                    @Html.RadioButtonFor(model => model.SelectedDonde, item.ID)
+                                    @item.Value
+                                </label>
+                            }
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group text-right">
+                                    <input type="button" id="btnIdentificar" name="Command" value="@Model.BtnIdentificar.Text" class="btn btn-primary"
+                                           @(Model.BtnIdentificar.Enabled && !Model.ParticipanteCongelado ? "" : "disabled = 'disabled'") tabindex="4" />
+                                    <input type="button" id="btnEliminar" name="Command" value="Eliminar" class="btn btn-danger"
+                                           @(Model.BtnEliminar.Enabled && !Model.ParticipanteCongelado ? "" : "disabled = 'disabled'") />
+                                    <input type="button" id="btnInstruccion" name="Command" value="Instrucción" class="btn btn-default"
+                                           disabled="disabled" />
+                                </div>
+                            </div>
+                        </div>
+                </fieldset>
+            </div>
+        </div>
+
+        @section scripts{
+            <script>
+                var DesdeCargaOperaciones = '@Model.AbrirDesdeCargaOperaciones';
+                var CargaAutomatica = '@Model.CargaAutomatica';
+                var OperacionReversa = '@ViewBag.OperacionReversa';
+                var modelCompleto = @Html.Raw(Json.Encode(Model));
+            </script>
+            @Scripts.Render("~/bundles/FundTransfer/Participantes")
+        }
+
+    }
+
+</div>
+
+<!-- Modal Identificacion de Participantes -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Identificar Participantes" id="ParticipantesIdentificar">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                <h4 class="modal-title">Identificar Participantes</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("_ParticipantesIdentificar")
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnAceptarPIdentificar">Aceptar</button>
+                </div>*@
+
+            <div class="modal-footer">
+                <div class="col-xs-12 text-right">
+                    <button type="button" class="btn btn-primary" id="btnAceptarPIdentificar">Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

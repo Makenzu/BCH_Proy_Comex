@@ -1,0 +1,38 @@
+﻿@using System.Collections;
+@using System.Web.Mvc;
+@using BCH.Comex.Core.Entities.Cext01.FundTransfer.UI_Modulos;
+
+@model BCH.Comex.Common.UI_Modulos.UI_Combo
+
+@{
+    var htmlAttributes = (object)ViewData["htmlAttributes"];
+    var newAttrs = HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
+    if (!Model.Enabled)
+    {
+        newAttrs.Add("disabled", "disabled");
+    }
+    
+}
+
+@if (!newAttrs.ContainsKey("multiple")) { 
+    @Html.DropDownListFor(model => model.SelectedValue,
+                    Model.Items.Select(x => new SelectListItem{
+                        Text =  x.Value,
+                        Value = x.Data.ToString(),
+                        Selected = (Model.ListIndex >= 0 && Model.Items[Model.ListIndex].Data == x.Data)
+                    }).ToList(),
+                    "--Seleccione--",
+                    htmlAttributes: @newAttrs);
+}
+else
+{
+    @Html.DropDownListFor(model => model.SelectedValue,
+                    Model.Items.Select(x => new SelectListItem
+                    {
+                        Text = x.Value,
+                        Value = x.Data.ToString(),
+                        Selected = (Model.ListIndex >= 0 && Model.Items[Model.ListIndex].Data == x.Data)
+                    }).ToList(),
+                    htmlAttributes: @newAttrs);
+}

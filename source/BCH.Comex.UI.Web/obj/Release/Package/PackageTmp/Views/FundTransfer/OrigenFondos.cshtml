@@ -1,0 +1,231 @@
+﻿@using BCH.Comex.Core.Entities.Cext01.FundTransfer.UI_Modulos
+@model UI_Frm_Origen_Fondos
+
+<div class="container" id="OrigenFondos">
+    <h3>Orígenes de Fondos @ViewBag.Caption</h3>
+    <div class="col-xs-4">
+        <div style="max-height:200px; overflow: auto;">
+            <table class="table table-hover table-bordered" style="overflow: auto;" id="l_mto">
+                <thead>
+                    <tr data-bind="foreach: l_mto.Header">
+                        <th data-bind="text: $data"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: l_mto.Items">
+                    <tr style="max-height:40px;" data-bind="click: $parent.ORIFOND_l_mto_Blur($index), style:{color:$parent.l_mto.ListIndex()==$index() ? 'blue' : 'black'}, css:{'info': $parent.l_mto.ListIndex() == $index() }">
+                        <td data-bind="text: columns.NemMon"></td>
+                        <td data-bind="text: columns.MtoTot"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <label>Moneda</label>
+            <select id="L_Mnd" data-bind="options: l_mnd.Items, optionsText: 'Value', optionsValue: 'Data', value: l_mnd.Value, event:{blur:ORIFOND_l_mnd_Blur,change:ORIFOND_l_mnd_Change}" class="form-control input-sm"></select>
+        </div>
+        <div class="form-group">
+            <label>Participantes</label>
+            <select id="L_Partys" data-bind="options: L_Partys.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Partys.Value, event:{blur:ORIFOND_L_Partys_Blur,change:ORIFOND_L_Partys_Change}" class="form-control input-sm"></select>
+        </div>
+        <div class="form-group">
+            <label>Cuentas</label>
+            <select id="L_Cuentas" tabindex="1" data-bind="enable: L_Cuentas.Enabled, visible: L_Cuentas.Visible, options: L_Cuentas.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Cuentas.Value, event:{blur:ORIFOND_L_Cuentas_Blur,change:ORIFOND_L_Cuentas_Change}" class="form-control input-sm"></select>
+        </div>
+        <div class="form-group" data-bind="visible: cmb_codtran.Visible">
+            <label>Seleccione Tipo de Transacción</label>
+            <select id="cmb_codtran" tabindex="7" data-bind="options: cmb_codtran.Items, optionsText: 'Value', optionsValue: 'Data', value: cmb_codtran.Value, optionsCaption: '--Seleccione--' ,enable: cmb_codtran.Enabled, event:{blur:ORIFOND_cmb_codtran_Blur,change: ORIFOND_cmb_codtran_Change}" class="form-control input-sm"></select>
+        </div>
+    </div>
+    <div class="col-xs-8">
+        <div style="max-height: 200px; overflow: auto;">
+            <table class="table table-hover table-bordered header-fixed" style="overflow: auto;">
+                <thead>
+                    <tr data-bind="foreach: l_ori.Header">
+                        <th data-bind="text: $data"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: l_ori.Items">
+                    <tr style="max-height:40px;" data-bind="click: $parent.ORIFOND_l_ori_Blur($index), css:{'info': $parent.l_ori.ListIndex() == $index() }, scrollTo: $parent.scrollToItem">
+                        <td data-bind="text: columns.NomOri"></td>
+                        <td data-bind="text: columns.NemMon"></td>
+                        <td data-bind="text: columns.MtoTot"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <label>Orígen de los Fondos</label>
+                <select id="L_Cta" tabindex="2" data-bind="options: L_Cta.Items, optionsText: 'Value', optionsValue: 'Data', value: L_Cta.Value, event:{blur:ORIFOND_L_Cta_Blur,change:ORIFOND_L_Cta_Change}" class="form-control input-sm" style="width:100%;"></select>
+            </div>
+            <div class="col-xs-5">
+                <label>Monto</label>
+                <input id="MtoOri" tabindex="3" type="text" maxlength="15" data-bind="textInput: MtoOri.Text" class="col-xs-10 form-control monto input-sm" />
+            </div>
+            <div class="col-xs-2">
+                <div class="input-group text-right" style="margin-top: 20px">
+                    <button id="btn_ok" tabindex="8" class="btn btn-success input-group-addon" data-bind="click: ORIFOND_ok_Click">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </button>
+                    <button id="btn_no" disabled="disabled" class="btn btn-danger input-group-addon" data-bind="click: ORIFOND_NO_Click">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-bind="if: Lb_Datos()[1].Visible() || Lb_Datos()[2].Visible() || Lb_Datos()[0].Visible() || BNem.Visible()">
+            <div class="col-xs-12">
+                <!-- ko if: Lb_Datos()[0].Visible -->
+                <div class="col-xs-3" data-bind="visible: Lb_Datos()[0].Visible">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Datos()[0].Text"></label>
+                        <input id="Tx_Datos_0" style="text-transform: uppercase" tabindex="4" type="text" class="form-control tx_datos input-sm" data-bind="textInput: Tx_Datos()[0].Text, event:{blur:tx_datos_change_toUpper,keydown: tx_datos_keypress_Nemonico}, attr :{ maxlength: Tx_Datos()[0].MaxLength }" />
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: Lb_Datos()[1].Visible -->
+                <div class="col-xs-3" data-bind="visible: Lb_Datos()[1].Visible">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label data-bind="text: Lb_Datos()[1].Text"></label>
+                            <input id="Tx_Datos_1" style="text-transform: uppercase" tabindex="5" type="text" class="form-control tx_datos input-sm" data-bind="textInput: Tx_Datos()[1].Text, event:{blur:tx_datos_change_toUpper,keypress: tx_datos_keypress}, attr :{ maxlength: Tx_Datos()[1].MaxLength }" maxlength="20" />
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: Lb_Datos()[2].Visible -->
+                <div class="col-xs-3" data-bind="visible: Lb_Datos()[2].Visible">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label data-bind="text: Lb_Datos()[2].Text"></label>
+                            <input id="Tx_Datos_2" style="text-transform: uppercase" tabindex="6" type="text" class="form-control tx_datos input-sm" data-bind="textInput: Tx_Datos()[2].Text, event:{blur:tx_datos_change_toUpper,keypress: tx_datos_keypress}, attr :{ maxlength: Tx_Datos()[2].MaxLength }" />
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="col-xs-1" data-bind="if: BNem.Visible">
+                    <button id="bnem" data-bind="click: ORIFOND_BNem_Click, enable: BNem.Enabled" class="pull-left btn btn-default" style="display: inline-block; margin-top: 25px;">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+                <div class="col-xs-4" style="padding-top: 20px;" data-bind="if: Lb_Oficina.Visible">
+                    <div class="form-group">
+                        <label data-bind="text: Lb_Oficina.Text"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-bind="if: txtNumRef.Visible">
+            <div class="col-xs-4 col-xs-offset-6" data-bind="if: txtNumRef.Visible">
+                <div class="form-group">
+                    <label>Número de Partida</label>
+                    <input type="text" class="form-control input-sm" data-bind="textInput: txtNumRef.Text" />
+                </div>
+            </div>
+        </div>
+        <div class="row" data-bind="if:  Ch_ImpDeb.Visible || Bt_PlnTrn.Visible ||  frm_datos.Visible">
+            <div class="col-xs-6" data-bind="visible: frm_datos.Visible">
+                <div class="form-group">
+                    <label>Beneficiario</label>
+                    <input class="form-control text-uppercase input-sm" id="Text0_Text" type="text" maxlength="35" data-bind="enable: Text1()[0].Enabled, textInput: Text1()[0].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper}" />
+                </div>
+                <div class="form-group">
+                    <label>Detalle</label>
+                    <input class="form-control text-uppercase input-sm" id="Text1_Text" type="text" maxlength="35" data-bind="enable: Text1()[1].Enabled,textInput: Text1()[1].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper}" />
+                </div>
+                <div class="form-group">
+                    <label>Detalle</label>
+                    <input class="form-control text-uppercase input-sm" id="Text2_Text" type="text" maxlength="35" data-bind="enable: Text1()[2].Enabled,textInput: Text1()[2].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper}" />
+                </div>
+                <div class="form-group">
+                    <label>Detalle</label>
+                    <input class="form-control text-uppercase input-sm" id="Text3_Text" type="text" maxlength="35" data-bind="enable: Text1()[3].Enabled,textInput: Text1()[3].Text,event: {keypress:tx_datos_keypress_ConPunto, change:tx_datos_change_toUpper}" />
+                </div>
+                <div class="form-group">
+                    <label>Referencia</label>
+                    <input class="form-control input-sm" type="text" data-bind="enable: Text1()[4].Enabled,textInput: Text1()[4].Text,event: {keypress:tx_datos_keypress}" />
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="form-group" data-bind="visible: Ch_ImpDeb.Visible, enable: Ch_ImpDeb.Enabled">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-bind="checked: Ch_ImpDeb.Checked" />
+                            Impuesto al Débito
+                        </label>
+                    </div>
+                </div>
+                <button id="Bt_PlnTrn" type="button" class="btn btn-default pull-right" data-bind="click: ORIFOND_Bt_PlnTrn_Click, visible: Bt_PlnTrn.Visible">Planillas</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" data-bind="if: frm_infoctagap.Visible, enable: frm_infoctagap.Enabled">
+        <div class="col-xs-8">
+            <div class="form-group">
+                <label>Información de Cuentas GAP</label>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Cuenta</label>
+                    <input id="txt_cuenta" class="form-control input-sm" type="text" data-bind="textInput: txt_cuenta.Text" maxlength="35" />
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>C. R. Number</label>
+                    <input id="txt_CRN" class="form-control input-sm" type="text" data-bind="textInput: txt_CRN.Text" maxlength="35" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 text-right">
+        <button class="btn btn-primary" tabindex="9" disabled="disabled" id="btnAccept" data-bind="click: ORIFOND_Boton_Click(0)">Aceptar</button>
+        <button class="btn btn-default" id="btnCancel" data-bind="click: ORIFOND_Boton_Click(1)">Cancelar</button>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/FundTransfer/OrigenFondos")
+    <script>
+        /** todas estas variables se utilizan en el archivo FundTransfer.GenerarSwift.js  **/
+        //datos en formato Json
+        var modeloCompleto = @Html.Raw(Json.Encode(Model));
+
+    </script>
+}
+
+@section css{
+    <style>
+        .header-fixed {
+            width: 100%;
+        }
+
+            .header-fixed > thead,
+            .header-fixed > tbody,
+            .header-fixed > thead > tr,
+            .header-fixed > tbody > tr,
+            .header-fixed > thead > tr > th,
+            .header-fixed > tbody > tr > td {
+                display: block;
+            }
+
+                .header-fixed > tbody > tr:after,
+                .header-fixed > thead > tr:after {
+                    content: ' ';
+                    display: block;
+                    visibility: hidden;
+                    clear: both;
+                }
+
+            .header-fixed > tbody {
+                overflow: auto;
+                height: 122px;
+            }
+
+                .header-fixed > tbody > tr > td,
+                .header-fixed > thead > tr > th {
+                    width: 33.33%;
+                    float: left;
+                }
+    </style>
+}

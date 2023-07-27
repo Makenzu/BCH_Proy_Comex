@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3a631c79-6e84-4f41-8166-2cb68a7ba27f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona8.xsd" MetadataType="Schema" ID="df0bbc91-5fad-4134-a87a-9fd2c4e38e17" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderResponse" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona81.xsd" MetadataType="Schema" ID="fe0467cb-064a-447d-beef-d986a1db5af8" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FTelefono" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona82.xsd" MetadataType="Schema" ID="85362f66-6321-4791-9ef3-9313c763a65b" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FEmail" />
+    <MetadataFile FileName="ConsultaInformacionBasicaPersona1.wsdl" MetadataType="Wsdl" ID="4d345ff0-ac91-45ba-a443-22e363802ea0" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?WSDL" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona83.xsd" MetadataType="Schema" ID="85fb03af-af63-4083-b719-1c8b60d38802" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FCS000028_ConsultaInformacionBasicaPersona%2FSpecifications%2FWSDL%2FCS000028_OpConsultarInfoBasicaRequest" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona84.xsd" MetadataType="Schema" ID="d2d67b8f-0a23-4533-ad60-afc7ba939b34" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDireccion" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona85.xsd" MetadataType="Schema" ID="941ca743-361a-45c0-8d62-50eccbdb1adc" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FCS000028_ConsultaInformacionBasicaPersona%2FSpecifications%2FWSDL%2FCS000028_OpConsultarInfoBasicaResponse" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona86.xsd" MetadataType="Schema" ID="0b725676-4af4-4e20-bbac-399c0968c9f5" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FUT_EsquemasComunes%2FSpecifications%2FXSD%2FCommon%2FHeaderRequest" />
+    <MetadataFile FileName="CS000028_ConsultaInformacionBasicaPersona87.xsd" MetadataType="Schema" ID="6c8834e5-f339-4b51-8bf5-28a0fda62fbb" SourceId="1" SourceUrl="http://200.14.147.250:8011/contactabilidad/CS000028_ConsultaInformacionBasicaPersona?SCHEMA%2FPX_SiebelClientes%2FSpecifications%2FCommon%2FSpecifications%2FDatosEjecutivo" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

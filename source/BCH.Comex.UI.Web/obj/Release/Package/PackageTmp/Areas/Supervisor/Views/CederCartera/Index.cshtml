@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Supervisor";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+
+<h2>Ceder Cartera</h2>
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">Identificación de Especialistas</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>Usuario Actual:</label>
+                            <select class="form-control" id="userItems" data-bind="options: userItems"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>Nuevo Usuario:</label>
+                            <select class="form-control" id="newUserItems" data-bind="options: newUserItems"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>Productos:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <select multiple id="productItems" class="form-control mono" data-bind="options:productItems, optionsText: 'desPro', optionsValue: 'codPro'" size="5"></select>
+                        </div>
+                        <div class="col-xs-1">
+                            <button id="btn_AddClientes" class="btn btn-success input-group-addon" style="width: 30px; color: #fff" data-bind="click: btn_AddClientesHandler , clickBubble: false">
+                                <i class=" glyphicon glyphicon-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Identificación de Clientes</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <select style="height:100px" size="5" id="clientItems" class="form-control mono" data-bind="options:clientItems, optionsText: 'descripcion', optionsValue: 'rutOriginal'"></select>
+                        </div>
+                        <div class="col-xs-1">
+                            <button id="btn_AddOperaciones" class="btn btn-success input-group-addon" style="width: 30px; color: #fff" data-bind="click: btn_AddOperacionesHandler">
+                                <i class="glyphicon glyphicon-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Cantidad de Operaciones por Cliente</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <select style="height:100px" size="5" id="operationItems" class="form-control mono" data-bind="options:operationItems, optionsText: 'descripcion', optionsValue: 'codPro'"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6" style="margin-top:25px;">
+                            <button id="btnAceptar" class="btn btn-primary" data-bind="event: { click: btn_AceptarHandler }">Aceptar</button>
+                            <button id="btnCancelar" class="btn btn-default" data-bind="event: { click: btn_CancelarHandler }">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section scripts {
+    <script>
+        var urlObtenerProductos = '@Url.Action("ObtenerProductos")';
+    </script>
+    @Scripts.Render("~/bundles/Supervisor/CederCartera")
+}

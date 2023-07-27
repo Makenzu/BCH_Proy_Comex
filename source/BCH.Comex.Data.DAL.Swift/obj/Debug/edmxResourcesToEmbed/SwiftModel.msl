@@ -1,0 +1,1996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SwiftModelStoreContainer" CdmEntityContainer="swiftEntities">
+    <FunctionImportMapping FunctionImportName="EncriptaMensajeS_MS" FunctionName="SwiftModel.Store.EncriptaMensajeS_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_env_rango" FunctionName="SwiftModel.Store.proc_sw_env_trae_env_rango">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.ResultadoBusquedaSwift">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateMensajeS_MS" FunctionName="SwiftModel.Store.UpdateMensajeS_MS" />
+    <FunctionImportMapping FunctionImportName="proc_trae_tipo_campos_MS" FunctionName="SwiftModel.Store.proc_trae_tipo_campos_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_trae_tipo_campos_MS_Result">
+          <ScalarProperty Name="tipo_msg_tipcam" ColumnName="tipo_msg_tipcam" />
+          <ScalarProperty Name="tag_campo_tipcam" ColumnName="tag_campo_tipcam" />
+          <ScalarProperty Name="nombre_campo_tipcam" ColumnName="nombre_campo_tipcam" />
+          <ScalarProperty Name="max_largo" ColumnName="max_largo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_trae_formato_campos_MS" FunctionName="SwiftModel.Store.proc_trae_formato_campos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_trae_bancos_MS" FunctionName="SwiftModel.Store.proc_trae_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_por_idmensaje" FunctionName="SwiftModel.Store.proc_sw_env_trae_por_idmensaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.ResultadoBusquedaSwift">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_por_id_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_por_id_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.ResultadoBusquedaSwift">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_fmt_largo_MS" FunctionName="SwiftModel.Store.proc_sw_trae_fmt_largo_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_fmt_largo_MS_Result">
+          <ScalarProperty Name="tag_fmt" ColumnName="tag_fmt" />
+          <ScalarProperty Name="status_fmt" ColumnName="status_fmt" />
+          <ScalarProperty Name="repeticion_fmt" ColumnName="repeticion_fmt" />
+          <ScalarProperty Name="orden_fmt" ColumnName="orden_fmt" />
+          <ScalarProperty Name="secuencia_fmt" ColumnName="secuencia_fmt" />
+          <ScalarProperty Name="largo_total" ColumnName="largo_total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_datos_msg_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_datos_msg_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_datos_msg_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="unidad_rechazo" ColumnName="unidad_rechazo" />
+          <ScalarProperty Name="rut_rechazo" ColumnName="rut_rechazo" />
+          <ScalarProperty Name="fecha_rechazo" ColumnName="fecha_rechazo" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+          <ScalarProperty Name="veces_rechazo" ColumnName="veces_rechazo" />
+          <ScalarProperty Name="unidad_modifica" ColumnName="unidad_modifica" />
+          <ScalarProperty Name="rut_modifica" ColumnName="rut_modifica" />
+          <ScalarProperty Name="fecha_modifica" ColumnName="fecha_modifica" />
+          <ScalarProperty Name="veces_modifica" ColumnName="veces_modifica" />
+          <ScalarProperty Name="fecha_aprobac" ColumnName="fecha_aprobac" />
+          <ScalarProperty Name="rut_bloqueo" ColumnName="rut_bloqueo" />
+          <ScalarProperty Name="fecha_bloqueo" ColumnName="fecha_bloqueo" />
+          <ScalarProperty Name="veces_bloqueo" ColumnName="veces_bloqueo" />
+          <ScalarProperty Name="texto_bloqueo" ColumnName="texto_bloqueo" />
+          <ScalarProperty Name="unidad_anula" ColumnName="unidad_anula" />
+          <ScalarProperty Name="rut_anula" ColumnName="rut_anula" />
+          <ScalarProperty Name="fecha_anula" ColumnName="fecha_anula" />
+          <ScalarProperty Name="texto_anula" ColumnName="texto_anula" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_datos_msg_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_datos_msg_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_datos_msg_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha_send" ColumnName="fecha_send" />
+          <ScalarProperty Name="fecha_ack" ColumnName="fecha_ack" />
+          <ScalarProperty Name="rut_entry" ColumnName="rut_entry" />
+          <ScalarProperty Name="observ_encas" ColumnName="observ_encas" />
+          <ScalarProperty Name="unidad_recibe" ColumnName="unidad_recibe" />
+          <ScalarProperty Name="rut_autoriza" ColumnName="rut_autoriza" />
+          <ScalarProperty Name="fecha_recibe" ColumnName="fecha_recibe" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="unidad_imprime" ColumnName="unidad_imprime" />
+          <ScalarProperty Name="rut_imprime" ColumnName="rut_imprime" />
+          <ScalarProperty Name="fecha_imprime" ColumnName="fecha_imprime" />
+          <ScalarProperty Name="unidad_rechazo" ColumnName="unidad_rechazo" />
+          <ScalarProperty Name="rut_rechazo" ColumnName="rut_rechazo" />
+          <ScalarProperty Name="fecha_rechazo" ColumnName="fecha_rechazo" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+          <ScalarProperty Name="veces_rechazo" ColumnName="veces_rechazo" />
+          <ScalarProperty Name="rut_reenvio" ColumnName="rut_reenvio" />
+          <ScalarProperty Name="fecha_reenvio" ColumnName="fecha_reenvio" />
+          <ScalarProperty Name="texto_reenvio" ColumnName="texto_reenvio" />
+          <ScalarProperty Name="veces_reenvio" ColumnName="veces_reenvio" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_log_trae_msg_MS" FunctionName="SwiftModel.Store.proc_sw_log_trae_msg_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_log_trae_msg_MS_Result">
+          <ScalarProperty Name="fecha_log" ColumnName="fecha_log" />
+          <ScalarProperty Name="rutais_log" ColumnName="rutais_log" />
+          <ScalarProperty Name="casilla_origen" ColumnName="casilla_origen" />
+          <ScalarProperty Name="estado_origen" ColumnName="estado_origen" />
+          <ScalarProperty Name="casilla_destino" ColumnName="casilla_destino" />
+          <ScalarProperty Name="estado_destino" ColumnName="estado_destino" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="comentario_log" ColumnName="comentario_log" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_log_trae_msgsend_MS" FunctionName="SwiftModel.Store.proc_sw_log_trae_msgsend_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_log_trae_msg_MS_Result">
+          <ScalarProperty Name="fecha_log" ColumnName="fecha_log" />
+          <ScalarProperty Name="rutais_log" ColumnName="rutais_log" />
+          <ScalarProperty Name="casilla_origen" ColumnName="casilla_origen" />
+          <ScalarProperty Name="estado_origen" ColumnName="estado_origen" />
+          <ScalarProperty Name="casilla_destino" ColumnName="casilla_destino" />
+          <ScalarProperty Name="estado_destino" ColumnName="estado_destino" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="comentario_log" ColumnName="comentario_log" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_msg_s01" FunctionName="SwiftModel.Store.proc_sw_msg_s01" />
+    <EntitySetMapping Name="sw_bancos">
+      <EntityTypeMapping TypeName="SwiftModel.sw_bancos">
+        <MappingFragment StoreEntitySet="sw_bancos">
+          <ScalarProperty Name="pobnr_banco" ColumnName="pobnr_banco" />
+          <ScalarProperty Name="localidad_banco" ColumnName="localidad_banco" />
+          <ScalarProperty Name="intercambio_clave" ColumnName="intercambio_clave" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="direccion_banco" ColumnName="direccion_banco" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_bancos_autorizados">
+      <EntityTypeMapping TypeName="SwiftModel.sw_bancos_autorizados">
+        <MappingFragment StoreEntitySet="sw_bancos_autorizados">
+          <ScalarProperty Name="intercambio_clave" ColumnName="intercambio_clave" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_campos_msg">
+      <EntityTypeMapping TypeName="SwiftModel.sw_campos_msg">
+        <MappingFragment StoreEntitySet="sw_campos_msg">
+          <ScalarProperty Name="formato_campo" ColumnName="formato_campo" />
+          <ScalarProperty Name="largo_campo" ColumnName="largo_campo" />
+          <ScalarProperty Name="nombre_campo" ColumnName="nombre_campo" />
+          <ScalarProperty Name="linea_campo" ColumnName="linea_campo" />
+          <ScalarProperty Name="tag_campo" ColumnName="tag_campo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_caracter_error">
+      <EntityTypeMapping TypeName="SwiftModel.sw_caracter_error">
+        <MappingFragment StoreEntitySet="sw_caracter_error">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="caracter" ColumnName="caracter" />
+          <ScalarProperty Name="valor_ascii" ColumnName="valor_ascii" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_casillas">
+      <EntityTypeMapping TypeName="SwiftModel.sw_casillas">
+        <MappingFragment StoreEntitySet="sw_casillas">
+          <ScalarProperty Name="origen_recep" ColumnName="origen_recep" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="cod_casilla" ColumnName="cod_casilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_ciclos">
+      <EntityTypeMapping TypeName="SwiftModel.sw_ciclos">
+        <MappingFragment StoreEntitySet="sw_ciclos">
+          <ScalarProperty Name="status_fmt" ColumnName="status_fmt" />
+          <ScalarProperty Name="tag_fmt" ColumnName="tag_fmt" />
+          <ScalarProperty Name="repeticion_fmt" ColumnName="repeticion_fmt" />
+          <ScalarProperty Name="secuencia_fmt" ColumnName="secuencia_fmt" />
+          <ScalarProperty Name="orden_fmt" ColumnName="orden_fmt" />
+          <ScalarProperty Name="tipo_msg_fmt" ColumnName="tipo_msg_fmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_configura">
+      <EntityTypeMapping TypeName="SwiftModel.sw_configura">
+        <MappingFragment StoreEntitySet="sw_configura">
+          <ScalarProperty Name="cod_aplicac" ColumnName="cod_aplicac" />
+          <ScalarProperty Name="rut_usuario" ColumnName="rut_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_estados_msg">
+      <EntityTypeMapping TypeName="SwiftModel.sw_estados_msg">
+        <MappingFragment StoreEntitySet="sw_estados_msg">
+          <ScalarProperty Name="send_recv" ColumnName="send_recv" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_folios">
+      <EntityTypeMapping TypeName="SwiftModel.sw_folios">
+        <MappingFragment StoreEntitySet="sw_folios">
+          <ScalarProperty Name="nro_folio" ColumnName="nro_folio" />
+          <ScalarProperty Name="id_folio" ColumnName="id_folio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_formatos">
+      <EntityTypeMapping TypeName="SwiftModel.sw_formatos">
+        <MappingFragment StoreEntitySet="sw_formatos">
+          <ScalarProperty Name="status_fmt" ColumnName="status_fmt" />
+          <ScalarProperty Name="tag_fmt" ColumnName="tag_fmt" />
+          <ScalarProperty Name="repeticion_fmt" ColumnName="repeticion_fmt" />
+          <ScalarProperty Name="secuencia_fmt" ColumnName="secuencia_fmt" />
+          <ScalarProperty Name="orden_fmt" ColumnName="orden_fmt" />
+          <ScalarProperty Name="tipo_msg_fmt" ColumnName="tipo_msg_fmt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_glosa_cmx">
+      <EntityTypeMapping TypeName="SwiftModel.sw_glosa_cmx">
+        <MappingFragment StoreEntitySet="sw_glosa_cmx">
+          <ScalarProperty Name="nom_msg" ColumnName="nom_msg" />
+          <ScalarProperty Name="cod_msg" ColumnName="cod_msg" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_log_msg">
+      <EntityTypeMapping TypeName="SwiftModel.sw_log_msg">
+        <MappingFragment StoreEntitySet="sw_log_msg">
+          <ScalarProperty Name="comentario_log" ColumnName="comentario_log" />
+          <ScalarProperty Name="resultado_log" ColumnName="resultado_log" />
+          <ScalarProperty Name="apoderado_log" ColumnName="apoderado_log" />
+          <ScalarProperty Name="unidad_log" ColumnName="unidad_log" />
+          <ScalarProperty Name="estado_destino" ColumnName="estado_destino" />
+          <ScalarProperty Name="casilla_destino" ColumnName="casilla_destino" />
+          <ScalarProperty Name="estado_origen" ColumnName="estado_origen" />
+          <ScalarProperty Name="casilla_origen" ColumnName="casilla_origen" />
+          <ScalarProperty Name="opcion_log" ColumnName="opcion_log" />
+          <ScalarProperty Name="idprog_log" ColumnName="idprog_log" />
+          <ScalarProperty Name="nodoais_log" ColumnName="nodoais_log" />
+          <ScalarProperty Name="rutais_log" ColumnName="rutais_log" />
+          <ScalarProperty Name="fecha_log" ColumnName="fecha_log" />
+          <ScalarProperty Name="send_recv_log" ColumnName="send_recv_log" />
+          <ScalarProperty Name="secuencia_log" ColumnName="secuencia_log" />
+          <ScalarProperty Name="sesion_log" ColumnName="sesion_log" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_mensajes">
+      <EntityTypeMapping TypeName="SwiftModel.sw_mensajes">
+        <MappingFragment StoreEntitySet="sw_mensajes">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ack" ColumnName="fecha_ack" />
+          <ScalarProperty Name="fecha_send" ColumnName="fecha_send" />
+          <ScalarProperty Name="rut_autoriza" ColumnName="rut_autoriza" />
+          <ScalarProperty Name="rut_entry" ColumnName="rut_entry" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="send_recv" ColumnName="send_recv" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_mensajes_add">
+      <EntityTypeMapping TypeName="SwiftModel.sw_mensajes_add">
+        <MappingFragment StoreEntitySet="sw_mensajes_add">
+          <ScalarProperty Name="veces_reenvio" ColumnName="veces_reenvio" />
+          <ScalarProperty Name="texto_reenvio" ColumnName="texto_reenvio" />
+          <ScalarProperty Name="fecha_reenvio" ColumnName="fecha_reenvio" />
+          <ScalarProperty Name="rut_reenvio" ColumnName="rut_reenvio" />
+          <ScalarProperty Name="veces_rechazo" ColumnName="veces_rechazo" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+          <ScalarProperty Name="fecha_rechazo" ColumnName="fecha_rechazo" />
+          <ScalarProperty Name="rut_rechazo" ColumnName="rut_rechazo" />
+          <ScalarProperty Name="unidad_rechazo" ColumnName="unidad_rechazo" />
+          <ScalarProperty Name="fecha_imprime" ColumnName="fecha_imprime" />
+          <ScalarProperty Name="rut_imprime" ColumnName="rut_imprime" />
+          <ScalarProperty Name="unidad_imprime" ColumnName="unidad_imprime" />
+          <ScalarProperty Name="unidad_recibe" ColumnName="unidad_recibe" />
+          <ScalarProperty Name="fecha_recibe" ColumnName="fecha_recibe" />
+          <ScalarProperty Name="observ_encas" ColumnName="observ_encas" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="send_recv" ColumnName="send_recv" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_monedas">
+      <EntityTypeMapping TypeName="SwiftModel.sw_monedas">
+        <MappingFragment StoreEntitySet="sw_monedas">
+          <ScalarProperty Name="uso_moneda_banco" ColumnName="uso_moneda_banco" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="decimales" ColumnName="decimales" />
+          <ScalarProperty Name="cod_moneda_sw" ColumnName="cod_moneda_sw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend">
+        <MappingFragment StoreEntitySet="sw_msgsend">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_add">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_add">
+        <MappingFragment StoreEntitySet="sw_msgsend_add">
+          <ScalarProperty Name="texto_anula" ColumnName="texto_anula" />
+          <ScalarProperty Name="fecha_anula" ColumnName="fecha_anula" />
+          <ScalarProperty Name="rut_anula" ColumnName="rut_anula" />
+          <ScalarProperty Name="unidad_anula" ColumnName="unidad_anula" />
+          <ScalarProperty Name="texto_bloqueo" ColumnName="texto_bloqueo" />
+          <ScalarProperty Name="veces_bloqueo" ColumnName="veces_bloqueo" />
+          <ScalarProperty Name="fecha_bloqueo" ColumnName="fecha_bloqueo" />
+          <ScalarProperty Name="rut_bloqueo" ColumnName="rut_bloqueo" />
+          <ScalarProperty Name="fecha_aprobac" ColumnName="fecha_aprobac" />
+          <ScalarProperty Name="veces_modifica" ColumnName="veces_modifica" />
+          <ScalarProperty Name="fecha_modifica" ColumnName="fecha_modifica" />
+          <ScalarProperty Name="rut_modifica" ColumnName="rut_modifica" />
+          <ScalarProperty Name="unidad_modifica" ColumnName="unidad_modifica" />
+          <ScalarProperty Name="veces_rechazo" ColumnName="veces_rechazo" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+          <ScalarProperty Name="fecha_rechazo" ColumnName="fecha_rechazo" />
+          <ScalarProperty Name="rut_rechazo" ColumnName="rut_rechazo" />
+          <ScalarProperty Name="unidad_rechazo" ColumnName="unidad_rechazo" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_cambio_estados">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_cambio_estados">
+        <MappingFragment StoreEntitySet="sw_msgsend_cambio_estados">
+          <ScalarProperty Name="fecha_estado" ColumnName="fecha_estado" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_cmx">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_cmx">
+        <MappingFragment StoreEntitySet="sw_msgsend_cmx">
+          <ScalarProperty Name="baja_swift" ColumnName="baja_swift" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="ciud_banco" ColumnName="ciud_banco" />
+          <ScalarProperty Name="nomb_banco" ColumnName="nomb_banco" />
+          <ScalarProperty Name="desc_unidad" ColumnName="desc_unidad" />
+          <ScalarProperty Name="desc_msg" ColumnName="desc_msg" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_cmx_dia">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_cmx_dia">
+        <MappingFragment StoreEntitySet="sw_msgsend_cmx_dia">
+          <ScalarProperty Name="baja_swift" ColumnName="baja_swift" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="ciud_banco" ColumnName="ciud_banco" />
+          <ScalarProperty Name="nomb_banco" ColumnName="nomb_banco" />
+          <ScalarProperty Name="desc_unidad" ColumnName="desc_unidad" />
+          <ScalarProperty Name="desc_msg" ColumnName="desc_msg" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_detfile">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_detfile">
+        <MappingFragment StoreEntitySet="sw_msgsend_detfile">
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="fd_archivo" ColumnName="fd_archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_files">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_files">
+        <MappingFragment StoreEntitySet="sw_msgsend_files">
+          <ScalarProperty Name="estado_ftp" ColumnName="estado_ftp" />
+          <ScalarProperty Name="total_rechazos" ColumnName="total_rechazos" />
+          <ScalarProperty Name="total_envios" ColumnName="total_envios" />
+          <ScalarProperty Name="total_mensajes" ColumnName="total_mensajes" />
+          <ScalarProperty Name="estado_archivo" ColumnName="estado_archivo" />
+          <ScalarProperty Name="fecha_confirma" ColumnName="fecha_confirma" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="nombre_archivo" ColumnName="nombre_archivo" />
+          <ScalarProperty Name="fd_archivo" ColumnName="fd_archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_firma">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_firma">
+        <MappingFragment StoreEntitySet="sw_msgsend_firma">
+          <ScalarProperty Name="avisado" ColumnName="avisado" />
+          <ScalarProperty Name="fecha_firma" ColumnName="fecha_firma" />
+          <ScalarProperty Name="fecha_solic" ColumnName="fecha_solic" />
+          <ScalarProperty Name="rut_solic" ColumnName="rut_solic" />
+          <ScalarProperty Name="revisa_firma" ColumnName="revisa_firma" />
+          <ScalarProperty Name="estado_firma" ColumnName="estado_firma" />
+          <ScalarProperty Name="tipo_firma" ColumnName="tipo_firma" />
+          <ScalarProperty Name="rut_firma" ColumnName="rut_firma" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_log">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_log">
+        <MappingFragment StoreEntitySet="sw_msgsend_log">
+          <ScalarProperty Name="comentario_log" ColumnName="comentario_log" />
+          <ScalarProperty Name="resultado_log" ColumnName="resultado_log" />
+          <ScalarProperty Name="unidad_log" ColumnName="unidad_log" />
+          <ScalarProperty Name="estado_destino" ColumnName="estado_destino" />
+          <ScalarProperty Name="casilla_destino" ColumnName="casilla_destino" />
+          <ScalarProperty Name="estado_origen" ColumnName="estado_origen" />
+          <ScalarProperty Name="casilla_origen" ColumnName="casilla_origen" />
+          <ScalarProperty Name="opcion_log" ColumnName="opcion_log" />
+          <ScalarProperty Name="idprog_log" ColumnName="idprog_log" />
+          <ScalarProperty Name="nodoais_log" ColumnName="nodoais_log" />
+          <ScalarProperty Name="rutais_log" ColumnName="rutais_log" />
+          <ScalarProperty Name="fecha_log" ColumnName="fecha_log" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_nop">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_nop">
+        <MappingFragment StoreEntitySet="sw_msgsend_nop">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="fecha_proceso" ColumnName="fecha_proceso" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_orden_firmas">
+      <EntityTypeMapping TypeName="SwiftModel.sw_orden_firmas">
+        <MappingFragment StoreEntitySet="sw_orden_firmas">
+          <ScalarProperty Name="tipofirma" ColumnName="tipofirma" />
+          <ScalarProperty Name="orden" ColumnName="orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_paridad">
+      <EntityTypeMapping TypeName="SwiftModel.sw_paridad">
+        <MappingFragment StoreEntitySet="sw_paridad">
+          <ScalarProperty Name="fecha_valor" ColumnName="fecha_valor" />
+          <ScalarProperty Name="tipcam_observ" ColumnName="tipcam_observ" />
+          <ScalarProperty Name="paridad" ColumnName="paridad" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_regla_firmas">
+      <EntityTypeMapping TypeName="SwiftModel.sw_regla_firmas">
+        <MappingFragment StoreEntitySet="sw_regla_firmas">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="firma4" ColumnName="firma4" />
+          <ScalarProperty Name="firma3" ColumnName="firma3" />
+          <ScalarProperty Name="firma2" ColumnName="firma2" />
+          <ScalarProperty Name="firma1" ColumnName="firma1" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto_fin" ColumnName="monto_fin" />
+          <ScalarProperty Name="monto_ini" ColumnName="monto_ini" />
+          <ScalarProperty Name="id_firma" ColumnName="id_firma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_sce_bic">
+      <EntityTypeMapping TypeName="SwiftModel.sw_sce_bic">
+        <MappingFragment StoreEntitySet="sw_sce_bic">
+          <ScalarProperty Name="bic_cod" ColumnName="bic_cod" />
+          <ScalarProperty Name="bic_ala" ColumnName="bic_ala" />
+          <ScalarProperty Name="couname" ColumnName="couname" />
+          <ScalarProperty Name="pobnr" ColumnName="pobnr" />
+          <ScalarProperty Name="physadd" ColumnName="physadd" />
+          <ScalarProperty Name="cityhead" ColumnName="cityhead" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="instname" ColumnName="instname" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="bankcode" ColumnName="bankcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_tipos_campos">
+      <EntityTypeMapping TypeName="SwiftModel.sw_tipos_campos">
+        <MappingFragment StoreEntitySet="sw_tipos_campos">
+          <ScalarProperty Name="nombre_campo_tipcam" ColumnName="nombre_campo_tipcam" />
+          <ScalarProperty Name="tag_campo_tipcam" ColumnName="tag_campo_tipcam" />
+          <ScalarProperty Name="tipo_msg_tipcam" ColumnName="tipo_msg_tipcam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_tipos_firmas">
+      <EntityTypeMapping TypeName="SwiftModel.sw_tipos_firmas">
+        <MappingFragment StoreEntitySet="sw_tipos_firmas">
+          <ScalarProperty Name="tipofirma" ColumnName="tipofirma" />
+          <ScalarProperty Name="codig_rh" ColumnName="codig_rh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_tipos_msg">
+      <EntityTypeMapping TypeName="SwiftModel.sw_tipos_msg">
+        <MappingFragment StoreEntitySet="sw_tipos_msg">
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="cod_tipo" ColumnName="cod_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_users_srm">
+      <EntityTypeMapping TypeName="SwiftModel.sw_users_srm">
+        <MappingFragment StoreEntitySet="sw_users_srm">
+          <ScalarProperty Name="pass_user" ColumnName="pass_user" />
+          <ScalarProperty Name="rut_user" ColumnName="rut_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_users_swift">
+      <EntityTypeMapping TypeName="SwiftModel.sw_users_swift">
+        <MappingFragment StoreEntitySet="sw_users_swift">
+          <ScalarProperty Name="tipo_user" ColumnName="tipo_user" />
+          <ScalarProperty Name="nombre_user" ColumnName="nombre_user" />
+          <ScalarProperty Name="digv_user" ColumnName="digv_user" />
+          <ScalarProperty Name="rut_user" ColumnName="rut_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_valor_campos">
+      <EntityTypeMapping TypeName="SwiftModel.sw_valor_campos">
+        <MappingFragment StoreEntitySet="sw_valor_campos">
+          <ScalarProperty Name="total_valor" ColumnName="total_valor" />
+          <ScalarProperty Name="valor_campo" ColumnName="valor_campo" />
+          <ScalarProperty Name="cond_valor" ColumnName="cond_valor" />
+          <ScalarProperty Name="linea_campo" ColumnName="linea_campo" />
+          <ScalarProperty Name="tag_campo" ColumnName="tag_campo" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sw_nets">
+      <EntityTypeMapping TypeName="SwiftModel.tbl_sw_nets">
+        <MappingFragment StoreEntitySet="tbl_sw_nets">
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="ciud_banco" ColumnName="ciud_banco" />
+          <ScalarProperty Name="nomb_banco" ColumnName="nomb_banco" />
+          <ScalarProperty Name="desc_unidad" ColumnName="desc_unidad" />
+          <ScalarProperty Name="desc_msg" ColumnName="desc_msg" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="caracter" ColumnName="caracter" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="rut_cli" ColumnName="rut_cli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sw_nets_det">
+      <EntityTypeMapping TypeName="SwiftModel.tbl_sw_nets_det">
+        <MappingFragment StoreEntitySet="tbl_sw_nets_det">
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="linea" ColumnName="linea" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="joal">
+      <EntityTypeMapping TypeName="SwiftModel.joal">
+        <MappingFragment StoreEntitySet="joal">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_firmas_msg">
+      <EntityTypeMapping TypeName="SwiftModel.sw_firmas_msg">
+        <MappingFragment StoreEntitySet="sw_firmas_msg">
+          <ScalarProperty Name="rut_firma" ColumnName="rut_firma" />
+          <ScalarProperty Name="send_recv_firma" ColumnName="send_recv_firma" />
+          <ScalarProperty Name="secuencia_firma" ColumnName="secuencia_firma" />
+          <ScalarProperty Name="sesion_firma" ColumnName="sesion_firma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_formato_cmx">
+      <EntityTypeMapping TypeName="SwiftModel.sw_formato_cmx">
+        <MappingFragment StoreEntitySet="sw_formato_cmx">
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="campo" ColumnName="campo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sw_msgsend_ftp">
+      <EntityTypeMapping TypeName="SwiftModel.sw_msgsend_ftp">
+        <MappingFragment StoreEntitySet="sw_msgsend_ftp">
+          <ScalarProperty Name="nombre_archivo" ColumnName="nombre_archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sw_nets_sor">
+      <EntityTypeMapping TypeName="SwiftModel.tbl_sw_nets_sor">
+        <MappingFragment StoreEntitySet="tbl_sw_nets_sor">
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="ciud_banco" ColumnName="ciud_banco" />
+          <ScalarProperty Name="nomb_banco" ColumnName="nomb_banco" />
+          <ScalarProperty Name="desc_unidad" ColumnName="desc_unidad" />
+          <ScalarProperty Name="desc_msg" ColumnName="desc_msg" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="caracter" ColumnName="caracter" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="rut_cli" ColumnName="rut_cli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_detfile" FunctionName="SwiftModel.Store.proc_sw_env_trae_detfile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_detfile_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="hora_envio" ColumnName="hora_envio" />
+          <ScalarProperty Name="fecha_rech" ColumnName="fecha_rech" />
+          <ScalarProperty Name="hora_rech" ColumnName="hora_rech" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_ftp_err" FunctionName="SwiftModel.Store.proc_sw_env_trae_ftp_err">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_ftp_err_Result">
+          <ScalarProperty Name="fd_archivo" ColumnName="fd_archivo" />
+          <ScalarProperty Name="nombre_archivo" ColumnName="nombre_archivo" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="fecha_confirma" ColumnName="fecha_confirma" />
+          <ScalarProperty Name="estado_archivo" ColumnName="estado_archivo" />
+          <ScalarProperty Name="total_mensajes" ColumnName="total_mensajes" />
+          <ScalarProperty Name="total_envios" ColumnName="total_envios" />
+          <ScalarProperty Name="total_rechazos" ColumnName="total_rechazos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_nop" FunctionName="SwiftModel.Store.proc_sw_env_trae_nop">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_nop_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+          <ScalarProperty Name="hora_pro" ColumnName="hora_pro" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_tiposMensajeConFormato_MS" FunctionName="SwiftModel.Store.proc_sw_trae_tiposMensajeConFormato_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_aup_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_aup_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_aup_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_del_firnul_MS" FunctionName="SwiftModel.Store.proc_sw_env_del_firnul_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_cons_fipe_MS" FunctionName="SwiftModel.Store.proc_sw_env_cons_fipe_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_cons_sim_MS" FunctionName="SwiftModel.Store.proc_sw_env_cons_sim_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_apr_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_apr_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_dev_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_dev_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_rec_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_rec_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_aut_pend_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_aut_pend_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_aut_pend_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fec_ing" ColumnName="fec_ing" />
+          <ScalarProperty Name="hor_ing" ColumnName="hor_ing" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="rut_solic" ColumnName="rut_solic" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_aut_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_aut_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_aut_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_apr" ColumnName="fecha_apr" />
+          <ScalarProperty Name="hora_apr" ColumnName="hora_apr" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_blo_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_blo_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_blo_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_bloq" ColumnName="fecha_bloq" />
+          <ScalarProperty Name="hora_bloq" ColumnName="hora_bloq" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_dev_firma_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_dev_firma_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_dev_firma_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_firma" ColumnName="rut_firma" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_files_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_files_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_files_MS_Result">
+          <ScalarProperty Name="fd_archivo" ColumnName="fd_archivo" />
+          <ScalarProperty Name="nombre_archivo" ColumnName="nombre_archivo" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="fecha_confirma" ColumnName="fecha_confirma" />
+          <ScalarProperty Name="estado_archivo" ColumnName="estado_archivo" />
+          <ScalarProperty Name="total_mensajes" ColumnName="total_mensajes" />
+          <ScalarProperty Name="total_envios" ColumnName="total_envios" />
+          <ScalarProperty Name="total_rechazos" ColumnName="total_rechazos" />
+          <ScalarProperty Name="campo1" ColumnName="campo1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_firmas_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_firmas_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_firmas_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fec_ing" ColumnName="fec_ing" />
+          <ScalarProperty Name="hor_ing" ColumnName="hor_ing" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="rut_solic" ColumnName="rut_solic" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_ing_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_ing_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_ing_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_mod_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_mod_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_mod_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+          <ScalarProperty Name="hora_mod" ColumnName="hora_mod" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_nul_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_nul_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_nul_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_anula" ColumnName="fecha_anula" />
+          <ScalarProperty Name="hora_anula" ColumnName="hora_anula" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_pro_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_pro_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_pro_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+          <ScalarProperty Name="hora_pro" ColumnName="hora_pro" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_rech_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_rech_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_rech_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_rech" ColumnName="fecha_rech" />
+          <ScalarProperty Name="hora_rech" ColumnName="hora_rech" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+          <ScalarProperty Name="fecha_rechazo" ColumnName="fecha_rechazo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_firma" FunctionName="SwiftModel.Store.proc_sw_trae_firma">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_firma_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="rut_firma" ColumnName="rut_firma" />
+          <ScalarProperty Name="tipo_firma" ColumnName="tipo_firma" />
+          <ScalarProperty Name="estado_firma" ColumnName="estado_firma" />
+          <ScalarProperty Name="revisa_firma" ColumnName="revisa_firma" />
+          <ScalarProperty Name="rut_solic" ColumnName="rut_solic" />
+          <ScalarProperty Name="fecha_solic" ColumnName="fecha_solic" />
+          <ScalarProperty Name="fecha_firma" ColumnName="fecha_firma" />
+          <ScalarProperty Name="avisado" ColumnName="avisado" />
+          <ScalarProperty Name="nombre_firma" ColumnName="nombre_firma" />
+          <ScalarProperty Name="estaba" ColumnName="estaba" />
+          <ScalarProperty Name="avis_antes" ColumnName="avis_antes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_config_ing" FunctionName="SwiftModel.Store.proc_sw_config_ing" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_estadist_msg_MS" FunctionName="SwiftModel.Store.proc_sw_env_estadist_msg_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_estadist_msg_MS_Result">
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_log_trae_aut_rango_MS" FunctionName="SwiftModel.Store.proc_sw_log_trae_aut_rango_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_log_trae_enc_rango_MS" FunctionName="SwiftModel.Store.proc_sw_log_trae_enc_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_log_trae_enc_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha1" ColumnName="fecha1" />
+          <ScalarProperty Name="hora1" ColumnName="hora1" />
+          <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+          <ScalarProperty Name="hora_pro" ColumnName="hora_pro" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_msg_por_rut" FunctionName="SwiftModel.Store.proc_sw_env_msg_por_rut">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_msg_por_rut_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_graba_conf_MS" FunctionName="SwiftModel.Store.proc_sw_rec_graba_conf_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_graba_rech_MS" FunctionName="SwiftModel.Store.proc_sw_rec_graba_rech_MS" />
+    <FunctionImportMapping FunctionImportName="sw_configura_s01_MS" FunctionName="SwiftModel.Store.sw_configura_s01_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_cnf_rango_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_cnf_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_cnf_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_enc" ColumnName="fecha_enc" />
+          <ScalarProperty Name="hora_enc" ColumnName="hora_enc" />
+          <ScalarProperty Name="fecha_rcb" ColumnName="fecha_rcb" />
+          <ScalarProperty Name="hora_rcb" ColumnName="hora_rcb" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_enc_rango_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_enc_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_enc_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="fecha_enc" ColumnName="fecha_enc" />
+          <ScalarProperty Name="hora_enc" ColumnName="hora_enc" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_imp_rango_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_imp_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_imp_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_enc" ColumnName="fecha_enc" />
+          <ScalarProperty Name="hora_enc" ColumnName="hora_enc" />
+          <ScalarProperty Name="fecha_imp" ColumnName="fecha_imp" />
+          <ScalarProperty Name="hora_imp" ColumnName="hora_imp" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_ree_rango_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_ree_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_ree_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_rec" ColumnName="fecha_rec" />
+          <ScalarProperty Name="hora_rec" ColumnName="hora_rec" />
+          <ScalarProperty Name="fecha_ree" ColumnName="fecha_ree" />
+          <ScalarProperty Name="hora_ree" ColumnName="hora_ree" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_otr_rango_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_otr_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_rec_trae_otr_rango_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_send" ColumnName="fecha_send" />
+          <ScalarProperty Name="hora_send" ColumnName="hora_send" />
+          <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+          <ScalarProperty Name="hora_pro" ColumnName="hora_pro" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="total_imp" ColumnName="total_imp" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_anula_enc_MS" FunctionName="SwiftModel.Store.proc_sw_rec_anula_enc_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_bancos_MS" FunctionName="SwiftModel.Store.proc_sw_trae_bancos_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_bancos_MS_Result">
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="direccion_banco" ColumnName="direccion_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="intercambio_clave" ColumnName="intercambio_clave" />
+          <ScalarProperty Name="localidad_banco" ColumnName="localidad_banco" />
+          <ScalarProperty Name="pobnr_banco" ColumnName="pobnr_banco" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="origen_recep_s01_MS" FunctionName="SwiftModel.Store.origen_recep_s01_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.origen_recep_s01_MS_Result">
+          <ScalarProperty Name="cod_casilla" ColumnName="cod_casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="origen_recep" ColumnName="origen_recep" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_bancos_claves_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_bancos_claves_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_bancos_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_CampoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_CampoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_CaracterInvalido_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_CaracterInvalido_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_casillas_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_casillas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_FormatoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_FormatoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_GlosaCampos_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_GlosaCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_monedas_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_monedas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_TiposMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_TiposMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_usuarios_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_usuarios_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_Actualiza_valoresCampos_MS" FunctionName="SwiftModel.Store.proc_sw_Actualiza_valoresCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_bancos_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_CampoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_CampoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_CaracterInvalido_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_CaracterInvalido_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_casillas_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_casillas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_FormatoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_FormatoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_GlosaCampos_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_GlosaCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_monedas_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_monedas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_TiposCambios_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_TiposCambios_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_TiposMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_TiposMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_usuarios_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_usuarios_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_ValoresCampos_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_ValoresCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_env_rango_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_env_rango_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_env_rango_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_bancos_MS" FunctionName="SwiftModel.Store.proc_sw_graba_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_CampoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_graba_CampoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_CaracterInvalido_MS" FunctionName="SwiftModel.Store.proc_sw_graba_CaracterInvalido_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_casillas_MS" FunctionName="SwiftModel.Store.proc_sw_graba_casillas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_FormatoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_graba_FormatoMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_GlosaCampos_MS" FunctionName="SwiftModel.Store.proc_sw_graba_GlosaCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_monedas_MS" FunctionName="SwiftModel.Store.proc_sw_graba_monedas_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_TiposMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_graba_TiposMensajes_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_usuarios_MS" FunctionName="SwiftModel.Store.proc_sw_graba_usuarios_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_graba_ValoresCampos_MS" FunctionName="SwiftModel.Store.proc_sw_graba_ValoresCampos_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_bancos_verificados_MS" FunctionName="SwiftModel.Store.proc_sw_trae_bancos_verificados_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_bancos_verificados_MS_Result">
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="direccion_banco" ColumnName="direccion_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="intercambio_clave" ColumnName="intercambio_clave" />
+          <ScalarProperty Name="localidad_banco" ColumnName="localidad_banco" />
+          <ScalarProperty Name="pobnr_banco" ColumnName="pobnr_banco" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_CampoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_trae_CampoMensajes_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_CampoMensajes_MS_Result">
+          <ScalarProperty Name="tag_campo" ColumnName="tag_campo" />
+          <ScalarProperty Name="linea_campo" ColumnName="linea_campo" />
+          <ScalarProperty Name="nombre_campo" ColumnName="nombre_campo" />
+          <ScalarProperty Name="largo_campo" ColumnName="largo_campo" />
+          <ScalarProperty Name="formato_campo" ColumnName="formato_campo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_CaracterInvalido_MS" FunctionName="SwiftModel.Store.proc_sw_trae_CaracterInvalido_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_CaracterInvalido_MS_Result">
+          <ScalarProperty Name="valor_ascii" ColumnName="valor_ascii" />
+          <ScalarProperty Name="caracter" ColumnName="caracter" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_casillas_MS" FunctionName="SwiftModel.Store.proc_sw_trae_casillas_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_casillas_MS_Result">
+          <ScalarProperty Name="cod_casilla" ColumnName="cod_casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="origen_recep" ColumnName="origen_recep" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_FormatoMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_trae_FormatoMensajes_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_FormatoMensajes_MS_Result">
+          <ScalarProperty Name="tipo_msg_fmt" ColumnName="tipo_msg_fmt" />
+          <ScalarProperty Name="orden_fmt" ColumnName="orden_fmt" />
+          <ScalarProperty Name="secuencia_fmt" ColumnName="secuencia_fmt" />
+          <ScalarProperty Name="repeticion_fmt" ColumnName="repeticion_fmt" />
+          <ScalarProperty Name="tag_fmt" ColumnName="tag_fmt" />
+          <ScalarProperty Name="status_fmt" ColumnName="status_fmt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_GlosaCampos_MS" FunctionName="SwiftModel.Store.proc_sw_trae_GlosaCampos_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_GlosaCampos_MS_Result">
+          <ScalarProperty Name="tipo_msg_tipcam" ColumnName="tipo_msg_tipcam" />
+          <ScalarProperty Name="tag_campo_tipcam" ColumnName="tag_campo_tipcam" />
+          <ScalarProperty Name="nombre_campo_tipcam" ColumnName="nombre_campo_tipcam" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_monedas_MS" FunctionName="SwiftModel.Store.proc_sw_trae_monedas_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_monedas_MS_Result">
+          <ScalarProperty Name="cod_moneda_sw" ColumnName="cod_moneda_sw" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="uso_moneda_banco" ColumnName="uso_moneda_banco" />
+          <ScalarProperty Name="decimales" ColumnName="decimales" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_paridad_MS" FunctionName="SwiftModel.Store.proc_sw_trae_paridad_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_paridad_MS_Result">
+          <ScalarProperty Name="cod_moneda_sw" ColumnName="cod_moneda_sw" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="paridad" ColumnName="paridad" />
+          <ScalarProperty Name="tipcam_observ" ColumnName="tipcam_observ" />
+          <ScalarProperty Name="fecha_valor" ColumnName="fecha_valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_TiposMensajes_MS" FunctionName="SwiftModel.Store.proc_sw_trae_TiposMensajes_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_TiposMensajes_MS_Result">
+          <ScalarProperty Name="cod_tipo" ColumnName="cod_tipo" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_valoresCampos_MS" FunctionName="SwiftModel.Store.proc_sw_trae_valoresCampos_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_valoresCampos_MS_Result">
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="tag_campo" ColumnName="tag_campo" />
+          <ScalarProperty Name="linea_campo" ColumnName="linea_campo" />
+          <ScalarProperty Name="cond_valor" ColumnName="cond_valor" />
+          <ScalarProperty Name="valor_campo" ColumnName="valor_campo" />
+          <ScalarProperty Name="total_valor" ColumnName="total_valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sw_mensajes_add_s01_MS1" FunctionName="SwiftModel.Store.sw_mensajes_add_s01_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_MensajeSwift_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_MensajeSwift_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_MensajesEliminar_MS" FunctionName="SwiftModel.Store.proc_sw_trae_MensajesEliminar_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_MensajesEliminar_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_count_bancos_MS" FunctionName="SwiftModel.Store.proc_sw_trae_count_bancos_MS" />
+    <FunctionImportMapping FunctionImportName="sw_mensajes_add_s01_MS" FunctionName="SwiftModel.Store.sw_mensajes_add_s01_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_test_firma_MS" FunctionName="SwiftModel.Store.proc_sw_env_test_firma_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_test_firma_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_test_firma_count_MS" FunctionName="SwiftModel.Store.proc_sw_env_test_firma_count_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_cambios_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_cambios_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_mod_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_mod_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_sap_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_sap_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_bancos2_MS" FunctionName="SwiftModel.Store.proc_sw_trae_bancos2_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_bancos2_MS_Result">
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="direccion_banco" ColumnName="direccion_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="intercambio_clave" ColumnName="intercambio_clave" />
+          <ScalarProperty Name="localidad_banco" ColumnName="localidad_banco" />
+          <ScalarProperty Name="pobnr_banco" ColumnName="pobnr_banco" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_del_firma_MS" FunctionName="SwiftModel.Store.proc_sw_env_del_firma_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_msgsend_log_i01_MS" FunctionName="SwiftModel.Store.proc_sw_msgsend_log_i01_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_borra_casilla_MS" FunctionName="SwiftModel.Store.proc_sw_rec_borra_casilla_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_busca_eliminar_MS" FunctionName="SwiftModel.Store.proc_sw_busca_eliminar_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_busca_eliminar_MS_Result">
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_elimina_mensaje_MS" FunctionName="SwiftModel.Store.proc_sw_elimina_mensaje_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_test_apr_MS" FunctionName="SwiftModel.Store.proc_sw_env_test_apr_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_test_file_MS" FunctionName="SwiftModel.Store.proc_sw_env_test_file_MS" />
+    <FunctionImportMapping FunctionImportName="sw_configura_s02_MS" FunctionName="SwiftModel.Store.sw_configura_s02_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_update_aut_MS" FunctionName="SwiftModel.Store.proc_sw_env_update_aut_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_aum" FunctionName="SwiftModel.Store.proc_sw_env_graba_aum" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_aum_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_aum_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_count_bancos2_MS" FunctionName="SwiftModel.Store.proc_sw_count_bancos2_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_graba_imp_MS" FunctionName="SwiftModel.Store.proc_sw_rec_graba_imp_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_rec_trae_nro_imp_MS" FunctionName="SwiftModel.Store.proc_sw_rec_trae_nro_imp_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_nul_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_nul_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_validaFirmaAnular_MS" FunctionName="SwiftModel.Store.proc_sw_validaFirmaAnular_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_ftp_err_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_ftp_err_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_ftp_err_MS_Result">
+          <ScalarProperty Name="fd_archivo" ColumnName="fd_archivo" />
+          <ScalarProperty Name="nombre_archivo" ColumnName="nombre_archivo" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="fecha_confirma" ColumnName="fecha_confirma" />
+          <ScalarProperty Name="estado_archivo" ColumnName="estado_archivo" />
+          <ScalarProperty Name="total_mensajes" ColumnName="total_mensajes" />
+          <ScalarProperty Name="total_envios" ColumnName="total_envios" />
+          <ScalarProperty Name="total_rechazos" ColumnName="total_rechazos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_nop_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_nop_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_nop_MS_Result">
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+          <ScalarProperty Name="hora_pro" ColumnName="hora_pro" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_trae_firma_MS" FunctionName="SwiftModel.Store.proc_sw_trae_firma_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_trae_firma_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="rut_firma" ColumnName="rut_firma" />
+          <ScalarProperty Name="tipo_firma" ColumnName="tipo_firma" />
+          <ScalarProperty Name="estado_firma" ColumnName="estado_firma" />
+          <ScalarProperty Name="revisa_firma" ColumnName="revisa_firma" />
+          <ScalarProperty Name="rut_solic" ColumnName="rut_solic" />
+          <ScalarProperty Name="fecha_solic" ColumnName="fecha_solic" />
+          <ScalarProperty Name="fecha_firma" ColumnName="fecha_firma" />
+          <ScalarProperty Name="avisado" ColumnName="avisado" />
+          <ScalarProperty Name="nombre_firma" ColumnName="nombre_firma" />
+          <ScalarProperty Name="estaba" ColumnName="estaba" />
+          <ScalarProperty Name="avis_antes" ColumnName="avis_antes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_detfile_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_detfile_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_trae_detfile_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="hora_envio" ColumnName="hora_envio" />
+          <ScalarProperty Name="fecha_rech" ColumnName="fecha_rech" />
+          <ScalarProperty Name="hora_rech" ColumnName="hora_rech" />
+          <ScalarProperty Name="texto_rechazo" ColumnName="texto_rechazo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_res_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_res_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_graba_file_MS" FunctionName="SwiftModel.Store.proc_sw_env_graba_file_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_config_ing_MS" FunctionName="SwiftModel.Store.proc_sw_config_ing_MS" />
+    <FunctionImportMapping FunctionImportName="proc_sw_env_msg_por_rut_MS" FunctionName="SwiftModel.Store.proc_sw_env_msg_por_rut_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.proc_sw_env_msg_por_rut_MS_Result">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="tipo_ingreso" ColumnName="tipo_ingreso" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_env_trae_por_idmensaje_MS" FunctionName="SwiftModel.Store.proc_sw_env_trae_por_idmensaje_MS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SwiftModel.ResultadoBusquedaSwift">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="casilla" ColumnName="casilla" />
+          <ScalarProperty Name="nombre_casilla" ColumnName="nombre_casilla" />
+          <ScalarProperty Name="tipo_msg" ColumnName="tipo_msg" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="estado_msg" ColumnName="estado_msg" />
+          <ScalarProperty Name="fecha_ingr" ColumnName="fecha_ingr" />
+          <ScalarProperty Name="hora_ingr" ColumnName="hora_ingr" />
+          <ScalarProperty Name="fecha_env" ColumnName="fecha_env" />
+          <ScalarProperty Name="hora_env" ColumnName="hora_env" />
+          <ScalarProperty Name="cod_banco_em" ColumnName="cod_banco_em" />
+          <ScalarProperty Name="branch_em" ColumnName="branch_em" />
+          <ScalarProperty Name="cod_banco_rec" ColumnName="cod_banco_rec" />
+          <ScalarProperty Name="branch_rec" ColumnName="branch_rec" />
+          <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+          <ScalarProperty Name="ciudad_banco" ColumnName="ciudad_banco" />
+          <ScalarProperty Name="pais_banco" ColumnName="pais_banco" />
+          <ScalarProperty Name="oficina_banco" ColumnName="oficina_banco" />
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="nombre_moneda" ColumnName="nombre_moneda" />
+          <ScalarProperty Name="cod_moneda_banco" ColumnName="cod_moneda_banco" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="rut_ingreso" ColumnName="rut_ingreso" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_sw_msg_s01_MS" FunctionName="SwiftModel.Store.proc_sw_msg_s01_MS" />
+    <FunctionImportMapping FunctionImportName="sw_mensajes_u01_MS" FunctionName="SwiftModel.Store.sw_mensajes_u01_MS" />
+  </EntityContainerMapping>
+</Mapping>

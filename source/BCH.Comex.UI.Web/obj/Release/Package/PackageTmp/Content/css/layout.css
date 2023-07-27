@@ -1,0 +1,70 @@
+﻿.btn.btn-no-padding {
+    padding: 0 0 0 0;
+}
+
+.app_title {
+    text-align: center;
+}
+
+.recuadro {
+    border: solid 1px;
+    border-radius: 6px;
+    border-color: #0066a6;
+    margin-bottom: 20px;
+}
+
+.nav.nav-pills {
+    margin-bottom: 5px!important;
+}
+
+.buttons {
+    padding-bottom: 10px;
+}
+
+.btn-transparent {
+    border: none;
+    background-color: transparent;
+}
+
+.form {
+    padding-bottom: 20px;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.padding-vertical-double {
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+.margin-horizontal-half {
+    margin-right: 8px;
+    margin-left:  8px;
+}
+
+.margin-bottom-double {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-triple {
+    margin-bottom: 45px;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.label-div {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.mono{
+    font-family:monospace;
+}
+
+.no-records-found > td{
+    text-align: left!important;
+}

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="McambioModelStoreContainer" CdmEntityContainer="McambioEntities">
+    <FunctionImportMapping FunctionImportName="CambioDeEstadoCFXT" FunctionName="McambioModel.Store.CambioDeEstadoCFXT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McambioModel.CambioDeEstadoCFXT_Result">
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ConsultaDealsDisponible" FunctionName="McambioModel.Store.ConsultaDealsDisponible">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McambioModel.ConsultaDealsDisponible_Result">
+          <ScalarProperty Name="rutCliente" ColumnName="rutCliente" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="numeroDeal" ColumnName="numeroDeal" />
+          <ScalarProperty Name="moneda1" ColumnName="moneda1" />
+          <ScalarProperty Name="moneda2" ColumnName="moneda2" />
+          <ScalarProperty Name="precioPoolMoneda1" ColumnName="precioPoolMoneda1" />
+          <ScalarProperty Name="precioPoolMoneda2" ColumnName="precioPoolMoneda2" />
+          <ScalarProperty Name="precioCliente" ColumnName="precioCliente" />
+          <ScalarProperty Name="fechaValuta1" ColumnName="fechaValuta1" />
+          <ScalarProperty Name="fechaValuta2" ColumnName="fechaValuta2" />
+          <ScalarProperty Name="codigoBancoCentral" ColumnName="codigoBancoCentral" />
+          <ScalarProperty Name="montoBancoRecibe" ColumnName="montoBancoRecibe" />
+          <ScalarProperty Name="montoClienteRecibe" ColumnName="montoClienteRecibe" />
+          <ScalarProperty Name="delta" ColumnName="delta" />
+          <ScalarProperty Name="fechaTransaccion" ColumnName="fechaTransaccion" />
+          <ScalarProperty Name="tipoCambioPizarra" ColumnName="tipoCambioPizarra" />
+          <ScalarProperty Name="tipoTransaccion" ColumnName="tipoTransaccion" />
+          <ScalarProperty Name="codigoEstadoDeal" ColumnName="codigoEstadoDeal" />
+          <ScalarProperty Name="codigoFormaPago1" ColumnName="codigoFormaPago1" />
+          <ScalarProperty Name="codigoFormaPago2" ColumnName="codigoFormaPago2" />
+          <ScalarProperty Name="codigoEstadoPago" ColumnName="codigoEstadoPago" />
+          <ScalarProperty Name="codigoReferenciaComex" ColumnName="codigoReferenciaComex" />
+          <ScalarProperty Name="codigoOrigenCarga" ColumnName="codigoOrigenCarga" />
+          <ScalarProperty Name="codigoTipoOperacion" ColumnName="codigoTipoOperacion" />
+          <ScalarProperty Name="codigoEstadoContable" ColumnName="codigoEstadoContable" />
+          <ScalarProperty Name="ultimoNumeroTransitoria" ColumnName="ultimoNumeroTransitoria" />
+          <ScalarProperty Name="ultimoNumeroContingente" ColumnName="ultimoNumeroContingente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CrearDealChileFxTesoreria" FunctionName="McambioModel.Store.CrearDealChileFxTesoreria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McambioModel.CrearDealChileFxTesoreria_Result">
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="IncorporacionNumeroOperacionSCE" FunctionName="McambioModel.Store.IncorporacionNumeroOperacionSCE" />
+    <FunctionImportMapping FunctionImportName="pro_cvd_ni_consulta_precios" FunctionName="McambioModel.Store.pro_cvd_ni_consulta_precios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McambioModel.pro_cvd_ni_consulta_precios_Result">
+          <ScalarProperty Name="retorno_decimales" ColumnName="retorno_decimales" />
+          <ScalarProperty Name="precio_final" ColumnName="precio_final" />
+          <ScalarProperty Name="monto_segunda_moneda" ColumnName="monto_segunda_moneda" />
+          <ScalarProperty Name="identificador_consulta" ColumnName="identificador_consulta" />
+          <ScalarProperty Name="tiempo_consulta" ColumnName="tiempo_consulta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_chilefx_deal_sce">
+      <EntityTypeMapping TypeName="McambioModel.tbl_chilefx_deal_sce">
+        <MappingFragment StoreEntitySet="tbl_chilefx_deal_sce">
+          <ScalarProperty Name="codcom" ColumnName="codcom" />
+          <ScalarProperty Name="vb_jefatura" ColumnName="vb_jefatura" />
+          <ScalarProperty Name="exepcionado" ColumnName="exepcionado" />
+          <ScalarProperty Name="glosa_error" ColumnName="glosa_error" />
+          <ScalarProperty Name="rut_cliente" ColumnName="rut_cliente" />
+          <ScalarProperty Name="codigo_contable" ColumnName="codigo_contable" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="fecha_hora_registro" ColumnName="fecha_hora_registro" />
+          <ScalarProperty Name="mto_sce" ColumnName="mto_sce" />
+          <ScalarProperty Name="mto_chilefx" ColumnName="mto_chilefx" />
+          <ScalarProperty Name="id_sce" ColumnName="id_sce" />
+          <ScalarProperty Name="id_chilefx" ColumnName="id_chilefx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="pro_cvd_ni_consulta_precios2" FunctionName="McambioModel.Store.pro_cvd_ni_consulta_precios2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="McambioModel.pro_cvd_ni_consulta_precios2_Result">
+          <ScalarProperty Name="retorno_decimales" ColumnName="retorno_decimales" />
+          <ScalarProperty Name="precio_final" ColumnName="precio_final" />
+          <ScalarProperty Name="monto_segunda_moneda" ColumnName="monto_segunda_moneda" />
+          <ScalarProperty Name="identificador_consulta" ColumnName="identificador_consulta" />
+          <ScalarProperty Name="tiempo_consulta" ColumnName="tiempo_consulta" />
+          <ScalarProperty Name="fec_valuta" ColumnName="fec_valuta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

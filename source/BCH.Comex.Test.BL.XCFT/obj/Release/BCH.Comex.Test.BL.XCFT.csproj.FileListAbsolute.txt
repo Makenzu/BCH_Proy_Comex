@@ -1,0 +1,2 @@
+D:\3IT\COMEX\BCH.Comex.Test.BL.XCFT\obj\Release\BCH.Comex.Test.BL.XCFT.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Test.BL.XCFT\obj\Release\BCH.Comex.Test.BL.XCFT.csproj.CoreCompileInputs.cache

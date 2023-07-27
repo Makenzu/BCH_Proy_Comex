@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="portalModelStoreContainer" CdmEntityContainer="portalEntities">
+    <EntitySetMapping Name="Aplicacions">
+      <EntityTypeMapping TypeName="portalModel.Aplicacion">
+        <MappingFragment StoreEntitySet="tbl_aplicacion">
+          <ScalarProperty Name="parameters" ColumnName="parameters" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="controller" ColumnName="controller" />
+          <ScalarProperty Name="ad_group_name" ColumnName="ad_group_name" />
+          <ScalarProperty Name="grupo_id" ColumnName="grupo_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoAplicacions">
+      <EntityTypeMapping TypeName="portalModel.GrupoAplicacion">
+        <MappingFragment StoreEntitySet="tbl_grupoaplicacion">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosUsuarios">
+      <EntityTypeMapping TypeName="portalModel.DatosUsuario">
+        <MappingFragment StoreEntitySet="tbl_datos_usuario">
+          <ScalarProperty Name="ConfigImpres_Formato" ColumnName="ConfigImpres_Formato" />
+          <ScalarProperty Name="MinsAlertaRecepcionSwift" ColumnName="MinsAlertaRecepcionSwift" />
+          <ScalarProperty Name="MinsAlertaAdminEnvioSwift" ColumnName="MinsAlertaAdminEnvioSwift" />
+          <ScalarProperty Name="MinsAlertaAutorizacionSwift" ColumnName="MinsAlertaAutorizacionSwift" />
+          <ScalarProperty Name="ConfigImpres_ContabilidadGenerica" ColumnName="ConfigImpres_ContabilidadGenerica" />
+          <ScalarProperty Name="FirmasLocales" ColumnName="FirmasLocales" />
+          <ScalarProperty Name="BCHComexSwem_Casillas" ColumnName="BCHComexSwem_Casillas" />
+          <ScalarProperty Name="MinsAlertaEnvioSwift" ColumnName="MinsAlertaEnvioSwift" />
+          <ScalarProperty Name="WebServices_IP" ColumnName="WebServices_IP" />
+          <ScalarProperty Name="Ubicacion_Entry" ColumnName="Ubicacion_Entry" />
+          <ScalarProperty Name="SyBase_Usuario" ColumnName="SyBase_Usuario" />
+          <ScalarProperty Name="SyBase_Servidor" ColumnName="SyBase_Servidor" />
+          <ScalarProperty Name="SyBase_Nodo" ColumnName="SyBase_Nodo" />
+          <ScalarProperty Name="SyBase_Base" ColumnName="SyBase_Base" />
+          <ScalarProperty Name="Swift_23E_Reglas" ColumnName="Swift_23E_Reglas" />
+          <ScalarProperty Name="Swift103_BICREC" ColumnName="Swift103_BICREC" />
+          <ScalarProperty Name="Swift103_BICEMI" ColumnName="Swift103_BICEMI" />
+          <ScalarProperty Name="SgtCCLin_VisSgt" ColumnName="SgtCCLin_VisSgt" />
+          <ScalarProperty Name="SgtCCLin_TabSgt" ColumnName="SgtCCLin_TabSgt" />
+          <ScalarProperty Name="SgtCCLin_ServSgt" ColumnName="SgtCCLin_ServSgt" />
+          <ScalarProperty Name="SgtCCLin_NodoSgt" ColumnName="SgtCCLin_NodoSgt" />
+          <ScalarProperty Name="SceIdi_PlazaCentral" ColumnName="SceIdi_PlazaCentral" />
+          <ScalarProperty Name="SaldosCtaCte_VisSalMN" ColumnName="SaldosCtaCte_VisSalMN" />
+          <ScalarProperty Name="SaldosCtaCte_VisSalME" ColumnName="SaldosCtaCte_VisSalME" />
+          <ScalarProperty Name="SaldosCtaCte_SerSalCCL" ColumnName="SaldosCtaCte_SerSalCCL" />
+          <ScalarProperty Name="SaldosCtaCte_NodoSalME" ColumnName="SaldosCtaCte_NodoSalME" />
+          <ScalarProperty Name="Participantes_PartyServidor" ColumnName="Participantes_PartyServidor" />
+          <ScalarProperty Name="Participantes_PartyNodo" ColumnName="Participantes_PartyNodo" />
+          <ScalarProperty Name="Participantes_PartyEnRed" ColumnName="Participantes_PartyEnRed" />
+          <ScalarProperty Name="Pais_CodPais" ColumnName="Pais_CodPais" />
+          <ScalarProperty Name="Oficinas_UsrEsp_CentroCosto" ColumnName="Oficinas_UsrEsp_CentroCosto" />
+          <ScalarProperty Name="Monedas_CodMonedaNacional" ColumnName="Monedas_CodMonedaNacional" />
+          <ScalarProperty Name="Monedas_CodMonedaDolar" ColumnName="Monedas_CodMonedaDolar" />
+          <ScalarProperty Name="MODGUSR_UsrEsp_CentroCosto_SucBCH" ColumnName="MODGUSR_UsrEsp_CentroCosto_SucBCH" />
+          <ScalarProperty Name="MODGUSR_UsrEsp_CentroCosto_CodPBC" ColumnName="MODGUSR_UsrEsp_CentroCosto_CodPBC" />
+          <ScalarProperty Name="MODGUSR_UsrEsp_CentroCosto_CodBCH" ColumnName="MODGUSR_UsrEsp_CentroCosto_CodBCH" />
+          <ScalarProperty Name="MODGUSR_UsrEsp_CentroCosto_CodBCCH" ColumnName="MODGUSR_UsrEsp_CentroCosto_CodBCCH" />
+          <ScalarProperty Name="Importaciones_TcpAutBcoCen" ColumnName="Importaciones_TcpAutBcoCen" />
+          <ScalarProperty Name="Identificacion_Rut" ColumnName="Identificacion_Rut" />
+          <ScalarProperty Name="Identificacion_Impresora" ColumnName="Identificacion_Impresora" />
+          <ScalarProperty Name="Identificacion_CCtUsro" ColumnName="Identificacion_CCtUsro" />
+          <ScalarProperty Name="Identificacion_CCtUsr" ColumnName="Identificacion_CCtUsr" />
+          <ScalarProperty Name="Identificacion_Alias" ColumnName="Identificacion_Alias" />
+          <ScalarProperty Name="General_MontoIVA" ColumnName="General_MontoIVA" />
+          <ScalarProperty Name="General_MndSinDec" ColumnName="General_MndSinDec" />
+          <ScalarProperty Name="General_MndNac" ColumnName="General_MndNac" />
+          <ScalarProperty Name="General_MndDol" ColumnName="General_MndDol" />
+          <ScalarProperty Name="EXPOTAR_ruta_excel" ColumnName="EXPOTAR_ruta_excel" />
+          <ScalarProperty Name="EXPOTAR_dir_arch_export" ColumnName="EXPOTAR_dir_arch_export" />
+          <ScalarProperty Name="EXPOTAR_arch_export" ColumnName="EXPOTAR_arch_export" />
+          <ScalarProperty Name="Exportaciones_TcpSinPai" ColumnName="Exportaciones_TcpSinPai" />
+          <ScalarProperty Name="Exportaciones_TcpConvenio" ColumnName="Exportaciones_TcpConvenio" />
+          <ScalarProperty Name="Exportaciones_TcpConDec" ColumnName="Exportaciones_TcpConDec" />
+          <ScalarProperty Name="Exportaciones_DocSwf" ColumnName="Exportaciones_DocSwf" />
+          <ScalarProperty Name="Entry_Usuario" ColumnName="Entry_Usuario" />
+          <ScalarProperty Name="CtaCteLin_VistSOL" ColumnName="CtaCteLin_VistSOL" />
+          <ScalarProperty Name="CtaCteLin_ServSOL" ColumnName="CtaCteLin_ServSOL" />
+          <ScalarProperty Name="CtaCteLin_ServCCL" ColumnName="CtaCteLin_ServCCL" />
+          <ScalarProperty Name="CtaCteLin_ArcLCCL" ColumnName="CtaCteLin_ArcLCCL" />
+          <ScalarProperty Name="CtaCteLin_ArcHCCL" ColumnName="CtaCteLin_ArcHCCL" />
+          <ScalarProperty Name="Configuracion_Sonidos" ColumnName="Configuracion_Sonidos" />
+          <ScalarProperty Name="ConfigImpres_ImprimeReporte" ColumnName="ConfigImpres_ImprimeReporte" />
+          <ScalarProperty Name="ConfigImpres_ImprimePlanillas" ColumnName="ConfigImpres_ImprimePlanillas" />
+          <ScalarProperty Name="ConfigImpres_ImprimeCartas" ColumnName="ConfigImpres_ImprimeCartas" />
+          <ScalarProperty Name="samAccountName" ColumnName="samAccountName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_datos_usuario_codigos_sucursal">
+      <EntityTypeMapping TypeName="portalModel.CodigosSucursal">
+        <MappingFragment StoreEntitySet="tbl_datos_usuario_codigos_sucursal">
+          <ScalarProperty Name="CodBCCH" ColumnName="CodBCCH" />
+          <ScalarProperty Name="SucBCH" ColumnName="SucBCH" />
+          <ScalarProperty Name="CodBCH" ColumnName="CodBCH" />
+          <ScalarProperty Name="CodPBC" ColumnName="CodPBC" />
+          <ScalarProperty Name="CentroCosto" ColumnName="CentroCosto" />
+          <ScalarProperty Name="samAccountName" ColumnName="samAccountName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_sel_TBLSceTabcomex_MS" FunctionName="portalModel.Store.proc_sel_TBLSceTabcomex_MS" />
+  </EntityContainerMapping>
+</Mapping>

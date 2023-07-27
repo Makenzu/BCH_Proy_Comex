@@ -1,0 +1,107 @@
+﻿@model BCH.Comex.UI.Web.Models.GestionControlSwift.ReporteEstadisticaSwift
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mensajes @Model.Verbo Por Sistema</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/content/css/site.css")" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/gestion-y-control-inv.png")" />
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <div class="tit"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h2>Mensajes @Model.Verbo Por Sistema</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>
+                    @string.Format("Mensajes {0} {1} {2} {3}",
+            Model.Verbo,
+            (Model.FechaHasta.HasValue ? "desde el" : "el día"),
+            @Model.FechaDesde.ToString("dd/MMM/yyyy"),
+            (Model.FechaHasta.HasValue ? "al " + Model.FechaHasta.Value.ToString("dd/MMM/yyyy") : String.Empty))
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Total Mensajes: </strong></div>
+            <div class="col-xs-3">
+                @Model.RegistrosEnviados.Count;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3"><strong>Casilla: </strong></div>
+            <div class="col-xs-3">@Model.Casilla</div>
+        </div>
+
+        @if (!Model.Enviados)
+        {
+            <div class="row">
+                <div class="col-xs-3"><strong>Estado: </strong></div>
+                <div class="col-xs-3">@Model.Filtro</div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-xs-12">&nbsp;</div>
+        </div>
+
+        <table class="table table-condensed">
+            <thead>
+                @if (Model.Enviados)
+                {
+                    <tr>
+                        <th>Tipo Mensaje</th>
+                        <th>Nombre Mensaje</th>
+                        <th>Cantidad</th>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th>Tipo Mensaje</th>
+                        <th>Nombre Mensaje</th>
+                        <th>Cantidad</th>
+                    </tr>
+                }
+            </thead>
+            <tbody>
+
+                @if (Model.Enviados)
+                {
+                    foreach (var row in Model.RegistrosEnviados)
+                    {
+                        <tr>
+                            <td>@row.tipo_msg</td>
+                            <td>@row.nombre_tipo</td>
+                            <td>@row.cantidad</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    
+                    foreach (var row in Model.RegistrosRecibidos)
+                    {
+                        <tr>
+                            <td>@row.tipo_msg</td>
+                            <td>@row.nombre_tipo</td>
+                            <td>@row.cantidad</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+

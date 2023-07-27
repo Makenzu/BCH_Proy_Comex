@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Razon Social";
+    BCH.Comex.Core.Entities.Cext01.AdminParticipantes.UI_Modulos.UI_Mdi_Principal Mdi_Principal = ViewBag.MdiPrincipal;
+}
+
+@{ Html.RenderPartial("_MenuMain"); }
+
+<div class="col-md-7 col-md-offset-2">
+    <div class="efx-box">
+        <h3><strong>Razones Sociales de Participantes</strong></h3>
+        <hr />
+        <div class="form-body">
+            <div class="row">
+                <input type="hidden" id="oldNombreRazonSocial" />
+                <div class="col-md-9">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-4 " for="nombreRazonSocial">Nombre o Razón Social</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="nombreRazonSocial" maxlength="60" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="nombreFantasia">Nombre de Fantasía</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="nombreFantasia" maxlength="40" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="contacto">Contacto</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="contacto" maxlength="40" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="sortKey">Sort Key</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="sortKey" maxlength="60" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="rutBanco">R.U.T. Banco</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="rutBanco" maxlength="16"   />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <div class="row">
+                        <button class="btn btn-primary btn-block" id="btnRSAceptar" style="width:100px">Aceptar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-default btn-block" id="btnRSCancelar" style="width:100px">Cancelar</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block" id="btnRSGuardar" style="width:100px"><i class="fa fa-floppy-o"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{ Html.RenderPartial("_ConfirmarSalirGuardar"); }
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery.rut.min.js"></script>
+    @Scripts.Render("~/bundles/AdminParticipantes/base")
+    @Scripts.Render("~/bundles/AdminParticipantes/new/rs")
+    <script>    
+        var referer = referrerPathname().split("/");
+
+        if (referer[referer.length - 1] === 'NuevoParticipante') {        
+            sessionStorage.setItem('modificando', true)
+        } else {
+            sessionStorage.setItem('modificando', false)
+        }
+
+        CustomSave = function () {
+            $('#btnRSAceptar').trigger('click');
+        }
+
+        $(function () {
+            $('.form-body').change(function () {
+                sessionStorage.setItem('modificando', true);
+            });
+        });
+    </script>
+}

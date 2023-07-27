@@ -1,0 +1,29 @@
+﻿@{ 
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<form method="POST" action='@Url.Content("~/ContabilidadGenerica/Mensajes/GuardarCambiosOperacion")'>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <p>
+                Si continua, los cambios realizados se perderán.
+                ¿Desea continuar y perder los cambios?
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <input type="submit" value="Aceptar" class="btn btn-primary left" id="accept" />
+            <input type="submit" value="Cancelar" class="btn btn-default right" id="cancel" />
+        </div>
+    </div>
+    <input type="checkbox" style="visibility: hidden" checked name="ok" id="ok" value="false" />
+</form>    
+
+@section css{
+
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/GuardarCambiosOperacion")
+}

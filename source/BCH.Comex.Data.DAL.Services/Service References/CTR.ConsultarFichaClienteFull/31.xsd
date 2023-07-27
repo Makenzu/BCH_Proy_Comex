@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRq/mpi" xmlns:com="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://osb.bancochile.cl/bch/neg/cif/consultarFichaClienteFullRq/mpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://osb12pc:20001/sb/bch/neg/cif/consultarFichaClienteFull/v/3?SCHEMA%2FBCH.INFRA.ModeloComunInformacion%2FSpecifications%2FENT.3.0.BCH.INFRA.Comun" namespace="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3" />
+  <xsd:annotation>
+    <xsd:documentation>
+      Estructura de entrada usada para llamar al servicio de consulta de ficha cliente full.
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="consultarFichaClienteFullRq" type="tns:consultarFichaClienteFullRqType" />
+  <xsd:complexType name="consultarFichaClienteFullRqType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="rutCliente" type="com:Rut">
+        <xsd:annotation>
+          <xsd:documentation>
+            Rut del Cliente
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

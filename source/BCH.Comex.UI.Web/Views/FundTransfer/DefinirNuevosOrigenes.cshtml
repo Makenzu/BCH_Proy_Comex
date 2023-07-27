@@ -1,0 +1,24 @@
+﻿@model string
+<div class="container">
+    <input type="hidden" id="urlTo" value="@Model" />
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3" id="NuevosOrigenes">
+            <p>
+                El origen de los fondos ya se encuentra definido. ¿Desea volver a definirlos? 
+            </p>
+            <div class="text-center">
+                <button type="button" id="btn_no" class="btn btn-default" data-bind="click: noVolverADefinir">No</button>
+                <button type="button" id="btn_si" class="btn btn-primary" data-bind="click: volverADefinir">Si</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+@Scripts.Render("~/bundles/FundTransfer/NuevoOrigen")
+}
+
+
+
+
+

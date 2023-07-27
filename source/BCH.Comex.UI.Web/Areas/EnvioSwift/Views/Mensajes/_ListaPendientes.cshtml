@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Envío de Mensajes Swift -  Lista swift Pendientes";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/envio-msj-swift-inv.png");
+    Layout = null;
+}
+
+
+
+<h2>Lista Pendientes</h2>
+
+<div class="container form-horizontal">
+    <div class="row">
+        <div class="col-xs-8">
+
+            <div class="panel-body">
+                <table id="tablaSwift">
+                    <thead>
+                        <tr>
+                            <th data-checkbox="true"></th>
+                            <th data-field="esPlantilla"  data-formatter="booleanFormatter">Plantilla</th>
+                            <th data-field="archivo">Archivo</th>
+                            <th data-field="sistema">Sistema</th>
+                            <th data-field="fecha" data-formatter="fechaFormatter">Fecha</th>
+                            <th data-field="tipo">Tipo</th>
+                            <th data-field="moneda">Moneda</th>
+                            <th data-field="monto" data-formatter="montoFormatter">Monto</th>
+                            <th data-field="referencia">Referencia</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+            
+        </div>
+        <div class="col-xs-2">
+            <a class="btn btn-default align-btn-fix" id="BtnEditar"><span class="glyphicon glyphicon-edit"> Editar</span></a>
+        </div>
+        <div class="col-xs-2">
+            <a class="btn btn-default align-btn-fix" id="BtnEliminar" style="display: none"><span class="glyphicon glyphicon-remove"> Eliminar</span></a>            
+        </div>
+        <div class="col-xs-2">
+            <a class="btn btn-default align-btn-fix btn" data-dismiss="modal" id="BtnCancelar"><span class="glyphicon glyphicon-floppy-remove"> Cancelar</span></a>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    
+    <script>
+    //datos en formato Json
+    //var modelLista = @Html.Raw(Json.Encode(Model.listaSwift));
+
+    //urls
+        
+</script>
+}

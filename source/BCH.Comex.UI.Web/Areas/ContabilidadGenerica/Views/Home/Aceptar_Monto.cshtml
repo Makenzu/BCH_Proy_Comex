@@ -1,0 +1,25 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.ContabilidadGenerica.UI_Forms.UI_gl
+
+@{ 
+    var text = Model.ListaConfirmaciones.Find(x => x.Type == BCH.Comex.Common.UI_Modulos.TipoMensaje.YesNo).Text;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+<div class="row" style="padding-top: 40px;">
+    <div class="col-xs-6">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <p>@text</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <button id="cancelar" type="button" class="btn btn-default pull-left">Cancelar</button>
+                <button id="aceptar" type="button" class="btn btn-primary pull-right">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/ContabilidadGenerica/AceptaMonto")
+}

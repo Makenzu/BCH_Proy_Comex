@@ -1,0 +1,37 @@
+﻿@model BCH.Comex.UI.Web.Areas.FinDia.Models.ReporteCuadraturaModel
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = Model.Titulo;
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+@if (Model != null)
+{
+
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Tipo MT.</th>
+                <th>Referencia.</th>
+                <th>N° mensaje.</th>
+                <th>Estado.</th>
+                <th>Error.</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Detalle)
+        {
+            <tr>
+                <td>@item.tipo_mt|</td>
+                <td>@item.referencia</td>
+                <td>@item.ncorr</td>
+                <td>@item.glosa_estado</td>
+                <td>@item.mensaje_error</td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    @Model.Total
+}

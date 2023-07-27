@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Busqueda Planillas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Búsqueda de Planillas Informadas</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="radio-inline"><input type="radio" name="tipoPlanilla" value="I" checked /> Importación</label>
+                    <label class="radio-inline"><input type="radio" name="tipoPlanilla" value="E" /> Exportación</label>
+                </div>
+                <div class="col-sm-4">
+
+                    <fieldset class="form-inline" aria-label="Filtrar planillas por fecha">
+                        <div class="form-group" id="grpFechaIngreso">
+                            <label for="FechaIngreso">Fecha de Ingreso</label>
+                            <div class="input-group date" id="dtpFechaIngreso">
+                                <input type="text" class="form-control" id="txtFechaIngreso" name="FechaIngreso" value="@(DateTime.Now)" data-inputmask="'alias': 'date'" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                            <label class="control-label has-error" style="display:none" id="lblErrorFechaIngreso"></label>
+                        </div>
+                    </fieldset>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <a class="btn btn-default" id="btnBuscar">Buscar</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <table class="table tabla-reporte" id="tablaPlanillas"></table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a id="btnImprimir" class="btn btn-default disabled">Imprimir</a>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-tableSelect/jquery.tableSelect.min.js"></script>
+    <script type="text/javascript">
+        var $tablaPlanillas;
+        var tableOne;
+
+        $(function () {
+
+            var dateNow = new Date();
+            $('#dtpFechaIngreso').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, debug: true });
+
+
+            $tablaPlanillas = $('#tablaPlanillas');
+            $(window).resize(function () { $tablaPlanillas.bootstrapTable('resetView'); });
+
+            $('#btnBuscar').click(function () {
+                $tablaPlanillas.bootstrapTable('destroy');
+                $tablaPlanillas.bootstrapTable({
+                    //url: '/Planillas/Reportes/BuscarPlanillasInformadas',
+                    url: '@Url.Action("BuscarPlanillasInformadas", "Reportes")',
+                    method: 'get',
+                    cache: false,
+                    height: 300,
+                    search: true,
+                    showRefresh: true,
+                    //clickToSelect: true, //da error en IE8
+                    //singleSelect: true,  //da error en IE8
+                    queryParams: function (p) {
+                        return {
+                            tipoPlanilla: $('input[name="tipoPlanilla"]:checked').val(),
+                            fecha: $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD')
+                        };
+                    },
+                    locale: "es-SP",
+                    columns: [
+                        {
+                            field: 'Correlativo',
+                            title: 'N°',
+                        },
+                        {
+                            field: 'FechaPresentacionString',
+                            title: 'Fec. Pres.',
+                        },
+                        {
+                            field: 'NumeroDeclaracion',
+                            title: 'Num. Dec.',
+                            align: 'right'
+                        },
+
+                        {
+                            field: 'CodigoAduana',
+                            title: 'Cód. adn.',
+                            align: 'right'
+                        },
+                         {
+                             field: 'VtoRetString',
+                             title: 'Vto. Ret.'
+                         },
+                         {
+                             field: 'MontoDolaresDeclaracionIngresoString',
+                             title: 'Mto. USD$ D.I.',
+                             'class': 'monto'
+                         },
+                         {
+                             field: 'MontoInteresDeclaracionIngresoString',
+                             title: 'Mto. Interés D.I.',
+                             'class': 'monto'
+                         }
+                    ],
+                    onLoadSuccess: function (data) {
+                        if (Object.keys(data).length > 0) {
+                            $('#btnImprimir').attr('href', 'ImprimirCartaBancoCentral?'
+                                    + jQuery.param([
+                                        {
+                                            name: 'tipoPlanilla', value: $('input[name="tipoPlanilla"]:checked').val()
+                                        },
+                                        {
+                                            name: 'fecha', value: $('#dtpFechaIngreso').data('DateTimePicker').date().format('YYYY-MM-DD')
+                                        }
+                                    ])
+                                );
+                            $('#btnImprimir').toggleClass('disabled', false);
+                        } else {
+                            $('#btnImprimir').toggleClass('disabled', true);
+                        }
+                    }
+                });
+
+            });
+
+        });
+    </script>
+}
+
+@section css {
+    <style>
+        td.monto {
+            text-align: right;
+        }
+
+        .fixed-table-container tbody .selected td {
+            background-color: #002464;
+            color: white;
+        }
+    </style>
+}

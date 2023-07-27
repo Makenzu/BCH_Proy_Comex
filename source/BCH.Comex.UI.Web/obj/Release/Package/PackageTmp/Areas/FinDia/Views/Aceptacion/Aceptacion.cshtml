@@ -1,0 +1,45 @@
+﻿@model BCH.Comex.UI.Web.Areas.FinDia.Models.AceptacionViewModel
+
+
+@{
+    ViewBag.Title = "Aceptacion";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/fin-de-dia-inv.png");
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/FinDia/Aceptacion")
+    <script>
+        /** todas estas variables se utilizan en el archivo FundTransfer.GenerarSwift.js  **/
+
+        //datos en formato Json
+        var modelTabla = @Html.Raw(Json.Encode(Model.ListaAceptaciones));
+    </script>
+}
+
+@using (Html.BeginForm("AceptacionBotones", "Aceptacion", FormMethod.Post, new { id = "Aceptacion", name = "Aceptacion" }))
+{
+    <div class="container form-horizontal" id="divContainer">
+        <h2 class="margin-bottom-double">Aceptaciones de CCI vencidas</h2>
+        <div class="row">
+            <div class="col-xs-6">
+
+                <div class="panel-body">
+                    <table id="tablaPlanillas">
+                        <thead>
+                            <tr>
+                                <th data-field="refere">Referencia</th>
+                                <th data-field="monacpnemonico">Moneda Acp</th>
+                                <th data-field="salacp" data-formatter="montoFormatter" data-halign="right">Saldo</th>
+                                <th data-field="venacp">Venc Acp</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <input type="button" id="btnImprimir" name="Command" class="btn btn-success" value="Imprimir" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+                <input type="submit" id="btnAceptar" name="Command" class="btn btn-primary" value="Aceptar" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+            </div>
+        </div>
+    </div>
+}

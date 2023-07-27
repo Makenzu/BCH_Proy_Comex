@@ -1,0 +1,10 @@
+﻿@using BCH.Comex.UI.Web.Helpers
+
+@section scripts{
+    <script>
+        var ConfigImpres_PrintFormat = "@HttpContext.Current.GetCurrentUser().GetDatosUsuario().ConfigImpres_PrintFormat";
+    </script>
+
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/FundTransfer/ImprimirGrabar")
+}

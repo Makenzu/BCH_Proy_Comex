@@ -1,0 +1,56 @@
+﻿@model BCH.Comex.UI.Web.Models.FundTransfer.PlanillaAnularNumeroViewModel
+@{
+    ViewBag.Title = "Número de planillas a anular";
+    <script>
+        var mensajesDeError = @Html.Raw(Json.Encode(ViewBag.MdiPrincipal.MESSAGES));
+    </script>
+}
+<div class="container" style="max-width: 600px">
+    <div class="col-xs-12">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmPlanillaAnular", name = "FrmPlanillaAnular", @class = "form-horizontal" }))
+        {
+            <div class="form-group">
+                <label for="Moneda" class="col-xs-2">Moneda:</label>
+                <div class="col-xs-12">
+                    @Html.EditorFor(model => model.Cb_Moneda, new { htmlAttributes = new { @class = "form-control", @id = "Moneda", tabindex ="1" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="TipoCambio" class="col-xs-2">Tipo de cambio:</label>
+                <div class="col-xs-12">
+                    @Html.EditorFor(model => model.CAM_TipCam, new { htmlAttributes = new { @class = "form-control", @id = "TipoCambio" , tabindex ="2" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="NroPlanillas" class="col-xs-2">Nro. de Planillas:</label>
+                <div class="col-xs-12">
+                    @Html.EditorFor(model => model.Cam_NroPln, new { htmlAttributes = new { @class = "form-control", @id = "NroPlanillas", @type = "number", tabindex = "3", min = 1 } })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 text-right">
+                    <input id="btnAceptar" tabindex="4" name="btnSubmit" type="submit" value="Aceptar" class="btn btn-primary" />
+                    <input id="btnSubmit" tabindex="5" name="command" type="submit" value="Salir" class="btn btn-default" style="width: 80px;" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Moneda').change(function () {
+            $.get('@Url.Action("PlanillaAnular_Cb_Moneda_Click")', { monedaItemData: $('#Moneda').val() }, function (data) {
+                $('#TipoCambio').val(data);
+            });
+        });
+
+        if (mensajesDeError != null && mensajesDeError != undefined)
+        {
+            focusOnErrorControl(mensajesDeError);
+        }
+    });
+</script>
+}

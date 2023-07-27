@@ -1,0 +1,48 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.xml
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CopyComplete
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll.config
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Core.Entities.Custodia.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\EntityFramework.SqlServer.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\bin\Release\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Custodia\obj\Release\BCH.Comex.Core.Entities.Custodia.pdb

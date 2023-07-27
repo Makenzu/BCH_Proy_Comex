@@ -1,0 +1,93 @@
+﻿<!-- Modal -->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Seleccione el Ordenante</h4>
+</div>
+<div class="modal-body">
+    @*<form class="form-horizontal">*@
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-4" for="searchRazonSocial">Ingrese Nombre del Ordenante</label>
+            <div class="col-md-5">
+                <input class="form-control" id="searchRazonSocial" name="searchRazonSocial" maxlength="60" size="60" />
+            </div>
+            <div class="col-md-3">
+                <button type="button" id="btnBuscarByRazonSocial" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Buscar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h4 style="color:#428bca">Encontrados&nbsp;&nbsp;&nbsp;<span class="badge" id="badgeCantResultados">0</span></h4>
+                <table id="tablaSearchByRazonSocial">
+                    <thead>
+                        <tr>
+                            <th data-field="accnum" data-sortable="true">Cuenta</th>
+                            <th data-field="nombre" data-sortable="true">Nombre</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    @*</form>*@
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+</div>
+
+<script>
+
+    var baseUrl = $("#base_url").val();
+    var Nombre = "AVOID_SEARCH";
+
+    $('#tablaSearchByRazonSocial').bootstrapTable({
+        height: getHeight(),
+        onLoadSuccess: function (data) {
+            if (data == "LIMIT_EXCEEDED") {
+                $('#tablaSearchByRazonSocial').bootstrapTable('removeAll');
+                $('.no-records-found').find('td').text("Su búsqueda retornó demasiados resultados, debe agregar algún filtro");
+                $('#badgeCantResultados').text(0);
+            } else {
+                $('#badgeCantResultados').text(data.length);
+            }
+        },
+        method: 'post',
+        url: baseUrl + "ControlIntegral/GetListaDeOrdenantesRazonSocial",
+        queryParams: function (p) {
+            return {
+                opcion: 1,
+                razonSocial: Nombre//$('#searchRazonSocial').val()
+            };
+        },
+        pagination: false
+    });
+
+    $('#btnBuscarByRazonSocial').click(function () {
+        Nombre = $('#searchRazonSocial').val();
+        $('#tablaSearchByRazonSocial').bootstrapTable('refresh');
+    });
+
+    $('#tablaSearchByRazonSocial').on('dbl-click-row.bs.table', function (row, $element) {
+
+        $('#txtCuenta').val($element['accnum']);
+        $('#txtMonto').focus();
+        $('#modal_dialog_Empresa').modal('hide');
+
+    });
+
+    $('#searchRazonSocial').keyup(function (e) {
+        if (e.keyCode == 13) {
+            if (!S($('#searchRazonSocial').val()).isEmpty()) {
+                $('#btnBuscarByRazonSocial').click();
+            }
+        }
+    });
+
+
+
+    function getHeight() {
+        return $(window).height() / 2;
+    }
+
+
+</script>

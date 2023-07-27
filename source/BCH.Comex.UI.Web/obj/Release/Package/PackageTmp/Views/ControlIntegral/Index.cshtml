@@ -1,0 +1,783 @@
+﻿@model @BCH.Comex.UI.Web.Models.ControlIntegral.IndexViewModel
+@{
+    ViewBag.Title = "Control Integral";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/control-integral-inv.png");
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h5>Control Integral</h5>
+        <div class="form-horizontal">
+            <div class="tabbable table-hover">
+                <ul class="nav nav-tabs">
+                    <li id="tab_Consulta" class="active">
+                        <a href="#tab_0" class="small" data-toggle="tab">
+                            Consulta Contratos - Recurrencia
+                        </a>
+                    </li>
+                    <li id="tab_Mandato">
+                        <a href="#tab_1" class="small" data-toggle="tab">
+                            Mantenedor Contratos
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab_0">
+                        <br />
+                        <form id="frmConsultaControlIntegralTab1" name="frmConsultaControlIntegralTab1" action="#">
+                            <input type="hidden" id="Error_original" name="Error_original" />
+                            <input type="hidden" id="HiNombreClte" name="HiNombreClte" value="@Model.HiNombreClte" />
+                            <input type="hidden" id="HiEjecutivo" name="HiEjecutivo" value="@Model.HiEjecutivo" />
+                            <input type="hidden" id="HiSegmento" name="HiSegmento" value="@Model.HiSegmento" />
+                            <input id="Frame1" name="Frame1" type="hidden" value="@Model.Frame1" />
+                            <input id="cmdMesa" name="cmdMesa" type="hidden" value="@Model.cmdMesa" />
+                            <input id="cmdVRecurrencia" name="cmdVRecurrencia" type="hidden" value="@Model.cmdVRecurrencia" />
+                            <div class="row">
+                                <div class="col-xs-1"></div>
+                                <div class="col-md-10" id="divLblLog2">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <h4><span id="lblLog2" class="label label-warning" style="color:red; background-color: yellow;"></span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Datos Ordenante</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="col-xs-10">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-xs-2 small">Llave</label>
+                                                            <div class="col-xs-10">
+                                                                <input id="txtCuenta" name="txtCuenta" type="text" tabindex="1" maxlength="20" class="form-control input-sm" />
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <button id="btnBuscarDatosCliente" type="button" name="btnBuscarDatosCliente" class="btn btn-primary btn-sm">...</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="divDatosOrdenanteRut">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label id="lblRut" class="control-label col-xs-2 small">Rut</label>
+                                                        <div class="col-xs-6">
+                                                            <input id="txtRut" name="txtRut" class="form-control input-sm" maxlength="10" />
+                                                        </div>
+                                                        <div class="col-xs-2">
+                                                            <input id="txtDV" name="txtDV" class="form-control input-sm" maxlength="1" />
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="divDatosOrdenanteBase">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label id="lblBase" class="control-label col-xs-2 small">Base</label>
+                                                        <div class="col-xs-8">
+                                                            <input id="txtBase" name="txtBase" class="form-control input-sm" maxlength="20" />
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12">
+                                                            <span id="lblNombreClte" class="badge small">@Model.lblNombreClte</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-5">
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12 small">
+                                                            <label id="lblEjecutivo" class="btn-link" style="font-size: 13px"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12 small">
+                                                            <label id="lblSegmento" class="btn-link" style="font-size: 13px"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-7">
+                                                    <div class="col-xs-5">
+                                                        <div class="form-group small">
+                                                            <input id="opTipo1" name="opTipo" checked="checked" type="radio" />
+                                                            <label class="control-label small">OPC</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-7" id="EsVisibleChkOpc">
+                                                        <div class="form-group small">
+                                                            <label class="control-label small"><input id="opTipoCargo" type="checkbox" value="" />&nbsp;Cargo NY/London</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="form-group small">
+                                                            <input id="opTipo2" name="opTipo" type="radio" />
+                                                            <label class="control-label small">OPR/SPOT</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Datos Beneficiario Recurrente</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4 small">
+                                                            Monto
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            @Html.DropDownList("cmbMoneda", ViewData["listaMoneda"] as List<SelectListItem>, new { @id = "cmbMoneda", @class = "form-control input-sm", tabindex = 3 })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                            <input id="txtMonto" name="txtMonto" type="number" maxlength="13" size="13" min="0" max="9999999999999" tabindex="4" class="form-control input-sm" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label col-xs-3 small">Cuenta</label>
+                                                        <div class="col-xs-9">
+                                                            <input id="txtCuentab" name="txtCuentab" type="text" class="form-control input-sm" tabindex="5" maxlength="60" value="@Model.txtCuentab" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label col-xs-3 small">Nombre</label>
+                                                        <div class="col-xs-9">
+                                                            <input id="txtNombreb" name="txtNombreb" class="form-control input-sm" tabindex="6" maxlength="60" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label col-xs-3 small">Banco Int.</label>
+                                                        <div class="col-xs-9">
+                                                            <input id="txtBancoib" name="txtBancoib" class="form-control input-sm" tabindex="7" maxlength="60" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label col-xs-3 small">Banco Pag.</label>
+                                                        <div class="col-xs-9">
+                                                            <input id="txtBancopb" name="txtBancopb" class="form-control input-sm" tabindex="8" maxlength="60" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <br />
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label id="lblResultado" class="control-label small" style="text-align:center;width:100%;font-size:small"></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div id="circulo" style="position:absolute;background-color:red;left:14%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <button id="btnBuscar" type="button" class="btn btn-primary btn-block" tabindex="9">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Buscar
+                                            </button>
+                                            <button id="btnLimpiar" type="button" class="btn btn-default btn-block">Limpiar</button>
+                                            <button id="btnReparar" type="button" class="btn btn-primary btn-block">Reparar</button>
+                                            <button id="btnCheckList" type="button" class="btn btn-primary btn-block">Check List</button>
+                                            <button id="btnVerRecurrencia" name="btnVerRecurrencia" type="button" class="btn btn-primary btn-block">Ver Recurrencia</button>
+                                            <button id="btnTipoCambio" type="button" class="btn btn-primary btn-block">Tipo de Cambio</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Validaciones Contratos</div>
+                                        <div class="panel-body">
+                                            <div class="row small">
+                                                <div class="col-xs-5">
+                                                    <label id="lblContratofaxlocal" class="control-label small">Contrato Fax Local:</label>
+                                                </div>
+                                                <div class="col-xs-7">
+                                                    <div class="col-xs-12">
+                                                        <div class="checkbox">
+                                                            <input id="chkContratoFax" name="chkContratoFax" disabled="disabled" type="checkbox" />
+                                                            <label id="lblChkContratoFax" class="control-label small"></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row small">
+                                                <div class="col-xs-5">
+                                                    <label id="lblContratoMift" class="control-label small">Contrato Mift:</label>
+                                                </div>
+                                                <div class="col-xs-7">
+                                                    <div class="col-xs-12">
+                                                        <div class="checkbox">
+                                                            <input id="chkContratoMift" name="chkContratoMift" disabled="disabled" type="checkbox" />
+                                                            <label id="lblChkContratoMift" class="control-label small"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row small">
+                                                <div class="col-xs-5">
+                                                    <label id="lblContratoFaxNYL" class="control-label small">Contrato fax (NY - London):</label>
+                                                </div>
+                                                <div class="col-xs-7">
+                                                    <div class="col-xs-12">
+                                                        <div class="checkbox">
+                                                            <input id="chkfaxNY" name="chkfaxNY" disabled="disabled" type="checkbox" />
+                                                            <label id="lblChkfaxNY" class="control-label small"></label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row small">
+                                                <div class="col-xs-5">
+                                                    <label id="lblContratoFaxNYL" class="control-label small">Contrato Citibank (Offshore):</label>
+                                                </div>
+                                                <div class="col-xs-7">
+                                                    <div class="col-xs-12">
+                                                        <div class="checkbox">
+                                                            <input id="chkCiti" name="chkCiti" disabled="disabled" type="checkbox" />
+                                                            <label id="lblChkCiti" class="control-label small"></label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <table id="datatable_flxTarifas"></table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <textarea id="lblMensaje" class="form-control" rows="10" readonly="readonly" cols="6">@Model.lblMensaje</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <table id="datatable_flxPizarra"></table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="col-sm-1"></div>
+                                                    <div class="col-sm-10" id="idDivFrame1">
+                                                        <p class="bg-primary" id="Label1" style="text-align:center">NO SE ENCONTRARON DUPLICIDADES EN CITIDOC</p>
+                                                        <p class="bg-primary" id="lblLog" style="text-align:center"></p>
+                                                    </div>
+                                                    <div class="col-sm-1"></div>
+                                                </div>
+                                            </div>
+                                            <table id="datatable_flxCitidocDPL"></table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="tab_1">
+                        <br />
+                        <form id="frmConsultaControlIntegralTab2" name="frmConsultaControlIntegralTab2" action="#">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Datos Ordenante</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label id="lblRutM" class="control-label col-xs-2">Rut</label>
+                                                        <div class="col-xs-6">
+                                                            <input id="txtRutM" name="txtRutM" class="form-control input-sm" value="@Model.txtRutM" />
+                                                        </div>
+                                                        <div class="col-xs-2">
+                                                            <input id="txtDVM" name="txtDVM" class="form-control input-sm" value="@Model.txtDVM" />
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label id="lblCuentaM" class="control-label col-xs-2">Cuenta</label>
+                                                        <div class="col-xs-8">
+                                                            <input id="txtCuentaM" type="text" name="txtCuentaM" class="form-control input-sm" value="@Model.txtCuentaM" />
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label id="lblBaseM" class="control-label col-xs-2">Base</label>
+                                                        <div class="col-xs-8">
+                                                            <input id="txtBaseM" name="txtBaseM" class="form-control input-sm" value="@Model.txtBaseM" />
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12">
+                                                            <label id="lblNombreClteM" class="control-label col-xs-2">@Model.lblNombreClteM</label>
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12">
+                                                            <label id="lblSegmentoM" class="control-label col-xs-2">@Model.lblSegmentoM</label>
+                                                        </div>
+                                                        <div class="col-xs-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdBuscarM" name="cmdBuscarM" type="button" class="btn btn-primary btn-block">Buscar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdAgregar" name="cmdAgregar" type="button" class="btn btn-primary btn-block"
+                                                    @(Model.cmdAgregar ? "" : "disabled = 'disabled'")>
+                                                Agregar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdModificar" name="cmdModificar" type="button" class="btn btn-primary btn-block" @(Model.cmdModificar ? "" : "disabled = 'disabled'")>Modificar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdLimpiarM" name="cmdLimpiarM" type="button" class="btn btn-default btn-block">Limpiar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdSalirM" name="cmdSalirM" type="button" class="btn btn-default btn-block">Salir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdVisibleANT" name="cmdVisibleANT" type="button" class="btn btn-primary btn-block">Siempre Visible</button>
+                                        </div>
+                                    </div>
+                                    <div class="row"></div>
+                                    <div class="row"></div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="btnConsultarContacto" type="button" class="btn btn-primary btn-block">Contactos</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="cmdRManual" name="cmdRManual" type="button" class="btn btn-primary btn-block">Recurrencia Manual</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Contratos Firmados</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblFaxLocalM" class="control-label small">Contrato Fax Local:</label>
+                                                </div>
+                                                <div class="col-xs-5">
+                                                    <div class="checkbox">
+                                                        <input id="chkContratoFaxM" name="chkContratoFaxM" type="checkbox" />
+                                                        <label id="LblchkContratoFaxM" class="control-label small">@Model.LblchkContratoFaxM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblCitiM" class="control-label small">Contrato Citibank (Offshore):</label>
+                                                </div>
+                                                <div class="col-xs-5">
+                                                    <div class="checkbox">
+                                                        <input id="chkCitiM" name="chkCitiM" type="checkbox" />
+                                                        <label id="LblchkCitiM" class="control-label small">@Model.LblchkCitiM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblMiftM" class="control-label small">Contrato Mift:</label>
+                                                </div>
+                                                <div class="col-xs-5">
+                                                    <div class="checkbox">
+                                                        <input id="chkContratoMiftM" name="chkContratoMiftM" type="checkbox" />
+                                                        <label id="LblchkContratoMiftM" class="control-label small">@Model.LblchkContratoMiftM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblCitiNYM" class="control-label small">Contrato fax (NY - London):</label>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="checkbox">
+                                                        <input id="chkfaxNYM" name="chkfaxNYM" type="checkbox" />
+                                                        <label id="LblchkfaxNYM" class="control-label small">@Model.LblchkfaxNYM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-5" id="divListaFaxNYM">
+                                                    @Html.DropDownList("cmbFaxNYM", ViewData["listaFaxNYM"] as List<SelectListItem>, new { @id = "cmbFaxNYM", @class = "form-control input-sm small" })
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblOtrosM" class="control-label small">Contrato Otros:</label>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="checkbox">
+                                                        <input id="chkOtrosM" name="chkOtrosM" type="checkbox" />
+                                                        <label id="LblchkOtrosM" class="control-label small">@Model.LblchkOtrosM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-5" id="divListaOtrosM">
+                                                    @Html.DropDownList("cmbOtrosM", ViewData["listaOtrosM"] as List<SelectListItem>, new { @id = "cmbOtrosM", @class = "form-control input-sm small" })
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <label id="lblMailM" class="control-label small">Contrato Anexo Mail:</label>
+                                                </div>
+                                                <div class="col-xs-5">
+                                                    <div class="checkbox">
+                                                        <input id="chkMailM" name="chkMailM" type="checkbox" />
+                                                        <label id="LblchkMailM" class="control-label small">@Model.LblchkMailM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal Empresa-->
+<div id="modal_dialog_Empresa" class="modal fade" tabindex="-1">
+    <div class="modal-dialog  modal-lg">
+        @*modal-lg*@
+        <div id="modal_dialog_Empresa_content" class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- Modal Reparo-->
+<div id="modal_dialog_Reparo" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        @*modal-lg*@
+        <div id="modal_dialog_Reparo_content" class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- Modal CheckList Control-->
+<div id="modal_dialog_CheckListControl" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        @*modal-lg*@
+        <div id="modal_dialog_CheckListControl_content" class="modal-content">
+        </div>
+    </div>
+</div>
+
+<!-- Modal Detalle Control-->
+<div id="modal_dialog_Detalle" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        @*modal-lg*@
+        <div id="modal_dialog_Detalle_content" class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- Modal Detalle Mesa-->
+<div id="modal_dialog_DetalleMesa" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        @*modal-lg*@
+        <div id="modal_dialog_DetalleMesa_content" class="modal-content">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id='urlIndex' data-url='@Url.Action("/")' />
+@Styles.Render("~/Scripts/plugins/bootstrap-toastr/toastr.min.css")
+@section css{
+    <style type="text/css">
+        #circulo {
+            width: 70px;
+            height: 70px;
+            /*background-color: yellow;*/
+            -moz-border-radius: 70px;
+            -webkit-border-radius: 70px;
+            border-radius: 70px;
+            behavior: url('Content/img/PIE.php');
+            position: relative;
+            z-index: 0;
+        }
+
+        .nav > li > a {
+            position: relative;
+            display: block;
+            padding: 6px 8px; /*10px 15px;*/
+        }
+
+
+        .form-group {
+            margin-bottom: 2px;
+            line-height: 24px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 12px;
+            line-height: 1.4285;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+
+        .input-sm {
+            padding: 0px 10px;
+            line-height: 21px;
+            height: 21px;
+        }
+
+
+        .panel-heading {
+            padding: 0px 13px;
+        }
+
+
+        .form-horizontal .control-label {
+            padding-top: 1px;
+            margin-bottom: 0px;
+            text-align: right;
+            font-size: 11px;
+        }
+
+        /*.label-warning {
+            background-color: yellow;
+        }*/
+
+        .panel-body {
+            padding: 5px 3px;
+        }
+
+        .fixed-table-container tbody td .th-inner, .fixed-table-container thead th .th-inner {
+            padding: 6px;
+            line-height: 4px;
+            vertical-align: top;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 10px;
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 0px;
+            font-size: 10px;
+            font-weight: normal;
+            line-height: 1.2285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] {
+            position: absolute;
+            margin-top: 1px; /*4px \9;*/
+            margin-left: -20px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 15px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+            padding-top: 2px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .form-horizontal .radio, .form-horizontal .checkbox {
+            min-height: 17px; /*4px \9;*/
+        }
+
+
+        select.input-sm {
+            height: 21px;
+            line-height: 21px;
+        }
+
+        .bootstrap-table :not(.table-condensed).table, .bootstrap-table :not(.table-condensed).table > tbody > tr > td, .bootstrap-table :not(.table-condensed).table > tbody > tr > th, .bootstrap-table :not(.table-condensed).table > tfoot > tr > td, .bootstrap-table :not(.table-condensed).table > tfoot > tr > th, .bootstrap-table :not(.table-condensed).table > thead > tr > td {
+            padding: 2px;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.2285;
+            color: #333;
+            background-color: #fff;
+        }
+    </style>
+}
+@section scripts{
+    @Scripts.Render("~/Scripts/plugins/bootstrap-toastr/toastr.min.js")
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    @Scripts.Render("~/bundles/ControlIntegral/custom")
+    <script type="text/javascript" src="~/Scripts/bootbox/bootbox.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            AppControlIntegral.initCustom();
+        });
+
+
+    </script>
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/ControlIntegral/frmMift")
+    <script>
+        var urlDescargarMailControlIntegral = '@Url.Action("DescargarMailCI")';
+    </script>
+}
+
+
+

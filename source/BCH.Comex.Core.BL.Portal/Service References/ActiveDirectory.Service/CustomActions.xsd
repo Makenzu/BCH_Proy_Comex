@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetADGroupMemberRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PartitionDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Recursive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Server" nillable="true" type="xs:string" />
+  <xs:element name="GetADGroupMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="Members" nillable="true" type="q1:ArrayOfActiveDirectoryPrincipal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfActiveDirectoryPrincipal">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" maxOccurs="unbounded" name="ActiveDirectoryPrincipal" nillable="true" type="q2:ActiveDirectoryPrincipal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArrayOfActiveDirectoryPrincipal" nillable="true" type="q3:ArrayOfActiveDirectoryPrincipal" />
+  <xs:complexType name="ActiveDirectoryPrincipal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q4:ActiveDirectoryObject">
+        <xs:sequence>
+          <xs:element name="SID" nillable="true" type="xs:base64Binary" />
+          <xs:element name="SamAccountName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryPrincipal" nillable="true" type="q5:ActiveDirectoryPrincipal" />
+  <xs:complexType name="ActiveDirectoryObject">
+    <xs:sequence>
+      <xs:element name="DistinguishedName" nillable="true" type="xs:string" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="ObjectClass" nillable="true" type="xs:string" />
+      <xs:element name="ObjectGuid" type="ser:guid" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ObjectTypes" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element name="ReferenceServer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q7="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryObject" nillable="true" type="q7:ActiveDirectoryObject" />
+  <xs:complexType name="ActiveDirectoryGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q8:ActiveDirectoryPrincipal">
+        <xs:sequence>
+          <xs:element name="GroupScope" type="q8:ActiveDirectoryGroupScope" />
+          <xs:element name="GroupType" type="q8:ActiveDirectoryGroupType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q9="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryGroup" nillable="true" type="q9:ActiveDirectoryGroup" />
+  <xs:simpleType name="ActiveDirectoryGroupScope">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="DomainLocal" />
+      <xs:enumeration value="Global" />
+      <xs:enumeration value="Universal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q10="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryGroupScope" nillable="true" type="q10:ActiveDirectoryGroupScope" />
+  <xs:simpleType name="ActiveDirectoryGroupType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Distribution" />
+      <xs:enumeration value="Security" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q11="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryGroupType" nillable="true" type="q11:ActiveDirectoryGroupType" />
+  <xs:complexType name="ActiveDirectoryPartition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q12:ActiveDirectoryObject">
+        <xs:sequence>
+          <xs:element name="DNSRoot" nillable="true" type="xs:string" />
+          <xs:element name="DeletedObjectsContainer" nillable="true" type="xs:string" />
+          <xs:element name="LostAndFoundContainer" nillable="true" type="xs:string" />
+          <xs:element name="QuotasContainer" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ReadOnlyReplicaDirectoryServer" nillable="true" type="q13:ArrayOfstring" />
+          <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ReplicaDirectoryServer" nillable="true" type="q14:ArrayOfstring" />
+          <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="SubordinateReferences" nillable="true" type="q15:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q16="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryPartition" nillable="true" type="q16:ActiveDirectoryPartition" />
+  <xs:complexType name="ActiveDirectoryDomain">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q17:ActiveDirectoryPartition">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AllowedDNSSuffixes" nillable="true" type="q18:ArrayOfstring" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AppliedGroupPolicies" nillable="true" type="q19:ArrayOfstring" />
+          <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ChildDomains" nillable="true" type="q20:ArrayOfstring" />
+          <xs:element name="ComputersContainer" nillable="true" type="xs:string" />
+          <xs:element name="DomainControllersContainer" nillable="true" type="xs:string" />
+          <xs:element name="DomainMode" type="xs:int" />
+          <xs:element name="DomainSID" nillable="true" type="xs:base64Binary" />
+          <xs:element name="ForeignSecurityPrincipalsContainer" nillable="true" type="xs:string" />
+          <xs:element name="Forest" nillable="true" type="xs:string" />
+          <xs:element name="InfrastructureMaster" nillable="true" type="xs:string" />
+          <xs:element name="LastLogonReplicationInterval" nillable="true" type="ser:duration" />
+          <xs:element name="ManagedBy" nillable="true" type="xs:string" />
+          <xs:element name="NetBIOSName" nillable="true" type="xs:string" />
+          <xs:element name="PDCEmulator" nillable="true" type="xs:string" />
+          <xs:element name="ParentDomain" nillable="true" type="xs:string" />
+          <xs:element name="RIDMaster" nillable="true" type="xs:string" />
+          <xs:element name="SystemsContainer" nillable="true" type="xs:string" />
+          <xs:element name="UsersContainer" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q21="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryDomain" nillable="true" type="q21:ActiveDirectoryDomain" />
+  <xs:complexType name="GetADGroupMemberFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q22:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q23="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADGroupMemberFault" nillable="true" type="q23:GetADGroupMemberFault" />
+  <xs:complexType name="CustomActionFault">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="ArgumentError" nillable="true" type="q24:ArgumentErrorDetailCA" />
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="DirectoryError" nillable="true" type="q25:DirectoryErrorDetailCA" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortError" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q26="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="CustomActionFault" nillable="true" type="q26:CustomActionFault" />
+  <xs:complexType name="ArgumentErrorDetailCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q27="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArgumentErrorDetailCA" nillable="true" type="q27:ArgumentErrorDetailCA" />
+  <xs:complexType name="DirectoryErrorDetailCA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtendedErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchedDN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Referral" nillable="true" type="q28:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ShortMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Win32ErrorCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q29="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="DirectoryErrorDetailCA" nillable="true" type="q29:DirectoryErrorDetailCA" />
+  <xs:complexType name="ChangeOptionalFeatureFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q30:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q31="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ChangeOptionalFeatureFault" nillable="true" type="q31:ChangeOptionalFeatureFault" />
+  <xs:complexType name="GetADForestFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q32:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q33="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADForestFault" nillable="true" type="q33:GetADForestFault" />
+  <xs:complexType name="MoveADOperationMasterRoleFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q34:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q35="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="MoveADOperationMasterRoleFault" nillable="true" type="q35:MoveADOperationMasterRoleFault" />
+  <xs:complexType name="GetADPrincipalGroupMembershipFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q36:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q37="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADPrincipalGroupMembershipFault" nillable="true" type="q37:GetADPrincipalGroupMembershipFault" />
+  <xs:complexType name="SetPasswordFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q38:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q39="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="SetPasswordFault" nillable="true" type="q39:SetPasswordFault" />
+  <xs:complexType name="ChangePasswordFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q40:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q41="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ChangePasswordFault" nillable="true" type="q41:ChangePasswordFault" />
+  <xs:complexType name="GetADPrincipalAuthorizationGroupFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q42:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q43="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADPrincipalAuthorizationGroupFault" nillable="true" type="q43:GetADPrincipalAuthorizationGroupFault" />
+  <xs:complexType name="GetADDomainFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q44:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q45="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADDomainFault" nillable="true" type="q45:GetADDomainFault" />
+  <xs:complexType name="GetADDomainControllerFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q46:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q47="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetADDomainControllerFault" nillable="true" type="q47:GetADDomainControllerFault" />
+  <xs:complexType name="TranslateNameFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q48:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q49="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="TranslateNameFault" nillable="true" type="q49:TranslateNameFault" />
+  <xs:element name="GetADPrincipalGroupMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartitionDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PrincipalDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResourceContextPartition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResourceContextServer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADPrincipalGroupMembershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="MemberOf" nillable="true" type="q50:ArrayOfActiveDirectoryGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfActiveDirectoryGroup">
+    <xs:sequence>
+      <xs:element xmlns:q51="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" maxOccurs="unbounded" name="ActiveDirectoryGroup" nillable="true" type="q51:ActiveDirectoryGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q52="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArrayOfActiveDirectoryGroup" nillable="true" type="q52:ArrayOfActiveDirectoryGroup" />
+  <xs:element name="SetPasswordRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PartitionDN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PartitionDN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADPrincipalAuthorizationGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartitionDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PrincipalDN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADPrincipalAuthorizationGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="MemberOf" nillable="true" type="q53:ArrayOfActiveDirectoryGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranslateNameRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="FormatDesired" type="q54:ActiveDirectoryNameFormat" />
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="FormatOffered" type="q55:ActiveDirectoryNameFormat" />
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Names" nillable="true" type="q56:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ActiveDirectoryNameFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DistinguishedName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CanonicalName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q57="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryNameFormat" nillable="true" type="q57:ActiveDirectoryNameFormat" />
+  <xs:element name="TranslateNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="NameTranslateResult" nillable="true" type="q58:ArrayOfActiveDirectoryNameTranslateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfActiveDirectoryNameTranslateResult">
+    <xs:sequence>
+      <xs:element xmlns:q59="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" maxOccurs="unbounded" name="ActiveDirectoryNameTranslateResult" nillable="true" type="q59:ActiveDirectoryNameTranslateResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q60="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArrayOfActiveDirectoryNameTranslateResult" nillable="true" type="q60:ArrayOfActiveDirectoryNameTranslateResult" />
+  <xs:complexType name="ActiveDirectoryNameTranslateResult">
+    <xs:sequence>
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="Result" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q61="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryNameTranslateResult" nillable="true" type="q61:ActiveDirectoryNameTranslateResult" />
+  <xs:element name="GetADDomainControllerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NtdsSettingsDN" nillable="true" type="q62:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADDomainControllerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="DomainControllers" nillable="true" type="q63:ArrayOfActiveDirectoryDomainController" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfActiveDirectoryDomainController">
+    <xs:sequence>
+      <xs:element xmlns:q64="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" maxOccurs="unbounded" name="ActiveDirectoryDomainController" nillable="true" type="q64:ActiveDirectoryDomainController" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q65="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArrayOfActiveDirectoryDomainController" nillable="true" type="q65:ArrayOfActiveDirectoryDomainController" />
+  <xs:complexType name="ActiveDirectoryDomainController">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q66:ActiveDirectoryDirectoryServer">
+        <xs:sequence>
+          <xs:element name="ComputerDN" nillable="true" type="xs:string" />
+          <xs:element name="Domain" nillable="true" type="xs:string" />
+          <xs:element name="Enabled" type="xs:boolean" />
+          <xs:element name="Forest" nillable="true" type="xs:string" />
+          <xs:element name="IsGlobalCatalog" type="xs:boolean" />
+          <xs:element name="IsReadOnly" type="xs:boolean" />
+          <xs:element name="OSHotFix" nillable="true" type="xs:string" />
+          <xs:element name="OSName" nillable="true" type="xs:string" />
+          <xs:element name="OSServicepack" nillable="true" type="xs:string" />
+          <xs:element name="OSVersion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q67="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryDomainController" nillable="true" type="q67:ActiveDirectoryDomainController" />
+  <xs:complexType name="ActiveDirectoryDirectoryServer">
+    <xs:sequence>
+      <xs:element name="DefaultPartition" nillable="true" type="xs:string" />
+      <xs:element name="HostName" nillable="true" type="xs:string" />
+      <xs:element name="InvocationId" type="ser:guid" />
+      <xs:element name="LdapPort" type="xs:int" />
+      <xs:element name="NTDSSettingsObjectDN" nillable="true" type="xs:string" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q68="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="OperationMasterRole" nillable="true" type="q68:ArrayOfActiveDirectoryOperationMasterRole" />
+      <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Partitions" nillable="true" type="q69:ArrayOfstring" />
+      <xs:element name="ServerObjectDN" nillable="true" type="xs:string" />
+      <xs:element name="ServerObjectGuid" type="ser:guid" />
+      <xs:element name="Site" nillable="true" type="xs:string" />
+      <xs:element name="SslPort" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q70="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryDirectoryServer" nillable="true" type="q70:ActiveDirectoryDirectoryServer" />
+  <xs:complexType name="ArrayOfActiveDirectoryOperationMasterRole">
+    <xs:sequence>
+      <xs:element xmlns:q71="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" maxOccurs="unbounded" name="ActiveDirectoryOperationMasterRole" type="q71:ActiveDirectoryOperationMasterRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q72="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ArrayOfActiveDirectoryOperationMasterRole" nillable="true" type="q72:ArrayOfActiveDirectoryOperationMasterRole" />
+  <xs:simpleType name="ActiveDirectoryOperationMasterRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDCEmulator" />
+      <xs:enumeration value="RIDMaster" />
+      <xs:enumeration value="InfrastructureMaster" />
+      <xs:enumeration value="SchemaMaster" />
+      <xs:enumeration value="DomainNamingMaster" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q73="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryOperationMasterRole" nillable="true" type="q73:ActiveDirectoryOperationMasterRole" />
+  <xs:element name="GetADDomainRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="Domain" nillable="true" type="q74:ActiveDirectoryDomain" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveADOperationMasterRoleRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="OperationMasterRole" type="q75:ActiveDirectoryOperationMasterRole" />
+        <xs:element minOccurs="0" name="Seize" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveADOperationMasterRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WasSeized" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADForestRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetADForestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" minOccurs="0" name="Forest" nillable="true" type="q76:ActiveDirectoryForest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ActiveDirectoryForest">
+    <xs:sequence>
+      <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ApplicationPartitions" nillable="true" type="q77:ArrayOfstring" />
+      <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CrossForestReferences" nillable="true" type="q78:ArrayOfstring" />
+      <xs:element name="DomainNamingMaster" nillable="true" type="xs:string" />
+      <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Domains" nillable="true" type="q79:ArrayOfstring" />
+      <xs:element name="ForestMode" type="xs:int" />
+      <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="GlobalCatalogs" nillable="true" type="q80:ArrayOfstring" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="RootDomain" nillable="true" type="xs:string" />
+      <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="SPNSuffixes" nillable="true" type="q81:ArrayOfstring" />
+      <xs:element name="SchemaMaster" nillable="true" type="xs:string" />
+      <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Sites" nillable="true" type="q82:ArrayOfstring" />
+      <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="UPNSuffixes" nillable="true" type="q83:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q84="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="ActiveDirectoryForest" nillable="true" type="q84:ActiveDirectoryForest" />
+  <xs:element name="ChangeOptionalFeatureRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DistinguishedName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Enable" type="xs:boolean" />
+        <xs:element minOccurs="0" name="FeatureId" type="ser:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeOptionalFeatureResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionMajor" type="xs:int" />
+        <xs:element minOccurs="0" name="VersionMinor" type="xs:int" />
+        <xs:element minOccurs="0" name="VersionString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetVersionFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q85="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" base="q85:CustomActionFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q86="http://schemas.microsoft.com/2008/1/ActiveDirectory/CustomActions" name="GetVersionFault" nillable="true" type="q86:GetVersionFault" />
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+@if (ViewBag.GenerarHtmlCompleto)
+{
+@: <!DOCTYPE html>
+@: <html>
+@: <head>
+@:     <title>Detalle de Mensaje Swift @ViewBag.Caption</title>
+if (ViewBag.Imprimir) {
+@:     <script type="text/javascript">
+@:         window.onload = function () { window.print(); }
+@:      </script>
+}
+@: </head>
+@: <body>
+}
+
+<div style='white-space: pre; font-family: Consolas; font-weight: bold; line-height: 1; align-content: center; margin: 10px;'>
+
+@if (@ViewBag.Estado == BCH.Comex.Core.Entities.Cext01.FundTransfer.T_Modulos.T_MODGCON0.ECC_ANU)
+{
+    <div class="alert alert-danger text-center" style="font-size:1.2em;" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>&nbsp;&nbsp;ANULADO</div>
+}
+
+@ViewBag.DetalleSwift
+</div>
+    
+@if (ViewBag.GenerarHtmlCompleto)
+{
+@: </body></html>
+}

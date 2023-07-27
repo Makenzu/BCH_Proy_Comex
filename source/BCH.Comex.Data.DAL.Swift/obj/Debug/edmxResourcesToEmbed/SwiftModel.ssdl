@@ -1,0 +1,1578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SwiftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.joal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="joal">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="casilla" />
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="prioridad" />
+      <PropertyRef Name="estado_msg" />
+      <PropertyRef Name="tipo_ingreso" />
+      <PropertyRef Name="rut_ingreso" />
+      <PropertyRef Name="fecha_ingreso" />
+      <PropertyRef Name="cod_banco_rec" />
+      <PropertyRef Name="branch_rec" />
+      <PropertyRef Name="cod_banco_em" />
+      <PropertyRef Name="branch_em" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="sesion" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="int" Nullable="false" />
+    <Property Name="casilla" Type="int" Nullable="false" />
+    <Property Name="unidad" Type="int" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="tipo_ingreso" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_ingreso" Type="int" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="datetime" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="float" />
+    <Property Name="referencia" Type="varchar" MaxLength="17" />
+    <Property Name="beneficiario" Type="varchar" MaxLength="37" />
+    <Property Name="mensaje" Type="varchar(max)" />
+    <Property Name="comentario" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_bancos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_bancos">
+    <Key>
+      <PropertyRef Name="cod_banco" />
+      <PropertyRef Name="branch" />
+    </Key>
+    <Property Name="cod_banco" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nombre_banco" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="direccion_banco" Type="varchar" MaxLength="70" />
+    <Property Name="ciudad_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pais_banco" Type="varchar" MaxLength="35" />
+    <Property Name="oficina_banco" Type="varchar" MaxLength="50" />
+    <Property Name="intercambio_clave" Type="varchar" MaxLength="3" />
+    <Property Name="localidad_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pobnr_banco" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_bancos_autorizados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_bancos_autorizados">
+    <Key>
+      <PropertyRef Name="cod_banco" />
+      <PropertyRef Name="branch" />
+    </Key>
+    <Property Name="cod_banco" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="branch" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="intercambio_clave" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_campos_msg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_campos_msg">
+    <Key>
+      <PropertyRef Name="tag_campo" />
+      <PropertyRef Name="linea_campo" />
+    </Key>
+    <Property Name="tag_campo" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="linea_campo" Type="int" Nullable="false" />
+    <Property Name="nombre_campo" Type="varchar" MaxLength="40" />
+    <Property Name="largo_campo" Type="int" />
+    <Property Name="formato_campo" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_caracter_error' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_caracter_error">
+    <Key>
+      <PropertyRef Name="valor_ascii" />
+    </Key>
+    <Property Name="valor_ascii" Type="int" Nullable="false" />
+    <Property Name="caracter" Type="varchar" MaxLength="1" />
+    <Property Name="descripcion" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_casillas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_casillas">
+    <Key>
+      <PropertyRef Name="cod_casilla" />
+    </Key>
+    <Property Name="cod_casilla" Type="int" Nullable="false" />
+    <Property Name="nombre_casilla" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="origen_recep" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_ciclos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_ciclos">
+    <Key>
+      <PropertyRef Name="tipo_msg_fmt" />
+      <PropertyRef Name="orden_fmt" />
+      <PropertyRef Name="tag_fmt" />
+    </Key>
+    <Property Name="tipo_msg_fmt" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="orden_fmt" Type="int" Nullable="false" />
+    <Property Name="secuencia_fmt" Type="varchar" MaxLength="1" />
+    <Property Name="repeticion_fmt" Type="int" Nullable="false" />
+    <Property Name="tag_fmt" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="status_fmt" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_configura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_configura">
+    <Key>
+      <PropertyRef Name="rut_usuario" />
+      <PropertyRef Name="cod_aplicac" />
+    </Key>
+    <Property Name="rut_usuario" Type="int" Nullable="false" />
+    <Property Name="cod_aplicac" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_estados_msg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_estados_msg">
+    <Key>
+      <PropertyRef Name="estado_msg" />
+    </Key>
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="send_recv" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_firmas_msg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_firmas_msg">
+    <Key>
+      <PropertyRef Name="sesion_firma" />
+      <PropertyRef Name="secuencia_firma" />
+      <PropertyRef Name="send_recv_firma" />
+      <PropertyRef Name="rut_firma" />
+    </Key>
+    <Property Name="sesion_firma" Type="int" Nullable="false" />
+    <Property Name="secuencia_firma" Type="int" Nullable="false" />
+    <Property Name="send_recv_firma" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_firma" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_folios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_folios">
+    <Key>
+      <PropertyRef Name="id_folio" />
+    </Key>
+    <Property Name="id_folio" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="nro_folio" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_formato_cmx' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_formato_cmx">
+    <Key>
+      <PropertyRef Name="campo" />
+      <PropertyRef Name="formato" />
+    </Key>
+    <Property Name="campo" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="formato" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_formatos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_formatos">
+    <Key>
+      <PropertyRef Name="tipo_msg_fmt" />
+      <PropertyRef Name="orden_fmt" />
+      <PropertyRef Name="tag_fmt" />
+    </Key>
+    <Property Name="tipo_msg_fmt" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="orden_fmt" Type="int" Nullable="false" />
+    <Property Name="secuencia_fmt" Type="varchar" MaxLength="1" />
+    <Property Name="repeticion_fmt" Type="int" Nullable="false" />
+    <Property Name="tag_fmt" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="status_fmt" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_glosa_cmx' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_glosa_cmx">
+    <Key>
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="cod_msg" />
+    </Key>
+    <Property Name="tipo_msg" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="cod_msg" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="nom_msg" Type="varchar" MaxLength="41" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_log_msg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_log_msg">
+    <Key>
+      <PropertyRef Name="sesion_log" />
+      <PropertyRef Name="secuencia_log" />
+      <PropertyRef Name="send_recv_log" />
+      <PropertyRef Name="fecha_log" />
+    </Key>
+    <Property Name="sesion_log" Type="int" Nullable="false" />
+    <Property Name="secuencia_log" Type="int" Nullable="false" />
+    <Property Name="send_recv_log" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fecha_log" Type="datetime" Nullable="false" />
+    <Property Name="rutais_log" Type="int" />
+    <Property Name="nodoais_log" Type="varchar" MaxLength="4" />
+    <Property Name="idprog_log" Type="varchar" MaxLength="8" />
+    <Property Name="opcion_log" Type="varchar" MaxLength="8" />
+    <Property Name="casilla_origen" Type="int" />
+    <Property Name="estado_origen" Type="varchar" MaxLength="3" />
+    <Property Name="casilla_destino" Type="int" />
+    <Property Name="estado_destino" Type="varchar" MaxLength="3" />
+    <Property Name="unidad_log" Type="int" />
+    <Property Name="apoderado_log" Type="int" />
+    <Property Name="resultado_log" Type="varchar" MaxLength="1" />
+    <Property Name="comentario_log" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_mensajes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_mensajes">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="send_recv" />
+    </Key>
+    <Property Name="sesion" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="int" Nullable="false" />
+    <Property Name="send_recv" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="casilla" Type="int" Nullable="false" />
+    <Property Name="unidad" Type="int" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="estado_msg" Type="varchar" MaxLength="3" />
+    <Property Name="rut_entry" Type="int" />
+    <Property Name="rut_autoriza" Type="int" />
+    <Property Name="fecha_send" Type="datetime" />
+    <Property Name="fecha_ack" Type="datetime" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="float" />
+    <Property Name="referencia" Type="varchar" MaxLength="17" />
+    <Property Name="beneficiario" Type="varchar" MaxLength="37" />
+    <Property Name="total_imp" Type="int" />
+    <Property Name="mensaje" Type="varchar(max)" />
+    <Property Name="comentario" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="sw_mensajes_add">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="send_recv" />
+    </Key>
+    <Property Name="sesion" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="int" Nullable="false" />
+    <Property Name="send_recv" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="casilla" Type="int" Nullable="false" />
+    <Property Name="observ_encas" Type="varchar" MaxLength="90" />
+    <Property Name="fecha_recibe" Type="datetime" />
+    <Property Name="unidad_recibe" Type="int" />
+    <Property Name="unidad_imprime" Type="int" />
+    <Property Name="rut_imprime" Type="int" />
+    <Property Name="fecha_imprime" Type="datetime" />
+    <Property Name="unidad_rechazo" Type="int" />
+    <Property Name="rut_rechazo" Type="int" />
+    <Property Name="fecha_rechazo" Type="datetime" />
+    <Property Name="texto_rechazo" Type="varchar" MaxLength="90" />
+    <Property Name="veces_rechazo" Type="int" />
+    <Property Name="rut_reenvio" Type="int" />
+    <Property Name="fecha_reenvio" Type="datetime" />
+    <Property Name="texto_reenvio" Type="varchar" MaxLength="90" />
+    <Property Name="veces_reenvio" Type="int" />
+  </EntityType>
+  <EntityType Name="sw_monedas">
+    <Key>
+      <PropertyRef Name="cod_moneda_sw" />
+    </Key>
+    <Property Name="cod_moneda_sw" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="decimales" Type="smallint" />
+    <Property Name="nombre_moneda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cod_moneda_banco" Type="varchar" MaxLength="3" />
+    <Property Name="uso_moneda_banco" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sw_msgsend">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="sesion" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="int" Nullable="false" />
+    <Property Name="casilla" Type="int" Nullable="false" />
+    <Property Name="unidad" Type="int" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="tipo_ingreso" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_ingreso" Type="int" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="datetime" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="float" />
+    <Property Name="referencia" Type="varchar" MaxLength="17" />
+    <Property Name="beneficiario" Type="varchar" MaxLength="37" />
+    <Property Name="mensaje" Type="varchar(max)" />
+    <Property Name="comentario" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_add">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="unidad_rechazo" Type="int" />
+    <Property Name="rut_rechazo" Type="int" />
+    <Property Name="fecha_rechazo" Type="datetime" />
+    <Property Name="texto_rechazo" Type="varchar" MaxLength="90" />
+    <Property Name="veces_rechazo" Type="int" />
+    <Property Name="unidad_modifica" Type="int" />
+    <Property Name="rut_modifica" Type="int" />
+    <Property Name="fecha_modifica" Type="datetime" />
+    <Property Name="veces_modifica" Type="int" />
+    <Property Name="fecha_aprobac" Type="datetime" />
+    <Property Name="rut_bloqueo" Type="int" />
+    <Property Name="fecha_bloqueo" Type="datetime" />
+    <Property Name="veces_bloqueo" Type="int" />
+    <Property Name="texto_bloqueo" Type="varchar" MaxLength="90" />
+    <Property Name="unidad_anula" Type="int" />
+    <Property Name="rut_anula" Type="int" />
+    <Property Name="fecha_anula" Type="datetime" />
+    <Property Name="texto_anula" Type="varchar" MaxLength="90" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cambio_estados">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="fecha_estado" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="fecha_estado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cmx">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="sesion" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="secuencia" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="casilla" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="3" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="tipo_ingreso" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_ingreso" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="varchar" MaxLength="15" />
+    <Property Name="referencia" Type="varchar" MaxLength="15" />
+    <Property Name="beneficiario" Type="varchar" MaxLength="37" />
+    <Property Name="comentario" Type="varchar" MaxLength="80" />
+    <Property Name="desc_msg" Type="varchar" MaxLength="40" />
+    <Property Name="desc_unidad" Type="varchar" MaxLength="30" />
+    <Property Name="nomb_banco" Type="varchar" MaxLength="70" />
+    <Property Name="ciud_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pais_banco" Type="varchar" MaxLength="35" />
+    <Property Name="fecha_envio" Type="varchar" MaxLength="20" />
+    <Property Name="baja_swift" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_cmx_dia">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="sesion" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="secuencia" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="casilla" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="3" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="tipo_ingreso" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_ingreso" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="varchar" MaxLength="15" />
+    <Property Name="referencia" Type="varchar" MaxLength="15" />
+    <Property Name="beneficiario" Type="varchar" MaxLength="37" />
+    <Property Name="comentario" Type="varchar" MaxLength="80" />
+    <Property Name="desc_msg" Type="varchar" MaxLength="40" />
+    <Property Name="desc_unidad" Type="varchar" MaxLength="30" />
+    <Property Name="nomb_banco" Type="varchar" MaxLength="70" />
+    <Property Name="ciud_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pais_banco" Type="varchar" MaxLength="35" />
+    <Property Name="fecha_envio" Type="varchar" MaxLength="20" />
+    <Property Name="baja_swift" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_detfile">
+    <Key>
+      <PropertyRef Name="fd_archivo" />
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="fd_archivo" Type="int" Nullable="false" />
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="fecha_envio" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_files">
+    <Key>
+      <PropertyRef Name="fd_archivo" />
+    </Key>
+    <Property Name="fd_archivo" Type="int" Nullable="false" />
+    <Property Name="nombre_archivo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_creacion" Type="datetime" Nullable="false" />
+    <Property Name="fecha_confirma" Type="datetime" />
+    <Property Name="estado_archivo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="total_mensajes" Type="int" />
+    <Property Name="total_envios" Type="int" />
+    <Property Name="total_rechazos" Type="int" />
+    <Property Name="estado_ftp" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_firma">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="rut_firma" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="rut_firma" Type="int" Nullable="false" />
+    <Property Name="tipo_firma" Type="varchar" MaxLength="1" />
+    <Property Name="estado_firma" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="revisa_firma" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rut_solic" Type="int" Nullable="false" />
+    <Property Name="fecha_solic" Type="datetime" Nullable="false" />
+    <Property Name="fecha_firma" Type="datetime" />
+    <Property Name="avisado" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.sw_msgsend_ftp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sw_msgsend_ftp">
+    <Key>
+      <PropertyRef Name="nombre_archivo" />
+    </Key>
+    <Property Name="nombre_archivo" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_log">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="fecha_log" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="fecha_log" Type="datetime" Nullable="false" />
+    <Property Name="rutais_log" Type="int" />
+    <Property Name="nodoais_log" Type="char" MaxLength="10" />
+    <Property Name="idprog_log" Type="varchar" MaxLength="8" />
+    <Property Name="opcion_log" Type="varchar" MaxLength="8" />
+    <Property Name="casilla_origen" Type="int" />
+    <Property Name="estado_origen" Type="varchar" MaxLength="3" />
+    <Property Name="casilla_destino" Type="int" />
+    <Property Name="estado_destino" Type="varchar" MaxLength="3" />
+    <Property Name="unidad_log" Type="int" />
+    <Property Name="resultado_log" Type="varchar" MaxLength="1" />
+    <Property Name="comentario_log" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="sw_msgsend_nop">
+    <Key>
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+    </Key>
+    <Property Name="sesion" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="int" Nullable="false" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="estado_msg" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="real" />
+    <Property Name="referencia" Type="varchar" MaxLength="17" />
+    <Property Name="fecha_proceso" Type="datetime" Nullable="false" />
+    <Property Name="comentario" Type="varchar" MaxLength="90" />
+  </EntityType>
+  <EntityType Name="sw_orden_firmas">
+    <Key>
+      <PropertyRef Name="orden" />
+    </Key>
+    <Property Name="orden" Type="int" Nullable="false" />
+    <Property Name="tipofirma" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_paridad">
+    <Key>
+      <PropertyRef Name="cod_moneda_banco" />
+    </Key>
+    <Property Name="cod_moneda_banco" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="paridad" Type="float" Nullable="false" />
+    <Property Name="tipcam_observ" Type="float" Nullable="false" />
+    <Property Name="fecha_valor" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_regla_firmas">
+    <Key>
+      <PropertyRef Name="id_firma" />
+    </Key>
+    <Property Name="id_firma" Type="int" Nullable="false" />
+    <Property Name="monto_ini" Type="real" Nullable="false" />
+    <Property Name="monto_fin" Type="real" Nullable="false" />
+    <Property Name="cod_moneda" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="tipo_msg" Type="varchar" MaxLength="7" />
+    <Property Name="firma1" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="firma2" Type="varchar" MaxLength="1" />
+    <Property Name="firma3" Type="varchar" MaxLength="1" />
+    <Property Name="firma4" Type="varchar" MaxLength="1" />
+    <Property Name="total" Type="int" />
+  </EntityType>
+  <EntityType Name="sw_sce_bic">
+    <Key>
+      <PropertyRef Name="bankcode" />
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="bankcode" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="branchcode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="instname" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="35" />
+    <Property Name="cityhead" Type="varchar" MaxLength="35" />
+    <Property Name="physadd" Type="varchar" MaxLength="35" />
+    <Property Name="pobnr" Type="varchar" MaxLength="35" />
+    <Property Name="couname" Type="varchar" MaxLength="35" />
+    <Property Name="bic_ala" Type="varchar" MaxLength="1" />
+    <Property Name="bic_cod" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="sw_tipos_campos">
+    <Key>
+      <PropertyRef Name="tipo_msg_tipcam" />
+      <PropertyRef Name="tag_campo_tipcam" />
+    </Key>
+    <Property Name="tipo_msg_tipcam" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="tag_campo_tipcam" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="nombre_campo_tipcam" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="sw_tipos_firmas">
+    <Key>
+      <PropertyRef Name="codig_rh" />
+      <PropertyRef Name="tipofirma" />
+    </Key>
+    <Property Name="codig_rh" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="tipofirma" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_tipos_msg">
+    <Key>
+      <PropertyRef Name="cod_tipo" />
+    </Key>
+    <Property Name="cod_tipo" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="nombre_tipo" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="sw_users_srm">
+    <Key>
+      <PropertyRef Name="rut_user" />
+    </Key>
+    <Property Name="rut_user" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="pass_user" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_users_swift">
+    <Key>
+      <PropertyRef Name="rut_user" />
+    </Key>
+    <Property Name="rut_user" Type="int" Nullable="false" />
+    <Property Name="digv_user" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="nombre_user" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="tipo_user" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sw_valor_campos">
+    <Key>
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="tag_campo" />
+      <PropertyRef Name="linea_campo" />
+    </Key>
+    <Property Name="tipo_msg" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="tag_campo" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="linea_campo" Type="int" Nullable="false" />
+    <Property Name="cond_valor" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="valor_campo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="total_valor" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_sw_nets">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="rut_cli" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="caracter" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="id_mensaje" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="sesion" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="secuencia" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="casilla" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="3" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="varchar" MaxLength="15" />
+    <Property Name="referencia" Type="varchar" MaxLength="15" />
+    <Property Name="desc_msg" Type="varchar" MaxLength="40" />
+    <Property Name="desc_unidad" Type="varchar" MaxLength="30" />
+    <Property Name="nomb_banco" Type="varchar" MaxLength="70" />
+    <Property Name="ciud_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pais_banco" Type="varchar" MaxLength="35" />
+    <Property Name="fecha_envio" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbl_sw_nets_det">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="linea" />
+    </Key>
+    <Property Name="id_mensaje" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="linea" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="detalle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift.dbo.tbl_sw_nets_sor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_sw_nets_sor">
+    <Key>
+      <PropertyRef Name="rut_cli" />
+      <PropertyRef Name="estado" />
+      <PropertyRef Name="caracter" />
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="sesion" />
+      <PropertyRef Name="secuencia" />
+      <PropertyRef Name="casilla" />
+      <PropertyRef Name="tipo_msg" />
+      <PropertyRef Name="prioridad" />
+      <PropertyRef Name="fecha_ingreso" />
+      <PropertyRef Name="cod_banco_rec" />
+      <PropertyRef Name="branch_rec" />
+      <PropertyRef Name="cod_banco_em" />
+      <PropertyRef Name="branch_em" />
+    </Key>
+    <Property Name="rut_cli" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="caracter" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="id_mensaje" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="sesion" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="secuencia" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="casilla" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="3" />
+    <Property Name="tipo_msg" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="prioridad" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="cod_banco_rec" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_rec" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_banco_em" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="branch_em" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_moneda" Type="varchar" MaxLength="3" />
+    <Property Name="monto" Type="varchar" MaxLength="15" />
+    <Property Name="referencia" Type="varchar" MaxLength="15" />
+    <Property Name="desc_msg" Type="varchar" MaxLength="40" />
+    <Property Name="desc_unidad" Type="varchar" MaxLength="30" />
+    <Property Name="nomb_banco" Type="varchar" MaxLength="70" />
+    <Property Name="ciud_banco" Type="varchar" MaxLength="35" />
+    <Property Name="pais_banco" Type="varchar" MaxLength="35" />
+    <Property Name="fecha_envio" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Function Name="EncriptaMensajeS_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+    <Parameter Name="casilla" Type="int" Mode="In" />
+    <Parameter Name="unidad" Type="int" Mode="In" />
+    <Parameter Name="tipo_msg" Type="varchar" Mode="In" />
+    <Parameter Name="prioridad" Type="varchar" Mode="In" />
+    <Parameter Name="estado_msg" Type="varchar" Mode="In" />
+    <Parameter Name="tipo_ingreso" Type="varchar" Mode="In" />
+    <Parameter Name="rut_digita" Type="int" Mode="In" />
+    <Parameter Name="banco_re" Type="varchar" Mode="In" />
+    <Parameter Name="branch_re" Type="varchar" Mode="In" />
+    <Parameter Name="banco_em" Type="varchar" Mode="In" />
+    <Parameter Name="branch_em" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="float" Mode="In" />
+    <Parameter Name="referencia" Type="varchar" Mode="In" />
+    <Parameter Name="beneficiario" Type="varchar" Mode="In" />
+    <Parameter Name="txt_mensaje" Type="varchar(max)" Mode="In" />
+    <Parameter Name="comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="origen_recep_s01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_sw_Actualiza_bancos_claves_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="intercambio_clave" Type="nvarchar" Mode="In" />
+    <Parameter Name="cod_banco" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch" Type="nvarchar" Mode="In" />
+    <Parameter Name="Flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ciudad" Type="nvarchar" Mode="In" />
+    <Parameter Name="Oficina" Type="nvarchar" Mode="In" />
+    <Parameter Name="clave" Type="nvarchar" Mode="In" />
+    <Parameter Name="Localidad" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pob" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pais" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_CampoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Largo" Type="int" Mode="In" />
+    <Parameter Name="Formato" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_CaracterInvalido_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_casillas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="origen" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_FormatoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Secuencia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Repeticion" Type="int" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrdenOriginal" Type="int" Mode="In" />
+    <Parameter Name="TagOriginal" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_GlosaCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_monedas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSwMoneda" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreMoneda" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsoMoneda" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoBcMoneda" Type="int" Mode="In" />
+    <Parameter Name="DecimalesMoneda" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_TiposMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_usuarios_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_rut" Type="int" Mode="In" />
+    <Parameter Name="p_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="p_tipo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_Actualiza_valoresCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Tipo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Condicion" Type="nvarchar" Mode="In" />
+    <Parameter Name="valor" Type="nvarchar" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+    <Parameter Name="Total_valor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_busca_eliminar_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_config_ing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="apli" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_config_ing_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="apli" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_count_bancos2_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="swift" Type="varchar" Mode="In" />
+    <Parameter Name="pais" Type="varchar" Mode="In" />
+    <Parameter Name="ciudad" Type="varchar" Mode="In" />
+    <Parameter Name="banco" Type="varchar" Mode="In" />
+    <Parameter Name="direccion" Type="varchar" Mode="In" />
+    <Parameter Name="branch" Type="varchar" Mode="In" />
+    <Parameter Name="intercambioClave" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="flag" Type="int" Mode="In" />
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_CampoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_CaracterInvalido_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_casillas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_FormatoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_GlosaCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_mensaje_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_MensajeSwift_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_monedas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_TiposCambios_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_TiposMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_usuarios_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_elimina_ValoresCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="linea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_cons_fipe_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="monto_swift" Type="float" Mode="In" />
+    <Parameter Name="par1" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_cons_sim_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_del_firma_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_firma" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_del_firnul_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_solic" Type="int" Mode="In" />
+    <Parameter Name="p_fecha_solic" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_estadist_msg_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_apr_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_aum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_fecha_aum" Type="datetime" Mode="In" />
+    <Parameter Name="p_comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_aum_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_fecha_aum" Type="datetime" Mode="In" />
+    <Parameter Name="p_comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_cambios_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="cambios" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_dev_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_file_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fd_archivo" Type="int" Mode="In" />
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_mod_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_nul_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_comentario" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_rec_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_comentario1" Type="varchar" Mode="In" />
+    <Parameter Name="p_comentario2" Type="varchar" Mode="In" />
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_res_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_fecha_res" Type="datetime" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_unidad" Type="int" Mode="In" />
+    <Parameter Name="p_texto" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_graba_sap_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_fecha_sap" Type="datetime" Mode="In" />
+    <Parameter Name="p_comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_msg_por_rut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_msg_por_rut_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_test_apr_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_test_file_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_sw_env_test_firma_count_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_test_firma_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut" Type="int" Mode="In" />
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_aup_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_aut_pend_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_aut_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_blo_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_datos_msg_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_detfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fd_archivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_detfile_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fd_archivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_dev_firma_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_env_rango" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_env_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_files_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_firmas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="rut" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_ftp_err" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_ftp_err_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_ing_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_mod_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_nop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_nop_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_nul_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_por_idmensaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idMensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_por_idmensaje_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idMensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_pro_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_trae_rech_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_env_update_aut_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idMensaje" Type="int" Mode="In" />
+    <Parameter Name="casilla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Branch" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ciudad" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pais" Type="nvarchar" Mode="In" />
+    <Parameter Name="Oficina" Type="nvarchar" Mode="In" />
+    <Parameter Name="Clave" Type="nvarchar" Mode="In" />
+    <Parameter Name="Localidad" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pob" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_CampoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Largo" Type="int" Mode="In" />
+    <Parameter Name="Formato" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_CaracterInvalido_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="int" Mode="In" />
+    <Parameter Name="Caracter" Type="nvarchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_casillas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="origen" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_FormatoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Orden" Type="int" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Secuencia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Repeticion" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_GlosaCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_monedas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSw" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoBc" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="Decimales" Type="int" Mode="In" />
+    <Parameter Name="Uso" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_TiposMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_usuarios_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_rut" Type="int" Mode="In" />
+    <Parameter Name="p_dvRut" Type="int" Mode="In" />
+    <Parameter Name="p_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="p_tipo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_graba_ValoresCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="Linea" Type="int" Mode="In" />
+    <Parameter Name="Condicion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Campos" Type="nvarchar" Mode="In" />
+    <Parameter Name="Total" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_log_trae_aut_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_log_trae_enc_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_log_trae_msg_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_send_recv" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_log_trae_msgsend_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_msg_s01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_msg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_msg_s01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_msg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_msgsend_log_i01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+    <Parameter Name="fecha_log" Type="datetime" Mode="In" />
+    <Parameter Name="rutais_log" Type="int" Mode="In" />
+    <Parameter Name="idprog_log" Type="varchar" Mode="In" />
+    <Parameter Name="opcion_log" Type="varchar" Mode="In" />
+    <Parameter Name="casilla_destino" Type="int" Mode="In" />
+    <Parameter Name="estado_destino" Type="varchar" Mode="In" />
+    <Parameter Name="unidad_log" Type="int" Mode="In" />
+    <Parameter Name="resultado_log" Type="varchar" Mode="In" />
+    <Parameter Name="comentario_log" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_anula_enc_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_borra_casilla_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_graba_conf_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_graba_imp_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+    <Parameter Name="comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_graba_rech_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_rut_log" Type="int" Mode="In" />
+    <Parameter Name="p_estado" Type="char" Mode="In" />
+    <Parameter Name="p_texto" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_cnf_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_datos_msg_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+    <Parameter Name="p_sendrecv" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_enc_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_imp_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_iny_rango_paginado_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+    <Parameter Name="offset" Type="int" Mode="In" />
+    <Parameter Name="fetchRows" Type="smallint" Mode="In" />
+    <Parameter Name="searchText" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_nro_imp_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_sesion" Type="int" Mode="In" />
+    <Parameter Name="p_secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_otr_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_por_id_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_rec_trae_ree_rango_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_casilla" Type="int" Mode="In" />
+    <Parameter Name="p_fecha1" Type="datetime" Mode="In" />
+    <Parameter Name="p_fecha2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_bancos_verificados_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_bancos2_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="swift" Type="varchar" Mode="In" />
+    <Parameter Name="pais" Type="varchar" Mode="In" />
+    <Parameter Name="ciudad" Type="varchar" Mode="In" />
+    <Parameter Name="banco" Type="varchar" Mode="In" />
+    <Parameter Name="direccion" Type="varchar" Mode="In" />
+    <Parameter Name="branch" Type="varchar" Mode="In" />
+    <Parameter Name="intercambioClave" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_CampoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_CaracterInvalido_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_casillas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codCasilla" Type="int" Mode="In" />
+    <Parameter Name="nombreCasilla" Type="nvarchar" Mode="In" />
+    <Parameter Name="origenCasilla" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_count_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="swift" Type="nvarchar" Mode="In" />
+    <Parameter Name="pais" Type="nvarchar" Mode="In" />
+    <Parameter Name="ciudad" Type="nvarchar" Mode="In" />
+    <Parameter Name="direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="banco" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch" Type="nvarchar" Mode="In" />
+    <Parameter Name="intercambioClave" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_firma" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Idmensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_firma_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Idmensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_fmt_largo_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_tipo_mt" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_FormatoMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_GlosaCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_MensajesEliminar_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_monedas_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_sw_trae_paridad_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_tiposMensajeConFormato_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_sw_trae_TiposMensajes_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_trae_valoresCampos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codigo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_sw_validaFirmaAnular_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_id_mensaje" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_trae_bancos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Codbanco" Type="char" Mode="In" />
+    <Parameter Name="Branch" Type="char" Mode="In" />
+  </Function>
+  <Function Name="proc_trae_formato_campos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_trae_tipo_campos_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sw_configura_s01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut_usuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sw_configura_s02_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rut_usuario" Type="int" Mode="In" />
+    <Parameter Name="apli" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sw_mensajes_add_s01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sw_mensajes_u01_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sesion" Type="int" Mode="In" />
+    <Parameter Name="secuencia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateMensajeS_MS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="unidad" Type="int" Mode="In" />
+    <Parameter Name="prioridad" Type="varchar" Mode="In" />
+    <Parameter Name="estado_msg" Type="varchar" Mode="In" />
+    <Parameter Name="banco_re" Type="varchar" Mode="In" />
+    <Parameter Name="branch_re" Type="varchar" Mode="In" />
+    <Parameter Name="moneda" Type="varchar" Mode="In" />
+    <Parameter Name="monto" Type="float" Mode="In" />
+    <Parameter Name="referencia" Type="varchar" Mode="In" />
+    <Parameter Name="beneficiario" Type="varchar" Mode="In" />
+    <Parameter Name="comentario" Type="varchar" Mode="In" />
+    <Parameter Name="txt_mensaje" Type="varchar(max)" Mode="In" />
+    <Parameter Name="id_mensaje" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="SwiftModelStoreContainer">
+    <EntitySet Name="sw_mensajes_add" EntityType="Self.sw_mensajes_add" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_monedas" EntityType="Self.sw_monedas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend" EntityType="Self.sw_msgsend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_add" EntityType="Self.sw_msgsend_add" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_cambio_estados" EntityType="Self.sw_msgsend_cambio_estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_cmx" EntityType="Self.sw_msgsend_cmx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_cmx_dia" EntityType="Self.sw_msgsend_cmx_dia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_detfile" EntityType="Self.sw_msgsend_detfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_files" EntityType="Self.sw_msgsend_files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_firma" EntityType="Self.sw_msgsend_firma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_log" EntityType="Self.sw_msgsend_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_msgsend_nop" EntityType="Self.sw_msgsend_nop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_orden_firmas" EntityType="Self.sw_orden_firmas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_paridad" EntityType="Self.sw_paridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_regla_firmas" EntityType="Self.sw_regla_firmas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_sce_bic" EntityType="Self.sw_sce_bic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_tipos_campos" EntityType="Self.sw_tipos_campos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_tipos_firmas" EntityType="Self.sw_tipos_firmas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_tipos_msg" EntityType="Self.sw_tipos_msg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_users_srm" EntityType="Self.sw_users_srm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_users_swift" EntityType="Self.sw_users_swift" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sw_valor_campos" EntityType="Self.sw_valor_campos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sw_nets" EntityType="Self.tbl_sw_nets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sw_nets_det" EntityType="Self.tbl_sw_nets_det" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="joal" EntityType="Self.joal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [joal].[id_mensaje] AS [id_mensaje], 
+    [joal].[sesion] AS [sesion], 
+    [joal].[secuencia] AS [secuencia], 
+    [joal].[casilla] AS [casilla], 
+    [joal].[unidad] AS [unidad], 
+    [joal].[tipo_msg] AS [tipo_msg], 
+    [joal].[prioridad] AS [prioridad], 
+    [joal].[estado_msg] AS [estado_msg], 
+    [joal].[tipo_ingreso] AS [tipo_ingreso], 
+    [joal].[rut_ingreso] AS [rut_ingreso], 
+    [joal].[fecha_ingreso] AS [fecha_ingreso], 
+    [joal].[cod_banco_rec] AS [cod_banco_rec], 
+    [joal].[branch_rec] AS [branch_rec], 
+    [joal].[cod_banco_em] AS [cod_banco_em], 
+    [joal].[branch_em] AS [branch_em], 
+    [joal].[cod_moneda] AS [cod_moneda], 
+    [joal].[monto] AS [monto], 
+    [joal].[referencia] AS [referencia], 
+    [joal].[beneficiario] AS [beneficiario], 
+    [joal].[mensaje] AS [mensaje], 
+    [joal].[comentario] AS [comentario]
+    FROM [dbo].[joal] AS [joal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_bancos" EntityType="Self.sw_bancos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_bancos].[cod_banco] AS [cod_banco], 
+    [sw_bancos].[branch] AS [branch], 
+    [sw_bancos].[nombre_banco] AS [nombre_banco], 
+    [sw_bancos].[direccion_banco] AS [direccion_banco], 
+    [sw_bancos].[ciudad_banco] AS [ciudad_banco], 
+    [sw_bancos].[pais_banco] AS [pais_banco], 
+    [sw_bancos].[oficina_banco] AS [oficina_banco], 
+    [sw_bancos].[intercambio_clave] AS [intercambio_clave], 
+    [sw_bancos].[localidad_banco] AS [localidad_banco], 
+    [sw_bancos].[pobnr_banco] AS [pobnr_banco]
+    FROM [dbo].[sw_bancos] AS [sw_bancos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_bancos_autorizados" EntityType="Self.sw_bancos_autorizados" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_bancos_autorizados].[cod_banco] AS [cod_banco], 
+    [sw_bancos_autorizados].[branch] AS [branch], 
+    [sw_bancos_autorizados].[intercambio_clave] AS [intercambio_clave]
+    FROM [dbo].[sw_bancos_autorizados] AS [sw_bancos_autorizados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_campos_msg" EntityType="Self.sw_campos_msg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_campos_msg].[tag_campo] AS [tag_campo], 
+    [sw_campos_msg].[linea_campo] AS [linea_campo], 
+    [sw_campos_msg].[nombre_campo] AS [nombre_campo], 
+    [sw_campos_msg].[largo_campo] AS [largo_campo], 
+    [sw_campos_msg].[formato_campo] AS [formato_campo]
+    FROM [dbo].[sw_campos_msg] AS [sw_campos_msg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_caracter_error" EntityType="Self.sw_caracter_error" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_caracter_error].[valor_ascii] AS [valor_ascii], 
+    [sw_caracter_error].[caracter] AS [caracter], 
+    [sw_caracter_error].[descripcion] AS [descripcion]
+    FROM [dbo].[sw_caracter_error] AS [sw_caracter_error]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_casillas" EntityType="Self.sw_casillas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_casillas].[cod_casilla] AS [cod_casilla], 
+    [sw_casillas].[nombre_casilla] AS [nombre_casilla], 
+    [sw_casillas].[origen_recep] AS [origen_recep]
+    FROM [dbo].[sw_casillas] AS [sw_casillas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_ciclos" EntityType="Self.sw_ciclos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_ciclos].[tipo_msg_fmt] AS [tipo_msg_fmt], 
+    [sw_ciclos].[orden_fmt] AS [orden_fmt], 
+    [sw_ciclos].[secuencia_fmt] AS [secuencia_fmt], 
+    [sw_ciclos].[repeticion_fmt] AS [repeticion_fmt], 
+    [sw_ciclos].[tag_fmt] AS [tag_fmt], 
+    [sw_ciclos].[status_fmt] AS [status_fmt]
+    FROM [dbo].[sw_ciclos] AS [sw_ciclos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_configura" EntityType="Self.sw_configura" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_configura].[rut_usuario] AS [rut_usuario], 
+    [sw_configura].[cod_aplicac] AS [cod_aplicac]
+    FROM [dbo].[sw_configura] AS [sw_configura]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_estados_msg" EntityType="Self.sw_estados_msg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_estados_msg].[estado_msg] AS [estado_msg], 
+    [sw_estados_msg].[descripcion] AS [descripcion], 
+    [sw_estados_msg].[send_recv] AS [send_recv]
+    FROM [dbo].[sw_estados_msg] AS [sw_estados_msg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_firmas_msg" EntityType="Self.sw_firmas_msg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_firmas_msg].[sesion_firma] AS [sesion_firma], 
+    [sw_firmas_msg].[secuencia_firma] AS [secuencia_firma], 
+    [sw_firmas_msg].[send_recv_firma] AS [send_recv_firma], 
+    [sw_firmas_msg].[rut_firma] AS [rut_firma]
+    FROM [dbo].[sw_firmas_msg] AS [sw_firmas_msg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_folios" EntityType="Self.sw_folios" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_folios].[id_folio] AS [id_folio], 
+    [sw_folios].[nro_folio] AS [nro_folio]
+    FROM [dbo].[sw_folios] AS [sw_folios]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_formato_cmx" EntityType="Self.sw_formato_cmx" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_formato_cmx].[campo] AS [campo], 
+    [sw_formato_cmx].[formato] AS [formato]
+    FROM [dbo].[sw_formato_cmx] AS [sw_formato_cmx]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_formatos" EntityType="Self.sw_formatos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_formatos].[tipo_msg_fmt] AS [tipo_msg_fmt], 
+    [sw_formatos].[orden_fmt] AS [orden_fmt], 
+    [sw_formatos].[secuencia_fmt] AS [secuencia_fmt], 
+    [sw_formatos].[repeticion_fmt] AS [repeticion_fmt], 
+    [sw_formatos].[tag_fmt] AS [tag_fmt], 
+    [sw_formatos].[status_fmt] AS [status_fmt]
+    FROM [dbo].[sw_formatos] AS [sw_formatos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_glosa_cmx" EntityType="Self.sw_glosa_cmx" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_glosa_cmx].[tipo_msg] AS [tipo_msg], 
+    [sw_glosa_cmx].[cod_msg] AS [cod_msg], 
+    [sw_glosa_cmx].[nom_msg] AS [nom_msg]
+    FROM [dbo].[sw_glosa_cmx] AS [sw_glosa_cmx]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_log_msg" EntityType="Self.sw_log_msg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_log_msg].[sesion_log] AS [sesion_log], 
+    [sw_log_msg].[secuencia_log] AS [secuencia_log], 
+    [sw_log_msg].[send_recv_log] AS [send_recv_log], 
+    [sw_log_msg].[fecha_log] AS [fecha_log], 
+    [sw_log_msg].[rutais_log] AS [rutais_log], 
+    [sw_log_msg].[nodoais_log] AS [nodoais_log], 
+    [sw_log_msg].[idprog_log] AS [idprog_log], 
+    [sw_log_msg].[opcion_log] AS [opcion_log], 
+    [sw_log_msg].[casilla_origen] AS [casilla_origen], 
+    [sw_log_msg].[estado_origen] AS [estado_origen], 
+    [sw_log_msg].[casilla_destino] AS [casilla_destino], 
+    [sw_log_msg].[estado_destino] AS [estado_destino], 
+    [sw_log_msg].[unidad_log] AS [unidad_log], 
+    [sw_log_msg].[apoderado_log] AS [apoderado_log], 
+    [sw_log_msg].[resultado_log] AS [resultado_log], 
+    [sw_log_msg].[comentario_log] AS [comentario_log]
+    FROM [dbo].[sw_log_msg] AS [sw_log_msg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_mensajes" EntityType="Self.sw_mensajes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_mensajes].[sesion] AS [sesion], 
+    [sw_mensajes].[secuencia] AS [secuencia], 
+    [sw_mensajes].[send_recv] AS [send_recv], 
+    [sw_mensajes].[casilla] AS [casilla], 
+    [sw_mensajes].[unidad] AS [unidad], 
+    [sw_mensajes].[tipo_msg] AS [tipo_msg], 
+    [sw_mensajes].[prioridad] AS [prioridad], 
+    [sw_mensajes].[estado_msg] AS [estado_msg], 
+    [sw_mensajes].[rut_entry] AS [rut_entry], 
+    [sw_mensajes].[rut_autoriza] AS [rut_autoriza], 
+    [sw_mensajes].[fecha_send] AS [fecha_send], 
+    [sw_mensajes].[fecha_ack] AS [fecha_ack], 
+    [sw_mensajes].[cod_banco_rec] AS [cod_banco_rec], 
+    [sw_mensajes].[branch_rec] AS [branch_rec], 
+    [sw_mensajes].[cod_banco_em] AS [cod_banco_em], 
+    [sw_mensajes].[branch_em] AS [branch_em], 
+    [sw_mensajes].[cod_moneda] AS [cod_moneda], 
+    [sw_mensajes].[monto] AS [monto], 
+    [sw_mensajes].[referencia] AS [referencia], 
+    [sw_mensajes].[beneficiario] AS [beneficiario], 
+    [sw_mensajes].[total_imp] AS [total_imp], 
+    [sw_mensajes].[mensaje] AS [mensaje], 
+    [sw_mensajes].[comentario] AS [comentario]
+    FROM [dbo].[sw_mensajes] AS [sw_mensajes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sw_msgsend_ftp" EntityType="Self.sw_msgsend_ftp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sw_msgsend_ftp].[nombre_archivo] AS [nombre_archivo]
+    FROM [dbo].[sw_msgsend_ftp] AS [sw_msgsend_ftp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_sw_nets_sor" EntityType="Self.tbl_sw_nets_sor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_sw_nets_sor].[rut_cli] AS [rut_cli], 
+    [tbl_sw_nets_sor].[estado] AS [estado], 
+    [tbl_sw_nets_sor].[caracter] AS [caracter], 
+    [tbl_sw_nets_sor].[id_mensaje] AS [id_mensaje], 
+    [tbl_sw_nets_sor].[sesion] AS [sesion], 
+    [tbl_sw_nets_sor].[secuencia] AS [secuencia], 
+    [tbl_sw_nets_sor].[casilla] AS [casilla], 
+    [tbl_sw_nets_sor].[unidad] AS [unidad], 
+    [tbl_sw_nets_sor].[tipo_msg] AS [tipo_msg], 
+    [tbl_sw_nets_sor].[prioridad] AS [prioridad], 
+    [tbl_sw_nets_sor].[fecha_ingreso] AS [fecha_ingreso], 
+    [tbl_sw_nets_sor].[cod_banco_rec] AS [cod_banco_rec], 
+    [tbl_sw_nets_sor].[branch_rec] AS [branch_rec], 
+    [tbl_sw_nets_sor].[cod_banco_em] AS [cod_banco_em], 
+    [tbl_sw_nets_sor].[branch_em] AS [branch_em], 
+    [tbl_sw_nets_sor].[cod_moneda] AS [cod_moneda], 
+    [tbl_sw_nets_sor].[monto] AS [monto], 
+    [tbl_sw_nets_sor].[referencia] AS [referencia], 
+    [tbl_sw_nets_sor].[desc_msg] AS [desc_msg], 
+    [tbl_sw_nets_sor].[desc_unidad] AS [desc_unidad], 
+    [tbl_sw_nets_sor].[nomb_banco] AS [nomb_banco], 
+    [tbl_sw_nets_sor].[ciud_banco] AS [ciud_banco], 
+    [tbl_sw_nets_sor].[pais_banco] AS [pais_banco], 
+    [tbl_sw_nets_sor].[fecha_envio] AS [fecha_envio]
+    FROM [dbo].[tbl_sw_nets_sor] AS [tbl_sw_nets_sor]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

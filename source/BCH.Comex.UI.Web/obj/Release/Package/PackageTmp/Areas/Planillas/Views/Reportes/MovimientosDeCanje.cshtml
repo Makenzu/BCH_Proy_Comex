@@ -1,0 +1,452 @@
+﻿@model  BCH.Comex.UI.Web.Areas.Planillas.Models.ReporteMovimientosDeCanjeViewModel
+@using BCH.Comex.Core.BL.XGPL
+@{
+    ViewBag.Title = Model.Titulo;
+    Layout = "";
+}
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>Created by BCL easyConverter SDK 3 (HTML Version)</title>
+    <link rel="icon" type="image/png" href="@Url.Content("~/Content/img/apps/admin-planillas-inv.png")" />
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #page_1 {
+            position: relative;
+            overflow: hidden;
+            margin: 51px 0px 0px 0px;
+            padding: 0px;
+            border: none;
+            width: 816px;
+        }
+
+            #page_1 #id_1 {
+                border: none;
+                margin: 0px 0px 0px 60px;
+                padding: 0px;
+                border: none;
+                width: 756px;
+                overflow: hidden;
+            }
+
+            #page_1 #id_2 {
+                border: none;
+                margin: 192px 0px 0px 0px;
+                padding: 0px;
+                border: none;
+                width: 816px;
+                overflow: hidden;
+            }
+
+
+
+
+
+        #page_2 {
+            position: relative;
+            overflow: hidden;
+            margin: 516px 0px 494px 82px;
+            padding: 0px;
+            border: none;
+            width: 734px;
+        }
+
+
+
+
+
+        .ft0 {
+            font: 15px 'Times';
+            line-height: 17px;
+        }
+
+        .ft1 {
+            font: 1px 'Times';
+            line-height: 1px;
+        }
+
+        .ft2 {
+            font: 14px 'Times';
+            line-height: 16px;
+        }
+
+        .ft3 {
+            font: 13px 'Times';
+            line-height: 15px;
+        }
+
+        .ft4 {
+            font: 16px 'Helvetica';
+            line-height: 18px;
+        }
+
+        .ft5 {
+            font: 9px 'Arial Unicode MS';
+            color: #0000ff;
+            line-height: 12px;
+        }
+
+        .ft6 {
+            font: 9px 'Arial Unicode MS';
+            line-height: 12px;
+        }
+
+        .ft7 {
+            font: 13px 'Arial Unicode MS';
+            line-height: 18px;
+        }
+
+        .p0 {
+            text-align: left;
+            padding-left: 172px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p1 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p2 {
+            text-align: left;
+            padding-left: 34px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p3 {
+            text-align: left;
+            padding-left: 29px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p4 {
+            text-align: right;
+            padding-right: 38px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p5 {
+            text-align: left;
+            padding-left: 9px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p6 {
+            text-align: right;
+            padding-right: 40px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p7 {
+            text-align: left;
+            padding-left: 48px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p8 {
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p9 {
+            text-align: right;
+            padding-right: 12px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p10 {
+            text-align: right;
+            padding-right: 36px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p11 {
+            text-align: left;
+            padding-left: 28px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p12 {
+            text-align: left;
+            padding-left: 1px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p13 {
+            text-align: right;
+            padding-right: 133px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p14 {
+            text-align: right;
+            padding-right: 44px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p15 {
+            text-align: right;
+            padding-right: 74px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+        }
+
+        .p16 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .p17 {
+            text-align: left;
+            margin-top: 1px;
+            margin-bottom: 0px;
+        }
+
+        .p18 {
+            text-align: left;
+            margin-top: 3px;
+            margin-bottom: 0px;
+        }
+
+        .td0 {
+            padding: 0px;
+            margin: 0px;
+            width: 143px;
+            vertical-align: bottom;
+        }
+
+        .td1 {
+            padding: 0px;
+            margin: 0px;
+            width: 111px;
+            vertical-align: bottom;
+        }
+
+        .td2 {
+            padding: 0px;
+            margin: 0px;
+            width: 251px;
+            vertical-align: bottom;
+        }
+
+        .td3 {
+            padding: 0px;
+            margin: 0px;
+            width: 148px;
+            vertical-align: bottom;
+        }
+
+        .td4 {
+            padding: 0px;
+            margin: 0px;
+            width: 91px;
+            vertical-align: bottom;
+        }
+
+        .td5 {
+            padding: 0px;
+            margin: 0px;
+            width: 160px;
+            vertical-align: bottom;
+        }
+
+        .td6 {
+            padding: 0px;
+            margin: 0px;
+            width: 653px;
+            vertical-align: bottom;
+        }
+
+        .td7 {
+            padding: 0px;
+            margin: 0px;
+            width: 308px;
+            vertical-align: bottom;
+        }
+
+        .td8 {
+            padding: 0px;
+            margin: 0px;
+            width: 213px;
+            vertical-align: bottom;
+        }
+
+        .td9 {
+            padding: 0px;
+            margin: 0px;
+            width: 256px;
+            vertical-align: bottom;
+        }
+
+        .tr0 {
+            height: 23px;
+        }
+
+        .tr1 {
+            height: 48px;
+        }
+
+        .tr2 {
+            height: 17px;
+        }
+
+        .tr3 {
+            height: 51px;
+        }
+
+        .tr4 {
+            height: 20px;
+        }
+
+        .tr5 {
+            height: 15px;
+        }
+
+        .t0 {
+            width: 653px;
+            margin-top: 13px;
+            font: 15px 'Times';
+        }
+
+        .t1 {
+            width: 469px;
+            margin-left: 86px;
+            margin-top: 506px;
+            font: 13px 'Times';
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page_1">
+
+
+        <div id="id_1">
+            <p class="p0 ft0">CONTROL CUADRATURA CANJE. OFICINA 500- C.C 826</p>
+            <p class="p0 ft0">__________________________________________________</p>
+            <table cellpadding=0 cellspacing=0 class="t0">
+                <tr>
+                    <td class="tr0 td0"><p class="p1 ft1">&nbsp;</p></td>
+                    <td class="tr0 td1"><p class="p1 ft1">&nbsp;</p></td>
+                    <td colspan=2 class="tr0 td2"><p class="p2 ft0">FECHA: @DateTime.Today.ToString("dd/MM/yyyy")</p></td>
+                    <td class="tr0 td3"><p class="p1 ft1">&nbsp;</p></td>
+                </tr>
+                <tr>
+                    <td class="tr1 td0"><p class="p1 ft0">Cuenta: <nobr>@ViewBag.Rut</nobr></p></td>
+                    <td class="tr1 td1"><p class="p3 ft0">CANJEE</p></td>
+                    <td class="tr1 td4"><p class="p1 ft1">&nbsp;</p></td>
+                    <td class="tr1 td5"><p class="p1 ft1">&nbsp;</p></td>
+                    <td class="tr1 td3"><p class="p4 ft0">Hora = @DateTime.Now.ToString("HH:mm:ss")</p></td>
+                </tr>
+                <tr>
+                    <td colspan=5 class="tr2 td6"><p class="p1 ft0"><nobr>--------------------------------------------------------------------------------------------------------------------------------</nobr></p></td>
+                </tr>
+                <tr>
+                    <td class="tr2 td0"><p class="p1 ft0">Operación</p></td>
+                    <td class="tr2 td1"><p class="p5 ft0">Mnda.</p></td>
+                    <td class="tr2 td4"><p class="p6 ft0">Monto</p></td>
+                    <td class="tr2 td5"><p class="p7 ft0">Cliente</p></td>
+                    <td class="tr2 td3"><p class="p8 ft0">Usuario</p></td>
+                </tr>
+                <tr>
+                    <td colspan=5 class="tr2 td6"><p class="p1 ft0"><nobr>--------------------------------------------------------------------------------------------------------------------------------</nobr></p></td>
+                </tr>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td class="tr2 td0"><p class="p1 ft0">@item.NumeroOperacion</p></td>
+                        <td class="tr2 td1"><p class="p1 ft0">@item.SimboloMoneda</p></td>
+                        <td class="tr2 td4"><p class="p9 ft0">@item.Debe.FormatoDecimal()</p></td>
+                        <td class="tr2 td5"><p class="p1 ft0">@item.NombreCliente</p></td>
+                        <td class="tr2 td3"><p class="p10 ft0"><nobr>@item.CodigoUsuario</nobr></p></td>
+                        @*<td>@item.NumeroOperacion</td>
+                        <td>@item.NombreCliente</td>
+                        <td>@item.NumeroCuenta</td>
+                        <td>@item.NemotecnicoCuenta</td>
+                        <td>@item.CentroCosto</td>
+                        <td>@item.CodigoUsuario</td>
+                        <td>@item.SimboloMoneda</td>
+                        <td class="monto">@item.Debe.FormatoDecimal()</td>
+                        <td class="monto">@item.Haber.FormatoDecimal()</td>*@
+                    </tr>
+                }
+                <tr>
+                    <td colspan=5 class="tr2 td6"><p class="p1 ft0"><nobr>--------------------------------------------------------------------------------------------------------------------------------</nobr></p></td>
+                </tr>
+                <tr>
+                    <td class="tr3 td0"><p class="p11 ft0">TOTAL:</p></td>
+                    <td class="tr3 td1"><p class="p12 ft0">@Model.Items.First().SimboloMoneda</p></td>
+                    <td class="tr3 td4"><p class="p9 ft0">@Model.Items.Sum(i => i.Debe).FormatoDecimal()</p></td>
+                    <td colspan=2 class="tr3 td7"><p class="p13 ft0">DOCUMENTOS @Model.Items.Count()</p></td>
+                </tr>
+            </table>
+            <table cellpadding=0 cellspacing=0 class="t1">
+                <tr>
+                    <td class="tr4 td8"><p class="p14 ft2">_______________________</p></td>
+                    <td class="tr4 td9"><p class="p9 ft0">&nbsp;_______________________</p></td>
+                </tr>
+                <tr>
+                    <td class="tr5 td8"><p class="p15 ft3">RECIBIDO POR</p></td>
+                    <td class="tr5 td9"><p class="p8 ft3">Firma Autorizada</p></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+
+@*<table class="tabla-reporte">
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>@item.NumeroOperacion</td>
+            <td>@item.NombreCliente</td>
+            <td>@item.NumeroCuenta</td>
+            <td>@item.NemotecnicoCuenta</td>
+            <td>@item.CentroCosto</td>
+            <td>@item.CodigoUsuario</td>
+            <td>@item.SimboloMoneda</td>
+            <td class="monto">@item.Debe.FormatoDecimal()</td>
+            <td class="monto">@item.Haber.FormatoDecimal()</td>
+        </tr>
+    }
+</table>*@

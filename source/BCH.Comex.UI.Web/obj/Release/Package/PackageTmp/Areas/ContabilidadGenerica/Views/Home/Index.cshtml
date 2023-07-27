@@ -1,0 +1,291 @@
+﻿@model BCH.Comex.Core.Entities.Cext01.ContabilidadGenerica.UI_Forms.UI_gl
+
+@{
+    ViewBag.Title = "Contabilidad Genérica";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/ingreso-asientos-inv.png");
+}
+
+
+<div class="container" id="header_layout">
+    <div class="row" id="texto_func">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Archivo <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Archivo">
+                        <li class='@(Model.Bot_Nueva.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.Bot_Nueva.Tag)">Nuevo</a></li>
+                        <li class='@(Model.Bot_Salvar.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.Bot_Salvar.Tag)">Guardar</a></li>
+                        <li class='@(Model.Menu_Imprimir.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.Menu_Imprimir.Tag)">Imprimir</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Opciones <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Opciones">
+                        <li class='@(Model.bot_operacion.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.bot_operacion.Tag)">Operaciones</a></li>
+                        <li class='@(Model.bot_factura.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.bot_factura.Tag)">Nota de Crédito</a></li>
+                        <li class='@(Model.Bot_Partys.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.Bot_Partys.Tag)">Participantes</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class='@(Model.menu_anulaGL.Enabled ? "" : "disabled")'><a href="@Url.Content((string)Model.menu_anulaGL.Tag)">Anular GL</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Configuración <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="Configuracion" id="mnuConfiguracion">
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionCartas) Impresión Cartas
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.EditorFor(model => model.ChkImpresionContabilidad) Impresión Contabilidad
+                                    </label>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center panel">
+    @{
+        int i = 0;
+        foreach (var item in Model.botones)
+        {
+            i++;
+            <a id="@item.ID"
+               @if (!item.Enabled) {  @: disabled="disabled"
+                                                                 @: href="#"
+                                                             } else {  @: href="@Url.Content((string)item.Tag)"
+                                                                 @: tabindex="@item.TabIndex"
+                                                             }
+               class="btn btn-transparent btn-no-padding margin-horizontal-half"><img class="img-func" title="@item.Text" src="@Url.Content(item.ImgPath)" style="width:32px;height:32px" /></a>
+            if (i == 3)
+            {
+                <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                i = 0;
+            }
+        }
+    }
+</div>
+<div class="container margin-bottom">
+    <div class="row">
+        <h2>@Model.Text</h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-2 label-div"><label for="cliente">Cliente</label></div>
+                <div class="col-xs-10">
+                    @Html.EditorFor(model => model.Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-3 label-div"><label for="referencia">Operación</label></div>
+                    <div class="col-xs-7">
+                        @Html.EditorFor(model => model.Num_Op, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 15px;">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-4 label-div"><label for="cliente">Factura Nro.</label></div>
+                        <div class="col-xs-8">
+                            @Html.EditorFor(model => model.Tx_NroFac, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-3 label-div"><label for="cliente">Moneda</label></div>
+                        <div class="col-xs-9">
+                            @Html.EditorFor(model => model.Tx_moneda, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-4 label-div"><label for="cliente">Tipo Factura</label></div>
+                        <div class="col-xs-8">
+                            @Html.EditorFor(model => model.Tx_tipo, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-3 label-div"><label for="cliente">Referencia Cliente</label></div>
+                        <div class="col-xs-9">
+                            @Html.EditorFor(model => model.Tx_ReferenciaCliente, new { htmlAttributes = new { @class = "form-control", id = "Tx_ReferenciaCliente" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-3 label-div"><label for="cliente">Neto</label></div>
+                    <div class="col-xs-7">
+                        @Html.EditorFor(model => model.Tx_neto, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-3 label-div"><label for="cliente">Iva</label></div>
+                    <div class="col-xs-7">
+                        @Html.EditorFor(model => model.Tx_iva, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-3 label-div"><label for="cliente">Total</label></div>
+                    <div class="col-xs-7">
+                        @Html.EditorFor(model => model.Tx_MtoOri, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container margin-bottom">
+    @{
+        bool disabled = !Model.datos.Enabled;
+        string strDis = disabled ? "disabled=true" : "";
+    }
+    <h4 class="margin-bottom">Datos Partida</h4>
+    <div class="row" id="marca">
+        <div class="col-xs-5">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Moneda</label>
+                    @Html.EditorFor(model => model.monedas, new { htmlAttributes = new { @class = "form-control", id = "monedas", data_frame = "datos", tabindex = 3 } })
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Monto</label>
+                    @Html.EditorFor(model => model.monto, new { htmlAttributes = new { @class = "form-control", id = "monto", data_frame = "datos", tabindex = 4 } })
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="debehaber" id="tipo_000" data-checked="@Model.tipo_000.Checked" data-frame="datos" @(Model.tipo_000.Enabled ? "" : "disabled = 'disabled'")>
+                            Debe
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="debehaber" id="tipo_001" data-checked="@Model.tipo_001.Checked" data-frame="datos" @(Model.tipo_001.Enabled ? "" : "disabled = 'disabled'")>
+                            Haber
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="input-group pull-left" style="margin-top: 26px">
+                        <button id="aceptar" tabindex="6" class="btn btn-success input-group-addon" style="width: 39px; color: #fff" data-frame="datos" @strDis>
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                        <button id="cancelar" class="btn btn-danger input-group-addon" style="width: 39px; color: #fff" data-frame="datos" @strDis>
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Nemónico</label>
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.nemonico, new { htmlAttributes = new { @class = "form-control upper", id = "nemonico", tabindex = 5 } })
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="ver" @strDis><i class="glyphicon glyphicon-sunglasses"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                @{ string a = Model.txtNumRef.Visible ? "" : "style=visibility:hidden;";}
+                <div id="refDiv" class="form-group" @a>
+                    <label>No de Partida</label>
+                    @Html.EditorFor(model => model.txtNumRef, new { htmlAttributes = new { @class = "form-control", id = "txtNumRef" } })
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="checkbox">
+                <label>
+                    @Html.EditorFor(model => model.cambiar, new { htmlAttributes = new { id = "cambiar" } })
+                </label>
+                Cambiar Participante
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" disabled="disabled" value="2" id="impuesto">
+                    Impuesto al Débito
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container margin-bottom">
+    <h4 class="margin-bottom">Moneda Extranjera</h4>
+    @Html.EditorFor(model => model.m_e, new { htmlAttributes = new { id = "m_e", columns = new string[] { "Moneda", "Nemónico", "Debe", "Haber", "Participante" } } })
+</div>
+<div class="container margin-bottom">
+    <h4 class="margin-bottom">Moneda Nacional</h4>
+    @Html.EditorFor(model => model.m_n, new { htmlAttributes = new { id = "m_n", columns = new string[] { "Moneda", "Nemónico", "Debe", "Haber", "Participante" } } })
+</div>
+
+@section scripts{
+    <script>
+        var modelListaConfirmaciones = @Html.Raw(Json.Encode(Model.ListaConfirmaciones));
+        var m_n_index = @Model.m_n.ListIndex;
+        var m_e_index = @Model.m_e.ListIndex;
+    </script>
+    @Scripts.Render("~/bundles/ContabilidadGenerica")
+}
+
+@section css{
+    <style type="text/css">
+        #m_e, #m_n {
+            width: 72%;
+        }
+
+        #body_content {
+            max-width: 880px;
+        }
+    </style>
+}

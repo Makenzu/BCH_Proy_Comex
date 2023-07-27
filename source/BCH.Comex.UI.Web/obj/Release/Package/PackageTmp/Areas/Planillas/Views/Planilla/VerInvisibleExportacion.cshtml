@@ -1,0 +1,482 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.InvisibleExportacionViewModel
+@{
+    ViewBag.Title = "Invisible: " + Model.NumeroPlanilla;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+
+    var additionalViewData = new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } };
+    var additionalViewDataEditable = new { htmlAttributes = new { @class = "form-control input-sm" } };
+    
+}
+
+@using (Html.BeginForm("VerInvisibleExportacion"))
+{
+    
+    @Html.ValidationSummary();
+    @Html.AntiForgeryToken();
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Planilla Invisible</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label">Cód. Operación</label>
+                            @Html.EditorFor(m => m.CodigoOperacion, additionalViewData)
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label">Número</label>
+                            @Html.EditorFor(m => m.NumeroPlanilla, additionalViewData)
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label">Entidad que presenta la planilla</label>
+                            <br/>
+                            <span><strong>Banco de Chile</strong></span>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <label class="control-label">Código</label>
+                            <input type="text" class="form-control input-sm" value="15" readonly />
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label">País de Origen :</label>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.PaisOrigen, additionalViewData)
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.EditorFor(m => m.CodigoPaisOrigen, additionalViewDataEditable)
+                                    @Html.ValidationMessageFor(m => m.CodigoPaisOrigen)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label">Tipo</label>
+                            @Html.EditorFor(m => m.TipoPlanila, additionalViewData)
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <label class="control-label">Fecha</label>
+                            @Html.EditorFor(m => m.FechaPlanilla, "Fecha", additionalViewData)
+                            @Html.HiddenFor(m => m.FechaAnterior)
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label class="control-label">Plaza Banco Central</label>
+                            @Html.EditorFor(m => m.PlazaBancoCentral, additionalViewData)
+                        </div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <label class="control-label">Cód.</label>
+                            @Html.EditorFor(m => m.CodigoPlazaBancoCentral, additionalViewData)
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label class="control-label">Moneda</label>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.NombreMoneda, additionalViewData)
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.EditorFor(m => m.CodigoMoneda, additionalViewData)
+                                    @Html.ValidationMessageFor(m => m.CodigoMoneda)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Rut</label>
+                                            @Html.EditorFor(m => m.RUTCliente, additionalViewData)
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Nombre</label>
+                                            @Html.EditorFor(m => m.NombreParticipante, additionalViewData)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Dirección</label>
+                                            @Html.EditorFor(m => m.DireccionParticipante, additionalViewData)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nombre Cód. Comercio</label>
+                                    @Html.EditorFor(m => m.NombreCodigoComercio, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Cód.</label>
+                                    @Html.EditorFor(m => m.CodigoComercio, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Concepto</label>
+                                    @Html.EditorFor(m => m.Concepto, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Num. Planilla</label>
+                                    @Html.EditorFor(m => m.NumeroPlanillaAnulada, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha Anul.</label>
+                                    @Html.EditorFor(m => m.FechaAnulacion, "Fecha", additionalViewData)
+                                    @Html.ValidationMessageFor(m => m.FechaAnulacion)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Suc. BCCH.</label>
+                                    @Html.EditorFor(m => m.PlazaBancoCentralAnulacion, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Tipo</label>
+                                    @Html.EditorFor(m => m.ApcTipo, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Número</label>
+                                    @Html.EditorFor(m => m.ApcNumero, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha</label>
+                                    @Html.EditorFor(m => m.ApcFecha, "Fecha", additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Suc. BCCH.</label>
+                                    @Html.EditorFor(m => m.ApcPlazaBancoCentral, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="control-label"><STRONG>Acuerdos a que se acoge (cantidad)</STRONG></label>
+                                    @Html.EditorFor(m => m.Acuerdos.Length, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.Acuerdos[0], additionalViewData)
+                                    @Html.EditorFor(m => m.Acuerdos[1], additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.Acuerdos[2], additionalViewData)
+                                    @Html.EditorFor(m => m.Acuerdos[3], additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    @Html.EditorFor(m => m.Acuerdos[4], additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <fieldset class="form-horizontal">
+
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Monto Operación</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.MontoOperacion, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Paridad Bco. C.</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.MontoParidadBancoCentral, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Monto en Dolares</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.MontoEnDolares, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Monto en Pesos al <br/>T/C por US$</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.TipoDeCambio, additionalViewData)
+                                    @Html.ValidationMessageFor(m => m.TipoDeCambio)
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-xs-4">Son $</label>
+                                <div class="col-xs-8">
+                                    @Html.EditorFor(m => m.MontoNacional, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <div class="col-xs-8 col-xs-offset-4">
+                                    <label>
+                                        @Html.EditorFor(m => m.ZonaFranca) Zona franca
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-xs-6"> 
+                        <div class="row">
+                            <h5><strong>Informe de Exportación</strong></h5>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Número</label>
+                                    @Html.EditorFor(m => m.DieNumero, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha</label>
+                                    @Html.EditorFor(m => m.DieFecha, "Fecha", additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Plaza BCCH</label>
+                                    @Html.EditorFor(m => m.DiePlazaBancoCentral, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5><strong>Declaración de Exportación</strong></h5>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Nro. Acept.</label>
+                                    @Html.EditorFor(m => m.NumeroDeclaracion, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha A.</label>
+                                    @Html.EditorFor(m => m.FechaDeclaracion, "Fecha", additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label class="control-label">Aduana</label>
+                                    @Html.EditorFor(m => m.CodigoAduana, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="form-group">
+                                    <label class="control-label">E/R</label>
+                                    @Html.EditorFor(m => m.CodigoEOR, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5><STRONG>Créditos Externos</STRONG></h5>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Número de crédito</label>
+                                    @Html.EditorFor(m => m.NumeroCredito, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Fec. Desembolso</label>
+                                    @Html.EditorFor(m => m.FechaCredito, "Fecha", additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label">Cod. Mda. Desembolso</label>
+                                    @Html.EditorFor(m => m.MonedaCredito, additionalViewData)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label">Monto equivalente</label>
+                                @Html.EditorFor(m => m.MontoCredito, additionalViewData)
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group ">
+                                    <label class="control-label">Sec. Ec. Ben</label>
+                                    @Html.EditorFor(m => m.SecBen, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label">Sec. Ec. Inv.</label>
+                                    @Html.EditorFor(m => m.SecInv, additionalViewData)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Porcentaje Part.</label>
+                                @Html.EditorFor(m => m.PorcentajeParticipacion, additionalViewData)
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <h5><STRONG>Acuerdo 1657 - 3 (Diferencial cambiario)</STRONG></h5>
+
+                            <div class="form-group">
+                                <label class="control-label">Acuerdo corresp. a</label>
+                                @Html.EditorFor(m => m.CodigoAcuerdo, additionalViewData)
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label">Número Registro</label>
+                                @Html.EditorFor(m => m.NumeroRegistroAcuerdo, additionalViewData)
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Rut Deudor Original</label>
+                                @Html.EditorFor(m => m.RutAcuerdo, additionalViewData)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <h5><STRONG>Convenio Crédito Recíproco</STRONG></h5>
+                        <div class="form-group">
+                            <label class="control-label">En Chile fec. Aut. Débito</label>
+                            @Html.EditorFor(m => m.ConvenioCreditoFechaAutorizacionDebito, "Fecha", additionalViewData)
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nro. Documento</label>
+                            @Html.EditorFor(m => m.ConvenioCreditoDocumentoNacional, additionalViewData)
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">En el Ext. Nro. Documento</label>
+                            @Html.EditorFor(m => m.ConvenioCreditoDocumentoExtranjero, additionalViewData)
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Cod. Bco. Comercial Ext.</label>
+                            @Html.EditorFor(m => m.ConvenioCreditoBancoExtranjero, additionalViewData)
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Observaciones</label>
+                            @Html.EditorFor(m => m.Observaciones, additionalViewDataEditable)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <input type="submit" class="btn btn-primary" value="Aceptar" id="btnAceptar" />
+            <button type="button" class="btn btn-default" id="btnCancelar">Cancelar</button>
+        </div>
+    </div>
+}
+
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="txtTitleModal">Advertencia del Sistema</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtSuccess">Atención !... Se Han Modificado 1 o más Planillas. Desea Guardar los Cambios.</h3>
+                <h3 id="txtCancel">Atención !... Se perderá cualquier cambio que haya realizado, ¿Desea continuar?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnAceptarModal" style="margin-bottom: 0px">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section css{
+    <style type="text/css">
+        .form-group {
+            margin-bottom: 0px;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+        }
+
+        .panel-heading {
+            padding: 0px 15px;
+        }
+
+        .control-label {
+            font-size: 12px;
+        }
+    </style>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/globalization")
+    @{bool planillaGuardada = Model.PlanillaGuardada;}
+    <script type="text/javascript">
+        $(document).ready(function () {
+                @if (planillaGuardada)
+                {
+                    @:window.close();
+                }
+
+                $('#btnCancelar').click(function (){
+                    $('#txtSuccess').hide();
+                    $('#txtCancel').show();
+                    $('#modalAlert').modal();
+                });
+                $('#btnAceptarModal').click(function () {
+                    window.close();
+                });
+
+                $(":input").inputmask();
+         });
+    </script>
+}

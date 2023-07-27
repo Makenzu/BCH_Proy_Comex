@@ -1,0 +1,99 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.ActualizacionPlanillasViewModel
+    @{ 
+        ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+    }
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions
+{
+    HttpMethod = "Post",
+    UpdateTargetId = "containerDeclaracion"
+}, new { id = "formDeclaracion" }))
+{
+
+    <div class="row">
+        <div class="col-xs-2">
+            <div class="form-group">
+                <label for="">Num. presentación</label>
+                <input class="form-control input-sm text-box single-line" disabled="disabled" maxlength="18" type="number" value="" data-inputmask="'mask': '9','repeat': 3, 'greedy' : false">                
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                <label for="Declaracion_FechaPresentacion">Fecha presentación</label>
+                <input class="form-control input-sm text-box single-line"  disabled="disabled" data-val="true" type="datetime" value="" data-inputmask="'alias': 'date'">                
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                <label for="">MontoUSD</label>
+                <input class="form-control input-sm text-box single-line form-control monto"  data-val="true" type="text" disabled="disabled">                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.NumeroDeclaracion)
+                @Html.EditorFor(m => m.Declaracion.NumeroDeclaracion, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "7", maxlength = "18", data_inputmask = "'mask': 'G','repeat': 18, 'greedy' : false" } })
+                @Html.ValidationMessageFor(m => m.Declaracion.NumeroDeclaracion)
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.FechaDeclaracion)
+                <div class="input-group date" id="dtpFechaDeclaracion">
+                    <input tabindex="8" type="text" class="form-control" id="Declaracion_FechaDeclaracion" name="Declaracion.FechaDeclaracion" data-inputmask="'alias': 'date'" />
+                     <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    @Html.ValidationMessageFor(m => m.Declaracion.FechaDeclaracion)
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.CodigoAduana)
+                @Html.DropDownListFor(m => m.Declaracion.CodigoAduana, Model.Declaracion.CodigosAduana, new { @class = "form-control input-sm", tabindex = "9" })
+                @Html.ValidationMessageFor(m => m.Declaracion.CodigoAduana)
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.FechaVencimientoRetorno)
+                <div class="input-group date" id="dtpFechaVencimientoRetorno">
+                    <input id="txtFechaVencimientoRetorno" name="Declaracion.FechaVencimientoRetorno" tabindex="10" disabled="disabled" class="form-control input-sm text-box single-line" data-val="true" type="datetime" value="" data-inputmask="'alias': 'date'" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(m => m.Declaracion.FechaVencimientoRetorno)
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.MontoDI)
+                @Html.EditorFor(m => m.Declaracion.MontoDI, new { htmlAttributes = new { @type = "text", @class = "form-control input-sm monto", tabindex = "11", maxlength = "13" } })
+                @Html.ValidationMessageFor(m => m.Declaracion.MontoDI)
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Declaracion.InteresDI)
+                @Html.EditorFor(m => m.Declaracion.InteresDI, new { htmlAttributes = new { @type = "number", @class = "form-control input-sm monto", tabindex = "12", maxlength = "13", min = "0", max = "9999999999999", oninput = "Largo(this)", onkeypress = "return isNumeric(event)" } })
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+       <script type="text/javascript">
+           $(function () {
+               //$("#Declaracion_NumeroDeclaracion").inputmask("9{1,18}");
+            $(":input").inputmask();
+        });
+       </script>
+    }
+}
+
+
+

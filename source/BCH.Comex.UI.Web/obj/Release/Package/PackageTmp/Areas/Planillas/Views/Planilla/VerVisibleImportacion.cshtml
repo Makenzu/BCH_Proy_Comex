@@ -1,0 +1,629 @@
+﻿@model BCH.Comex.UI.Web.Areas.Planillas.Models.VisibleImportacionViewModel
+@using BCH.Comex.Core.BL.XGPL
+@{
+    ViewBag.Title = "Visible Imp: " + Model.NumeroPresentacion;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/admin-planillas-inv.png");
+}
+
+<div class="panel">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary();
+        @Html.AntiForgeryToken();
+        @Html.HiddenFor(m => m.FechaVentaAntigua)
+        <div class="panel-heading">
+            <h4>Planilla Visible</h4>
+        </div>
+        <div class="panel-body bg-visible-importacion">
+
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">N&deg; PRESENTACION</label>
+                                @Html.EditorFor(m => m.NumeroPresentacion, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">CODIGO</label>
+                                @Html.EditorFor(m => m.CodigoPlanilla, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <h5 style="text-align:center;font-family:'Times New Roman'"><strong>PLANILLA DE COBERTURA EGRESO COMERCIO VISIBLE</strong></h5>
+                            <h6 style="text-align:center">OPERACIONES DE MONEDA EXTRANJERA IMPORTACIONES</h6>
+                            <h6 style ="text-align:center">ENTIDAD QUE PRESENTA A LA PLANILLA</h6>
+                            <h4 style="text-align:center;font-family:'Times New Roman';font-style:italic" ><strong>BANCO  DE  CHILE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</strong></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">FECHA VENTA</label>  
+                                <div class="input-group date" id="dtpFechaPlanilla">
+                                    <input type="text" class="form-control input-sm" id="txtFechaPlanilla" name="FechaPlanilla" data-inputmask="'alias': 'date'" value="@Model.FechaPlanilla" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="form-group col-xs-8">
+                                    <h6 style="text-align:center">PLAZA BANCO CENTRAL DE CHILE</h6>
+                                    <h4 style="text-align:center;font-family:'Times New Roman';font-style:italic"><strong style="text-align:center">SANTIAGO</strong></h4>
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.EditorFor(m => m.CodigoPlazaBancoCentral, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <label class="control-label">IMPORTADOR</label>
+                                @Html.EditorFor(m => m.NombreImportador, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">R.U.T.</label>
+                                @Html.EditorFor(m => m.RutImportador, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group ">
+                                        <label class="control-label">N&deg; INF. IMPORTACION</label>
+                                        @Html.EditorFor(m => m.NumeroInforme, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label class="control-label">FECHA EMISION INFORME</label>
+                                        <div class="input-group date" id="dtpFechaInforme">
+                                            <input type="text" class="form-control input-sm" id="txtFechaInforme" name="FechaInforme" disabled="disabled" data-inputmask="'alias': 'date'" value="@Model.FechaInforme" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group ">
+                                        <label class="control-label">N&deg; CONOCIMIENTO</label>
+                                        @Html.EditorFor(m => m.NumeroConocimientoEmbarque, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "29" , data_inputmask = "'mask': '9','repeat': 29, 'greedy' : false" } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                          <label class="control-label">FECHA CONOCIMIENTO</label>
+                                         <div class="input-group date" id="dtpFechaConocimientoEmbarque">
+                                            <input type="text" class="form-control input-sm" id="txtFechaConocimientoEmbarque" name="FechaConocimientoEmbarque" data-inputmask="'alias': 'date'" value="@Model.FechaConocimientoEmbarque" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> ,
+                        <div class="col-xs-6">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-8">FECHA VCTO. OPERACION</label>
+                                    <div class="col-xs-4">
+                                        <div class="input-group date" id="dtpFechaVencimiento">
+                                            <input type="text" class="form-control input-sm" id="txtFechaVencimiento" name="FechaVencimiento" data-inputmask="'alias': 'date'" value="@Model.FechaVencimiento" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <label class="control-label">FORMA DE PAGO</label>
+                                @Html.DropDownListFor(m => m.FormaPago, Model.FormasPago, new { @class = "form-control input-sm" })
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">COD. PLAZA EMISION</label>
+                                @Html.DropDownListFor(m => m.PlazaEmision, Model.PlazasEmision, new { @class = "form-control input-sm" })
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h5><STRONG>CUADRO DE PAGOS</STRONG></h5>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label class="control-label">N&deg;</label>
+                                        @Html.EditorFor(m => m.NumeroCuotas, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "6" , data_inputmask = "'mask': '9','repeat': 6, 'greedy' : false" } })
+                                        @Html.ValidationMessageFor(m => m.NumeroCuotas)
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label class="control-label">CUOTA N&deg;</label>
+                                        @Html.EditorFor(m => m.Cuota, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "2" , data_inputmask = "'mask': '9','repeat': 2, 'greedy' : false" } })
+                                        @Html.ValidationMessageFor(m => m.Cuota)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-6">ACUERDOS A QUE SE ACOGE:</label>
+                                        <div class="col-xs-6">
+                                            @Html.EditorFor(m => m.NumeroAcuerdos, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        @Html.EditorFor(m => m.AcuerdoDesde, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                    </div>
+                                    <div class="col-xs-6">
+                                        @Html.EditorFor(m => m.AcuerdoHasta, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="control-label">PAIS DE PAGO</label>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                @Html.DropDownListFor(m => m.CodigoPaisPago, Model.Paises, new { @class = "form-control input-sm" })                                
+                            </div>
+                            <div class="col-xs-4">
+                                @Html.EditorFor(m => m.CodigoPaisPago, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled", @Id = "CodigoPaisPagoLabel" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.Moneda, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                            <div class="col-xs-4">
+                                @Html.EditorFor(m => m.CodigoMoneda, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <fieldset class="form-horizontal">
+                        <legend>Detalle de Montos en Cobertura</legend>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR MERCADERIA</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.ValorMercaderia, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">GASTOS HASTA FOB</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.GastosHastaFOB, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR FOB</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.FOB, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">FLETE</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.Flete, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">SEGURO</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.Seguro, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR CIF</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.CIF, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(m => m.CIF)
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">INTERESES</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.Intereses, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">GASTOS BANCARIOS</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.GastosBancarios, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR TOTAL</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.ValorTotal, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR CIF EN US$</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.CIFEnDolares, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">VALOR TOTAL EN US$</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.TotalEnDolares, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-horizontal">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">TIPO DE CAMBIO $</label>
+                            <div class="col-xs-8 input-group">
+                                @Html.EditorFor(m => m.TipoCambio, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                <span class="input-group-addon">POR 1 US$</span>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">PARIDAD A US$</label>
+                            <div class="col-xs-8 input-group">
+                                @Html.EditorFor(m => m.ParidadUSD, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                                <span class="input-group-addon">POR 1 US$</span>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h5 style="font-family:'Times New Roman'"><STRONG>ANTECEDENTES A LA FECHA DE ANULACION</STRONG></h5>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group ">
+                                <label class="control-label">FECHA</label>
+                                <div class="input-group date" id="dtpFechaAnulacion">
+                                    <input type="text" class="form-control input-sm" id="txtFechaAnulacion" name="FechaAnulacion" disabled="disabled" data-inputmask="'alias': 'date'" value="@Model.FechaAnulacion" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">PARIDAD A US$</label>
+                                @Html.EditorFor(m => m.ParidadUSDAnulacion, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">VALOR TOTAL US$</label>
+                                @Html.EditorFor(m => m.TotalAnulacion, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </div>
+                    <h5 style="font-family:'Times New Roman'"><strong>ANTECEDENTES PLANILLA REEMPLAZADA</strong></h5>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group ">
+                                <label class="control-label">N&deg; PRESENTACION</label>
+                                @Html.EditorFor(m => m.ReemplazoNumeroPresentacion, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">FECHA</label>
+                                <div class="input-group date" id="dtpReemplazoFecha">
+                                    <input type="text" class="form-control input-sm" id="txtReemplazoFecha" name="ReemplazoFecha" disabled="disabled" data-inputmask="'alias': 'date'" value="@Model.ReemplazoFecha" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">COD. PLAZA BCCH</label>
+                                @Html.EditorFor(m => m.ReemplazoCodigoPlazaBancoCentral, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group ">
+                                <label class="control-label">COD. ENTIDAD</label>
+                                @Html.EditorFor(m => m.ReemplazoCodigoEntidad, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">N&deg; INF. IMPORTACION</label>
+                                @Html.EditorFor(m => m.ReemplazoNumeroInforme, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">FECHA EMISION INFORME</label>
+                                <div class="input-group date" id="dtpReemplazoFechaInforme">
+                                    <input type="text" class="form-control input-sm" id="txtReemplazoFechaInforme" name="ReemplazoFechaInforme" data-inputmask="'alias': 'date'" value="@Model.ReemplazoFechaInforme" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group ">
+                                <label class="control-label">PLAZA EMISION INFORME</label>
+                                @Html.EditorFor(m => m.ReemplazoPlazaEmision, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">N&deg; CONOCIMIENTO</label>
+                                @Html.EditorFor(m => m.ReemplazoNumeroConocimientoEmbarque, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label">FECHA CONOCIMIENTO</label>
+                                <div class="input-group date" id="dtpReemplazoFechaConocimientoEmbarque">
+                                    <input type="text" class="form-control input-sm" id="txtReemplazoFechaConocimientoEmbarque" name="ReemplazoFechaConocimientoEmbarque" data-inputmask="'alias': 'date'" value="@Model.ReemplazoFechaConocimientoEmbarque" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <h5 style="font-family:'Times New Roman'"><strong>CONVENIO CREDITO RECIPROCO</strong></h5>
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.UsaConvenio, new { htmlAttributes = new { @id = "HayAcuerdos" } }))
+                            Usa convenio Aladi
+                        </label>
+                    </div>
+                    <fieldset id="fsAladi" @(Model.UsaConvenio ? "" : "disabled")>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-6">a) EN CHILE FECHA AUT. DE DEBITO</label>
+                            <div class="col-xs-6">
+                                <div class="input-group date" id="dtpFechaAutorizacionDebito">
+                                    <input type="text" class="form-control input-sm" id="txtFechaAutorizacionDebito" name="FechaAutorizacionDebito" data-inputmask="'alias': 'date'" value="@Model.FechaAutorizacionDebito"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">NUMERO DOCUMENTO</label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.NumeroDocumentoChile, new { htmlAttributes = new { @class = "form-control input-sm",maxlength = "15", data_inputmask = "'mask': '9','repeat': 15, 'greedy' : false" } })
+                                @Html.ValidationMessageFor(m => m.NumeroDocumentoChile)
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label col-xs-4">b) EN EL EXTRANJERO NUMERO DOCUMENTO></label>
+                            <div class="col-xs-8">
+                                @Html.EditorFor(m => m.NumeroDocumentoExtranjero, new { htmlAttributes = new { @class = "form-control input-sm", maxlength = "15" } })
+                                @Html.ValidationMessageFor(m => m.NumeroDocumentoExtranjero)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-xs-2">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.isZonaFranca, new { htmlAttributes = new { @id = "ZonaFranca" } }) Zona Franca
+                        </label>
+                    </div>                    
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalObservacionesVisible">Observaciones</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalObservacionesVisible">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Observaciones</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <fieldset class="col-xs-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="col-xs-4 control-label">N&deg; planilla</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" disabled value="@Model.NumeroPresentacion">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-xs-4 control-label">Fecha</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" disabled value="@Model.FechaVentaAntigua">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Observaciones libres</label>
+                        @Html.TextAreaFor(m => m.Observaciones, new { @class = "form-control input-sm" })
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Observaciones declaración</label>
+                        @Html.EditorFor(m => m.ObservacionesDeclaracion, new { htmlAttributes = new { @class = "form-control input-sm", @readonly = "readonly" } })
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" style="margin-bottom:0px" data-dismiss="modal">Aceptar</button>
+                    @Html.ActionLink("Cancelar", "Volver", "Planillas", null, new { @class = "btn btn-default align-btn-fix", @data_dismiss = "modal" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary" id="btnAceptar">Aceptar</button>
+            <button type="button" class="btn btn-default" id="btnCancelar">Cancelar</button>
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title" id="txtTitleModal">Advertencia del Sistema</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="txtSuccess">Atención !... Se Han Modificado 1 o más Planillas. Desea Guardar los Cambios.</h3>
+                <h3 id="txtCancel">Atención !... Se perderá cualquier cambio que haya realizado, ¿Desea continuar?</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnAceptarModal" style="margin-bottom: 0px">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section css{
+    <style type="text/css">
+        .form-group {
+            margin-bottom: 0px;
+        }
+
+        .input-sm {
+            padding: 0px 10px;
+        }
+
+        .panel-heading {
+            padding: 0px 15px;
+        }
+
+        .control-label {
+            font-size: 12px;
+        }
+    </style>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/globalization");
+    @{bool planillaGuardada = Model.PlanillaGuardada;}
+    <script type="text/javascript">
+        $(function () {
+            @if (planillaGuardada)
+            {
+                @:window.close();
+            }
+            var dateNow = moment().startOf("day").utc();
+
+            $('#dtpFechaAutorizacionDebito').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpFechaPlanilla').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpFechaConocimientoEmbarque').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpFechaVencimiento').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpReemplazoFechaConocimientoEmbarque').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+
+            $('#dtpFechaInforme').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpFechaAnulacion').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpReemplazoFecha').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+            $('#dtpReemplazoFechaInforme').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', maxDate: dateNow, debug: true });
+
+            if ($('#txtFechaInforme').val() == "01/01/1900") {
+                $('#txtFechaInforme').val('');
+            }
+            if ($('#txtFechaPlanilla').val() == "01/01/1900") {
+                $('#txtFechaPlanilla').val('');
+            }
+            if ($('#txtFechaConocimientoEmbarque').val() == "01/01/1900") {
+                $('#txtFechaConocimientoEmbarque').val('');
+            }
+
+            if ($('#txtFechaVencimiento').val() == "01/01/1900") {
+                $('#txtFechaVencimiento').val('');
+            }
+
+            if ($('#txtFechaAutorizacionDebito').val() == "01/01/1900") {
+                $('#txtFechaAutorizacionDebito').val('');
+            }
+
+            $('#UsaConvenio').click(function () {
+                if (this.checked) {
+                    //habilitar campos
+                    var dateNow = moment().startOf("day").utc();
+                    $('#fsAladi').prop('disabled', false);
+                    $('#NumeroAcuerdos').val('1');
+                    $('#AcuerdoDesde').val('1493');
+
+                    if ($('#txtFechaAutorizacionDebito').val() != "") {
+                        $('#dtpFechaAutorizacionDebito').datetimepicker({ format: 'DD/MM/YYYY', locale: 'es', defaultDate: dateNow, maxDate: dateNow, debug: true });
+                    }
+                    else {
+                        $('#txtFechaAutorizacionDebito').val(dateNow)
+                    }
+                } else {
+                    //deshabilitar campos
+                    $('#fsAladi').prop('disabled', true);
+                    $('#NumeroAcuerdos').val('1');
+                    $('#AcuerdoDesde').val('1493');
+                }
+            });
+
+            $("#CodigoPaisPago").change(function () {
+                $("#CodigoPaisPagoLabel").val(this.value);
+            });
+
+            $('#btnCancelar').click(function () {
+                $('#txtSuccess').hide();
+                $('#txtCancel').show();
+                $('#modalAlert').modal();
+            });
+            $('#btnAceptarModal').click(function () {
+                window.close();
+            });
+
+            $('#NumeroConocimientoEmbarque').inputmask("9{1,8}");
+            $(":input").inputmask();
+
+            $('#dtpFechaVencimiento').click(function () {
+                $('#txtFechaVencimiento').val(dateNow)
+            });
+
+            $('#dtpFechaConocimientoEmbarque').click(function () {
+                $('#txtFechaConocimientoEmbarque').val(dateNow)
+            });
+        });
+    </script>
+}

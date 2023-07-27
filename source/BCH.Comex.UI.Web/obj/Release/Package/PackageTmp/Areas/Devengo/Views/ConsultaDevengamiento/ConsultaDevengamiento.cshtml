@@ -1,0 +1,38 @@
+﻿@model BCH.Comex.UI.Web.Areas.Devengo.Models.ConsultaDevengamientoViewModel
+
+@{
+    ViewBag.Title = "ConsultaDevengamiento";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/info-de-devengo-inv.png");
+}
+
+
+@using (Html.BeginForm("DescargaConsultaDevengamiento", "ConsultaDevengamiento", FormMethod.Post, new { id = "ConsultaDevengamiento", name = "ConsultaDevengamiento" }))
+{
+    <div class="container">
+        <h3 class="margin-bottom-double" id="tituloParticipantes">Consulta Devengamiento @Model.Titulo</h3>
+        <div class="row">
+            <div class="col-xs-1">
+                <label class="control-label">Periodo:</label>
+            </div>
+            <div class="col-xs-2">
+                @Html.EditorFor(model => model.listaPeriodos, new { htmlAttributes = new { @class = "form-control input-sm", tabindex = "1" } })
+            </div>
+            <div class="col-xs-3">
+                <input type="submit" id="btnGenerarExcel" name="Command" class="btn btn-success" value="Generar Excel" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+                <input type="submit" id="btnVolver" name="Command" class="btn btn-primary" value="Volver" />@*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;Generar Excel</input>*@
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts {
+
+    <script type="text/javascript">
+        var urlDescargaConsultaDevengamiento = '@Url.Action("DescargaConsultaDevengamiento", "ConsultaDevengamiento")';
+        var urlDescarga = '@Url.Action("DescargaDocumento", "ConsultaDevengamiento")';
+    </script>
+
+    @Scripts.Render("~/bundles/JQueryfileDownload")
+    @Scripts.Render("~/bundles/Devengo/Common")
+    @Scripts.Render("~/bundles/Devengo/ConsultaDevengamiento")
+}

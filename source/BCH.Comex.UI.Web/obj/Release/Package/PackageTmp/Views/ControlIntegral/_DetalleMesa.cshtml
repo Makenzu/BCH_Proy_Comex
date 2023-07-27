@@ -1,0 +1,91 @@
+﻿<!-- Modal -->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Tipos de Cambio</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <input id="opcion" name="opcion" type="hidden" value="@ViewBag.opcion" />
+        <div class="row">
+            <div class="col-md-12">
+                <table id="datatable_DetalleMesa">
+                    <thead>
+                        <tr>
+                            <th data-field="chk" data-sortable="false" data-checkbox="true" style="border-color:red" data-formatter="stateFormatter" align="right">Chk</th>
+                            <th data-field="fecha" data-sortable="false">Fecha</th>
+                            <th data-field="monto" align="right" data-sortable="false">Monto</th>
+                            <th data-field="precio" align="right" data-sortable="false">Precio</th>
+                            <th data-field="mdn_com" data-sortable="false">mcom</th>
+                            <th data-field="mnd_vta" data-sortable="false">mvta</th>
+                            <th data-field="tipo" data-sortable="false">Tipo</th>
+                            <th data-field="mtoPesos" align="right" data-sortable="false">Mto$</th>
+                            <th data-field="mtoUSD" align="right" data-sortable="false">mtoUSD</th>
+                            <th data-field="FVALOR" data-sortable="false">FVALOR</th>
+                            <th data-field="idComex" data-sortable="false">idComex</th>
+                            <th hidden data-field="estado" data-sortable="false" data-visible="false">estado</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+</div>
+<script>
+
+
+    function stateFormatter(value, row, index) {
+        if ((row['chk']).length == 0 || (row['chk']) == 0)
+            return {
+                disabled: true
+            }
+        if ((row['chk']) == 1)
+            return {
+                disabled: true,
+                checked: true
+            }
+    }
+
+    $('#datatable_DetalleMesa').bootstrapTable({
+        height: getHeight(),
+        method: 'post',
+        url: baseUrl + "ControlIntegral/GetListaDeFlxMesa",
+        checkboxHeader: false,
+        pagination: false,
+        rowStyle: function (row, index) {
+           // alert(row['estado']);
+            if ((row['estado']) == 1) {
+                return {
+                    css: { "color": "blue", "font-size": "11px" }
+                }
+            }
+            else if ((row['estado']) == 2) {
+                return {
+                    css: { "color": "blue", "font-size": "11px" }
+                }
+            }
+            else if ((row['estado']) == -1) {
+                return {
+                    css: { "color": "red", "font-size": "11px" }
+                }
+            }
+            else if ((row['estado']) == -2) {
+                return {
+                    css: { "color": "red", "font-size": "11px" }
+                }
+            }
+        }
+    });
+
+    $('#datatable_DetalleMesa').on("load-success.bs.table", function (e, data) {
+
+    });
+
+    function getHeight() {
+        return $(window).height() / 2;
+    }
+
+
+</script>

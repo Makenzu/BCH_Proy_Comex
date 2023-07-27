@@ -1,0 +1,36 @@
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX_BCOCHI_20221110\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\DES\BcoChile\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\System.Web.Mvc.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\log4net.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\System.Web.Mvc.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\log4net.xml
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\bin\Debug\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CopyComplete
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Core.Entities.Mcambio.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Common.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\System.Web.Mvc.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\log4net.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\BCH.Comex.Common.pdb
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\System.Web.Mvc.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\log4net.xml
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\es\System.Web.Mvc.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\bin\Debug\es\Microsoft.Web.Infrastructure.resources.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.AssemblyReference.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CoreCompileInputs.cache
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.csproj.CopyComplete
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.dll
+D:\3IT\COMEX - version QA\BCH.Comex.Core.Entities.Mcambio\obj\Debug\BCH.Comex.Core.Entities.Mcambio.pdb

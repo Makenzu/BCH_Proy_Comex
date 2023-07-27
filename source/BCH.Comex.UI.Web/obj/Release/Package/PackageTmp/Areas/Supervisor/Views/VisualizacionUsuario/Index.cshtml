@@ -1,0 +1,78 @@
+﻿@model BCH.Comex.UI.Web.Areas.Supervisor.Models.EspecialistaViewModel
+
+@{
+    ViewBag.Title = "Supervisor";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Favicon = @Url.Content("~/Content/img/apps/apli-supervisor-inv.png");
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/bootstrap-table.min.css">
+}
+
+<h2>Visualización Usuario</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmgUsr", name = "FrmgUsr" }))
+{
+    @Html.AntiForgeryToken() 
+    
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">Control de Fin de Día: @DateTime.Now.ToShortDateString()</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 alert alert-@Model.ClassMsgCierre">@Model.MsgCierre</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label>Supervisor</label>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" placeholder="" value='@Model.supervisor' readonly>
+                        </div>
+                    </div>
+                    <div class="row"><div class="col-xs-1">&nbsp;</div></div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label>Especialistas</label>
+                            @Html.DropDownListFor(model => model.opciones, Model.opciones, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="col-xs-8" style="margin-top:25px;">
+                            <input type="submit" name="Command" id="CierreDiario" value="Cierre Diario" class="btn btn-default" />
+                            <input type="submit" name="Command" id="DesCierre" value="Des. Cierre" class="btn btn-default" />
+                            <input type="submit" name="Command" id="Cancelar" value="Cancelar" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    
+                    <div class="row"><div class="col-xs-12">&nbsp;</div></div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <fieldset class="margin-bottom-triple">
+                                <div class="table-responsive">
+                                    <table id="tableEspecialistas" name="tableEspecialistas" class="table"></table>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        var dataltEspecialista = @Html.Raw(Json.Encode(Model.ltEspecialista));
+        var dataltEspecialistaFill = @Html.Raw(Json.Encode(Model.ltEspecialistaFill));
+    </script>
+    @Scripts.Render("~/bundles/Supervisor/Especialistas")
+}
